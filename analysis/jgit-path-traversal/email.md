@@ -1,180 +1,186 @@
-**To:** security@eclipse.org
-**Subject:** [JGit] Two Protocol V2 path traversal vulnerabilities in ProtocolV2Parser
+To: security@eclipse.org
+Subject: [JGit] Two Protocol V2 path traversal vulnerabilities in ProtocolV2Parser
 
----
+Hello Eclipse JGit security team,
 
-Hello JGit security team,
+I am reporting two path traversal vulnerabilities in JGit Protocol V2 upload-pack handling. Both issues are caused by missing ref-name validation in `ProtocolV2Parser`.
 
-I am reporting two path traversal vulnerabilities in JGit's Protocol V2 upload-pack
-implementation, both caused by the same missing validation in `ProtocolV2Parser`. Both
-allow a remote client to read data from git repositories that share a filesystem with a
-JGit HTTP server but are not publicly served.
+Please treat this report as confidential until a fix is released.
 
-Tested version: **7.5.0.202512021534-r** (latest stable). Older releases using
-`ProtocolV2Parser` are likely affected.
+## Report Metadata
 
-I am attaching proof-of-concept scripts for both. Please treat this report as confidential
-until a fix is shipped.
+- Issue types:
+  - Path traversal / directory traversal
+  - Information disclosure
+  - File existence oracle (vulnerability 2)
+- Tested artifacts:
+  - `org.eclipse.jgit:org.eclipse.jgit:7.5.0.202512021534-r`
+  - `org.eclipse.jgit:org.eclipse.jgit.http.server:7.5.0.202512021534-r`
+- Potentially affected versions:
+  - Any release where `ProtocolV2Parser` accepts unvalidated `ref-prefix` or `want-ref` values and passes them to `RefDirectory` resolution.
+- CVSS (initial):
+  - Vulnerability 1: `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` (7.5 High)
+  - Vulnerability 2: `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` (7.5 High), with possible adjustment if non-default config requirement is weighted differently.
 
----
+## Vulnerability 1: `ls-refs ref-prefix` path traversal
 
-## Vulnerability 1 — Branch name and SHA disclosure via `ls-refs ref-prefix`
+### 1) Type of issue
 
-**Severity:** High (CVSS 3.1: 7.5 — `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N`)
-**Config required:** None (default JGit server)
-**Auth required:** No
+- Path traversal in Protocol V2 `ls-refs` request parsing.
+- Leads to unauthorized disclosure of ref names and commit SHAs from other repositories on the same filesystem.
 
-### What an attacker can do
+### 2) Affected version(s)
 
-Send a single unauthenticated HTTP POST to any JGit smart-HTTP endpoint. The response
-contains the branch names and commit SHAs of every git repository that lives on the same
-filesystem and is readable by the JGit process.
+- Confirmed on `7.5.0.202512021534-r`.
+- Older versions using the same parser path are likely affected.
 
-**Scenario:** server hosts `/srv/git/public.git` over HTTP; `/srv/git/secret.git` is on
-the same disk, not publicly served. An attacker enumerates all branches of `secret.git`
-— including their names and tip SHAs — without any credentials.
+### 3) Impact and exploitation
 
-### Steps to reproduce
+- Unauthenticated remote client can send one HTTP POST to a public repo endpoint and enumerate refs from non-served neighboring repos.
+- Example impact:
+  - Public repo served: `/tmp/jgit-demo/public.git`
+  - Secret repo not served: `/tmp/jgit-demo/secret.git`
+  - Attacker receives `refs/heads/classified-feature` and its tip SHA from `secret.git`.
 
-```
-bash vuln-1-ls-refs-branch-discovery/start_server.sh setup   # one-time
-bash vuln-1-ls-refs-branch-discovery/start_server.sh serve   # terminal 1
-python3 vuln-1-ls-refs-branch-discovery/exploit.py            # terminal 2
-```
+### 4) Configuration required
 
-Expected output includes:
+- None. Default upload-pack Protocol V2 behavior is sufficient.
 
-```
-[3] Traversal to /tmp/jgit-demo/secret.git/refs/
-    SHA                                         Leaked path
-    a3f8c1d2e4b5…  refs/heads/…/secret.git/refs/heads/classified-feature
-    ...
+### 5) Step-by-step reproduction
 
-[!] Discovered branches in secret.git:
-      a3f8c1d2e4b5...  refs/heads/classified-feature
-```
+1. Set up demo repos and server:
+   - `bash vuln-1-ls-refs-branch-discovery/start_server.sh setup`
+2. Start server:
+   - `bash vuln-1-ls-refs-branch-discovery/start_server.sh serve`
+3. Run exploit:
+   - `python3 vuln-1-ls-refs-branch-discovery/exploit.py`
+4. Observe leaked refs from `secret.git` in the HTTP response.
 
-### Root cause
+### 6) Location of affected source code (release/tag context)
 
-`ProtocolV2Parser.parseLsRefsRequest()` appends client-supplied `ref-prefix` values to
-the prefix list without validation:
+- Release tested: `7.5.0.202512021534-r`
+- Affected logic:
+  - `ProtocolV2Parser.parseLsRefsRequest()` (accepts `ref-prefix` without validation)
+  - `RefDirectory.LooseScanner.scan()` (constructs filesystem path from untrusted prefix)
+
+### 7) Full paths of source files related to manifestation
+
+- `org/eclipse/jgit/transport/ProtocolV2Parser.java`
+- `org/eclipse/jgit/internal/storage/file/RefDirectory.java`
+
+### 8) Related logs
+
+- No specific warning/error is required for successful exploitation.
+- Typical behavior is HTTP 200 with leaked ref lines in response body.
+
+### 9) PoC / exploit code
+
+- `vuln-1-ls-refs-branch-discovery/exploit.py`
+- `vuln-1-ls-refs-branch-discovery/start_server.sh`
+
+### 10) Root cause and minimal fix
+
+Current behavior accepts raw `ref-prefix`:
 
 ```java
-// ProtocolV2Parser.java
 } else if (line2.startsWith("ref-prefix ")) {
-    prefixes.add(line2.substring("ref-prefix ".length()));  // ← no isValidRefName()
+    prefixes.add(line2.substring("ref-prefix ".length()));
+}
 ```
 
-These prefixes reach `RefDirectory.LooseScanner.scan()`, which builds a `java.io.File`
-directly from the prefix after stripping `"refs/"`:
+Suggested guard before adding prefix:
 
 ```java
-// RefDirectory.java — LooseScanner.scan()
-} else if (prefix.startsWith(R_REFS) && prefix.endsWith("/")) {
-    File dir = new File(refsDir, prefix.substring(R_REFS.length()));
-    //   refsDir = $GIT_DIR/refs/
-    //   prefix  = "refs/heads/../../../../../../srv/git/secret.git/refs/"
-    //   → new File($GIT_DIR/refs/, "heads/../../../../../../srv/git/secret.git/refs/")
-    //   → OS resolves at opendir() → /srv/git/secret.git/refs/
-    scanTree(prefix, dir);   // recursively lists the secret repo's refs
-```
-
-`scanTree()` returns every file whose content is a 40-char hex SHA as a ref entry in the
-HTTP 200 response. No error, no log entry — the branch names and SHAs are delivered
-directly to the attacker.
-
-### Suggested fix
-
-```java
-// ProtocolV2Parser.java — parseLsRefsRequest(), before prefixes.add()
 String prefix = line2.substring("ref-prefix ".length());
-String check  = prefix.endsWith("/") ? prefix.substring(0, prefix.length() - 1) : prefix;
+String check = prefix.endsWith("/") ? prefix.substring(0, prefix.length() - 1) : prefix;
 if (!check.isEmpty() && !Repository.isValidRefName(check)) {
     throw new PackProtocolException("invalid ref-prefix: " + prefix);
 }
 prefixes.add(prefix);
 ```
 
-`Repository.isValidRefName()` already exists and rejects any name containing `..`. It is
-called correctly in the receive-pack write path but not here.
+## Vulnerability 2: `fetch/want-ref` path traversal and file oracle
 
----
+### 1) Type of issue
 
-## Vulnerability 2 — File existence oracle and commit exfiltration via `fetch/want-ref`
+- Path traversal in Protocol V2 `fetch` request parsing.
+- Results in file existence oracle and potential object exfiltration when targeted file contains SHA-like content.
 
-**Severity:** High (CVSS 3.1: 7.5 — `AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N`)
-**Config required:** `[uploadpack] allowRefInWant = true` (non-default)
-**Auth required:** No (if server allows unauthenticated access)
+### 2) Affected version(s)
 
-### What an attacker can do
+- Confirmed on `7.5.0.202512021534-r`.
+- Older versions with same `want-ref` handling are likely affected.
 
-When `allowRefInWant = true` is set, the `fetch` endpoint becomes a binary file-existence
-oracle for any path on the server filesystem:
+### 3) Impact and exploitation
 
-| HTTP response | Meaning |
-|---|---|
-| `200` + `ERR invalid ref name …` | File does not exist at the probed path |
-| **`500`** (empty body) | File **exists** and was read; first ~4 KB in server log |
-| `200` + `wanted-refs` + packfile | File contained a valid SHA; **commit exfiltrated** |
+When `[uploadpack] allowRefInWant = true` is enabled:
 
-Files with git-SHA-shaped content (e.g. `FETCH_HEAD`, ref files in neighboring repos) are
-served as git objects to the attacker.
+- Attacker can probe arbitrary paths readable by server process.
+- Behavior observed from HTTP responses:
+  - `200` + `ERR invalid ref name ...` -> file absent
+  - `500` (often empty response body) -> file exists and read/parsing path reached
+  - `200` + `wanted-refs` + packfile -> file contained valid object id; object data exfiltrated
 
-### Steps to reproduce
+Practical target example:
 
-```
-bash vuln-2-want-ref-file-oracle/start_server.sh setup   # one-time
-bash vuln-2-want-ref-file-oracle/start_server.sh serve   # terminal 1
-python3 vuln-2-want-ref-file-oracle/exploit.py           # terminal 2
-```
+- `want-ref refs/heads/../../FETCH_HEAD` can read `$GIT_DIR/FETCH_HEAD`.
+- If first token is a valid SHA, upload-pack can return corresponding commit/tree/blob objects.
 
-Expected output includes:
+### 4) Configuration required
 
-```
-[3] File existence oracle — /etc/passwd
-    HTTP : 500
-    Result: EXISTS (HTTP 500 — content in server log)
+- Requires repo config:
 
-[6] Secret commit exfiltration — $GIT_DIR/FETCH_HEAD
-    HTTP : 200
-    Result: EXFILTRATED (wanted-refs + packfile returned)
-    SHA  : a3f8c1d2e4b5...
+```ini
+[uploadpack]
+    allowRefInWant = true
 ```
 
-### Root cause
+### 5) Step-by-step reproduction
 
-`ProtocolV2Parser.parseFetchRequest()` stores the raw `want-ref` string without
-validation:
+1. Set up demo repos and server:
+   - `bash vuln-2-want-ref-file-oracle/start_server.sh setup`
+2. Start server:
+   - `bash vuln-2-want-ref-file-oracle/start_server.sh serve`
+3. Run exploit:
+   - `python3 vuln-2-want-ref-file-oracle/exploit.py`
+4. Observe oracle behavior (`200` absent vs `500` exists) and exfiltration from `FETCH_HEAD`.
+
+### 6) Location of affected source code (release/tag context)
+
+- Release tested: `7.5.0.202512021534-r`
+- Affected logic:
+  - `ProtocolV2Parser.parseFetchRequest()` (accepts `want-ref` without validation)
+  - `RefDirectory.fileFor()` (resolves file path from untrusted ref name)
+
+### 7) Full paths of source files related to manifestation
+
+- `org/eclipse/jgit/transport/ProtocolV2Parser.java`
+- `org/eclipse/jgit/internal/storage/file/RefDirectory.java`
+
+### 8) Related logs
+
+- For existing files with non-ref content, server logs can include errors similar to:
+  - `Not a ref: <refname>: <file-content-prefix>`
+- This can leak portions of file content into logs while the client sees HTTP 500.
+
+### 9) PoC / exploit code
+
+- `vuln-2-want-ref-file-oracle/exploit.py`
+- `vuln-2-want-ref-file-oracle/start_server.sh`
+
+### 10) Root cause and minimal fix
+
+Current behavior accepts raw `want-ref`:
 
 ```java
-// ProtocolV2Parser.java
 } else if (line2.startsWith(PACKET_WANT_REF)) {
-    reqBuilder.addWantedRef(line2.substring(PACKET_WANT_REF.length()));  // ← no isValidRefName()
+    reqBuilder.addWantedRef(line2.substring(PACKET_WANT_REF.length()));
+}
 ```
 
-`UploadPack` resolves it via `RefDirectory.fileFor()`, which has no traversal guard:
+Suggested guard before adding wanted ref:
 
 ```java
-// RefDirectory.java
-File fileFor(String name) {
-    if (name.startsWith(R_REFS)) {
-        name = name.substring(R_REFS.length());   // strips "refs/"
-        return new File(refsDir, name);            // ← OS resolves ".." at open()
-    }
-```
-
-Path arithmetic example:
-
-```
-want-ref  "refs/heads/../../FETCH_HEAD"
-fileFor:  new File($GIT_DIR/refs/, "heads/../../FETCH_HEAD")
-OS:       $GIT_DIR/FETCH_HEAD   ← file read successfully
-```
-
-### Suggested fix
-
-```java
-// ProtocolV2Parser.java — parseFetchRequest(), before reqBuilder.addWantedRef()
 String refName = line2.substring(PACKET_WANT_REF.length());
 if (!Repository.isValidRefName(refName)) {
     throw new PackProtocolException(
@@ -183,33 +189,16 @@ if (!Repository.isValidRefName(refName)) {
 reqBuilder.addWantedRef(refName);
 ```
 
----
-
 ## Common root cause
 
-Both vulnerabilities share a single root cause: **`ProtocolV2Parser` does not call
-`Repository.isValidRefName()` on client-supplied ref strings**, while `ReceivePack` (the
-write path) correctly does. The fix for each surface is the same one-line guard.
-
-The two fixes are independent and can be applied separately, but applying both in the same
-commit is recommended to close the entire class of issue in `ProtocolV2Parser`.
-
----
-
-## Affected files
-
-- `org/eclipse/jgit/transport/ProtocolV2Parser.java` — two guard sites
-- `org/eclipse/jgit/internal/storage/file/RefDirectory.java` — `fileFor()` trusts its
-  caller; no change needed there once the parser is fixed
+Both vulnerabilities are caused by missing `Repository.isValidRefName()` validation in Protocol V2 parser paths that consume client-controlled ref strings.
 
 ## Attachments
 
-- `vuln-1-ls-refs-branch-discovery/` — README, `start_server.sh`, `exploit.py`
-- `vuln-2-want-ref-file-oracle/` — README, `start_server.sh`, `exploit.py`
-- `JGitServer.java` — the minimal Jetty + JGit HTTP server used by both PoCs
+- `vuln-1-ls-refs-branch-discovery/` (README, setup script, exploit)
+- `vuln-2-want-ref-file-oracle/` (README, setup script, exploit)
+- `JGitServer.java` (minimal HTTP server used by PoCs)
 
----
-
-Thank you for your time. I am happy to provide a patch or additional information.
+I can provide a patch or test additional candidate fixes if helpful.
 
 [Reporter name / affiliation]

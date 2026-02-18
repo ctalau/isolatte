@@ -6,7 +6,6 @@
 #   bash start_server.sh serve    # start the server (blocks)
 #
 # Requires: Java 11+, curl
-set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SHARED_LIB="$(cd "$SCRIPT_DIR/.." && pwd)/lib"   # shared jar cache
