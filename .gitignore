@@ -1,1 +1,3 @@
 openjdk-jdk/
+analysis/jgit-path-traversal/lib/
+analysis/jgit-path-traversal/*.class
