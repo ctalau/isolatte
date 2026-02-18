@@ -99,13 +99,13 @@ if (!check.isEmpty() && !Repository.isValidRefName(check)) {
 prefixes.add(prefix);
 ```
 
-## Vulnerability 2: `fetch/want-ref` path traversal and file oracle
+## Vulnerability 2: `fetch/want-ref` path traversal oracle and log leakage
 
 ### 1) Type of issue
 
 - Path traversal in Protocol V2 `fetch` request parsing.
-- Results in file existence oracle and potential object exfiltration when targeted file contains SHA-like content.
-- Content from arbirary files end up in server logs which can lead to various issues such as logs poisoning, PII handling compliance violations, etc.
+- Results in a file existence oracle and server-side log disclosure.
+- Content from arbitrary files can be written to server logs, exposing data to operators who may have log access but not direct filesystem access.
 
 ### 2) Affected version(s)
 
@@ -120,12 +120,11 @@ When `[uploadpack] allowRefInWant = true` is enabled:
 - Behavior observed from HTTP responses:
   - `200` + `ERR invalid ref name ...` -> file absent
   - `500` (often empty response body) -> file exists and read/parsing path reached
-  - `200` + `wanted-refs` + packfile -> file contained valid object id; object data exfiltrated
 
-Practical target example:
+Operational impact:
 
-- `want-ref refs/heads/../../FETCH_HEAD` can read `$GIT_DIR/FETCH_HEAD`.
-- If first token is a valid SHA, upload-pack can return corresponding commit/tree/blob objects.
+- For existing files with non-ref content, error text can include a prefix of file content in server logs.
+- This can expose sensitive data in logs and introduce compliance/handling risks.
 
 ### 4) Configuration required
 
@@ -144,7 +143,7 @@ Practical target example:
    - `bash vuln-2-want-ref-file-oracle/start_server.sh serve 2> /tmp/server.log &`
 3. Run exploit:
    - `python3 vuln-2-want-ref-file-oracle/exploit.py`
-4. Observe oracle behavior (`200` absent vs `500` exists) and exfiltration from `FETCH_HEAD`.
+4. Observe oracle behavior (`200` absent vs `500` exists) and inspect server logs for content prefixes included in exception messages.
 
 ### 6) Location of affected source code (release/tag context)
 
