@@ -51,7 +51,7 @@ Please treat this report as confidential until a fix is released.
 1. Set up demo repos and server:
    - `bash vuln-1-ls-refs-branch-discovery/start_server.sh setup`
 2. Start server:
-   - `bash vuln-1-ls-refs-branch-discovery/start_server.sh serve`
+   - `bash vuln-1-ls-refs-branch-discovery/start_server.sh serve 2> /tmp/server.log &`
 3. Run exploit:
    - `python3 vuln-1-ls-refs-branch-discovery/exploit.py`
 4. Observe leaked refs from `secret.git` in the HTTP response.
@@ -105,6 +105,7 @@ prefixes.add(prefix);
 
 - Path traversal in Protocol V2 `fetch` request parsing.
 - Results in file existence oracle and potential object exfiltration when targeted file contains SHA-like content.
+- Content from arbirary files end up in server logs which can lead to various issues such as logs poisoning, PII handling compliance violations, etc.
 
 ### 2) Affected version(s)
 
@@ -140,7 +141,7 @@ Practical target example:
 1. Set up demo repos and server:
    - `bash vuln-2-want-ref-file-oracle/start_server.sh setup`
 2. Start server:
-   - `bash vuln-2-want-ref-file-oracle/start_server.sh serve`
+   - `bash vuln-2-want-ref-file-oracle/start_server.sh serve 2> /tmp/server.log &`
 3. Run exploit:
    - `python3 vuln-2-want-ref-file-oracle/exploit.py`
 4. Observe oracle behavior (`200` absent vs `500` exists) and exfiltration from `FETCH_HEAD`.
