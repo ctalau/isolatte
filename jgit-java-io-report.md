@@ -1,22 +1,28 @@
-# JGit `java.io` Package Usage Report
+# JGit `java.io` and `java.nio` Package Usage Report
 
 **Repository:** https://github.com/eclipse-jgit/jgit
 **Commit analyzed:** `2501792` (PackIndexMerger: replace constructor with Builder)
-**Date:** 2026-02-17
+**Date:** 2026-02-18
 **Total Java files in codebase:** 1,882
 
 ---
 
 ## Executive Summary
 
-- **41 distinct `java.io` classes** are imported across the JGit codebase.
-- **1,047 of 1,882 Java files** (55.6%) import at least one `java.io` class.
-- `java.io.IOException` is used in **926 files** — nearly half the entire codebase — reflecting JGit's heavily I/O-bound nature as a Git implementation.
-- No wildcard `import java.io.*` statements exist anywhere; every class is imported explicitly.
+| Package | Distinct Classes | Files Using It | Coverage |
+|---------|----------------:|---------------:|---------:|
+| `java.io` | 41 | 1,047 | 55.6% |
+| `java.nio` | 47 | 235 | 12.5% |
+
+- `java.io.IOException` is used in **926 files** — nearly half the entire codebase.
+- `java.io.File` (326 files) is the legacy file abstraction; `java.nio.file.Path`/`Files` (91/113 files) show active migration in progress but are far behind.
+- No wildcard imports (`java.io.*` or `java.nio.*`) exist anywhere; every class is imported explicitly.
 
 ---
 
-## 1. Class Usage Frequency
+## Part 1 — `java.io` Package
+
+### 1.1 Class Usage Frequency
 
 Number of files importing each `java.io` class, sorted by prevalence:
 
@@ -64,7 +70,7 @@ Number of files importing each `java.io` class, sorted by prevalence:
 | 40 | `java.io.FilenameFilter` | 1 |
 | 41 | `java.io.FileDescriptor` | 1 |
 
-### Category Breakdown
+### 1.2 Category Breakdown
 
 | Category | Classes | Total file-uses |
 |----------|---------|---------------:|
@@ -80,9 +86,7 @@ Number of files importing each `java.io` class, sorted by prevalence:
 | Filter streams | `FilterInputStream`, `FilterOutputStream` | 6 |
 | Terminal | `Console` | 2 |
 
----
-
-## 2. Usage Spread Across Modules
+### 1.3 Per-Module Coverage
 
 | Module | `java.io` Files | Total Java Files | Coverage |
 |--------|---------------:|----------------:|---------:|
@@ -116,11 +120,7 @@ Number of files importing each `java.io` class, sorted by prevalence:
 | `org.eclipse.jgit.packaging` | 0 | 0 | — |
 | **Total** | **1,047** | **1,882** | **55.6%** |
 
----
-
-## 3. Files with Most `java.io` Imports
-
-The following 20 files each use the most distinct `java.io` classes:
+### 1.4 Files with Most `java.io` Imports
 
 | `java.io` Imports | File |
 |:-----------------:|------|
@@ -145,30 +145,221 @@ The following 20 files each use the most distinct `java.io` classes:
 | 7 | `org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/file/Pack.java` |
 | 7 | `org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/file/ObjectDirectoryInserter.java` |
 
+### 1.5 Deep Dive: `RandomAccessFile` (7 files)
+
+`RandomAccessFile` is used for low-level byte-offset access to binary files — a pattern that `java.nio.channels.FileChannel` can also serve, but `RandomAccessFile` remains here for historical reasons or where seek+read convenience outweighs the NIO migration cost.
+
+| File | Mode | Purpose |
+|------|:----:|---------|
+| `internal/storage/file/Pack.java` | `"r"` (long-lived field) | Random-seek reads of object data from a `.pack` file, held for the pack's lifetime, serialized by a `readLock` |
+| `internal/storage/file/ObjectDirectoryPackParser.java` | `"rw"` (field, closed after parse) | Writes incoming pack bytes to a temp file; seeks back to write the final SHA-1 checksum, then `fsync`s and renames to permanent location |
+| `internal/storage/file/PackInserter.java` (inner `PackStream`) | `"rw"` (field) | Builds a new pack file; calls `file.getFD()` to construct a `FileOutputStream` that shares the same OS file descriptor — enabling both sequential writes and seek-back reads without reopening the file. A code comment explicitly warns never to close the `RandomAccessFile` from within a wrapping stream. |
+| `internal/storage/file/GC.java` (inner `PidLock`) | `"rw"` (field) | Holds a `FileChannel` + `FileLock` on `gc.pid` to prevent concurrent GC runs; writes the current process's PID/host info into the lock file so stale locks can be detected |
+| `internal/storage/file/PackFileSnapshot.java` | `"r"` (try-with-resources) | Short-lived open: seeks to last 20 bytes of a `.pack` file to read the trailing SHA-1 checksum, used for change detection without re-reading the file |
+| `http.server/FileSender.java` | `"r"` (long-lived field) | Serves dumb-HTTP Git clients; uses `seek()` to honor `Range:` HTTP headers and stream exactly the requested byte range of pack/info files |
+| `org.eclipse.jgit.test/HugeFileTest.java` | `"rw"` (try-with-resources) | Test-only (`@Ignore`d): creates sparse files >4 GiB via `setLength()` and mutates single bytes via `write()` to exercise large-file and index-overflow handling |
+
+### 1.6 Deep Dive: `FileDescriptor` (1 file)
+
+`FileDescriptor` is used in exactly one file: `org.eclipse.jgit.pgm/src/org/eclipse/jgit/pgm/TextBuiltin.java`.
+
+`TextBuiltin` is the abstract base class for all JGit CLI commands. Its `init()` method wires up the three standard I/O streams. The static constants `FileDescriptor.in`, `FileDescriptor.out`, and `FileDescriptor.err` are used as **fallbacks** when streams have not been pre-configured by a caller:
+
+```java
+if (ins == null)
+    ins = new FileInputStream(FileDescriptor.in);    // stdin
+if (outs == null)
+    outs = new FileOutputStream(FileDescriptor.out); // stdout
+if (errs == null)
+    errs = new FileOutputStream(FileDescriptor.err); // stderr
+```
+
+The `if (x == null)` guards mean that when `initRaw()` has already been called by a test harness or embedding application (injecting piped streams), the real `FileDescriptor.*` values are never opened. This allows CLI commands to be driven programmatically with captured I/O.
+
 ---
 
-## 4. Key Observations
+## Part 2 — `java.nio` Package
 
-### Dominance of `IOException`
-`java.io.IOException` appears in 926 files — **49.2% of the entire codebase**. This is expected: Git is fundamentally a file-system and network protocol implementation, and virtually every operation that touches a repository, pack file, ref, or remote can fail with an I/O error.
+### 2.1 Class Usage Frequency
 
-### Heavy use of `java.io.File`
-`java.io.File` (326 files) is the second most-used class. JGit predates the widespread adoption of `java.nio.file.Path` as the idiomatic file abstraction in Java. Much of the codebase still uses `java.io.File` for path manipulation, temp file creation, and file existence checks — a potential area for modernization toward `java.nio.file`.
+47 distinct `java.nio` classes are used across 235 files (12.5% of the codebase):
 
-### Stream abstractions are widespread
-The generic `InputStream` (181 files) and `OutputStream` (161 files) are heavily used as API boundaries, which is good design: callers pass streams in rather than file paths, keeping the core logic storage-agnostic.
+| Rank | Class | Files |
+|------|-------|------:|
+| 1 | `java.nio.file.Files` | 113 |
+| 2 | `java.nio.file.Path` | 91 |
+| 3 | `java.nio.charset.StandardCharsets` | 44 |
+| 4 | `java.nio.ByteBuffer` | 44 |
+| 5 | `java.nio.file.Paths` | 21 |
+| 6 | `java.nio.charset.Charset` | 21 |
+| 7 | `java.nio.file.StandardCopyOption` | 18 |
+| 8 | `java.nio.file.InvalidPathException` | 15 |
+| 9 | `java.nio.file.NoSuchFileException` | 13 |
+| 10 | `java.nio.channels.Channels` | 11 |
+| 11 | `java.nio.file.attribute.FileTime` | 10 |
+| 12 | `java.nio.file.StandardOpenOption` | 9 |
+| 13 | `java.nio.file.LinkOption` | 8 |
+| 14 | `java.nio.channels.FileChannel` | 8 |
+| 15 | `java.nio.file.attribute.BasicFileAttributes` | 7 |
+| 16 | `java.nio.charset.UnsupportedCharsetException` | 7 |
+| 17 | `java.nio.charset.IllegalCharsetNameException` | 6 |
+| 18 | `java.nio.channels.ReadableByteChannel` | 6 |
+| 19 | `java.nio.charset.CharacterCodingException` | 5 |
+| 20 | `java.nio.CharBuffer` | 5 |
+| 21 | `java.nio.file.DirectoryStream` | 4 |
+| 22 | `java.nio.file.attribute.PosixFilePermission` | 3 |
+| 23 | `java.nio.file.FileStore` | 3 |
+| 24 | `java.nio.file.DirectoryNotEmptyException` | 3 |
+| 25 | `java.nio.charset.CharsetEncoder` | 3 |
+| 26 | `java.nio.file.attribute.PosixFileAttributeView` | 2 |
+| 27 | `java.nio.file.attribute.BasicFileAttributeView` | 2 |
+| 28 | `java.nio.file.SimpleFileVisitor` | 2 |
+| 29 | `java.nio.file.FileVisitResult` | 2 |
+| 30 | `java.nio.file.FileSystemException` | 2 |
+| 31 | `java.nio.file.AtomicMoveNotSupportedException` | 2 |
+| 32 | `java.nio.file.AccessDeniedException` | 2 |
+| 33 | `java.nio.charset.CodingErrorAction` | 2 |
+| 34 | `java.nio.channels.WritableByteChannel` | 2 |
+| 35 | `java.nio.file.attribute.PosixFileAttributes` | 1 |
+| 36 | `java.nio.file.FileVisitOption` | 1 |
+| 37 | `java.nio.file.FileAlreadyExistsException` | 1 |
+| 38 | `java.nio.file.DirectoryIteratorException` | 1 |
+| 39 | `java.nio.file.CopyOption` | 1 |
+| 40 | `java.nio.charset.CoderResult` | 1 |
+| 41 | `java.nio.charset.CharsetDecoder` | 1 |
+| 42 | `java.nio.channels.OverlappingFileLockException` | 1 |
+| 43 | `java.nio.channels.FileLock` | 1 |
+| 44 | `java.nio.channels.FileChannel.MapMode` | 1 |
+| 45 | `java.nio.channels.ClosedByInterruptException` | 1 |
+| 46 | `java.nio.MappedByteBuffer` | 1 |
+| 47 | `java.nio.InvalidMarkException` | 1 |
 
-### Buffered wrappers used consistently
-Classes like `BufferedReader` (43), `InputStreamReader` (40), `BufferedInputStream` (30), and `BufferedOutputStream` (25) show that the codebase wraps raw streams with buffering before use, which is correct practice.
+### 2.2 Sub-Package Breakdown
 
-### No wildcard imports
-Zero files use `import java.io.*`. All 41 classes are imported individually, maintaining explicit dependency tracking.
+| Sub-package | Import lines | Primary role |
+|-------------|------------:|--------------|
+| `java.nio.file` | 312 | NIO.2 filesystem API — `Files`, `Path`, copy/move options, exception types |
+| `java.nio.charset` | 90 | Character encoding — `StandardCharsets`, `Charset`, codec error handling |
+| `java.nio` (buffers) | 51 | Direct/heap buffers — `ByteBuffer`, `CharBuffer`, `MappedByteBuffer` |
+| `java.nio.channels` | 31 | Channel I/O — `FileChannel`, `ReadableByteChannel`, `FileLock` |
+| `java.nio.file.attribute` | 25 | File metadata — `FileTime`, `PosixFilePermission`, `BasicFileAttributes` |
 
-### `pgm` modules have highest saturation
-The command-line (`pgm`) and HTTP server modules show the highest coverage (~70%+), which makes sense as they are closest to user-facing I/O: reading config, writing output, streaming pack data over HTTP.
+### 2.3 Per-Module Coverage
 
-### Low use of serialization
-Only 2 files use `ObjectInputStream`/`ObjectOutputStream`, and 13 use `Serializable`. JGit does not rely on Java object serialization for persistence — it uses Git's own binary formats instead.
+| Module | `java.nio` Files | Total Java Files | Coverage |
+|--------|----------------:|----------------:|---------:|
+| `org.eclipse.jgit` (core) | 83 | 960 | 8.6% |
+| `org.eclipse.jgit.test` | 73 | 499 | 14.6% |
+| `org.eclipse.jgit.ssh.apache` | 18 | 69 | 26.1% |
+| `org.eclipse.jgit.ssh.apache.test` | 8 | 16 | 50.0% |
+| `org.eclipse.jgit.lfs` | 9 | 33 | 27.3% |
+| `org.eclipse.jgit.benchmarks` | 5 | 8 | 62.5% |
+| `org.eclipse.jgit.lfs.server.test` | 5 | 5 | 100.0% |
+| `org.eclipse.jgit.pgm.test` | 5 | 36 | 13.9% |
+| `org.eclipse.jgit.gpg.bc` | 4 | 12 | 33.3% |
+| `org.eclipse.jgit.junit` | 4 | 14 | 28.6% |
+| `org.eclipse.jgit.pgm` | 4 | 87 | 4.6% |
+| `org.eclipse.jgit.lfs.test` | 3 | 9 | 33.3% |
+| `org.eclipse.jgit.junit.ssh` | 3 | 4 | 75.0% |
+| `org.eclipse.jgit.ssh.apache.agent` | 3 | 9 | 33.3% |
+| `org.eclipse.jgit.lfs.server` | 3 | 14 | 21.4% |
+| `org.eclipse.jgit.ssh.jsch.test` | 3 | 5 | 60.0% |
+| `org.eclipse.jgit.http.test` | 1 | 26 | 3.8% |
+| `org.eclipse.jgit.junit.http` | 1 | 7 | 14.3% |
+| `org.eclipse.jgit.ant` | 0 | 4 | 0% |
+| `org.eclipse.jgit.ant.test` | 0 | 1 | 0% |
+| `org.eclipse.jgit.archive` | 0 | 9 | 0% |
+| `org.eclipse.jgit.gpg.bc.test` | 0 | 4 | 0% |
+| `org.eclipse.jgit.http.apache` | 0 | 4 | 0% |
+| `org.eclipse.jgit.http.server` | 0 | 35 | 0% |
+| `org.eclipse.jgit.ssh.jsch` | 0 | 6 | 0% |
+| `org.eclipse.jgit.ui` | 0 | 6 | 0% |
+| **Total** | **235** | **1,882** | **12.5%** |
 
-### `java.io.File` vs `java.nio.file.Path`
-A migration opportunity exists: `java.io.File` (326 files) is the legacy API. The `java.nio.file` package (`Path`, `Files`, `FileChannel`) provides better error reporting, symbolic link support, and atomic operations. Some parts of JGit already use NIO, but the majority still depends on `java.io.File`.
+### 2.4 Files with Most `java.nio` Imports
+
+| `java.nio` Imports | File |
+|:-----------------:|------|
+| 17 | `org.eclipse.jgit/src/org/eclipse/jgit/util/FileUtils.java` |
+| 11 | `org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/file/GC.java` |
+| 8 | `org.eclipse.jgit/src/org/eclipse/jgit/util/FS_POSIX.java` |
+| 8 | `org.eclipse.jgit.lfs.server.test/tst/.../fs/LfsServerTest.java` |
+| 7 | `org.eclipse.jgit/src/org/eclipse/jgit/util/RawParseUtils.java` |
+| 7 | `org.eclipse.jgit/src/org/eclipse/jgit/util/FS_Win32.java` |
+| 7 | `org.eclipse.jgit/src/org/eclipse/jgit/util/FS.java` |
+| 7 | `org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/file/LockFile.java` |
+| 6 | `org.eclipse.jgit/src/org/eclipse/jgit/util/SystemReader.java` |
+| 6 | `org.eclipse.jgit/src/org/eclipse/jgit/treewalk/WorkingTreeIterator.java` |
+| 6 | `org.eclipse.jgit.test/tst/org/eclipse/jgit/util/FSTest.java` |
+| 6 | `org.eclipse.jgit.gpg.bc/.../BouncyCastleGpgKeyLocator.java` |
+| 5 | `org.eclipse.jgit/src/org/eclipse/jgit/transport/RefAdvertiser.java` |
+| 5 | `org.eclipse.jgit/src/org/eclipse/jgit/patch/PatchApplier.java` |
+| 5 | `org.eclipse.jgit/src/org/eclipse/jgit/lib/FileModeCache.java` |
+| 5 | `org.eclipse.jgit/src/org/eclipse/jgit/internal/storage/file/RefDirectory.java` |
+| 5 | `org.eclipse.jgit.test/tst/.../file/PackInserterTest.java` |
+| 5 | `org.eclipse.jgit.test/tst/.../file/PackFileSnapshotTest.java` |
+| 5 | `org.eclipse.jgit.test/tst/.../file/FileSnapshotTest.java` |
+| 5 | `org.eclipse.jgit.ssh.apache/.../OpenSshServerKeyDatabase.java` |
+
+---
+
+## Part 3 — Cross-Package Analysis
+
+### 3.1 `java.io` vs `java.nio` — File API Comparison
+
+The coexistence of `java.io.File` (326 files) and `java.nio.file.Path`/`Files` (91/113 files) shows a **partially migrated codebase**:
+
+| API | Files | Notes |
+|-----|------:|-------|
+| `java.io.File` (legacy) | 326 | Pervasive; used for paths, temp files, existence checks, and as `FileInputStream`/`FileOutputStream` arguments |
+| `java.nio.file.Path` (modern) | 91 | Present in newer code and the `util/` layer; often coexists with `File` via `.toPath()` / `.toFile()` bridges |
+| `java.nio.file.Files` (modern) | 113 | Used for copy, move, delete, attribute reads, and directory streaming |
+
+`FileUtils.java` (17 NIO imports) is the nexus of this migration: it implements atomic file operations (`AtomicMoveNotSupportedException`, `StandardCopyOption.ATOMIC_MOVE`), POSIX permission management, and recursive directory deletion — all using NIO.2.
+
+### 3.2 Stream APIs Compared
+
+| API | Abstractions | Total file-uses |
+|-----|-------------|---------------:|
+| `java.io` streams | `InputStream`, `OutputStream`, `Reader`, `Writer`, + buffered wrappers | 540 |
+| `java.nio` channels | `ReadableByteChannel`, `WritableByteChannel`, `FileChannel`, `Channels` | 25 |
+
+Stream APIs still dominate overwhelmingly. NIO channels appear mainly for `FileChannel` locking (`GC.PidLock`), memory-mapped I/O (`MappedByteBuffer`), and bridging via `Channels.newInputStream()`.
+
+### 3.3 Notable: Modules with Zero `java.nio` Usage
+
+Several modules use `java.io` but no `java.nio` at all:
+
+| Module | `java.io` files | `java.nio` files |
+|--------|---------------:|----------------:|
+| `org.eclipse.jgit.http.server` | 25 | 0 |
+| `org.eclipse.jgit.archive` | 6 | 0 |
+| `org.eclipse.jgit.ant` | 4 | 0 |
+| `org.eclipse.jgit.ssh.jsch` | 3 | 0 |
+
+These modules have not adopted NIO.2 at all and represent the oldest or most IO-stream-oriented parts of the codebase.
+
+---
+
+## Part 4 — Key Observations
+
+### `IOException` is everywhere
+926 files (49.2% of the entire codebase) declare `throws IOException` or catch it. This is unavoidable for a Git implementation — every object read, pack access, ref update, and network transfer can fail with an I/O error.
+
+### `java.io.File` migration is incomplete
+`java.io.File` (326 files) vs `java.nio.file.Path` (91 files) — the NIO.2 `Path` API is 3.5× less common than `File`. Newer utility code (especially `FileUtils.java`, `FS.java`, `LockFile.java`) has been migrated; older storage and transport code has not. This is the single largest modernization opportunity.
+
+### Charset handling is explicit and correct
+`StandardCharsets` (44 files) and `Charset` (21 files) are used where character encoding matters. The presence of `UnsupportedCharsetException` (7) and `IllegalCharsetNameException` (6) import counts shows that charset errors are handled rather than silently ignored.
+
+### `ByteBuffer` is used for binary protocol parsing
+`java.nio.ByteBuffer` (44 files) is the workhorse for parsing Git's binary wire and pack formats, especially in `RawParseUtils.java` and the pack-file layer. `CharBuffer` (5 files) is used for encoding/decoding text in the same layer.
+
+### No wildcard imports anywhere
+Neither `java.io.*` nor `java.nio.*` wildcard imports appear. All 88 classes (41 `java.io` + 47 `java.nio`) are imported explicitly.
+
+### Low serialization footprint
+Only 13 files use `Serializable`, 2 use `ObjectInputStream`/`ObjectOutputStream`. JGit persists data using Git's own binary formats, not Java object serialization.
+
+### `RandomAccessFile` serves three distinct roles
+Despite appearing in only 7 files, `RandomAccessFile` is used for three fundamentally different purposes: **random-access reading** (serving HTTP range requests, reading pack data), **read/write pack building** (sharing an fd with a `FileOutputStream` via `getFD()`), and **OS-level file locking** (bridging to `FileChannel.tryLock()` in `GC.PidLock`). It is not a candidate for simple removal.
