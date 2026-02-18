@@ -171,6 +171,29 @@ fileFor:  new File($GIT_DIR/refs/, "heads/../../FETCH_HEAD")
 OS:       $GIT_DIR/FETCH_HEAD   ← file read successfully
 ```
 
+### Additional surface: character device files (tested live, JGit 7.5.0 / Linux kernel ≥ 5.6)
+
+The oracle works on character devices in addition to regular files:
+
+| `want-ref` target | HTTP | Server log | Blocks? |
+|---|---|---|---|
+| `/etc/passwd` | 500 | `Not a ref: …: root:x:0:0:root:/root:/bin/bash` | No |
+| `/dev/urandom` | 500 | `Not a ref: …: %?…` (random bytes) | **No** |
+| `/dev/random` | 500 | `Not a ref: …: M ???E,…` (random bytes) | **No** (kernel ≥ 5.6) |
+| `/dev/zero` | 500 | `Not a ref: …: ` (null bytes) | **No** |
+| `/dev/tty` | 200 | `PackProtocolException: Invalid ref name` | N/A — ENXIO, no tty in container |
+| `/dev/stdin` | 200 | `PackProtocolException: Invalid ref name` | N/A — not accessible |
+
+**Potential DoS via `/dev/tty`:** On non-containerized hosts where the JGit process has a
+controlling terminal, `open("/dev/tty")` succeeds and `read()` blocks indefinitely. Each
+such in-flight request occupies one Jetty thread. Exhausting the thread pool (default ~200
+threads with 200 concurrent requests) renders the server unresponsive. This did not trigger
+in the tested containerized environment (ENXIO — no controlling terminal). Deployments
+launched interactively or under a process manager that allocates a pty are at risk.
+
+**`/dev/random` on kernels < 5.6:** may block when the entropy pool is exhausted. Not
+observed on the tested system (kernel ≥ 5.6 where `/dev/random` is non-blocking).
+
 ### Suggested fix
 
 ```java

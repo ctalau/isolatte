@@ -28,12 +28,38 @@ object.
 | Response | Meaning |
 |---|---|
 | HTTP 200 + `ERR invalid ref name …` | File does not exist at the traversed path |
-| **HTTP 500** (empty body) | File **exists** and was read by the JVM; first ~4 KB in server log |
+| **HTTP 500** (empty body) | File **exists** and was read by the JVM; first line in server log |
 | HTTP 200 + `wanted-refs` section + packfile | File contained a valid SHA; **commit exfiltrated** |
 
 **Prerequisite:** `allowRefInWant = true` is a non-default setting. It is documented as
 enabling "object-id-less fetches" and is used by some CI/CD integrations. Any deployment
 with this flag is affected.
+
+### Extended: device file probing (tested live)
+
+The oracle works on character devices as well as regular files. Confirmed on JGit
+7.5.0 / Linux (kernel ≥ 5.6, containerized):
+
+| Target | HTTP | Server log exception message | Blocking? |
+|---|---|---|---|
+| `/etc/passwd` | 500 | `Not a ref: …/etc/passwd: root:x:0:0:root:/root:/bin/bash` | No |
+| `/dev/urandom` | 500 | `Not a ref: …/dev/urandom: %?…` (raw random bytes) | **No** — `read()` returns immediately |
+| `/dev/random`  | 500 | `Not a ref: …/dev/random: M ???E,…` (raw bytes) | **No** — non-blocking on kernel ≥ 5.6 |
+| `/dev/zero`    | 500 | `Not a ref: …/dev/zero: ` (null bytes, empty display) | **No** — `read()` returns immediately |
+| `/dev/tty`     | 200 | `PackProtocolException: Invalid ref name: …` | N/A — ENXIO (no controlling terminal in container) |
+| `/dev/stdin`   | 200 | `PackProtocolException: Invalid ref name: …` | N/A — not accessible in container |
+
+**Blocking via `/dev/tty` — theory vs. observed:** On a non-containerized host where the JGit
+process has a controlling terminal (e.g. launched interactively from a shell or through a
+process manager that allocates a pty), `open("/dev/tty")` succeeds and `read()` blocks
+indefinitely waiting for terminal input. Each in-flight request of this form ties up one
+Jetty thread. With Jetty's default thread pool size (≈ 200), 200 concurrent requests would
+exhaust the pool and make the server unresponsive — a DoS. This did **not** trigger in this
+containerized environment because the JVM had no controlling terminal (ENXIO).
+
+**`/dev/random` on kernels < 5.6:** On older kernels `/dev/random` blocks when the entropy
+pool is exhausted. Combined with a high-frequency request loop, this could deplete entropy
+and stall all subsequent reads. Not observed here (kernel is ≥ 5.6).
 
 ---
 
