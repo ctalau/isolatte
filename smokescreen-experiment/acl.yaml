@@ -1,0 +1,8 @@
+---
+version: v1
+services: []
+default:
+  project: default
+  action: enforce
+  allowed_domains:
+    - example.com
