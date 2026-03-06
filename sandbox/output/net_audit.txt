@@ -1,0 +1,9 @@
+{
+  "host_fd_leaks": [
+    "1->/tmp/claude-0/-home-user-isolatte/tasks/byerhw0by.output",
+    "2->/tmp/claude-0/-home-user-isolatte/tasks/byerhw0by.output"
+  ],
+  "udp_inet": "error: EACCES",
+  "tcp_inet": "error: EACCES",
+  "dns": "blocked: EAI_AGAIN"
+}
