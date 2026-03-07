@@ -1,57 +1,43 @@
-# Session notes (captured outputs)
+# Session notes (0.8B experiment)
 
-## `udocker` install
+## Model
 
-```
-Info: creating repo: /root/.udocker
-Info: udocker command line interface 1.3.17
-Info: searching for udockertools >= 1.2.11
-Info: installing udockertools 1.2.11
-Info: installation of udockertools successful
-```
+- Repo: `unsloth/Qwen3.5-0.8B-GGUF`
+- Quant file: `Qwen3.5-0.8B-Q4_K_M.gguf`
 
-## HF auto-download mode in-container (`--hf-repo`) failed
-
-```
-error: failed to get manifest at https://huggingface.co/v2/unsloth/Qwen3.5-4B-GGUF/manifests/Q4_K_M: error: cannot make GET request
-error: failed to get manifest (check your internet connection)
-```
-
-## Local-model mode succeeded
-
-Key startup lines:
-
-```
-main: model loaded
-main: server is listening on http://0.0.0.0:8080
-main: starting the main loop...
-```
-
-## Retry run (explicitly prompted model and measured throughput)
-
-Prompt used:
+## Prompt sent
 
 ```
 Explain Linux containers in 3 short sentences.
 ```
 
-Request used:
+## Request command
 
-```
+```bash
 curl -s http://localhost:8000/completion \
   -H 'Content-Type: application/json' \
-  -d '{"prompt":"Explain Linux containers in 3 short sentences.","n_predict":60,"temperature":0.7}'
+  -d '{"prompt":"Explain Linux containers in 3 short sentences.","n_predict":80,"temperature":0.7}'
 ```
 
-Saved full JSON response to `results/retry-response.json`.
+## Throughput
 
-Measured throughput from response timings:
+From `results/retry-response-0.8b.json` timings:
 
-- `prompt_per_second`: **4.215265161254969** tokens/s
-- `predicted_per_second`: **2.5586433595294347** tokens/s
+- `prompt_per_second`: **13.535352988470585** tokens/s
+- `predicted_per_second`: **4.943740541620147** tokens/s
 
-Response excerpt:
+## RAM usage
+
+From llama.cpp memory breakdown at shutdown:
+
+- Host total: **1087 MiB**
+- Host model: **497 MiB**
+- Host context: **101 MiB**
+- Host compute: **489 MiB**
+- CPU_REPACK: **160 MiB**
+
+## Response excerpt
 
 ```
-Linux containers use process isolation and shared namespaces to run applications in lightweight, portable units. They share the host operating system's kernel, allowing them to be significantly smaller than virtual machines while maintaining security boundaries.
+Linux containers are isolated virtual machine environments designed to isolate each user's work from others' work. They provide a safe sandbox where developers can develop code without affecting the host system. Each container uses the same Linux kernel and system software, ...
 ```
