@@ -1,0 +1,24 @@
+# Technologies
+
+- libkrun
+- kata containers
+- qemu
+- gvisor
+- unshare -Ur
+- nsjail
+- prlimit
+- KVM
+- xen
+- firecracker
+- bubblewrap
+- landlock
+- apparmor
+- seccomp
+- SELinux
+- eBPF
+- CAP_SYS_ADMIN
+- ptrace
+- cgroup
+- uidmap
+- pasta
+- slirp4netns
