@@ -1,0 +1,3 @@
+# Container Networking
+
+Experiments and documentation covering Podman container networking behavior on Linux kernel 4.4.0. This folder captures how podman handles iptables rules across different network modes (host vs. bridge vs. slirp4netns), port-mapping/tunneling mechanics, container-to-container DNS-based communication on shared bridge networks, and network isolation topologies (e.g., Container A reaching only Container B while B retains internet access). Includes a detailed reproduction guide, recorded test results, and two test-runner shell scripts (quick and full) that automate all the networking scenarios.

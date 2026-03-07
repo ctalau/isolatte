@@ -1,0 +1,3 @@
+# JVM Sandbox Analysis
+
+Research into which Java standard-library (JRE) classes and native functions are reachable from untrusted code running inside a DITA-OT pipeline, and how each could be restricted in a sandbox. This folder contains: a research plan for mapping JRE class usage across dita-ot and all its transitive dependencies; a complete JRE class inventory for dita-ot itself; a third-party dependency audit that ranks each library (Saxon-HE, Apache Ant, Xerces, Commons IO, etc.) by sandboxing priority; and a deep dive into OpenJDK's `java.base` native code, cataloguing the ~265 critical JNI functions (file I/O, networking, process spawning, FFI) that must be intercepted or replaced to enforce a hermetic sandbox.
