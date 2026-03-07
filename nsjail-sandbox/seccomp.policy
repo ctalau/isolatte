@@ -1,0 +1,126 @@
+# seccomp.policy — kafel deny-list for the DITA nsjail sandbox
+#
+# Strategy: ALLOW everything except the syscalls listed below (KILL_PROCESS).
+# A deny-list is chosen over an allow-list because the DITA build toolchain
+# (Java, Python, shell) exercises a large and somewhat unpredictable syscall
+# surface; blocking only the clearly-dangerous calls keeps the tool working
+# while closing the most exploitable kernel interfaces.
+#
+# Loaded via:
+#   nsjail --seccomp_string "$(cat seccomp.policy)" ...
+#
+# Reference: https://github.com/google/kafel
+#            https://github.com/google/nsjail/blob/master/kafel/README.md
+
+POLICY dita_sandbox {
+
+    KILL_PROCESS {
+
+        # ── process inspection / memory access ────────────────────────────────
+        # These allow one process to read or write another's memory and
+        # registers even without tracing; combined they bypass all namespace-
+        # level memory isolation.
+        ptrace,
+        process_vm_readv,
+        process_vm_writev,
+
+        # ── filesystem / namespace manipulation ───────────────────────────────
+        # Block all syscalls that can remount read-only bind mounts as writable,
+        # pivot out of the chroot, or create/join new namespaces outside nsjail's
+        # control.
+        mount,
+        umount2,
+        pivot_root,
+        move_mount,         # new mount API (Linux 5.2+)
+        open_tree,          # new mount API
+        fsopen,             # new mount API
+        fsconfig,           # new mount API
+        fsmount,            # new mount API
+        fspick,             # new mount API
+        mount_setattr,      # new mount API
+        unshare,
+        setns,
+
+        # ── kernel module loading ─────────────────────────────────────────────
+        init_module,
+        finit_module,
+        delete_module,
+        create_module,      # obsolete but present on some kernels
+        query_module,       # obsolete
+        get_kernel_syms,    # obsolete
+
+        # ── kernel replacement / boot ─────────────────────────────────────────
+        kexec_load,
+        kexec_file_load,
+        reboot,
+
+        # ── eBPF — kernel-level code execution ───────────────────────────────
+        bpf,
+
+        # ── device node creation ──────────────────────────────────────────────
+        # mknod / mknodat can create /dev/mem, /dev/sda, etc. even on a tmpfs.
+        mknod,
+        mknodat,
+
+        # ── performance counters — kernel info leak ───────────────────────────
+        perf_event_open,
+
+        # ── io_uring — large attack surface, not needed by DITA tools ────────
+        io_uring_setup,
+        io_uring_enter,
+        io_uring_register,
+
+        # ── userfaultfd — heap-spray / exploit primitive ──────────────────────
+        userfaultfd,
+
+        # ── kernel keyring ────────────────────────────────────────────────────
+        keyctl,
+        add_key,
+        request_key,
+
+        # ── swap / accounting ─────────────────────────────────────────────────
+        swapon,
+        swapoff,
+        acct,
+
+        # ── low-level hardware / privileged I/O ───────────────────────────────
+        iopl,
+        ioperm,
+        modify_ldt,
+
+        # ── kernel ring-buffer read ───────────────────────────────────────────
+        syslog,
+
+        # ── file-handle bypass (can traverse mounts) ──────────────────────────
+        open_by_handle_at,
+        name_to_handle_at,
+
+        # ── fanotify — filesystem-wide event listener (info leak) ─────────────
+        fanotify_init,
+        fanotify_mark,
+
+        # ── obsolete / unused kernel interfaces ───────────────────────────────
+        nfsservctl,
+        afs_syscall,
+        tuxcall,
+        security,
+        remap_file_pages,
+        uselib,
+        ustat,
+
+        # ── profiling / tracing info leaks ────────────────────────────────────
+        lookup_dcookie,
+        kcmp,
+
+        # ── process file-descriptor theft ────────────────────────────────────
+        pidfd_getfd,
+
+        # ── landlock — not needed; prevent mis-use as escape vector ──────────
+        landlock_create_ruleset,
+        landlock_add_rule,
+        landlock_restrict_self
+    }
+
+}
+
+USE dita_sandbox DEFAULT ALLOW
