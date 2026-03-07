@@ -71,15 +71,24 @@ done
 [[ $# -gt 0 ]] || die "No command specified after '--' (run with --help for usage)"
 
 # ── validation ────────────────────────────────────────────────────────────────
-[[ -d "$DITA_PROJECT" ]] || die "DITA project directory not found: $DITA_PROJECT"
-
 command -v nsjail  >/dev/null 2>&1 || die "nsjail not found (install: sudo apt-get install nsjail)"
 command -v prlimit >/dev/null 2>&1 || die "prlimit not found (install: sudo apt-get install util-linux)"
 command -v taskset >/dev/null 2>&1 || die "taskset not found (install: sudo apt-get install util-linux)"
 command -v python3 >/dev/null 2>&1 || die "python3 not found (required for http.server)"
 
-[[ "$MEM_LIMIT_MiB" =~ ^[0-9]+$ ]] || die "--mem-limit must be a positive integer"
-[[ "$CPU_CORE"      =~ ^[0-9]+$ ]] || die "--cpu-core must be a non-negative integer"
+[[ "$MEM_LIMIT_MiB"     =~ ^[0-9]+$   ]] || die "--mem-limit must be a positive integer"
+[[ "$CPU_CORE"          =~ ^[0-9]+$   ]] || die "--cpu-core must be a non-negative integer"
+[[ "$HTTP_SERVER_PORT"  =~ ^[0-9]+$   ]] || die "--http-port must be a positive integer"
+
+# Resolve to an absolute, normalised path to prevent path-traversal and
+# shell-metacharacter injection into the inner script template.
+DITA_PROJECT=$(realpath -m "$DITA_PROJECT")
+[[ "$DITA_PROJECT" == /* ]] || die "DITA_PROJECT must resolve to an absolute path"
+[[ -d "$DITA_PROJECT"    ]] || die "DITA project directory not found: $DITA_PROJECT"
+
+# Capture the calling user's UID/GID for the user-namespace mapping below.
+HOST_UID=$(id -u)
+HOST_GID=$(id -g)
 
 MEM_LIMIT_BYTES=$(( MEM_LIMIT_MiB * 1024 * 1024 ))
 
@@ -118,7 +127,11 @@ mkdir -p "$ROOTFS$DITA_PROJECT"
 #   3. Execs the user-supplied command.
 INNER_SCRIPT=$(mktemp /tmp/dita-sandbox-inner-XXXXXX.sh)
 
-cat > "$INNER_SCRIPT" <<INNER_EOF
+# Use a QUOTED heredoc delimiter ('INNER_EOF') so the outer shell performs NO
+# variable expansion while writing the template.  HTTP_SERVER_PORT and
+# DITA_PROJECT reach the inner script as environment variables set via
+# nsjail --env (see below), avoiding command-injection through their values.
+cat > "$INNER_SCRIPT" <<'INNER_EOF'
 #!/bin/sh
 set -e
 
@@ -133,7 +146,8 @@ ip link set lo up 2>/dev/null || \
 # Serve the DITA project tree at http://127.0.0.1:${HTTP_SERVER_PORT}/
 # --bind 127.0.0.1 ensures it never binds to any external interface.
 # Running in the background; killed automatically when the jail exits.
-python3 -m http.server ${HTTP_SERVER_PORT} \
+# HTTP_SERVER_PORT and DITA_PROJECT are injected as env vars by nsjail --env.
+python3 -m http.server "${HTTP_SERVER_PORT}" \
   --bind 127.0.0.1 \
   --directory "${DITA_PROJECT}" \
   >/dev/null 2>&1 &
@@ -142,7 +156,7 @@ python3 -m http.server ${HTTP_SERVER_PORT} \
 sleep 0.3
 
 # ── exec user command ─────────────────────────────────────────────────────────
-exec "\$@"
+exec "$@"
 INNER_EOF
 
 chmod +x "$INNER_SCRIPT"
@@ -185,6 +199,26 @@ BIND_FLAGS=(
   $(bind_ro /etc/ssl/certs)     # CA bundle, in case TLS is needed over lo
 )
 
+# ── seccomp-BPF policy ────────────────────────────────────────────────────────
+# Block syscalls that are unnecessary for DITA-OT and would allow a confined
+# process to bypass the namespace or filesystem isolation layers.
+# Applied on top of the capability drops and user-namespace isolation for
+# defense in depth.
+SECCOMP_POLICY='POLICY dita_sandbox {
+  KILL_PROCESS {
+    unshare,
+    mount, umount2, pivot_root,
+    mknod, mknodat,
+    perf_event_open,
+    bpf,
+    process_vm_writev, process_vm_readv,
+    swapon, swapoff,
+    kexec_load, kexec_file_load,
+    reboot
+  }
+}
+USE dita_sandbox DEFAULT ALLOW'
+
 # ── run ───────────────────────────────────────────────────────────────────────
 # Execution order (outermost → innermost):
 #
@@ -203,25 +237,65 @@ exec prlimit \
     `# ── execution mode ──────────────────────────────────────────────────` \
     --mode o \
     --log_fd "${NSJAIL_LOG_FD}" \
-    --time_limit 0 \
+    --time_limit 600 \
     \
     `# ── filesystem isolation ─────────────────────────────────────────────` \
     --chroot "${ROOTFS}" \
     "${BIND_FLAGS[@]}" \
     --tmpfsmount /tmp \
     --tmpfsmount /dev \
-    --proc_rw \
     --cwd "${DITA_PROJECT}" \
     \
     `# ── network isolation ────────────────────────────────────────────────` \
     --clone_newnet \
     \
+    `# ── user and ID isolation ─────────────────────────────────────────────` \
+    `# Creates a user namespace so all capabilities are scoped to the jail.  ` \
+    `# Inside UID/GID 1000 maps to the calling user's UID/GID on the host.   ` \
+    `# A process that escapes the chroot is still an unprivileged host user.  ` \
+    --clone_newuser \
+    --uidmap "1000:${HOST_UID}:1" \
+    --gidmap "1000:${HOST_GID}:1" \
+    \
     `# ── capability restrictions inside the jail ──────────────────────────` \
-    --cap DROP:CAP_NET_ADMIN \
+    `# Defense-in-depth: drop all capabilities not needed by DITA-OT.        ` \
+    `# CAP_NET_ADMIN is retained because the inner script brings up loopback; ` \
+    `# with --clone_newuser it is scoped to the jail's network namespace only.` \
+    --cap DROP:CAP_CHOWN \
+    --cap DROP:CAP_DAC_OVERRIDE \
+    --cap DROP:CAP_DAC_READ_SEARCH \
+    --cap DROP:CAP_FOWNER \
+    --cap DROP:CAP_FSETID \
+    --cap DROP:CAP_KILL \
+    --cap DROP:CAP_SETGID \
+    --cap DROP:CAP_SETUID \
+    --cap DROP:CAP_SETPCAP \
+    --cap DROP:CAP_SETFCAP \
+    --cap DROP:CAP_NET_BIND_SERVICE \
+    --cap DROP:CAP_NET_RAW \
+    --cap DROP:CAP_NET_BROADCAST \
     --cap DROP:CAP_SYS_ADMIN \
     --cap DROP:CAP_SYS_PTRACE \
     --cap DROP:CAP_SYS_MODULE \
     --cap DROP:CAP_SYS_RAWIO \
+    --cap DROP:CAP_SYS_CHROOT \
+    --cap DROP:CAP_SYS_RESOURCE \
+    --cap DROP:CAP_SYS_BOOT \
+    --cap DROP:CAP_SYS_NICE \
+    --cap DROP:CAP_SYS_TIME \
+    --cap DROP:CAP_MKNOD \
+    --cap DROP:CAP_AUDIT_WRITE \
+    --cap DROP:CAP_AUDIT_CONTROL \
+    --cap DROP:CAP_AUDIT_READ \
+    \
+    `# ── seccomp-BPF syscall filter ────────────────────────────────────────` \
+    --seccomp_string "${SECCOMP_POLICY}" \
+    \
+    `# ── environment variables ─────────────────────────────────────────────` \
+    `# Pass validated values into the jail so the quoted inner script can use ` \
+    `# them without any risk of outer-shell expansion or injection.           ` \
+    --env "HTTP_SERVER_PORT=${HTTP_SERVER_PORT}" \
+    --env "DITA_PROJECT=${DITA_PROJECT}" \
     \
     `# ── inner entrypoint ─────────────────────────────────────────────────` \
     -- /bin/sh /run/sandbox-inner.sh "$@"
