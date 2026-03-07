@@ -1,0 +1,24 @@
+# Large downloaded binaries — re-created by setup.sh
+*.iso
+*.zip
+*.tar.gz
+vmlinuz-virt
+initramfs-virt
+
+# Extracted JDK (hundreds of MB)
+jdk-aarch64/
+
+# DITA-OT extracted directory (hundreds of MB)
+dita-ot-*/
+
+# Userguide sparse-checkout (cloned by setup.sh)
+userguide/
+
+# VM share directory (copies of DITA-OT + userguide for 9p)
+vm-share/
+
+# QEMU unix socket
+qemu-serial.sock
+
+# Generated launch script (written at runtime by run_qemu.sh)
+qemu-launch.sh

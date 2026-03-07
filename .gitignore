@@ -1,1 +1,8 @@
 openjdk-jdk/
+
+# Core dumps from JVM/QEMU crashes
+*.core
+qemu_java_*.core
+
+# JVM fatal error logs (session-specific)
+hs_err_pid*.log
