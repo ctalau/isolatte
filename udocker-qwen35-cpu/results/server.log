@@ -1,0 +1,12 @@
+[retry run] udocker + llama-server startup with local model
+main: model loaded
+main: server is listening on http://0.0.0.0:8080
+main: starting the main loop...
+
+[retry run] prompt + throughput from llama-server timing
+prompt eval time =    2372.33 ms /    10 tokens (  237.23 ms per token,     4.22 tokens per second)
+       eval time =   23449.93 ms /    60 tokens (  390.83 ms per token,     2.56 tokens per second)
+      total time =   25822.26 ms /    70 tokens
+
+[retry run] endpoint status
+srv  log_server_r: done request: POST /completion 127.0.0.1 200
