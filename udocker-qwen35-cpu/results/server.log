@@ -1,0 +1,15 @@
+[0.8B run] startup
+main: model loaded
+main: server is listening on http://0.0.0.0:8080
+main: starting the main loop...
+
+[0.8B run] request timing
+prompt eval time =     738.81 ms /    10 tokens (   73.88 ms per token,    13.54 tokens per second)
+       eval time =   16182.08 ms /    80 tokens (  202.28 ms per token,     4.94 tokens per second)
+      total time =   16920.88 ms /    90 tokens
+srv  log_server_r: done request: POST /completion 127.0.0.1 200
+
+[0.8B run] RAM usage
+llama_memory_breakdown_print: | memory breakdown [MiB] | total   free    self   model   context   compute    unaccounted |
+llama_memory_breakdown_print: |   - Host               |                 1087 =   497 +     101 +     489                |
+llama_memory_breakdown_print: |   - CPU_REPACK         |                  160 =   160 +       0 +       0                |
