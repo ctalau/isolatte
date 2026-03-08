@@ -22,3 +22,7 @@
 - uidmap
 - pasta
 - slirp4netns
+- smokescreen
+- xfs project quota
+- just-bash
+- https://github.com/earendil-works/gondolin
