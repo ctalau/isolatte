@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="techniques">
+  <title>Isolation Techniques</title>
+  <shortdesc>A survey of practical isolation techniques used in modern container runtimes.</shortdesc>
+  <body>
+    <section id="namespaces">
+      <title>Linux Namespaces</title>
+      <p>Namespaces partition kernel resources so that each set of processes sees its own
+        isolated instance of the global resource. Key namespace types include:</p>
+      <dl>
+        <dlentry>
+          <dt>PID</dt>
+          <dd>Isolates the process ID number space.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Network</dt>
+          <dd>Provides an isolated network stack with its own interfaces and routing tables.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Mount</dt>
+          <dd>Isolates the set of filesystem mount points.</dd>
+        </dlentry>
+      </dl>
+    </section>
+    <section id="seccomp">
+      <title>Seccomp-BPF Filters</title>
+      <p>Seccomp-BPF allows a process to install a Berkeley Packet Filter program that
+        restricts which system calls the kernel will execute on its behalf. This reduces
+        the kernel attack surface available to a sandboxed workload.</p>
+    </section>
+  </body>
+</topic>

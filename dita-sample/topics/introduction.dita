@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="introduction">
+  <title>Introduction to Container Isolation</title>
+  <shortdesc>An overview of container isolation techniques for secure workload execution.</shortdesc>
+  <body>
+    <p>Container isolation is a fundamental building block for running untrusted or
+      semi-trusted workloads in a shared environment. By combining Linux namespaces,
+      cgroups, and seccomp-BPF filters, operators can restrict what a process can see
+      and do.</p>
+    <section id="why-isolation">
+      <title>Why Isolation Matters</title>
+      <p>Without proper isolation, a compromised process can:</p>
+      <ul>
+        <li>Access host filesystems and sensitive data.</li>
+        <li>Communicate with arbitrary network endpoints.</li>
+        <li>Escalate privileges through kernel exploits.</li>
+      </ul>
+    </section>
+  </body>
+</topic>
