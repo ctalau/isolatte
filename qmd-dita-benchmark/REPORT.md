@@ -10,7 +10,7 @@ Benchmarking [QMD](https://github.com/tobi/qmd) (on-device hybrid search engine)
 | Metric | Value |
 |---|---|
 | **Topics indexed** | 2740 `.dita` files |
-| **Chunks created** | 7839 (3694 embedded, 4145 failed) |
+| **Chunks created** | ~7839 (3694 embedded, 4145 not attempted — see [analysis](#embedding-failure-analysis)) |
 | **Indexing time (FTS5)** | ~5 seconds |
 | **Embedding time (CPU)** | ~30 minutes (embeddinggemma-300M, Q8_0, no GPU) |
 | **Index size (FTS5 only)** | 41 MB |
@@ -88,18 +88,62 @@ The best matching topic is **`dita-to-webhelp-responsive-with-oxygen-feedback-fr
    A DITA-aware preprocessor (stripping tags, extracting `<title>`, `<shortdesc>`, `<keyword>`)
    would improve both BM25 and embedding quality.
 
-3. **Embedding failures** — 4145 of 7839 chunks (53%) failed to embed. Only 48% of the index
-   has vectors. Despite this, vector search still found relevant results. Full embedding
-   coverage would likely improve recall.
+3. **Embedding "failures" are a 30-minute timeout, not actual errors** — See
+   [detailed analysis](#embedding-failure-analysis) below. QMD's `generateEmbeddings` enforces
+   a hard 30-minute `maxDuration` session limit. On CPU, embedding 1318 of 2740 documents
+   (3694 chunks) took the full 30 minutes before the timer fired. The remaining 1422 documents
+   were never attempted. Running `qmd embed` again would continue from where it left off.
 
-4. **CPU performance is usable but slow** — Embedding 2740 documents took ~30 minutes on 4 CPU
-   cores. Reranking 40 chunks takes ~3s per query. With GPU, these would be 10-50x faster.
+4. **CPU performance is usable but slow** — Embedding 1318 documents (3694 chunks) took 30
+   minutes on 4 CPU cores (~0.49s per chunk). Reranking 40 chunks takes ~3s per query. Full
+   embedding of all 2740 docs would require ~2 runs of `qmd embed` (~60 min total on CPU).
+   With GPU, this would be 10-50x faster.
 
 5. **BM25 stop-word sensitivity** — FTS5 tokenizer treats common English words as meaningful,
    causing the full NL query to fail entirely. Keyword-extracted queries work well.
 
 6. **Title extraction** — QMD has title extractors for `.md` and `.org` files but not for DITA.
    Document titles fall back to filenames, which are less useful for display.
+
+## Embedding Failure Analysis
+
+The `qmd embed` output reported "4145 chunks failed", but investigation shows these are **not
+actual embedding failures**. They are chunks that were **never attempted** due to a session
+timeout.
+
+### Root cause: 30-minute `maxDuration` session limit
+
+QMD's `generateEmbeddings()` function ([store.ts:1439](qmd-tool/src/store.ts)) wraps the
+embedding loop in a `withLLMSession` call with `maxDuration: 30 * 60 * 1000` (30 minutes).
+When this timer fires, it triggers an `AbortController` that causes a `SessionReleasedError`
+on all subsequent `embed()`/`embedBatch()` calls ([llm.ts:1362-1364](qmd-tool/src/llm.ts)).
+
+### Evidence
+
+1. **Clean alphabetical cutoff** — Documents are processed in path order. The last successfully
+   embedded doc was `topics/eppo-installation-linux-server.dita`, and the first "failed" doc was
+   `topics/eppo-installation-linux.dita`. There is exactly **1 status switch** across all 2740
+   documents — no interleaved successes and failures.
+
+2. **Identical size distributions** — Average size of embedded docs (5349 bytes) vs pending docs
+   (5564 bytes) shows no meaningful difference. The pending docs aren't unusually large or
+   malformed.
+
+3. **Consistent throughput** — 3694 chunks embedded in 30m 19s = ~0.49s per chunk. At this rate,
+   the remaining ~4145 chunks would need ~34 more minutes, matching the need for a second run.
+
+### Resolution
+
+Run `qmd embed` a second time. It will pick up where it left off (only processes docs without
+vectors). Two runs of 30 minutes each would embed all 2740 documents.
+
+```bash
+# First run embeds ~1318 docs (30 min on CPU)
+bun src/cli/qmd.ts embed
+
+# Second run embeds the remaining ~1422 docs
+bun src/cli/qmd.ts embed
+```
 
 ## Reproducibility
 
@@ -110,8 +154,10 @@ The best matching topic is **`dita-to-webhelp-responsive-with-oxygen-feedback-fr
 # 2. Run benchmark (indexes and searches — BM25 only, fast)
 ./benchmark.sh
 
-# 3. Run embedding (CPU, ~30 min)
-cd qmd-tool && bun src/cli/qmd.ts embed
+# 3. Run embedding (CPU, ~30 min per run, need 2 runs for full coverage)
+cd qmd-tool
+bun src/cli/qmd.ts embed   # first pass: embeds ~1318 docs
+bun src/cli/qmd.ts embed   # second pass: embeds remaining ~1422 docs
 
 # 4. Run vector/hybrid search
 bun src/cli/qmd.ts vsearch "How to enable Oxygen Feedback for a webhelp deliverable built with Oxygen Content Fusion" --json -n 10
