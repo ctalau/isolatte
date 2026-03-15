@@ -2,12 +2,12 @@
 <project xmlns="https://www.dita-ot.org/project">
 
   <context id="isolation-guide" name="Container Isolation Guide">
-    <input href="isolation-guide.ditamap"/>
+    <input href="../dita-sample/isolation-guide.ditamap"/>
   </context>
 
   <deliverable name="HTML5 Output">
     <context idref="isolation-guide"/>
-    <output href="out/html5"/>
+    <output href="../dita-sample/out/html5"/>
     <publication transtype="html5">
       <param name="nav-toc" value="full"/>
     </publication>
@@ -15,7 +15,7 @@
 
   <deliverable name="PDF Output">
     <context idref="isolation-guide"/>
-    <output href="out/pdf"/>
+    <output href="../dita-sample/out/pdf"/>
     <publication transtype="pdf"/>
   </deliverable>
 
