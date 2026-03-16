@@ -5,7 +5,7 @@
     <input href="../dita-sample/isolation-guide.ditamap"/>
   </context>
 
-  <deliverable name="HTML5 Output">
+  <deliverable name="HTML5 Output" id="html5">
     <context idref="isolation-guide"/>
     <output href="../dita-sample/out/html5"/>
     <publication transtype="html5">
@@ -13,7 +13,7 @@
     </publication>
   </deliverable>
 
-  <deliverable name="PDF Output">
+  <deliverable name="PDF Output" id="pdf">
     <context idref="isolation-guide"/>
     <output href="../dita-sample/out/pdf"/>
     <publication transtype="pdf"/>
