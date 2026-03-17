@@ -7,7 +7,7 @@
 
   <deliverable name="HTML5 Output" id="html5">
     <context idref="isolation-guide"/>
-    <output href="../dita-sample/out/html5"/>
+    <output href="dita-sample/out/html5"/>
     <publication transtype="html5">
       <param name="nav-toc" value="full"/>
     </publication>
@@ -15,7 +15,7 @@
 
   <deliverable name="PDF Output" id="pdf">
     <context idref="isolation-guide"/>
-    <output href="../dita-sample/out/pdf"/>
+    <output href="dita-sample/out/pdf"/>
     <publication transtype="pdf"/>
   </deliverable>
 
