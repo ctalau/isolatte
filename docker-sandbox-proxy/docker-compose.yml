@@ -1,0 +1,37 @@
+networks:
+  internal:
+    driver: bridge
+    internal: true            # no external connectivity
+  public:
+    driver: bridge
+
+services:
+  # ── Egress proxy (Smokescreen) ──────────────────────────────────
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile.proxy
+    networks:
+      internal:
+        aliases: [proxy]
+      public: {}
+    restart: unless-stopped
+
+  # ── Sandboxed workspace ─────────────────────────────────────────
+  sandbox:
+    image: ubuntu:24.04
+    networks:
+      - internal                # internal-only: all egress goes via proxy
+    environment:
+      - http_proxy=http://proxy:4750
+      - https_proxy=http://proxy:4750
+      - HTTP_PROXY=http://proxy:4750
+      - HTTPS_PROXY=http://proxy:4750
+      - no_proxy=localhost,127.0.0.1
+      - NO_PROXY=localhost,127.0.0.1
+    volumes:
+      - ${MOUNT_DIR:-.}:/workspace:rw
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: ["sleep", "infinity"]

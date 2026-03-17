@@ -1,0 +1,54 @@
+---
+version: v1
+services: []
+default:
+  project: default
+  action: enforce
+  allowed_domains:
+    # ── npm ──
+    - registry.npmjs.org
+    - registry.yarnpkg.com
+
+    # ── Maven Central & common mirrors ──
+    - repo1.maven.org
+    - repo.maven.apache.org
+    - central.sonatype.com
+    - maven.google.com
+
+    # ── APT / Ubuntu ──
+    - archive.ubuntu.com
+    - security.ubuntu.com
+    - ppa.launchpadcontent.net
+    - keyserver.ubuntu.com
+
+    # ── Docker ──
+    - registry-1.docker.io
+    - auth.docker.io
+    - production.cloudflare.docker.com
+    - docker.io
+
+    # ── OpenAI ──
+    - api.openai.com
+
+    # ── Anthropic / Claude Code ──
+    - api.anthropic.com
+    - cdn.anthropic.com
+    - claude.ai
+    - statsig.anthropic.com
+    - sentry.io
+
+    # ── Apache distribution (for Maven binary download) ──
+    - dlcdn.apache.org
+    - downloads.apache.org
+    - archive.apache.org
+    - www.apache.org
+
+    # ── PyPI (commonly needed) ──
+    - pypi.org
+    - files.pythonhosted.org
+
+    # ── GitHub (releases, raw content) ──
+    - github.com
+    - raw.githubusercontent.com
+    - objects.githubusercontent.com
+    - github-releases.githubusercontent.com
