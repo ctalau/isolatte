@@ -1,0 +1,17 @@
+FROM debian:bookworm-slim
+
+# CA certificates copied from build host (avoids needing network during build)
+COPY ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+
+COPY smokescreen-proxy /usr/local/bin/smokescreen-proxy
+COPY acl.yaml /etc/smokescreen/acl.yaml
+
+EXPOSE 4750
+
+ENTRYPOINT ["smokescreen-proxy", \
+  "--listen-ip", "0.0.0.0", \
+  "--listen-port", "4750", \
+  "--egress-acl-file", "/etc/smokescreen/acl.yaml", \
+  "--unsafe-allow-private-ranges", \
+  "--deny-range", "169.254.0.0/16", \
+  "--deny-range", "100.64.0.0/10"]
