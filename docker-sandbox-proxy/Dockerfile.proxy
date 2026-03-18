@@ -1,22 +1,9 @@
-FROM golang:1.24-bookworm AS builder
-
-# Fetch Smokescreen source (pinned to latest release tag)
-RUN git clone --depth 1 https://github.com/stripe/smokescreen.git /tmp/smokescreen
-
-WORKDIR /build
-COPY go.mod ./
-COPY main.go ./
-
-# Resolve dependencies then build
-RUN go mod tidy && go build -o /smokescreen-proxy .
-
-# ── Runtime image ─────────────────────────────────────────────────
 FROM debian:bookworm-slim
 
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates \
-    && rm -rf /var/lib/apt/lists/*
+# CA certificates copied from build host (avoids needing network during build)
+COPY ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-COPY --from=builder /smokescreen-proxy /usr/local/bin/smokescreen-proxy
+COPY smokescreen-proxy /usr/local/bin/smokescreen-proxy
 COPY acl.yaml /etc/smokescreen/acl.yaml
 
 EXPOSE 4750
@@ -25,4 +12,6 @@ ENTRYPOINT ["smokescreen-proxy", \
   "--listen-ip", "0.0.0.0", \
   "--listen-port", "4750", \
   "--egress-acl-file", "/etc/smokescreen/acl.yaml", \
-  "--unsafe-allow-private-ranges"]
+  "--unsafe-allow-private-ranges", \
+  "--deny-range", "169.254.0.0/16", \
+  "--deny-range", "100.64.0.0/10"]

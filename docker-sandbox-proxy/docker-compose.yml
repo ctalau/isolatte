@@ -15,6 +15,10 @@ services:
       internal:
         aliases: [proxy]
       public: {}
+    environment:
+      # When running inside an environment with an upstream proxy,
+      # set UPSTREAM_PROXY_URL to chain Smokescreen through it.
+      - UPSTREAM_PROXY_URL=${UPSTREAM_PROXY_URL:-}
     restart: unless-stopped
 
   # ── Sandboxed workspace ─────────────────────────────────────────
@@ -32,6 +36,20 @@ services:
     volumes:
       - ${MOUNT_DIR:-.}:/workspace:rw
     working_dir: /workspace
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - FOWNER
+      - FSETID
+      - SETGID
+      - SETUID
+      - SETPCAP
+      - NET_BIND_SERVICE
+      - SYS_CHROOT
+      - KILL
+      - AUDIT_WRITE
     stdin_open: true
     tty: true
     command: ["sleep", "infinity"]

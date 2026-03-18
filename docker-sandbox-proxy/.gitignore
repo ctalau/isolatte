@@ -1,1 +1,4 @@
 .qemu-work/
+.smokescreen-src/
+smokescreen-proxy
+ca-certificates.crt

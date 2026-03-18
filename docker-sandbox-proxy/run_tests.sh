@@ -17,6 +17,11 @@ cd "$(dirname "$0")"
 export MOUNT_DIR="${MOUNT_DIR:-$(pwd)}"
 PROJECT="sandbox-proxy-test"
 
+# Auto-detect host upstream proxy and pass it to Smokescreen.
+if [ -z "${UPSTREAM_PROXY_URL:-}" ] && [ -n "${HTTPS_PROXY:-}" ]; then
+  export UPSTREAM_PROXY_URL="$HTTPS_PROXY"
+fi
+
 RED='\033[0;31m'; GREEN='\033[0;32m'; CYAN='\033[0;36m'; NC='\033[0m'
 info()  { printf "${CYAN}▸ %s${NC}\n" "$*"; }
 ok()    { printf "${GREEN}✓ %s${NC}\n" "$*"; }
@@ -27,6 +32,21 @@ cleanup() {
   docker compose -p "$PROJECT" down --volumes --remove-orphans 2>/dev/null || true
 }
 trap cleanup EXIT
+
+# ── Build Smokescreen proxy binary on host ────────────────────────
+if [ ! -f smokescreen-proxy ]; then
+  info "Building Smokescreen proxy binary …"
+  SMOKESCREEN_SRC=$(mktemp -d)
+  git clone --depth 1 https://github.com/stripe/smokescreen.git "$SMOKESCREEN_SRC"
+  cp main.go "$SMOKESCREEN_SRC/main.go"
+  (cd "$SMOKESCREEN_SRC" && CGO_ENABLED=0 go build -mod=vendor -o "$OLDPWD/smokescreen-proxy" .)
+  rm -rf "$SMOKESCREEN_SRC"
+fi
+
+# ── Copy host CA certificates for the proxy image ─────────────────
+if [ ! -f ca-certificates.crt ]; then
+  cp /etc/ssl/certs/ca-certificates.crt ca-certificates.crt
+fi
 
 # ── Build & start ─────────────────────────────────────────────────
 info "Building proxy image …"
@@ -51,7 +71,7 @@ info "Installing test prerequisites in sandbox …"
 docker compose -p "$PROJECT" exec -T sandbox bash -c '
   export DEBIAN_FRONTEND=noninteractive
   apt-get update -qq
-  apt-get install -y -qq --no-install-recommends curl wget iputils-ping dnsutils iproute2 python3 >/dev/null 2>&1
+  apt-get install -y -qq --no-install-recommends curl wget iputils-ping dnsutils iproute2 python3 ca-certificates >/dev/null 2>&1
 '
 
 # ── Run escape test suite ─────────────────────────────────────────

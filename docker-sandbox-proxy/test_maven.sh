@@ -11,10 +11,35 @@ echo ""
 # ── Install JDK and Maven ─────────────────────────────────────────
 echo "── Installing OpenJDK 21 and Maven ──"
 export DEBIAN_FRONTEND=noninteractive
-apt-get update
-apt-get install -y --no-install-recommends openjdk-21-jdk-headless maven ca-certificates
+apt-get update -qq
+apt-get install -y --no-install-recommends openjdk-21-jdk-headless maven ca-certificates openssl
 echo "  Java: $(java -version 2>&1 | head -1)"
 echo "  Maven: $(mvn --version 2>&1 | head -1)"
+
+# ── Trust upstream proxy's TLS inspection CA (if present) ─────────
+# Some environments use TLS-intercepting proxies. Import their CA
+# into Java's truststore so Maven HTTPS connections succeed.
+echo ""
+echo "── Checking for TLS inspection CA ──"
+JAVA_HOME=$(dirname "$(dirname "$(readlink -f "$(which java)")")")
+CACERTS="$JAVA_HOME/lib/security/cacerts"
+
+TLS_CA=$(mktemp)
+echo | openssl s_client -connect repo.maven.apache.org:443 \
+  -proxy proxy:4750 -showcerts 2>/dev/null | \
+  awk 'BEGIN{n=0} /BEGIN CERTIFICATE/{n++} n==2{print}' > "$TLS_CA"
+
+if [ -s "$TLS_CA" ]; then
+  ISSUER=$(openssl x509 -in "$TLS_CA" -noout -issuer 2>/dev/null || true)
+  echo "  Found TLS inspection CA: $ISSUER"
+  keytool -importcert -trustcacerts -keystore "$CACERTS" \
+    -storepass changeit -noprompt -alias proxy-tls-ca \
+    -file "$TLS_CA" 2>/dev/null || true
+  echo "  Imported into Java truststore"
+else
+  echo "  No TLS inspection CA detected (direct TLS)"
+fi
+rm -f "$TLS_CA"
 
 # ── Create a minimal POM that pulls Guava ─────────────────────────
 WORKDIR=$(mktemp -d)
@@ -64,7 +89,7 @@ XML
 echo ""
 echo "── Downloading Guava via Maven (through proxy) ──"
 cd "$WORKDIR"
-mvn dependency:resolve -B -q
+mvn dependency:resolve -B -U
 
 # ── Verify the artifact landed in the local repo ──────────────────
 GUAVA_JAR=$(find ~/.m2/repository/com/google/guava/guava -name 'guava-*.jar' | head -1)

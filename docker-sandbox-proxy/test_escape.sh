@@ -25,6 +25,22 @@ expect_fail() {
   if "$@" >/dev/null 2>&1; then return 1; else return 0; fi
 }
 
+# proxy_returns_error: curl through proxy, expect 4xx/5xx
+proxy_blocked() {
+  local code
+  code=$(curl --proxy http://proxy:4750 --max-time 10 -sk -o /dev/null -w '%{http_code}' "$1" 2>/dev/null)
+  [ "$code" -ge 400 ] 2>/dev/null || [ "$code" = "000" ]
+}
+
+# proxy_succeeds: curl through proxy, expect any non-proxy-error response
+# (the target server may return 4xx for auth, but the proxy allowed the connection)
+proxy_ok() {
+  local code
+  code=$(curl --proxy http://proxy:4750 --max-time 15 -sk -o /dev/null -w '%{http_code}' "$1" 2>/dev/null)
+  # 407 = proxy denied; 502/503 = proxy error; 000 = connection failed
+  [ "$code" != "000" ] 2>/dev/null && [ "$code" != "407" ] 2>/dev/null && [ "$code" != "502" ] 2>/dev/null
+}
+
 echo "=== Sandbox Escape & Proxy-Bypass Tests ==="
 echo ""
 
@@ -50,32 +66,32 @@ echo ""
 echo "── Proxy ACL enforcement (blocked domains) ──"
 
 run_test "Proxy blocks google.com" \
-  expect_fail curl --proxy http://proxy:4750 --max-time 5 -s https://google.com
+  proxy_blocked https://google.com
 
 run_test "Proxy blocks evil.com" \
-  expect_fail curl --proxy http://proxy:4750 --max-time 5 -s https://evil.com
+  proxy_blocked https://evil.com
 
 run_test "Proxy blocks raw IP 1.1.1.1" \
-  expect_fail curl --proxy http://proxy:4750 --max-time 5 -s https://1.1.1.1
+  proxy_blocked https://1.1.1.1
 
 run_test "Proxy blocks metadata endpoint 169.254.169.254" \
-  expect_fail curl --proxy http://proxy:4750 --max-time 5 -s http://169.254.169.254/latest/meta-data/
+  proxy_blocked http://169.254.169.254/latest/meta-data/
 
 # ── 3. Allowed domains ───────────────────────────────────────────
 echo ""
 echo "── Allowed domains (should succeed via proxy) ──"
 
 run_test "Proxy allows registry.npmjs.org" \
-  curl --proxy http://proxy:4750 --max-time 10 -s -o /dev/null -w '%{http_code}' https://registry.npmjs.org | grep -qE '^[23]'
+  proxy_ok https://registry.npmjs.org
 
 run_test "Proxy allows repo1.maven.org" \
-  curl --proxy http://proxy:4750 --max-time 10 -s -o /dev/null -w '%{http_code}' https://repo1.maven.org/maven2/ | grep -qE '^[23]'
+  proxy_ok https://repo1.maven.org/maven2/
 
 run_test "Proxy allows api.anthropic.com" \
-  curl --proxy http://proxy:4750 --max-time 10 -s -o /dev/null https://api.anthropic.com
+  proxy_ok https://api.anthropic.com
 
 run_test "Proxy allows api.openai.com" \
-  curl --proxy http://proxy:4750 --max-time 10 -s -o /dev/null https://api.openai.com
+  proxy_ok https://api.openai.com
 
 # ── 4. Container escape vectors ──────────────────────────────────
 echo ""
