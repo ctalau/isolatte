@@ -98,6 +98,18 @@ The model correctly:
 Sample translated title:
 > **Sarcini de Revizuire a Proiectelor vs. Sarcini de Revizuire Non-Proiect**
 
+### Corrections needed (top 5)
+
+Full analysis: `results/translation-analysis.md`
+
+| # | Severity | Location | Issue |
+|---|---|---|---|
+| 1 | **Critical** | `<p id="p_fvr_c32_z1c">` | **Inverted meaning** — "non-project based" → "bazate pe proiect" (dropped `non-`, reverses the sentence). Fix: "fără proiect" or "non-bazate pe proiect". |
+| 2 | High | `<p id="p_o2t_pl3_vxb">` | **Untranslated "output"** — "Oxygen WebHelp Responsive output" left with English "output". Fix: "ieșire". |
+| 3 | Medium | `<ph product="fusion-cloud">` | **Untranslated "page"** — `<xref .../> page` left with English "page". Fix: "pagina". |
+| 4 | Medium | `<p id="p_o2t_pl3_vxb">` | **"browser interface" → "interfața de utilizator"** — "browser" dropped, making it a generic "user interface". Fix: "interfața web". |
+| 5 | Low | `<li id="li_vc1_qxf_zxb">` | **"technical writers" → "autori de documente"** — drops "technical"; "reviewers" → "evaluatori" (evaluators) instead of "recenzori". Fix: "autori tehnici și recenzori". |
+
 ## Output files
 
 - `results/translation-response.json` — raw llama.cpp `/completion` API response
