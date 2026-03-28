@@ -13,6 +13,7 @@ Usage:
 import argparse
 import os
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -24,6 +25,8 @@ from pathlib import Path
 
 USERGUIDE_REPO = "https://github.com/oxygenxml/userguide.git"
 CHEMISTRY_URL  = "https://www.oxygenxml.com/InstData/Chemistry/oxygen-pdf-chemistry.zip"
+DITA_VER       = "4.3.1"
+DITA_OT_URL    = f"https://github.com/dita-ot/dita-ot/releases/download/{DITA_VER}/dita-ot-{DITA_VER}.zip"
 DITAMAP_REL    = "DITA/UserManual.ditamap"
 DITAVAL_REL    = "DITA/ditaval/editor-sa.ditaval"
 
@@ -128,7 +131,13 @@ _GENERIC_RE = [
 def detect_phase(line: str) -> str | None:
     stripped = line.strip()
 
-    # Shell-script header lines emitted before the JVM starts
+    # ── DITA-OT 4.x progress markers: "==> Phase name" ────────────────────
+    if stripped.startswith("==>"):
+        name = stripped[3:].strip()
+        if name:
+            return name
+
+    # ── Shell-script lines emitted before the JVM starts ──────────────────
     if stripped.startswith("Starting Chemistry"):
         return "Shell startup"
     if stripped.startswith("Java executable"):
@@ -136,21 +145,18 @@ def detect_phase(line: str) -> str | None:
     if stripped.startswith("Picked up JAVA_TOOL_OPTIONS"):
         return "JVM init (TOOL_OPTIONS)"
 
-    # Chemistry structured log
+    # ── Chemistry structured log: "LEVEL  LoggerClass - Message" ──────────
     m = _CHEM_LOG_RE.match(stripped)
     if m:
         logger = m.group(2)
-        # Exact match
         if logger in _LOGGER_PHASE:
             return _LOGGER_PHASE[logger]
-        # Prefix match (e.g. "AFMParser$SomethingElse")
         for prefix, phase in _LOGGER_PHASE.items():
             if logger.startswith(prefix):
                 return phase
-        # Unknown logger: use it as the phase name
         return logger
 
-    # Generic Ant / DITA-OT fallback
+    # ── Generic Ant target / DITA-OT keyword fallback ─────────────────────
     for pat in _GENERIC_RE:
         gm = pat.match(stripped)
         if gm:
@@ -297,9 +303,49 @@ def extract_phases(step: StepResult) -> list[dict]:
 
 # ── report ─────────────────────────────────────────────────────────────────────
 
+def _phases_section(step: StepResult, heading: str, min_dur_ms: float = 500) -> list[str]:
+    """Return markdown rows for per-phase breakdown of a build step."""
+    phases = extract_phases(step)
+    nontrivial = [p for p in phases if (p["end_ms"] - p["start_ms"]) >= min_dur_ms]
+    if not nontrivial:
+        return []
+    rows = [
+        f"### {heading} Sub-Phases (≥ {min_dur_ms/1000:.1f} s)",
+        "",
+        "| Phase | Duration | Peak RSS | Avg RSS |",
+        "|-------|----------|----------|---------|",
+    ]
+    for p in nontrivial:
+        dur = (p["end_ms"] - p["start_ms"]) / 1000.0
+        rows.append(
+            f"| `{p['name'][:65]}` | {fmt_dur(dur)} "
+            f"| {fmt_ram(p['peak_rss_kb'])} | {fmt_ram(int(p['avg_rss_kb']))} |"
+        )
+    rows.append("")
+    return rows
+
+
+def _ram_section(step: StepResult, heading: str) -> list[str]:
+    """Return markdown rows for RAM-over-time of a build step."""
+    if not step.ram_samples:
+        return []
+    rows = [
+        f"### {heading} — RAM Over Time",
+        "",
+        "| Elapsed (s) | RSS |",
+        "|-------------|-----|",
+    ]
+    stride = max(1, len(step.ram_samples) // 40)
+    for t, rss in step.ram_samples[::stride]:
+        elapsed = (t - step.start_ms) / 1000.0
+        rows.append(f"| {elapsed:.0f} | {fmt_ram(rss)} |")
+    rows.append("")
+    return rows
+
+
 def write_report(
     steps: list[StepResult],
-    output_pdf: Path,
+    outputs: dict[str, Path],   # label → PDF path
     report_path: Path,
     topic_count: int,
 ) -> str:
@@ -307,7 +353,7 @@ def write_report(
     overall_peak = max((s.peak_rss_kb for s in steps), default=0)
 
     rows: list[str] = [
-        "# Oxygen PDF Chemistry — Build Analysis",
+        "# Oxygen PDF Chemistry + DITA-OT — Build Analysis",
         "",
         f"**Date:** {time.strftime('%Y-%m-%d %H:%M:%S')}  ",
         f"**Source:** `oxygenxml/userguide` ({topic_count} DITA topics)  ",
@@ -331,71 +377,35 @@ def write_report(
         )
     rows.append("")
 
-    # Chemistry sub-phases
-    chem = next(
-        (s for s in steps if "chemistry" in s.name.lower() or "Chemistry" in s.name),
-        None,
-    )
-    if chem and chem.log_lines:
-        phases = extract_phases(chem)
-        nontrivial = [p for p in phases if (p["end_ms"] - p["start_ms"]) >= 500]
-        if nontrivial:
-            rows += [
-                "## Chemistry Sub-Phases (≥ 0.5 s)",
-                "",
-                "| Phase | Duration | Peak RSS | Avg RSS |",
-                "|-------|----------|----------|---------|",
-            ]
-            for p in nontrivial:
-                dur = (p["end_ms"] - p["start_ms"]) / 1000.0
-                rows.append(
-                    f"| `{p['name'][:65]}` | {fmt_dur(dur)} "
-                    f"| {fmt_ram(p['peak_rss_kb'])} | {fmt_ram(int(p['avg_rss_kb']))} |"
-                )
-            rows.append("")
+    # Per-build-step detail sections
+    rows += ["## Build Step Details", ""]
+    for s in steps:
+        if not s.log_lines:
+            continue
+        rows += _phases_section(s, s.name)
+        rows += _ram_section(s, s.name)
 
-    # RAM over time
-    if chem and chem.ram_samples:
-        rows += [
-            "## RAM Over Time (Chemistry Step)",
-            "",
-            "| Elapsed (s) | RSS |",
-            "|-------------|-----|",
-        ]
-        stride = max(1, len(chem.ram_samples) // 40)
-        for t, rss in chem.ram_samples[::stride]:
-            elapsed = (t - chem.start_ms) / 1000.0
-            rows.append(f"| {elapsed:.0f} | {fmt_ram(rss)} |")
-        rows.append("")
+    # Output files
+    rows += ["## Output Files", ""]
+    for label, path in outputs.items():
+        if path.exists():
+            size_mb = path.stat().st_size / (1024 * 1024)
+            rows.append(f"- **{label}:** `{path}` ({size_mb:.1f} MB)")
+        else:
+            rows.append(f"- **{label}:** not generated")
+    rows.append("")
 
-    # Output info
-    if output_pdf.exists():
-        size_mb = output_pdf.stat().st_size / (1024 * 1024)
-        rows += [
-            "## Output",
-            "",
-            f"- **PDF:** `{output_pdf}` ({size_mb:.1f} MB)",
-            "",
-        ]
-    else:
-        rows += [
-            "## Output",
-            "",
-            "- PDF was **not generated** — Chemistry may require a license or failed.",
-            "",
-        ]
-
-    # Warnings / errors
-    if chem:
+    # Aggregate warnings/errors from all steps with log lines
+    for s in steps:
         problems = [
             (ts, l)
-            for ts, l in chem.log_lines
+            for ts, l in s.log_lines
             if any(k in l for k in ("ERROR", "WARN", "Exception", "Error:"))
         ]
         if problems:
-            rows += ["## Warnings / Errors", ""]
-            for ts, l in problems[:40]:
-                elapsed = (ts - chem.start_ms) / 1000.0
+            rows += [f"## Warnings / Errors — {s.name}", ""]
+            for ts, l in problems[:30]:
+                elapsed = (ts - s.start_ms) / 1000.0
                 rows.append(f"- `[{elapsed:.0f}s]` {l.strip()}")
             rows.append("")
 
@@ -517,7 +527,7 @@ def main() -> int:
         chem_cmd += ["-filter", str(ditaval)]
 
     chem_step = run_step(
-        "Chemistry PDF build",
+        "Chemistry PDF build (demo — 1 page, no license)",
         chem_cmd,
         env=chem_env,
         log_file=logs_dir / "chemistry.log",
@@ -525,20 +535,88 @@ def main() -> int:
     )
     steps.append(chem_step)
 
+    # ── 4. Download DITA-OT ──────────────────────────────────────────────────
+    dita_ot_zip = workdir / f"dita-ot-{DITA_VER}.zip"
+    dita_ot_dir = workdir / f"dita-ot-{DITA_VER}"
+    dita_bin    = dita_ot_dir / "bin" / "dita"
+
+    if not dita_ot_dir.exists():
+        if not dita_ot_zip.exists():
+            step = run_step(
+                f"Download DITA-OT {DITA_VER}",
+                ["curl", "-fsSL", "-o", str(dita_ot_zip), DITA_OT_URL],
+                log_file=logs_dir / "dita-ot-download.log",
+                sample_ram=False,
+            )
+            if step.returncode != 0:
+                log("ERROR: DITA-OT download failed")
+                return 1
+            steps.append(step)
+
+        log(f"Extracting dita-ot-{DITA_VER}.zip …")
+        t_start = ts_ms()
+        with zipfile.ZipFile(dita_ot_zip) as zf:
+            zf.extractall(workdir)
+        ex = StepResult(f"Extract DITA-OT {DITA_VER}", t_start)
+        ex.end_ms = ts_ms()
+        steps.append(ex)
+        log(f"DITA-OT extraction done in {fmt_dur(ex.duration_s)}")
+    else:
+        log(f"DITA-OT {DITA_VER} already present — skipping download")
+
+    dita_bin.chmod(dita_bin.stat().st_mode | 0o755)
+    log(f"DITA-OT binary: {dita_bin}")
+
+    # ── 5. Run DITA-OT PDF build (Apache FOP — full output, free) ───────────
+    java_exe = shutil.which("java") or "java"
+    java_home = str(Path(java_exe).resolve().parent.parent)
+
+    dita_output = workdir / "output-dita-ot"
+    dita_output.mkdir(exist_ok=True)
+
+    dita_env = os.environ.copy()
+    dita_env["JAVA_HOME"] = java_home
+    dita_env.setdefault("HOME", "/tmp")
+    dita_env.setdefault("LANG", "C.UTF-8")
+    dita_env.setdefault("LC_ALL", "C.UTF-8")
+
+    dita_cmd = [
+        str(dita_bin),
+        f"--input={ditamap}",
+        "--format=pdf",
+        f"--filter={ditaval}",
+        f"--output={dita_output}",
+        "-v",   # verbose: emit Ant target names for phase detection
+    ]
+
+    dita_step = run_step(
+        "DITA-OT PDF build (Apache FOP — full output)",
+        dita_cmd,
+        env=dita_env,
+        log_file=logs_dir / "dita-ot.log",
+        sample_ram=True,
+    )
+    steps.append(dita_step)
+
     # ── Report ───────────────────────────────────────────────────────────────
-    report = write_report(steps, output_pdf, report_path, topic_count)
+    dita_pdf = next(dita_output.glob("**/*.pdf"), None) or dita_output / "UserManual.pdf"
+    outputs = {
+        "Chemistry PDF (demo, 1 page)": output_pdf,
+        "DITA-OT PDF (Apache FOP, full)": dita_pdf,
+    }
+    report = write_report(steps, outputs, report_path, topic_count)
 
     print("\n" + "=" * 70)
-    print(report[:4000])
-    if len(report) > 4000:
+    print(report[:5000])
+    if len(report) > 5000:
         print(f"\n… (full report at {report_path})")
 
-    if output_pdf.exists():
-        log(f"SUCCESS — PDF: {output_pdf} ({output_pdf.stat().st_size / 1e6:.1f} MB)")
+    if dita_pdf.exists():
+        log(f"SUCCESS — DITA-OT PDF: {dita_pdf} ({dita_pdf.stat().st_size / 1e6:.1f} MB)")
     else:
-        log("NOTE — PDF not generated; Chemistry may require a license for full output")
+        log("WARNING — DITA-OT PDF not found")
 
-    return 0 if chem_step.returncode == 0 else 1
+    return 0 if dita_step.returncode == 0 else 1
 
 
 if __name__ == "__main__":
