@@ -1,0 +1,40 @@
+--- a/fop-core/src/main/java/org/apache/fop/cli/InputHandler.java
++++ b/fop-core/src/main/java/org/apache/fop/cli/InputHandler.java
+@@
+-            Source xsltSource = createXSLTSource();
+-            if (xsltSource == null) {   // FO Input
+-                transformer = factory.newTransformer();
+-            } else {    // XML/XSLT input
++            Source xsltSource = createXSLTSource();
++            if (xsltSource == null && result instanceof SAXResult) {   // FO input can stream directly
++                parseFOInput((SAXResult) result);
++                return;
++            }
++            if (xsltSource == null) {   // FO Input fallback
++                transformer = factory.newTransformer();
++            } else {    // XML/XSLT input
+@@
++    private void parseFOInput(SAXResult result) throws Exception {
++        Source src = createMainSource();
++        XMLReader xmlReader;
++        InputSource inputSource;
++
++        if (src instanceof SAXSource) {
++            SAXSource saxSource = (SAXSource) src;
++            xmlReader = saxSource.getXMLReader();
++            inputSource = saxSource.getInputSource();
++        } else if (src instanceof StreamSource) {
++            StreamSource streamSource = (StreamSource) src;
++            xmlReader = getXMLReader();
++            inputSource = SAXSource.sourceToInputSource(streamSource);
++        } else {
++            throw new FOPException("Unsupported FO source type for streaming parse: "
++                    + src.getClass().getName());
++        }
++
++        xmlReader.setContentHandler(result.getHandler());
++        if (result.getLexicalHandler() != null) {
++            xmlReader.setProperty("http://xml.org/sax/properties/lexical-handler", result.getLexicalHandler());
++        }
++        xmlReader.parse(inputSource);
++    }
