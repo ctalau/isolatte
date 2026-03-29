@@ -2,9 +2,7 @@ module smokescreen-experiment
 
 go 1.24.7
 
-replace github.com/stripe/smokescreen => /tmp/smokescreen
-
-require github.com/stripe/smokescreen v0.0.0-00010101000000-000000000000
+require github.com/stripe/smokescreen v0.0.5-0.20260217125948-464b1115f802
 
 require (
 	github.com/DataDog/datadog-go v4.5.1+incompatible // indirect
