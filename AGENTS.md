@@ -20,3 +20,13 @@ Each top-level folder is a self-contained experiment or research artifact. Do no
 ## Networking
 
 - **podman-container-networking** — podman container networking experiments and test results
+
+## Agent response expectations
+
+- In status updates and final responses, provide an honest assessment.
+- Always include:
+  - what worked,
+  - what did not work,
+  - what you would try next to make it work,
+  - and your honest opinion on whether the experiment can be made to work.
+- Apply this format to ongoing tasks unless explicitly overridden by the user.
