@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  run_fop.xml — Ant build file that runs just the Apache FOP rendering step.
+  Called by fop.sh; uses DITA-OT's bundled FOP Ant task and jars.
+
+  Required properties:
+    fo.file     absolute path to the XSL-FO input file (topic.fo)
+    out.pdf     absolute path for the output PDF
+    fop.xconf   absolute path to FOP configuration file (fop.xconf)
+    fop.lib     directory containing the FOP jars
+-->
+<project name="run-fop" default="fop" basedir=".">
+
+  <!-- Ant classpath for the fop taskdef: all jars in the FOP plugin lib dir -->
+  <path id="fop.cp">
+    <fileset dir="${fop.lib}" includes="*.jar"/>
+  </path>
+
+  <!-- Register the FOP Ant task (same class DITA-OT uses in build_fop.xml) -->
+  <taskdef name="fop"
+           classname="org.apache.fop.tools.anttasks.Fop"
+           classpathref="fop.cp"/>
+
+  <target name="fop">
+    <echo message="FO input : ${fo.file}"/>
+    <echo message="PDF output: ${out.pdf}"/>
+    <echo message="FOP config: ${fop.xconf}"/>
+
+    <fop format="application/pdf"
+         fofile="${fo.file}"
+         outfile="${out.pdf}"
+         basedir="${basedir}"
+         userconfig="${fop.xconf}"
+         messagelevel="info"
+         relativebase="true"
+         force="true"/>
+
+    <echo message="Done: ${out.pdf}"/>
+  </target>
+
+</project>
