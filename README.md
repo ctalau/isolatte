@@ -7,6 +7,7 @@ Security and sandboxing experiments for running untrusted code with granular iso
 - **bwrap-seccomp** — hermetic bubblewrap sandbox hardened with a custom seccomp-BPF syscall filter
 - **nsjail-dita** — wraps DITA-OT processing in an nsjail jail with namespace isolation, chroot, capability drops, CPU pinning, and a loopback-only HTTP server
 - **smokescreen-proxy** — egress ACL enforcement on a container with no default route using Stripe's Smokescreen proxy over a veth pair
+- **iron-proxy** — reimplementation of the smokescreen-proxy experiment using [iron-proxy](https://github.com/ironsh/iron-proxy): MITM/TLS-terminating egress proxy with built-in DNS, default-deny allowlist, and secret injection capability
 - **podman-node-v10** — baseline podman script that established the constrained kernel/storage environment all other container experiments built on
 - **jenkins-container** — Jenkins CI environment inside a udocker container with isolated git repos and restricted authentication
 
