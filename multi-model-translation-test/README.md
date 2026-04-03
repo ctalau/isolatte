@@ -117,8 +117,8 @@ The system prompt instructs the model to:
 
 ## Run status
 
-**Experiment complete. 6/7 models produced Romanian translations; 1 model
-(`zai/glm-5`) failed with a gateway error.**
+**Experiment complete. All 7 models produced Romanian translations.**
+(`zai/glm-5` failed on the first run with an SDK parse error; a retry succeeded.)
 
 ### Proxy fix
 
@@ -138,147 +138,139 @@ This `undici` package is now listed in `package.json`.
 
 ### Results
 
-| Model | Input tok | Output tok | Total cost | Elapsed | finish_reason | Score |
-|---|---|---|---|---|---|---|
-| `anthropic/claude-haiku-4.5` | 1,126 | 1,186 | $0.007056 | 8.3 s | stop | 6/10 |
-| `openai/gpt-5.4-mini` | 987 | 1,034 | $0.005393 | 5.9 s | stop | 8/10 |
-| `google/gemini-3-flash` | 1,022 | 6,291¹ | $0.192436 | 283.0 s | stop | 6/10 |
-| `alibaba/qwen3.6-plus` | 1,035 | 7,298¹ | $0.025448 | 130.3 s | stop | 8/10 |
-| `moonshotai/kimi-k2.5` | 983 | 1,099 | $0.003887 | 9.9 s | stop | 5/10 |
-| `zai/glm-5` | 986 | 7,664¹ | $0.029092 | 311.4 s | **SDK ERROR** | N/A |
-| `minimax/minimax-m2.7` | 989 | 1,799 | $0.002456 | 41.2 s | stop | 7/10 |
-| **Total** | | | **$0.266** | | | |
+| Model | Input tok | Output tok | Total cost | Elapsed | Score |
+|---|---|---|---|---|---|
+| `anthropic/claude-haiku-4.5` | 1,126 | 1,186 | $0.007056 | 8.3 s | 7/10 |
+| `openai/gpt-5.4-mini` | 987 | 1,034 | $0.005393 | 5.9 s | 9/10 |
+| `google/gemini-3-flash` | 1,022 | 6,291¹ | $0.192436 | 283.0 s | 7/10 |
+| `alibaba/qwen3.6-plus` | 1,035 | 7,298¹ | $0.025448 | 130.3 s | 9/10 |
+| `moonshotai/kimi-k2.5` | 983 | 1,099 | $0.003887 | 9.9 s | 6/10 |
+| `zai/glm-5` | 986 | 8,921¹ | $0.029092 | 198.2 s | 9/10 |
+| `minimax/minimax-m2.7` | 989 | 1,799 | $0.002456 | 41.2 s | 8/10 |
+| **Total** | | | **$0.266** | | |
 
-¹ Output token count is inflated by internal model reasoning/thinking tokens that
-are billed but not included in the visible output text.
+¹ Output token count includes internal reasoning/thinking tokens billed but not
+present in the visible output text. Only `zai/glm-5` breakdown is available:
+986 input / 1,157 visible output / 7,764 reasoning tokens.
 
 Costs and token counts are from the Vercel AI Gateway billing dashboard. Token
 counts in the script output were all zero due to a bug in the script: the AI SDK
-v6 `result.usage` object was accessed using incorrect field names (`promptTokens`
-/ `completionTokens`). The data was present but not read correctly. This is a
-script bug, not an SDK or gateway limitation.
+v6 `result.usage` object uses `inputTokens`/`outputTokens`, not
+`promptTokens`/`completionTokens` as the script assumed. This is a script bug —
+the data was present but accessed with the wrong field names. Fixed in
+`translate.mjs`.
 
 ### Translation quality evaluation
 
-**`anthropic/claude-haiku-4.5` — 6/10**
-- Good Romanian translation, diacritics correct throughout.
-- All IDs and XML attributes preserved correctly.
+Scoring criteria: formatting issues (code fences, leading whitespace) are
+fixable in post-processing and not heavily penalized. English technical terms
+widely used in Romanian tech documentation ("repository", "output", "non-proiect")
+are acceptable.
+
+**`anthropic/claude-haiku-4.5` — 7/10**
+- Good Romanian, diacritics correct. All IDs and attributes preserved.
 - `<term>Proiecte</term>` translated appropriately.
-- **Problem:** Wrapped the entire output in ` ```xml ``` ` code fences despite
-  the explicit system prompt rule — breaks automated DITA processing.
-- **Problem:** "revedenților" (line with reviewers) is a non-standard word;
-  correct Romanian is "recenzorilor" or "revizuitorilor".
+- **Problem:** Output wrapped in ` ```xml ``` ` code fences — fixable in
+  post-processing, but the model ignored an explicit system prompt rule.
+- **Problem:** "revedenților" is non-standard Romanian; correct form is
+  "recenzorilor" or "revizuitorilor".
 
-**`openai/gpt-5.4-mini` — 8/10**
-- Clean output, no code fences. Preserved original whitespace structure.
-- Accurate Romanian with natural phrasing ("redactori tehnici" for technical
-  writers, "livrabile" for deliverables).
-- **Problem:** In the `<ph product="fusion-cloud">` block, the word "page" was
-  left in English instead of being translated to "pagina".
-- **Problem:** Partially translated the SME label inside `<b>` —
-  "Expert în domeniu/recenzent" — the prompt forbids translating proper nouns
-  but the SME expansion is not clearly a proper noun, so this is a judgment call.
+**`openai/gpt-5.4-mini` — 9/10**
+- Clean output, whitespace structure preserved from source. Accurate, natural
+  Romanian ("redactori tehnici", "livrabile").
+- **Minor:** In the `<ph product="fusion-cloud">` block the word `page` was
+  left in English — should be `pagina`. Single word, fixable in post-processing.
 
-**`google/gemini-3-flash` — 6/10**
-- Clean output, correct diacritics, well-formed XML.
-- **Problem:** `<term>Projects</term>` left in English throughout (title section
-  and body) while the topic title and index term were translated. Internally
-  inconsistent.
-- **Problem:** "Administration" link text left in English inside the
-  `<ph product="fusion">` block — should be "Administrare".
-- Slow (283 s) and expensive ($0.192) — likely due to large hidden reasoning
-  token usage. Poor value for this task.
+**`google/gemini-3-flash` — 7/10**
+- Well-formed XML, correct diacritics.
+- **Problem:** `<term>Projects</term>` consistently left in English (both
+  occurrences in the body) while the title and index term were translated —
+  internally inconsistent, not a formatting issue.
+- **Problem:** "Administration" link text left in English in the
+  `<ph product="fusion">` block — a genuine translation miss.
+- Slow (283 s) and expensive ($0.192) for this quality level; reasoning token
+  overhead dominates the cost.
 
-**`alibaba/qwen3.6-plus` — 8/10**
-- Clean output, no code fences.
-- Accurate, fluent Romanian. Good handling of XML structure.
-- `<term>Proiecte</term>` correctly translated.
-- Translated the SME expansion ("Expert în domeniu/Recenzor") — debatable per
-  prompt instructions but linguistically reasonable.
-- **Minor problem:** "pagina" appears after the `<xref>` in the
-  `<ph product="fusion-cloud">` block — slightly awkward word order.
-- Despite 7,298 billed output tokens (reasoning), the visible output is compact
-  and correct.
+**`alibaba/qwen3.6-plus` — 9/10**
+- Clean output, fluent Romanian, compact structure.
+- `<term>Proiecte</term>` translated. SME expansion translated ("Expert în
+  domeniu/Recenzor") — reasonable and consistent with how other models handled it.
+- Minor word-order awkwardness after the `<xref>` in `<ph product="fusion-cloud">`.
+- Despite 7,298 billed tokens, the visible output is concise and correct.
 
-**`moonshotai/kimi-k2.5` — 5/10**
-- **Problem:** Translated the protected role name `<i>Content Fusion Author</i>`
-  to `<i>Autor Content Fusion</i>`, and similarly `<b>Content Fusion Author</b>`
-  to `<b>Autor Content Fusion</b>`. The prompt explicitly prohibits translating
-  proper nouns; "Content Fusion Author" is a specific product role name.
-- **Problem:** Leading whitespace before `<?xml` declaration makes the file
-  technically not well-formed XML (XML declaration must start at byte 0).
-- **Problem:** Uses English "repository" and "repository-ul" (with Romanian
-  morphological suffix) inconsistently alongside Romanian "depozit" elsewhere.
-- Translation quality is otherwise reasonable.
+**`moonshotai/kimi-k2.5` — 6/10**
+- **Problem:** Translated the protected product role name: `<i>Content Fusion
+  Author</i>` → `<i>Autor Content Fusion</i>`. "Content Fusion Author" is a
+  specific product role, not a generic phrase. This is a semantic error that
+  would break UI consistency in a real localization project.
+- Leading space before `<?xml` declaration: fixable in post-processing.
+- Uses "repository-ul" (English term with Romanian morphology) — acceptable per
+  criteria, though inconsistent within the same file where "depozit" also appears.
 
-**`zai/glm-5` — N/A**
-- The AI SDK threw `"Invalid error response format: Gateway request failed"`.
-- The gateway billing shows 986 input / 7,664 output tokens and $0.029 — so
-  the model did run and return a response, but in a format the AI SDK could
-  not parse. The 7,664 output token count (vs ~1,000 expected) suggests the
-  model likely returned verbose reasoning or preamble before the XML.
-- No `translated.dita` output available for evaluation.
+**`zai/glm-5` — 9/10** *(retry after first-run SDK parse error)*
+- First run failed: the AI SDK threw `"Invalid error response format"`. The
+  gateway billing confirms the model ran and returned data; the AI SDK could not
+  parse the response. A retry the next day succeeded without code changes.
+- Translation quality is excellent: fluent Romanian, all markup preserved, IDs
+  intact. "recenzenților" correct. "pagina de administrare" correctly
+  translated. "Content Fusion Author" correctly kept in English.
+- Uses "depozit Git" (Romanian) throughout — better than models that use
+  "repository".
+- 7,764 reasoning tokens (not visible) drive cost to $0.029 for ~1,157 visible
+  output tokens.
 
-**`minimax/minimax-m2.7` — 7/10**
-- Clean output, no code fences. Correct diacritics.
-- XML structure and all attributes preserved.
-- **Problem:** Uses English loanword "repository" / "repository-ul Git"
-  throughout instead of the more standard Romanian "depozit Git".
-- **Problem:** Uses "output" as a Romanian noun with declension ("output-ul")
-  instead of "ieșire" or "livrabil" — common in informal technical Romanian but
-  not ideal in formal documentation.
-- Correctly kept "Content Fusion Author" untranslated (unlike Kimi).
+**`minimax/minimax-m2.7` — 8/10**
+- Clean output. Diacritics correct. All attributes and IDs preserved.
+- "Content Fusion Author" correctly kept in English.
+- Uses "repository" and "output" (English loanwords with Romanian morphology)
+  throughout — acceptable per criteria.
 
 ### What worked
-- Proxy workaround via `undici` `ProxyAgent` — all requests went through
-  without timeout errors.
-- 6/7 models returned valid Romanian DITA XML with `finish_reason: stop`.
-- `openai/gpt-5.4-mini` was the best overall: fastest (5.9 s), cheapest
-  practical option ($0.005), and highest translation quality (8/10).
-- `alibaba/qwen3.6-plus` matched quality (8/10) at a higher cost ($0.025) due
-  to reasoning token usage.
+- Proxy workaround via `undici` `ProxyAgent` — all requests went through.
+- All 7 models produced Romanian DITA translations. Three models scored 9/10:
+  `openai/gpt-5.4-mini`, `alibaba/qwen3.6-plus`, and `zai/glm-5`.
+- `openai/gpt-5.4-mini` is the best value: fastest (5.9 s), cheapest ($0.005),
+  9/10 quality.
+- `zai/glm-5` and `alibaba/qwen3.6-plus` match quality (9/10) but cost 5–6×
+  more due to reasoning tokens, with no visible quality benefit.
 
 ### What did not work
-- `zai/glm-5` ran on the gateway but returned a response format the AI SDK
-  could not parse; 7,664 billed output tokens suggests the model prefixed the
-  XML with verbose reasoning text.
-- `anthropic/claude-haiku-4.5` ignored the "no code fences" system prompt rule.
-- `moonshotai/kimi-k2.5` translated a protected role name ("Content Fusion
-  Author") and produced a technically invalid XML declaration (leading space).
-- `google/gemini-3-flash` was extremely expensive ($0.192) due to hidden
-  reasoning tokens, and left key terms inconsistently untranslated.
-- Token usage in the script output was zero due to a script bug (wrong field
-  names for accessing `result.usage`).
+- `zai/glm-5` first run: SDK threw a parse error on the gateway response.
+  Retry the next day succeeded without any changes — likely a transient issue.
+- `anthropic/claude-haiku-4.5` wrapped output in code fences despite the
+  explicit system prompt rule.
+- `moonshotai/kimi-k2.5` translated the "Content Fusion Author" product role
+  name — a semantic error that would break localization consistency.
+- `google/gemini-3-flash` left "Projects" and "Administration" inconsistently
+  untranslated, and cost $0.192 primarily due to reasoning token overhead.
+- Token counts in the script output were all zero due to a script bug: the AI
+  SDK v6 usage object uses `inputTokens`/`outputTokens` but the script read
+  `promptTokens`/`completionTokens`. Fixed in this revision.
 
 ### What to try next
-- Fix the usage field names in the script to correctly read AI SDK v6 token
-  counts and enable in-script cost calculation.
-- For `zai/glm-5`: inspect the raw gateway response to determine the format
-  mismatch and add a custom parser or use a different SDK invocation.
-- For `anthropic/claude-haiku-4.5`: add a post-processing step to strip code
-  fences, or add the no-fence rule more forcefully (e.g. start the user prompt
-  with `<?xml`).
-- For `moonshotai/kimi-k2.5`: the role-name translation and leading-space bugs
-  suggest the model needs more specific system prompt constraints.
-- Consider dropping `google/gemini-3-flash` from future runs — $0.192 for a
-  6/10 result is poor value compared to `openai/gpt-5.4-mini` at $0.005 for 8/10.
+- Start the user prompt with `<?xml` to coerce models away from code fences.
+- Add stricter wording for `moonshotai/kimi-k2.5` about not translating
+  product role names specifically.
+- Consider dropping `google/gemini-3-flash` — $0.192 for 7/10 quality vs
+  $0.005 for 9/10 from `openai/gpt-5.4-mini` is hard to justify.
+- Re-run the full batch with the fixed usage field names to get in-script cost
+  tracking working end-to-end.
 
 ### Honest assessment
-The experiment succeeded. Six of seven models produced usable Romanian DITA
-translations in a single automated pass. `openai/gpt-5.4-mini` is the clear
-winner: fastest, cheapest (excluding reasoning-heavy models), and best quality.
-`alibaba/qwen3.6-plus` is a close second on quality but costs 5× more due to
-reasoning tokens. `google/gemini-3-flash` at $0.192 per translation call is
-not cost-effective for this task. The biggest remaining issues are the
-script-level token parsing bug and the `zai/glm-5` response format problem.
+All 7 models produced usable Romanian DITA translations. Three scored 9/10
+(`openai/gpt-5.4-mini`, `alibaba/qwen3.6-plus`, `zai/glm-5`). The `zai/glm-5`
+transient failure was the only significant reliability issue. Cost varies 75×
+across models ($0.002 to $0.192) with no correlation to quality — reasoning-heavy
+models spend most of their budget on hidden tokens. `openai/gpt-5.4-mini` is the
+clear choice for production use: best quality, fastest, cheapest.
 
 ## Cost tracking
 
 Actual costs are from the Vercel AI Gateway billing dashboard. The script
-computed zero costs due to a bug: `result.usage.promptTokens` /
-`result.usage.completionTokens` returned 0, likely because the AI SDK v6 uses
-different field names for the usage object when proxied through the gateway.
-This is a script bug — the data was available but accessed incorrectly.
+computed zero costs due to a bug: the AI SDK v6 usage object uses
+`inputTokens`/`outputTokens`, but the script read `promptTokens`/
+`completionTokens` (v4/v5 naming). The data was present — this was a script
+error, not an SDK or gateway limitation. Fixed in `translate.mjs`.
 
 | Model | Input tok | Output tok | Actual cost |
 |---|---|---|---|

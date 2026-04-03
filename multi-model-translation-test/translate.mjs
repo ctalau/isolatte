@@ -90,8 +90,9 @@ async function translateWithModel(modelId) {
 
   const elapsedMs = Date.now() - startMs;
   const usage = result.usage ?? {};
-  const promptTokens     = usage.promptTokens     ?? 0;
-  const completionTokens = usage.completionTokens ?? 0;
+  // AI SDK v6 uses inputTokens/outputTokens (not promptTokens/completionTokens)
+  const promptTokens     = usage.inputTokens      ?? 0;
+  const completionTokens = usage.outputTokens     ?? 0;
   const cost = calcCost(modelId, promptTokens, completionTokens);
 
   console.log(`  prompt_tokens:     ${promptTokens}`);
