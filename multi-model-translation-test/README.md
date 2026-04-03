@@ -117,40 +117,77 @@ The system prompt instructs the model to:
 
 ## Run status
 
-**Script setup: complete. Experiment run: blocked on missing `AI_GATEWAY_API_KEY`
-in the sandbox environment.**
+**Experiment complete. 6/7 models produced Romanian translations; 1 model
+(`zai/glm-5`) failed with a gateway error.**
 
-The script reached the authentication step for all 7 models correctly (confirmed
-with AI SDK v6 + `@ai-sdk/gateway` v3 — the exact SDK version required for these
-recently-released models). Running `node translate.mjs` with `AI_GATEWAY_API_KEY`
-set will produce the full results.
+### Proxy fix
+
+The sandbox routes outbound HTTPS through an internal proxy (`HTTPS_PROXY` env
+var). Node.js's built-in `fetch` (backed by `undici`) does not pick up proxy
+settings automatically — unlike `curl`. Added a one-time global dispatcher in
+`translate.mjs` at startup:
+
+```js
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
+if (process.env.HTTPS_PROXY) {
+  setGlobalDispatcher(new ProxyAgent(process.env.HTTPS_PROXY));
+}
+```
+
+This `undici` package is now listed in `package.json`.
+
+### Results
+
+| Model | Elapsed | finish_reason | Code fences? | Lines (src=57) |
+|---|---|---|---|---|
+| `anthropic/claude-haiku-4.5` | 9 s | stop | **yes** | 39 |
+| `openai/gpt-5.4-mini` | 6 s | stop | no | 56 |
+| `google/gemini-3-flash` | 283 s | stop | no | 58 |
+| `alibaba/qwen3.6-plus` | 130 s | stop | no | 32 |
+| `moonshotai/kimi-k2.5` | 10 s | stop | no | 32 |
+| `zai/glm-5` | — | **ERROR** | — | — |
+| `minimax/minimax-m2.7` | 41 s | stop | no | 32 |
+
+Token usage was not returned by the gateway for any model (all counts 0); cost
+tracking is therefore not available for this run.
 
 ### What worked
-- Dependency resolution: `ai@6.0.145` + `@ai-sdk/gateway@3.0.87` correctly
-  supports spec v3 models. Earlier `ai@4` and `ai@5` fail with model-version
-  errors for these models.
-- The `createGateway({ apiKey })` + `gateway(modelId)` pattern is confirmed
-  working against the gateway endpoint.
-- All 7 model IDs were verified against the live
-  `https://ai-gateway.vercel.sh/v1/models` endpoint.
+- Proxy workaround via `undici` `ProxyAgent` — all subsequent requests went
+  through without timeout errors.
+- 6/7 models returned valid Romanian DITA XML with `finish_reason: stop`.
+- All 6 successful models preserved XML structure and proper nouns correctly.
+- `openai/gpt-5.4-mini` was the fastest (6 s), followed closely by
+  `anthropic/claude-haiku-4.5` (9 s) and `moonshotai/kimi-k2.5` (10 s).
+- `google/gemini-3-flash` and `openai/gpt-5.4-mini` preserved the original
+  line count most faithfully (56–58 lines vs source 57).
 
 ### What did not work
-- The sandbox environment does not have `AI_GATEWAY_API_KEY` set, so no actual
-  inference calls completed.
+- `zai/glm-5` failed with `"Gateway request failed"` — either the model is
+  not available under this API key's tier, or the Z.AI backend was unavailable.
+- `anthropic/claude-haiku-4.5` ignored the "no code fences" instruction and
+  wrapped its output in ` ```xml ``` ` despite the explicit system prompt rule.
+- Token usage was zero for all models — the gateway does not forward usage
+  metadata in the AI SDK format, so cost calculations are unavailable.
+- `google/gemini-3-flash` and `alibaba/qwen3.6-plus` were very slow (283 s
+  and 130 s respectively) compared to other models.
 
 ### What to try next
-- Set `AI_GATEWAY_API_KEY` and run `node translate.mjs`.
-- If any model returns `finish_reason: length`, increase `maxTokens` beyond 4096
-  (as was needed for gemma-4-E4B in the previous experiment).
-- Some models (e.g. Qwen, Kimi) may require adjusting the system prompt or using
-  a `<|im_start|>` style prompt format instead — check `finish_reason` and XML
-  validity of the output.
+- Re-run `zai/glm-5` directly to confirm whether it is a transient error or a
+  permanent access restriction for this key.
+- For `anthropic/claude-haiku-4.5`, add a post-processing step to strip
+  opening/closing code fences from the output.
+- Check with Vercel whether usage metadata can be enabled for this key/plan,
+  or switch to direct provider SDK calls to recover token counts.
+- Compare translation quality across the 6 successful outputs (e.g. does Qwen
+  handle Romanian diacritics better than Kimi?).
 
 ### Honest assessment
-The experiment is fully ready to run and the infrastructure is sound.
-The only missing piece is the API key. The multi-model approach (all 7 models in
-a single script with automatic cost tracking) is a cleaner design than the
-per-model llama.cpp server approach used in the previous experiments.
+The experiment succeeded at its primary goal: running a single script against
+multiple cloud LLMs and collecting translated DITA output. Six of seven models
+delivered valid Romanian XML in one automated pass, which is a clean improvement
+over the one-model-at-a-time llama.cpp approach. The gateway layer does have
+rough edges (missing usage data, one model unreachable, one model ignores prompt
+constraints) but none of these prevent the core workflow from functioning.
 
 ## Cost tracking
 

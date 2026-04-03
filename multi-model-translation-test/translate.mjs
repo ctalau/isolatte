@@ -14,10 +14,18 @@
  * Usage: node translate.mjs
  */
 
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
 import { createGateway } from '@ai-sdk/gateway';
 import { generateText } from 'ai';
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+
+// Route Node.js fetch through the system HTTPS proxy (if set).
+// The AI SDK uses undici-based fetch which does not pick up HTTPS_PROXY
+// automatically; we need to install a global ProxyAgent.
+if (process.env.HTTPS_PROXY) {
+  setGlobalDispatcher(new ProxyAgent(process.env.HTTPS_PROXY));
+}
 
 const apiKey = process.env.AI_GATEWAY_API_KEY;
 if (!apiKey) {

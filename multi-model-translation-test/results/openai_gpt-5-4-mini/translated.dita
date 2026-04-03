@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-review-tasks-projects">
+  <title>Sarcini de revizuire ale proiectului vs sarcini de revizuire non-proiect</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Sarcini de revizuire ale proiectului</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_o2t_pl3_vxb"><ph keyref="product"/> oferă posibilitatea de a se conecta la un depozit Git
+      existent care are un proiect DITA ca sursă. Acest lucru este gestionat în interfața de browser Content Fusion
+      printr-o funcționalitate cunoscută ca <xref href="cf-projects.dita"
+          ><term>Proiecte</term></xref>. Utilizatorii cu rolul de <i>Content Fusion Author</i> pot crea
+      sarcini de revizuire în cadrul unui proiect, iar sugestiile recenzenților sunt urmărite pe o ramură dedicată din
+      depozitul Git. Puteți, de asemenea, să folosiți funcționalitatea <term>Proiecte</term> pentru a construi și configura
+      livrabile pentru crearea de PDF sau <xref
+        href="https://www.oxygenxml.com/xml_webhelp/webhelp_responsive.html" format="html"
+        scope="external"><b>Oxygen WebHelp Responsive</b></xref> output.</p>
+    <section id="section_lyh_rm1_n2c">
+      <title>Sarcini de revizuire non-proiect vs proiecte</title>
+      <p id="p_fvr_c32_z1c">Principalele diferențe dintre lucrul cu sarcini de revizuire bazate pe non-proiect
+        și proiecte sunt:<ul id="ul_wcv_lxf_zxb">
+          <li id="li_vc1_qxf_zxb"><b>Sarcini de revizuire non-proiect</b> - Oferă instrumente pentru redactori tehnici
+            și recenzenți pentru a crea și utiliza sarcini de revizuire pentru o colaborare eficientă în timpul
+            procesului lor de revizuire a documentației.</li>
+          <li id="li_xcv_lxf_zxb"><b>Proiecte</b> - Oferă instrumente suplimentare pentru redactori tehnici
+            pentru a ajuta la gestionarea unui proiect DITA găzduit într-un depozit Git, menținând în același timp compatibilitatea deplină
+            cu instrumentele și fluxurile de lucru existente. Sarcinile de revizuire create în cadrul unui proiect Content
+            Fusion oferă funcționalități suplimentare, cum ar fi posibilitatea de a îmbina modificările
+            folosind un instrument încorporat de comparare/îmbinare a fișierelor și de a construi livrabile de ieșire
+            WebHelp sau PDF.</li>
+        </ul></p>
+    </section>
+    <section id="user_roles">
+      <title>Roluri de utilizator ale proiectului</title>
+      <p>Când lucrați cu proiecte, există două roluri de utilizator:<ul>
+          <li><b>SME (Expert în domeniu/recenzent)</b> - În mod implicit, utilizatorilor Content Fusion li se atribuie
+            rolul SME (Subject Matter Expert). Acest rol îi permite utilizatorului să acceseze
+            sarcinile de revizuire alocate și să creeze sarcini de revizuire de la zero.</li>
+          <li><b>Content Fusion Author</b> - Acest rol trebuie atribuit unui utilizator de către un
+            administrator (de pe pagina <ph product="fusion"><xref
+                href="cf-enterprise-configuration.dita">Administrare</xref>)</ph><ph
+              product="fusion-cloud"><xref href="cf-organization-members.dita"/> page</ph>). Pe lângă
+            funcționalitățile la care are acces un SME, autorii pot accesa toate proiectele și
+            pot crea sarcini de revizuire în cadrul proiectelor, precum și alte funcționalități care sunt
+            restricționate pentru un SME.</li>
+        </ul></p>
+    </section>
+  </body>
+  <related-links>
+    <link href="cf-projects.dita"/>
+    <link href="cf-non-project-review-tasks.dita"/>
+  </related-links>
+</topic>
