@@ -1,0 +1,9 @@
+{
+  "name": "multi-model-translation-test",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@ai-sdk/gateway": "^3.0.87",
+    "ai": "^6.0.145"
+  }
+}
