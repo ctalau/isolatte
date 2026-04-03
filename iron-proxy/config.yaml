@@ -1,6 +1,6 @@
 dns:
   listen: ":5353"
-  proxy_ip: "10.77.1.1"
+  proxy_ip: "127.0.0.1"
   passthrough: []
 
 proxy:
