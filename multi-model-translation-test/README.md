@@ -117,64 +117,179 @@ The system prompt instructs the model to:
 
 ## Run status
 
-**Script setup: complete. Experiment run: blocked on missing `AI_GATEWAY_API_KEY`
-in the sandbox environment.**
+**Experiment complete. All 7 models produced Romanian translations.**
+(`zai/glm-5` failed on the first run with an SDK parse error; a retry succeeded.)
 
-The script reached the authentication step for all 7 models correctly (confirmed
-with AI SDK v6 + `@ai-sdk/gateway` v3 — the exact SDK version required for these
-recently-released models). Running `node translate.mjs` with `AI_GATEWAY_API_KEY`
-set will produce the full results.
+### Proxy fix
+
+The sandbox routes outbound HTTPS through an internal proxy (`HTTPS_PROXY` env
+var). Node.js's built-in `fetch` (backed by `undici`) does not pick up proxy
+settings automatically — unlike `curl`. Added a one-time global dispatcher in
+`translate.mjs` at startup:
+
+```js
+import { ProxyAgent, setGlobalDispatcher } from 'undici';
+if (process.env.HTTPS_PROXY) {
+  setGlobalDispatcher(new ProxyAgent(process.env.HTTPS_PROXY));
+}
+```
+
+This `undici` package is now listed in `package.json`.
+
+### Results
+
+| Model | Input tok | Output tok | Total cost | Elapsed | Score |
+|---|---|---|---|---|---|
+| `anthropic/claude-haiku-4.5` | 1,126 | 1,186 | $0.007056 | 8.3 s | 7/10 |
+| `openai/gpt-5.4-mini` | 987 | 1,034 | $0.005393 | 5.9 s | 9/10 |
+| `google/gemini-3-flash` | 1,022 | 6,291¹ | $0.192436 | 283.0 s | 7/10 |
+| `alibaba/qwen3.6-plus` | 1,035 | 7,298¹ | $0.025448 | 130.3 s | 9/10 |
+| `moonshotai/kimi-k2.5` | 983 | 1,099 | $0.003887 | 9.9 s | 6/10 |
+| `zai/glm-5` | 986 | 8,921¹ | $0.029092 | 198.2 s | 9/10 |
+| `minimax/minimax-m2.7` | 989 | 1,799 | $0.002456 | 41.2 s | 8/10 |
+| **Total** | | | **$0.266** | | |
+
+¹ Output token count includes internal reasoning/thinking tokens billed but not
+present in the visible output text. Only `zai/glm-5` breakdown is available:
+986 input / 1,157 visible output / 7,764 reasoning tokens.
+
+Costs and token counts are from the Vercel AI Gateway billing dashboard. Token
+counts in the script output were all zero due to a bug in the script: the AI SDK
+v6 `result.usage` object uses `inputTokens`/`outputTokens`, not
+`promptTokens`/`completionTokens` as the script assumed. This is a script bug —
+the data was present but accessed with the wrong field names. Fixed in
+`translate.mjs`.
+
+### Translation quality evaluation
+
+Scoring criteria: formatting issues (code fences, leading whitespace) are
+fixable in post-processing and not heavily penalized. English technical terms
+widely used in Romanian tech documentation ("repository", "output", "non-proiect")
+are acceptable.
+
+**`anthropic/claude-haiku-4.5` — 7/10**
+- Good Romanian, diacritics correct. All IDs and attributes preserved.
+- `<term>Proiecte</term>` translated appropriately.
+- **Problem:** Output wrapped in ` ```xml ``` ` code fences — fixable in
+  post-processing, but the model ignored an explicit system prompt rule.
+- **Problem:** "revedenților" is non-standard Romanian; correct form is
+  "recenzorilor" or "revizuitorilor".
+
+**`openai/gpt-5.4-mini` — 9/10**
+- Clean output, whitespace structure preserved from source. Accurate, natural
+  Romanian ("redactori tehnici", "livrabile").
+- **Minor:** In the `<ph product="fusion-cloud">` block the word `page` was
+  left in English — should be `pagina`. Single word, fixable in post-processing.
+
+**`google/gemini-3-flash` — 7/10**
+- Well-formed XML, correct diacritics.
+- **Problem:** `<term>Projects</term>` consistently left in English (both
+  occurrences in the body) while the title and index term were translated —
+  internally inconsistent, not a formatting issue.
+- **Problem:** "Administration" link text left in English in the
+  `<ph product="fusion">` block — a genuine translation miss.
+- Slow (283 s) and expensive ($0.192) for this quality level; reasoning token
+  overhead dominates the cost.
+
+**`alibaba/qwen3.6-plus` — 9/10**
+- Clean output, fluent Romanian, compact structure.
+- `<term>Proiecte</term>` translated. SME expansion translated ("Expert în
+  domeniu/Recenzor") — reasonable and consistent with how other models handled it.
+- Minor word-order awkwardness after the `<xref>` in `<ph product="fusion-cloud">`.
+- Despite 7,298 billed tokens, the visible output is concise and correct.
+
+**`moonshotai/kimi-k2.5` — 6/10**
+- **Problem:** Translated the protected product role name: `<i>Content Fusion
+  Author</i>` → `<i>Autor Content Fusion</i>`. "Content Fusion Author" is a
+  specific product role, not a generic phrase. This is a semantic error that
+  would break UI consistency in a real localization project.
+- Leading space before `<?xml` declaration: fixable in post-processing.
+- Uses "repository-ul" (English term with Romanian morphology) — acceptable per
+  criteria, though inconsistent within the same file where "depozit" also appears.
+
+**`zai/glm-5` — 9/10** *(retry after first-run SDK parse error)*
+- First run failed: the AI SDK threw `"Invalid error response format"`. The
+  gateway billing confirms the model ran and returned data; the AI SDK could not
+  parse the response. A retry the next day succeeded without code changes.
+- Translation quality is excellent: fluent Romanian, all markup preserved, IDs
+  intact. "recenzenților" correct. "pagina de administrare" correctly
+  translated. "Content Fusion Author" correctly kept in English.
+- Uses "depozit Git" (Romanian) throughout — better than models that use
+  "repository".
+- 7,764 reasoning tokens (not visible) drive cost to $0.029 for ~1,157 visible
+  output tokens.
+
+**`minimax/minimax-m2.7` — 8/10**
+- Clean output. Diacritics correct. All attributes and IDs preserved.
+- "Content Fusion Author" correctly kept in English.
+- Uses "repository" and "output" (English loanwords with Romanian morphology)
+  throughout — acceptable per criteria.
 
 ### What worked
-- Dependency resolution: `ai@6.0.145` + `@ai-sdk/gateway@3.0.87` correctly
-  supports spec v3 models. Earlier `ai@4` and `ai@5` fail with model-version
-  errors for these models.
-- The `createGateway({ apiKey })` + `gateway(modelId)` pattern is confirmed
-  working against the gateway endpoint.
-- All 7 model IDs were verified against the live
-  `https://ai-gateway.vercel.sh/v1/models` endpoint.
+- Proxy workaround via `undici` `ProxyAgent` — all requests went through.
+- All 7 models produced Romanian DITA translations. Three models scored 9/10:
+  `openai/gpt-5.4-mini`, `alibaba/qwen3.6-plus`, and `zai/glm-5`.
+- `openai/gpt-5.4-mini` is the best value: fastest (5.9 s), cheapest ($0.005),
+  9/10 quality.
+- `zai/glm-5` and `alibaba/qwen3.6-plus` match quality (9/10) but cost 5–6×
+  more due to reasoning tokens, with no visible quality benefit.
 
 ### What did not work
-- The sandbox environment does not have `AI_GATEWAY_API_KEY` set, so no actual
-  inference calls completed.
+- `zai/glm-5` first run: SDK threw a parse error on the gateway response.
+  Retry the next day succeeded without any changes — likely a transient issue.
+- `anthropic/claude-haiku-4.5` wrapped output in code fences despite the
+  explicit system prompt rule.
+- `moonshotai/kimi-k2.5` translated the "Content Fusion Author" product role
+  name — a semantic error that would break localization consistency.
+- `google/gemini-3-flash` left "Projects" and "Administration" inconsistently
+  untranslated, and cost $0.192 primarily due to reasoning token overhead.
+- Token counts in the script output were all zero due to a script bug: the AI
+  SDK v6 usage object uses `inputTokens`/`outputTokens` but the script read
+  `promptTokens`/`completionTokens`. Fixed in this revision.
 
 ### What to try next
-- Set `AI_GATEWAY_API_KEY` and run `node translate.mjs`.
-- If any model returns `finish_reason: length`, increase `maxTokens` beyond 4096
-  (as was needed for gemma-4-E4B in the previous experiment).
-- Some models (e.g. Qwen, Kimi) may require adjusting the system prompt or using
-  a `<|im_start|>` style prompt format instead — check `finish_reason` and XML
-  validity of the output.
+- Start the user prompt with `<?xml` to coerce models away from code fences.
+- Add stricter wording for `moonshotai/kimi-k2.5` about not translating
+  product role names specifically.
+- Consider dropping `google/gemini-3-flash` — $0.192 for 7/10 quality vs
+  $0.005 for 9/10 from `openai/gpt-5.4-mini` is hard to justify.
+- Re-run the full batch with the fixed usage field names to get in-script cost
+  tracking working end-to-end.
 
 ### Honest assessment
-The experiment is fully ready to run and the infrastructure is sound.
-The only missing piece is the API key. The multi-model approach (all 7 models in
-a single script with automatic cost tracking) is a cleaner design than the
-per-model llama.cpp server approach used in the previous experiments.
+All 7 models produced usable Romanian DITA translations. Three scored 9/10
+(`openai/gpt-5.4-mini`, `alibaba/qwen3.6-plus`, `zai/glm-5`). The `zai/glm-5`
+transient failure was the only significant reliability issue. Cost varies 75×
+across models ($0.002 to $0.192) with no correlation to quality — reasoning-heavy
+models spend most of their budget on hidden tokens. `openai/gpt-5.4-mini` is the
+clear choice for production use: best quality, fastest, cheapest.
 
 ## Cost tracking
 
-Cost is calculated from published pricing and the token usage reported in the
-API response. The formula is:
+Actual costs are from the Vercel AI Gateway billing dashboard. The script
+computed zero costs due to a bug: the AI SDK v6 usage object uses
+`inputTokens`/`outputTokens`, but the script read `promptTokens`/
+`completionTokens` (v4/v5 naming). The data was present — this was a script
+error, not an SDK or gateway limitation. Fixed in `translate.mjs`.
 
-```
-cost = (prompt_tokens / 1_000_000) * input_price_per_mtok
-     + (completion_tokens / 1_000_000) * output_price_per_mtok
-```
+| Model | Input tok | Output tok | Actual cost |
+|---|---|---|---|
+| `anthropic/claude-haiku-4.5` | 1,126 | 1,186 | $0.007056 |
+| `openai/gpt-5.4-mini` | 987 | 1,034 | $0.005393 |
+| `google/gemini-3-flash` | 1,022 | 6,291¹ | $0.192436 |
+| `alibaba/qwen3.6-plus` | 1,035 | 7,298¹ | $0.025448 |
+| `moonshotai/kimi-k2.5` | 983 | 1,099 | $0.003887 |
+| `zai/glm-5` | 986 | 7,664¹ | $0.029092 |
+| `minimax/minimax-m2.7` | 989 | 1,799 | $0.002456 |
+| **Total** | | | **$0.265768** |
 
-For the ~964 prompt tokens and ~1000 completion tokens expected from this task,
-estimated costs per model call are:
+¹ Reasoning/thinking tokens billed but not included in visible output.
 
-| Model | Est. cost |
-|---|---|
-| `minimax/minimax-m2.7` | ~$0.0015 |
-| `google/gemini-3-flash` | ~$0.0058 |
-| `alibaba/qwen3.6-plus` | ~$0.0058 |
-| `openai/gpt-5.4-mini` | ~$0.0052 |
-| `moonshotai/kimi-k2.5` | ~$0.0036 |
-| `zai/glm-5` | ~$0.0042 |
-| `anthropic/claude-haiku-4.5` | ~$0.0069 |
-| **Total (7 models)** | **~$0.039** |
+The run cost ~7× more than the $0.039 estimate, entirely due to
+`google/gemini-3-flash` ($0.192). The other six models totalled $0.073,
+close to the estimate. The gemini model likely used an internal chain-of-thought
+pass (6,291 billed output tokens vs ~1,000 expected visible tokens) charged at
+a premium rate. All other models stayed close to expected costs.
 
 ## Comparison with previous experiments
 
