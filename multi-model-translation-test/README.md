@@ -4,7 +4,7 @@ This experiment repeats the `udocker-translategemma` / `gemma4-translation-exper
 workflow but replaces local llama.cpp inference with cloud models accessed through the
 **Vercel AI Gateway** (`@ai-sdk/gateway` v3, `ai` v6).
 
-Seven models are tested in a single automated pass:
+Nine models are tested across two runs:
 
 | Gateway model ID | Provider | Approx. price (input / output per MTok) |
 |---|---|---|
@@ -15,6 +15,8 @@ Seven models are tested in a single automated pass:
 | `moonshotai/kimi-k2.5` | Moonshot AI | $0.60 / $3.00 |
 | `zai/glm-5` | Zhipu AI (Z.AI) | $1.00 / $3.20 |
 | `minimax/minimax-m2.7` | MiniMax | $0.30 / $1.20 |
+| `google/gemma-4-26b-a4b-it` | Google | $0.13 / $0.40 |
+| `google/gemma-4-31b-it` | Google | $0.14 / $0.40 |
 
 Model IDs were confirmed from the live Vercel AI Gateway models endpoint
 (`https://ai-gateway.vercel.sh/v1/models`).
@@ -67,8 +69,7 @@ results/
     translated.dita                     # extracted Romanian DITA XML
     response.json                       # tokens, cost, finish_reason, full text
   openai_gpt-5-4-mini/
-    translated.dita
-    response.json
+    ...
   google_gemini-3-flash/
     ...
   alibaba_qwen3-6-plus/
@@ -78,6 +79,10 @@ results/
   zai_glm-5/
     ...
   minimax_minimax-m2-7/
+    ...
+  google_gemma-4-26b-a4b-it/
+    ...
+  google_gemma-4-31b-it/
     ...
 ```
 
@@ -291,14 +296,129 @@ close to the estimate. The gemini model likely used an internal chain-of-thought
 pass (6,291 billed output tokens vs ~1,000 expected visible tokens) charged at
 a premium rate. All other models stayed close to expected costs.
 
+## Gemma 4 run (2026-04-03)
+
+Both Gemma 4 models (`google/gemma-4-26b-a4b-it` and `google/gemma-4-31b-it`) were added to
+`translate.mjs` and run in a separate pass using CLI model selection:
+
+```bash
+node translate.mjs google/gemma-4-26b-a4b-it google/gemma-4-31b-it
+```
+
+### Results
+
+| Model | Input tok | Output tok | Total cost | Elapsed | Score |
+|---|---|---|---|---|---|
+| `google/gemma-4-26b-a4b-it` | 1,089 | 1,022 | $0.000550 | 88.6 s | 7/10 |
+| `google/gemma-4-31b-it` | 1,089 | 1,034 | $0.000566 | 18.1 s | 7/10 |
+
+Both models ran successfully (finish_reason: stop). No proxy or SDK issues.
+
+### Translation quality
+
+**`google/gemma-4-26b-a4b-it` — 7/10**
+
+- Valid XML structure throughout. The `<ul>` stays inside its `<p>` — fixing the critical
+  structural bug seen in the local Gemma 4 E4B run.
+- No invented IDs (another regression from the local run that is absent here).
+- Diacritics correct. "Content Fusion Author" correctly preserved in English.
+- Consistent: `<term>Projects</term>` kept in English as a feature name; section title also
+  uses "Projects" in English — internally consistent, even if technically it could be
+  translated.
+- **Problem (Medium):** `<xref href="cf-enterprise-configuration.dita">Administration
+  page</xref>` — "Administration page" left in English; should be "pagina de administrare".
+- **Problem (Minor):** In the `<ph product="fusion-cloud">` block the word order is swapped:
+  output is `pagina <xref .../>` but source order is `<xref .../> page`. The Romanian text
+  lands before the element instead of after. Fixable in post-processing.
+- Very slow: 88.6 s for a cloud call — likely heavy inference load on the A4B variant.
+
+**`google/gemma-4-31b-it` — 7/10**
+
+- Valid XML structure. No invented IDs. Diacritics correct.
+- "Administration page" correctly translated to "pagina de Administrare" ✓
+- Correct word order in the `<ph product="fusion-cloud">` block ✓
+- "Content Fusion Author" correctly preserved in English ✓
+- **Problem (Medium):** `<indexterm>Project review tasks</indexterm>` — left in English;
+  source is human-readable text that should have been translated.
+- **Problem (Medium):** Inconsistent treatment of "Projects": the `<term>Projects</term>`
+  inline is kept in English (correct for a feature name) but the section title and
+  `<li><b>Projects</b>` are both rendered as "Proiecte" (Romanian). Same term translated
+  differently within the same document.
+- Fast: 18.1 s — significantly faster than the 26B A4B variant despite being the larger model.
+
+### Cost comparison (all 9 models)
+
+| Model | Input tok | Output tok | Total cost | Elapsed | Score |
+|---|---|---|---|---|---|
+| `anthropic/claude-haiku-4.5` | 1,126 | 1,186 | $0.007056 | 8.3 s | 7/10 |
+| `openai/gpt-5.4-mini` | 987 | 1,034 | $0.005393 | 5.9 s | 9/10 |
+| `google/gemini-3-flash` | 1,022 | 6,291¹ | $0.192436 | 283.0 s | 7/10 |
+| `alibaba/qwen3.6-plus` | 1,035 | 7,298¹ | $0.025448 | 130.3 s | 9/10 |
+| `moonshotai/kimi-k2.5` | 983 | 1,099 | $0.003887 | 9.9 s | 6/10 |
+| `zai/glm-5` | 986 | 8,921¹ | $0.029092 | 198.2 s | 9/10 |
+| `minimax/minimax-m2.7` | 989 | 1,799 | $0.002456 | 41.2 s | 8/10 |
+| `google/gemma-4-26b-a4b-it` | 1,089 | 1,022 | $0.000550 | 88.6 s | 7/10 |
+| `google/gemma-4-31b-it` | 1,089 | 1,034 | $0.000566 | 18.1 s | 7/10 |
+
+¹ Includes reasoning/thinking tokens billed but not visible in output.
+
+At $0.00055–$0.00057 per call, the Gemma 4 models are the cheapest in the set by a factor of
+4–350×. The 31B is unexpectedly 5× faster than the 26B A4B variant at the same quality level.
+
+### What worked
+
+- Both models produced valid Romanian DITA XML with no structural bugs (improvement over
+  local Gemma 4 E4B which broke the `<ul>`/`<p>` nesting).
+- `google/gemma-4-31b-it` correctly translated the "Administration page" xref text and
+  placed text fragments in the right order within `<ph>` blocks.
+- Extremely low cost — a full production document batch would cost a fraction of a cent.
+- CLI model filtering (`node translate.mjs model1 model2`) worked cleanly; existing results
+  for other models were not overwritten.
+
+### What did not work
+
+- `google/gemma-4-26b-a4b-it`: left "Administration page" in English and reversed word
+  order in the `fusion-cloud` conditional block.
+- `google/gemma-4-31b-it`: failed to translate the `<indexterm>` element and translated
+  "Projects" inconsistently (feature name vs section heading vs list item).
+- `google/gemma-4-26b-a4b-it`: very slow (88.6 s) for a cloud model compared to 18.1 s
+  for the 31B — the A4B quantization may be less well-optimized on the gateway hardware.
+- Neither model reached the 9/10 quality bar set by `openai/gpt-5.4-mini`,
+  `alibaba/qwen3.6-plus`, and `zai/glm-5`.
+
+### What to try next
+
+- Prompt the model to start output with `<?xml` to prevent any possible code-fence wrapping.
+- Add an explicit rule: "Translate `<indexterm>` text content as you would any other
+  human-readable text."
+- Add a rule: "Use a single consistent Romanian translation for feature names like
+  `<term>Projects</term>` throughout the document."
+- Run `google/gemma-4-31b-it` on a larger/more complex topic to see if the inconsistency
+  worsens at scale.
+- Re-test `google/gemma-4-26b-a4b-it` at a different time to see if the 88 s latency was a
+  transient load issue.
+
+### Honest assessment
+
+Gemma 4 via the Vercel AI Gateway is dramatically cheaper than every other model tested
+($0.00055 vs next-cheapest $0.0025 for minimax-m2.7) and fixed the critical XML structural
+bugs seen in the local Gemma 4 E4B run. However, both cloud variants score 7/10 — the same
+as Claude Haiku 4.5 and Gemini 3 Flash — due to distinct per-model errors (missed
+translation, inconsistency, or word-order swaps). At this quality level, `openai/gpt-5.4-mini`
+remains the better production choice: 9/10 quality at $0.005 vs 7/10 at $0.0006 is a
+compelling quality/cost trade-off in either direction depending on the use case. For bulk
+preprocessing where 7/10 is acceptable and a human reviewer will post-edit, Gemma 4 31B at
+~$0.0006 per topic is very attractive.
+
 ## Comparison with previous experiments
 
-| Dimension | translategemma-4b | gemma-4-E4B | This experiment |
-|---|---|---|---|
-| Infrastructure | udocker + llama.cpp | Source-built llama.cpp | Vercel AI Gateway |
-| Model source | Local GGUF (2.4 GiB) | Local GGUF (5.34 GiB) | Cloud API |
-| Models tested | 1 | 1 | 7 |
-| Cost | Hardware only | Hardware only | ~$0.039 total |
-| Setup complexity | High (udocker, GGUF download) | Very high (cmake build) | Low (npm install) |
-| Latency | 5–7 tok/s generation | 7 tok/s generation | Network-bound |
-| Cost tracking | N/A | N/A | Automatic |
+| Dimension | translategemma-4b | gemma-4-E4B (local) | Run 1 (7 models) | Run 2 (Gemma 4 cloud) |
+|---|---|---|---|---|
+| Infrastructure | udocker + llama.cpp | Source-built llama.cpp | Vercel AI Gateway | Vercel AI Gateway |
+| Model source | Local GGUF (2.4 GiB) | Local GGUF (5.34 GiB) | Cloud API | Cloud API |
+| Models tested | 1 | 1 | 7 | 2 |
+| Cost | Hardware only | Hardware only | ~$0.266 total | $0.001 total |
+| Setup complexity | High (udocker, GGUF download) | Very high (cmake build) | Low (npm install) | Low (already installed) |
+| Latency | 5–7 tok/s generation | 7 tok/s generation | Network-bound | Network-bound |
+| Cost tracking | N/A | N/A | Automatic | Automatic |
+| Best score | N/A | ~7/10 | 9/10 (gpt-5.4-mini) | 7/10 (both models) |
