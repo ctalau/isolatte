@@ -1,0 +1,6038 @@
+[
+  {
+    "term": "Review Task",
+    "category": "FEATURE",
+    "count": 35,
+    "topics": [
+      "overview",
+      "platform-user-roles",
+      "cf-profile-settings",
+      "content_fusion_user_interface",
+      "cf-projects",
+      "cf-projects-workspace_publications_view",
+      "cf-projects-workspace_files_view",
+      "cf-projects-workspace_changes_view",
+      "cf-projects-review-tasks",
+      "cf-projects-repository",
+      "cf-projects-publications",
+      "cf-projects-settings",
+      "review-tasks-intro",
+      "cf-non-project-review-tasks",
+      "content_fusion_task_details",
+      "cf-task-files",
+      "cf-task-reviews-view",
+      "cf-how-to-find-reviews-where-mentioned",
+      "cf-review-task-comment-mentions-notifications",
+      "sharing_tasks_with_reviewers",
+      "communicating_with_the_author",
+      "assign_task_to_new_owner",
+      "finishing_tasks",
+      "deleting_tasks",
+      "CF-task-states-user-roles",
+      "cf-using-in-oxygen",
+      "cf-configure-server-address-property-file",
+      "cf-author-experience-user-role",
+      "cf-admin-page-users",
+      "cf-enterprise-backups",
+      "cf-disk-space",
+      "cf-enterprise-unistall",
+      "cf-organization-settings",
+      "known_issues",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Reviewer",
+    "category": "ROLE",
+    "count": 20,
+    "topics": [
+      "overview",
+      "cf-profile-settings",
+      "content_fusion_user_interface",
+      "cf-projects-workspace_changes_view",
+      "cf-projects-review-tasks",
+      "making_changes_to_uploaded_files",
+      "review-tasks-intro",
+      "cf-review-tasks-projects",
+      "content_fusion_task_details",
+      "cf-task-settings",
+      "cf-review-task-comment-mentions-notifications",
+      "sharing_tasks_with_reviewers",
+      "communicating_with_the_author",
+      "cf-concurrent-editing",
+      "assign_task_to_new_owner",
+      "CF-task-states-user-roles",
+      "cf-custom-frameworks",
+      "cf-author-experience-user-role",
+      "cf-admin-page-general",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "task owner",
+    "category": "ROLE",
+    "count": 14,
+    "topics": [
+      "cf-projects-review-tasks",
+      "making_changes_to_uploaded_files",
+      "review-tasks-intro",
+      "content_fusion_task_details",
+      "cf-task-files",
+      "cf-review-task-comment-mentions-notifications",
+      "sharing_tasks_with_reviewers",
+      "cf-new-task-from-interface",
+      "cf-concurrent-editing",
+      "assign_task_to_new_owner",
+      "finishing_tasks",
+      "cf-closing-tasks",
+      "cf-admin-page-general",
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Personal Workspace",
+    "category": "UI_ELEMENT",
+    "count": 13,
+    "topics": [
+      "cf-projects",
+      "cf-projects-workspace",
+      "cf-projects-workspace_publications_view",
+      "CF-dita-map-tree-editor",
+      "cf-projects-workspace_files_view",
+      "cf-projects-workspace_changes_view",
+      "cf-projects-workspace_problems_view",
+      "cf-projects-workspace_search_view",
+      "cf-projects-repository",
+      "cf-projects-settings",
+      "cf-how-to-find-reviews-where-mentioned",
+      "cf-review-task-comment-mentions-notifications",
+      "cf-disk-space"
+    ]
+  },
+  {
+    "term": "Project",
+    "category": "FEATURE",
+    "count": 13,
+    "topics": [
+      "cf-projects",
+      "cf-projects-workspace",
+      "cf-projects-publications",
+      "cf-projects-publishing-execution-status",
+      "review-tasks-intro",
+      "cf-review-task-comment-mentions-notifications",
+      "cf-author-experience-user-role",
+      "cf-admin-page-users",
+      "cf-admin-page-git",
+      "cf-disk-space",
+      "cf-organization-members",
+      "cf-organization-settings",
+      "known_issues"
+    ]
+  },
+  {
+    "term": "visual editor",
+    "category": "UI_ELEMENT",
+    "count": 13,
+    "topics": [
+      "cf-projects-workspace",
+      "cf-projects-workspace_files_view",
+      "cf-projects-repository",
+      "making_changes_to_uploaded_files",
+      "cf-task-files",
+      "cf-task-activity",
+      "cf-task-search",
+      "cf-task-reviews-view",
+      "cf-how-to-find-reviews-where-mentioned",
+      "communicating_with_the_author",
+      "cf-new-task-from-interface",
+      "cf-customizing-options",
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Deliverable",
+    "category": "CONCEPT",
+    "count": 12,
+    "topics": [
+      "overview",
+      "cf-projects",
+      "cf-projects-workspace_publications_view",
+      "cf-projects-deliverables",
+      "cf-amazon-s3-connector",
+      "cf-netlify-connector",
+      "cf-sftp-connector",
+      "cf-review-tasks-projects",
+      "cf-configure-task-executor-container",
+      "cf-configure-publishing-main-container",
+      "cf-disk-space",
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "DITA map",
+    "category": "CONCEPT",
+    "count": 12,
+    "topics": [
+      "cf-projects",
+      "cf-projects-workspace_publications_view",
+      "CF-dita-map-tree-editor",
+      "cf-projects-repository",
+      "cf-projects-deliverables",
+      "cf-projects-publications",
+      "making_changes_to_uploaded_files",
+      "WA-dita-topic-doc-type",
+      "WA-dita-map-doc-type",
+      "cf-review-tasks-projects",
+      "cf-disk-space",
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise",
+    "category": "FEATURE",
+    "count": 11,
+    "topics": [
+      "cf-linux",
+      "cf-enterprise-backups",
+      "cf-set-web-author-system-property",
+      "cf-increase-memory",
+      "cf-configure-publishing-main-container",
+      "CF-set-Web-Author-logging",
+      "cf-google-auth",
+      "cf-github-auth",
+      "cf-upgrading",
+      "cf-enterprise-unistall",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Git repository",
+    "category": "CONCEPT",
+    "count": 11,
+    "topics": [
+      "overview",
+      "content_fusion_user_interface",
+      "cf-projects",
+      "cf-projects-review-tasks",
+      "cf-projects-deliverables",
+      "cf-projects-settings",
+      "cf-review-tasks-projects",
+      "CF-task-states-user-roles",
+      "cf-disk-space",
+      "cf-organization-members",
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Administration Page",
+    "category": "UI_ELEMENT",
+    "count": 9,
+    "topics": [
+      "cf-projects-members",
+      "cf-review-tasks-projects",
+      "sharing_tasks_with_reviewers",
+      "CF-task-states-user-roles",
+      "cf-enterprise-configuration",
+      "cf-oidc-auth",
+      "cf-admin-page-maintenance",
+      "cf-upgrading",
+      "cf-change-admin-password"
+    ]
+  },
+  {
+    "term": "Author",
+    "category": "ROLE",
+    "count": 8,
+    "topics": [
+      "cf-ai-positron-overview",
+      "cf-projects-review-tasks",
+      "cf-projects-members",
+      "CF-task-states-user-roles",
+      "cf-author-experience-user-role",
+      "cf-integrate-ai-positron-overview",
+      "cf-organization-members",
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Collaborator",
+    "category": "ROLE",
+    "count": 8,
+    "topics": [
+      "cf-profile-settings",
+      "cf-task-activity",
+      "cf-review-task-comment-mentions-notifications",
+      "sharing_tasks_with_reviewers",
+      "assign_task_to_new_owner",
+      "finishing_tasks",
+      "cf-configure-server-address-property-file",
+      "cf-security"
+    ]
+  },
+  {
+    "term": "My Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 8,
+    "topics": [
+      "account_management",
+      "content_fusion_user_interface",
+      "cf-projects-review-tasks",
+      "content_fusion_task_details",
+      "cf-task-settings",
+      "cf-new-task-from-interface",
+      "assign_task_to_new_owner",
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Content Fusion Administration page",
+    "category": "UI_ELEMENT",
+    "count": 7,
+    "topics": [
+      "cf-admin-page-general",
+      "cf-admin-page-license",
+      "cf-admin-page-users",
+      "cf-admin-page-git",
+      "cf-admin-page-mail",
+      "cf-admin-page-authentication",
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Projects",
+    "category": "FEATURE",
+    "count": 7,
+    "topics": [
+      "platform-user-roles",
+      "content_fusion_user_interface",
+      "CF-dita-map-tree-editor",
+      "cf-review-tasks-projects",
+      "CF-task-states-user-roles",
+      "cf-organization-subscription",
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Subject Matter Expert",
+    "category": "ROLE",
+    "count": 7,
+    "topics": [
+      "overview",
+      "platform-user-roles",
+      "cf-review-tasks-projects",
+      "CF-task-states-user-roles",
+      "cf-admin-page-users",
+      "cf-organization-members",
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Content Fusion Author",
+    "category": "ROLE",
+    "count": 6,
+    "topics": [
+      "overview",
+      "platform-user-roles",
+      "cf-projects",
+      "cf-review-tasks-projects",
+      "CF-task-states-user-roles",
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "Deliverables",
+    "category": "FEATURE",
+    "count": 6,
+    "topics": [
+      "cf-projects-publications",
+      "cf-publishing-connectors",
+      "cf-projects-publishing-execution-status",
+      "cf-projects-publishing-metrics",
+      "CF-task-states-user-roles",
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Delete",
+    "category": "ACTION",
+    "count": 5,
+    "topics": [
+      "cf-projects-review-tasks",
+      "cf-projects-publications",
+      "cf-publishing-connectors",
+      "content_fusion_task_details",
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "LDAP",
+    "category": "CONCEPT",
+    "count": 5,
+    "topics": [
+      "cf-admin-page-authentication",
+      "ldap_troubleshoot",
+      "cf-security",
+      "cf-configure-firewall",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Organization Administrator",
+    "category": "ROLE",
+    "count": 5,
+    "topics": [
+      "cf-organization-members",
+      "cf-organization-subscription",
+      "cf-organization-authentication",
+      "cf-organization-security",
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Publication",
+    "category": "FEATURE",
+    "count": 5,
+    "topics": [
+      "cf-projects",
+      "cf-projects-workspace_publications_view",
+      "cf-projects-workspace_problems_view",
+      "cf-projects-deliverables",
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "repository",
+    "category": "CONCEPT",
+    "count": 5,
+    "topics": [
+      "cf-projects-workspace",
+      "cf-projects-workspace_files_view",
+      "cf-projects-workspace_changes_view",
+      "cf-projects-workspace-conflict-resolution",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Task Settings page",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details",
+      "cf-task-settings",
+      "cf-new-task-from-interface",
+      "cf-concurrent-editing"
+    ]
+  },
+  {
+    "term": "Administrator",
+    "category": "ROLE",
+    "count": 4,
+    "topics": [
+      "account_management",
+      "cf-profile-settings",
+      "CF-task-states-user-roles",
+      "cf-disk-space"
+    ]
+  },
+  {
+    "term": "Branch",
+    "category": "CONCEPT",
+    "count": 4,
+    "topics": [
+      "cf-projects-workspace_changes_view",
+      "cf-projects-workspace-conflict-resolution",
+      "cf-projects-review-tasks",
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Build",
+    "category": "FEATURE",
+    "count": 4,
+    "topics": [
+      "cf-projects-deliverables",
+      "cf-publishing-connectors",
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "Change Tracking",
+    "category": "FEATURE",
+    "count": 4,
+    "topics": [
+      "cf-task-settings",
+      "cf-new-task-from-interface",
+      "cf-admin-page-webauthor",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Changes view",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "cf-projects-workspace",
+      "cf-projects-workspace_files_view",
+      "cf-projects-workspace_incoming_changes",
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Commit",
+    "category": "ACTION",
+    "count": 4,
+    "topics": [
+      "cf-projects-workspace_changes_view",
+      "cf-projects-workspace-conflict-resolution",
+      "cf-projects-repository",
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise Administration Page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "cf-custom-frameworks",
+      "cf-upload-plugins",
+      "cf-security",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "DITA project",
+    "category": "CONCEPT",
+    "count": 4,
+    "topics": [
+      "content_fusion_user_interface",
+      "cf-projects",
+      "cf-projects-workspace_problems_view",
+      "cf-review-tasks-projects"
+    ]
+  },
+  {
+    "term": "Owner",
+    "category": "ROLE",
+    "count": 4,
+    "topics": [
+      "cf-projects-members",
+      "assign_task_to_new_owner",
+      "CF-task-states-user-roles",
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion Connector",
+    "category": "FEATURE",
+    "count": 4,
+    "topics": [
+      "platform-user-roles",
+      "cf-using-in-oxygen",
+      "cf-configure-server-address-property-file",
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Profile settings page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "account_management",
+      "cf-profile-settings",
+      "content_fusion_user_interface",
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Projects page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "platform-user-roles",
+      "content_fusion_user_interface",
+      "content_fusion_task_details",
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Review item",
+    "category": "CONCEPT",
+    "count": 4,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "cf-task-search",
+      "cf-task-reviews-view",
+      "cf-how-to-find-reviews-where-mentioned"
+    ]
+  },
+  {
+    "term": "server administrator",
+    "category": "ROLE",
+    "count": 4,
+    "topics": [
+      "cf-linux",
+      "cf-custom-frameworks",
+      "cf-upload-plugins",
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "Task",
+    "category": "CONCEPT",
+    "count": 4,
+    "topics": [
+      "sharing_tasks_with_reviewers",
+      "cf-new-task-from-interface",
+      "cf-security",
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Task Files page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details",
+      "cf-task-files",
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "visual editor page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details",
+      "cf-new-task-from-interface",
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Web Author tab",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "topics": [
+      "cf-custom-frameworks",
+      "cf-upload-plugins",
+      "cf-admin-page-webauthor",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Account lockout",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "account_management",
+      "cf-admin-page-authentication",
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Add message",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "making_changes_to_uploaded_files",
+      "cf-task-activity",
+      "communicating_with_the_author"
+    ]
+  },
+  {
+    "term": "Bookmap",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace_publications_view",
+      "CF-dita-map-tree-editor",
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Client ID",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-oidc-auth",
+      "cf-github-auth",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Client Secret",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-oidc-auth",
+      "cf-github-auth",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Commit Changes",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace",
+      "cf-projects-workspace_files_view",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Content Completion Assistant",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "making_changes_to_uploaded_files",
+      "WA-dita-topic-doc-type",
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Content Fusion",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "ldap_troubleshoot",
+      "cf-increasing-available-disk-space",
+      "cf-change-admin-password"
+    ]
+  },
+  {
+    "term": "Content Fusion interface",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-google-auth",
+      "cf-github-auth",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Context publication",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace_changes_view",
+      "cf-projects-review-tasks",
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "Custom framework",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-enterprise-server",
+      "cf-custom-frameworks",
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Deliverable build process",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "cf-amazon-s3-connector",
+      "cf-netlify-connector",
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "Deliverables page",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-amazon-s3-connector",
+      "cf-netlify-connector",
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "DITA",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-search-syntax-dita",
+      "making_changes_to_uploaded_files",
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "DITAVAL filter",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace_publications_view",
+      "cf-projects-deliverables",
+      "cf-projects-publications"
+    ]
+  },
+  {
+    "term": "framework",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-author-experience-user-role",
+      "cf-admin-page-webauthor",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "GitHub authentication",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "account_management",
+      "cf-admin-page-authentication",
+      "cf-github-auth"
+    ]
+  },
+  {
+    "term": "Google authentication",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "account_management",
+      "cf-admin-page-authentication",
+      "cf-google-auth"
+    ]
+  },
+  {
+    "term": "In reviews tab",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "cf-how-to-find-reviews-where-mentioned",
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "Installation Kit",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "cf-enterprise-server",
+      "cf-linux",
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "Manage organization",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-organization-members",
+      "cf-organization-authentication",
+      "cf-organization-security"
+    ]
+  },
+  {
+    "term": "Manage Web Author",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-custom-frameworks",
+      "cf-upload-plugins",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Mention",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "cf-task-reviews-view",
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "OIDC",
+    "category": "CONCEPT",
+    "count": 3,
+    "topics": [
+      "account_management",
+      "cf-admin-page-authentication",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Oxygen XML Web Author Administration page",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-upload-plugins",
+      "cf-admin-page-webauthor",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Plugin",
+    "category": "FEATURE",
+    "count": 3,
+    "topics": [
+      "cf-enterprise-server",
+      "cf-upload-plugins",
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Publications side-view",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-profile-settings",
+      "cf-projects-workspace_publications_view",
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Restart Server",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-custom-frameworks",
+      "cf-upload-plugins",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Save Configuration",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-admin-page-authentication",
+      "cf-oidc-auth",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Sharing settings dialog box",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "sharing_tasks_with_reviewers",
+      "assign_task_to_new_owner",
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Upload output using a publishing connector",
+    "category": "ACTION",
+    "count": 3,
+    "topics": [
+      "cf-amazon-s3-connector",
+      "cf-netlify-connector",
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "Users Management tab",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-projects-members",
+      "CF-task-states-user-roles",
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "web-based editor",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "cf-set-web-author-system-property",
+      "cf-increase-memory",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Activity stream",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-settings",
+      "cf-concurrent-editing"
+    ]
+  },
+  {
+    "term": "Add to Review Task",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_files_view",
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "AI Positron",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "platform-user-roles",
+      "cf-ai-positron-overview"
+    ]
+  },
+  {
+    "term": "AI Positron View",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-ai-positron-overview",
+      "cf-integrate-ai-positron-overview"
+    ]
+  },
+  {
+    "term": "Amazon S3",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-publishing-connectors",
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "Assigned To Me tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Authentication tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-authentication",
+      "cf-security"
+    ]
+  },
+  {
+    "term": "AutoCorrect",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-customizing-options",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "Close review",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-closing-tasks",
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Cloud version",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-publishing-connectors",
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Concurrent Editing",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-task-files",
+      "cf-concurrent-editing"
+    ]
+  },
+  {
+    "term": "Content Fusion browser interface",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "sharing_tasks_with_reviewers",
+      "ldap_troubleshoot"
+    ]
+  },
+  {
+    "term": "Content Fusion Docs Web Platform",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-projects-deliverables",
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Content Fusion Project",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Content Fusion server",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-ai-positron-overview",
+      "cf-integrate-ai-positron-overview"
+    ]
+  },
+  {
+    "term": "Content Fusion Tasks Manager view",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "assign_task_to_new_owner",
+      "deleting_tasks"
+    ]
+  },
+  {
+    "term": "Delete account",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-profile-settings",
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Delete user",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-users",
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Deliverable build",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-publishing-execution-status",
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Demote",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "DITA content",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "CF-task-states-user-roles",
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "DITA Map Pane",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "WA-dita-topic-doc-type",
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "DITA map tree editor",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-profile-settings",
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "DITA Topic",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA-OT project file",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_publications_view",
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DocBook",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "making_changes_to_uploaded_files",
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Due Date",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "Email notification",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-profile-settings",
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "Enterprise server",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-configure-server-address-property-file",
+      "cf-enterprise-configuration"
+    ]
+  },
+  {
+    "term": "extension descriptor file",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-custom-frameworks",
+      "cf-upload-plugins"
+    ]
+  },
+  {
+    "term": "Files box",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-files",
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "Files header",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_files_view",
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Files side-pane",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Finalize My Review",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-task-files",
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Git",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-configure-firewall",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Git account",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects",
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Highlight",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "cf-task-reviews-view"
+    ]
+  },
+  {
+    "term": "In review",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "content_fusion_task_details",
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Key Definition",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "Key reference",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "left stripe",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-activity",
+      "cf-how-to-find-reviews-where-mentioned"
+    ]
+  },
+  {
+    "term": "License seat",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-organization-members",
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Log Out",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "account_management",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Mail tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-mail",
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Main visual editor",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-settings",
+      "cf-concurrent-editing"
+    ]
+  },
+  {
+    "term": "Maintenance Mode",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-maintenance",
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "Mark as integrated",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "content_fusion_task_details",
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Mentioned user filter",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-how-to-find-reviews-where-mentioned",
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "Merge",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_changes_view",
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Netlify",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-publishing-connectors",
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "New Document Template Wizard",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "WA-dita-topic-doc-type",
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "New Review Task page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_publications_view",
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "Non-Project Review Task",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "content_fusion_user_interface",
+      "cf-review-tasks-projects"
+    ]
+  },
+  {
+    "term": "Organization management interface",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-organization-security",
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Organization Settings page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-ai-positron-overview",
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Owned By Me tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Oxygen AI Positron",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Oxygen Styles Basket",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-projects-deliverables",
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "Pending Collaborator",
+    "category": "ROLE",
+    "count": 2,
+    "topics": [
+      "sharing_tasks_with_reviewers",
+      "assign_task_to_new_owner"
+    ]
+  },
+  {
+    "term": "Project Review Task",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "content_fusion_user_interface",
+      "cf-review-tasks-projects"
+    ]
+  },
+  {
+    "term": "Project Workspace",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "WA-dita-map-doc-type",
+      "cf-how-to-find-reviews-where-mentioned"
+    ]
+  },
+  {
+    "term": "Project-based review task",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Promote",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Publications Management page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_publications_view",
+      "cf-projects-publications"
+    ]
+  },
+  {
+    "term": "Publishing Connectors page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-deliverables",
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "publishing process",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-publishing-metrics",
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "Report Problem",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Request re-review",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Review closed",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "content_fusion_task_details",
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Review comment",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "Review Status Summary pop-up window",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Review Tasks Header Stripe",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-review-tasks",
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Reviews view",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-reviews-view",
+      "cf-how-to-find-reviews-where-mentioned"
+    ]
+  },
+  {
+    "term": "Save",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-mail",
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Schedule Build",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "server log",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "ldap_troubleshoot",
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Share button",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "sharing_tasks_with_reviewers",
+      "assign_task_to_new_owner"
+    ]
+  },
+  {
+    "term": "Single Sign-On",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-oidc-auth",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "SME License",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "platform-user-roles",
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "spell checker",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-customizing-options",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "SSL",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-mail",
+      "ldap_troubleshoot"
+    ]
+  },
+  {
+    "term": "task activity",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "cf-task-activity",
+      "communicating_with_the_author"
+    ]
+  },
+  {
+    "term": "Task Activity page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-task-activity",
+      "communicating_with_the_author"
+    ]
+  },
+  {
+    "term": "Task Executor container",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-projects-publishing-metrics",
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "task metadata",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-maintenance",
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "Task Search page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-search-syntax-dita",
+      "cf-task-search"
+    ]
+  },
+  {
+    "term": "Tasks Manager view",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "content_fusion_user_interface",
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Technical Writer",
+    "category": "ROLE",
+    "count": 2,
+    "topics": [
+      "content_fusion_user_interface",
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "TEI",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "making_changes_to_uploaded_files",
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Toggle Change Tracking",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "content_fusion_task_details",
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Topic Reference",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "CF-dita-map-tree-editor",
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "Trusted host",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-admin-page-general",
+      "cf-organization-security"
+    ]
+  },
+  {
+    "term": "Upload File",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_files_view",
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "user profile",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-author-experience-user-role",
+      "cf-enterprise-unistall"
+    ]
+  },
+  {
+    "term": "User role",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "cf-profile-settings",
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "View deliverables",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "cf-projects-publications",
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Web Author",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "CF-set-Web-Author-logging",
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "WebHelp",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "overview",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Workspace Search View",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "cf-projects-workspace_search_view",
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "XHTML",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "making_changes_to_uploaded_files",
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Access Token",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects"
+    ]
+  },
+  {
+    "term": "Account management",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Activate",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "Add account",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Add button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "assign_task_to_new_owner"
+    ]
+  },
+  {
+    "term": "Add collaborator",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Add Comment",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Add Comment button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Add Member",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "Add message button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Add publication",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "admin page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "admin user",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "cf-change-admin-password"
+    ]
+  },
+  {
+    "term": "Administration Web UI",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Advanced Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "agentic AI workflow",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "AI Positron pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-integrate-ai-positron-overview"
+    ]
+  },
+  {
+    "term": "AI-powered feature",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Amazon S3 bucket",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-amazon-s3-connector"
+    ]
+  },
+  {
+    "term": "Amazon S3 connector",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-amazon-s3-connector"
+    ]
+  },
+  {
+    "term": "Announcement Banner",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Anonymize user",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "artifact",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Assign Me as Owner",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Association rule",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Authentication page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Authorization endpoint URL",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Authorization Server",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "Authorize",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "AuthorUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Auto-renewal",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "automatic build",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "backup",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "backup archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "Backup script",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-disk-space"
+    ]
+  },
+  {
+    "term": "Boolean Operator",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "Boosting",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "branch management",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "Branch merging",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Branch merging conflict resolution dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "build console",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "build metric",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "build package",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Build progress bar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "built-in review workflow",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "built-in storage",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Buy subscription",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Cancel deletion button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Change history",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Changed files only filter",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "chapter",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Clear Index button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "collaboration platform",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-using-in-oxygen"
+    ]
+  },
+  {
+    "term": "Collaborative Review",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "comment",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-task-reviews-view"
+    ]
+  },
+  {
+    "term": "Comment only",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "Commit graph",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Commit message",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Commit Update",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Compare with latest version",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Compare with previous version",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "comparison dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_incoming_changes"
+    ]
+  },
+  {
+    "term": "Configuration Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "Configure",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-publications"
+    ]
+  },
+  {
+    "term": "Configure DITA Context dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "Configure publication",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Confirmation dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "Conflict resolution",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Conflict resolution dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Conflicting change",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "conkeyref attribute",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Connect",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-configure-server-address-property-file"
+    ]
+  },
+  {
+    "term": "connector",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Connector Name",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-netlify-connector"
+    ]
+  },
+  {
+    "term": "Connector Type",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Content Author",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Content Completion list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Content Fusion Author License",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Content Fusion browser login page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Content Fusion Download webpage",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise server",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise virtual machine",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Content Fusion publication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-publications"
+    ]
+  },
+  {
+    "term": "Content Fusion Task Manager view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Content Fusion Visual Editor Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Content Fusion Web UI",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Content Security Policy",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Copy link button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Copy task link",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Create",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Create Database Backup",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Create new file",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Create publication",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "CSS Inspector pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "database backup",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Define Variable",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Delete folder",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "Delete Organization button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Delete Organization section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Delete project",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-settings"
+    ]
+  },
+  {
+    "term": "Delete publication",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Delete Relationship Column",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Delete Relationship Row",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Delete Task",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "deleting_tasks"
+    ]
+  },
+  {
+    "term": "deliverables management page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Deliverables Summary",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Deploy",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "deployment",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Destination branch",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Destination Folder",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "diff",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Discard changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Discard changes from all files",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Disk quota",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "DITA CMS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "DITA Context",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "DITA CSS style",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA document type",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA framework",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA key scope",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA Map Display Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "DITA Map toolbar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "DITA markup",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA schema",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "DITA source",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "DITA specialization",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-custom-frameworks"
+    ]
+  },
+  {
+    "term": "DITA Task",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "DITA validation",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITA XML project",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "DITAVAL context filter",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DITAVAL filtering file",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "DNS name",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-security"
+    ]
+  },
+  {
+    "term": "Documentation Folder",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-amazon-s3-connector"
+    ]
+  },
+  {
+    "term": "documentation review process",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Documents Storage container",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-proxy-setup"
+    ]
+  },
+  {
+    "term": "Done button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "assign_task_to_new_owner"
+    ]
+  },
+  {
+    "term": "Download",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Download task",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Duplicate & Edit",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Edit",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Edit account",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Edit in Author Mode",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Edit in Workspace",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "Edit Profiling Attributes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Edit Properties",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Edit Topic Content",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "EditContext",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "Editing and Publishing Security",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Editing and Publishing Security section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "editing mode",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "editing pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "editor pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Element Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "Email and Password Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Enable Concurrent Editing",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "Enable Sign Up",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Estimated remaining time",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "Execution Status",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "Execution Status page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "Field Grouping",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "file",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-new-task-from-interface"
+    ]
+  },
+  {
+    "term": "file change notification",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "File comparison view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "file repository",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "file tree pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace"
+    ]
+  },
+  {
+    "term": "Files pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "Files view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "Finalize Review button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "Finalized state",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Finalized widget",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Finish Integration",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "floating license model",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "floating licensing model",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "framework archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-custom-frameworks"
+    ]
+  },
+  {
+    "term": "framework extension mechanism",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Frameworks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-custom-frameworks"
+    ]
+  },
+  {
+    "term": "General Information section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "General tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Get password reset email",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Git Accounts tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Git Integration",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Git server",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-proxy-setup"
+    ]
+  },
+  {
+    "term": "Git service",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-git"
+    ]
+  },
+  {
+    "term": "Git working directory",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Git-based storage",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects"
+    ]
+  },
+  {
+    "term": "Git-based versioning control",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "GitHub",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "GitHub application",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-github-auth"
+    ]
+  },
+  {
+    "term": "GitLab",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "Google Fonts",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "Grant Task Access dialog",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "Hide Excluded Content",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "History tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Host Key fingerprint",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "HSTS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "HTML 5",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "HTTPS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "HTTPS certificate",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "HTTPS enabled for Content Fusion",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "HTTPS protocol",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "ime_interface",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "In content tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "In progress",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Include Publications",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Incoming change",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Incoming Commits",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_incoming_changes"
+    ]
+  },
+  {
+    "term": "Incoming commits widget",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace"
+    ]
+  },
+  {
+    "term": "Input Method Editor",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "Insert Relationship Column",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Insert Relationship Row",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Insert Relationship Table",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Inspect Styles",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Integrated",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Integrated task",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Integrating",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Invitation email",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Invite Member button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Issuer URI",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Java system property",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-set-web-author-system-property"
+    ]
+  },
+  {
+    "term": "JVM option",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-increase-memory"
+    ]
+  },
+  {
+    "term": "Keep dev changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Keep main changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Keep repository changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Keep workspace changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Key name",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Key scope",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "LDAP authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "ldap_troubleshoot"
+    ]
+  },
+  {
+    "term": "LDAP Authentication Settings",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "learned word",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Left Side Pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "License change notification",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "license management and statistics page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "license plan",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "License tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "Lifecycle Rule",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-amazon-s3-connector"
+    ]
+  },
+  {
+    "term": "Link With Git Repository dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-settings"
+    ]
+  },
+  {
+    "term": "Linked Git Repository",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-settings"
+    ]
+  },
+  {
+    "term": "Linux installation kit",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "Login page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "login screen",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "ldap_troubleshoot"
+    ]
+  },
+  {
+    "term": "Made by you tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Mail configuration",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-mail"
+    ]
+  },
+  {
+    "term": "Main Editing Pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Main Projects Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects"
+    ]
+  },
+  {
+    "term": "Maintenance tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Manage Deliverables",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Manage Deliverables button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Manage License button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "Manage Publications",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Manage Publications dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Manage subscription",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Manage Web Author button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Manual merge",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Map Reference",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Map type",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Mark as not integrated",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Markdown",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Member",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "Members list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Members page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "merge branch",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace"
+    ]
+  },
+  {
+    "term": "Merge button",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Merge changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Merge into current branch",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "merge suggested changes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Metrics page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Microsoft Entra ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "Move Down",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Move Up",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "My Review Task page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "My Review Tasks",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "named-user license model",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "Netlify connector",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-netlify-connector"
+    ]
+  },
+  {
+    "term": "New Connector button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "New Deliverable page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "New File",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "New File button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-new-task-from-interface"
+    ]
+  },
+  {
+    "term": "New Folder",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "New Publication button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publications"
+    ]
+  },
+  {
+    "term": "New Review Task",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "New Task button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-new-task-from-interface"
+    ]
+  },
+  {
+    "term": "OAuth",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "OAuth client ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-google-auth"
+    ]
+  },
+  {
+    "term": "OAuth2",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "OAuth2 Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "Okta",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "online editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Online Visual Editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "review-tasks-intro"
+    ]
+  },
+  {
+    "term": "OPE",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Open latest version",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Open latest version button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Open this version",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "OpenID Connect",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "options.xml",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Org-level role",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Organization account",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Organization administration area",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Organization Avatar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Organization deletion",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Organization Display Name",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Organization ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Organization Projects page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Organization storage quota",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Organization Subscription Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Outline side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "OwnerUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Oxygen AI Positron for Content Fusion",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-integrate-ai-positron-overview"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion Connector add-on",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "OXYGEN_JAVA_OPTS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-increase-memory"
+    ]
+  },
+  {
+    "term": "Paid subscription",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Password Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "PDF output deliverable",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "PEM format",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Pending",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Pending invitation",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-members"
+    ]
+  },
+  {
+    "term": "Perforce",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Permitted Email Addresses",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Personal Access Token",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-netlify-connector"
+    ]
+  },
+  {
+    "term": "Phrase Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "platform administrator",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "plugin archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-upload-plugins"
+    ]
+  },
+  {
+    "term": "Plugins page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-upload-plugins"
+    ]
+  },
+  {
+    "term": "PostgreSQL database dump",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "private project",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "Processing role",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "product expert",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Profile management",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Profile page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Profiling attribute",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Project Deliverable",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Project Deliverables page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Project Git Repo",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Project indexing data",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "Project Members page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "Project Repository page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "Project Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Project Settings page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-settings"
+    ]
+  },
+  {
+    "term": "project validation",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Projects Disk Usage table",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-projects"
+    ]
+  },
+  {
+    "term": "Proximity Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "Proxy setting",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "public project",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "publication context",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Publications Management dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Publications page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects"
+    ]
+  },
+  {
+    "term": "publishing build",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "publishing functionality",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Publishing Main Container",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "Publishing Pipeline",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Publishing Project",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects"
+    ]
+  },
+  {
+    "term": "Pull",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_incoming_changes"
+    ]
+  },
+  {
+    "term": "Pull button",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Pull Request",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Quick Fix",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "Re-index project content",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "read-only mode",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "real-time messaging mechanism",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "reCAPTCHA",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "Refresh",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Refresh Publications",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Register/Activate",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "registered users list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "Regular Expression Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "Regular Review Task",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Relationship Table submenu",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "remote modification",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "Remove collaborator button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Remove Reference",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "Renew Plan",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Reopen review",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Replace/Remove license key",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "Reply Notification",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "repository clone",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-metrics"
+    ]
+  },
+  {
+    "term": "Request a trial license key",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-license"
+    ]
+  },
+  {
+    "term": "Request access",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Request access button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Reset password",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Resolve conflicts",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_incoming_changes"
+    ]
+  },
+  {
+    "term": "Resolve conflicts button",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Restart Trial",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Restart validation",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Restore Database from Backup",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Results panel",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  },
+  {
+    "term": "Resume Editing button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "Review process",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Review Status",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Review task header stripe",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "review task owner",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "communicating_with_the_author"
+    ]
+  },
+  {
+    "term": "Review Tasks",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content_fusion_task_details"
+    ]
+  },
+  {
+    "term": "Review Tasks button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Reviewers Edit Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "ReviewerUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-author-experience-user-role"
+    ]
+  },
+  {
+    "term": "Reviews",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-reviews-view"
+    ]
+  },
+  {
+    "term": "Reviews side view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-search"
+    ]
+  },
+  {
+    "term": "Reviews side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "revision history",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Save merge result to a new branch",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "scheduled task",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-task-search"
+    ]
+  },
+  {
+    "term": "Search functionality",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-disk-space"
+    ]
+  },
+  {
+    "term": "Search in Task page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-search"
+    ]
+  },
+  {
+    "term": "Search Index",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-disk-space"
+    ]
+  },
+  {
+    "term": "Search side view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "Search side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Search view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-how-to-find-reviews-where-mentioned"
+    ]
+  },
+  {
+    "term": "Seat Usage Section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Security Option",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Security page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-security"
+    ]
+  },
+  {
+    "term": "Send Feedback",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Sender email address",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-mail"
+    ]
+  },
+  {
+    "term": "Settings Bandwidth Management",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "browser-compatibility"
+    ]
+  },
+  {
+    "term": "Settings page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "deleting_tasks"
+    ]
+  },
+  {
+    "term": "Settings view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-members"
+    ]
+  },
+  {
+    "term": "SFTP",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-firewall"
+    ]
+  },
+  {
+    "term": "SFTP connector",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "SFTP Server",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "Share",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-review-task-comment-mentions-notifications"
+    ]
+  },
+  {
+    "term": "Share Option",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "review-tasks-intro"
+    ]
+  },
+  {
+    "term": "Share Task",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "Shareable link",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "sharing_tasks_with_reviewers"
+    ]
+  },
+  {
+    "term": "SharePoint",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Show finalized review tasks link",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "finishing_tasks"
+    ]
+  },
+  {
+    "term": "Show integrated review task",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-closing-tasks"
+    ]
+  },
+  {
+    "term": "Show Logs",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-maintenance"
+    ]
+  },
+  {
+    "term": "Show Profiling Attributes",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "side-view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-activity"
+    ]
+  },
+  {
+    "term": "Sign Up tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Sign-up Option",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Single Sign-On Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Single Sign-On Authentication section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "Site ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-netlify-connector"
+    ]
+  },
+  {
+    "term": "Smart Paste",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Software-as-a-Service",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Source branch",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "SSH",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "SSH Private Key Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "SSL certificate",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-authentication"
+    ]
+  },
+  {
+    "term": "Start Integrating",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "CF-task-states-user-roles"
+    ]
+  },
+  {
+    "term": "Start Review Task",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-repository"
+    ]
+  },
+  {
+    "term": "STARTTLS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-mail"
+    ]
+  },
+  {
+    "term": "Stop",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Stop Auto-renewal",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Stop build",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "Stop button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-publishing-execution-status"
+    ]
+  },
+  {
+    "term": "Subject Scheme",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Subscription",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "Subscription Status Section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Subscription Status Types",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "support team",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "SVN",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "System Administrator",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "Tags Display Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Task Activity pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "communicating_with_the_author"
+    ]
+  },
+  {
+    "term": "Task Activity side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "Task Creator",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "task file",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-backups"
+    ]
+  },
+  {
+    "term": "task management view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-configure-server-address-property-file"
+    ]
+  },
+  {
+    "term": "Task Reviews page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-reviews-view"
+    ]
+  },
+  {
+    "term": "Task Reviews view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-reviews-view"
+    ]
+  },
+  {
+    "term": "Task Setting",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "review-tasks-intro"
+    ]
+  },
+  {
+    "term": "Task sharing behavior",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Task Title",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-settings"
+    ]
+  },
+  {
+    "term": "Team",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-enterprise-server"
+    ]
+  },
+  {
+    "term": "template",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "template gallery",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-deliverables"
+    ]
+  },
+  {
+    "term": "Temporary Folder",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-sftp-connector"
+    ]
+  },
+  {
+    "term": "term list",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-customizing-options"
+    ]
+  },
+  {
+    "term": "Terms list",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-restart"
+    ]
+  },
+  {
+    "term": "TLS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-security"
+    ]
+  },
+  {
+    "term": "TLS certificate",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "TLS certificate table",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-general"
+    ]
+  },
+  {
+    "term": "Toggle Change Tracking toolbar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-task-files"
+    ]
+  },
+  {
+    "term": "Toggle Change Tracking toolbar button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-new-task-from-interface"
+    ]
+  },
+  {
+    "term": "Token endpoint URL",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Topic Head",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-dita-map-tree-editor"
+    ]
+  },
+  {
+    "term": "topicref",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Tracked changes",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "making_changes_to_uploaded_files"
+    ]
+  },
+  {
+    "term": "transformation progress",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-publishing-main-container"
+    ]
+  },
+  {
+    "term": "Tree editing",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "tree editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Trial subscription",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Trusted Code",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-webauthor"
+    ]
+  },
+  {
+    "term": "Trusted email domain",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "Unlock File",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-unlocking-files"
+    ]
+  },
+  {
+    "term": "Upgrade plan",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-organization-subscription"
+    ]
+  },
+  {
+    "term": "Upload",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Upload button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-new-task-from-interface"
+    ]
+  },
+  {
+    "term": "Upload Folder",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_files_view"
+    ]
+  },
+  {
+    "term": "Upload Framework",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-custom-frameworks"
+    ]
+  },
+  {
+    "term": "Upload Plugin",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-upload-plugins"
+    ]
+  },
+  {
+    "term": "Upload the deliverable's build output in ZIP format",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-amazon-s3-connector"
+    ]
+  },
+  {
+    "term": "upstream remote repository",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-review-tasks"
+    ]
+  },
+  {
+    "term": "Use OIDC single sign-on",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-oidc-auth"
+    ]
+  },
+  {
+    "term": "User info endpoint URL",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-authentication"
+    ]
+  },
+  {
+    "term": "User Roles Capabilities Matrix",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "user-based licensing",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Users status section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-admin-page-users"
+    ]
+  },
+  {
+    "term": "Validate now",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "validation build",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "Validation pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "WA-dita-topic-doc-type"
+    ]
+  },
+  {
+    "term": "validation process",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-configure-task-executor-container"
+    ]
+  },
+  {
+    "term": "Verifone system",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-organization-settings"
+    ]
+  },
+  {
+    "term": "version control system",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "View deployments button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-publishing-connectors"
+    ]
+  },
+  {
+    "term": "View Topic Content",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "View Topic References",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "View Topic Titles",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "WA-dita-map-doc-type"
+    ]
+  },
+  {
+    "term": "Web Author Docker container",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "CF-set-Web-Author-logging"
+    ]
+  },
+  {
+    "term": "Web Author framework",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-upgrading"
+    ]
+  },
+  {
+    "term": "web-based visual editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "WebDAV",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content-fusion_vs_web-author"
+    ]
+  },
+  {
+    "term": "Wildcard Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "Workspace",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace-conflict-resolution"
+    ]
+  },
+  {
+    "term": "Workspace Changes view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "Workspace Problems view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_problems_view"
+    ]
+  },
+  {
+    "term": "Workspace Publications View",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_publications_view"
+    ]
+  },
+  {
+    "term": "Workspace Search",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_search_view"
+    ]
+  },
+  {
+    "term": "Workspace version",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-projects-workspace_changes_view"
+    ]
+  },
+  {
+    "term": "XML element",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-search-syntax-dita"
+    ]
+  },
+  {
+    "term": "XML language",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-custom-frameworks"
+    ]
+  },
+  {
+    "term": "xref element",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "known_issues"
+    ]
+  }
+]

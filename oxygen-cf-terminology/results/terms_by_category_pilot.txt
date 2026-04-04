@@ -1,0 +1,73 @@
+Oxygen Content Fusion – Extracted Terminology
+Model: google/gemma-4-26b-a4b-it  |  Mode: PILOT  |  Topics: 5
+Total unique terms: 58
+============================================================
+
+## UI_ELEMENT (11)
+  Profile settings page                         [×3]
+  My Review Tasks page                          [×2]
+  Projects page                                 [×2]
+  Confirmation dialog box                       [×1]
+  Content Fusion browser login page             [×1]
+  DITA map tree editor                          [×1]
+  Login page                                    [×1]
+  Publications side-view                        [×1]
+  Review Tasks page                             [×1]
+  Sign Up tab                                   [×1]
+  Tasks Manager view                            [×1]
+
+## FEATURE (17)
+  Review Task                                   [×4]
+  Deliverable                                   [×2]
+  Projects                                      [×2]
+  Account lockout                               [×1]
+  Account management                            [×1]
+  AI Positron                                   [×1]
+  Collaborative Review                          [×1]
+  Content Fusion Author License                 [×1]
+  Email notification                            [×1]
+  Oxygen AI Positron                            [×1]
+  Oxygen Content Fusion Connector               [×1]
+  Profile management                            [×1]
+  Project                                       [×1]
+  Publishing                                    [×1]
+  Publishing Pipeline                           [×1]
+  SME License                                   [×1]
+  Tree editing                                  [×1]
+
+## CONCEPT (15)
+  Git repository                                [×2]
+  WebHelp                                       [×2]
+  DITA CMS                                      [×1]
+  DITA map                                      [×1]
+  DITA project                                  [×1]
+  DITA source                                   [×1]
+  floating licensing model                      [×1]
+  floating seat model                           [×1]
+  Git-based version control                     [×1]
+  GitHub authentication                         [×1]
+  Google authentication                         [×1]
+  OIDC                                          [×1]
+  PDF output                                    [×1]
+  User role                                     [×1]
+  user-based licensing                          [×1]
+
+## ROLE (7)
+  Reviewer                                      [×3]
+  Administrator                                 [×2]
+  Content Fusion Author                         [×2]
+  Subject Matter Expert                         [×2]
+  Collaborator                                  [×1]
+  Task Creator                                  [×1]
+  Technical Writer                              [×1]
+
+## ACTION (8)
+  Log Out                                       [×2]
+  Authorize                                     [×1]
+  Commit Update                                 [×1]
+  Delete account                                [×1]
+  Log In                                        [×1]
+  Reset password                                [×1]
+  Send Feedback                                 [×1]
+  Show finalized review tasks                   [×1]
+

@@ -1,0 +1,1002 @@
+{
+  "model": "google/gemma-4-26b-a4b-it",
+  "mode": "full",
+  "topicsProcessed": 99,
+  "topicsTotal": 99,
+  "uniqueTerms": 699,
+  "totalInputTokens": 108479,
+  "totalOutputTokens": 19875,
+  "totalCostUsd": 0.02205227000000001,
+  "topicResults": [
+    {
+      "file": "overview.dita",
+      "termsExtracted": 18,
+      "error": null,
+      "usage": {
+        "inputTokens": 1250,
+        "outputTokens": 291,
+        "costUsd": 0.0002789
+      }
+    },
+    {
+      "file": "platform-user-roles.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1129,
+        "outputTokens": 215,
+        "costUsd": 0.00023277
+      }
+    },
+    {
+      "file": "account_management.dita",
+      "termsExtracted": 14,
+      "error": null,
+      "usage": {
+        "inputTokens": 1263,
+        "outputTokens": 224,
+        "costUsd": 0.00025379000000000005
+      }
+    },
+    {
+      "file": "cf-profile-settings.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 1026,
+        "outputTokens": 294,
+        "costUsd": 0.00025098
+      }
+    },
+    {
+      "file": "content_fusion_user_interface.dita",
+      "termsExtracted": 19,
+      "error": null,
+      "usage": {
+        "inputTokens": 1410,
+        "outputTokens": 313,
+        "costUsd": 0.0003085
+      }
+    },
+    {
+      "file": "cf-projects.dita",
+      "termsExtracted": 15,
+      "error": null,
+      "usage": {
+        "inputTokens": 1386,
+        "outputTokens": 240,
+        "costUsd": 0.00027618
+      }
+    },
+    {
+      "file": "cf-projects-workspace.dita",
+      "termsExtracted": 9,
+      "error": null,
+      "usage": {
+        "inputTokens": 875,
+        "outputTokens": 219,
+        "costUsd": 0.00020135000000000002
+      }
+    },
+    {
+      "file": "cf-projects-workspace_publications_view.dita",
+      "termsExtracted": 27,
+      "error": null,
+      "usage": {
+        "inputTokens": 1633,
+        "outputTokens": 454,
+        "costUsd": 0.00039389
+      }
+    },
+    {
+      "file": "CF-dita-map-tree-editor.dita",
+      "termsExtracted": 27,
+      "error": null,
+      "usage": {
+        "inputTokens": 1634,
+        "outputTokens": 429,
+        "costUsd": 0.00038402
+      }
+    },
+    {
+      "file": "cf-projects-workspace_files_view.dita",
+      "termsExtracted": 17,
+      "error": null,
+      "usage": {
+        "inputTokens": 1395,
+        "outputTokens": 414,
+        "costUsd": 0.00034695
+      }
+    },
+    {
+      "file": "cf-projects-workspace_changes_view.dita",
+      "termsExtracted": 17,
+      "error": null,
+      "usage": {
+        "inputTokens": 1031,
+        "outputTokens": 272,
+        "costUsd": 0.00024283000000000003
+      }
+    },
+    {
+      "file": "cf-projects-workspace_incoming_changes.dita",
+      "termsExtracted": 5,
+      "error": null,
+      "usage": {
+        "inputTokens": 804,
+        "outputTokens": 73,
+        "costUsd": 0.00013372000000000001
+      }
+    },
+    {
+      "file": "cf-projects-workspace-conflict-resolution.dita",
+      "termsExtracted": 24,
+      "error": null,
+      "usage": {
+        "inputTokens": 1602,
+        "outputTokens": 384,
+        "costUsd": 0.00036186
+      }
+    },
+    {
+      "file": "cf-projects-workspace_problems_view.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1052,
+        "outputTokens": 205,
+        "costUsd": 0.00021876000000000003
+      }
+    },
+    {
+      "file": "cf-projects-workspace_search_view.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1109,
+        "outputTokens": 322,
+        "costUsd": 0.00027297
+      }
+    },
+    {
+      "file": "cf-search-syntax-dita.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1338,
+        "outputTokens": 208,
+        "costUsd": 0.00025714
+      }
+    },
+    {
+      "file": "cf-ai-positron-overview.dita",
+      "termsExtracted": 5,
+      "error": null,
+      "usage": {
+        "inputTokens": 814,
+        "outputTokens": 78,
+        "costUsd": 0.00013702
+      }
+    },
+    {
+      "file": "cf-projects-review-tasks.dita",
+      "termsExtracted": 26,
+      "error": null,
+      "usage": {
+        "inputTokens": 1857,
+        "outputTokens": 437,
+        "costUsd": 0.00041621000000000003
+      }
+    },
+    {
+      "file": "cf-projects-repository.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 1049,
+        "outputTokens": 195,
+        "costUsd": 0.00021437
+      }
+    },
+    {
+      "file": "cf-projects-deliverables.dita",
+      "termsExtracted": 21,
+      "error": null,
+      "usage": {
+        "inputTokens": 1777,
+        "outputTokens": 336,
+        "costUsd": 0.00036541
+      }
+    },
+    {
+      "file": "cf-projects-publications.dita",
+      "termsExtracted": 11,
+      "error": null,
+      "usage": {
+        "inputTokens": 839,
+        "outputTokens": 154,
+        "costUsd": 0.00017067000000000002
+      }
+    },
+    {
+      "file": "cf-publishing-connectors.dita",
+      "termsExtracted": 15,
+      "error": null,
+      "usage": {
+        "inputTokens": 915,
+        "outputTokens": 241,
+        "costUsd": 0.00021535
+      }
+    },
+    {
+      "file": "cf-amazon-s3-connector.dita",
+      "termsExtracted": 9,
+      "error": null,
+      "usage": {
+        "inputTokens": 1891,
+        "outputTokens": 161,
+        "costUsd": 0.00031023
+      }
+    },
+    {
+      "file": "cf-netlify-connector.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 907,
+        "outputTokens": 199,
+        "costUsd": 0.00019751000000000002
+      }
+    },
+    {
+      "file": "cf-sftp-connector.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 1180,
+        "outputTokens": 167,
+        "costUsd": 0.0002202
+      }
+    },
+    {
+      "file": "cf-projects-publishing-execution-status.dita",
+      "termsExtracted": 9,
+      "error": null,
+      "usage": {
+        "inputTokens": 960,
+        "outputTokens": 150,
+        "costUsd": 0.0001848
+      }
+    },
+    {
+      "file": "cf-projects-publishing-metrics.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 1324,
+        "outputTokens": 160,
+        "costUsd": 0.00023612000000000004
+      }
+    },
+    {
+      "file": "cf-projects-settings.dita",
+      "termsExtracted": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 815,
+        "outputTokens": 104,
+        "costUsd": 0.00014755
+      }
+    },
+    {
+      "file": "cf-projects-members.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 857,
+        "outputTokens": 161,
+        "costUsd": 0.00017581
+      }
+    },
+    {
+      "file": "making_changes_to_uploaded_files.dita",
+      "termsExtracted": 22,
+      "error": null,
+      "usage": {
+        "inputTokens": 1808,
+        "outputTokens": 370,
+        "costUsd": 0.00038304
+      }
+    },
+    {
+      "file": "WA-dita-topic-doc-type.dita",
+      "termsExtracted": 20,
+      "error": null,
+      "usage": {
+        "inputTokens": 1848,
+        "outputTokens": 342,
+        "costUsd": 0.00037704000000000004
+      }
+    },
+    {
+      "file": "WA-dita-map-doc-type.dita",
+      "termsExtracted": 28,
+      "error": null,
+      "usage": {
+        "inputTokens": 1551,
+        "outputTokens": 454,
+        "costUsd": 0.00038323000000000003
+      }
+    },
+    {
+      "file": "review-tasks-intro.dita",
+      "termsExtracted": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 753,
+        "outputTokens": 96,
+        "costUsd": 0.00013629
+      }
+    },
+    {
+      "file": "cf-review-tasks-projects.dita",
+      "termsExtracted": 11,
+      "error": null,
+      "usage": {
+        "inputTokens": 971,
+        "outputTokens": 178,
+        "costUsd": 0.00019742999999999999
+      }
+    },
+    {
+      "file": "cf-non-project-review-tasks.dita",
+      "termsExtracted": 1,
+      "error": null,
+      "usage": {
+        "inputTokens": 645,
+        "outputTokens": 16,
+        "costUsd": 0.00009025
+      }
+    },
+    {
+      "file": "content_fusion_task_details.dita",
+      "termsExtracted": 21,
+      "error": null,
+      "usage": {
+        "inputTokens": 1766,
+        "outputTokens": 351,
+        "costUsd": 0.00036998
+      }
+    },
+    {
+      "file": "cf-task-files.dita",
+      "termsExtracted": 16,
+      "error": null,
+      "usage": {
+        "inputTokens": 1156,
+        "outputTokens": 266,
+        "costUsd": 0.00025668
+      }
+    },
+    {
+      "file": "cf-task-activity.dita",
+      "termsExtracted": 17,
+      "error": null,
+      "usage": {
+        "inputTokens": 958,
+        "outputTokens": 421,
+        "costUsd": 0.00029294
+      }
+    },
+    {
+      "file": "cf-task-search.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 806,
+        "outputTokens": 92,
+        "costUsd": 0.00014157999999999998
+      }
+    },
+    {
+      "file": "cf-task-reviews-view.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 1004,
+        "outputTokens": 160,
+        "costUsd": 0.00019452
+      }
+    },
+    {
+      "file": "cf-how-to-find-reviews-where-mentioned.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 879,
+        "outputTokens": 169,
+        "costUsd": 0.00018187
+      }
+    },
+    {
+      "file": "cf-task-settings.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 985,
+        "outputTokens": 202,
+        "costUsd": 0.00020885
+      }
+    },
+    {
+      "file": "cf-review-task-comment-mentions-notifications.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1219,
+        "outputTokens": 207,
+        "costUsd": 0.00024127000000000003
+      }
+    },
+    {
+      "file": "sharing_tasks_with_reviewers.dita",
+      "termsExtracted": 20,
+      "error": null,
+      "usage": {
+        "inputTokens": 1423,
+        "outputTokens": 332,
+        "costUsd": 0.00031779
+      }
+    },
+    {
+      "file": "communicating_with_the_author.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 822,
+        "outputTokens": 117,
+        "costUsd": 0.00015366000000000002
+      }
+    },
+    {
+      "file": "cf-new-task-from-interface.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 942,
+        "outputTokens": 205,
+        "costUsd": 0.00020446
+      }
+    },
+    {
+      "file": "cf-concurrent-editing.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 821,
+        "outputTokens": 88,
+        "costUsd": 0.00014193000000000002
+      }
+    },
+    {
+      "file": "cf-unlocking-files.dita",
+      "termsExtracted": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 876,
+        "outputTokens": 123,
+        "costUsd": 0.00016308000000000002
+      }
+    },
+    {
+      "file": "assign_task_to_new_owner.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 1013,
+        "outputTokens": 203,
+        "costUsd": 0.00021289000000000003
+      }
+    },
+    {
+      "file": "finishing_tasks.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 955,
+        "outputTokens": 257,
+        "costUsd": 0.00022695000000000001
+      }
+    },
+    {
+      "file": "cf-closing-tasks.dita",
+      "termsExtracted": 11,
+      "error": null,
+      "usage": {
+        "inputTokens": 832,
+        "outputTokens": 184,
+        "costUsd": 0.00018176
+      }
+    },
+    {
+      "file": "deleting_tasks.dita",
+      "termsExtracted": 4,
+      "error": null,
+      "usage": {
+        "inputTokens": 705,
+        "outputTokens": 62,
+        "costUsd": 0.00011645000000000001
+      }
+    },
+    {
+      "file": "CF-task-states-user-roles.dita",
+      "termsExtracted": 22,
+      "error": null,
+      "usage": {
+        "inputTokens": 1498,
+        "outputTokens": 340,
+        "costUsd": 0.00033074000000000005
+      }
+    },
+    {
+      "file": "cf-using-in-oxygen.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 747,
+        "outputTokens": 45,
+        "costUsd": 0.00011511000000000001
+      }
+    },
+    {
+      "file": "cf-enterprise-server.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 985,
+        "outputTokens": 198,
+        "costUsd": 0.00020725
+      }
+    },
+    {
+      "file": "cf-linux.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 909,
+        "outputTokens": 43,
+        "costUsd": 0.00013537
+      }
+    },
+    {
+      "file": "cf-configure-server-address-property-file.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 956,
+        "outputTokens": 146,
+        "costUsd": 0.00018268
+      }
+    },
+    {
+      "file": "cf-custom-frameworks.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 965,
+        "outputTokens": 317,
+        "costUsd": 0.00025225000000000003
+      }
+    },
+    {
+      "file": "cf-author-experience-user-role.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 791,
+        "outputTokens": 164,
+        "costUsd": 0.00016843
+      }
+    },
+    {
+      "file": "cf-upload-plugins.dita",
+      "termsExtracted": 11,
+      "error": null,
+      "usage": {
+        "inputTokens": 836,
+        "outputTokens": 274,
+        "costUsd": 0.00021828
+      }
+    },
+    {
+      "file": "cf-customizing-options.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1249,
+        "outputTokens": 208,
+        "costUsd": 0.00024556999999999997
+      }
+    },
+    {
+      "file": "cf-enterprise-configuration.dita",
+      "termsExtracted": 2,
+      "error": null,
+      "usage": {
+        "inputTokens": 775,
+        "outputTokens": 31,
+        "costUsd": 0.00011315
+      }
+    },
+    {
+      "file": "cf-admin-page-general.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 906,
+        "outputTokens": 218,
+        "costUsd": 0.00020498
+      }
+    },
+    {
+      "file": "cf-admin-page-license.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 772,
+        "outputTokens": 127,
+        "costUsd": 0.00015116
+      }
+    },
+    {
+      "file": "cf-admin-page-users.dita",
+      "termsExtracted": 13,
+      "error": null,
+      "usage": {
+        "inputTokens": 1075,
+        "outputTokens": 221,
+        "costUsd": 0.00022815000000000002
+      }
+    },
+    {
+      "file": "cf-admin-page-git.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 738,
+        "outputTokens": 113,
+        "costUsd": 0.00014114
+      }
+    },
+    {
+      "file": "cf-admin-page-mail.dita",
+      "termsExtracted": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 742,
+        "outputTokens": 99,
+        "costUsd": 0.00013606000000000002
+      }
+    },
+    {
+      "file": "cf-admin-page-authentication.dita",
+      "termsExtracted": 15,
+      "error": null,
+      "usage": {
+        "inputTokens": 1165,
+        "outputTokens": 249,
+        "costUsd": 0.00025105
+      }
+    },
+    {
+      "file": "cf-oidc-auth.dita",
+      "termsExtracted": 11,
+      "error": null,
+      "usage": {
+        "inputTokens": 1196,
+        "outputTokens": 187,
+        "costUsd": 0.00023028
+      }
+    },
+    {
+      "file": "ldap_troubleshoot.dita",
+      "termsExtracted": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 1474,
+        "outputTokens": 171,
+        "costUsd": 0.00026002
+      }
+    },
+    {
+      "file": "cf-admin-page-webauthor.dita",
+      "termsExtracted": 14,
+      "error": null,
+      "usage": {
+        "inputTokens": 1250,
+        "outputTokens": 234,
+        "costUsd": 0.0002561
+      }
+    },
+    {
+      "file": "cf-admin-page-maintenance.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 948,
+        "outputTokens": 161,
+        "costUsd": 0.00018763999999999999
+      }
+    },
+    {
+      "file": "cf-integrate-ai-positron-overview.dita",
+      "termsExtracted": 5,
+      "error": null,
+      "usage": {
+        "inputTokens": 774,
+        "outputTokens": 84,
+        "costUsd": 0.00013422
+      }
+    },
+    {
+      "file": "cf-enterprise-backups.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 1091,
+        "outputTokens": 190,
+        "costUsd": 0.00021783
+      }
+    },
+    {
+      "file": "cf-security.dita",
+      "termsExtracted": 16,
+      "error": null,
+      "usage": {
+        "inputTokens": 1110,
+        "outputTokens": 258,
+        "costUsd": 0.0002475
+      }
+    },
+    {
+      "file": "cf-set-web-author-system-property.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 784,
+        "outputTokens": 48,
+        "costUsd": 0.00012112
+      }
+    },
+    {
+      "file": "cf-increase-memory.dita",
+      "termsExtracted": 4,
+      "error": null,
+      "usage": {
+        "inputTokens": 803,
+        "outputTokens": 65,
+        "costUsd": 0.00013039
+      }
+    },
+    {
+      "file": "cf-configure-task-executor-container.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 974,
+        "outputTokens": 188,
+        "costUsd": 0.00020182000000000002
+      }
+    },
+    {
+      "file": "cf-configure-publishing-main-container.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 1073,
+        "outputTokens": 237,
+        "costUsd": 0.00023429
+      }
+    },
+    {
+      "file": "cf-disk-space.dita",
+      "termsExtracted": 10,
+      "error": null,
+      "usage": {
+        "inputTokens": 1100,
+        "outputTokens": 153,
+        "costUsd": 0.00020420000000000003
+      }
+    },
+    {
+      "file": "cf-increasing-available-disk-space.dita",
+      "termsExtracted": 1,
+      "error": null,
+      "usage": {
+        "inputTokens": 777,
+        "outputTokens": 16,
+        "costUsd": 0.00010741
+      }
+    },
+    {
+      "file": "CF-set-Web-Author-logging.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 1037,
+        "outputTokens": 76,
+        "costUsd": 0.00016521
+      }
+    },
+    {
+      "file": "cf-google-auth.dita",
+      "termsExtracted": 4,
+      "error": null,
+      "usage": {
+        "inputTokens": 912,
+        "outputTokens": 101,
+        "costUsd": 0.00015896000000000004
+      }
+    },
+    {
+      "file": "cf-github-auth.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 866,
+        "outputTokens": 85,
+        "costUsd": 0.00014658000000000002
+      }
+    },
+    {
+      "file": "cf-upgrading.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 1374,
+        "outputTokens": 135,
+        "costUsd": 0.00023262
+      }
+    },
+    {
+      "file": "cf-enterprise-unistall.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 726,
+        "outputTokens": 43,
+        "costUsd": 0.00011158
+      }
+    },
+    {
+      "file": "cf-restart.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 831,
+        "outputTokens": 180,
+        "costUsd": 0.00018003000000000002
+      }
+    },
+    {
+      "file": "cf-change-admin-password.dita",
+      "termsExtracted": 3,
+      "error": null,
+      "usage": {
+        "inputTokens": 740,
+        "outputTokens": 44,
+        "costUsd": 0.0001138
+      }
+    },
+    {
+      "file": "cf-proxy-setup.dita",
+      "termsExtracted": 2,
+      "error": null,
+      "usage": {
+        "inputTokens": 781,
+        "outputTokens": 30,
+        "costUsd": 0.00011353
+      }
+    },
+    {
+      "file": "cf-configure-firewall.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 831,
+        "outputTokens": 192,
+        "costUsd": 0.00018483000000000003
+      }
+    },
+    {
+      "file": "cf-organization-members.dita",
+      "termsExtracted": 17,
+      "error": null,
+      "usage": {
+        "inputTokens": 1477,
+        "outputTokens": 270,
+        "costUsd": 0.00030001
+      }
+    },
+    {
+      "file": "cf-organization-subscription.dita",
+      "termsExtracted": 21,
+      "error": null,
+      "usage": {
+        "inputTokens": 1697,
+        "outputTokens": 333,
+        "costUsd": 0.00035381
+      }
+    },
+    {
+      "file": "cf-organization-authentication.dita",
+      "termsExtracted": 15,
+      "error": null,
+      "usage": {
+        "inputTokens": 1444,
+        "outputTokens": 361,
+        "costUsd": 0.00033212
+      }
+    },
+    {
+      "file": "cf-organization-security.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 826,
+        "outputTokens": 86,
+        "costUsd": 0.00014178000000000001
+      }
+    },
+    {
+      "file": "cf-organization-projects.dita",
+      "termsExtracted": 8,
+      "error": null,
+      "usage": {
+        "inputTokens": 768,
+        "outputTokens": 118,
+        "costUsd": 0.00014704
+      }
+    },
+    {
+      "file": "cf-organization-settings.dita",
+      "termsExtracted": 18,
+      "error": null,
+      "usage": {
+        "inputTokens": 1653,
+        "outputTokens": 303,
+        "costUsd": 0.00033609
+      }
+    },
+    {
+      "file": "known_issues.dita",
+      "termsExtracted": 14,
+      "error": null,
+      "usage": {
+        "inputTokens": 1776,
+        "outputTokens": 227,
+        "costUsd": 0.00032168
+      }
+    },
+    {
+      "file": "browser-compatibility.dita",
+      "termsExtracted": 6,
+      "error": null,
+      "usage": {
+        "inputTokens": 1122,
+        "outputTokens": 101,
+        "costUsd": 0.00018626
+      }
+    },
+    {
+      "file": "content-fusion_vs_web-author.dita",
+      "termsExtracted": 26,
+      "error": null,
+      "usage": {
+        "inputTokens": 1295,
+        "outputTokens": 410,
+        "costUsd": 0.00033235000000000003
+      }
+    }
+  ]
+}
