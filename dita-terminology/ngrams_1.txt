@@ -1,4 +1,4 @@
-the	83852 *
+the	83852
 to	28574 *
 a	21619 *
 in	19637 *
@@ -35,7 +35,7 @@ element	3393 *
 page	3278 *
 following	3071 *
 files	3039 *
-using	2930 *
+using	2930
 box	2882 *
 view	2881 *
 all	2833 *
@@ -700,7 +700,7 @@ warning	180 *
 state	180 *
 ids	179
 during	179
-restart	179 *
+restart	179
 design	178 *
 starting	177
 now	177
@@ -748,7 +748,7 @@ easily	161
 floating	161 *
 styling	161 *
 arguments	161 *
-website	160 *
+website	160
 504.2	160
 602.3	160
 separate	160 *
@@ -1679,7 +1679,7 @@ give	47
 thread	47 *
 readers	47
 exceptions	47 *
-headings	47 *
+headings	47
 identical	47
 know	47
 anchor	47 *
@@ -1815,7 +1815,7 @@ internet	42
 keystore	42 *
 soap	42
 clause	42
-join	41 *
+join	41
 descriptions	41
 precise	41
 navigating	41
@@ -2345,7 +2345,7 @@ bound	26
 11	26
 subdirectory	26
 verbose	26 *
-ellipsis	26 *
+ellipsis	26
 frames	26
 ignoring	26
 web-based	26
@@ -2730,7 +2730,7 @@ templatesnew	20
 perspectives	20 *
 anything	20
 locking	20 *
-hyperlink	20 *
+hyperlink	20
 ask('message	20
 commented	20
 inclusive	20 *
@@ -2808,7 +2808,7 @@ mention	19 *
 promote	19 *
 sitemap.xml	19 *
 targetset	19 *
-deploying	19 *
+deploying	19
 ranges	19
 netlify	19 *
 side-pane	18
@@ -3104,7 +3104,7 @@ redundancy	16 *
 clauses	16
 ambiguity	16 *
 restored	15
-favorites	15 *
+favorites	15
 checkboxes	15
 leveraging	15
 submit	15 *
@@ -3177,7 +3177,7 @@ saxon-he/pe/ee	15 *
 marking	15
 hash	15
 recognize	15
-xalan	15 *
+xalan	15
 informing	15
 statements	15
 teams	15
@@ -3529,7 +3529,7 @@ rowsep	12 *
 evaluates	12
 xsl:for-each	12 *
 indexes	12
-editedit	12 *
+editedit	12
 end-users	12
 tdi	12 *
 uppercase	12
@@ -3756,7 +3756,7 @@ topic/topic"][is-chapter]:not([is-part	11
 helping	11
 schemasdiagram	11
 topic/navtitle	11 *
-grayed	11 *
+grayed	11
 topic/section	11
 renew	11
 assignment	11
@@ -3974,7 +3974,7 @@ translators	10
 completing	10
 value="yes	10
 border-bottom	10 *
-promotes	10 *
+promotes	10
 recovered	10
 untrusted	10
 pipeline	10
@@ -4195,7 +4195,7 @@ maintaining	9
 costs	9
 segments	9
 cat	9
-compressed	9 *
+compressed	9
 xs:import	9 *
 php	9 *
 composite	9
@@ -4251,7 +4251,7 @@ plural	9
 serial	9
 appender-ref	8
 launches	8
-next/previous	8 *
+next/previous	8
 powerpoint	8
 automating	8
 pem	8 *
@@ -4416,7 +4416,7 @@ ps	8 *
 ctrl+space	8 *
 logos	8
 accesses	8
-preferencesxml	8 *
+preferencesxml	8
 darwin	8
 minitoc	8 *
 transferring	8
@@ -4816,7 +4816,7 @@ losing	7
 linter	7 *
 saxon-he	7 *
 enters	7
-frameworks\[custom_framework_dir	7 *
+frameworks\[custom_framework_dir	7
 border:1px	7
 onto	7 *
 unparsed	7
@@ -5136,7 +5136,7 @@ mozilla	6 *
 existed	6
 pulls	6
 stashes	6
-submodule	6 *
+submodule	6
 outdated	6
 abort	6
 topic/li	6
@@ -5310,7 +5310,7 @@ fixed-size	6
 fixed-width	6
 variable-height	6
 3.x	6
-plugins/myplugin	6 *
+plugins/myplugin	6
 sel	6
 organizes	6
 decided	6
@@ -5551,7 +5551,7 @@ tc	5
 deciding	5
 disc	5 *
 database-specific	5
-preferencesdita	5 *
+preferencesdita	5
 pre-defined	5
 otherprops	5 *
 action="exclude	5
@@ -5604,7 +5604,7 @@ st5	5
 evolved	5
 underlines	5
 font-size:0	5
-deletedelete	5 *
+deletedelete	5
 composing	5
 70	5
 61	5
@@ -5649,7 +5649,7 @@ border-collapse	5 *
 break-word	5 *
 inspiration	5
 cfd}/${cfn}.pdf	5
-preferencessvn	5 *
+preferencessvn	5
 intersect	5
 subtree	5
 imposes	5
@@ -6088,7 +6088,7 @@ xs:redefine	5 *
 reintegrated	5
 machinery	5
 href="">item	5
-plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates	5 *
+plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/page-templates	5
 172	5
 86	5
 basedirpath	5 *
@@ -6994,7 +6994,7 @@ class="chapter	4
 intent	4
 replace/remove	4
 register/activate	4 *
-plugins/com.oxygenxml.webhelp.responsive/templates	4 *
+plugins/com.oxygenxml.webhelp.responsive/templates	4
 initiative	4
 footerchapter	4
 chapter:first:right	4
@@ -7036,7 +7036,7 @@ imaging	4
 trouble	4 *
 namespace-valid	4 *
 class~="task/choicetable	4
-metadatakeywords	4 *
+metadatakeywords	4
 exec	4
 ro.sync.ecss.extensions.api.node.attrvalue	4
 sync	4 *
@@ -7545,7 +7545,7 @@ user_home_directory]\appdata\roaming\com.oxygenxml[user_home_directory]\appdata\
 descriptor.types.image.filters.push	3
 junit	3 *
 sub-directory	3
-plugins/org.dita.pdf2.fop/fop/conf/fop.xconf	3 *
+plugins/org.dita.pdf2.fop/fop/conf/fop.xconf	3
 file.it	3
 gimp	3
 oxy_xpath('/*/@*[local-name()="main-title"][1	3
@@ -7557,7 +7557,7 @@ hdiutil	3
 re-opened	3
 800	3
 transformation/validation	3
-frameworks/dita	3 *
+frameworks/dita	3
 inner	3
 rowheader="firstcol	3 *
 colnum="1	3
@@ -7872,7 +7872,7 @@ abstractaction	3 *
 sync.api.editor.editortypes.author	3 *
 clearing	3
 listens	3
-preferencesxquery	3 *
+preferencesxquery	3
 chapter/section	3
 change-historylist	3 *
 anchorref	3 *
@@ -8193,7 +8193,7 @@ topic/prodinfo	3
 integrators	3
 announcements	3
 startoftextincurrentnode	3
-plugins\com.oxygenxml.webhelp.responsive\xsl\mainfiles\createmainpage.xsl	3 *
+plugins\com.oxygenxml.webhelp.responsive\xsl\mainfiles\createmainpage.xsl	3
 whc:include_html	3 *
 match="*:div[contains(@class	3
 class="copyright_info	3
@@ -8271,8 +8271,8 @@ nd	3 *
 scripts/mergedirstrackchanges.sh	3
 http://www.tei-c.org/ns/1.0	3 *
 frameworks/tei/templates/tei	3
-frameworks/tei/xml/tei/custom/schema/relaxng	3 *
-frameworks/tei/xml/tei/css	3 *
+frameworks/tei/xml/tei/custom/schema/relaxng	3
+frameworks/tei/xml/tei/css	3
 webapprendererclassname	3 *
 revealed	3
 mapto	3
@@ -8341,7 +8341,7 @@ re-used	3
 sur	3
 reserving	3
 args.css.param.numbering-sections	3 *
-modifystrings	3 *
+modifystrings	3
 xml:lang="en-us	3
 strings-en-us.xml	3 *
 language-specific	3
@@ -8358,8 +8358,8 @@ outlineplacement	3 *
 plugin_custom_options.outlineplacement	3 *
 reverting	3
 path_to_config_file	3 *
-upup	3 *
-downdown	3 *
+upup	3
+downdown	3
 svgz	3 *
 rhel	3
 cpus	3 *
@@ -8377,9 +8377,9 @@ table-landscape-page	3 *
 chapter:first	3
 rearranging	3
 document-oriented	3
-frameworks/docbook/templates/docbook5.1	3 *
+frameworks/docbook/templates/docbook5.1	3
 docbookxi.rng	3 *
-frameworks/docbook/5.1/rng	3 *
+frameworks/docbook/5.1/rng	3
 pdf2	3
 a:after	3
 offo	3 *
@@ -8464,7 +8464,7 @@ queried	3
 oxy_url(oxy_base-uri	3
 controlobject	3
 ro.sync.contentcompletion.xml.schemamanagerfilter	3 *
-preferencesxslt	3 *
+preferencesxslt	3
 reportfile	3
 sub-directories	3
 main.xml	3 *
@@ -8473,7 +8473,7 @@ main.xml	3 *
 10.9	3 *
 11.6	3 *
 12.4	3 *
-lib/endorsed	3 *
+lib/endorsed	3
 aggregates	3
 example.com	3 *
 greatly	3
@@ -8681,7 +8681,7 @@ patternproperty	3 *
 optionsglobal	3
 editingcontextual	3
 unescape	3
-preferencesxpath	3 *
+preferencesxpath	3
 part/chapter	3
 menucontribution	3
 menumanagerobj	3
@@ -8701,7 +8701,7 @@ xpaths	3
 jlist	3
 currenttextpage	3
 reconfigure	3
-frameworks/[framework_dir	3 *
+frameworks/[framework_dir	3
 colleagues	3
 perfect	3
 framemaker	3
@@ -8710,7 +8710,7 @@ com.oxygenxml.editor.frameworks.url	3 *
 figuresfigure	3
 v1	3 *
 function's	3
-commentsstyling	3 *
+commentsstyling	3
 changesstyling	3
 build.xml	3 *
 swingutilities.iseventdispatchthread	3
@@ -8733,7 +8733,7 @@ chapter:left	3
 files.log	3 *
 went	3
 mixture	3
-customizestrings	3 *
+customizestrings	3
 totals	3
 document.xml	3 *
 number="1	3
@@ -8842,7 +8842,7 @@ element:<schema	3
 hazardsymbol	3 *
 syncro-oxygen	3 *
 high-contrast	3
-plugins/org.dita.pdf2/cfg/fo/font-mappings.xml	3 *
+plugins/org.dita.pdf2/cfg/fo/font-mappings.xml	3
 char-set="default	3 *
 my_file.pdf	3
 semi-colon	3
@@ -8956,7 +8956,7 @@ table.note	3
 rgba(255	3
 anttask	3
 this:[fop	3
-addstrings	3 *
+addstrings	3
 chemistry.sh	3
 securing	3
 topic/link"][href]:after	3
@@ -9171,7 +9171,7 @@ control/command	2 *
 box:invoke	2
 selection-original	2 *
 selection-final	2 *
-attach(filepath	2 *
+attach(filepath	2
 attaches	2
 estimate	2
 explores	2
@@ -9285,7 +9285,7 @@ toolmenus	2
 customization\catalog.xml.orig	2 *
 customization\catalog.xml	2 *
 customization\fo\xsl\custom.xsl.orig	2 *
-plugins\org.dita.pdf2\xsl\fo\front-matter.xsl	2 *
+plugins\org.dita.pdf2\xsl\fo\front-matter.xsl	2
 xmlns:fo="http://www.w3.org/1999/xsl/format	2
 name="createfrontcovercontents	2
 xsl:use-attribute-sets="__frontmatter__title	2
@@ -9728,9 +9728,9 @@ footnotehere	2
 purchasing	2
 documentscustom	2
 wsdldochtml.xsl	2 *
-oxygen.bat/oxygen.sh	2 *
-oxygenauthor.bat/oxygenauthor.sh	2 *
-syncrosvnclient.bat/syncrosvnclient.sh	2 *
+oxygen.bat/oxygen.sh	2
+oxygenauthor.bat/oxygenauthor.sh	2
+syncrosvnclient.bat/syncrosvnclient.sh	2
 macos/linux	2
 use:body	2
 pdf.accessibility	2 *
@@ -9828,9 +9828,9 @@ modestext	2
 fetched	2
 schemacustomize	2
 toolcustomize	2
-frameworks/schema_documentation/xsl/xsddocdita.xsl	2 *
+frameworks/schema_documentation/xsl/xsddocdita.xsl	2
 https://<server-address>:9080.by	2
-titleslayout	2 *
+titleslayout	2
 4.5.5	2
 args.css.param.title.layout	2 *
 change-completed>build	2
@@ -10077,8 +10077,8 @@ http_sec_websocket_extensions	2 *
 outbound	2
 jurisdiction	2
 export/import	2
-jre/lib/security	2 *
-preferencesdiff	2 *
+jre/lib/security	2
+preferencesdiff	2
 ditaprofilingcreating	2
 parentattrvalue(subattrvalue1	2
 subattrvalue2	2
@@ -10208,7 +10208,7 @@ extensionscontribute	2
 this:<translation	2
 h1:fresh	2 *
 cross-references	2
-preferencesglobal	2 *
+preferencesglobal	2
 user-home-folder]\appdata\roaming\com.oxygenxml	2 *
 user-home-folder]\appdata\roaming\com.oxygenxml.author	2 *
 oxy-range-start	2 *
@@ -10282,7 +10282,7 @@ id="d_de	2
 hund	2
 bein	2
 haben	2
-frameworks\dita	2 *
+frameworks\dita	2
 re-bundle	2
 dependences	2 *
 one:-dcom.oxygenxml.app.descriptor=ro.sync.exml.editorframedescriptor	2
@@ -10290,11 +10290,11 @@ com.oxygenxml.app.descriptor	2 *
 ro.sync.exml.authorframedescriptorro.sync.exml.developerframedescriptor	2
 appeared	2
 generalplugincontext	2 *
-databasesconnectionsmarklogic	2 *
+databasesconnectionsmarklogic	2
 dwebhelp.publishing.template.descriptor=flowers.opt	2
 xsltcomponent	2
 non-null	2
-frameworks/stylesheet_documentation	2 *
+frameworks/stylesheet_documentation	2
 xd:i>string</xd:i	2
 xd:i>searched</xd:i	2
 xd:return	2
@@ -10362,7 +10362,7 @@ topic/titlealts	2
 test="$args.chapter.layout	2
 mode="in-this-chapter-list	2
 name="args.chapter.layout	2
-tools/ant/lib	2 *
+tools/ant/lib	2
 ro.sync.ecss.extensions.api.webapp.access.webapppluginworkspace	2 *
 ro.sync.ecss.extensions.api.webapp.plugin.servletpluginextension	2 *
 webappservletfilter	2 *
@@ -10438,7 +10438,7 @@ modeelements	2
 editingelements	2
 data\subversion\auth	2
 schemasediting	2
-imagesborders	2 *
+imagesborders	2
 topic/image"][placement='break	2
 column-span:all	2 *
 two_columns	2
@@ -10500,7 +10500,7 @@ div1	2 *
 div2	2 *
 ptr	2 *
 scope>system</scope	2
-frameworks/mathml2	2 *
+frameworks/mathml2	2
 mathml2	2
 bundle-frameworks	2 *
 service:cd	2
@@ -10692,7 +10692,7 @@ communicators	2
 standardized	2
 single-source	2
 everywhere	2
-samples/dita	2 *
+samples/dita	2
 http://example.com/index.html	2 *
 output.the	2
 ai-related	2
@@ -10714,9 +10714,9 @@ nodeletionoffilesonlypresentinbasedir	2
 createchangetrackingmarkersforaddedxmlfiles	2
 allowed-users.txt	2 *
 frameworkstei	2
-frameworks/tei/xml/tei/schema/dtd/catalog.xml	2 *
-frameworks/tei/xml/tei/custom/schema/dtd/catalog.xml	2 *
-frameworks/tei/xml/tei/stylesheet/catalog.xml	2 *
+frameworks/tei/xml/tei/schema/dtd/catalog.xml	2
+frameworks/tei/xml/tei/custom/schema/dtd/catalog.xml	2
+frameworks/tei/xml/tei/stylesheet/catalog.xml	2
 com.oxygenxml.webapp.mermaid.webappmermaidrenderer	2 *
 tile:<topicmeta	2
 name="wh-tile	2
@@ -10831,7 +10831,7 @@ manual.</p	2
 morning	2
 drink	2
 contentcontent	2
-ditaconref	2 *
+ditaconref	2
 regulations	2
 crashes	2
 maximized	2
@@ -10979,14 +10979,14 @@ c:\some_dir\templates	2 *
 filtered-out	2
 assisted	2
 view).you	2
-samples/docbook/v5/assembly	2 *
+samples/docbook/v5/assembly	2
 hyphenationinstall	2
 hyp	2 *
 args.hyph.dir	2 *
 frameworksdita	2
 http://dita.oasis-open.org/architecture/2005	2 *
-frameworks/dita/css	2 *
-frameworks/dita/catalog.xml	2 *
+frameworks/dita/css	2
+frameworks/dita/catalog.xml	2
 filesadd	2
 container's	2
 oxygen.license.server.work.dir	2 *
@@ -11010,7 +11010,7 @@ emptied	2
 tm	2
 tmtype="tm">my	2
 language-dependent	2
-plugins/org.dita.base/xsl/common	2 *
+plugins/org.dita.base/xsl/common	2
 create.you	2
 bcpkix-jdk18on	2 *
 bcprov-jdk18on	2 *
@@ -11069,7 +11069,7 @@ fix-up	2
 infoset	2
 unfortunately	2
 name="**/*.git	2
-oxygen-webhelp/template	2 *
+oxygen-webhelp/template	2
 re-triggering	2
 editor/author.this	2
 oxy-fc-reports	2 *
@@ -11084,10 +11084,10 @@ form-control	2
 combo-box	2
 preferences-page	2 *
 samples/*.gif	2 *
-forum	2 *
+forum	2
 element:<object	2
 data="path/to/video.mp4	2
-imagesresolution	2 *
+imagesresolution	2
 prince-image-resolution	2
 ah-image-resolution	2
 1/96	2
@@ -11114,7 +11114,7 @@ servletpluginextension	2 *
 sessionid	2
 pluginworkspaceprovider.getpluginworkspace	2
 getpath	2 *
-frameworks/schema_documentation/xsl/xsddocdocbook.xsl	2 *
+frameworks/schema_documentation/xsl/xsddocdocbook.xsl	2
 match="schemadoc	2 *
 considerably	2
 data="myvideo.mp4"/>or	2
@@ -11291,8 +11291,8 @@ organization’s	2
 exhausted	2
 revoked	2
 health	2
-imageswide	2 *
-imagesrotate	2 *
+imageswide	2
+imagesrotate	2
 land	2
 preferencesfiles	2
 whitespaces.if	2
@@ -11321,7 +11321,7 @@ meat	2 *
 boat	2 *
 moat	2 *
 webhelp"~10	2
-lib/fop	2 *
+lib/fop	2
 fop-pdf-images	2 *
 lint	2
 growing	2
@@ -11331,7 +11331,7 @@ stacks	2
 oriented	2
 xml/xslt/xquery	2
 id="value	2 *
-frameworks/jats/lib/schemas	2 *
+frameworks/jats/lib/schemas	2
 appinfo	2 *
 this:<?xml-model	2
 schematypens="http://purl.oclc.org/dsdl/schematron	2
@@ -11472,7 +11472,7 @@ url("files/cover.png	2
 acknowledged	2
 peak	2
 allocates	2
-fontsmusic	2 *
+fontsmusic	2
 musical	2
 example:<sqf:add	2
 position="last-child	2
@@ -11625,7 +11625,7 @@ inputformat	2
 outputdirectory	2
 csd	2
 convertersettingsfile	2
-headerstyling	2 *
+headerstyling	2
 sslv3	2
 tlsv1	2
 uml	2
@@ -11748,7 +11748,7 @@ web-author	2
 server.p12	2
 dir]/tomcat/conf/server.xml	2
 author-specific	2
-pluginsdebugging	2 *
+pluginsdebugging	2
 databasesconnectionsmicrosoft	2
 form-controls	2
 assisting	2
@@ -11820,7 +11820,7 @@ topic/fn"]:footnote-marker	2
 controlsurl	2
 jpg,png,gif	2 *
 sdf.xsd	2 *
-frameworks/xliff/schemas/2.1	2 *
+frameworks/xliff/schemas/2.1	2
 button.step	2
 markings	2
 show.changes.and.comments.as.changebars	2 *
@@ -11831,7 +11831,7 @@ name="custom	2
 to/move	2
 perspectiveperformance	2
 caller	2
-frameworks/profiler	2 *
+frameworks/profiler	2
 scenariooptions	2
 fontsasian	2
 bold-italic	2
@@ -11866,7 +11866,7 @@ characterfragment	2
 getancestordetectionoptions	2 *
 canbereplaced	2 *
 activedirectoryrealm	2
-graphicssvg	2 *
+graphicssvg	2
 width="50	2
 height="50	2
 cx="25	2
@@ -11941,8 +11941,8 @@ css.processor.type	2 *
 css.processor.path.prince	2 *
 css.processor.path.antenna-house	2 *
 figure.title.placement	2 *
-metadataheader	2 *
-metadatafooter	2 *
+metadataheader	2
+metadatafooter	2
 checkingadd	2
 footnote-call	2 *
 footnote-marker	2 *
@@ -12005,7 +12005,7 @@ this:<extension	2
 preferencesauthor	2
 heavy	2
 pageauthor	2
-preferencesautocorrect	2 *
+preferencesautocorrect	2
 en_uk.dat	2 *
 en_us.dat	2 *
 support</title	2
@@ -12018,7 +12018,7 @@ href="#d16e4120	2
 d16e4120	2
 index/group	2
 index/label	2
-fontstitlescontent	2 *
+fontstitlescontent	2
 headless	2 *
 uninstall.exe	2 *
 permit	2
@@ -12077,7 +12077,7 @@ href="puffin.jpg	2
 alt>puffin	2
 figure</alt	2
 longdescref	2 *
-imagessize	2 *
+imagessize	2
 controlsvideo	2
 texture	2
 tracks	2
@@ -12145,7 +12145,7 @@ filesdetecting	2
 circular	2
 nest	2
 xsl:use-attribute-sets	2
-bookmarksdepth	2 *
+bookmarksdepth	2
 bookmarkssections	2
 icd	2
 ignorecdata	2
@@ -12159,7 +12159,7 @@ inlinecss	2 *
 results.xml	2 *
 results:sh	2
 file).sh	2
-hyphenationdictionaries	2 *
+hyphenationdictionaries	2
 nl	2 *
 russian	2 *
 license.txt	2 *
@@ -12183,7 +12183,7 @@ before/remove	2
 element/attribute/group	2
 unbounded	2 *
 reinstalled	2
-plugins/com.oxygenxml.webhelp.responsive	2 *
+plugins/com.oxygenxml.webhelp.responsive	2
 example:<publishing-template	2
 facility	2
 1.x	2
@@ -12191,7 +12191,7 @@ says	2
 branching	2
 concluded	2
 calculate	2
-plugins/com.oxygenxml.pdf.css/css/print/i18n	2 *
+plugins/com.oxygenxml.pdf.css/css/print/i18n	2
 xerces-driven	2
 saxon-driven	2
 expressionsthe	2
@@ -12349,7 +12349,7 @@ editorfull	2
 intensive	2
 file.txt	2 *
 resolve-uri	2 *
-tableslayout	2 *
+tableslayout	2
 editorintroduction	2
 easy-to-read	2
 st-restriction	2
@@ -12369,7 +12369,7 @@ custom_footer_template/resources	2 *
 file="resources/mycustom.css	2
 bin/dita.bat	2 *
 shift+enter	2 *
-ellipse	2 *
+ellipse	2
 contentsstart	2
 menu.you	2
 application/oxy-reference	2 *
@@ -12432,8 +12432,8 @@ faq	2 *
 moderating	2
 kb.when	2
 guiding	2
-tableswide	2 *
-tablesrotate	2 *
+tableswide	2
+tablesrotate	2
 wizardsettings	2
 camera	2
 licensing.server.password	2 *
@@ -12464,7 +12464,7 @@ webauthor)":/tomcat/webapps/oxygen-xml-web-author/web-inf/log4j.properties	2
 this.authoraccess.geteditoraccess().getcaretoffset	2
 frag	2
 obvious	2
-addadd	2 *
+addadd	2
 derive	2
 extended/restricted	2
 blockdefault	2 *
@@ -12499,7 +12499,7 @@ helpers	2
 privileged	2
 uri="path/to/custom.css	2
 custom.css	2 *
-metadatacustom	2 *
+metadatacustom	2
 attr(type	2
 clarity	2
 xmlns:x="nsp	2
@@ -12539,7 +12539,7 @@ evolves	2
 10-19	2 *
 indexadd	2
 class~="index/refid	2
-ditaglossary	2 *
+ditaglossary	2
 id="ddl	2
 glossterm>data	2
 language</glossterm	2
@@ -12711,7 +12711,7 @@ configuration/opentopic/cfg/common/artwork/watermark.png	2
 pagenum	2
 fo:page-sequence	2
 fo:flow	2
-tablescentering	2 *
+tablescentering	2
 margin-left:auto	2
 margin-right:auto	2
 firstfile	2 *
@@ -12874,7 +12874,7 @@ breaksadd	2
 com.oxygenxml.pdf.custom.codeblocks	2 *
 016	2
 018	2
-imagescentering	2 *
+imagescentering	2
 vendors	2
 args.css.param.pdf-split-mode	2 *
 args.keep.output.debug.files	2 *
@@ -12958,7 +12958,7 @@ content="-1	2
 renditions	2
 unmarked	2
 tableszebra	2
-tablesstripes	2 *
+tablesstripes	2
 attribute:<table	2
 editordita	2
 myfile.ditaval	2 *
@@ -13005,7 +13005,7 @@ body.font.family	2 *
 title.font.family	2 *
 bodyfont	2 *
 sansfont	2 *
-headerxpath	2 *
+headerxpath	2
 troubleshootingdisappearing	2
 troubleshootingcell	2
 sub-options	2
@@ -13054,11 +13054,11 @@ elementdisable	2
 outputclass="hyphens	2 *
 outputclass="no-hyphens	2 *
 dbconnectioninfo	2
-frameworks/docbook	2 *
-frameworks/docbook/css	2 *
-troubleshootingglossentry	2 *
-troubleshootingglossgroup	2 *
-troubleshootingabbreviated-form	2 *
+frameworks/docbook	2
+frameworks/docbook/css	2
+troubleshootingglossentry	2
+troubleshootingglossgroup	2
+troubleshootingabbreviated-form	2
 sport	2 *
 colname="c1	2
 colname="c2	2
@@ -13077,7 +13077,7 @@ createauthortablecellspanprovider	2 *
 createauthortablecolumnwidthprovider	2 *
 createlinktextresolver	2 *
 hazardstatement_caution	2
-fontssymbols	2 *
+fontssymbols	2
 0x2192	2
 arrowright	2
 icu-j	2
@@ -13234,11 +13234,11 @@ bookmap/booknumber	2
 bookmap/maintainer	2
 bookmap/person	2
 topic/metadata	2
-headerlanguage	2 *
+headerlanguage	2
 oxy_xpath("if	2
-tablescustomizerows	2 *
-tablescustomizecolumns	2 *
-tablescustomizecells	2 *
+tablescustomizerows	2
+tablescustomizecolumns	2
+tablescustomizecells	2
 necessity	2
 essentially	2
 sampleworkspaceaccesstoolbarid	2 *

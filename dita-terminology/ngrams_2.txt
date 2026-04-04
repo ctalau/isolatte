@@ -185,7 +185,7 @@ the toolbar	389
 or a	386
 of an	382
 to display	375
-on macos	375 *
+on macos	375
 maps manager	373
 the author	373
 the css	372 *
@@ -469,7 +469,7 @@ the review	178
 actions that	177
 be found	177
 create an	177
-click ok	177 *
+click ok	177
 the results	176
 mode the	175
 file you	174
@@ -934,7 +934,7 @@ and is	101
 converted to	101
 using an	101
 to perform	101
-projectproject explorer	101 *
+projectproject explorer	101
 text editing	101
 a publishing	101
 customizing the	101
@@ -1019,7 +1019,7 @@ available from	95
 map editor	95
 the line	95
 main page	95 *
-tools menu	94 *
+tools menu	94
 feature is	94
 documents that	94
 watch our	94
@@ -1054,7 +1054,7 @@ by adding	91
 changes and	91
 the top-right	91
 xml web	91
-options preferences	91 *
+options preferences	91
 the quick	91
 the various	91
 the beginning	91
@@ -1211,7 +1211,7 @@ version control	82 *
 the choose	82
 that specifies	82
 the index	82
-edit button	81 *
+edit button	81
 can then	81
 the external	81
 sure the	81
@@ -1357,7 +1357,7 @@ video demonstration	74
 create the	74
 your webhelp	74
 output directory	74 *
-new button	73 *
+new button	73
 install the	73
 that provides	73
 based upon	73
@@ -1536,7 +1536,7 @@ the property	67
 are editing	67
 a template	67
 this tab	67
-preview pane	67 *
+preview pane	67
 template to	67
 of memory	67
 the chat	66
@@ -1588,7 +1588,7 @@ identify the	65
 result of	65
 box allows	65
 id attribute	65
-framework configuration	65 *
+framework configuration	65
 type is	65
 to share	65
 html file	65
@@ -1633,7 +1633,7 @@ dita xml	63 *
 content or	63
 topic is	63
 made by	63
-xslt stylesheets	63 *
+xslt stylesheets	63
 plugin that	63
 through a	63
 to move	63
@@ -1759,7 +1759,7 @@ it with	60
 attribute on	60
 to automatically	60
 toolbar and	60
-the character	60 *
+the character	60
 element of	60
 markdown documents	60 *
 edit a	60
@@ -2120,7 +2120,7 @@ necessary to	51
 default it	51
 replaced with	51
 option and	51
-click next	51 *
+click next	51
 obtain the	51
 an empty	51
 provide a	51
@@ -2160,7 +2160,7 @@ result is	51
 file associated	51
 the items	51
 item in	51
-refactoring submenu	51 *
+refactoring submenu	51
 offers the	51
 base directory	51 *
 insert reference	51 *
@@ -2435,7 +2435,7 @@ right to	46
 equal to	46
 for rendering	46
 end tag	46
-file new	46 *
+file new	46
 xml source	46
 the destination	46
 errors are	46
@@ -2504,7 +2504,7 @@ edit profiling	45
 keys to	45
 following procedure	45
 an e	45
-text editor	45 *
+text editor	45
 block elements	45 *
 a common	45
 element if	45
@@ -2953,7 +2953,7 @@ css stylesheet	39 *
 content authors	39 *
 a specialized	39
 new documents	39 *
-what is	39 *
+what is	39
 following command	39
 transformation type	39
 only to	39
@@ -3078,7 +3078,7 @@ provided as	37
 client secret	37 *
 context and	37
 of available	37
-click apply	37 *
+click apply	37
 with version	37
 at any	37
 documentation is	37
@@ -3161,7 +3161,7 @@ the features	36
 advanced options	36 *
 to extend	36
 and close	36
-plugin for	36 *
+plugin for	36
 it by	36
 parameters and	36
 be referenced	36
@@ -3182,7 +3182,7 @@ client id	36 *
 editor area	36
 or any	36
 manager toolbar	36
-see more	36 *
+see more	36
 web page	36
 getting started	36 *
 and enter	36
@@ -3234,7 +3234,7 @@ terms page	36
 root folder	36
 get the	36
 children of	36
-enter key	36 *
+enter key	36
 not allowed	36
 of plugin	36
 templates that	36
@@ -3301,7 +3301,7 @@ schema that	35
 meaning that	35
 styles for	35
 toolbar drop-down	35
-document validate	35 *
+document validate	35
 prior to	35
 this information	35
 order of	35
@@ -3395,7 +3395,7 @@ the urls	34
 components are	34
 with limited	34
 a result	34
-user manual	34 *
+user manual	34
 pane the	34
 id for	34
 be processed	34
@@ -3548,7 +3548,7 @@ builder view	33
 out the	33
 compare with	33 *
 types are	33
-file open	33 *
+file open	33
 task and	33
 to instruct	33
 the lib	33
@@ -3796,7 +3796,7 @@ right panel	31
 to right	31
 reference in	31
 project is	31
-open and	31 *
+open and	31
 and validation	31
 however if	31
 available that	31
@@ -4032,7 +4032,7 @@ which can	29
 menu select	29
 the end-user	29
 is present	29
-preferences plugins	29 *
+preferences plugins	29
 preferences and	29
 the field	29
 dita or	29
@@ -4090,7 +4090,7 @@ or create	29
 left of	29
 blocks of	29
 is marked	29
-document transformation	29 *
+document transformation	29
 to web	29
 attributes that	29
 output format	29
@@ -4154,7 +4154,7 @@ and condition	29
 to group	29
 merge with	29
 templates wizard	29
-yes default	29 *
+yes default	29
 be associated	29
 content inside	29
 refactor operations	29
@@ -4518,7 +4518,7 @@ pdf files	26
 for further	26
 no selection	26
 the terms	26
-author or	26 *
+author or	26
 microsoft entra	26
 new one	26
 one you	26
@@ -4647,7 +4647,7 @@ a commit	26
 helpful if	26
 performed on	26
 look in	26 *
-plugins folder	26 *
+plugins folder	26
 work on	26
 be moved	26
 to rename	26
@@ -4804,7 +4804,7 @@ key dialog	25
 section to	25
 and run	25
 displayed if	25
-the sign	25 *
+the sign	25
 value if	25
 the side	25
 within oxygen	25
@@ -4870,7 +4870,7 @@ available and	25
 generate this	25
 schema component	25
 the dashboard	25
-no default	25 *
+no default	25
 home directory	25
 the libraries	25
 git staging	25 *
@@ -4958,7 +4958,7 @@ as they	24
 provides access	24
 comment in	24
 are loaded	24
-or author	24 *
+or author	24
 changes for	24
 on their	24
 can provide	24
@@ -4974,7 +4974,7 @@ specific for	24
 field and	24
 is finished	24
 keys are	24
-schematron file	24 *
+schematron file	24
 to complete	24
 for debugging	24
 done in	24
@@ -5001,9 +5001,9 @@ the webdav	24
 that an	24
 current one	24
 to handle	24
-validate submenu	24 *
+validate submenu	24
 tree of	24
-insert topic	24 *
+insert topic	24
 built-in form	24
 less file	24
 three-way comparison	24 *
@@ -5107,7 +5107,7 @@ current branch	24 *
 by double-clicking	24
 down the	24
 your server	24
-settings menu	24 *
+settings menu	24
 renames the	24
 opened from	24
 editor content	24
@@ -5272,7 +5272,7 @@ on both	23
 topics from	23
 or selection	23
 the email	23
-frameworks and	23 *
+frameworks and	23
 a command-line	23
 tab contains	23
 feature that	23
@@ -5408,7 +5408,7 @@ the home	22
 provided for	22
 not visible	22
 function is	22
-click add	22 *
+click add	22
 empty the	22
 default behavior	22
 add-on that	22
@@ -5528,7 +5528,7 @@ ldap authentication	22 *
 management page	22
 output page	22
 tab includes	22
-click save	22 *
+click save	22
 your account	22
 site owner	22 *
 of organization	22
@@ -5607,7 +5607,7 @@ template follow	22
 scenario from	22
 item found	22
 name attribute	22
-extended framework	22 *
+extended framework	22
 framework customization	22 *
 block-level comments	22 *
 true if	22
@@ -5803,7 +5803,7 @@ configuration that	21
 plugins that	21
 scenarios view	21
 advantage of	21
-autocorrect feature	21 *
+autocorrect feature	21
 procedure is	21
 the admin	21
 the sorting	21
@@ -6030,7 +6030,7 @@ project to	20
 drop-down menu.if	20
 menu.if you	20
 the special	20
-click finish	20 *
+click finish	20
 http server	20
 url that	20
 option you	20
@@ -6559,7 +6559,7 @@ editor with	19
 be embedded	19
 mode of	19
 all occurrences	19
-search occurrences	19 *
+search occurrences	19
 submenu the	19
 xhtml document	19
 instructions go	19
@@ -6607,7 +6607,7 @@ author test	19
 xslt 2.0	19
 done using	19
 run a	19
-help help	19 *
+help help	19
 solution is	19
 fo processors	19 *
 executable file	19
@@ -6665,7 +6665,7 @@ feedback service	19
 components to	19
 translation package	19
 schema xsd	19
-options.xml file	19 *
+options.xml file	19
 property value	19 *
 extracted from	19
 fusion projects	19
@@ -6684,7 +6684,7 @@ promoted to	19
 content security	19
 unit test	19
 component description	19
-rule location	19 *
+rule location	19
 code snippet	18
 the necessary	18
 enhance the	18
@@ -6811,7 +6811,7 @@ the before	18
 generated content	18
 moving the	18
 comments manager	18
-editor format	18 *
+editor format	18
 scenarios you	18
 from various	18
 wizard is	18
@@ -6826,7 +6826,7 @@ locate and	18
 domain name	18 *
 is running	18
 the oxy_xpath	18
-oxy_xpath function	18 *
+oxy_xpath function	18
 author in	18
 a function	18
 remove from	18
@@ -6915,7 +6915,7 @@ initial state	18 *
 a color	18
 nodes that	18
 nodes from	18
-insert submenu	18 *
+insert submenu	18
 x<hexadecimal value	18
 highlighting tool	18
 inspect styles	18 *
@@ -6952,7 +6952,7 @@ errors that	18
 page numbers	18
 like a	18
 color and	18
-xml xslt-xquery	18 *
+xml xslt-xquery	18
 config file	18 *
 only on	18
 resources are	18
@@ -7060,7 +7060,7 @@ a submap	18
 font-family roboto	18
 webdav server	18
 script the	18
-length percentage	18 *
+length percentage	18
 xml transformation	18
 addaction id="insert.note	18
 docs web	18
@@ -7160,7 +7160,7 @@ indicate the	17
 the up	17
 element allows	17
 any xml	17
-help register	17 *
+help register	17
 can run	17
 script file	17
 extension in	17
@@ -7220,7 +7220,7 @@ view it	17
 schema it	17
 particular type	17
 dita element	17
-settings drop-down	17 *
+settings drop-down	17
 several methods	17
 assistant to	17
 only contains	17
@@ -7266,7 +7266,7 @@ project this	17
 component for	17
 association select	17
 words are	17
-review submenu	17 *
+review submenu	17
 a format	17
 format attribute	17
 file so	17
@@ -7350,10 +7350,10 @@ for inline	17
 schema this	17
 view xslt	17
 view xquery	17
-xwatch view	17 *
+xwatch view	17
 files using	17
 the args.css	17
-args.css parameter	17 *
+args.css parameter	17
 this by	17
 completion assistance	17
 take precedence	17
@@ -7385,7 +7385,7 @@ dependent resources	17
 toggle comment	17 *
 of editor	17
 a detected	17
-xquery documents	17 *
+xquery documents	17
 operations the	17
 operations for	17
 nested topics	17
@@ -7465,7 +7465,7 @@ positioned inside	17
 revert to	17
 full model	17
 parameter specifies	17
-file save	17 *
+file save	17
 billing manager	17 *
 the upgrade	17
 the js	17
@@ -7620,14 +7620,14 @@ inline actions	16 *
 the severity	16
 executing the	16
 of which	16
-preferences dita	16 *
+preferences dita	16
 dita style	16
 time it	16
 number and	16
 when inserting	16
 assistant offers	16
 for pdf	16
-more drop-down	16 *
+more drop-down	16
 an inline	16
 a standalone	16
 test your	16
@@ -7705,7 +7705,7 @@ target for	16
 should appear	16
 users have	16
 password to	16
-delete button	16 *
+delete button	16
 to these	16
 version for	16
 install a	16
@@ -8113,7 +8113,7 @@ specify which	15
 a continuous	15
 assigned a	15
 wrapped in	15
-click create	15 *
+click create	15
 project directory	15 *
 available the	15
 if applicable	15
@@ -8285,7 +8285,7 @@ context root	15
 task you	15
 automatically added	15
 drag a	15
-edit content	15 *
+edit content	15
 revisions of	15
 it this	15
 mode are	15
@@ -8366,7 +8366,7 @@ various components	15
 that could	15
 be listed	15
 references when	15
-source submenu	15 *
+source submenu	15
 for encoding	15
 it once	15
 output into	15
@@ -8406,7 +8406,7 @@ comparison results	15
 comparison tools	15 *
 best practice	15
 make them	15
-options section	15 *
+options section	15
 tables to	15
 general task	15 *
 to topic	15
@@ -8462,7 +8462,7 @@ toolbar in	15
 the annotation	15
 version="3.0 xsl:template	15
 docbook and	15
-frameworks folder	15 *
+frameworks folder	15
 and functions	15
 document but	15
 template transformation	15
@@ -8501,7 +8501,7 @@ framework script	15
 font in	15
 fonts in	15
 normal font-weight	15
-window menu	15 *
+window menu	15
 perspective the	15
 columns and	15
 owned by	15
@@ -8772,7 +8772,7 @@ your text	14
 that help	14
 different than	14
 are actually	14
-document markup	14 *
+document markup	14
 bar at	14
 schema specified	14
 detects the	14
@@ -8788,7 +8788,7 @@ temporary directory	14
 directories that	14
 or replaced	14
 checks out	14 *
-jpeg png	14 *
+jpeg png	14
 share your	14
 wizard new	14
 or new	14
@@ -9075,7 +9075,7 @@ specific content	14
 right-click any	14
 be accessible	14
 configure toolbars	14 *
-dita toolbar	14 *
+dita toolbar	14
 map pane	14
 signature is	14
 are to	14
@@ -9095,7 +9095,7 @@ reusing content	14 *
 conref push	14 *
 then open	14
 the integration	14
-or backspace	14 *
+or backspace	14
 result if	14
 the lang	14
 grid and	14
@@ -9164,7 +9164,7 @@ url must	14
 a topicref	14
 keeps a	14
 templates there	14
-document source	14 *
+document source	14
 display:block important	14
 the callout	14
 target file	14
@@ -9522,8 +9522,8 @@ paragraphs or	13
 count words	13 *
 counts the	13
 read-only content	13
-accept change(s	13 *
-reject change(s	13 *
+accept change(s	13
+reject change(s	13
 for highlighting	13
 to deactivate	13
 manage reviews	13 *
@@ -9593,7 +9593,7 @@ not show	13
 css selector	13 *
 and test	13
 schema through	13
-yes no	13 *
+yes no	13
 static content	13
 the auto	13
 pdf viewer	13
@@ -9682,7 +9682,7 @@ can match	13
 menu item	13
 oxy_action name	13
 path or	13
-search scope	13 *
+search scope	13
 declarations of	13
 xslt parameters	13 *
 in bold	13
@@ -9708,7 +9708,7 @@ reader to	13
 window is	13
 files used	13
 affix file	13
-see and	13 *
+see and	13
 the part	13
 must first	13
 start or	13
@@ -10495,7 +10495,7 @@ fix support	12
 when validating	12
 the mathml	12
 falls back	12
-oxy_action function	12 *
+oxy_action function	12
 new css	12
 and edited	12
 procedure if	12
@@ -10993,7 +10993,7 @@ buttons at	11
 scenarios in	11
 margins of	11
 only see	11
-also see	11 *
+also see	11
 manager or	11
 the inline	11
 field with	11
@@ -11074,7 +11074,7 @@ parameter will	11
 conflict with	11
 by to	11
 there to	11
-collection-type attribute	11 *
+collection-type attribute	11
 the collection	11
 your feedback	11
 page can	11
@@ -11171,9 +11171,9 @@ copied from	11
 the pasted	11
 of cells	11
 submenus of	11
-edit mathml	11 *
+edit mathml	11
 mode most	11
-insert paragraph	11 *
+insert paragraph	11
 paragraph inserts	11
 list insert	11
 position a	11
@@ -11186,7 +11186,7 @@ document accept	11
 stop highlighting	11 *
 remove highlighting	11
 reviews opens	11
-folding submenu	11 *
+folding submenu	11
 minimum number	11
 created on	11
 default state	11
@@ -11362,7 +11362,7 @@ selection will	11
 or keyref	11
 target of	11
 profiling and	11
-show components	11 *
+show components	11
 reference from	11
 groups the	11
 by namespace	11
@@ -11428,7 +11428,7 @@ lines are	11
 xquery transformations	11
 review button	11
 processor the	11
-help about	11 *
+help about	11
 output when	11
 options at	11
 processor is	11
@@ -11479,7 +11479,7 @@ includes several	11
 perspective is	11
 html-fragments fragment	11
 application on	11
-fallback font	11 *
+fallback font	11
 might not	11
 some examples	11
 when its	11
@@ -11535,7 +11535,7 @@ formats such	11
 options show	11
 apply restart	11
 dita conref	11
-file import/convert	11 *
+file import/convert	11
 row in	11
 the difference	11
 color is	11
@@ -11569,7 +11569,7 @@ forms of	11
 dragging them	11
 control for	11
 references from	11
-xproc script	11 *
+xproc script	11
 its url	11
 additional options	11
 plugin it	11
@@ -11798,7 +11798,7 @@ openai microsoft	10
 from here	10
 engine can	10
 tab select	10
-select plugins	10 *
+select plugins	10
 ai assistance	10
 input area	10
 to refine	10
@@ -12126,7 +12126,7 @@ the bottom-left	10
 front-page/front-page front-page	10
 front-page div	10
 paste your	10
-execute xpath	10 *
+execute xpath	10
 completion subtab	10
 action with	10
 can implement	10
@@ -12211,7 +12211,7 @@ in different	10
 of predefined	10
 codeblock element	10
 editors in	10
-copy action	10 *
+copy action	10
 start by	10
 a user-friendly	10
 simple as	10
@@ -12264,10 +12264,10 @@ header or	10
 besides the	10
 to limit	10
 defined the	10
-grid editor	10 *
-insert row	10 *
+grid editor	10
+insert row	10
 default they	10
-text submenu	10 *
+text submenu	10
 word count	10
 characters no	10
 no spaces	10
@@ -12403,7 +12403,7 @@ the important	10
 json lines	10 *
 string initial	10
 bottom and	10
-left right	10 *
+left right	10
 an odd	10
 the hyphenation	10
 publication is	10
@@ -12574,7 +12574,7 @@ ratings statistics	10
 or down	10
 bar in	10
 current site	10
-global variable	10 *
+global variable	10
 not referenced	10
 the oxy_action	10
 with details	10
@@ -12749,7 +12749,7 @@ in parallel	10
 generate xslt	10
 include in	10
 a conkeyref	10
-reuse submenu	10 *
+reuse submenu	10
 that stores	10
 copied element	10
 insert reusable	10
@@ -12841,7 +12841,7 @@ added under	10
 specified folder	10
 svn working	10
 file displays	10
-link submenu	10 *
+link submenu	10
 are numbered	10
 the validated	10
 the expressions	10
@@ -12921,7 +12921,7 @@ driver file	10
 an end	10
 database and	10
 with projects	10
-click connect	10 *
+click connect	10
 and outgoing	10
 are organized	10
 all links	10
@@ -13518,7 +13518,7 @@ interface import	9
 null for	9
 specified width	9
 or its	9
-insert column	9 *
+insert column	9
 three methods	9
 what type	9
 opened this	9
@@ -13685,7 +13685,7 @@ two values	9
 namespace and	9
 local attributes	9 *
 search submenu	9
-document references	9 *
+document references	9
 editor/author or	9
 styles filter	9 *
 is how	9
@@ -13882,7 +13882,7 @@ corresponding item	9
 components displays	9
 resources opens	9
 element before	9
-any character	9 *
+any character	9
 a flag	9
 map view	9
 active the	9
@@ -13897,7 +13897,7 @@ one step	9
 and indented	9
 a query	9
 folder option	9
-element section	9 *
+element section	9
 to element	9
 operation requires	9
 be renamed	9
@@ -14013,7 +14013,7 @@ whitespace changes	9
 the indentation	9
 ignores all	9
 where all	9
-xml section	9 *
+xml section	9
 the transparency	9
 for yaml	9
 of selected	9
@@ -14023,7 +14023,7 @@ existing ids	9
 on elements	9
 example with	9
 information view	9 *
-perspective and	9 *
+perspective and	9
 default layout	9
 others to	9
 needs the	9
@@ -14199,7 +14199,7 @@ referenced as	9
 the baseline	9
 definition with	9
 topic/topic"][is-chapter]:not([is-part class	9
-schematron documents	9 *
+schematron documents	9
 sample plugins	9 *
 steps are	9
 optionally if	9
@@ -14305,7 +14305,7 @@ the bookmarks	9
 token is	9
 to clipboard	9
 security certificate	9
-validation actions	9 *
+validation actions	9
 selected document	9
 generate additional	9
 additional items	9 *
@@ -14498,7 +14498,7 @@ scenario called	9
 for addition	9
 sqf:add element	9
 schema element	9
-editor author	9 *
+editor author	9
 client application	9
 element expand	9
 components depending	9
@@ -14927,7 +14927,7 @@ map from	8
 sequential list	8
 and be	8
 validation warning	8
-new rectangle	8 *
+new rectangle	8
 point of	8
 hyperlinks to	8
 see which	8
@@ -15029,7 +15029,7 @@ of html	8
 attempting to	8
 on two	8
 using that	8
-table tab	8 *
+table tab	8
 value cannot	8
 attributes specified	8
 valign attribute	8
@@ -15281,7 +15281,7 @@ possible value	8 *
 stands for	8
 documents wsdl	8
 references menu	8
-document refactoring	8 *
+document refactoring	8
 an important	8
 the added	8
 view only	8
@@ -15354,7 +15354,7 @@ files contain	8
 copy if	8
 and incoming	8
 repository with	8
-merge wizard	8 *
+merge wizard	8
 the pre-merge	8
 local modifications	8 *
 receiving the	8
@@ -15463,10 +15463,10 @@ logging for	8
 byte order	8
 default displays	8
 for base64	8
-hex conversions	8 *
+hex conversions	8
 documentation using	8
 your html	8
-click continue	8 *
+click continue	8
 your published	8
 this the	8
 your ldap	8
@@ -15586,7 +15586,7 @@ topic use	8
 to troubleshooting	8
 on dita	8
 generate unique	8
-filters section	8 *
+filters section	8
 wildcards such	8
 as or	8
 archives if	8
@@ -15605,8 +15605,8 @@ xslt quick	8
 template name	8 *
 call-template element	8
 not declared	8
-global parameter	8 *
-local variable	8 *
+global parameter	8
+local variable	8
 template create	8
 a separator	8
 a leader	8
@@ -16228,7 +16228,7 @@ and switch	8
 nested table	8
 ms excel	8
 excel files	8
-translate fluenta	8 *
+translate fluenta	8
 it cannot	8
 its properties	8
 page definitions	8
@@ -16304,7 +16304,7 @@ uploaded to	8
 a deployment	8
 the internet	8
 subtab go	8
-rename in	8 *
+rename in	8
 its occurrences	8
 new id	8
 end in	8
@@ -16319,7 +16319,7 @@ usual text	8
 run openapi	8
 a test	8
 the requests	8
-fonts fonts	8 *
+fonts fonts	8
 and menu	8
 specify syntax	8
 highlight elements/attributes	8
@@ -16378,7 +16378,7 @@ cdata sections	8 *
 or local	8
 this media	8
 diagram and	8
-oxy_label function	8 *
+oxy_label function	8
 global elements	8 *
 characters if	8
 a scenarios	8
@@ -16571,7 +16571,7 @@ main chat	7 *
 content selected	7
 chunks of	7
 tool where	7
-click submit	7 *
+click submit	7
 or actions	7
 a favorite	7
 text word	7
@@ -16932,7 +16932,7 @@ the applications	7
 old installation	7
 not copy	7
 xml developer	7
-editor open	7 *
+editor open	7
 tab at	7
 cursor will	7
 option with	7
@@ -16991,7 +16991,7 @@ after selecting	7
 have at	7
 to redo	7
 was undone	7
-show/hide numbers	7 *
+show/hide numbers	7
 bring the	7
 top layer	7
 to zoom	7
@@ -17094,7 +17094,7 @@ external sources	7
 options include	7
 an apache	7
 out action	7
-repository menu	7 *
+repository menu	7
 original url	7
 revision if	7
 other text	7
@@ -17113,7 +17113,7 @@ framework files	7
 resources on	7
 from web	7
 files adds	7
-refresh f5	7 *
+refresh f5	7
 bold text	7 *
 ellipsis 3	7
 the side-pane	7
@@ -17398,7 +17398,7 @@ servers for	7
 secret that	7
 up with	7
 that each	7
-attribute description	7 *
+attribute description	7
 copy with	7
 revision that	7
 compared to	7
@@ -18128,7 +18128,7 @@ to collaborate	7
 keep track	7
 a simplified	7
 also useful	7
-comments option	7 *
+comments option	7
 may result	7
 existing built-in	7
 easily share	7
@@ -18194,7 +18194,7 @@ row with	7
 converts an	7
 cursor changes	7
 deleting content	7 *
-delete column(s	7 *
+delete column(s	7
 or split	7
 ancestor element	7
 valid certificate	7
@@ -18300,7 +18300,7 @@ validation this	7
 not display	7
 xhtml to	7
 columns column	7
-column description	7 *
+column description	7
 before running	7
 license file	7
 with resolved	7
@@ -18733,7 +18733,7 @@ hints to	7
 properties will	7
 landscape page	7 *
 maximize the	7
-source pane	7 *
+source pane	7
 written as	7
 docbook transformation	7
 that converts	7
@@ -19016,7 +19016,7 @@ external xslt	7
 digitally sign	7
 or step	7
 authors in	7
-profiling settings	7 *
+profiling settings	7
 tutorials view	7 *
 default tutorials	7
 style your	7
@@ -19059,7 +19059,7 @@ node if	7
 1 gb	7
 initiated by	7
 activity for	7
-oxy_compound_action function	7 *
+oxy_compound_action function	7
 pass parameters	7
 example public	7
 of updating	7
@@ -19182,7 +19182,7 @@ webinar oxygen	6
 add-on by	6
 contact us	6 *
 openai is	6
-openai models	6 *
+openai models	6
 it that	6
 openai user	6
 value azure_client_id	6
@@ -19363,7 +19363,7 @@ action are	6
 view other	6
 create more	6
 and personalized	6
-review changes	6 *
+review changes	6
 revert the	6
 code found	6
 selected code	6
@@ -19702,7 +19702,7 @@ be reflected	6
 displayed before	6
 or ip	6
 of global	6
-file import	6 *
+file import	6
 selecting content	6 *
 shortcuts to	6
 node at	6
@@ -19931,7 +19931,7 @@ json data	6
 more specifically	6
 element li	6
 possible by	6
-autocorrect mechanism	6 *
+autocorrect mechanism	6
 point allows	6
 created implementation	6
 individual extension	6
@@ -20251,7 +20251,7 @@ model layout	6
 dita simple	6
 used within	6
 for documenting	6
-table table	6 *
+table table	6
 in manual	6
 has fewer	6
 an incorrect	6
@@ -20390,7 +20390,7 @@ are optional	6
 by including	6
 sides of	6
 cell content	6
-join cells	6 *
+join cells	6
 codes see	6
 can ignore	6
 following characters	6
@@ -20413,7 +20413,7 @@ one will	6
 sequence and	6
 is collected	6
 translated in	6
-reload f5	6 *
+reload f5	6
 merging the	6
 also apply	6
 occurrences when	6
@@ -20463,7 +20463,7 @@ automatically opens	6
 a personal	6
 project's personal	6
 project management	6
-changes view	6 *
+changes view	6
 be editable	6
 folder containing	6
 file relative	6
@@ -20706,7 +20706,7 @@ referenced attribute	6
 and openapi	6
 separator between	6
 fragments are	6
-oxy_action_list function	6 *
+oxy_action_list function	6
 the oxy_buttongroup	6
 optional a	6
 rules it	6
@@ -20744,7 +20744,7 @@ all modified	6
 display information	6
 information displayed	6
 have changed	6
-unversioned files	6 *
+unversioned files	6
 properties status	6
 compute valid	6
 order the	6
@@ -21094,12 +21094,12 @@ criteria dialog	6
 tabular form	6
 cycle through	6
 is interpreted	6
-editor save	6 *
+editor save	6
 panel of	6
 default associations	6
 its executable	6
 following dialog	6
-save action	6 *
+save action	6
 declaration or	6
 resource feature	6
 filter buttons	6 *
@@ -21141,7 +21141,7 @@ property as	6
 way is	6
 oxygen the	6
 fonts and	6
-appearance fonts	6 *
+appearance fonts	6
 java access	6
 view go	6
 sometimes the	6
@@ -21512,7 +21512,7 @@ following diff	6
 algorithms to	6
 size selected	6
 works well	6
-synchronized scrolling	6 *
+synchronized scrolling	6
 selected difference	6
 that before	6
 trailing whitespaces	6
@@ -21766,7 +21766,7 @@ when change	6
 block the	6
 functionality the	6
 also check	6
-headerunderlined header	6 *
+headerunderlined header	6
 horizontal line	6
 space between	6
 repository svn	6
@@ -21966,7 +21966,7 @@ file copy	6
 subtab document	6
 defined inside	6
 rename operation	6
-change scope	6 *
+change scope	6
 type dita	6
 maps are	6
 the opf	6
@@ -22077,7 +22077,7 @@ editing mathml	6
 box name	6
 db structure	6
 with keyword	6
-site usage	6 *
+site usage	6
 is sorted	6
 additional statistics	6
 average number	6
@@ -22308,7 +22308,7 @@ same type	6
 of reference	6
 or part	6
 extended toolbar	6
-tab key	6 *
+tab key	6
 displays profiling	6
 stream handler	6
 specific protocol	6
@@ -22974,7 +22974,7 @@ understand it	5
 document show	5
 locations where	5
 response pane	5
-record examples	5 *
+record examples	5
 my account	5
 contains general	5
 that create	5
@@ -23176,7 +23176,7 @@ interfere with	5
 base class	5
 eclipse workbench	5
 library and	5
-id string	5 *
+id string	5
 like this:public	5
 this:public class	5
 out in	5
@@ -23269,7 +23269,7 @@ reference file	5
 new reference	5
 of three	5
 editor consists	5
-new circle	5 *
+new circle	5
 rectangle new	5
 duplicate of	5
 undo the	5
@@ -23850,7 +23850,7 @@ for add-on	5
 add-on updates	5
 add-on update	5
 updated you	5
-restart oxygen	5 *
+restart oxygen	5
 manually check	5
 help check	5
 update available	5 *
@@ -24079,7 +24079,7 @@ compare it	5
 inspect how	5
 using more	5
 selectors enclosed	5
-headers footers	5 *
+headers footers	5
 footers or	5
 inspect and	5
 will affect	5
@@ -24268,7 +24268,7 @@ xhtml epub	5
 enable a	5
 http requests	5
 are recognized	5
-css documents	5 *
+css documents	5
 not alter	5
 the bom	5
 be represented	5
@@ -24298,10 +24298,10 @@ recommended approach	5
 approach to	5
 that depend	5
 file along	5
-dita keys	5 *
+dita keys	5
 point that	5
 your external	5
-extensionsbundle implementation	5 *
+extensionsbundle implementation	5
 scripts that	5
 browser compatibility	5 *
 for optimal	5
@@ -24376,7 +24376,7 @@ push operation	5
 docs as	5
 also right-click	5
 are determined	5
-generic default	5 *
+generic default	5
 default set	5
 testing the	5
 plugin archive	5
@@ -24438,7 +24438,7 @@ following wildcards	5
 accepted any	5
 string any	5
 character patterns	5
-patterns separator	5 *
+patterns separator	5
 no wildcards	5
 plugin developers	5
 who develop	5
@@ -24481,7 +24481,7 @@ you configured	5
 with options	5
 also access	5
 xslt-xquery xpath	5
-xpath options	5 *
+xpath options	5
 expression attribute	5
 affected attribute	5
 attribute namespace	5 *
@@ -24517,7 +24517,7 @@ excludes non-xml	5
 bookmap to	5
 replace and	5
 all topic	5
-location section	5 *
+location section	5
 while keeping	5
 be surrounded	5
 surrounded with	5
@@ -24744,7 +24744,7 @@ tables if	5
 for chapters	5
 toc is	5
 chapter topicref	5
-related-links element	5 *
+related-links element	5
 label of	5
 class topic/desc	5
 the darwin	5
@@ -24921,7 +24921,7 @@ editor then	5
 modeimage map	5
 editingimage map	5
 xml:id attribute	5
-new polygon	5 *
+new polygon	5
 form you	5
 and color	5
 other editing	5
@@ -24970,8 +24970,8 @@ deletions are	5
 are colored	5
 about an	5
 mentions and	5
-remove comment	5 *
-view original	5 *
+remove comment	5
+view original	5
 you attempt	5
 at framework	5
 map docbook	5
@@ -25164,7 +25164,7 @@ button enter	5
 create to	5
 feedback and	5
 editing tables	5
-tables tables	5 *
+tables tables	5
 widget that	5
 a move	5
 cell you	5
@@ -25173,7 +25173,7 @@ selected cells	5
 keyboard or	5
 between table	5
 multiple selected	5
-split cell	5 *
+split cell	5
 mode dita	5
 dita tables	5
 large tables	5
@@ -25247,7 +25247,7 @@ example consider	5
 for parsing	5
 the outputs	5
 edit dialog	5
-selection plugin	5 *
+selection plugin	5
 container is	5
 character string	5
 expression option	5
@@ -25255,7 +25255,7 @@ whole words	5 *
 xml xsl	5
 you input	5
 backup files	5
-scope section	5 *
+scope section	5
 search to	5
 performed recursively	5
 recursively for	5
@@ -25348,7 +25348,7 @@ interface localization	5
 or three	5
 an underscore	5
 interface provides	5
-archiving archiving	5 *
+archiving archiving	5
 word processing	5
 when these	5
 the epub	5
@@ -25589,7 +25589,7 @@ identical xml	5
 feature ignoring	5
 ignoring whitespace	5
 whitespace means	5
-file reload	5 *
+file reload	5
 stripe help	5
 several colors	5
 dynamic lines	5
@@ -25815,7 +25815,7 @@ generating json	5
 testing tool	5
 files generate	5
 docbook checker	5 *
-profiling preferences	5 *
+profiling preferences	5
 preferences in	5
 primary key	5
 or string	5
@@ -25957,7 +25957,7 @@ certificate or	5
 invalid option	5
 this automatically	5
 click view	5
-details tab	5 *
+details tab	5
 and replaced	5
 add searchable	5
 same label	5
@@ -26248,7 +26248,7 @@ panels the	5
 input of	5
 to more	5
 watch expression	5 *
-assembly documents	5 *
+assembly documents	5
 the definitive	5
 definitive guide	5
 detected is	5
@@ -26637,7 +26637,7 @@ avoid conflicts	5
 copy url	5
 another item	5
 was performed	5
-delete delete	5 *
+delete delete	5
 external folder	5
 particular revision	5
 root url	5
@@ -26931,7 +26931,7 @@ and classes	5
 contain extension	5
 built-in scenarios	5
 must select	5
-edit extensions	5 *
+edit extensions	5
 nvdl schemasdiagram	5
 four types	5
 merge a	5
@@ -26947,7 +26947,7 @@ entire list	5
 subversion server	5
 other directory	5
 files save	5
-footnotes footnotes	5 *
+footnotes footnotes	5
 following document	5
 an actual	5
 footnote call	5
@@ -26973,7 +26973,7 @@ different repository	5
 draft 2019-09	5 *
 especially in	5
 red squiggly	5
-select submenu	5 *
+select submenu	5
 element selects	5
 content selects	5
 position excluding	5
@@ -27013,7 +27013,7 @@ file all	5
 have write	5
 security permissions	5 *
 this password	5
-links links	5 *
+links links	5
 ol li>first	5
 list schema	5
 populated based	5
@@ -29003,7 +29003,7 @@ video video	4
 menu there	4
 keys from	4
 map link	4
-context option	4 *
+context option	4
 specified resource	4
 type but	4
 or iframe	4
@@ -29151,7 +29151,7 @@ fusion website	4
 restart content	4
 enterprise to	4
 you upload	4
-select frameworks	4 *
+select frameworks	4
 tab xslt	4
 your input	4
 elements then	4
@@ -29292,7 +29292,7 @@ file properties	4 *
 or information	4
 the publisher	4
 products that	4
-trademarks trademarks	4 *
+trademarks trademarks	4
 preparation of	4
 ask questions	4
 questions about	4
@@ -29438,7 +29438,7 @@ shift downarrow	4
 downarrow option	4
 q command	4
 shift g	4
-help f1	4 *
+help f1	4
 f1 opens	4
 paragraph at	4
 position text	4
@@ -30035,7 +30035,7 @@ to pick	4
 projects see	4
 see also	4
 also for	4
-mathtype integration	4 *
+mathtype integration	4
 integration can	4
 default mathml	4
 default html	4
@@ -30046,7 +30046,7 @@ to 2	4
 last line	4
 the bat	4
 bat file	4
-accessibility accessibility	4 *
+accessibility accessibility	4
 top-left font-family	4
 top-right font-family	4
 top-center font-family	4
@@ -30116,7 +30116,7 @@ separator with	4
 also normalizes	4
 space insert	4
 as moving	4
-open submenu	4 *
+open submenu	4
 generate openapi	4
 or 3.1	4
 including annotations	4
@@ -30512,7 +30512,7 @@ rendered on	4
 revision history	4
 on what	4
 elements example	4
-attribute section	4 *
+attribute section	4
 between one	4
 convert attribute	4
 fragment inside	4
@@ -30801,7 +30801,7 @@ even the	4
 xep is	4
 executable script	4
 name changes	4
-up down	4 *
+up down	4
 textual description	4
 pd the	4
 used between	4
@@ -31259,7 +31259,7 @@ editing actions.you	4
 actions.you can	4
 access various	4
 helpful contextual	4
-remove point	4 *
+remove point	4
 point with	4
 shape selected	4
 appropriate steps	4
@@ -31339,11 +31339,11 @@ changes tap	4
 click one	4
 document area	4
 queries in	4
-comment change	4 *
+comment change	4
 multiple changes	4
-accept change	4 *
+accept change	4
 to reject	4
-reject change	4 *
+reject change	4
 and tap	4
 in blue	4
 comment use	4
@@ -31438,7 +31438,7 @@ and row	4
 xml names	4
 and entering	4
 configure more	4
-xml import	4 *
+xml import	4
 panel contains	4
 document created	4
 of svn	4
@@ -32224,7 +32224,7 @@ libraries can	4
 properties when	4
 automatically validates	4
 or transform	4
-transform submenu	4 *
+transform submenu	4
 xml-stylesheet processing	4
 references an	4
 be dynamically	4
@@ -32641,7 +32641,7 @@ deep-chapter-scope class	4
 class topic/xref"][href][type	4
 target-counter(attr(href chapter	4
 submap you	4
-metadata metadata	4 *
+metadata metadata	4
 and reusable	4
 images referenced	4
 view keys	4
@@ -32730,7 +32730,7 @@ ctrl+shift+1 through	4
 through ctrl+shift+9	4
 a bookmark	4
 f9 on	4
-edit bookmarks	4 *
+edit bookmarks	4
 do either	4
 right-click its	4
 could happen	4
@@ -32883,7 +32883,7 @@ error highlight	4
 location using	4
 position that	4
 to epub	4
-transformation scenariosdocbook	4 *
+transformation scenariosdocbook	4
 specific font	4
 use commas	4
 commas to	4
@@ -32923,7 +32923,7 @@ and subject	4
 facet values	4
 windows 7	4
 user selects	4
-hyphenation hyphenation	4 *
+hyphenation hyphenation	4
 element locator	4
 catch numberformatexception	4
 invoked at	4
@@ -33122,7 +33122,7 @@ files etc	4
 com.oxygenxml.webhelp.xsl.createmainpage extension	4
 the disable	4
 property metadatatitle	4
-metadatatitle property	4 *
+metadatatitle property	4
 the map's	4
 tab xquery	4
 transformation scenariofo	4
@@ -33142,7 +33142,7 @@ to inline	4
 solid green	4
 table grid	4
 extensions debugging	4
-set breakpoints	4 *
+set breakpoints	4
 classpath the	4
 debugging perspective	4
 oauth 1.0	4
@@ -33421,7 +33421,7 @@ schema association	4
 in complex	4
 ncname for	4
 all groups	4
-extract template	4 *
+extract template	4
 included from	4
 instruction to	4
 current and	4
@@ -33673,7 +33673,7 @@ selected rows	4 *
 are painted	4
 two color	4
 built-in template	4
-online preview	4 *
+online preview	4
 preview icon	4
 sharing publishing	4
 hosted by	4
@@ -33686,7 +33686,7 @@ searches use	4
 schematron language	4
 authors with	4
 as inserting	4
-dita-ot customization	4 *
+dita-ot customization	4
 with support	4
 codes for	4
 the us	4
@@ -34067,7 +34067,7 @@ schema languages	4
 to processing	4
 itself or	4
 modifications and	4
-tools merge	4 *
+tools merge	4
 displayed.if errors	4
 found you	4
 proceeding click	4
@@ -34314,7 +34314,7 @@ who will	4
 manual configuration	4 *
 location repository	4
 date date	4
-lock information	4 *
+lock information	4
 column if	4
 who created	4
 server side	4
@@ -35267,7 +35267,7 @@ actions including	4
 a slider	4
 custom json	4
 json framework	4
-refresh references	4 *
+refresh references	4
 viewsoutput mapping	4
 specific areas	4
 xalan shows	4
@@ -35320,7 +35320,7 @@ deletion callouts	4 *
 deletion you	4
 in callout	4
 document reject	4
-options folder	4 *
+options folder	4
 boolean>true</boolean entry	4
 master account	4
 header you	4
@@ -35541,7 +35541,7 @@ variant of	4
 removing a	4
 to 3	4
 the folds	4
-toggle fold	4 *
+toggle fold	4
 current fold	4
 fold collapse	4
 conversion processors	4 *
@@ -35723,7 +35723,7 @@ and index	4
 team page	4
 packed-refs file	4
 compile to	4
-appendices appendices	4 *
+appendices appendices	4
 the appendices	4
 also resolves	4
 editors is	4
@@ -36688,7 +36688,7 @@ models you	3
 newer versions	3
 released after	3
 they often	3
-text xml	3 *
+text xml	3
 plugin's installation	3
 initializes the	3
 in three	3
@@ -36762,7 +36762,7 @@ to correct	3
 attach action	3
 results match	3
 or description	3
-insert variables	3 *
+insert variables	3
 supported variables	3
 original version	3
 in png	3
@@ -36899,7 +36899,7 @@ it creates	3
 map location	3
 fix terminology	3
 with key	3
-document file	3 *
+document file	3
 dtd file	3
 documents xslt	3
 xslt xml	3
@@ -37129,7 +37129,7 @@ affect performance	3
 specified size	3
 is 300	3
 500 mb	3 *
-performance section	3 *
+performance section	3
 loading in	3
 optimized for	3
 memory usage	3
@@ -37288,13 +37288,13 @@ page set	3
 and before	3
 contain some	3
 toolbar as	3
-source open	3 *
+source open	3
 open browses	3
 url browses	3
 archive browses	3
 browses an	3
-target open	3 *
-base open	3 *
+target open	3
+base open	3
 contains detailed	3
 differences detected	3
 can load	3
@@ -39089,7 +39089,7 @@ all file	3
 customizationconfiguring content	3
 proposals configuring	3
 proposals content	3
-xmlnoderenderercustomizer api	3 *
+xmlnoderenderercustomizer api	3
 p to	3
 as paragraph	3
 paragraph instead	3
@@ -39139,7 +39139,7 @@ an atx-style	3
 block inserts	3
 position three	3
 three child	3
-insert task	3 *
+insert task	3
 table inserts	3
 configure printing	3
 printing options	3
@@ -39547,7 +39547,7 @@ forward go	3
 modification go	3
 global components	3
 edit components	3
-open schema	3 *
+open schema	3
 modified on	3
 be detected	3
 this symbol	3
@@ -39618,7 +39618,7 @@ is disposed	3
 by listening	3
 although not	3
 not as	3
-clear all	3 *
+clear all	3
 checking spell	3
 and every	3
 document however	3
@@ -39748,7 +39748,7 @@ default prefix-namespace	3
 prefix-namespace mappings	3
 parameters wizard	3
 templates new	3
-document templatescreating	3 *
+document templatescreating	3
 wizard allows	3
 previous sessions	3
 wizard by	3
@@ -40076,7 +40076,7 @@ homedir the	3
 oxygeninstalldir the	3
 processor you	3
 types association	3
-operations section	3 *
+operations section	3
 invoked to	3
 application name	3 *
 feedback interface	3
@@ -40090,7 +40090,7 @@ samples plugin	3
 kit and	3
 there and	3
 another to	3
-shiro-users.ini file	3 *
+shiro-users.ini file	3
 dashboarddashboard page	3
 of dialog	3
 after defining	3
@@ -40292,7 +40292,7 @@ header this	3
 including creating	3
 and deleting	3
 builds for	3
-publications side-view	3 *
+publications side-view	3
 read only	3
 corner this	3
 not loaded	3
@@ -40344,7 +40344,7 @@ by each	3
 editor background	3 *
 mode outline	3
 files compare	3
-color chooser	3 *
+color chooser	3
 print margin	3
 column allows	3
 of transparency	3
@@ -40844,7 +40844,7 @@ following server	3
 location content	3
 see using	3
 yaml the	3
-pressing or	3 *
+pressing or	3
 borders to	3
 completion mechanism	3
 generated automatically	3
@@ -41664,7 +41664,7 @@ last column	3
 block style	3
 style it	3
 the n	3
-import button	3 *
+import button	3
 an exported	3
 will process	3
 process as	3
@@ -41722,7 +41722,7 @@ footer to	3
 transparent colors	3 *
 doctype article	3
 article public	3
-validate document	3 *
+validate document	3
 more difficult	3
 learn about	3
 and nested	3
@@ -41881,7 +41881,7 @@ footer set	3
 is framed	3
 cells below	3
 row this	3
-delete row	3 *
+delete row	3
 row located	3
 selection insert	3
 column deletes	3
@@ -42306,7 +42306,7 @@ path</descr arg	3
 options option	3
 path id	3
 folders filter	3
-transformation scenariosconfigure	3 *
+transformation scenariosconfigure	3
 scenarios or	3
 following sortable	3
 type contextual	3
@@ -42339,7 +42339,7 @@ prevent validation	3
 context drop-down	3
 propagated throughout	3
 map drop-down	3
-browse workspace	3 *
+browse workspace	3
 workspace allows	3
 using sftp	3
 sftp dialog	3
@@ -42347,7 +42347,7 @@ for archived	3
 browse data	3
 explorer opens	3
 explorer that	3
-numbering numbering	3 *
+numbering numbering	3
 numbering the	3
 of numbering	3
 figures tables	3 *
@@ -42449,7 +42449,7 @@ right change	3
 appends it	3
 left replaces	3
 side remove	3
-remove change	3 *
+remove change	3
 feature although	3
 button all	3
 conflicts conflicts	3
@@ -42535,7 +42535,7 @@ in modules	3
 surround all	3 *
 use their	3
 console logging	3 *
-logging logging	3 *
+logging logging	3
 custom logback.xml	3
 info messages	3
 another database	3
@@ -42700,7 +42700,7 @@ own container	3
 container oxygen	3
 service run	3
 sh load-docker-images.sh	3
-configure docker-compose.yml	3 *
+configure docker-compose.yml	3
 is expected	3
 format generate	3
 group are	3
@@ -42722,7 +42722,7 @@ for extensive	3
 documents xquery	3
 documents deprecated	3
 documents css	3
-xproc scripts	3 *
+xproc scripts	3
 null values	3
 of date	3
 column are	3
@@ -42973,7 +42973,7 @@ that by	3
 can translate	3
 and language	3
 or entire	3
-replace button	3 *
+replace button	3
 certificate as	3
 environment where	3
 actions validate	3
@@ -43103,7 +43103,7 @@ of objects	3
 an xsd	3
 type then	3
 name conflicts	3
-name string	3 *
+name string	3
 of integers	3
 schema but	3
 consideration when	3
@@ -43416,7 +43416,7 @@ help if	3
 file folder	3
 administration pageconfigure	3
 for follow	3
-select license	3 *
+select license	3
 server section	3
 server select	3
 that informs	3
@@ -43469,7 +43469,7 @@ manually trigger	3
 trigger an	3
 an indexing	3
 indexing functionality	3
-duplicate action	3 *
+duplicate action	3
 version will	3
 create each	3
 configure application	3
@@ -43507,7 +43507,7 @@ range from	3
 dita scenario	3
 the transformation's	3
 page according	3
-open archive	3 *
+open archive	3
 for epub	3
 information watch	3
 modified xml	3
@@ -43663,9 +43663,9 @@ the whr-collect-indexterms	3
 com.oxygenxml.webhelp.xsl.createindextermspage extension	3
 positron and	3
 pdf publication	3
-highlight tool	3 *
+highlight tool	3
 highlight action	3
-edit review	3 *
+edit review	3
 review menu	3
 highlight content	3
 highlighting mode	3
@@ -43881,7 +43881,7 @@ need and	3
 tabular format	3
 select how	3
 box on	3
-find find	3 *
+find find	3
 criteria to	3
 it manually	3
 menu only	3
@@ -44002,7 +44002,7 @@ different name	3
 surround content	3
 other refactoring	3
 markup by	3
-edit copy	3 *
+edit copy	3
 corresponding xml	3
 owners to	3
 separate installation	3
@@ -44216,7 +44216,7 @@ press on	3
 to interrupt	3
 direction is	3
 forward or	3
-find/replace operation	3 *
+find/replace operation	3
 is covered	3
 without going	3
 or backward	3
@@ -44624,7 +44624,7 @@ mentions in	3
 set other	3
 see find	3
 workspace open	3
-videos videos	3 *
+videos videos	3
 resolution for	3
 images such	3
 image-resolution 300dpi	3
@@ -44867,7 +44867,7 @@ resources relative	3
 paths like	3
 form controlobject	3
 controlobject content	3
-bookmarks bookmarks	3 *
+bookmarks bookmarks	3
 content(text in	3
 bookmarks the	3
 declaration line	3
@@ -45164,7 +45164,7 @@ a load-balanced	3
 server setup	3
 editing feature	3
 servers behind	3
-session stickiness	3 *
+session stickiness	3
 the duration	3
 duration of	3
 this result	3
@@ -45260,7 +45260,7 @@ oxygen vale	3
 markdown md	3
 editing these	3
 which scenarios	3
-default checkbox	3 *
+default checkbox	3
 scenarios listed	3
 the clean.temp	3
 clean.temp parameter	3
@@ -45316,7 +45316,7 @@ fontinherit always	3
 always true	3
 single or	3
 chooser form	3
-href width	3 *
+href width	3
 were designed	3
 designed specifically	3
 create various	3
@@ -45411,7 +45411,7 @@ the scheme	3
 alt i	3
 control it	3
 it actually	3
-svn:ignore property	3 *
+svn:ignore property	3
 alt v	3
 from version	3
 operation removes	3
@@ -45451,7 +45451,7 @@ returned to	3
 nn label	3
 a table's	3
 java se	3
-integration serverjenkins	3 *
+integration serverjenkins	3
 your maven	3
 changes limitations	3
 limitations include	3
@@ -45617,7 +45617,7 @@ have questions	3
 intend on	3
 css js	3
 extensions used	3
-tags section	3 *
+tags section	3
 each tag	3
 icon it	3
 all generated	3
@@ -46070,7 +46070,7 @@ not trusted	3
 sdk extension	3
 vm arguments	3 *
 simple for	3
-customized frameworks	3 *
+customized frameworks	3
 of framework	3
 oxygen github	3
 embedded formats	3 *
@@ -46155,7 +46155,7 @@ configuration locate	3
 version corresponding	3
 the docbook5	3
 default most	3
-section submenu	3 *
+section submenu	3
 an imagedata	3
 hostname that	3
 parent web	3
@@ -46860,7 +46860,7 @@ type configurations	3
 then by	3
 order specified	3
 numbering figuresfigure	3
-figuresfigure numbering	3 *
+figuresfigure numbering	3
 figure titles	3
 oxy_video form	3
 helper identify	3
@@ -46874,7 +46874,7 @@ by space	3
 each schema	3
 each attribute	3
 commentsstyling tracked	3
-tracked changesstyling	3 *
+tracked changesstyling	3
 oxy-insert oxy-delete	3
 advanced settings	3
 java home	3 *
@@ -46891,7 +46891,7 @@ the xml-stylesheet	3
 duplicate them	3
 no css	3
 css association	3
-tasks tasks	3 *
+tasks tasks	3
 provide step-by-step	3
 step-by-step instructions	3
 max-width 100	3
@@ -47003,7 +47003,7 @@ specific annotation	3
 item can	3
 move items	3
 component paste	3
-remove delete	3 *
+remove delete	3
 component collapse	3
 in jpeg	3
 png format	3
@@ -47209,7 +47209,7 @@ manage dita	3
 projects users	3
 import content	3
 content allows	3
-publications page	3 *
+publications page	3
 template choose	3
 archive url	3
 admin ui	3
@@ -47881,11 +47881,11 @@ shape if	3
 framework paste	3
 another word	3
 other side	3
-window results	3 *
+window results	3
 results menu	3
 editor highlights	3 *
 all find	3
-grouping mode	3 *
+grouping mode	3
 full error	3
 displayed completely	3
 next message	3 *
@@ -47893,7 +47893,7 @@ phase the	3
 validation starts	3
 file error	3
 info message	3
-notes notes	3 *
+notes notes	3
 on pattern	3
 phase or	3
 or diagnostic	3
@@ -48073,7 +48073,7 @@ task element	3
 a uicontrol	3
 semantic information	3
 particular product	3
-viewviews preferences	3 *
+viewviews preferences	3
 use insert	3
 odd toolbar	3
 tag action	3
@@ -48100,7 +48100,7 @@ repository remote	3
 corresponding file	3
 or broken	3
 has different	3
-classpath property	3 *
+classpath property	3
 present at	3
 property example	3
 library in	3
@@ -48207,7 +48207,7 @@ organized around	3
 around a	3
 single subject	3
 subject insert	3
-insert note	3 *
+insert note	3
 note inserts	3
 new note	3
 new codeblock	3
@@ -48221,13 +48221,13 @@ shortdesc keyword	3
 as related	3
 content parent	3
 actions rename	3
-document folding	3 *
+document folding	3
 target key	3
 plugins submenu	3
 preview view	3
 subsequent example	3
 distribution by	3
-click register/activate	3 *
+click register/activate	3
 other terms	3
 xs:complextype the	3
 are smart	3
@@ -48643,7 +48643,7 @@ frameworks by	3
 property action	3
 registering floating	3
 fusion review	3
-projects feature	3 *
+projects feature	3
 owner uses	3
 configured com.oxygenxml.webreviewer.authz.oxygenauthorizingrealm.dogetusrpassauthinfo	3
 oxygenauthorizingrealm.java:203 http-nio-8079-exec-2	3
@@ -50244,7 +50244,7 @@ icon while	2
 modifications if	2
 all listed	2
 listed files	2
-keep changes	2 *
+keep changes	2
 changes rejects	2
 changes keep	2
 and reject	2
@@ -50531,7 +50531,7 @@ schematron json	2
 and dtd	2
 drop down	2
 platform when	2
-create document	2 *
+create document	2
 response you	2
 then right-click	2
 right-click to	2
@@ -51093,7 +51093,7 @@ support experimental	2
 2.0 standard	2
 dtds for	2
 scenario json	2
-json documentsvalidation	2 *
+json documentsvalidation	2
 documentsvalidation scenarios	2
 scenarios json	2
 schema creating	2
@@ -51276,9 +51276,9 @@ tool menus	2
 menus compare	2
 toolmenus the	2
 tool contain	2
-source save	2 *
+source save	2
 destination to	2
-target save	2 *
+target save	2
 comparison base	2
 result see	2
 generated report	2
@@ -51567,7 +51567,7 @@ an ipv6	2
 name instead	2
 license cannot	2
 ipv6 if	2
-debuggingxpath expressionswritedebug	2 *
+debuggingxpath expressionswritedebug	2
 write xpath	2
 function these	2
 these xpath	2
@@ -52027,7 +52027,7 @@ secondary results	2
 specified uris	2
 uris while	2
 principal result	2
-add-ons addons	2 *
+add-ons addons	2
 additional community	2
 community submissions	2
 submissions are	2
@@ -52125,7 +52125,7 @@ number from	2
 open first	2
 first instance	2
 first generated	2
-namespaces section	2 *
+namespaces section	2
 namespace as	2
 the prefixes	2
 prefixes for	2
@@ -52421,7 +52421,7 @@ correct layout	2
 add syntax	2
 highlights for	2
 codeblocks in	2
-code language	2 *
+code language	2
 provide syntax	2
 the codeblocks	2
 selected are	2
@@ -52507,7 +52507,7 @@ rendered comparable	2
 method names	2
 proposals contains	2
 current function	2
-archive options	2 *
+archive options	2
 archive backup	2
 options controls	2
 create backup	2
@@ -52600,7 +52600,7 @@ activate any	2
 few options	2
 styles specified	2
 preferences preferencesspell	2
-preferencesspell check	2 *
+preferencesspell check	2
 dictionaries this	2
 valid when	2
 when uses	2
@@ -52655,7 +52655,7 @@ tasks so	2
 so each	2
 one should	2
 uploaded dita	2
-choose ditaval	2 *
+choose ditaval	2
 ditaval button	2
 corresponding ditaval	2
 task so	2
@@ -52969,9 +52969,9 @@ from table	2
 cells xsl:template	2
 xsl:analyze-string select	2
 select xsl:non-matching-substring	2
-headerdynamic images	2 *
+headerdynamic images	2
 images footerdynamic	2
-footerdynamic images	2 *
+footerdynamic images	2
 place an	2
 define some	2
 attr url	2 *
@@ -53022,12 +53022,12 @@ existing cells	2
 overwriting existing	2
 jats author	2
 in jats	2
-boxed text	2 *
+boxed text	2
 text inserts	2
 a shaded	2
 shaded background	2
 code inserts	2
-display quote	2 *
+display quote	2
 quote inserts	2
 a disp-quote	2
 disp-quote element	2
@@ -53437,7 +53437,7 @@ rate limiting	2
 svn main	2
 svn repositories	2
 repository update	2
-commit all	2 *
+commit all	2
 all commits	2
 repository refresh	2
 whole content	2
@@ -53640,7 +53640,7 @@ replacing any	2
 other detected	2
 has any	2
 other value	2
-values description	2 *
+values description	2
 correct value	2
 to 1</sch:assert	2
 sqf:add node-type="attribute	2
@@ -53697,7 +53697,7 @@ wildcard skip	2
 skip lax	2
 lax strict	2
 documentssearch actions	2
-images images	2 *
+images images	2
 scenario within	2
 add form	2
 api solution	2
@@ -53739,7 +53739,7 @@ resulting page	2
 also reach	2
 published webhelp	2
 current user's	2
-home button	2 *
+home button	2
 and reloads	2
 editor only	2
 will retrieve	2
@@ -54048,7 +54048,7 @@ pluginworkspaceaccess pluginworkspaceaccess.addeditorchangelistener	2
 pluginworkspaceaccess.addeditorchangelistener new	2
 new wseditorchangelistener	2
 authordocumentcontroller controller	2
-preferencessaxon-he/pe/ee xquery	2 *
+preferencessaxon-he/pe/ee xquery	2
 he/pe/ee xquery	2
 configure global	2
 xquery saxon-he/pe/ee	2
@@ -54813,7 +54813,7 @@ attempting the	2
 framework plugin	2
 plugin extensionsadditional	2
 add extension	2
-duplicate it	2 *
+duplicate it	2
 frameworks will	2
 your templates	2
 now added	2
@@ -55980,7 +55980,7 @@ default serif	2
 serif font	2
 referencing them	2
 associated framework	2
-oxy_buttongroup function	2 *
+oxy_buttongroup function	2
 are normally	2
 normally defined	2
 actions executed	2
@@ -56648,7 +56648,7 @@ to must	2
 share dialog	2
 copy task	2
 link send	2
-indent section	2 *
+indent section	2
 operation preserves	2
 space preserve	2 *
 long attributes	2
@@ -56930,7 +56930,7 @@ history you	2
 state using	2
 svn clientviewsannotations	2
 clientviewsannotations view	2
-history menu	2 *
+history menu	2
 box once	2
 and annotations	2
 from revision	2
@@ -56972,12 +56972,12 @@ highlight matching	2
 tag highlights	2
 corresponding member	2
 the pair	2
-json section	2 *
+json section	2
 show property	2
 after ending	2
 slider to	2
 transparency or	2
-yaml section	2 *
+yaml section	2
 match="*[contains(@class topic/related-links	2
 topic/related-links remove	2
 remove xsl:template	2
@@ -57027,7 +57027,7 @@ resources relax	2
 supported also	2
 getting familiar	2
 several perspectives	2
-perspectives and	2 *
+perspectives and	2
 of helper	2
 views menu	2
 menu functions	2
@@ -57070,7 +57070,7 @@ rect 269	2
 400 386	2
 386 420	2
 420 editing	2
-perspective or	2 *
+perspective or	2
 following areas	2
 some context-sensitive	2
 document toolbars	2
@@ -57331,7 +57331,7 @@ of allocated	2
 be insufficient	2
 processors xslt	2
 the allocated	2
-xsltcontent completion	2 *
+xsltcontent completion	2
 are context-sensitive	2
 includes proposals	2
 additional schema	2
@@ -57648,7 +57648,7 @@ various mouse	2
 mouse keyboard	2
 keyboard toolbar	2
 style opens	2
-print ctrl+p	2 *
+print ctrl+p	2
 ctrl+p opens	2
 document preferences	2
 no tags.for	2
@@ -57732,7 +57732,7 @@ becomes part	2
 file manually	2
 also download	2
 system by	2
-more download	2 *
+more download	2
 review side	2
 screen if	2
 those items	2
@@ -57940,7 +57940,7 @@ is optimize	2
 hyphens it	2
 ant libraries	2
 with installation	2
-oxy_button function	2 *
+oxy_button function	2
 example oxy_action	2
 action oxy_action	2
 one icon	2
@@ -57961,7 +57961,7 @@ two jar	2
 the task's	2
 preferences preferencesdiff	2
 appearance diff	2
-preferences diff	2 *
+preferences diff	2
 appearance this	2
 incoming color	2 *
 for incoming	2
@@ -58640,8 +58640,8 @@ default port	2
 for basex	2
 is functioning	2
 are sure	2
-user admin	2 *
-password admin	2 *
+user admin	2
+password admin	2
 created to	2
 reference ditareusing	2
 reuse rather	2
@@ -58851,7 +58851,7 @@ not setting	2
 attribute means	2
 all nodes	2
 incorrect-terms element	2
-xml:lang value	2 *
+xml:lang value	2
 always presented	2
 value editing	2
 scenario see	2
@@ -59022,7 +59022,7 @@ windows setting	2
 documentation webhelp.pdf.link.url	2
 webhelp.pdf.link.anchor.enabled specifies	2
 name destination	2
-transformation scenariosxquery	2 *
+transformation scenariosxquery	2
 scenariosxquery xquery	2
 json go	2
 json both	2
@@ -59257,7 +59257,7 @@ regular files	2
 any operation	2
 view selected	2
 references only	2
-opened archive	2 *
+opened archive	2
 certain file	2
 manager when	2
 zip-type archives	2
@@ -59455,7 +59455,7 @@ parent classloader	2
 classloader from	2
 from plugin	2
 footer footeradd	2
-footeradd topics	2 *
+footeradd topics	2
 footer that	2
 topics under	2
 following map	2
@@ -59804,7 +59804,7 @@ to schematron	2
 the cgm	2
 are commonly	2
 add-on if	2
-metadatakey values	2 *
+metadatakey values	2
 values metadatause	2
 metadatause key	2
 key must	2
@@ -59818,7 +59818,7 @@ class topic/data"][keyref="my_key	2
 page bottom-left	2
 important or	2
 page titlesseparate	2
-titlesseparate page	2 *
+titlesseparate page	2
 default chapter	2
 page definition	2
 finally you	2
@@ -60036,7 +60036,7 @@ your imported	2
 imported documents	2
 not reflected	2
 only an	2
-bookmap bookmap	2 *
+bookmap bookmap	2
 publication with	2
 a front	2
 chapters with	2
@@ -60345,7 +60345,7 @@ interface component	2
 automatically cause	2
 help is	2
 and through	2
-help button	2 *
+help button	2
 provide labels	2
 windows in	2
 information within	2
@@ -60368,7 +60368,7 @@ with few	2
 author colors	2
 colors change	2
 some review	2
-review panel	2 *
+review panel	2
 panel items	2
 placeholders shown	2
 elements comments	2
@@ -60569,7 +60569,7 @@ elements style	2
 style conflict	2 *
 conflict inserts	2
 a style-conflict	2
-style-conflict element	2 *
+style-conflict element	2
 declares behavior	2
 more flagging	2
 flagging methods	2
@@ -60583,7 +60583,7 @@ and background-conflict-color	2
 background-conflict-color attributes	2
 filter inserts	2
 a prop	2
-prop element	2 *
+prop element	2
 filtering action	2
 exclude passthrough	2
 style color	2
@@ -60591,7 +60591,7 @@ background attributes	2
 attributes flag	2
 flag inserts	2
 a revprop	2
-revprop element	2 *
+revprop element	2
 the rev	2
 rev attribute	2
 flagged in	2
@@ -61160,9 +61160,9 @@ running stopped	2
 completed task	2
 task details	2 *
 duration the	2
-resume task	2 *
+resume task	2
 execution stop	2
-stop task	2 *
+stop task	2
 save translated	2
 to rerun	2
 rerun the	2
@@ -61811,9 +61811,9 @@ has unique	2
 namespace-based validation	2
 validation dispatching	2
 dispatching language	2
-less documents	2 *
+less documents	2
 documents xproc	2
-sql documents	2 *
+sql documents	2
 include text	2
 and null	2
 in imported	2
@@ -61854,7 +61854,7 @@ between 00	2
 00 and	2
 independent and	2
 and digits	2
-preferencessaxon-he/pe/ee xslt	2 *
+preferencessaxon-he/pe/ee xslt	2
 he/pe/ee xslt	2
 saxon saxon-he/pe/ee	2
 includes powerful	2
@@ -61875,7 +61875,7 @@ enable batch	2
 add-on resources	2
 dita-compatible resources	2
 page metadatacover	2
-metadatacover page	2 *
+metadatacover page	2
 executes an	2
 argument value	2
 value represents	2
@@ -62006,7 +62006,7 @@ maps set	2
 have child	2
 chapter child	2
 it consists	2
-description content	2 *
+description content	2
 yaml converter	2
 json documentsjson	2
 documentsjson to	2
@@ -62238,13 +62238,13 @@ for primary	2
 null this	2
 empty row	2
 table duplicate	2
-duplicate row	2 *
+duplicate row	2
 row makes	2
 view note	2
 table until	2
 until all	2
 resolved commit	2
-commit row	2 *
+commit row	2
 row commits	2
 export criteria	2 *
 a thorough	2
@@ -62619,8 +62619,8 @@ string number	2
 integer boolean	2
 boolean null	2
 string id	2
-boolean boolean	2 *
-float number	2 *
+boolean boolean	2
+float number	2
 choice the	2
 block attribute	2
 framework it	2
@@ -62731,7 +62731,7 @@ allow installing	2
 application allow	2
 installation privacy	2
 validation batch	2
-transformation actions	2 *
+transformation actions	2
 validate files	2
 directories right-click	2
 source field	2
@@ -63023,7 +63023,7 @@ database criteria	2
 script includes	2
 but other	2
 versions can	2
-transformation scenariosdita-ot	2 *
+transformation scenariosdita-ot	2
 possible outputs	2
 outputs dita	2
 ok this	2
@@ -63080,7 +63080,7 @@ selected facets	2
 multiple facet	2
 results display	2
 numbers inline	2
-indexinline terms	2 *
+indexinline terms	2
 elements on	2
 term as	2
 this simply	2
@@ -63195,7 +63195,7 @@ background-color background-image	2
 background-image background-position	2
 background-position background-repeat	2
 unset percentage	2
-percentage length	2 *
+percentage length	2
 border-width border-style	2
 border-style border-color	2
 border-color inherit	2
@@ -63221,14 +63221,14 @@ list-item table	2
 table-row-group table-header-group	2
 table-header-group table-footer-group	2
 table-cell table-caption	2
-float none	2 *
+float none	2
 font-weight font-size	2
 unset font-variant	2
 family-name generic-family	2
 font-weight normal	2
 number length	2
 unset list-style-position	2
-list-style-image none	2 *
+list-style-image none	2
 list-style-type disc	2
 decimal lower-roman	2
 lower-roman upper-roman	2
@@ -63299,7 +63299,7 @@ created date	2 *
 documents update	2
 for already	2
 parent url	2
-framework customizationcreating	2 *
+framework customizationcreating	2
 it step	2
 framework give	2
 tabs on	2
@@ -63351,11 +63351,11 @@ displaying an	2
 for databases	2
 table etc	2
 error parsing	2 *
-troubleshootingerror parsing	2 *
+troubleshootingerror parsing	2
 parsing troubleshootingi/o	2
-troubleshootingi/o exception	2 *
+troubleshootingi/o exception	2
 exception troubleshootingunknown	2
-troubleshootingunknown host	2 *
+troubleshootingunknown host	2
 unknown host	2 *
 another website	2
 and refer	2
@@ -63601,7 +63601,7 @@ and odt	2
 odt they	2
 guidelines related	2
 validating yaml	2
-yaml documentsvalidation	2 *
+yaml documentsvalidation	2
 engine detects	2
 detects syntax	2
 more yaml	2
@@ -63770,7 +63770,7 @@ dictionaries spell	2
 dictionaries includes	2
 dic extension	2
 line needs	2
-dicts folder	2 *
+dicts folder	2
 en_medical.dic for	2
 dictionary in	2
 checker for	2
@@ -63991,7 +63991,7 @@ for defined	2
 manual method	2 *
 attribute using	2
 bring up	2
-footeradd copyright	2 *
+footeradd copyright	2
 footer with	2
 2017 my	2
 company ltd	2
@@ -64412,7 +64412,7 @@ replace their	2
 variable id="figure">fig</variable	2
 id="figure">fig</variable variable	2
 labels indexstyle	2
-indexstyle labels	2 *
+indexstyle labels	2
 is configurable	2
 the indexed	2
 language can	2
@@ -64828,7 +64828,7 @@ match xsl:variable	2
 features customizing	2
 list customize	2
 users editing	2
-outline side-pane	2 *
+outline side-pane	2
 side-pane that	2
 following outlineplacement	2
 outlineplacement loading	2
@@ -64883,7 +64883,7 @@ remove markup	2
 appropriate block	2
 be unwrapped	2
 or joined	2
-remove text	2 *
+remove text	2
 breadcrumb and	2
 collaborators who	2
 who you	2
@@ -64988,7 +64988,7 @@ deployment installing	2
 linux installing	2
 solution on	2
 linux rhel	2
-centos 9	2 *
+centos 9	2
 linux distributions	2
 ubuntu 22.04	2
 least 100	2
@@ -65426,7 +65426,7 @@ document until	2
 until its	2
 link available	2
 elements find	2
-find button	2 *
+find button	2
 match in	2
 occurrence replace	2
 direction specified	2
@@ -65578,7 +65578,7 @@ editor specifies	2
 editor on	2
 same font	2
 general appearance	2
-appearance colors	2 *
+appearance colors	2
 fonts customize	2
 font specifies	2
 author allows	2
@@ -65940,7 +65940,7 @@ all example	2
 opening saving	2
 documents opening	2
 searching documents	2 *
-urlstreamhandlerpluginextension interface	2 *
+urlstreamhandlerpluginextension interface	2
 geturlstreamhandler(string protocol	2 *
 protocol it	2
 or null	2
@@ -66039,9 +66039,9 @@ mode second-level	2
 mode automatically	2
 support relax	2
 ng document	2
-cm centimeters	2 *
+cm centimeters	2
 centimeters mm	2
-mm millimeters	2 *
+mm millimeters	2
 pt points	2
 computed font-size	2
 font-size property	2
@@ -66137,7 +66137,7 @@ row below	2
 expand/collapse expand	2
 children expand/collapse	2
 selection expand/collapse	2
-refresh selected	2 *
+refresh selected	2
 be recomputed	2
 manage license	2 *
 license button	2
@@ -66166,7 +66166,7 @@ this call-path	2
 call-path an	2
 instruction name	2
 grid preferences	2 *
-grid view	2 *
+grid view	2
 grid the	2
 when passing	2
 passing from	2
@@ -66282,7 +66282,7 @@ various html	2
 getting help	2 *
 related resources	2
 of support	2
-the forum	2 *
+the forum	2
 customizing new	2
 type save	2
 click filters	2
@@ -66687,7 +66687,7 @@ font ligatures	2 *
 ligatures ligatures	2
 the font-variant-ligatures	2
 font-variant-ligatures css	2
-videoskey reference	2 *
+videoskey reference	2
 reference videos	2
 width="480 height="270	2
 executing sql	2
@@ -66843,7 +66843,7 @@ step through	2
 into step	2
 cursor run	2
 end pause	2
-appendicespage breaks	2 *
+appendicespage breaks	2
 appendices to	2
 done automatically	2
 contains part	2
@@ -66899,7 +66899,7 @@ from links	2
 support will	2
 finder the	2
 the defaultelementlocatorprovider	2
-defaultelementlocatorprovider implementation	2 *
+defaultelementlocatorprovider implementation	2
 the ro.sync.ecss.extensions.commons.defaultelementlocatorprovider	2
 be queried	2
 queried for	2
@@ -66918,7 +66918,7 @@ information w3c	2
 encoding issues	2
 encoding specified	2
 width color	2
-color background-color	2 *
+color background-color	2
 link property	2
 property section	2
 label text	2
@@ -67179,7 +67179,7 @@ to allocate	2
 allocate to	2
 parts and	2
 prefixes titlesremove	2
-titlesremove prefixes	2 *
+titlesremove prefixes	2
 removing prefixes	2
 numbering default	2
 n and	2
@@ -67288,7 +67288,7 @@ please make	2
 new collection	2 *
 a searchable	2
 metadatakeywords metadataindex	2
-metadataindex terms	2 *
+metadataindex terms	2
 topics most	2
 parse the	2
 at map	2
@@ -67439,7 +67439,7 @@ http.proxyport the	2
 server https.proxyport	2
 bypassed by	2
 the semantic.search.configuration.server.url	2
-semantic.search.configuration.server.url property	2 *
+semantic.search.configuration.server.url property	2
 the http.nonproxyhosts	2
 http.nonproxyhosts list	2
 start you	2
@@ -67686,7 +67686,7 @@ new landscape	2
 class~="topic/image"][outputclass="land class~="topic/topic"]:has(*[class~="topic/body	2
 class~="topic/topic"]:has(*[class~="topic/body class~="topic/image"][outputclass="land	2
 preferences preferencesfiles	2
-preferencesfiles comparison	2 *
+preferencesfiles comparison	2
 a recognized	2
 recognized document	2
 selected before	2
@@ -68415,7 +68415,7 @@ renamed you	2
 renamed outside	2
 renamed action	2
 directory both	2
-rename f2	2 *
+rename f2	2
 command a	2
 already versioned	2
 versioned new	2
@@ -68534,7 +68534,7 @@ are returned	2
 no values	2
 by evaluating	2
 left default	2
-licenses licensing	2 *
+licenses licensing	2
 user having	2
 having their	2
 license so	2
@@ -68913,7 +68913,7 @@ capability of	2
 graphics to	2
 svg in	2
 exported from	2
-en_us english	2 *
+en_us english	2
 already built	2
 of expertise	2
 expertise for	2
@@ -69946,7 +69946,7 @@ effectively you	2
 make reusable	2
 content easier	2
 orientation page	2
-page sizeorientation	2 *
+page sizeorientation	2
 orientation the	2
 is portrait	2
 letter landscape	2
@@ -70044,7 +70044,7 @@ end if	2
 contents that	2
 page toc-page	2
 the oxy-force-page-count	2
-oxy-force-page-count property	2 *
+oxy-force-page-count property	2
 even value	2
 value page	2
 oxy-force-page-count even	2
@@ -70200,7 +70200,7 @@ additivity="false appender-ref	2
 ref="console logger	2
 level="info appender-ref	2
 preferences preferencesdirectories	2
-preferencesdirectories comparison	2 *
+preferencesdirectories comparison	2
 associated by	2
 on opening	2
 navigation this	2
@@ -70860,10 +70860,10 @@ new deployment	2
 previous data	2
 to defaults	2
 old data	2
-user-plugins folder	2 *
+user-plugins folder	2
 which stores	2
 the license.properties	2
-license.properties file	2 *
+license.properties file	2
 comments application	2
 embedded the	2
 its place	2
@@ -70949,7 +70949,7 @@ whitespace to	2
 since all	2
 consecutive whitespaces	2
 whitespaces will	2
-code sample	2 *
+code sample	2
 character between	2
 layout with	2
 their place	2
@@ -71000,7 +71000,7 @@ resolution set	2
 image itself	2
 processor has	2
 resolution to	2
-image-resolution property	2 *
+image-resolution property	2
 the constant	2
 margin boxes:@page	2
 image-resolution 600dpi	2
@@ -71336,7 +71336,7 @@ source menu	2
 editors using	2
 use fonts	2
 languages fontsasian	2
-fontsasian languages	2 *
+fontsasian languages	2
 font or	2
 needed character	2
 character ranges	2
@@ -71360,7 +71360,7 @@ tamil font-style	2
 text imagesside	2
 p this	2
 display:inline-block width	2
-parent fig	2 *
+parent fig	2
 aligned at	2
 topic/fig vertical-align:top	2
 font ascent	2
@@ -71554,7 +71554,7 @@ policy if	2
 are revealed	2
 revealed where	2
 configure you	2
-tablestext bleeding	2 *
+tablestext bleeding	2
 many columns	2
 horizontal space	2
 accessibility 508	2
@@ -71599,7 +71599,7 @@ properties follow	2
 the custom_props.jar	2
 custom_props.jar file	2
 separators headerchange	2
-headerchange separators	2 *
+headerchange separators	2
 some strings	2
 parts chapters	2
 these strings	2
@@ -71900,7 +71900,7 @@ example oxy-url	2
 on branch	2
 sharepoint the	2
 cmis the	2
-ro.sync.ecss.extensions.api.webapp.plugin.urlstreamhandlerwithcontext class	2 *
+ro.sync.ecss.extensions.api.webapp.plugin.urlstreamhandlerwithcontext class	2
 contextid is	2
 should throw	2
 throw a	2
@@ -72479,7 +72479,7 @@ after next	2
 after previous	2
 attributes selects	2
 key insert	2
-insert xinclude	2 *
+insert xinclude	2
 source tab	2
 canonicalize dialog	2
 submenu modify	2
@@ -72627,7 +72627,7 @@ plugin preferences	2 *
 perform these	2
 saved inside	2
 preferences preferencesauthor	2
-preferencesauthor mode	2 *
+preferencesauthor mode	2
 available author	2
 background-color property	2
 document overwrites	2
@@ -72743,7 +72743,7 @@ space on	2
 commits to	2
 to append	2
 content css	2
-oxy-append-content property	2 *
+oxy-append-content property	2
 other matching	2
 of lesser	2
 specificity unlike	2
@@ -73132,7 +73132,7 @@ value no2	2
 no2 value	2
 value no3	2
 the apiaccessibleoptiontags	2
-apiaccessibleoptiontags interface	2 *
+apiaccessibleoptiontags interface	2
 interface contains	2
 either bundle	2
 not breaking	2
@@ -73195,7 +73195,7 @@ the pdf5	2
 that configure	2
 workflow video	2
 bookmarksdepth bookmarkssections	2
-bookmarkssections display	2 *
+bookmarkssections display	2
 to 7	2
 rules clear	2
 is given	2
@@ -73447,7 +73447,7 @@ src="engine-picture.png width="400	2
 width="400 height="300	2
 tasks when	2
 been finalized	2
-bookmarkschange labels	2 *
+bookmarkschange labels	2
 highlights such	2
 such highlights	2
 highlight between	2
@@ -73656,7 +73656,7 @@ since saxon	2
 saxon implements	2
 implemented returns	2
 error execute	2
-favorites button	2 *
+favorites button	2
 save certain	2
 certain expressions	2
 reuse to	2
@@ -74069,7 +74069,7 @@ dir2 out	2
 oxygen comparison	2
 tool convert	2
 source schema	2
-input section	2 *
+input section	2
 single xml	2
 of spaces	2
 spaces for	2
@@ -74303,7 +74303,7 @@ multiple question/answer	2
 translating annotations	2 *
 presents it	2
 similar information	2
-example oxygen_install_dir/frameworks/dita/styleguide	2 *
+example oxygen_install_dir/frameworks/dita/styleguide	2
 re-open the	2
 the styleguide	2
 styleguide folder	2
@@ -74754,7 +74754,7 @@ both single	2
 single and	2
 layout can	2
 grid edit	2 *
-headeradd links	2 *
+headeradd links	2
 svg link	2
 link inside	2
 document header	2
@@ -74915,7 +74915,7 @@ xpath evaluates	2
 modifies a	2
 replacing it	2
 the isenabled	2
-isenabled method	2 *
+isenabled method	2
 should modify	2
 type substitutions	2
 the xs:alternative	2
@@ -75020,7 +75020,7 @@ insert images	2
 tutorials page	2
 view once	2
 roadmap the	2
-tutorials list	2 *
+tutorials list	2
 start mission	2 *
 selected mission	2
 mission and	2
@@ -75553,7 +75553,7 @@ opening multiple	2
 an ooxml	2
 ooxml file	2
 xinclude xml	2
-xml documentsxinclude	2 *
+xml documentsxinclude	2
 documentsxinclude xinclude	2
 instances into	2
 is permitted	2
@@ -75803,7 +75803,7 @@ content-security-policy header	2
 string array	2 *
 string-array entry	2
 denied troubleshootingaccess	2
-troubleshootingaccess denied	2 *
+troubleshootingaccess denied	2
 necessary permissions	2
 the tmp	2
 tmp directory	2
@@ -76229,7 +76229,7 @@ site key	2
 between an	2
 against you	2
 include changes	2
-features responsive	2 *
+features responsive	2
 fragment contains	2
 declarations that	2
 id="dty2 ent	2
@@ -76270,7 +76270,7 @@ example name	2
 the combine	2
 combine attribute	2
 example attlist.person	2
-choice pattern	2 *
+choice pattern	2
 annotations namespace	2
 result should	2
 sql expression	2 *
@@ -76508,7 +76508,7 @@ appid="functionid1 resourceid	2
 appname="myapp appid="functionid2	2
 resourceid information	2
 help mapping	2
-appname optional	2 *
+appname optional	2
 the appname	2
 pages using	2
 exceptions of	2
@@ -76707,7 +76707,7 @@ label only	2
 string are	2
 ooxml or	2
 remove resources	2
-index index	2 *
+index index	2
 index you	2
 indexterm>installing indexterm>water	2
 indexterm>water pump</indexterm></indexterm	2
@@ -76755,7 +76755,7 @@ html5 as	2
 an intermediate	2
 transtype is	2
 is derived	2
-headerstyle text	2 *
+headerstyle text	2
 or font	2
 page see	2
 part color	2
@@ -77057,7 +77057,7 @@ action="include att="support	2
 action="exclude att="support	2
 filtering out	2
 value since	2
-ordered listslayoutstyles	2 *
+ordered listslayoutstyles	2
 styling how	2
 lists ordered	2
 output however	2
@@ -77320,7 +77320,7 @@ single category	2
 bold configure	2
 scenarios list	2
 map hyphenationentire	2
-hyphenationentire map	2 *
+hyphenationentire map	2
 hyphens none	2
 discrete blocks	2
 write in	2
@@ -77348,7 +77348,7 @@ element selecting	2
 allowed items	2
 the viewviews	2
 yaml validator	2 *
-dita insert	2 *
+dita insert	2
 equation clicking	2
 equation will	2
 insert menu	2
@@ -77640,7 +77640,7 @@ as c:\program	2
 menu note	2
 previewed in	2
 sdk artifact	2
-transformation scenariosxslt	2 *
+transformation scenariosxslt	2
 scenariosxslt xslt	2
 contains document	2
 validator preferences	2
@@ -77910,7 +77910,7 @@ instantly spot	2
 spot differences	2
 go into	2
 preferences preferencescontent	2
-preferencescontent completion	2 *
+preferencescontent completion	2
 subsequent sibling	2
 required elements	2
 selected inserts	2
@@ -78066,7 +78066,7 @@ secret restart	2
 signing into	2
 menu cross	2
 there insert	2
-insert concept	2 *
+insert concept	2
 concept inserts	2
 new concept	2
 concept element	2
@@ -78193,9 +78193,9 @@ type="doc:sectiontype xs:element	2
 xs:choice xs:sequence	2
 maxoccurs="unbounded xs:sequence	2
 styling markup	2
-bold b	2 *
+bold b	2
 b and	2
-italic i	2 *
+italic i	2
 xs:element name="td	2
 second property	2
 properties parent	2
@@ -78240,7 +78240,7 @@ supplied in	2
 matching public	2
 public catalog	2
 resolved by	2
-catalogs table	2 *
+catalogs table	2
 resolver when	2
 entities only	2
 manual validate	2
@@ -78495,7 +78495,7 @@ search ranking	2
 ranking order	2
 order sorted	2
 relevance is	2
-tablessplit cellborders	2 *
+tablessplit cellborders	2
 css customization:*[class	2
 version does	2
 of ports	2
@@ -79025,7 +79025,7 @@ various audiences	2
 own profiling	2
 issues technical	2
 problems error	2
-tableszebra stripes	2 *
+tableszebra stripes	2
 stripes tablesstripes	2
 border for	2
 blue the	2
@@ -79069,9 +79069,9 @@ helix drop-down	2
 the pseudo-element	2
 pdf bookmark	2
 state bookmarksinitial	2
-bookmarksinitial state	2 *
+bookmarksinitial state	2
 counter footnotesreset	2
-footnotesreset counter	2 *
+footnotesreset counter	2
 definitions keyword	2
 dependencies keyword	2
 wrapped into	2
@@ -79084,11 +79084,11 @@ instructions show/hide	2
 show/hide comments	2
 name show/hide	2
 show/hide element	2
-show text	2 *
+show text	2
 text show/hide	2
 show/hide additional	2
 elements show	2
-show attributes	2 *
+show attributes	2
 attributes show/hide	2
 show/hide attribute	2
 displayed attribute	2
@@ -79129,7 +79129,7 @@ that invokes	2
 type referencing	2
 extensionsform controlsbutton	2
 controlsbutton group	2
-form controlsbutton	2 *
+form controlsbutton	2
 translated using	2
 i18n editor	2
 button transparent	2
@@ -79204,9 +79204,9 @@ objects or	2
 not example	2
 else keywords	2
 validates it	2
-dependentschemas keyword	2 *
+dependentschemas keyword	2
 keyword instead	2
-dependentrequired keyword	2 *
+dependentrequired keyword	2
 gallery webhelp	2
 to gallery	2
 gallery publishing	2
@@ -79265,7 +79265,7 @@ write permissions	2
 images fonts	2
 fonts or	2
 already added	2
-bookmarksremove numbering	2 *
+bookmarksremove numbering	2
 element copy	2
 format xpath	2
 available format	2
@@ -79337,7 +79337,7 @@ renderer element	2
 the mime="application/pdf	2
 password change	2
 fusion password	2
-user fusion	2 *
+user fusion	2
 the hashed	2
 mysql driver	2
 1 example	2
@@ -79346,7 +79346,7 @@ data metadata	2
 validator json-skema	2
 macos text	2
 text flows	2
-troubleshootingdisappearing lines	2 *
+troubleshootingdisappearing lines	2
 lines troubleshootingcell	2
 troubleshootingcell borders	2
 borders missing	2
@@ -79372,7 +79372,7 @@ checking well-formedness	2
 well-formedness in	2
 well-formed json	2
 rng quick	2
-page sizechanging	2 *
+page sizechanging	2
 margin 2cm	2
 binding of	2
 finding all	2
@@ -79457,7 +79457,7 @@ tables nested	2
 or package	2
 first encountered	2
 encountered descriptor	2
-auto default	2 *
+auto default	2
 plugin comes	2
 transformation css	2
 styling applied	2
@@ -79830,7 +79830,7 @@ addstrings addstrings	2
 choose is	2
 saxon external	2
 built-in skins	2 *
-tablessmall images	2 *
+tablessmall images	2
 small as	2
 column contains	2
 an enlarged	2
@@ -80307,7 +80307,7 @@ example https://www.some-webdav-server.com:443/webdav-repository	2
 which items	2
 based enable	2
 show.changes.and.comments publishing	2
-hazard hazard	2 *
+hazard hazard	2
 included preserve	2
 factor that	2
 2 will	2
@@ -80536,7 +80536,7 @@ using files	2
 task action	2
 map editorxhtml	2
 hyperlink target	2
-href field	2 *
+href field	2
 management preferences	2
 by import	2
 way there	2
@@ -80605,7 +80605,7 @@ grid mode/tree	2
 mode/tree mode	2
 and customized	2
 prefix titleschange	2
-titleschange prefix	2 *
+titleschange prefix	2
 changing prefixes	2
 content module	2
 yaml support	2
@@ -81065,7 +81065,7 @@ north america	2
 use american	2
 common tags	2
 shortcuts shortcut	2
-oxygen product	2 *
+oxygen product	2
 product use	2
 key whenever	2
 phrases that	2
@@ -81261,9 +81261,9 @@ to 5	2
 9 command	2
 9 on	2
 9 bookmarks	2
-promote section	2 *
+promote section	2
 documents ctrl	2
-demote section	2 *
+demote section	2
 moves node	2
 b command	2
 b on	2
@@ -81740,7 +81740,7 @@ to decrease	2
 out it	2
 sample box	2
 share scenarios	2
-export scenarios	2 *
+export scenarios	2
 ungroup all	2 *
 when open	2
 xhtml browser	2

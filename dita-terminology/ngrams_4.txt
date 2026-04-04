@@ -6,7 +6,7 @@ the value of the	383
 the name of the	343
 the dita maps manager	320
 a well-formed xhtml fragment	316
-the content completion assistant	280 *
+the content completion assistant	280
 one of the following	265
 box that allows you	245
 at the bottom of	245
@@ -23,7 +23,7 @@ revised section 508 does	193
 opens a dialog box	191
 for more information about	186
 in the contextual menu	185
-for more information see	181 *
+for more information see	181
 this option is selected	179
 parameter can be used	172
 a file that contains	169
@@ -106,8 +106,8 @@ available in the contextual	97
 at the end of	97
 you can choose between	96
 actions are available in	95
-in oxygen xml editor/author	95 *
-the projectproject explorer view	95 *
+in oxygen xml editor/author	95
+the projectproject explorer view	95
 can also use the	94
 when this option is	93
 you can click the	92
@@ -200,10 +200,10 @@ in the author mode	61
 of the working copy	61
 the working copy view	61 *
 the topic page the	61
-click the new button	60 *
+click the new button	60
 if you do not	60
 also available in the	60
-in the project view	60 *
+in the project view	60
 the contextual menu in	60
 in the document type	60
 topic page the value	60
@@ -217,7 +217,7 @@ it is recommended to	58
 allows you to set	57
 select this option to	57
 allows you to create	56
-an oxygen publishing template	56 *
+an oxygen publishing template	56
 this option is not	56
 the contextual menu or	56
 have access to the	56
@@ -227,7 +227,7 @@ in the working copy	55
 the template descriptor file	55
 on the toolbar or	54
 in this dialog box	54
-click the edit button	54 *
+click the edit button	54
 webhelp responsive transformation scenario	54 *
 the dita open toolkit	53
 from the toolbar or	53
@@ -293,7 +293,7 @@ in the following example	46
 you want to change	46
 be added to the	46
 to add a new	46
-author visual editing mode	45 *
+author visual editing mode	45
 with the same name	45
 in the projectproject explorer	45
 will be used to	45
@@ -340,7 +340,7 @@ dita map in the	41
 can use the following	41
 in the form of	41
 in the webhelp responsive	41
-go to options preferences	41 *
+go to options preferences	41
 applicable the product does	40
 does not apply supports	40
 be used for the	40
@@ -400,7 +400,7 @@ follow these steps select	37
 opened in the editor	37
 name the name of	37
 that will be displayed	37
-open the dita map	37 *
+open the dita map	37
 the toolbar or the	37
 you to select a	37
 you do not have	37
@@ -435,7 +435,7 @@ you to change the	35
 the resulting dialog box	35
 menu or from the	35
 from the command line	35
-the text editing mode	35 *
+the text editing mode	35
 it is recommended that	35
 dialog box go to	35
 an element with the	35
@@ -466,7 +466,7 @@ scenario(s action from the	34
 button to open the	34
 ok to save the	34
 of the document type	34
-editor edit modes author	34 *
+editor edit modes author	34
 and go to xml	34
 using a transformation scenario	34
 in the project file	34
@@ -543,7 +543,7 @@ the currently edited file	31
 the cursor to the	31
 set the value of	31
 in the browse drop-down	31
-owner admin or moderator	31 *
+owner admin or moderator	31
 changes to the transformation	31
 the author editing mode	31
 options are available in	31
@@ -818,7 +818,7 @@ upper part of the	25
 for the current document	25
 follow these steps open	25
 the particular document type	25
-click the next button	25 *
+click the next button	25
 this means that the	25
 moves the cursor to	25
 displayed that allows you	25
@@ -895,7 +895,7 @@ transformation scenario click the	24
 click the choose custom	24
 the choose custom publishing	24
 custom publishing template link	24
-in the attributes view	24 *
+in the attributes view	24
 to the installation directory	24
 go to window show	24
 to window show view	24
@@ -1038,10 +1038,10 @@ in the json schema	22
 a file in the	22
 is not specified the	22
 file you can specify	22
-edit the transformation scenario	22 *
+edit the transformation scenario	22
 you want to see	22
 step result this opens	22
-the compare files tool	22 *
+the compare files tool	22
 the installation directory of	22
 the tags display mode	22
 preferences and go to	22
@@ -1065,7 +1065,7 @@ option allows you to	22
 you can also add	22
 and you can choose	22
 these steps in the	22
-name description possible values	22 *
+name description possible values	22
 actions available in the	22
 the bottom-right corner of	22
 that is associated with	22
@@ -1434,7 +1434,7 @@ located at the cursor	19
 full tags with attributes	19 *
 follow these instructions go	19
 the list of all	19
-open the parameters tab	19 *
+open the parameters tab	19
 type of plugin allows	19
 of plugin allows you	19
 can also choose to	19
@@ -1507,7 +1507,7 @@ the toolbar or from	18
 the insert table dialog	18
 the toolbar or in	18
 the styles drop-down menu	18
-validation toolbar drop-down menu	18 *
+validation toolbar drop-down menu	18
 xml schema relax ng	18
 content completion assistant the	18
 by the content completion	18
@@ -1682,7 +1682,7 @@ the document validate xml	17
 name of the transformation	17
 in text mode text	17
 text mode text editing	17
-go to help register	17 *
+go to help register	17
 that is used to	17
 option is selected and	17
 the local file system	17
@@ -1777,14 +1777,14 @@ to the type of	17
 of the editor panel	17
 be associated with the	17
 out of memory error	17 *
-in the classpath tab	17 *
+in the classpath tab	17
 valid at the current	17
 presents a list of	17
 the layout of the	17
 the java virtual machine	17
 an object is valid	17
 object is valid against	17
-visual author editing mode	17 *
+visual author editing mode	17
 to open a dialog	17
 actions that are specific	17
 is displayed at the	17
@@ -1911,8 +1911,8 @@ file for example named	16
 id the component id	16
 in author mode by	16
 tag you can use	16
-decimal value e.g 65	16 *
-x<hexadecimal value e.g x41	16 *
+decimal value e.g 65	16
+x<hexadecimal value e.g x41	16
 by default you can	16
 definition of the current	16
 profiling colors and styles	16 *
@@ -1998,7 +1998,7 @@ topic/topic class topic/topic class	16
 it is inserted as	16
 of the base directory	16
 to the xml document	16
-the main files directory	16 *
+the main files directory	16
 enable main files support	16 *
 content string(maptitle string(parttitle string(chaptertitle	16
 name of the file	16
@@ -2217,7 +2217,7 @@ values true or false	15
 of the selected text	14
 generates a suggestion for	14
 content or the entire	14
-oxygen ai positron add-on	14 *
+oxygen ai positron add-on	14
 the web author component	14
 level a 2.1 and	14
 a 2.1 and 2.2	14
@@ -2547,7 +2547,7 @@ the folder that contains	13
 the json schema design	13
 section allows you to	13
 scenario follow these steps	13
-project viewproject explorer view	13 *
+project viewproject explorer view	13
 the document checking preferences	13
 the apply associated button	13
 can create a new	13
@@ -2585,7 +2585,7 @@ in the framework templates	13
 in author mode when	13
 as well as the	13
 the document markup menu	13
-update on cursor move	13 *
+update on cursor move	13
 go to the author	13
 the author tab and	13
 dialog box the following	13
@@ -2920,7 +2920,7 @@ feedback comments manager view	12 *
 file located in the	12
 if you have the	12
 on the toolbar the	12
-new new from templates	12 *
+new new from templates	12
 to help you edit	12
 display mode drop-down menu	12
 contextual menu or the	12
@@ -2962,7 +2962,7 @@ configuration that you are	12
 where you have full	12
 you have full write	12
 action from the dita	12
-the transformation scenarios view	12 *
+the transformation scenarios view	12
 the integrate/install dita-ot plugins	12
 from oxygen xml editor/author	12 *
 converting publishing templates to	12
@@ -3097,7 +3097,7 @@ that can then be	12
 you want to convert	12
 right-click anywhere in the	12
 use this view to	12
-document type association locations	12 *
+document type association locations	12
 how to work with	12
 element that contains the	12
 you might want to	12
@@ -3444,7 +3444,7 @@ a dita map file	11
 the table in the	11
 property is set to	11
 in the associated schema	11
-text and author mode	11 *
+text and author mode	11
 from the repositories view	11
 and follow these steps	11
 newly created folder create	11
@@ -3639,7 +3639,7 @@ author tab and then	11
 tab and then the	11
 you to select an	11
 toolbar or contextual menu	11
-content key reference conkeyref	11 *
+content key reference conkeyref	11
 the content you want	11
 submenu from the contextual	11
 that need to be	11
@@ -3682,7 +3682,7 @@ oxygen pdf chemistry user	11
 tools json tools xml	11
 json tools xml tools	11
 tools xml tools json	11
-xml tools json tools	11 *
+xml tools json tools	11
 open in editor button	11
 is resolved through the	11
 dialog box enter the	11
@@ -3821,7 +3821,7 @@ the dialog box and	10
 action you can use	10
 the directory of the	10
 to set up the	10
-intelligent content completion assistant	10 *
+intelligent content completion assistant	10
 depending on the selected	10
 the current context the	10
 are collected from the	10
@@ -3887,7 +3887,7 @@ an area in the	10
 anywhere in the image	10
 using the arrow keys	10
 on the image map	10
-image map editor toolbar	10 *
+image map editor toolbar	10
 available in text mode	10
 html report for directory	10
 report for directory comparison	10
@@ -4063,7 +4063,7 @@ move to next reject	10
 colors allows you to	10
 manage reviews opens the	10
 reviews opens the review	10
-opens the review view	10 *
+opens the review view	10
 to examine the css	10
 examine the css rules	10
 that match the currently	10
@@ -4141,7 +4141,7 @@ this section explains how	10
 section explains how to	10
 access to the task	10
 how to use a	10
-click the add button	10 *
+click the add button	10
 variety of outputs such	10
 of outputs such as	10
 all of them are	10
@@ -4169,7 +4169,7 @@ the text filter field	10
 the dita document type	10
 in the attributes and	10
 the owner of the	10
-click the ok button	10 *
+click the ok button	10
 one of the components	10
 child of the selected	10
 and you need to	10
@@ -4283,7 +4283,7 @@ as a reverse proxy	10
 you can also define	10
 go to editor document	10
 in editor if selected	10
-the open/find resource view	10 *
+the open/find resource view	10
 with the ai assistant	10
 a custom framework by	10
 an element to be	10
@@ -4519,7 +4519,7 @@ yeslevel aa yeslevel aaa	9
 aa yeslevel aaa no	9
 product does not contain	9
 minimum level aa 2.2	9
-is a web application	9 *
+is a web application	9
 service configuration preferences page	9
 when creating a new	9
 about how you can	9
@@ -5153,11 +5153,11 @@ contextual menu in text	9
 menu in text mode	9
 the json schema documentation	9
 choose whether you want	9
-custom author mode operations	9 *
+custom author mode operations	9
 go to and download	9
 to and download the	9
 the enable automatic validation	9
-enable automatic validation option	9 *
+enable automatic validation option	9
 composed of the following	9
 installation directory of launch	9
 xml file you can	9
@@ -5620,7 +5620,7 @@ for creating a new	8
 xml refactoring dialog box	8
 and you have the	8
 xml refactoring in the	8
-the quick fix menu	8 *
+the quick fix menu	8
 text and author modes	8
 in the open/find resource	8
 from the main menu	8
@@ -5758,7 +5758,7 @@ selected in the content	8
 of the element to	8
 xml editor/author you can	8
 out a working copy	8
-the history dialog box	8 *
+the history dialog box	8
 use the browse button	8
 only the child files	8
 if you choose the	8
@@ -5860,7 +5860,7 @@ example suppose that you	8
 you to specify how	8
 go to editor spell	8
 to editor spell check	8
-editor spell check dictionaries	8 *
+editor spell check dictionaries	8
 the new task box	8
 drop them in the	8
 and you can click	8
@@ -6483,14 +6483,14 @@ of the following locations	8
 the enable-auto-props runtime configuration	8
 enable-auto-props runtime configuration directive	8
 to select a root	8
-select a root map	8 *
+select a root map	8
 start of the publication	8
 allows you to enable	8
 in the global preferences	8
 link to navigate to	8
 that match the specified	8
 the option to update	8
-move resource dialog box	8 *
+move resource dialog box	8
 location of the resource	8
 the current name of	8
 current name of the	8
@@ -6570,7 +6570,7 @@ the left or right	8
 if the action is	8
 set of rules and	8
 editing pane where you	8
-webhelp output site configuration	8 *
+webhelp output site configuration	8
 if you plan to	8
 you to search for	8
 files that are only	8
@@ -6645,7 +6645,7 @@ disk or from a	8
 or from a remote	8
 a remote server through	8
 remote server through http(s	8
-or a custom protocol	8 *
+or a custom protocol	8
 where they can make	8
 value of the property	8
 framework directory for example	8
@@ -6697,7 +6697,7 @@ you will not be	8
 option in the dita	8
 takes into account the	8
 top-left content none top-right	8
-rendering in author mode	8 *
+rendering in author mode	8
 is not selected by	8
 not selected by default	8
 can be customized in	8
@@ -6984,7 +6984,7 @@ of the text field	7
 the structure and content	7
 structure and content of	7
 the ai positron side	7
-ai positron side view	7 *
+ai positron side view	7
 to review the changes	7
 the current selection or	7
 be inserted after the	7
@@ -7007,7 +7007,7 @@ available in the oxygen	7
 you will be directed	7
 will be directed to	7
 and click finish restart	7
-option name value description	7 *
+option name value description	7
 be used to set	7
 editor variables can be	7
 inserted into the document	7
@@ -7107,7 +7107,7 @@ file with the following	7
 to filter content in	7
 dita topic in the	7
 the profiling/conditional text preferences	7
-profiling/conditional text preferences page	7 *
+profiling/conditional text preferences page	7
 that allows the user	7
 provides an easy way	7
 to create hyperlinks in	7
@@ -7231,7 +7231,7 @@ site configuration has the	7
 configuration has the comment	7
 has the comment moderation	7
 the comment moderation option	7
-comment moderation option enabled	7 *
+comment moderation option enabled	7
 comment for any site	7
 are assigned as a	7
 assigned as a moderator	7
@@ -7664,7 +7664,7 @@ the head revision of	7
 from the remote repository	7
 are available at the	7
 toolbar and select the	7
-or dita maps manager	7 *
+or dita maps manager	7
 drop-down menu you can	7
 document you can also	7
 actions in the contextual	7
@@ -7738,7 +7738,7 @@ deselect the enable automatic	7
 used by the spell	7
 add the following code	7
 your customization css page	7
-click the merge button	7 *
+click the merge button	7
 can choose the name	7
 use case is to	7
 provides more information about	7
@@ -8013,7 +8013,7 @@ editor document checking and	7
 easy to locate and	7
 directory of launch manage	7
 of launch manage web	7
-launch manage web author	7 *
+launch manage web author	7
 there are cases when	7
 to be converted to	7
 page that allows you	7
@@ -8224,7 +8224,7 @@ and they do not	7
 enable or disable the	7
 the move resource dialog	7
 you want to move	7
-rename resource dialog box	7 *
+rename resource dialog box	7
 the list to only	7
 you are required to	7
 in the top panel	7
@@ -8383,7 +8383,7 @@ panel this url is	7
 used for the transformation	7
 you are interested in	7
 file this can be	7
-xml schema xsd file	7 *
+xml schema xsd file	7
 also includes the following	7
 in your webhelp responsive	7
 the css file in	7
@@ -8407,7 +8407,7 @@ tool includes a tool	7
 json schema dialog box	7
 custom framework directory frameworks\[custom_framework_dir	7
 is meant to help	7
-the global preferences page	7 *
+the global preferences page	7
 is not allowed to	7
 working copy view the	7
 displays the number of	7
@@ -8514,7 +8514,7 @@ the following action in	7
 following action in the	7
 action in the refactoring	7
 a selection of content	7
-use the keyboard shortcut	7 *
+use the keyboard shortcut	7
 open opens the selected	7
 this action can be	7
 folder from the repository	7
@@ -8530,12 +8530,12 @@ and all its occurrences	7
 all the occurrences of	7
 the history button to	7
 that conforms to the	7
-add to main files	7 *
+add to main files	7
 is available for all	7
 the usual text editing	7
 the various features and	7
 run openapi test scenario	7 *
-go to file new	7 *
+go to file new	7
 highlighting colors for specific	7
 colors for specific xml	7
 for specific xml elements	7
@@ -8653,7 +8653,7 @@ is opened select the	7
 the url for example	7
 url for example url@rev1234	7
 the merge options wizard	7
-merge options wizard page	7 *
+merge options wizard page	7
 disable merge tracking option	7
 your local working copy	7
 and needs to be	7
@@ -9124,7 +9124,7 @@ your tables by using	6
 tables by using the	6
 the attributes view window	6
 attributes view window show	6
-window show view attributes	6 *
+window show view attributes	6
 can edit the xml	6
 by switching to text	6
 author mode using the	6
@@ -9252,7 +9252,7 @@ you can also move	6
 in author mode this	6
 for a file that	6
 the left panel source	6
-reload reloads the file	6 *
+reload reloads the file	6
 the right panel target	6
 save results as html	6 *
 an html file that	6
@@ -10242,7 +10242,7 @@ topics in a dita	6
 as in the example	6
 specified the tool will	6
 in the comparison tool	6
-webhelp output admin interface	6 *
+webhelp output admin interface	6
 the enable content indexing	6
 available in the output	6
 table of contents you	6
@@ -10747,7 +10747,7 @@ model view and logical	6
 view and logical model	6
 and logical model view	6
 mode the visual author	6
-the visual author mode	6 *
+the visual author mode	6
 relax ng schemas with	6
 that contains your custom	6
 id in the current	6
@@ -10810,7 +10810,7 @@ moderate comments manage users	6
 attached to the organization	6
 about the current subscription	6
 an xpath expression in	6
-dita docbook tei xhtml	6 *
+dita docbook tei xhtml	6
 is not associated with	6
 path relative to the	6
 your custom search engine	6
@@ -11107,7 +11107,7 @@ responsive output does not	6
 css rule in your	6
 an implementation of the	6
 url of the repository	6 *
-the export dialog box	6 *
+the export dialog box	6
 dialog box for the	6
 to the local file	6
 topic in author mode	6
@@ -11611,7 +11611,7 @@ to increase the memory	6
 proposals are applied on	6
 are applied on the	6
 provides a variety of	6
-length percentage initial unset	6 *
+length percentage initial unset	6
 variable that specifies the	6
 you also have the	6
 you want to reuse	6
@@ -12240,7 +12240,7 @@ the document based on	5
 button use this button	5
 the current document it	5
 you can also paste	5
-ai positron fix action	5 *
+ai positron fix action	5
 preferences page and the	5
 how to configure the	5
 topic contains information about	5
@@ -12466,8 +12466,8 @@ the subject scheme map	5
 needs to be set	5
 to be set to	5
 the advantages of using	5
-framework templates dita map	5 *
-switch to text mode	5 *
+framework templates dita map	5
+switch to text mode	5
 is bound to the	5
 a specific set of	5
 and select append child	5
@@ -13304,7 +13304,7 @@ home edition he professional	5
 edition he professional edition	5
 he professional edition pe	5
 saxon professional edition pe	5
-saxon enterprise edition ee	5 *
+saxon enterprise edition ee	5
 is located at the	5
 is the parent of	5
 and go to svn	5
@@ -13405,7 +13405,7 @@ option to generate the	5
 this section can be	5
 that reference the current	5
 the schema design preferences	5
-schema design preferences page	5 *
+schema design preferences page	5
 button to generate the	5
 you can collapse or	5
 can collapse or expand	5
@@ -13578,7 +13578,7 @@ most of the content	5
 create a ditaval filter	5
 filter file in the	5
 maps manager and select	5
-save the dita map	5 *
+save the dita map	5
 document by default it	5
 show all components displays	5
 all components displays all	5
@@ -13747,7 +13747,7 @@ add that directory to	5
 wizard follow these steps	5
 steps click the new	5
 of document that you	5
-click the finish button	5 *
+click the finish button	5
 to the xml file	5
 to point to your	5
 the page ratings statistics	5
@@ -13906,7 +13906,7 @@ command line that starts	5
 line that starts the	5
 a custom author mode	5
 button and use the	5
-admin interface site configuration	5 *
+admin interface site configuration	5
 of the administration interface	5
 to use a different	5
 version of the logo	5
@@ -13957,7 +13957,7 @@ schema-aware format and indent	5 *
 use information from the	5
 information from the associated	5
 for elements that are	5
-the format preferences page	5 *
+the format preferences page	5
 xml content you can	5
 use one or more	5
 box you can configure	5
@@ -14266,7 +14266,7 @@ application linux installer or	5
 installation directory of edit	5
 directory of edit the	5
 of edit the oxygenxmlwebauthor.vmoptions	5
-edit the oxygenxmlwebauthor.vmoptions file	5 *
+edit the oxygenxmlwebauthor.vmoptions file	5
 not have the same	5
 into an xml file	5
 go to file import/convert	5
@@ -14349,7 +14349,7 @@ name of the font	5
 is no need to	5
 you can adjust the	5
 in the options menu	5
-create a new action	5 *
+create a new action	5
 to select an image	5
 that uses for the	5
 in the path specified	5
@@ -14493,7 +14493,7 @@ the image will be	5
 configuration file should include	5
 this action in the	5
 want to insert a	5
-search engine oxygen feedback	5 *
+search engine oxygen feedback	5
 xquery transformation on json	5 *
 specifies the parameters and	5
 the parameters and location	5
@@ -14913,7 +14913,7 @@ the estimated number of	5
 estimated number of tokens	5
 the list you can	5
 ok to save your	5
-xml catalog preferences page	5 *
+xml catalog preferences page	5
 view presents a list	5
 of all defined elements	5
 all defined elements that	5
@@ -14949,7 +14949,7 @@ contextual menu actions while	5
 menu actions while browsing	5
 nodes include the following	5
 annotations for the content	5
-framework templates oxygen extensions	5 *
+framework templates oxygen extensions	5
 you need to indicate	5
 tab add a link	5
 to web author result	5
@@ -14994,7 +14994,7 @@ is displayed in author	5
 toggles whether or not	5
 attributes option in the	5
 as long as you	5
-relax ng relax ng	5 *
+relax ng relax ng	5
 it is available when	5
 set in the xml	5
 an xml catalog to	5
@@ -15061,7 +15061,7 @@ dialog box choose or	5
 box choose or enter	5
 the output file that	5
 output file that will	5
-click the convert button	5 *
+click the convert button	5
 the convert button result	5
 convert button result the	5
 button result the original	5
@@ -15107,7 +15107,7 @@ over the currently edited	5
 saxon xslt and xquery	5
 file in html format	5
 documentation and installation details	5
-publishing template css styling	5 *
+publishing template css styling	5
 the resources section of	5
 the toolbar you can	5
 includes information about the	5
@@ -15228,7 +15228,7 @@ the features that are	5
 in the location where	5
 during the initial setup	5
 how to install the	5
-click the save button	5 *
+click the save button	5
 bottom-left corner of the	5
 asked to confirm the	5
 steps copy the oxygen.jar	5
@@ -15916,7 +15916,7 @@ repository for it to	5
 to be available to	5
 be available to others	5
 click the logo image	5
-dita map display mode	5 *
+dita map display mode	5
 map display mode drop-down	5
 dita map is displayed	5
 with all of the	5
@@ -16099,7 +16099,7 @@ zip archive with the	5
 drop it into the	5
 button step result this	5
 the oxygen feedback comments	5
-oxygen feedback comments component	5 *
+oxygen feedback comments component	5
 a new site configuration	5
 insert equation opens the	5
 equation opens the xml	5
@@ -16156,7 +16156,7 @@ the drop-down list or	5
 of the output transformation	5
 opens the web link	5
 the web link dialog	5
-web link dialog box	5 *
+web link dialog box	5
 paste as link keyref	5 *
 the following cases when	5
 with a content reference	5
@@ -16554,7 +16554,7 @@ has no impact on	5
 the inserted and deleted	5
 java virtual machine that	5
 virtual machine that runs	5
-content completion assistant window	5 *
+content completion assistant window	5
 text from the current	5
 the input dita document	5
 product is not an	5
@@ -17123,7 +17123,7 @@ restart the application result	4
 you can install the	4
 is present in the	4
 adding it to the	4
-vpat accessibility conformance report	4 *
+vpat accessibility conformance report	4
 international edition vpat version	4
 contact information support@oxygenxml.com notes	4
 accessibility guidelines wcag for	4
@@ -17143,7 +17143,7 @@ the following accessibility standards/guidelines	4
 following accessibility standards/guidelines standard/guideline	4
 accessibility standards/guidelines standard/guideline included	4
 standards/guidelines standard/guideline included in	4
-standard/guideline included in report	4 *
+standard/guideline included in report	4
 included in report web	4
 in report web content	4
 report web content accessibility	4
@@ -17321,7 +17321,7 @@ alone to convey information	4
 1.4.2 audio control level	4
 audio control level a	4
 control level a also	4
-2.1.1 keyboard level a	4 *
+2.1.1 keyboard level a	4
 keyboard level a also	4
 through a keyboard interface	4
 2.1.2 no keyboard trap	4 *
@@ -17407,7 +17407,7 @@ readers do not announce	4
 labels or instructions level	4
 or instructions level a	4
 instructions level a also	4
-4.1.1 parsing level a	4 *
+4.1.1 parsing level a	4
 parsing level a also	4
 4.1.2 name role value	4 *
 name role value level	4
@@ -17585,12 +17585,12 @@ timing level aaa revised	4
 apply not evaluated 2.2.4	4
 not evaluated 2.2.4 interruptions	4
 evaluated 2.2.4 interruptions level	4
-2.2.4 interruptions level aaa	4 *
+2.2.4 interruptions level aaa	4
 interruptions level aaa revised	4
 apply not evaluated 2.2.5	4
 not evaluated 2.2.5 re-authenticating	4
 evaluated 2.2.5 re-authenticating level	4
-2.2.5 re-authenticating level aaa	4 *
+2.2.5 re-authenticating level aaa	4
 re-authenticating level aaa revised	4
 apply not evaluated 2.2.6	4
 not evaluated 2.2.6 timeouts	4
@@ -17613,7 +17613,7 @@ interactions level aaa 2.1	4
 apply not evaluated 2.4.8	4
 not evaluated 2.4.8 location	4
 evaluated 2.4.8 location level	4
-2.4.8 location level aaa	4 *
+2.4.8 location level aaa	4
 location level aaa revised	4
 apply not evaluated 2.4.9	4
 not evaluated 2.4.9 link	4
@@ -17660,7 +17660,7 @@ words level aaa revised	4
 apply not evaluated 3.1.4	4
 not evaluated 3.1.4 abbreviations	4
 evaluated 3.1.4 abbreviations level	4
-3.1.4 abbreviations level aaa	4 *
+3.1.4 abbreviations level aaa	4
 abbreviations level aaa revised	4
 apply not evaluated 3.1.5	4
 not evaluated 3.1.5 reading	4
@@ -17671,7 +17671,7 @@ level level aaa revised	4
 apply not evaluated 3.1.6	4
 not evaluated 3.1.6 pronunciation	4
 evaluated 3.1.6 pronunciation level	4
-3.1.6 pronunciation level aaa	4 *
+3.1.6 pronunciation level aaa	4
 pronunciation level aaa revised	4
 apply not evaluated 3.2.5	4
 not evaluated 3.2.5 change	4
@@ -17683,7 +17683,7 @@ request level aaa revised	4
 apply not evaluated 3.3.5	4
 not evaluated 3.3.5 help	4
 evaluated 3.3.5 help level	4
-3.3.5 help level aaa	4 *
+3.3.5 help level aaa	4
 help level aaa revised	4
 apply not evaluated 3.3.6	4
 not evaluated 3.3.6 error	4
@@ -18077,7 +18077,7 @@ the results of an	4
 the progress and results	4
 displayed in the main	4
 access to the ai	4
-window show view other	4 *
+window show view other	4
 of the view's header	4
 that contains the following	4
 to create more relevant	4
@@ -18871,7 +18871,7 @@ project in the project	4
 the following actions that	4
 following actions that are	4
 a new file dialog	4
-new file dialog box	4 *
+new file dialog box	4
 to specify a name	4
 specify a name for	4
 logical folder in the	4
@@ -19132,7 +19132,7 @@ need an oxygen content	4
 oxygen content fusion enterprise	4
 and configure your own	4
 custom frameworks and plugins	4
-oxygen content fusion website	4 *
+oxygen content fusion website	4
 to restart the web-based	4
 restart the web-based editor	4
 xml web author administration	4
@@ -19361,7 +19361,7 @@ file to review task	4
 one of these scenarios	4
 a link to open	4
 to the task if	4
-choose context root map	4 *
+choose context root map	4
 can specify a ditaval	4
 file so that the	4
 so that the content	4
@@ -19510,7 +19510,7 @@ style submenu this submenu	4
 includes the following text	4
 the following text styling	4
 following text styling actions	4
-list insert unordered list	4 *
+list insert unordered list	4
 list inserts an unordered	4
 inserts an unordered list	4
 an unordered list at	4
@@ -19735,7 +19735,7 @@ the add svn repository	4
 into your working copy	4
 you need to update	4
 the update to revision/depth	4
-update to revision/depth action	4 *
+update to revision/depth action	4
 a content fusion backup	4
 be stored in the	4
 with the following content:<xsl:stylesheet	4
@@ -19908,7 +19908,7 @@ they do not appear	4
 elements are mapped to	4
 to add a draft	4
 add a draft watermark	4
-draft watermarksconditional draft watermark	4 *
+draft watermarksconditional draft watermark	4
 part of your publication	4
 if you have associated	4
 content completion content completion	4
@@ -19924,7 +19924,7 @@ the pdf represents the	4
 the name and the	4
 title of the publication	4
 true true false initial	4
-true false initial unset	4 *
+true false initial unset	4
 false initial unset false	4
 with odd-numbered pages on	4
 odd-numbered pages on the	4
@@ -20122,7 +20122,7 @@ diagram displays the diagram	4
 generated according to the	4
 in the schema design	4
 that are used for	4
-click the generate button	4 *
+click the generate button	4
 it is presented in	4
 sections hyperlinks and options	4
 watch the following webinar	4
@@ -20130,7 +20130,7 @@ does not work with	4
 the css file to	4
 they will be redirected	4
 edit link in the	4
-edit a transformation scenario	4 *
+edit a transformation scenario	4
 the following parameters editlink.ditamap.edit.url	4
 following parameters editlink.ditamap.edit.url the	4
 url of the dita	4
@@ -20412,7 +20412,7 @@ location you can also	4
 information about the dita	4
 use-case suppose that you	4
 ditaval filter file in	4
-click insert and close	4 *
+click insert and close	4
 you can find a	4
 next generation of reuse	4
 concepts watch our webinar	4
@@ -20667,7 +20667,7 @@ you or other users	4
 the list of template	4
 list of template directories	4
 of template directories that	4
-document templates preferences page	4 *
+document templates preferences page	4
 the list of templates	4
 from templates wizard to	4
 opened in the appropriate	4
@@ -21185,7 +21185,7 @@ text to search in	4 *
 to search in tofind	4
 search in tofind the	4
 in tofind the searched	4
-tofind the searched substring	4 *
+tofind the searched substring	4
 only want to display	4
 owner can use the	4
 link to the task	4
@@ -21373,7 +21373,7 @@ the amount of whitespaces	4
 considered to be changes	4
 background color sets the	4
 if selected default value	4
-in the output view	4 *
+in the output view	4
 of the editor pane	4
 the number of characters	4
 line when nothing is	4
@@ -21875,7 +21875,7 @@ mentions and email notifications	4
 and email notifications for	4
 email notifications for review	4
 notifications for review task	4
-track changes visualization modes	4 *
+track changes visualization modes	4
 changes visualization modes drop-down	4
 visualization modes drop-down menu	4
 allow you to switch	4
@@ -21980,7 +21980,7 @@ in author mode edit	4
 author mode edit profiling	4
 used to customize the	4
 jdbc driver from the	4
-related information validation scenario	4 *
+related information validation scenario	4
 by default when using	4
 default when using the	4
 that are required for	4
@@ -22231,7 +22231,7 @@ for an xslt stylesheet	4
 generate xslt stylesheet documentation	4
 generate documentation xml tools	4
 documentation xml tools generate	4
-xml tools generate documentation	4 *
+xml tools generate documentation	4
 generate documentation menu or	4
 documentation menu or from	4
 or from the generate	4
@@ -22649,7 +22649,7 @@ content into dita documentation	4
 into dita documentation in	4
 dita documentation in oxygen	4
 word to dita using	4
-options export global options	4 *
+options export global options	4
 an xml properties file	4
 to share with others	4
 global options allows you	4
@@ -22888,7 +22888,7 @@ are various ways to	4
 to the default value	4
 a new editor is	4
 the find replace dialog	4
-find replace dialog box	4 *
+find replace dialog box	4
 on the document content	4
 the document content in	4
 when set in a	4
@@ -22966,7 +22966,7 @@ change tracking content in	4
 or functionality and without	4
 or a combination of	4
 the ability to change	4
-see wcag 2.x section	4 *
+see wcag 2.x section	4
 info and relationships the	4
 be set by the	4
 set by the user	4
@@ -23035,7 +23035,7 @@ if the organization's paid	4
 the organization's paid subscription	4
 views allowed by the	4
 for the current month	4
-search engine transformation parameters	4 *
+search engine transformation parameters	4
 a custom search engine	4
 be used to replace	4
 of the parameter is	4
@@ -23060,7 +23060,7 @@ that contains your publishing	4
 descriptor file the opt	4
 file the opt file	4
 the opt file a	4
-a folder named js	4 *
+a folder named js	4
 in the js folder	4
 the js folder create	4
 js folder create a	4
@@ -23333,7 +23333,7 @@ a change the following	4
 selected change from the	4
 copy of the original	4
 the merge action drop-down	4
-merge action drop-down menu	4 *
+merge action drop-down menu	4
 you to switch to	4
 that displays the files	4
 displays the files in	4
@@ -23506,7 +23506,7 @@ encloses the currently selected	4
 in a comment if	4
 the element is not	4
 the show profiling attributes	4
-show profiling attributes option	4 *
+show profiling attributes option	4
 plugin follow this procedure	4
 was installed in the	4
 may need to restart	4
@@ -23656,7 +23656,7 @@ position or surrounding the	4
 or surrounding the current	4
 surrounding the current selection	4
 value it is inserted	4
-cross reference link xref	4 *
+cross reference link xref	4
 reference to an image	4
 a variable reference ph	4
 to the selected key	4
@@ -23756,7 +23756,7 @@ options configured in that	4
 configured in that preferences	4
 that preferences page parameters	4
 preferences page parameters opens	4
-configure parameters dialog box	4 *
+configure parameters dialog box	4
 buttons in this dialog	4
 box to add edit	4
 to add edit or	4
@@ -23847,7 +23847,7 @@ by a thin light	4
 a thin light blue	4
 thin light blue bar	4
 light blue bar for	4
-options menu shortcut keys	4 *
+options menu shortcut keys	4
 of the following click	4
 any of the specific	4
 of the specific bookmark	4
@@ -25054,7 +25054,7 @@ form of an html	4
 of an html file	4
 the base directory that	4
 included in the comparison	4
-directories comparison preferences page	4 *
+directories comparison preferences page	4
 the diff options button	4
 diff options button to	4
 the ignore nodes by	4
@@ -25082,7 +25082,7 @@ templates are stored in	4
 stored in the following	4
 to share a publishing	4
 share a publishing template	4
-options preferences dita publishing	4 *
+options preferences dita publishing	4
 preferences dita publishing and	4
 dita publishing and add	4
 folder to the list	4
@@ -25361,7 +25361,7 @@ your follow these steps	4
 through a proxy server	4
 connections will go through	4
 will go through the	4
-web proxy http/https section	4 *
+web proxy http/https section	4
 the following additional options	4
 section address the address	4
 address the address of	4
@@ -25851,7 +25851,7 @@ map to webhelp responsive	4
 configure the parameters for	4
 the source code of	4
 and make sure you	4
-click the stop button	4 *
+click the stop button	4
 the front page title	4
 top-left content:none top-center content:none	4
 content:none top-center content:none top-right	4
@@ -26422,7 +26422,7 @@ drop-down menu a drop-down	4
 menu a drop-down menu	4
 the destination of the	4
 location within the same	4
-inserting a link in	4 *
+inserting a link in	4
 cross reference opens the	4
 insert a cross reference	4
 target dita resource at	4
@@ -26605,7 +26605,7 @@ save both files dic	4
 information on how to	4
 how to do this	4
 to do this see	4
-custom author mode action	4 *
+custom author mode action	4
 the value for a	4
 the xpath location that	4
 xpath location that identifies	4
@@ -26674,7 +26674,7 @@ position content selects the	4
 all the attributes of	4
 selected block to the	4
 the sign dialog box	4
-manage highlighted content submenu	4 *
+manage highlighted content submenu	4
 submenu this submenu is	4
 this submenu is available	4
 case or all matches	4
@@ -26799,7 +26799,7 @@ the less dynamic stylesheet	4
 less dynamic stylesheet language	4
 the reason why the	4
 dita docbook tei jats	4
-between two block elements	4 *
+between two block elements	4
 you can implement a	4
 create an xslt stylesheet	4
 a client application for	4
@@ -27243,7 +27243,7 @@ considered to be relative	4
 in the editor are	4
 on the web author	4
 the user tries to	4
-insert new dita resource	4 *
+insert new dita resource	4
 type of dita document	4
 of dita document to	4
 dita document to create	4
@@ -27406,7 +27406,7 @@ preview pane in the	4
 inserted at the current	4
 go to editor templates	4
 to editor templates code	4
-editor templates code templates	4 *
+editor templates code templates	4
 is selected automatically assigns	4
 selected automatically assigns a	4
 automatically assigns a color	4
@@ -27546,7 +27546,7 @@ configuration options if you	4
 this option to use	4
 also have the option	4
 that are opened in	4
-open/find resource dialog box/view	4 *
+open/find resource dialog box/view	4
 when you perform a	4
 the keyref attribute is	4
 a submap to a	4
@@ -27748,7 +27748,7 @@ text with an i	4
 text with a u	4
 opens the file reference	4
 the file reference dialog	4
-file reference dialog box	4 *
+file reference dialog box	4
 dita map structure for	4
 be inserted into a	4
 with a b bold	4
@@ -28077,7 +28077,7 @@ an end tag then	4
 then the entire attribute	4
 custom new file templates	4 *
 you can use such	4
-item 1 item 2	4 *
+item 1 item 2	4
 when it comes to	4
 technical writing it is	4
 to begin a sentence	4
@@ -29386,7 +29386,7 @@ a consistent navigation mechanism	3
 consistent navigation mechanism 3.2.4	3
 navigation mechanism 3.2.4 consistent	3
 mechanism 3.2.4 consistent identification	3
-components are identified consistently	3 *
+components are identified consistently	3
 are identified consistently 3.3.3	3
 identified consistently 3.3.3 error	3
 consistently 3.3.3 error suggestion	3
@@ -29767,7 +29767,7 @@ embed ai positron in	3
 ai positron in author	3
 positron in author page	3
 the ai positron drop-down	3
-ai positron drop-down widget	3 *
+ai positron drop-down widget	3
 positron drop-down widget is	3
 drop-down widget is displayed	3
 when documents are open	3
@@ -29920,7 +29920,7 @@ to be purchased from	3
 from the oxygen ai	3
 start eclipse go to	3
 eclipse go to help	3
-help install new software	3 *
+help install new software	3
 in the location field	3
 ai positron plugin and	3
 and click next select	3
@@ -30016,7 +30016,7 @@ you to restrict the	3
 read and write content	3
 to the project directory	3
 need to click the	3
-click the record button	3 *
+click the record button	3
 add dita markup to	3
 open a dita topic	3
 use this function from	3
@@ -30118,7 +30118,7 @@ in errors or warnings	3
 information is displayed in	3
 of the problem the	3
 name of the resource	3
-validate the dita map	3 *
+validate the dita map	3
 the dita map by	3
 dita map by using	3
 manager toolbar and in	3
@@ -30646,7 +30646,7 @@ browses for a remote	3
 for a remote file	3
 a remote file that	3
 remote file that will	3
-open file from archive	3 *
+open file from archive	3
 file from archive browses	3
 from archive browses an	3
 archive browses an archive	3
@@ -30996,7 +30996,7 @@ provide these permissions with	3
 these permissions with the	3
 permissions with the following	3
 the following command grant	3
-edit the oxygen_feedback_install_dir/docker-compose.yml file	3 *
+edit the oxygen_feedback_install_dir/docker-compose.yml file	3
 the following environment variables	3
 this example replace db_server_host	3
 example replace db_server_host with	3
@@ -31398,11 +31398,11 @@ name licensekey.txt and place	3
 licensekey.txt and place it	3
 the only difference is	3
 webhelp responsive or pdf	3
-email notifications site configuration	3 *
+email notifications site configuration	3
 page where they can	3
 to open this page	3
 the oxygen feedback administration	3
-oxygen feedback administration interface	3 *
+oxygen feedback administration interface	3
 button in the general	3
 in the general section	3
 image to use for	3
@@ -32205,7 +32205,7 @@ you click this button	3
 dita maps manager includes	3
 you to quickly create	3
 you need to insert	3
-fast create topics feature	3 *
+fast create topics feature	3
 opens the fast create	3
 topics dialog box where	3
 for the new topics	3
@@ -32284,7 +32284,7 @@ click update select the	3
 update select the i	3
 click finish restart oxygen	3
 finish restart oxygen xml	3
-restart oxygen xml editor/author	3 *
+restart oxygen xml editor/author	3
 go to help check	3
 to help check for	3
 you can also go	3
@@ -32483,7 +32483,7 @@ file you can choose	3
 add-on in oxygen xml	3
 show view menu you	3
 view menu you can	3
-show feedback comments manager	3 *
+show feedback comments manager	3
 to oxygen xml editor/author	3
 select preferences from the	3
 by going to options	3
@@ -32867,7 +32867,7 @@ of pages in this	3
 pages in this page-sequence	3
 even odd end-on-even end-on-odd	3
 specify the minimum number	3
-none url initial unset	3 *
+none url initial unset	3
 the creation of a	3
 even if the page	3
 with the file name	3
@@ -33041,7 +33041,7 @@ deprecated it is recommended	3
 could be used to	3
 to be used if	3
 in both author mode	3
-both author mode and	3 *
+both author mode and	3
 content completion assistant documentation	3
 completion assistant documentation window	3
 displayed when you hover	3
@@ -33489,7 +33489,7 @@ or remove a stash	3
 opens the git history	3
 git history view at	3
 history view at the	3
-git branch manager view	3 *
+git branch manager view	3
 opens the working copy	3
 in the system file	3
 the latest changes from	3
@@ -34433,7 +34433,7 @@ or right-click the topic	3
 dita maps manager go	3
 maps manager go to	3
 manager go to the	3
-the toolsxml toolsxml menu	3 *
+the toolsxml toolsxml menu	3
 when you right-click one	3
 you right-click one or	3
 right-click one or more	3
@@ -34562,7 +34562,7 @@ the target namespace of	3
 target namespace of the	3
 the dialog box displays	3
 mathml editor you can	3
-the mathml preferences page	3 *
+the mathml preferences page	3
 to a temporary file	3
 rendered in the author	3
 for other types of	3
@@ -34587,7 +34587,7 @@ all the css 3	3
 the css 3 standard	3
 css 3 standard properties	3
 the css extensions specific	3
-css extensions specific for	3 *
+css extensions specific for	3
 available for the selected	3
 dialog box or in	3
 specified in the xml	3
@@ -34687,7 +34687,7 @@ textual description of the	3
 of the fo processor	3
 specified in the class	3
 in the class path	3
-custom author mode operation	3 *
+custom author mode operation	3
 go to document types	3
 to document types association	3
 document types association and	3
@@ -35145,7 +35145,7 @@ all types of whitespace	3
 types of whitespace changes	3
 of text after you	3
 long time to process	3
-editor edit modes text	3 *
+editor edit modes text	3
 options are available editor	3
 sets the background color	3
 color for the text	3
@@ -35208,7 +35208,7 @@ one of the methods	3
 of the methods described	3
 status information generated by	3
 the enable oxygen consoles	3
-enable oxygen consoles option	3 *
+enable oxygen consoles option	3
 oxygen consoles option must	3
 consoles option must be	3
 perspective and editing mode	3
@@ -35354,7 +35354,7 @@ converted to proper xml	3
 to proper xml structure	3
 html document in the	3
 the main editor and	3
-site configuration admin interface	3 *
+site configuration admin interface	3
 particular site configuration to	3
 site configuration users with	3
 admin or moderator are	3
@@ -35670,7 +35670,7 @@ contains general information about	3
 tab contains a list	3
 and their values the	3
 can be started in	3
-external tools preferences page	3 *
+external tools preferences page	3
 this preferences page and	3
 and go to external	3
 go to external tools	3
@@ -36024,7 +36024,7 @@ dialog box condition set	3
 not specified the value	3
 table you can also	3
 the profiling condition sets	3
-profiling condition sets section	3 *
+profiling condition sets section	3
 to apply more complex	3
 apply more complex filters	3
 more complex filters on	3
@@ -36210,7 +36210,7 @@ the import preferences page	3
 import preferences page that	3
 to configure more import	3
 configure more import options	3
-xml import preview panel	3 *
+xml import preview panel	3
 import preview panel contains	3
 preview panel contains an	3
 panel contains an example	3
@@ -36768,7 +36768,7 @@ other topics in this	3
 key scopes and branch	3
 scopes and branch filtering	3
 dark mode dark mode	3
-dark mode css styling	3 *
+dark mode css styling	3
 from an existing template	3
 able to see all	3
 simply click on it	3
@@ -37413,7 +37413,7 @@ child insert before and	3
 insert before and insert	3
 before and insert after	3
 and insert after submenus	3
-markdown to dita markdown	3 *
+markdown to dita markdown	3
 to json yaml to	3
 json schema version 2020-12	3
 inserts map nodes as	3
@@ -37458,7 +37458,7 @@ specific space that you	3
 space that you want	3
 go to space settings	3
 to space settings export	3
-space settings export space	3 *
+space settings export space	3
 settings export space and	3
 export space and choose	3
 space and choose to	3
@@ -37658,7 +37658,7 @@ directory as configured in	3
 as configured in document	3
 configured in document type	3
 in document type associations	3
-document type associations locations	3 *
+document type associations locations	3
 type associations locations will	3
 associations locations will be	3
 locations will be preserved	3
@@ -37883,7 +37883,7 @@ validating xml documents against	3
 xml documents against schematron	3
 is used for validation	3
 allows you to validate	3
-xml xml parser schematron	3 *
+xml xml parser schematron	3
 attribute on the schema	3
 should have a bone	3
 a bone sch:diagnostic sch:diagnostic	3
@@ -38280,7 +38280,7 @@ a ditaval context filter	3
 and styles for profiled	3
 styles for profiled content	3
 spelling dialog box that	3
-the spelling dialog box	3 *
+the spelling dialog box	3
 also highlighted in the	3
 replace the misspelled word	3
 it in the document	3
@@ -38493,7 +38493,7 @@ browser dialog box allowing	3
 workspace allows you to	3
 from the local workspace	3
 using sftp dialog box	3
-browse for archived file	3 *
+browse for archived file	3
 the archive browser that	3
 archive browser that allows	3
 browser that allows you	3
@@ -39545,7 +39545,7 @@ you can not use	3
 the number of total	3
 that has the history	3
 it is marked with	3
-a newly created resource	3 *
+a newly created resource	3
 special character support in	3
 editing modebidirectional text bidirectional	3
 modebidirectional text bidirectional text	3
@@ -39589,7 +39589,7 @@ for markdown and html	3
 markdown and html validation	3
 provides the means for	3
 a certain xml vocabulary	3
-run xspec test scenarios	3 *
+run xspec test scenarios	3
 versions of the saxon	3
 converting an xml schema	3
 schema file xsd to	3
@@ -40197,7 +40197,7 @@ repository menu and in	3
 you do not accidentally	3
 of the repository is	3
 revision number is used	3
-headerunderlined header headerunderlined header	3 *
+headerunderlined header headerunderlined header	3
 to add a horizontal	3
 the space between the	3
 in any other part	3
@@ -40206,7 +40206,7 @@ useful when you need	3
 from the repository by	3
 will be exported to	3
 to find a valid	3
-network connection settings http(s)/webdav	3 *
+network connection settings http(s)/webdav	3
 the automatically accept a	3
 to the page that	3
 inherit initial unset transparent	3
@@ -42062,7 +42062,7 @@ with the custom protocol	3
 a string that is	3
 the files you want	3
 folder by using the	3
-transform configure transformation scenario(s	3 *
+transform configure transformation scenario(s	3
 or more transformation scenarios	3
 that the output is	3
 make sure the appropriate	3
@@ -42256,7 +42256,7 @@ one of them to	3
 or as a starting	3
 publishing templates are stored	3
 the dita publishing preferences	3
-dita publishing preferences page	3 *
+dita publishing preferences page	3
 this button will open	3
 button will open a	3
 that contains some options	3
@@ -43785,7 +43785,7 @@ in the list as	3
 to prompt the user	3
 as a java application	3
 the fo processors preferences	3
-fo processors preferences page	3 *
+fo processors preferences page	3
 is a type of	3
 an element and insert	3
 or xslt stylesheet that	3
@@ -43869,7 +43869,7 @@ content:none bottom-center content:none bottom-right	3
 bottom-center content:none bottom-right content:none	3
 in the tasks manager	3
 the tasks manager view	3
-oxygen content fusion logo	3 *
+oxygen content fusion logo	3
 opens the my review	3
 of all the current	3
 a webpage with a	3
@@ -43890,7 +43890,7 @@ a colspecs section that	3
 end of the selection	3
 in the cursor navigation	3
 the cursor navigation preferences	3
-cursor navigation preferences page	3 *
+cursor navigation preferences page	3
 the view and the	3
 applies only to email	3
 only to email and	3
@@ -43900,7 +43900,7 @@ to configure the number	3
 configure the number of	3
 parent structural pseudo-classes 3	3
 a value of 1	3
-the flatten schema action	3 *
+the flatten schema action	3
 that can render the	3
 the xslt transformation scenario	3
 in an integrated svg	3
@@ -44030,7 +44030,7 @@ configure the parameters sent	3
 the parameters sent to	3
 parameters sent to the	3
 in an oxygen publishing	3
-page breaks page breaks	3 *
+page breaks page breaks	3
 in your dita topic	3
 attribute on the topicref	3
 that are allowed at	3
@@ -44157,7 +44157,7 @@ switch to the text-based	3
 edit xml source from	3
 xml source from the	3
 selected list item nodes	3
-tags display mode option	3 *
+tags display mode option	3
 you can drag an	3
 select a block of	3
 file and its content	3
@@ -44175,7 +44175,7 @@ for linux and macos	3
 linux and macos run	3
 and macos run the	3
 macos run the following	3
-run the following command:stop-oxygen-xml-web-author.sh	3 *
+run the following command:stop-oxygen-xml-web-author.sh	3
 oxygen xml editor/author options	3
 you can add and	3
 not compatible with the	3
@@ -44215,7 +44215,7 @@ open the action dialog	3
 contextual menu and underneath	3
 menu and underneath the	3
 and underneath the table	3
-edit an existing action	3 *
+edit an existing action	3
 changes that cannot be	3
 the same working copy	3
 the main wsdl document	3
@@ -44439,7 +44439,7 @@ need to edit the	3
 in the framework in	3
 referenced directly in the	3
 the css-based processors preferences	3
-css-based processors preferences page	3 *
+css-based processors preferences page	3
 strings defined in the	3
 file into the file	3
 add the following in	3
@@ -44705,7 +44705,7 @@ does not already have	3
 the class attribute value	3
 are of the type	3
 the java code of	3
-select the transformation scenario	3 *
+select the transformation scenario	3
 while the transformation is	3
 the output in the	3
 in the appropriate application	3
@@ -45672,7 +45672,7 @@ page will be selected	3
 will be selected automatically	3
 be selected automatically and	3
 draft 2019-09 or 2020-12	3
-saxon he home edition	3 *
+saxon he home edition	3
 the values set in	3
 the following advanced options	3
 following advanced options are	3
@@ -45861,7 +45861,7 @@ outline view in text	3
 sec title>section title</title para>content</para	3
 title>section title</title para>content</para sec	3
 the outline view would	3
-workspace access plugin type	3 *
+workspace access plugin type	3
 id defined in the	3
 defined in the plugin.xml	3
 the information in this	3
@@ -46786,7 +46786,7 @@ designed to help you	3
 a set of files	3
 filtering profiled content in	3
 the profiling/conditional text drop-down	3
-profiling/conditional text drop-down menu	3 *
+profiling/conditional text drop-down menu	3
 menu that is located	3
 that is located on	3
 the following filtering options	3
@@ -47008,7 +47008,7 @@ the indent size is	3
 indent size is the	3
 characters if the indent	3
 if the indent with	3
-indent with tabs option	3 *
+indent with tabs option	3
 with tabs option is	3
 this setting is used	3
 indent size and line	3
@@ -47192,7 +47192,7 @@ of the author who	3
 also select the show	3
 select the show review	3
 the show review time	3
-show review time option	3 *
+show review time option	3
 review time option to	3
 time option to include	3
 option to include timestamp	3
@@ -47464,7 +47464,7 @@ jar file relative to	3
 relative to the frameworks	3
 to the frameworks folder	3
 set menu access key	3
-set shortcut key to	3 *
+set shortcut key to	3
 to test the action	3
 after an update operation	3
 the default namespace for	3
@@ -47997,7 +47997,7 @@ file a folder named	3
 folder named js a	3
 named js a folder	3
 js a folder named	3
-a folder named fragments	3 *
+a folder named fragments	3
 folder named fragments in	3
 named fragments in the	3
 fragments in the js	3
@@ -48019,7 +48019,7 @@ an object the following	3
 object the following fields	3
 following fields are required	3
 content completion assistant dita	3
-link actions drop-down menu	3 *
+link actions drop-down menu	3
 menu the following link	3
 inserted into a dita	3
 a dita document at	3
@@ -48433,7 +48433,7 @@ title in the pdf	3
 mb free disk space	3
 responsive output to provide	3
 output to provide a	3
-oxygen feedback site configuration	3 *
+oxygen feedback site configuration	3
 attribute you can also	3
 cursor is inside a	3
 compare files tool with	3
@@ -49024,7 +49024,7 @@ element to rename the	3
 dark mode-ready publishing template	3
 the new element to	3
 revision use this option	3
-programming elements programming elements	3 *
+programming elements programming elements	3
 of the most important	3
 xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005 xmlns:opentopic-index="http://www.idiominc.com/opentopic/index cascade="merge class	3
 xmlns:opentopic-index="http://www.idiominc.com/opentopic/index cascade="merge class map/map	3
@@ -51005,7 +51005,7 @@ in a meaningful order	2
 a meaningful order 2.4.4	2
 meaningful order 2.4.4 link	2
 order 2.4.4 link purpose	2
-has meaningful link phrases	2 *
+has meaningful link phrases	2
 meaningful link phrases 2.5.1	2
 link phrases 2.5.1 pointer	2
 phrases 2.5.1 pointer gestures	2
@@ -51215,7 +51215,7 @@ controls can be set	2
 through assistive technology 502.3.6	2
 assistive technology 502.3.6 label	2
 technology 502.3.6 label relationships	2
-502.3.6 label relationships supports	2 *
+502.3.6 label relationships supports	2
 label relationships supports 502.3.7	2
 relationships supports 502.3.7 hierarchical	2
 supports 502.3.7 hierarchical relationships	2
@@ -51227,7 +51227,7 @@ supports 502.3.9 modification of	2
 on objects can be	2
 objects can be performed	2
 be performed by users	2
-502.3.12 focus cursor supports	2 *
+502.3.12 focus cursor supports	2
 of focus cursor supports	2
 focus cursor supports 502.3.14	2
 cursor supports 502.3.14 event	2
@@ -53889,7 +53889,7 @@ various types of links	2
 types of links and	2
 elements the content completion	2
 or content key references	2
-content key references conkeyref	2 *
+content key references conkeyref	2
 values that are defined	2
 defined in the key	2
 values are defined in	2
@@ -53972,7 +53972,7 @@ install using the windows	2
 the windows installer follow	2
 windows installer follow these	2
 requirements download the windows	2
-download the windows installer	2 *
+download the windows installer	2
 the windows installer optional	2
 windows installer optional validate	2
 in the installation program	2
@@ -54955,7 +54955,7 @@ new rectangle use this	2
 rectangle use this button	2
 to draw a rectangular	2
 draw a rectangular shape	2
-new free form shape	2 *
+new free form shape	2
 free form shape use	2
 form shape use this	2
 shape use this button	2
@@ -55024,7 +55024,7 @@ numbers for the shapes	2
 for the shapes bring	2
 the shapes bring shape	2
 shapes bring shape to	2
-bring shape to front	2 *
+bring shape to front	2
 shape to front use	2
 to front use this	2
 front use this button	2
@@ -55049,7 +55049,7 @@ selected shape back one	2
 shape back one layer	2
 back one layer send	2
 layer send shape to	2
-send shape to back	2 *
+send shape to back	2
 shape to back use	2
 to back use this	2
 back use this button	2
@@ -55200,7 +55200,7 @@ ctrl y to redo	2
 y to redo the	2
 related information dita imagemap	2
 information dita imagemap element	2
-dita imagemap element specifications	2 *
+dita imagemap element specifications	2
 displays the structure of	2
 are editing by default	2
 editing by default it	2
@@ -55287,7 +55287,7 @@ resulted from the merge	2
 can accept or reject	2
 note that if the	2
 the documents to be	2
-close closes the application	2 *
+close closes the application	2
 closes the application edit	2
 the application edit menu	2
 cut cut the selection	2
@@ -55378,7 +55378,7 @@ examples see dita-ot documentation	2
 meaning that you can	2
 support is not available	2
 in the vmoptions configuration	2
-the vmoptions configuration file	2 *
+the vmoptions configuration file	2
 topics in multiple maps	2
 in multiple maps you	2
 multiple maps you can	2
@@ -55789,7 +55789,7 @@ enter to insert the	2
 insert the element if	2
 the model view window	2
 model view window show	2
-window show view model	2 *
+window show view model	2
 you get a warning	2
 get a warning that	2
 this is usually because	2
@@ -55974,7 +55974,7 @@ for oxygen text search	2
 text search service database	2
 service database setup supported	2
 database setup supported databases	2
-postgresql 11 postgresql 12	2 *
+postgresql 11 postgresql 12	2
 to the postgresql database	2
 the postgresql database follow	2
 postgresql database follow these	2
@@ -57124,7 +57124,7 @@ and presents descriptions in	2
 presents descriptions in the	2
 descriptions in the dita	2
 the transformation scenario's parameters	2
-transformation scenario's parameters tab	2 *
+transformation scenario's parameters tab	2
 the transformation type and	2
 transformation type and allowed	2
 type and allowed parameters	2
@@ -58114,7 +58114,7 @@ close closes the currently	2
 closes the currently selected	2
 selected editor close other	2
 editor close other filesclose	2
-close other filesclose others	2 *
+close other filesclose others	2
 other filesclose others if	2
 filesclose others if multiple	2
 others if multiple files	2
@@ -58154,7 +58154,7 @@ document type name and	2
 left to right and	2
 characters in the document	2
 view can be accessed	2
-window show view properties	2 *
+window show view properties	2
 the full file path	2
 and syncro soft srl	2
 from the use of	2
@@ -58172,7 +58172,7 @@ using the linux installer	2
 the linux installer follow	2
 linux installer follow these	2
 requirements download the linux	2
-download the linux installer	2 *
+download the linux installer	2
 the linux installer optional	2
 linux installer optional validate	2
 in the installation program.for	2
@@ -59188,7 +59188,7 @@ opens find/replace dialog box	2 *
 occurrence of the last	2
 of the last searched	2
 the last searched term	2
-find previous shift f3	2 *
+find previous shift f3	2
 shift f3 command shift	2
 f3 command shift g	2
 previous occurrence of the	2
@@ -60399,7 +60399,7 @@ makes changes to the	2
 to the document for	2
 document for large documents	2
 for large documents this	2
-oxy-url file urls in	2 *
+oxy-url file urls in	2
 component enables the author	2
 enables the author to	2
 the author to extend	2
@@ -60582,7 +60582,7 @@ view the drop-down menu	2
 the following actions refresh	2
 in the view and	2
 opens the oxygen feedback	2
-oxygen feedback user guide	2 *
+oxygen feedback user guide	2
 in or out of	2
 context dita map if	2
 the current context map	2
@@ -60771,7 +60771,7 @@ radio button in the	2
 this opens the file	2
 opens the file comparison/merge	2
 the file comparison/merge tool	2
-generate documentation wsdl documentation	2 *
+generate documentation wsdl documentation	2
 directory to generate xml	2
 to generate xml schema	2
 cfg:configfile out:outputfile for some	2
@@ -60939,7 +60939,7 @@ click the deploy button	2
 to somewhere between 1000-5000	2
 section click the add	2
 in the target directory	2
-configure a postgresql connection	2 *
+configure a postgresql connection	2
 a postgresql connection to	2
 to a postgresql server	2
 a postgresql server follow	2
@@ -60967,7 +60967,7 @@ purposes of this tutorial	2
 that you are using	2
 the images in the	2
 an external tool in	2
-tools external tools configure	2 *
+tools external tools configure	2
 menu click the new	2
 set the command line	2
 you select the html	2
@@ -61020,7 +61020,7 @@ default but it can	2
 it can be enabled	2
 check preferences page when	2
 the automatic spell check	2
-automatic spell check option	2 *
+automatic spell check option	2
 some actions are available	2
 automatic spell checking in	2
 word allows you to	2
@@ -61248,7 +61248,7 @@ that use the saxon	2
 use the saxon he/pe/ee	2
 saxon he/pe/ee engine and	2
 he/pe/ee engine and go	2
-xml xslt-xquery xquery saxon-he/pe/ee	2 *
+xml xslt-xquery xquery saxon-he/pe/ee	2
 for the saxon home	2
 the saxon home edition	2
 available for saxon professional	2
@@ -61444,7 +61444,7 @@ chrome developer tools by	2
 developer tools by using	2
 tools by using more	2
 using more tools developer	2
-more tools developer tools	2 *
+more tools developer tools	2
 tools developer tools or	2
 developer tools or press	2
 tools or press ctrl+shift+i	2
@@ -61849,7 +61849,7 @@ hyphenation character the minimum	2
 character the minimum number	2
 characters in the word	2
 2 number inherit initial	2
-number inherit initial unset	2 *
+number inherit initial unset	2
 inherit initial unset 2	2
 initial unset 2 yes	2
 url initial unset no	2
@@ -62364,7 +62364,7 @@ breadcrumb navigation bar the	2
 navigation bar the full	2
 bar the full tags	2
 the full tags display	2
-full tags display mode	2 *
+full tags display mode	2
 display mode and the	2
 and the outline elements	2
 is optional if it	2
@@ -62771,7 +62771,7 @@ sets or key definitions	2
 insert and configure references	2
 such as topic references	2
 to configure an xqj	2
-configure an xqj connection	2 *
+configure an xqj connection	2
 the data source combo	2
 data source combo box	2
 the connection details the	2
@@ -62972,7 +62972,7 @@ values for example insert	2
 for example insert into	2
 example insert into camera`.`cameradesc	2
 values delete from catalog	2
-delete from catalog table	2 *
+delete from catalog table	2
 table for example delete	2
 for example delete from	2
 example delete from camera`.`cameradesc	2
@@ -63513,7 +63513,7 @@ the existing stashes and	2
 existing stashes and you	2
 stashes and you can	2
 can choose to apply	2
-show current repository history	2 *
+show current repository history	2
 history opens the git	2
 of the application show	2
 show git branch manager	2 *
@@ -63526,7 +63526,7 @@ create repository in project	2 *
 a repository in the	2
 repository in the project	2
 in the project folder	2
-explorer finder on macos	2 *
+explorer finder on macos	2
 finder on macos opens	2
 the working copy folder	2
 working copy folder in	2
@@ -64069,7 +64069,7 @@ in the plugin's folder	2
 found in the target	2
 in the target folder	2
 it in the web	2
-web author's administration page	2 *
+web author's administration page	2
 one of the installation	2
 of the installation kits	2
 the war distribution or	2
@@ -65452,7 +65452,7 @@ templates that you or	2
 or other users created	2
 other users created in	2
 users created in previous	2
-new from templates option	2 *
+new from templates option	2
 option in the new	2
 new document wizard the	2
 user-defined template directory you	2
@@ -65510,7 +65510,7 @@ selected the new file	2
 the new file will	2
 new file will be	2
 mathml equations in html	2
-xml documentsauthor mode editingmathml	2 *
+xml documentsauthor mode editingmathml	2
 output in author mode	2
 dita for dita documents	2
 also use the following	2
@@ -65759,7 +65759,7 @@ system application for the	2
 application for the particular	2
 particular type of resource	2
 add link to pdf	2 *
-transformation parameters navigation links	2 *
+transformation parameters navigation links	2
 of the documentation this	2
 this procedure does not	2
 link to a pdf	2
@@ -66433,7 +66433,7 @@ editor you can configure	2
 mathml editor e.g the	2
 preferences page and in	2
 and in the external	2
-external application command line	2 *
+external application command line	2
 the command line used	2
 command line used to	2
 the cf editor variable	2
@@ -66831,9 +66831,9 @@ working directory the directory	2
 intermediate and final results	2
 following editor variables homedir	2
 a local file the	2
-pd the project directory	2 *
+pd the project directory	2
 directory oxygeninstalldir the installation	2
-oxygeninstalldir the installation directory	2 *
+oxygeninstalldir the installation directory	2
 directory command line the	2
 directory frameworksdir the path	2
 path of the frameworks	2
@@ -68342,11 +68342,11 @@ fed into the information	2
 into the information console	2
 the information console view	2
 lines option in the	2
-window show view information	2 *
+window show view information	2
 show view information window	2
 view information window show	2
 information window show view	2
-window show view console	2 *
+window show view console	2
 the references of a	2
 getting familiar with the	2
 familiar with the interface	2
@@ -70679,7 +70679,7 @@ is inserted by the	2
 the associated schema you	2
 options preferences editor content	2
 preferences editor content completion	2
-editor content completion yaml	2 *
+editor content completion yaml	2
 smaller than 300 mb	2
 than 300 mb the	2
 300 mb the recommended	2
@@ -70781,7 +70781,7 @@ columns are as follows	2
 are as follows value	2
 as follows value the	2
 follows value the attribute	2
-value the attribute value	2 *
+value the attribute value	2
 groups using the following	2
 using the following format	2
 the following format parentattrvalue(subattrvalue1	2
@@ -70799,7 +70799,7 @@ its name in various	2
 name in various components	2
 attributes dialog box condition	2
 box condition set dialog	2
-condition set dialog box	2 *
+condition set dialog box	2
 tab in the edit	2
 in the edit properties	2
 if the label is	2
@@ -72598,7 +72598,7 @@ to reference has an	2
 reference has an id	2
 has an id assigned	2
 an id assigned to	2
-id assigned to it	2 *
+id assigned to it	2
 to it in author	2
 in author mode place	2
 author mode place the	2
@@ -72755,7 +72755,7 @@ variable text key scopes	2
 text key scopes and	2
 and branch filtering related	2
 branch filtering related information	2
-webhelp responsive dark mode	2 *
+webhelp responsive dark mode	2
 mode dark mode css	2
 both the light and	2
 light and dark modes	2
@@ -74830,7 +74830,7 @@ set up an oxygen	2
 up an oxygen license	2
 elevated permissions to run	2
 permissions to run it	2
-web archive war distribution	2 *
+web archive war distribution	2
 such as apache tomcat	2
 version 17 or higher	2
 floating or named-user license	2
@@ -76329,7 +76329,7 @@ tags 2 block tags	2
 2 block tags 3	2
 block tags 3 partial	2
 tags 3 partial tags	2
-3 partial tags default	2 *
+3 partial tags default	2
 partial tags default 4	2
 tags default 4 full	2
 default 4 full tags	2
@@ -76591,7 +76591,7 @@ of the review tasks	2
 operate on a floating	2
 on a floating seat	2
 a floating seat model	2
-review tasks functionality including	2 *
+review tasks functionality including	2
 tasks functionality including creating	2
 functionality including creating and	2
 including creating and reviewing	2
@@ -76738,7 +76738,7 @@ include grid editing mode	2
 grid editing mode schema	2
 editing mode schema design	2
 mode schema design editing	2
-schema design editing mode	2 *
+schema design editing mode	2
 insert/edit topic reference dialog	2
 a meaningful sequence authors	2
 meaningful sequence authors should	2
@@ -77596,7 +77596,7 @@ editor and the dita	2
 with a dita map	2
 to define the context	2
 context click the settings	2
-show excluded content option	2 *
+show excluded content option	2
 current document use the	2
 language allows you to	2
 in multiple languages you	2
@@ -77616,7 +77616,7 @@ selected word from the	2
 word from the replace	2
 from the replace with	2
 button to replace all	2
-dashboard page site configuration	2 *
+dashboard page site configuration	2
 user-friendly administration interface where	2
 can moderate comments manage	2
 statistics and configure various	2
@@ -78335,7 +78335,7 @@ with the following choices	2
 the following choices browse	2
 following choices browse for	2
 choices browse for local	2
-browse for local file	2 *
+browse for local file	2
 for local file opens	2
 local file opens a	2
 file opens a local	2
@@ -78658,7 +78658,7 @@ is inserted and rendered	2
 inserted and rendered in	2
 and rendered in author	2
 depth table of contentsincrease	2
-table of contentsincrease depth	2 *
+table of contentsincrease depth	2
 only the first three	2
 the first three levels	2
 of contents built-in css	2
@@ -78768,7 +78768,7 @@ were modified by you	2
 modified by you show	2
 by you show only	2
 you show only conflicting	2
-show only conflicting files	2 *
+show only conflicting files	2
 only conflicting files filters	2
 conflicting files filters the	2
 files filters the list	2
@@ -78803,7 +78803,7 @@ the following sortable columns	2
 following sortable columns name	2
 sortable columns name the	2
 columns name the file	2
-name the file names	2 *
+name the file names	2
 the file names status	2
 file names status an	2
 names status an icon	2
@@ -79922,7 +79922,7 @@ testing plugins and java	2
 your plugin folder to	2
 want to test the	2
 the java code the	2
-troubleshootingpdf file is damaged	2 *
+troubleshootingpdf file is damaged	2
 possible to get a	2
 this case you might	2
 is not available as	2
@@ -80015,7 +80015,7 @@ this case the file	2
 path to the libxml	2
 to the libxml executable	2
 the libxml executable file	2
-flagging content flagging content	2 *
+flagging content flagging content	2
 in dita you can	2
 the map or by	2
 parameter in the following	2
@@ -80573,7 +80573,7 @@ how to upgrade oxygen	2
 a new version enterprise	2
 new version enterprise server	2
 version enterprise server database	2
-enterprise server database setup	2 *
+enterprise server database setup	2
 server database setup prerequisites	2
 database setup prerequisites docker	2
 setup prerequisites docker and	2
@@ -81736,7 +81736,7 @@ configured in the scenario	2
 that come bundled with	2
 configure mysql data source	2
 mysql data source drivers	2
-configure a mysql connection	2 *
+configure a mysql connection	2
 a mysql connection to	2
 explorer view table explorer	2
 view table explorer view	2
@@ -82120,7 +82120,7 @@ of the actions available	2
 available on the edit	2
 on the edit bookmarks	2
 the edit bookmarks go	2
-edit bookmarks go to	2 *
+edit bookmarks go to	2
 bookmarks go to menu	2
 the bookmarks are shown	2
 provides an interface for	2
@@ -82156,7 +82156,7 @@ from field.if you have	2
 field.if you have issues	2
 the translator helper add-on	2
 helper add-on and click	2
-click the replace button	2 *
+click the replace button	2
 the original untranslated content	2
 translator helper side view	2
 view you can choose	2
@@ -82919,7 +82919,7 @@ location will be at	2
 will be at the	2
 be at the cursor	2
 the cursor position insertposition	2
-draft watermarks draft watermarks	2 *
+draft watermarks draft watermarks	2
 an image displayed as	2
 the background of a	2
 to indicate that a	2
@@ -84060,7 +84060,7 @@ page that uses the	2
 that uses the certificate	2
 the details tab of	2
 details tab of the	2
-click the export button	2 *
+click the export button	2
 button in the resulting	2
 the certificate to the	2
 name and in the	2
@@ -84071,7 +84071,7 @@ the java.home property that	2
 java.home property that is	2
 displayed in the about	2
 in the about dialog	2
-css properties css properties	2 *
+css properties css properties	2
 as some of the	2
 of the values of	2
 background background-color background-image background-position	2
@@ -84101,7 +84101,7 @@ lower-latin upper-latin lower-alpha upper-alpha	2
 padding-width inherit initial unset	2 *
 text-decoration-style solid double dotted	2
 solid double dotted dashed	2
-double dotted dashed wavy	2 *
+double dotted dashed wavy	2
 vertical-align baseline sub super	2
 customization transformation parameters it	2
 labels in webhelp responsive	2
@@ -84663,7 +84663,7 @@ are available in and	2
 and how to create	2
 each type of transformation	2
 set up application properties	2 *
-site configuration email notifications	2 *
+site configuration email notifications	2
 email notifications you can	2
 it must contain the	2
 days that a deleted	2
@@ -85564,7 +85564,7 @@ publication title property metadatatitle	2
 property metadatatitle property metadataremoving	2
 metadatatitle property metadataremoving the	2
 property metadataremoving the title	2
-metadataremoving the title property	2 *
+metadataremoving the title property	2
 the title property metadatatitle	2
 the title property the	2
 title property the title	2
@@ -85793,7 +85793,7 @@ keyref attribute using the	2
 select edit attributes from	2
 edit attributes from the	2
 menu or simply press	2
-or simply press alt+enter	2 *
+or simply press alt+enter	2
 simply press alt+enter to	2
 press alt+enter to bring	2
 alt+enter to bring up	2
@@ -85900,7 +85900,7 @@ in such a case	2
 such a case the	2
 be extracted from the	2
 to xml xml signing	2
-xml xml signing certificates	2 *
+xml xml signing certificates	2
 contextual menu actions of	2
 menu actions of the	2
 actions of the compare	2
@@ -85929,7 +85929,7 @@ comment callouts for both	2
 callouts for both compared	2
 for both compared files	2
 the author visual comparison	2
-author visual comparison mode	2 *
+author visual comparison mode	2
 file comparison appearance preferences	2 *
 comparison mode you can	2
 it is the base	2
@@ -85962,7 +85962,7 @@ perspective from the window	2
 window open perspective window	2
 open perspective window perspective	2
 perspective window perspective open	2
-window perspective open perspective	2 *
+window perspective open perspective	2
 perspective open perspective menu	2
 only accessibility for this	2
 of table you have	2
@@ -87861,7 +87861,7 @@ loading option url parameter	2
 option url parameter plugin_custom_options.outlineplacement	2
 url parameter plugin_custom_options.outlineplacement in	2
 parameter plugin_custom_options.outlineplacement in the	2
-plugin_custom_options.outlineplacement in the options.xml	2 *
+plugin_custom_options.outlineplacement in the options.xml	2
 in the options.xml in	2
 the options.xml in both	2
 options.xml in both cases	2
@@ -88578,7 +88578,7 @@ in the place of	2
 the place of the	2
 and the context is	2
 wraps the selection in	2
-move to another stylesheet	2 *
+move to another stylesheet	2
 you to specify where	2
 to follow these steps	2
 to move the components	2
@@ -89354,7 +89354,7 @@ the text you are	2
 you click the find	2
 and replace with areas	2
 of the following press	2
-press on your keyboard	2 *
+press on your keyboard	2
 perl-like regular expressions syntax	2 *
 regular expressions syntax to	2
 dialog box the find/replace	2
@@ -90065,7 +90065,7 @@ scopes for the operation	2
 xml refactoring opens the	2
 refactoring opens the xml	2
 opens the xml refactoring	2
-xml refactoring tool wizard	2 *
+xml refactoring tool wizard	2
 refactoring tool wizard that	2
 tool wizard that presents	2
 wizard that presents refactoring	2
@@ -90127,7 +90127,7 @@ opens the format and	2
 to configure the format	2
 and indent pretty-print action	2
 applied on the selected	2
-open in svn client	2 *
+open in svn client	2
 allows you to compare	2
 you select two files	2
 select two files or	2
@@ -90162,7 +90162,7 @@ available from the project	2
 from the project container	2
 you to enable the	2
 when main files support	2
-detect main files wizard	2 *
+detect main files wizard	2
 files to the main	2
 for each project you	2
 each project you are	2
@@ -90621,7 +90621,7 @@ for the output file	2
 set the path of	2
 and select transform apply	2
 select transform apply transformation	2
-transform apply transformation scenario(s	2 *
+transform apply transformation scenario(s	2
 in a docker container	2
 on how to create	2
 changed using the administration	2
@@ -91421,7 +91421,7 @@ located in the specified	2
 in the specified output	2
 the specified output folder	2
 and integrating oxygen feedback	2
-enterprise server site configuration	2 *
+enterprise server site configuration	2
 section contains details about	2
 to create your initial	2
 create your initial account	2
@@ -92036,7 +92036,7 @@ xml sdk add-on repositories	2
 sdk add-on repositories web	2
 add-on repositories web page	2
 to migrate from the	2
-webhelp output database setup	2 *
+webhelp output database setup	2
 the old oxygen webhelp	2
 the oxygen webhelp commenting	2
 the connection details for	2
@@ -92348,7 +92348,7 @@ the restore defaults button	2
 from the installation of	2
 the installation of the	2
 page troubleshootinghighlights span off	2
-troubleshootinghighlights span off page	2 *
+troubleshootinghighlights span off page	2
 solution to fix this	2
 before the root element	2
 of the two main	2
@@ -95290,7 +95290,7 @@ value css extensionsadditional css	2
 value of the visibility	2
 of the visibility property	2
 the visibility property to	2
-visibility property to oxy-collapse-text	2 *
+visibility property to oxy-collapse-text	2
 an element is marked	2
 are not able to	2
 to position the cursor	2
@@ -95830,7 +95830,7 @@ process are displayed in	2
 console view the enable	2
 view the enable oxygen	2
 in xml schema or	2
-xml documentsvalidationagainst a schema	2 *
+xml documentsvalidationagainst a schema	2
 a schema with embedded	2
 schematron validating xml documentsagainst	2
 validating xml documentsagainst a	2
@@ -97781,11 +97781,11 @@ script and specify the	2
 and specify the desired	2
 related information dita-ot xslt-import	2
 information dita-ot xslt-import extension	2
-dita-ot xslt-import extension points	2 *
+dita-ot xslt-import extension points	2
 xslt-import extension points dita-ot	2
 extension points dita-ot xslt-parameter	2
 points dita-ot xslt-parameter extension	2
-dita-ot xslt-parameter extension points	2 *
+dita-ot xslt-parameter extension points	2
 and refactoring operations scope	2
 refactoring operations scope in	2
 members page members page	2
@@ -97842,7 +97842,7 @@ for running xslt and	2
 running xslt and xquery	2
 add a new custom	2
 to xml xslt-xquery custom	2
-xml xslt-xquery custom engines	2 *
+xml xslt-xquery custom engines	2
 parameters for the custom	2
 can not use these	2
 not use these custom	2
@@ -97939,7 +97939,7 @@ the original text string	2
 the character at the	2
 and extends to the	2
 extends to the end	2
-text the original string	2 *
+text the original string	2
 the original string startoffset	2
 original string startoffset the	2
 string startoffset the beginning	2
@@ -98195,7 +98195,7 @@ of attempts and lockout	2
 attempts and lockout duration	2
 for the main application	2
 ports 80 and 443	2
-22 for ssh access	2 *
+22 for ssh access	2
 see content fusion enterprise	2
 tab for configuration details	2
 access to content fusion	2
@@ -98410,7 +98410,7 @@ according to the document's	2
 to the document's schema	2
 the document's schema in	2
 document's schema in author	2
-author mode this view	2 *
+author mode this view	2
 mode this view includes	2
 this view includes tabs	2
 view includes tabs that	2
@@ -98902,7 +98902,7 @@ parameters are displayed in	2
 displayed in italics xslt	2
 in italics xslt extension	2
 italics xslt extension points	2
-xslt extensions publishing template	2 *
+xslt extensions publishing template	2
 xslt extension points they	2
 they can be specified	2
 specified using the xslt	2
@@ -99288,7 +99288,7 @@ information about the license	2
 this page provides access	2
 instructions for using the	2
 allocated license report page	2 *
-license usage statistics page	2 *
+license usage statistics page	2
 key use this link	2
 this page also contains	2
 for named-user licenses opens	2
@@ -101531,7 +101531,7 @@ editor schema diagram editor	2
 diagram editor schema design	2
 editor schema design mode	2
 mode xml schema design	2
-xml schemasdesign mode editing	2 *
+xml schemasdesign mode editing	2
 with xml schema documents	2
 documents in design mode	2
 provides a simple and	2
@@ -101969,7 +101969,7 @@ bar to cancel the	2
 need to be considered	2
 not compatible with this	2
 for your specific needs	2
-xslt debugger xquery debugger	2 *
+xslt debugger xquery debugger	2
 layout of the toolbars	2
 of the toolbars to	2
 dialog box the configure	2
@@ -102013,8 +102013,8 @@ page avoid-column avoid-page initial	2
 avoid-column avoid-page initial recto	2
 avoid-page initial recto verso	2
 initial recto verso region	2
-recto verso region avoid-region	2 *
-top bottom initial unset	2 *
+recto verso region avoid-region	2
+top bottom initial unset	2
 do not add up	2
 not add up defining	2
 add up defining new	2
@@ -102051,7 +102051,7 @@ capabilities and applies to	2
 and applies to open	2
 applies to open type	2
 to open type fonts	2
-length auto initial unset	2 *
+length auto initial unset	2
 number initial unset as	2
 initial unset as a	2
 unset as a difference	2
@@ -102189,11 +102189,11 @@ for all named components	2
 scroll function of my	2
 trackpad is not working	2
 cause it is most	2
-forgot password password management	2 *
+forgot password password management	2
 password password management google	2
 password management google recaptcha	2
 management google recaptcha email	2
-google recaptcha email notifications	2 *
+google recaptcha email notifications	2
 recaptcha email notifications if	2
 if you are having	2
 you are having trouble	2
@@ -102240,7 +102240,7 @@ css or javascript code	2
 it is not considered	2
 structure for more details	2
 file to be associated	2
-view in browser/system application	2 *
+view in browser/system application	2
 html document in your	2
 removing unnecessary white spaces	2
 unnecessary white spaces without	2
@@ -102632,7 +102632,7 @@ content that is reused	2
 reference a specific element	2
 modes author and deselect	2
 author and deselect the	2
-display referenced content option	2 *
+display referenced content option	2
 to search for references	2
 the search references action	2
 the contextual menu short	2
@@ -102920,7 +102920,7 @@ outside the working copy	2
 contents of the directory	2
 inside the working copy	2
 copy to the new	2
-add-ons install new add-ons	2 *
+add-ons install new add-ons	2
 the list of add-ons	2
 on-screen instructions to complete	2
 instructions to complete the	2
@@ -103103,7 +103103,7 @@ editing modeformat and indent	2
 the xml you can	2
 mode using one of	2
 and indents the current	2
-document source indent selection	2 *
+document source indent selection	2
 the xml document such	2
 xml document such as	2
 whitespace belonging to the	2
@@ -103661,7 +103661,7 @@ each toc entry is	2
 is defined inside an	2
 when using a leader	2
 calls footnotesstyle markers and	2
-footnotesstyle markers and calls	2 *
+footnotesstyle markers and calls	2
 a value such as	2
 value such as jpg,png,gif	2
 such as jpg,png,gif is	2
@@ -104280,7 +104280,7 @@ to place it when	2
 attributes are populated if	2
 are populated if their	2
 the dita topics preferences	2
-dita topics preferences page	2 *
+dita topics preferences page	2
 options are not selected	2
 are not selected the	2
 for the sake of	2
@@ -104778,7 +104778,7 @@ reject the edit entirely	2
 the edit entirely by	2
 edit entirely by throwing	2
 when pasting content in	2
-related information authordocumentfragment class	2 *
+related information authordocumentfragment class	2
 active directory admin auth	2
 directory admin auth config	2
 it according to your	2
@@ -104958,7 +104958,7 @@ it easier to access	2
 easier to access them	2
 reject change(s rejects the	2
 change(s rejects the tracked	2
-view only changes/comments by	2 *
+view only changes/comments by	2
 callouts you can also	2
 also choose to display	2
 by default tracked changes	2
@@ -105298,11 +105298,11 @@ xml document create a	2
 associate the css to	2
 should open the file	2
 built-in javascript-based search engine	2 *
-webhelp responsive search features	2 *
+webhelp responsive search features	2
 responsive search features webhelp	2
 search features webhelp responsive	2
 features webhelp responsive search	2
-webhelp responsive search rules	2 *
+webhelp responsive search rules	2
 responsive search rules search	2
 search rules search features	2
 rules search features search	2
@@ -106493,7 +106493,7 @@ blue marker in the	2
 the color for each	2
 for each type in	2
 each type in the	2
-table of contentsdisplay subtopics	2 *
+table of contentsdisplay subtopics	2
 menu actions in text	2
 editingcontextual menu actions contextual	2
 is no selection in	2
@@ -106758,7 +106758,7 @@ integrated action that appears	2
 action that appears for	2
 that appears for integrated	2
 appears for integrated tasks	2
-user authentication email notifications	2 *
+user authentication email notifications	2
 an oxygen feedback account	2
 results of an xpath	2
 tabs in the results	2
@@ -106811,7 +106811,7 @@ more specific for example	2
 property metadatatitle property metadatachanging	2
 metadatatitle property metadatachanging the	2
 property metadatachanging the title	2
-metadatachanging the title property	2 *
+metadatachanging the title property	2
 title element of a	2
 the publication title the	2
 the built-in css uses	2
@@ -108835,7 +108835,7 @@ support to implement your	2
 saved in the xml	2
 actions xml schema diagram	2
 schema diagram editorcontextual menu	2
-diagram editorcontextual menu actions	2 *
+diagram editorcontextual menu actions	2
 actions xml schemasdesign mode	2
 menu of the design	2
 of the design mode	2
@@ -109153,7 +109153,7 @@ any uri id redefine	2
 uri id redefine id	2
 id redefine id any	2
 redefine id any id	2
-publication content publication content	2 *
+publication content publication content	2
 means that in the	2
 can be inserted the	2
 completion assistant offers elements	2
@@ -109568,7 +109568,7 @@ contextual menu and it	2
 you see it in	2
 chapter title headeronly keep	2
 title headeronly keep chapter	2
-headeronly keep chapter title	2 *
+headeronly keep chapter title	2
 is to override the	2
 default page rules are	2
 increase the specificity of	2
@@ -109798,11 +109798,11 @@ button the following actions	2
 current actions section edit	2
 actions section edit edits	2
 section edit edits an	2
-edit edits an item	2 *
+edit edits an item	2
 edits an item remove	2
 an item remove removes	2
 item remove removes an	2
-remove removes an item	2 *
+remove removes an item	2
 removes an item move	2
 an item move up	2
 item move up moves	2
@@ -110973,7 +110973,7 @@ of a start tag	2
 the editor panel or	2
 editor panel and select	2
 to add a second	2
-cover pageadd second cover	2 *
+cover pageadd second cover	2
 you should use an	2
 the more distant the	2
 need to declare a	2
@@ -111083,7 +111083,7 @@ is used the title	2
 used the title will	2
 title will be input	2
 url format ask('message url	2
-format ask('message url default_value	2 *
+format ask('message url default_value	2
 ask('message url default_value description	2
 url default_value description input	2
 default_value description input is	2
@@ -111117,7 +111117,7 @@ field displays the default	2
 displays the default value	2
 the default value http://www.example.com	2
 password format ask('message password	2
-format ask('message password default	2 *
+format ask('message password default	2
 ask('message password default description	2
 password default description the	2
 hidden with bullet characters	2
@@ -111148,7 +111148,7 @@ field already contains the	2
 already contains the default	2
 contains the default abcd	2
 the default abcd value	2
-format ask('message generic default	2 *
+format ask('message generic default	2
 ask('message generic default description	2
 generic default description the	2
 the input is considered	2
@@ -111174,7 +111174,7 @@ displayed in the input	2
 input box is hello	2
 box is hello again	2
 relative_url format ask('message relative_url	2
-format ask('message relative_url default	2 *
+format ask('message relative_url default	2
 ask('message relative_url default description	2
 relative_url default description input	2
 default description input is	2
@@ -112153,7 +112153,7 @@ section to the current	2
 to the current actions	2
 current actions section as	2
 actions section as a	2
-action configuration dialog box	2 *
+action configuration dialog box	2
 moves the selected item	2
 xslt documentation in a	2
 based on the namespace	2
@@ -113049,7 +113049,7 @@ submenu or by using	2
 by using the choose	2
 using the choose condition	2
 the choose condition set	2
-choose condition set option	2 *
+choose condition set option	2
 condition set option to	2
 set option to access	2
 option to access a	2
@@ -113146,7 +113146,7 @@ windows linux or macos	2
 license which can be	2
 only one person can	2
 the output webhelp responsive	2
-webhelp responsive css styling	2 *
+webhelp responsive css styling	2
 responsive css styling webhelp	2
 css styling webhelp responsive	2
 styling webhelp responsive customizing	2
@@ -113154,7 +113154,7 @@ output with css css	2
 with css css styling	2
 css styling customizing output	2
 styling customizing output with	2
-css styling publishing template	2 *
+css styling publishing template	2
 responsive output is to	2
 simply need to create	2
 custom css file and	2
@@ -113693,7 +113693,7 @@ start open an xml	2
 document in the start	2
 in the start oxygen	2
 the start oxygen xml	2
-start oxygen xml editor/developer/author	2 *
+start oxygen xml editor/developer/author	2
 oxygen xml editor/developer/author if	2
 xml editor/developer/author if this	2
 editor/developer/author if this is	2
@@ -114041,7 +114041,7 @@ or dependencies for a	2
 referenced/dependent resources view refresh	2
 resources view refresh refreshes	2
 view refresh refreshes the	2
-stop stops the computing	2 *
+stop stops the computing	2
 stops the computing show	2
 the computing show hierarchy	2
 computing show hierarchy for	2
@@ -114066,7 +114066,7 @@ dependencies for a resource	2
 for a resource configure	2
 a resource configure dependencies	2
 resource configure dependencies search	2
-configure dependencies search scope	2 *
+configure dependencies search scope	2
 dependencies search scope allows	2
 search scope allows you	2
 to configure a scope	2
@@ -114366,7 +114366,7 @@ encoding="utf-8 xml-model href="test.rng type="application/xml	2
 xml-model href="test.rng type="application/xml schematypens="http://relaxng.org/ns/structure/1.0	2
 href="test.rng type="application/xml schematypens="http://relaxng.org/ns/structure/1.0 test	2
 letters indexchange style and	2
-indexchange style and letters	2 *
+indexchange style and letters	2
 repositories view contextual menu	2
 actions are available new	2
 open with displays the	2
@@ -114991,7 +114991,7 @@ styles for rendering profiling	2
 for rendering profiling in	2
 rendering profiling in author	2
 profiling in author mode	2
-xml documentsauthor mode editingprofiling	2 *
+xml documentsauthor mode editingprofiling	2
 colors and styles in	2
 and styles in author	2
 styles in author mode	2
@@ -116978,7 +116978,7 @@ an intermediate format for	2
 intermediate format for this	2
 format for this transformation	2
 for this transformation the	2
-single topic transformation type	2 *
+single topic transformation type	2
 is derived from the	2
 part of the text	2
 you have several options	2
@@ -117440,7 +117440,7 @@ find this template in	2
 this template in framework	2
 template in framework templates	2
 in framework templates dita	2
-framework templates dita plugin	2 *
+framework templates dita plugin	2
 references to the xslt	2
 to the xslt stylesheets	2
 xslt stylesheets that will	2
@@ -117802,7 +117802,7 @@ using the dita open	2
 operating system environment variables	2
 name and value fields	2
 is no standard way	2
-search references search declarations	2 *
+search references search declarations	2
 next and previous buttons	2
 bottom of the range	2
 of the range ruler	2
@@ -117936,7 +117936,7 @@ can enter an optional	2
 enter an optional description	2
 an optional description for	2
 optional description for the	2
-image map details section	2 *
+image map details section	2
 map details section in	2
 details section in author	2
 section in author mode	2
@@ -118036,7 +118036,7 @@ the editor panels show	2
 the beep signal has	2
 beep signal has a	2
 the colors and how	2
-publishing template responsive layout	2 *
+publishing template responsive layout	2
 to change the overall	2
 change the overall appearance	2
 the overall appearance of	2
@@ -118159,7 +118159,7 @@ exist in the repository	2
 the repository but you	2
 repository but you can	2
 use the delete action	2
-oxy_replace text target replacement	2 *
+oxy_replace text target replacement	2
 this function replaces each	2
 function replaces each substring	2
 replaces each substring of	2
@@ -118184,7 +118184,7 @@ string to be replaced	2
 to be replaced replacement	2
 be replaced replacement the	2
 replaced replacement the string	2
-replacement the string replacement	2 *
+replacement the string replacement	2
 to receive logs via	2
 receive logs via email	2
 stylesheetsvalidation includes a built-in	2
@@ -118734,7 +118734,7 @@ the fold simply click	2
 fold simply click the	2
 simply click the icon	2
 click the icon also	2
-in the folding sub-menu	2 *
+in the folding sub-menu	2
 toggle fold toggles the	2
 fold toggles the state	2
 information about the folding	2
@@ -119029,11 +119029,11 @@ validation preferences to configure	2
 the built-in css validator	2 *
 properties that will be	2
 content completion assistant lists	2
-json schema diagram editorcomponents	2 *
+json schema diagram editorcomponents	2
 schema diagram editorcomponents json	2
 diagram editorcomponents json schema	2
 editorcomponents json schema design	2
-json schema design modecomponents	2 *
+json schema design modecomponents	2
 teams to edit and	2
 the concurrent editing feature	2
 using the share editing	2
@@ -119664,7 +119664,7 @@ an example of using	2
 example of using the	2
 user guide oxy_xpath function	2
 the search engine only	2
-search engine publishing template	2 *
+search engine publishing template	2
 file object that implements	2
 object that implements the	2
 that implements the methods	2
@@ -119852,7 +119852,7 @@ will be that a	2
 be that a reference	2
 that a reference to	2
 directly from there insert	2
-insert section drop-down menu	2 *
+insert section drop-down menu	2
 menu the following insert	2
 following insert actions are	2
 insert actions are available	2
@@ -120357,7 +120357,7 @@ edited files that use	2
 catalog or run a	2
 or run a manual	2
 run a manual validate	2
-a manual validate action	2 *
+a manual validate action	2
 this procedure assumes that	2
 by default when a	2
 may want to combine	2
@@ -120466,7 +120466,7 @@ sided paginationstart chapters on	2
 paginationstart chapters on odd	2
 chapters on odd page	2
 header table of contentschange	2
-table of contentschange header	2 *
+table of contentschange header	2
 of the header page	2
 string(toc-header counter(page lower-roman font-size	2
 counter(page lower-roman font-size 8pt	2
@@ -120546,7 +120546,7 @@ ssl certificate you will	2
 certificate you will need	2
 property is set in	2
 to follow the procedure	2
-import folder dialog box	2 *
+import folder dialog box	2
 imports only the child	2
 working with special characters	2
 other special characters that	2
@@ -121337,7 +121337,7 @@ you can double-click on	2
 remove button to delete	2
 a path that is	2
 the autocorrect dictionaries preferences	2
-autocorrect dictionaries preferences page	2 *
+autocorrect dictionaries preferences page	2
 options in the smart	2
 in the smart quotes	2
 the smart quotes section	2
@@ -121463,7 +121463,7 @@ which does not require	2
 a value of 0	2
 corresponds to a completely	2
 and tracked changes to	2
-show review callouts section	2 *
+show review callouts section	2
 are displayed for tracked	2
 displayed for tracked change	2
 and the following additional	2
@@ -121991,7 +121991,7 @@ enter ext remote local	2
 remote local local merge	2
 local local merge tool	2
 local merge tool select	2
-merge tool select custom	2 *
+merge tool select custom	2
 arguments enter ext local	2
 enter ext local remote	2
 result in sourcetree you	2
@@ -124433,7 +124433,7 @@ of the new branch	2
 url of the parent	2
 after the cover page	2
 the cover page cover	2
-cover pageadd empty pages	2 *
+cover pageadd empty pages	2
 display:block content 2002 break-after:always	2
 is not shown on	2
 not shown on the	2
@@ -126322,7 +126322,7 @@ lists rule location item	2
 1 item 2 item	2
 item 2 item 3	2
 2 item 3 item	2
-item 3 item 4	2 *
+item 3 item 4	2
 report very long titles	2 *
 report figure which has	2
 figure which has a	2
@@ -127946,7 +127946,7 @@ is replaced by a	2
 replaced by a generate	2
 by a generate unique	2
 a generate unique id	2
-generate unique id value	2 *
+generate unique id value	2
 unique id value button	2
 id value button clicking	2
 value button clicking this	2
@@ -128957,7 +128957,7 @@ macos if you activate	2
 if you activate the	2
 activate the enable mouse-wheel	2
 the enable mouse-wheel zooming	2
-enable mouse-wheel zooming option	2 *
+enable mouse-wheel zooming option	2
 mouse-wheel zooming option in	2
 zooming option in the	2
 editor preferences page you	2

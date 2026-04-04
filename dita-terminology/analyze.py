@@ -46,16 +46,23 @@ def word_tokenize(text):
 
 def collect_element_texts(element):
     """
-    Yield the normalized full text of every element in the tree
-    whose word count is between 1 and 5.
+    Yield the word-tokenized text of every LEAF element in the tree
+    (elements with no child elements) whose direct text content, when
+    tokenized, yields between 1 and 5 words.  Using leaf elements only
+    ensures the * mark means the element wraps exactly those words and
+    nothing else (no embedded child tags, no stray trailing punctuation
+    contributed by child tails).
     """
-    full = normalize("".join(iter_all_text(element)))
-    if full:
-        words = word_tokenize(full)
-        if 1 <= len(words) <= 5:
-            yield " ".join(words)
-    for child in element:
-        yield from collect_element_texts(child)
+    if len(element) == 0:
+        # Leaf element: only direct text, no child elements
+        text = normalize(element.text or "")
+        if text:
+            words = word_tokenize(text)
+            if 1 <= len(words) <= 5:
+                yield " ".join(words)
+    else:
+        for child in element:
+            yield from collect_element_texts(child)
 
 
 def parse_file(filepath):
