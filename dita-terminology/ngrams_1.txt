@@ -1,50 +1,18 @@
-the	83852
-to	28574 *
-a	21619 *
-in	19637 *
-of	16387 *
-and	15376 *
-you	13763 *
-is	12806 *
-for	12276 *
-that	10169 *
-can	8652 *
-or	8157 *
-be	7572
-this	7536 *
-are	6794
 file	6253 *
-with	6006 *
-an	5671 *
-if	5652 *
 content	5318 *
-from	5234 *
-it	5172 *
-on	4544 *
-by	4491 *
 document	4405 *
-as	4281 *
 xml	4218 *
-your	4038
-not	4009 *
 use	3985 *
 dita	3931 *
-will	3921 *
-when	3637 *
 element	3393 *
 page	3278 *
-following	3071 *
 files	3039 *
-using	2930
 box	2882 *
 view	2881 *
-all	2833 *
-used	2788 *
 selected	2647
 dialog	2613 *
 new	2609 *
 text	2516 *
-also	2510 *
 select	2398 *
 default	2338 *
 menu	2331 *
@@ -53,9 +21,7 @@ schema	2274 *
 value	2269 *
 mode	2256 *
 type	2200 *
-set	2168 *
 author	2164 *
-available	2158
 actions	2123 *
 action	2084 *
 editor	2058 *
@@ -64,8 +30,6 @@ transformation	1998 *
 information	1989 *
 name	1967 *
 option	1919 *
-have	1893
-at	1885 *
 map	1880 *
 open	1865 *
 css	1852 *
@@ -73,53 +37,41 @@ options	1833 *
 oxygen	1820 *
 attribute	1784 *
 one	1752 *
-click	1724 *
 create	1714 *
 editing	1703 *
 elements	1696 *
 changes	1695 *
 output	1690 *
-only	1685 *
-allows	1676
 list	1645 *
 add	1621 *
 section	1582 *
 button	1579 *
 table	1576 *
-see	1567 *
 custom	1534 *
 documents	1530
 edit	1522 *
 topic	1491 *
 validation	1428 *
-more	1424 *
 displayed	1395
 project	1393 *
-where	1361
 search	1356 *
 configure	1349 *
 folder	1339 *
-other	1321 *
 change	1320 *
 contains	1310 *
 configuration	1309 *
 values	1302 *
 server	1274 *
 user	1258 *
-want	1252
-any	1238 *
 preferences	1229 *
 insert	1224 *
-each	1217
 directory	1215
 scenario	1209 *
-these	1198 *
 copy	1172 *
 image	1172 *
 class	1168 *
 framework	1160 *
 url	1148 *
-how	1147
 resources	1147 *
 parameter	1137 *
 template	1136 *
@@ -128,11 +80,8 @@ support	1125 *
 reference	1120 *
 ai	1118 *
 attributes	1117 *
-its	1114
-specified	1086
 plugin	1085 *
 tab	1071 *
-has	1063 *
 main	1061 *
 version	1060 *
 includes	1056 *
@@ -140,46 +89,30 @@ component	1033 *
 json	1033 *
 xslt	1025 *
 choose	1014 *
-go	1013
 path	1013 *
 location	978 *
-specify	972
-there	971
-then	971 *
-after	964 *
 application	963 *
 toolbar	962 *
 contextual	962 *
 link	960 *
-about	958 *
 webhelp	949 *
 pdf	948 *
-them	942
 opens	938
-should	929 *
 web	920 *
 property	915 *
-does	907
-same	898
 properties	894 *
 resource	893 *
 some	892
 operation	892 *
-such	889
 id	886 *
 completion	866
-into	865 *
-need	851
 system	845 *
 level	845 *
 html	844 *
-must	841 *
 license	839 *
 automatically	836
-no	836 *
 fragment	831 *
 multiple	823 *
-they	823 *
 extension	819 *
 defined	816 *
 display	814 *
@@ -191,7 +124,6 @@ number	785 *
 displays	778
 show	778 *
 references	776 *
-between	771 *
 types	766 *
 cursor	766 *
 xhtml	762 *
@@ -202,19 +134,14 @@ line	753 *
 task	748 *
 tool	746
 repository	735 *
-before	731 *
-make	731
 drop-down	721 *
 two	713 *
-inside	706 *
 result	703 *
 structure	702 *
 first	697 *
 data	696 *
 source	694 *
 maps	686 *
-specifies	681
-do	678 *
 templates	668 *
 various	667 *
 review	658 *
@@ -222,13 +149,11 @@ include	652 *
 possible	651
 xpath	651 *
 comments	650 *
-but	650 *
 follow	649
 rules	646 *
 particular	645
 field	635 *
 code	634 *
-may	632 *
 format	616 *
 associated	614
 target	610 *
@@ -240,7 +165,6 @@ provides	593
 apply	593 *
 local	593 *
 built-in	588 *
-within	587
 save	587 *
 engine	582 *
 details	578 *
@@ -256,9 +180,7 @@ users	566
 context	566 *
 xquery	566 *
 time	563 *
-their	563 *
 created	563
-enter	560 *
 opened	557
 installation	553 *
 interface	553 *
@@ -271,11 +193,9 @@ generated	547
 process	547
 left	547 *
 scenarios	535 *
-either	534 *
 pane	533
 comparison	531
 generate	514 *
-both	514 *
 java	514 *
 found	513
 profiling	513 *
@@ -294,8 +214,6 @@ add-on	491 *
 schematron	491 *
 column	491 *
 manager	489
-so	486 *
-which	483 *
 area	482 *
 color	482 *
 delete	481 *
@@ -308,7 +226,6 @@ contain	468
 start	467 *
 namespace	465 *
 assistant	463 *
-another	463 *
 filter	459 *
 string	459 *
 quick	458
@@ -319,7 +236,6 @@ submenu	452 *
 feedback	451 *
 run	450 *
 responsive	449 *
-based	448
 fusion	444 *
 case	443
 side	443
@@ -328,40 +244,33 @@ keys	440 *
 node	440
 inserted	435 *
 feature	430 *
-without	429 *
 creating	427 *
 database	427 *
 next	425 *
 items	424 *
 tools	423 *
 function	417 *
-was	416 *
 docbook	416 *
 enable	414 *
 define	413 *
 well-formed	412 *
-over	410 *
 true	407 *
 uses	407
 tags	405 *
 images	403 *
 language	403 *
 configured	402 *
-through	402
 api	401 *
 install	400 *
 edited	400
 style	400 *
 customization	400 *
-up	399 *
 word	398 *
 paste	397 *
-than	396 *
 characters	395 *
 like	394 *
 entire	394
 refactoring	393 *
-already	392
 browser	392 *
 panel	391 *
 bottom	389 *
@@ -382,7 +291,6 @@ located	375
 ctrl	375 *
 window	373 *
 move	373 *
-most	370
 different	369 *
 revision	369 *
 508	368
@@ -396,10 +304,8 @@ character	359 *
 font	359 *
 1	357 *
 base	357 *
-whether	356 *
 input	356 *
 top	356 *
-while	354 *
 div	352 *
 branch	352 *
 directly	350
@@ -410,10 +316,8 @@ certain	343
 chapter	341 *
 svn	340 *
 tag	338 *
-out	337 *
 layout	336 *
 adding	332
-allowed	332 *
 icon	331 *
 enabled	330 *
 visual	330 *
@@ -421,7 +325,6 @@ validate	330 *
 procedure	330 *
 provide	329
 words	329 *
-allow	328 *
 product	328 *
 size	328 *
 processing	327
@@ -435,7 +338,6 @@ git	318 *
 connector	317 *
 tasks	315 *
 step	315 *
-once	312 *
 pages	312 *
 tables	311 *
 point	309
@@ -463,7 +365,6 @@ stored	296
 history	295 *
 service	295
 sample	294 *
-needs	291
 sure	290
 errors	289 *
 installed	286
@@ -472,7 +373,6 @@ public	286 *
 compare	286 *
 relative	284 *
 useful	283 *
-been	283
 inserts	282
 frameworks	282 *
 contents	282 *
@@ -485,20 +385,15 @@ problem	278 *
 replace	278 *
 rule	277 *
 fix	277
-those	274
 modified	274 *
 windows	273 *
 offers	272
 preview	272 *
-made	271
 import	271 *
 width	271 *
 functionality	270 *
-own	270
 wizard	270
-always	270 *
 shift	269 *
-would	267 *
 authentication	267 *
 2	267 *
 required	266 *
@@ -519,7 +414,6 @@ look	256
 terms	256 *
 build	255 *
 instructions	255 *
-instead	255 *
 proposals	255
 views	253 *
 index	252 *
@@ -536,7 +430,6 @@ empty	246 *
 clicking	245
 detected	245
 false	245 *
-including	244
 export	244 *
 diagram	244 *
 problems	243 *
@@ -554,23 +447,18 @@ folders	239 *
 remote	239 *
 memory	238 *
 listed	238
-could	238 *
 buttons	237 *
 test	235 *
-above	235 *
 drag	235 *
 special	235
 saved	234
 expressions	234 *
 previous	233 *
-provided	233
 saxon	233 *
 lists	232 *
 common	232
 space	232 *
 role	231 *
-might	230 *
-sets	230
 large	228 *
 descriptor	228
 rendered	228
@@ -578,11 +466,9 @@ authoring	227
 return	227
 add-ons	227 *
 argument	227
-being	226
 directories	226
 owner	226 *
 highlight	225 *
-however	223 *
 functions	223 *
 versions	223 *
 debugging	223 *
@@ -597,7 +483,6 @@ automatic	220 *
 shows	220
 shortcut	220 *
 browse	219 *
-against	218
 entry	218 *
 customizing	218 *
 indent	217 *
@@ -605,13 +490,9 @@ merged	217
 ant	217 *
 general	216 *
 matches	215
-who	212 *
 ok	212 *
-even	211 *
 named	210
-what	209
 similar	209 *
-i	209 *
 none	209 *
 inline	208 *
 yes	208 *
@@ -623,7 +504,6 @@ simply	206
 projects	206 *
 fonts	206 *
 admin	205 *
-because	204 *
 tabs	204 *
 recommended	203
 embedded	203 *
@@ -643,19 +523,15 @@ annotations	199 *
 tracking	199
 spell	199 *
 override	198 *
-just	198 *
 note	197 *
 share	196 *
 relax	196
 catalog	196 *
 platform	195 *
-were	195 *
 advanced	194 *
 converted	194
 sections	194 *
-according	194
 ng	194
-here	193 *
 variety	193
 done	193 *
 condition	193 *
@@ -664,7 +540,6 @@ shown	192
 address	191 *
 points	191
 highlights	191 *
-since	191 *
 place	190
 avoid	189 *
 background	189 *
@@ -673,7 +548,6 @@ highlighting	189
 dtd	188 *
 resulting	188
 tracked	188
-below	187 *
 original	186
 implementation	186
 reusable	186
@@ -694,16 +568,13 @@ rename	182 *
 eclipse	181 *
 prefix	181 *
 changed	181
-along	180
 expand	180 *
 warning	180 *
 state	180 *
 ids	179
-during	179
 restart	179
 design	178 *
 starting	177
-now	177
 security	177 *
 mark	177 *
 navigate	176
@@ -723,7 +594,6 @@ defines	172 *
 wsdl	172 *
 read	171 *
 team	171 *
-get	170
 paragraph	169 *
 navigation	169 *
 tei	169 *
@@ -752,8 +622,6 @@ website	160
 504.2	160
 602.3	160
 separate	160 *
-usually	160
-otherwise	160 *
 management	159
 moves	159
 guide	159
@@ -796,10 +664,8 @@ xsl:template	150 *
 span	150 *
 term	150 *
 editors	149 *
-press	149
 missing	149 *
 proxy	149 *
-many	149
 try	148
 request	148
 implement	148
@@ -811,16 +677,13 @@ scenario(s	147
 second	147
 pattern	146 *
 creates	146
-our	146
 boxes	146
 others	146 *
 4	145 *
 unset	145 *
-under	144
 editable	144 *
 writing	144
 adds	144
-makes	144
 aaa	144
 follows	144
 formats	144
@@ -850,7 +713,6 @@ arrow	139
 generating	138
 diff	138 *
 certificate	138 *
-every	138
 border	138 *
 active	137 *
 changing	137 *
@@ -859,7 +721,6 @@ validating	137
 fragments	137 *
 topicref	137 *
 conversion	136
-less	136 *
 duplicate	136 *
 sharepoint	136 *
 invoke	135
@@ -918,7 +779,6 @@ watch	120
 invalid	120
 quickly	120
 chemistry	120 *
-needed	119
 cms	119 *
 aa	119
 imported	119 *
@@ -942,7 +802,6 @@ designed	116
 screen	116 *
 combo	116
 members	116 *
-very	116 *
 associate	116
 installer	116
 cover	115
@@ -976,7 +835,6 @@ blocks	112 *
 lock	112 *
 auto	112 *
 modifications	111 *
-take	111
 limit	111
 2.2	111
 operating	111
@@ -997,13 +855,11 @@ obtain	109
 reject	109 *
 removed	109 *
 find/replace	109 *
-upon	108
 replaced	108 *
 audio	108 *
 addition	108
 logo	108 *
 hierarchy	107 *
-outside	107 *
 toc	107 *
 https	107 *
 sign	106 *
@@ -1018,7 +874,6 @@ processed	105
 patterns	104 *
 usage	104 *
 easier	104
-takes	104
 instances	104
 1.0	104 *
 basic	104 *
@@ -1057,7 +912,6 @@ pressing	101
 specialized	101
 subversion	101 *
 whitespace	101 *
-comes	100
 alternate	100 *
 installing	100 *
 placed	100
@@ -1067,7 +921,6 @@ marklogic	100 *
 openai	99 *
 continue	99 *
 keywords	99 *
-having	99
 customized	99
 ability	98
 predefined	98 *
@@ -1098,7 +951,6 @@ poly	95 *
 small	94 *
 alternative	94 *
 info	94 *
-still	94 *
 browsing	94
 breadcrumb	94 *
 nested	94
@@ -1120,7 +972,6 @@ debug	91 *
 send	91 *
 demonstration	91
 linked	91
-via	91
 scripts	91 *
 saving	91
 subtab	91
@@ -1131,7 +982,6 @@ footer	90 *
 sites	90 *
 home	89 *
 selects	89
-until	89 *
 marker	88 *
 objects	88
 toggle	88
@@ -1142,7 +992,6 @@ logical	87
 online	87
 purpose	87 *
 plugin.xml	87 *
-least	87
 letter	87 *
 fields	87
 specifying	87
@@ -1159,7 +1008,6 @@ something	86
 extract	86 *
 register	86 *
 port	86 *
-again	86
 execution	86
 licenses	86 *
 sharing	86 *
@@ -1182,7 +1030,6 @@ absolute	83 *
 newer	83
 requirements	83 *
 separator	83 *
-my	83
 determine	83
 converting	82
 specifications	82
@@ -1220,7 +1067,6 @@ allowing	79
 looks	79
 prolog	79 *
 indexing	79
-off	79 *
 head	79 *
 shared	79
 cut	79 *
@@ -1231,12 +1077,10 @@ relationship	79
 limited	78
 execute	78 *
 terminology	78 *
-therefore	78 *
 doctype	78 *
 compared	78
 bookmarks	78 *
 upgrade	78 *
-per	77
 further	77
 english	77 *
 draft	77
@@ -1284,7 +1128,6 @@ numerous	73
 paragraphs	73
 committed	73
 declarations	73
-rather	72
 spelling	72 *
 dragging	72
 customizations	72
@@ -1299,9 +1142,7 @@ reported	71
 resolution	71 *
 oauth	71 *
 notification	71
-thus	71 *
 better	71 *
-although	71 *
 due	71
 whitespaces	71 *
 policy	71
@@ -1406,9 +1247,7 @@ concurrent	62
 typing	62 *
 matter	62
 regardless	62
-we	62
 widget	62
-unless	62 *
 approach	62
 void	62
 fallback	62 *
@@ -1439,13 +1278,10 @@ experience	60
 threads	60
 glossary	60 *
 relevant	60
-few	60
-regarding	60
 audience	60 *
 dynamic	60 *
 open/find	60
 int	60 *
-sometimes	60
 equal	60
 actual	60
 occurs	60
@@ -1466,7 +1302,6 @@ ordered	59
 bottom-right	59 *
 free	58
 chosen	58
-except	58 *
 impose	58
 representation	58
 accessed	58
@@ -1482,7 +1317,6 @@ synchronized	58
 tutorial	58 *
 roles	58 *
 troubleshooting	57 *
-often	57
 begin	57
 tile	57
 offer	57
@@ -1490,7 +1324,6 @@ units	57
 outputs	57 *
 stack	57 *
 larger	57
-whose	57
 databases	57 *
 inherited	57
 contained	57
@@ -1532,7 +1365,6 @@ exported	55 *
 1px	55
 prevent	55
 removing	55
-itself	55
 yellow	55 *
 stores	55
 expected	55
@@ -1627,7 +1459,6 @@ commonly	49
 samples	49 *
 guidelines	49
 grouped	49 *
-entered	49
 exception	49 *
 gray	49 *
 describes	49
@@ -1674,14 +1505,11 @@ reverse	48
 xml:lang	48 *
 translated	48
 confirmation	47
-much	47
-give	47
 thread	47 *
 readers	47
 exceptions	47 *
 headings	47
 identical	47
-know	47
 anchor	47 *
 reports	47
 contributed	47
@@ -1690,7 +1518,6 @@ old	47
 excluded	47
 four	47 *
 launch	47
-never	47 *
 postgresql	47 *
 horizontal	47 *
 handler	47
@@ -1702,7 +1529,6 @@ meant	47 *
 preference	46
 assistance	46
 sentences	46
-too	46
 depend	46
 zoom	46 *
 capabilities	46
@@ -1758,7 +1584,6 @@ prompted	44
 restrict	44
 chooser	44
 n	44 *
-yet	44 *
 occurrence	44 *
 xsl:call-template	44 *
 copyright	44 *
@@ -1782,7 +1607,6 @@ pasted	43 *
 extending	43 *
 pointer	43
 executing	43
-me	43
 choices	43
 hints	43 *
 updating	43
@@ -1928,7 +1752,6 @@ double-clicking	38
 implementing	38
 surrounding	37
 solutions	37 *
-around	37
 end-user	37
 authorization	37 *
 recently	37
@@ -1955,7 +1778,6 @@ vocabulary	37
 mission	37 *
 cyrillic	37 *
 attempts	36
-gives	36
 chrome	36 *
 levels	36
 visually	36
@@ -2029,7 +1851,6 @@ connectors	34 *
 agreement	34
 assistive	34
 reach	34
-across	34
 ph	34 *
 third-party	34
 subjectdef	34 *
@@ -2127,7 +1948,6 @@ tests	31 *
 structural	31
 statement	31
 endpoint	31
-throughout	31
 matched	31
 managed	31
 accordingly	31 *
@@ -2195,7 +2015,6 @@ webpage	29
 renders	29
 mentions	29 *
 restrictions	29
-whatever	29
 facebook	29 *
 commands	29
 24.1	29
@@ -2231,7 +2050,6 @@ https://www.oxygenxml.com/instdata/addons/default/updatesite.xml	28 *
 asking	28
 on-premise	28
 writers	28 *
-gets	28
 30	28 *
 radio	28 *
 102	28
@@ -2416,7 +2234,6 @@ bars	25
 frequently	25
 client-side	25
 representing	25
-come	25
 wildcard	25 *
 connects	25
 going	25
@@ -2553,7 +2370,6 @@ callback	22
 technologies	22
 captions	22
 sequentially	22
-why	22 *
 deselecting	22
 calling	22
 resolves	22
@@ -2606,7 +2422,6 @@ timestamp	22 *
 coordinates	22
 logged	22
 200	22
-clicks	22
 topic's	22
 conforms	22
 xpointer	22
@@ -2830,7 +2645,6 @@ manner	18
 dtds	18
 subfolders	18
 directed	18
-additionally	18 *
 serialized	18
 oasis//dtd	18
 bind	18
@@ -2844,7 +2658,6 @@ unchanged	18
 f5	18 *
 achieved	18
 expires	18
-past	18
 integrate/install	18
 xsl:next-match	18
 respective	18
@@ -2894,7 +2707,6 @@ appendices	18 *
 bullet	18
 proxy_set_header	18
 bedrock	17
-us	17 *
 distributed	17
 overridden	17
 output-action	17 *
@@ -2925,7 +2737,6 @@ topic/table	17
 websites	17
 user-friendly	17
 uparrow	17
-besides	17
 72	17
 joins	17
 sch:let	17
@@ -2934,7 +2745,6 @@ switched	17 *
 stops	17
 preconfigured	17
 editorlocation	17
-he	17
 negative	17
 oxy-link	17 *
 discarded	17
@@ -3077,7 +2887,6 @@ foldable	16 *
 owned	16
 complicated	16
 elementproposals	16 *
-though	16 *
 opf	16 *
 effective	16
 facet	16
@@ -3148,7 +2957,6 @@ respect	15
 undone	15 *
 calculated	15
 400	15
-yourself	15
 reflect	15
 kind	15
 accommodate	15
@@ -3158,7 +2966,6 @@ non-standard	15
 resized	15
 25	15 *
 content:<?xml	15
-themselves	15
 seats	15
 critdates	15 *
 travis	15 *
@@ -3381,7 +3188,6 @@ ipv6	13
 1.7	13
 immediate	13
 dir2	13 *
-among	13 *
 interchange	13
 justify	13 *
 colsep	13 *
@@ -3406,7 +3212,6 @@ painted	13
 60	13 *
 482	13
 103	13
-behind	13
 filepath	13 *
 incomplete	13 *
 cf	13 *
@@ -3431,7 +3236,6 @@ months	13
 fetch	13
 rtl	13 *
 topic/ol	13 *
-did	13
 sans	13
 normalized	13 *
 f2	13 *
@@ -3498,7 +3302,6 @@ standards/guidelines	12
 n/a	12 *
 operable	12
 adjustments	12
-hence	12 *
 implied	12
 srl	12
 webauthor	12 *
@@ -3510,7 +3313,6 @@ discover	12
 turns	12
 xmlns:sqf="http://www.schematron-quickfix.com/validator/process	12
 imported/included	12
-near	12
 demonstrations	12
 validity	12
 oxy-pdf-meta-title	12 *
@@ -3767,7 +3569,6 @@ digits	11
 consideration	11
 xdbc	11
 mostly	11 *
-pressed	11
 index/formatted-value	11 *
 slashes	11
 percent	11
@@ -3817,7 +3618,6 @@ announced	10
 plays	10
 resize	10
 obscured	10
-neither	10 *
 abilities	10
 constructed	10
 typed	10
@@ -3833,7 +3633,6 @@ buy	10 *
 previewed	10 *
 addressed	10
 carry	10
-underneath	10
 potential	10
 license.xml	10 *
 upcoming	10
@@ -3904,7 +3703,6 @@ e.printstacktrace	10
 1pt	10
 documentsediting	10
 inherits	10
-nor	10 *
 oxy-simulate-style	10 *
 strikethrough	10 *
 curly	10
@@ -3948,7 +3746,6 @@ contenttype	10 *
 parse	10
 languagelist	10 *
 nesting	10 *
-goes	10
 unavailable	10
 descending	10 *
 ope	10
@@ -3967,7 +3764,6 @@ estimated	10 *
 31	10
 pseudo-conflict	10 *
 saxon-ee	10 *
-clicked	10
 variants	10
 sub-tree	10
 translators	10
@@ -4045,7 +3841,6 @@ plans	9
 mcpservers	9
 project-level	9 *
 aligned	9
-am	9 *
 sync.api.workspace.eventtype.before_editor_loaded	9 *
 workbench	9
 scaled	9
@@ -4120,7 +3915,6 @@ mainly	9
 suggested	9
 segment	9
 fulfilled	9
-towards	9
 border-width	9 *
 care	9
 page-sequence	9
@@ -4319,7 +4113,6 @@ xsl:result-document	8 *
 user-password	8
 fn	8 *
 transforms	8
-presses	8
 getdescription	8 *
 tablecellstagname	8
 colspan	8 *
@@ -4657,7 +4450,6 @@ thumbnail	7
 widows	7 *
 orphans	7 *
 previews	7
-furthermore	7 *
 53	7
 57	7
 322	7
@@ -4815,7 +4607,6 @@ reindex	7 *
 losing	7
 linter	7 *
 saxon-he	7 *
-enters	7
 frameworks\[custom_framework_dir	7
 border:1px	7
 onto	7 *
@@ -4833,7 +4624,6 @@ delivery	7
 pseudo-conflicts	7
 browsed	7
 claims	7
-beside	7
 inherit="all	7
 addscenarios	7 *
 position="after	7
@@ -4846,7 +4636,6 @@ weight	7
 pdfs	7
 e1	7
 websphere	7
-beyond	7
 powered	7
 milliseconds	7
 urlconnection	7 *
@@ -5206,7 +4995,6 @@ modereview	6
 editingreview	6
 monitoring	6
 rdp	6
-toward	6
 what's	6
 adjusting	6
 modifiers	6
@@ -5299,7 +5087,6 @@ forwarded	6
 removeentry	6
 contextualmenu	6
 schemaproposals	6 *
-had	6
 centos	6
 difffiles.exe	6 *
 portrait	6 *
@@ -5461,7 +5248,6 @@ infinitives	6
 certainly	6
 stand	6
 adjectives	6
-gave	6
 closebracket	6
 openbracket	6
 reusables	6
@@ -5590,7 +5376,6 @@ colnumberstart	5
 bookmap/preface	5
 claim	5
 responsibility	5
-shall	5 *
 allocate	5
 jquery	5
 batik	5
@@ -6580,7 +6365,6 @@ unpushed	4
 lfs	4
 selected_branch	4 *
 diverged	4
-despite	4
 dev	4 *
 repetitive	4
 prove	4
@@ -6809,7 +6593,6 @@ aggregated	4
 unzipped	4
 functionalities	4
 cf-file	4 *
-wants	4
 cross-platform	4
 conveying	4
 blink	4 *
@@ -7583,7 +7366,6 @@ minimized	3
 table-like	3
 biggest	3
 jagged	3
-knows	3
 parenthesis	3
 title>the	3
 stub	3
@@ -7993,7 +7775,6 @@ csv	3 *
 semicolon	3 *
 importfinish	3
 unrelated	3
-took	3
 insights	3
 strike	3 *
 sect3	3
@@ -8226,7 +8007,6 @@ windowsdita.bat	3
 path/to/output/folder	3 *
 navtitle="windows	3
 map//en	3
-beneath	3
 xpointerelementlocator	3 *
 idverifier	3
 elementlocatorexception	3
@@ -8620,7 +8400,6 @@ imageobject	3 *
 oxy_unparsed-entity-uri	3 *
 opencontent	3 *
 man	3
-him	3
 id/idref	3
 dynamicref	3 *
 up/down/promote/demote	3
@@ -8731,7 +8510,6 @@ percents	3
 0.5	3
 chapter:left	3
 files.log	3 *
-went	3
 mixture	3
 customizestrings	3
 totals	3
@@ -9244,7 +9022,6 @@ allowaipositronservice	2 *
 goog.events.listen(workspace	2
 e.options.url.endswith('.ditamap	2
 userrole	2 *
-wanted	2
 width="420	2
 height="315	2
 src="https://www.youtube.com/embed/qeprkqxhtx	2
@@ -9555,7 +9332,6 @@ entraid	2 *
 https://login.microsoftonline.com/<tenant-id>/v2.0/.well-known/openid-configuration	2 *
 mitigate	2
 dos	2
-sees	2
 filter-name>ratelimitfilter	2
 global</filter-name	2
 filter-mapping	2
@@ -9873,12 +9649,10 @@ doc('${cfdu}/test.xml	2 *
 traceable	2
 serializes	2
 preserve-space	2
-whichever	2
 changes.it	2
 entrypoint	2 *
 specialization's	2
 six	2
-got	2
 constraint/specialization	2
 practitioners	2
 webhelp.enable.block.elements.id.generation	2 *
@@ -11791,7 +11565,6 @@ force.cookies.samesite.none	2 *
 unparsedentityname	2 *
 constrained	2
 modeformat	2
-his	2
 lengths	2
 consults	2
 select/deselect	2
@@ -13273,7 +13046,6 @@ apostrophes	2
 america	2
 apiname	2 *
 webappproduct	2 *
-came	2
 hyphenating	2
 punctuating	2
 2]}example	2

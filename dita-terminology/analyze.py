@@ -3,20 +3,115 @@
 Analyze DITA content for terminology: n-grams of length 1-5.
 For each n-gram appearing >= 2 times, record count and whether it is
 the complete text content of some XML element.
+
+Stop-word filtering:
+- Unigrams that are stop words are dropped entirely.
+- N-grams (n>=2) whose first OR last token is a stop word are dropped.
+  This removes phrases like "in the", "allows you to", "of the following"
+  while keeping genuine terms like "dialog box", "content completion assistant".
+
+Output:
+  ngrams_N.txt        – all qualifying n-grams, count desc, * if marked up
+  ngrams_N_starred.txt – only the starred (marked-up) subset
 """
 
 import os
 import re
-import sys
 from collections import defaultdict
 from xml.etree import ElementTree as ET
 
 DITA_DIR = os.path.join(os.path.dirname(__file__), "userguide", "DITA")
 OUTPUT_DIR = os.path.dirname(__file__)
 
+# ---------------------------------------------------------------------------
+# Stop words: articles, prepositions, conjunctions, auxiliary verbs, pronouns,
+# and other function words that cannot anchor a technical term.
+# ---------------------------------------------------------------------------
+STOP_WORDS = {
+    # articles
+    "a", "an", "the",
+    # coordinating / subordinating conjunctions
+    "and", "but", "or", "nor", "for", "yet", "so",
+    "although", "because", "since", "unless", "until", "while",
+    "though", "whether", "if", "once", "than", "that", "which",
+    "who", "whom", "whose", "when", "where", "why", "how",
+    # prepositions
+    "at", "by", "in", "of", "on", "to", "up",
+    "about", "above", "across", "after", "against", "along", "among",
+    "around", "as", "before", "behind", "below", "beneath", "beside",
+    "besides", "between", "beyond", "despite", "during", "except",
+    "from", "inside", "into", "near", "off", "out", "outside",
+    "over", "past", "per", "since", "through", "throughout", "toward",
+    "towards", "under", "underneath", "until", "upon", "via",
+    "with", "within", "without",
+    # auxiliary / modal verbs
+    "am", "is", "are", "was", "were", "be", "been", "being",
+    "have", "has", "had", "having",
+    "do", "does", "did",
+    "will", "would", "shall", "should", "may", "might", "must",
+    "can", "could", "need", "dare", "ought",
+    # pronouns
+    "i", "me", "my", "myself",
+    "you", "your", "yourself", "yourselves",
+    "he", "him", "his", "himself",
+    "she", "her", "hers", "herself",
+    "it", "its", "itself",
+    "we", "us", "our", "ours", "ourselves",
+    "they", "them", "their", "theirs", "themselves",
+    "this", "that", "these", "those",
+    "what", "whatever", "whichever", "whoever",
+    # common adverbs that never anchor terminology
+    "not", "no", "also", "just", "very", "too", "so",
+    "here", "there", "then", "now", "still", "already", "again",
+    "always", "never", "often", "sometimes", "usually",
+    "more", "most", "less", "least", "much", "many", "few",
+    "only", "even", "both", "each", "all", "any", "every",
+    "either", "neither", "other", "another",
+    "same", "such", "own",
+    # common verb forms that never anchor terminology on their own
+    "make", "makes", "made",
+    "get", "gets", "got",
+    "go", "goes", "went",
+    "come", "comes", "came",
+    "take", "takes", "took",
+    "give", "gives", "gave",
+    "know", "knows", "knew",
+    "see", "sees", "saw",
+    "want", "wants", "wanted",
+    "need", "needs", "needed",
+    "allow", "allows", "allowed",
+    "specify", "specifies", "specified",
+    "click", "clicks", "clicked",
+    "enter", "enters", "entered",
+    "press", "presses", "pressed",
+    # filler / connective phrases reduced to single words
+    "following", "however", "therefore", "thus", "hence",
+    "otherwise", "furthermore", "moreover", "additionally",
+    "instead", "rather", "whether", "although", "provided",
+    "including", "regarding", "according",
+    "available", "used", "using", "based",
+    "set", "sets",
+}
+
+
+def is_stop(word):
+    return word in STOP_WORDS
+
+
+def keep_ngram(tokens):
+    """Return True if this n-gram should be kept (not filtered out)."""
+    if len(tokens) == 1:
+        return not is_stop(tokens[0])
+    # For multi-word n-grams: reject if either boundary word is a stop word
+    return not is_stop(tokens[0]) and not is_stop(tokens[-1])
+
+
+# ---------------------------------------------------------------------------
+# XML helpers
+# ---------------------------------------------------------------------------
 
 def iter_all_text(element):
-    """Yield text pieces from element and all descendants (depth-first, in order)."""
+    """Yield text pieces from element and all descendants (depth-first)."""
     if element.text:
         yield element.text
     for child in element:
@@ -33,11 +128,10 @@ def normalize(text):
 def word_tokenize(text):
     """
     Split normalized text into word tokens.
-    Strip leading/trailing punctuation from each token, drop empty tokens.
+    Strip leading/trailing punctuation from each token; drop empty tokens.
     """
     tokens = []
     for raw in text.split():
-        # strip surrounding punctuation but keep hyphens inside words
         token = re.sub(r"^[^\w]+|[^\w]+$", "", raw, flags=re.UNICODE)
         if token:
             tokens.append(token)
@@ -48,13 +142,11 @@ def collect_element_texts(element):
     """
     Yield the word-tokenized text of every LEAF element in the tree
     (elements with no child elements) whose direct text content, when
-    tokenized, yields between 1 and 5 words.  Using leaf elements only
-    ensures the * mark means the element wraps exactly those words and
-    nothing else (no embedded child tags, no stray trailing punctuation
-    contributed by child tails).
+    tokenized, yields between 1 and 5 words.  Leaf elements only: this
+    ensures the * mark means the element wraps exactly those words with
+    no embedded child tags contributing extra text.
     """
     if len(element) == 0:
-        # Leaf element: only direct text, no child elements
         text = normalize(element.text or "")
         if text:
             words = word_tokenize(text)
@@ -65,14 +157,12 @@ def collect_element_texts(element):
             yield from collect_element_texts(child)
 
 
+# ---------------------------------------------------------------------------
+# Per-file parsing
+# ---------------------------------------------------------------------------
+
 def parse_file(filepath):
-    """
-    Return (tokens_list, element_phrases_set) for a single DITA file.
-    tokens_list: flat list of word tokens from the whole document.
-    element_phrases: set of normalized n-gram phrases (1-5 words) that appear
-                     as the complete text of some element.
-    """
-    # Strip DOCTYPE declarations which ElementTree can't resolve
+    """Return (tokens_list, element_phrases_set) for a single DITA file."""
     try:
         with open(filepath, "r", encoding="utf-8", errors="replace") as f:
             raw = f.read()
@@ -88,18 +178,17 @@ def parse_file(filepath):
     except ET.ParseError:
         return [], set()
 
-    # Full token stream
     full_text = normalize("".join(iter_all_text(root)))
     tokens = word_tokenize(full_text)
-
-    # Element phrases
     element_phrases = set(collect_element_texts(root))
-
     return tokens, element_phrases
 
 
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 def main():
-    # Discover DITA files
     dita_files = []
     for dirpath, _dirs, files in os.walk(DITA_DIR):
         for fname in files:
@@ -108,7 +197,6 @@ def main():
 
     print(f"Found {len(dita_files)} DITA files", flush=True)
 
-    # Per-length accumulators
     counts = [defaultdict(int) for _ in range(6)]   # index 1..5
     marked = [set() for _ in range(6)]               # index 1..5
 
@@ -118,31 +206,39 @@ def main():
 
         tokens, element_phrases = parse_file(filepath)
 
-        # Count n-grams from the token stream
+        # Count n-grams, skipping those anchored on stop words
         for n in range(1, 6):
             for j in range(len(tokens) - n + 1):
-                ngram = " ".join(tokens[j : j + n])
-                counts[n][ngram] += 1
+                toks = tokens[j : j + n]
+                if keep_ngram(toks):
+                    counts[n][" ".join(toks)] += 1
 
-        # Record which n-grams are element-marked
+        # Record which n-grams are element-marked (apply same filter)
         for phrase in element_phrases:
             words = phrase.split()
             n = len(words)
-            if 1 <= n <= 5:
+            if 1 <= n <= 5 and keep_ngram(words):
                 marked[n].add(phrase)
 
     # Write output files
     for n in range(1, 6):
-        outpath = os.path.join(OUTPUT_DIR, f"ngrams_{n}.txt")
         entries = [(seq, cnt) for seq, cnt in counts[n].items() if cnt >= 2]
         entries.sort(key=lambda x: -x[1])
 
+        starred = [(seq, cnt) for seq, cnt in entries if seq in marked[n]]
+
+        outpath = os.path.join(OUTPUT_DIR, f"ngrams_{n}.txt")
         with open(outpath, "w", encoding="utf-8") as f:
             for seq, cnt in entries:
                 star = " *" if seq in marked[n] else ""
                 f.write(f"{seq}\t{cnt}{star}\n")
 
-        print(f"Wrote {len(entries)} entries to {outpath}")
+        starpath = os.path.join(OUTPUT_DIR, f"ngrams_{n}_starred.txt")
+        with open(starpath, "w", encoding="utf-8") as f:
+            for seq, cnt in starred:
+                f.write(f"{seq}\t{cnt}\n")
+
+        print(f"ngrams_{n}.txt: {len(entries)} entries, {len(starred)} starred")
 
 
 if __name__ == "__main__":
