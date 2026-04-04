@@ -51,16 +51,20 @@ const USER_PROMPT = `Translate the following DITA XML document from English to R
 
 // Pricing in USD per million tokens (input / output)
 const PRICING = {
-  'anthropic/claude-haiku-4.5':  { input: 1.00, output: 5.00 },
-  'openai/gpt-5.4-mini':         { input: 0.75, output: 4.50 },
-  'google/gemini-3-flash':       { input: 0.50, output: 3.00 },
-  'alibaba/qwen3.6-plus':        { input: 0.50, output: 3.00 },
-  'moonshotai/kimi-k2.5':        { input: 0.60, output: 3.00 },
-  'zai/glm-5':                   { input: 1.00, output: 3.20 },
-  'minimax/minimax-m2.7':        { input: 0.30, output: 1.20 },
+  'anthropic/claude-haiku-4.5':      { input: 1.00,  output: 5.00 },
+  'openai/gpt-5.4-mini':             { input: 0.75,  output: 4.50 },
+  'google/gemini-3-flash':           { input: 0.50,  output: 3.00 },
+  'alibaba/qwen3.6-plus':            { input: 0.50,  output: 3.00 },
+  'moonshotai/kimi-k2.5':            { input: 0.60,  output: 3.00 },
+  'zai/glm-5':                       { input: 1.00,  output: 3.20 },
+  'minimax/minimax-m2.7':            { input: 0.30,  output: 1.20 },
+  'google/gemma-4-26b-a4b-it':       { input: 0.13,  output: 0.40 },
+  'google/gemma-4-31b-it':           { input: 0.14,  output: 0.40 },
 };
 
-const MODELS = Object.keys(PRICING);
+// If model IDs are passed as CLI args, use only those; otherwise run all.
+const cliModels = process.argv.slice(2);
+const MODELS = cliModels.length > 0 ? cliModels : Object.keys(PRICING);
 
 function calcCost(modelId, promptTokens, completionTokens) {
   const p = PRICING[modelId];
