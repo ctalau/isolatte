@@ -15,6 +15,7 @@ Output:
   ngrams_N_starred.txt – only the starred (marked-up) subset
 """
 
+import argparse
 import os
 import re
 from collections import defaultdict
@@ -189,13 +190,21 @@ def parse_file(filepath):
 # ---------------------------------------------------------------------------
 
 def main():
+    parser = argparse.ArgumentParser(description="Extract n-gram terminology from DITA files.")
+    parser.add_argument(
+        "--min-count", type=int, default=2, metavar="N",
+        help="Minimum occurrence count to include an n-gram (default: 2)",
+    )
+    args = parser.parse_args()
+    min_count = args.min_count
+
     dita_files = []
     for dirpath, _dirs, files in os.walk(DITA_DIR):
         for fname in files:
             if fname.endswith(".dita"):
                 dita_files.append(os.path.join(dirpath, fname))
 
-    print(f"Found {len(dita_files)} DITA files", flush=True)
+    print(f"Found {len(dita_files)} DITA files  (min-count={min_count})", flush=True)
 
     counts = [defaultdict(int) for _ in range(6)]   # index 1..5
     marked = [set() for _ in range(6)]               # index 1..5
@@ -222,7 +231,7 @@ def main():
 
     # Write output files
     for n in range(1, 6):
-        entries = [(seq, cnt) for seq, cnt in counts[n].items() if cnt >= 2]
+        entries = [(seq, cnt) for seq, cnt in counts[n].items() if cnt >= min_count]
         entries.sort(key=lambda x: -x[1])
 
         starred = [(seq, cnt) for seq, cnt in entries if seq in marked[n]]
