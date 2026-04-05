@@ -1,0 +1,1452 @@
+Oxygen Content Fusion – Grammar & Style Report
+Model: google/gemma-4-26b-a4b-it  |  Mode: FULL  |  Topics: 99
+Total issues found: 354
+  error       : 69
+  warning     : 162
+  suggestion  : 123
+
+## Issue type summary
+  article-usage                  10
+  awkward-phrasing               140
+  comma-splice                   2
+  dangling-modifier              1
+  missing-comma                  33
+  missing-subject                2
+  missing-word                   2
+  parallel-structure             24
+  pronoun-agreement              4
+  redundancy                     44
+  run-on-sentence                19
+  sentence-fragment              2
+  spelling                       11
+  subject-verb-agreement         16
+  unclear-antecedent             13
+  word-order                     9
+  wrong-word                     22
+
+======================================================================
+
+## ERROR (69)
+
+[overview.dita] [run-on-sentence]
+  Original  : What is Oxygen Content Fusion? combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.
+  Suggestion: Oxygen Content Fusion combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.
+
+[overview.dita] [run-on-sentence]
+  Original  : can be used purely as a collaborative review platform, without projects or publishing.
+  Suggestion: It can be used purely as a collaborative review platform, without projects or publishing.
+
+[overview.dita] [subject-verb-agreement]
+  Original  : The Content Fusion projects support allows you to connect to an existing Git repository
+  Suggestion: Content Fusion project support allows you to connect to an existing Git repository
+
+[platform-user-roles.dita] [subject-verb-agreement]
+  Original  : User roles supports two distinct user roles that can be assigned from the page
+  Suggestion: User roles support two distinct user roles that can be assigned from the page
+
+[account_management.dita] [unclear-antecedent]
+  Original  : only uses your social account to read your name and email address. No other data is accessed. requires a valid email address
+  Suggestion: [Product Name] only uses your social account to read your name and email address. No other data is accessed. [Product Name] requires a valid email address
+
+[account_management.dita] [unclear-antecedent]
+  Original  : In this case, asks you to provide one.
+  Suggestion: In this case, the system asks you to provide one.
+
+[account_management.dita] [unclear-antecedent]
+  Original  : For , the number of attempts and lockout duration can be configured
+  Suggestion: For [Product Name], the number of attempts and lockout duration can be configured
+
+[account_management.dita] [unclear-antecedent]
+  Original  : See .
+  Suggestion: See [Link/Section Name].
+
+[cf-profile-settings.dita] [wrong-word]
+  Original  : When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.
+  Suggestion: When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.
+
+[content_fusion_user_interface.dita] [spelling]
+  Original  : webpage with a variety of video demonstrations, webinars, and other presentations for .
+  Suggestion: webpage with a variety of video demonstrations, webinars, and other presentations.
+
+[content_fusion_user_interface.dita] [spelling]
+  Original  : displays information about the current version of .
+  Suggestion: displays information about the current version.
+
+[cf-projects-workspace_publications_view.dita] [wrong-word]
+  Original  : This action will add an <include> element in the 's builtin DITA-OT project file.
+  Suggestion: This action will add an <include> element to the built-in DITA-OT project file.
+
+[CF-dita-map-tree-editor.dita] [subject-verb-agreement]
+  Original  : Content Fusion projects includes a specialized DITA map tree editor
+  Suggestion: Content Fusion projects include a specialized DITA map tree editor
+
+[CF-dita-map-tree-editor.dita] [parallel-structure]
+  Original  : Move Up Move the reference up. Move Down Move the reference up.
+  Suggestion: Move Up Moves the reference up. Move Down Moves the reference down.
+
+[cf-projects-workspace_incoming_changes.dita] [spelling]
+  Original  : resolving the conflicts .
+  Suggestion: resolving the conflicts.
+
+[cf-projects-workspace-conflict-resolution.dita] [subject-verb-agreement]
+  Original  : There are three types of incoming changes and each have a dedicated icon:
+  Suggestion: There are three types of incoming changes and each has a dedicated icon:
+
+[cf-projects-workspace-conflict-resolution.dita] [subject-verb-agreement]
+  Original  : There are three types of changes and each have a dedicated icon:
+  Suggestion: There are three types of changes and each has a dedicated icon:
+
+[cf-projects-workspace_search_view.dita] [redundancy]
+  Original  : In the In content tab, enter the text you want to search for
+  Suggestion: In the In content tab, enter the text you want to search for
+
+[cf-projects-workspace_search_view.dita] [redundancy]
+  Original  : In the In reviews tab, you can search for text within review comments
+  Suggestion: In the In reviews tab, you can search for text within review comments
+
+[cf-projects-review-tasks.dita] [subject-verb-agreement]
+  Original  : This open the Task Files page .
+  Suggestion: This opens the Task Files page.
+
+[cf-projects-review-tasks.dita] [word-order]
+  Original  : the files added to the task will be render
+  Suggestion: the files added to the task will be rendered
+
+[cf-projects-deliverables.dita] [word-order]
+  Original  : This is a built-in connector that deploys the output to a web platform that is accessible pu
+  Suggestion: This is a built-in connector that deploys the output to a publicly accessible web platform.
+
+[cf-publishing-connectors.dita] [comma-splice]
+  Original  : The Content Fusion Docs Web Platform connector does not need to be configured, it will be created immediately.
+  Suggestion: The Content Fusion Docs Web Platform connector does not need to be configured; it will be created immediately.
+
+[cf-amazon-s3-connector.dita] [spelling]
+  Original  : logging.info("Path to unzp the files: " + TARGET_PATH);
+  Suggestion: logging.info("Path to unzip the files: " + TARGET_PATH);
+
+[cf-sftp-connector.dita] [spelling]
+  Original  : An account that will allow you to connect to the SFPT server.
+  Suggestion: An account that will allow you to connect to the SFTP server.
+
+[cf-sftp-connector.dita] [spelling]
+  Original  : Select the SFPT Connector in the Deliverables Page
+  Suggestion: Select the SFTP Connector in the Deliverables Page
+
+[cf-projects-members.dita] [redundancy]
+  Original  : The Member must be configured and assigned a role of Author in the Users Management tab of the Administration Page . The Member must be assigned a role of Author in the page.
+  Suggestion: The Member must be assigned a role of Author in the Users Management tab of the Administration Page.
+
+[making_changes_to_uploaded_files.dita] [wrong-word]
+  Original  : Markdown documents can opened as read-only in the visual editor
+  Suggestion: Markdown documents can be opened as read-only in the visual editor
+
+[WA-dita-topic-doc-type.dita] [article-usage]
+  Original  : to open the document in current browser tab.
+  Suggestion: to open the document in the current browser tab.
+
+[WA-dita-topic-doc-type.dita] [sentence-fragment]
+  Original  : also supports a KeyscopeStack URL parameter .
+  Suggestion: The system also supports a KeyscopeStack URL parameter.
+
+[review-tasks-intro.dita] [redundancy]
+  Original  : Review Tasks Review Tasks Review Tasks is one of the two main components
+  Suggestion: Review Tasks is one of the two main components
+
+[cf-review-tasks-projects.dita] [subject-verb-agreement]
+  Original  : Project review tasks offers the ability to connect to an existing Git repository
+  Suggestion: Project review tasks offer the ability to connect to an existing Git repository
+
+[cf-review-tasks-projects.dita] [redundancy]
+  Original  : This role must be assigned to a user by an administrator (from the Administration page ) page ).
+  Suggestion: This role must be assigned to a user by an administrator (from the Administration page).
+
+[content_fusion_task_details.dita] [subject-verb-agreement]
+  Original  : To open an existing task, simply click on it. This open the Task Files page .
+  Suggestion: This opens the Task Files page.
+
+[cf-task-files.dita] [subject-verb-agreement]
+  Original  : Information about the email and author name of the person who made the change in Content Fusion is included.
+  Suggestion: Information about the email and author name of the person who made the change in Content Fusion is included.
+
+[cf-task-search.dita] [wrong-word]
+  Original  : See for advanced options.
+  Suggestion: See advanced options.
+
+[cf-task-settings.dita] [unclear-antecedent]
+  Original  : For more information, see .
+  Suggestion: For more information, see [insert link/section].
+
+[cf-review-task-comment-mentions-notifications.dita] [awkward-phrasing]
+  Original  : When the task is shared so that anyone with the link has access (the Anyone in your organization who opens the link is automatically granted access as a Reviewer Anyone who opens the link is automatically granted access as a Reviewer option is enabled), the mention list shows all users from your organization all users who can access the server .
+  Suggestion: When the task is shared so that anyone with the link has access (the 'Anyone who opens the link is automatically granted access as a Reviewer' option is enabled), the mention list shows all users from your organization who can access the server.
+
+[sharing_tasks_with_reviewers.dita] [run-on-sentence]
+  Original  : If the Anyone who opens the link is automatically granted access as a Reviewer Anyone in your organization who opens the link is automatically granted access as a Reviewer option is selected, if a removed collaborator re-opens the task via its link, they will automatically be re-added as a Reviewer .
+  Suggestion: If the 'Anyone in your organization who opens the link is automatically granted access as a Reviewer' option is selected, a removed collaborator who re-opens the task via its link will automatically be re-added as a Reviewer.
+
+[cf-unlocking-files.dita] [missing-comma]
+  Original  : until that person navigates back to the Task Files page , closes the browser, or uses the Finalize Review button.
+  Suggestion: until that person navigates back to the Task Files page, closes the browser, or uses the Finalize Review button.
+
+[deleting_tasks.dita] [sentence-fragment]
+  Original  : From the task's Settings page, where you can find the Delete button.
+  Suggestion: From the task's Settings page, click the Delete button.
+
+[CF-task-states-user-roles.dita] [subject-verb-agreement]
+  Original  : Review tasks can be created inside or outside projects in Content Fusion and there are some difference between the two:
+  Suggestion: Review tasks can be created inside or outside projects in Content Fusion, and there are some differences between the two:
+
+[cf-enterprise-server.dita] [pronoun-agreement]
+  Original  : The information in this topic is meant to help system administrators install and configure your own Enterprise server solution.
+  Suggestion: The information in this topic is meant to help system administrators install and configure their own Enterprise server solution.
+
+[cf-enterprise-server.dita] [unclear-antecedent]
+  Original  : This solution also allows you to upload custom frameworks so that all contributors will have access to them when reviewing content in .
+  Suggestion: This solution also allows you to upload custom frameworks so that all contributors will have access to them when reviewing content in Content Fusion.
+
+[cf-linux.dita] [run-on-sentence]
+  Original  : Deploying Content Fusion Enterprise on Ubuntu, RHEL, CentOS Other platforms deployment Installing an Enterprise server with Ubuntu
+  Suggestion: Deploying Content Fusion Enterprise on Ubuntu, RHEL, or CentOS. Other platforms deployment: Installing an Enterprise server with Ubuntu
+
+[cf-custom-frameworks.dita] [unclear-antecedent]
+  Original  : whenever a file from that custom framework is opened in , the reviewers will have access
+  Suggestion: whenever a file from that custom framework is opened in Content Fusion, the reviewers will have access
+
+[cf-author-experience-user-role.dita] [subject-verb-agreement]
+  Original  : It will contribute some framework matching rules that takes the profile of the user into account.
+  Suggestion: It will contribute some framework matching rules that take the profile of the user into account.
+
+[cf-enterprise-configuration.dita] [missing-word]
+  Original  : Use the IP address shown in the VM console to access the web interface of .
+  Suggestion: Use the IP address shown in the VM console to access the web interface.
+
+[cf-enterprise-configuration.dita] [subject-verb-agreement]
+  Original  : By default, uses a self-signed certificate.
+  Suggestion: By default, the system uses a self-signed certificate.
+
+[cf-enterprise-configuration.dita] [missing-word]
+  Original  : For information about changing the password, see .
+  Suggestion: For information about changing the password, see the password configuration section.
+
+[cf-admin-page-users.dita] [wrong-word]
+  Original  : The number or assigned Author users is limited by the maximum supported number
+  Suggestion: The number of assigned Author users is limited by the maximum supported number
+
+[cf-admin-page-git.dita] [wrong-word]
+  Original  : The tab has contains the following options:
+  Suggestion: The tab contains the following options:
+
+[cf-admin-page-authentication.dita] [wrong-word]
+  Original  : It is also possible to configure your to accept Google or GitHub authentication .
+  Suggestion: It is also possible to configure your account to accept Google or GitHub authentication.
+
+[cf-oidc-auth.dita] [run-on-sentence]
+  Original  : Single Sign-On in Content Fusion Enterprise OpenID Connect authentication Microsoft Entra ID Okta supports Single Sign-On by configuring a provider
+  Suggestion: Single Sign-On in Content Fusion Enterprise: OpenID Connect authentication with Microsoft Entra ID or Okta supports Single Sign-On by configuring a provider
+
+[ldap_troubleshoot.dita] [wrong-word]
+  Original  : After configuring the to use LDAP authentication , you can test to make sure the configuration is correct
+  Suggestion: After configuring the system to use LDAP authentication, you can test to make sure the configuration is correct
+
+[cf-integrate-ai-positron-overview.dita] [redundancy]
+  Original  : Integrating Oxygen AI Positron for Content Fusion AI Positron for Content Fusion
+  Suggestion: Integrating Oxygen AI Positron for Content Fusion
+
+[cf-set-web-author-system-property.dita] [missing-comma]
+  Original  : A variety of Java system properties can be set to influence the behavior of the visual editor embedded in .
+  Suggestion: A variety of Java system properties can be set to influence the behavior of the visual editor embedded in Content Fusion.
+
+[cf-increase-memory.dita] [spelling]
+  Original  : - OXYGEN_JAVA_OTPS=-Xmx8g
+  Suggestion: - OXYGEN_JAVA_OPTS=-Xmx8g
+
+[cf-configure-publishing-main-container.dita] [spelling]
+  Original  : publising.service.check.remote.period
+  Suggestion: publishing.service.check.remote.period
+
+[cf-configure-publishing-main-container.dita] [spelling]
+  Original  : publishing.service.build.console.max.lines.numbe
+  Suggestion: publishing.service.build.console.max.lines.number
+
+[cf-disk-space.dita] [subject-verb-agreement]
+  Original  : Review tasks created within a project stores only files that were changed since the review task started.
+  Suggestion: Review tasks created within a project store only files that were changed since the review task started.
+
+[cf-enterprise-unistall.dita] [redundancy]
+  Original  : Uninstalling Content Fusion Enterprise Content Fusion Enterprise - Uninstalling Uninstalling To uninstall the deployment
+  Suggestion: Uninstalling Content Fusion Enterprise. To uninstall the deployment
+
+[cf-organization-subscription.dita] [wrong-word]
+  Original  : The Subscription page in allows organization administrators to view and manage
+  Suggestion: The Subscription page allows organization administrators to view and manage
+
+[cf-organization-subscription.dita] [unclear-antecedent]
+  Original  : After completing the renewal process, allow up to 10 minutes for the Verifone platform to send the license change notification (LCN) event to .
+  Suggestion: After completing the renewal process, allow up to 10 minutes for the Verifone platform to send the license change notification (LCN) event to the system.
+
+[cf-organization-settings.dita] [redundancy]
+  Original  : The Organization Settings page in allows organization administrators to manage their organization's basic information
+  Suggestion: The Organization Settings page allows organization administrators to manage their organization's basic information
+
+[known_issues.dita] [wrong-word]
+  Original  : it is mostly likely because the source DITA map was not uploaded in the review task.
+  Suggestion: it is most likely because the source DITA map was not uploaded with the review task.
+
+[browser-compatibility.dita] [missing-comma]
+  Original  : For browser versions that are released after version , the system administrator
+  Suggestion: For browser versions released after a specific version, the system administrator
+
+[browser-compatibility.dita] [missing-comma]
+  Original  : Due to implementation particularities, may exhibit minor behavioral differences:
+  Suggestion: Due to implementation particularities, the application may exhibit minor behavioral differences:
+
+[content-fusion_vs_web-author.dita] [wrong-word]
+  Original  : The simply follows the link to access the review task in a browser
+  Suggestion: They simply follow the link to access the review task in a browser
+
+## WARNING (162)
+
+[overview.dita] [awkward-phrasing]
+  Original  : For in-depth visual looks at , see the following resources:
+  Suggestion: For in-depth visual overviews, see the following resources:
+
+[platform-user-roles.dita] [article-usage]
+  Original  : This type of user role utilizes floating licensing model.
+  Suggestion: This type of user role utilizes a floating licensing model.
+
+[platform-user-roles.dita] [parallel-structure]
+  Original  : Content Fusion Author Capabilities: Access to projects and content creation tools . Ability to edit and manage content . Publishing functionality for finalized content.
+  Suggestion: Content Fusion Author Capabilities: Access projects and content creation tools; edit and manage content; and use publishing functionality for finalized content.
+
+[platform-user-roles.dita] [awkward-phrasing]
+  Original  : SMEs can create content but not directly in projects.
+  Suggestion: SMEs can create content, but not directly within projects.
+
+[account_management.dita] [awkward-phrasing]
+  Original  : If this is your first time before using , you must create an account by following these steps:
+  Suggestion: If this is your first time using the platform, you must create an account by following these steps:
+
+[account_management.dita] [awkward-phrasing]
+  Original  : you can simply click either of those two buttons and allow to use those credentials.
+  Suggestion: you can simply click either of those two buttons and allow the use of those credentials.
+
+[account_management.dita] [parallel-structure]
+  Original  : displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.
+  Suggestion: displays your name, email, and avatar, and allows you to delete your account or specify your email notification settings.
+
+[account_management.dita] [awkward-phrasing]
+  Original  : Opens the My Review Tasks page in the main area that displays a list of all the current tasks that you created, those that were assigned to you, and those that have been finalized
+  Suggestion: Opens the My Review Tasks page in the main area, which displays a list of all current tasks: those you created, those assigned to you, and those that have been finalized
+
+[cf-profile-settings.dita] [parallel-structure]
+  Original  : New messages are added on review tasks assigned to me New messages are added on review tasks owned by me Review tasks owned by me are finalized by a reviewer New reviewers are assigned to public tasks owned by me
+  Suggestion: New messages are added to review tasks assigned to me; New messages are added to review tasks owned by me; Review tasks owned by me are finalized by a reviewer; New reviewers are assigned to public tasks owned by me
+
+[cf-profile-settings.dita] [awkward-phrasing]
+  Original  : When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.
+  Suggestion: When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.
+
+[content_fusion_user_interface.dita] [missing-comma]
+  Original  : The browser interface includes a top stripe that is always visible and it contains a user drop-down menu
+  Suggestion: The browser interface includes a top stripe that is always visible, and it contains a user drop-down menu
+
+[content_fusion_user_interface.dita] [missing-comma]
+  Original  : A left navigation stripe is also always visible and it contains buttons for navigating
+  Suggestion: A left navigation stripe is also always visible, and it contains buttons for navigating
+
+[content_fusion_user_interface.dita] [parallel-structure]
+  Original  : Opens a profile settings page that displays your name, email, avatar, and allows you to delete your account
+  Suggestion: Opens a profile settings page that displays your name, email, and avatar, and allows you to delete your account
+
+[content_fusion_user_interface.dita] [run-on-sentence]
+  Original  : When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe
+  Suggestion: When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area to navigate to previous pages; additionally, more actions become available below the top stripe
+
+[content_fusion_user_interface.dita] [parallel-structure]
+  Original  : Non-Project Review Tasks - Provides tools for technical writers... Project Review Tasks - Provides additional tools...
+  Suggestion: Non-Project Review Tasks provide tools... Project Review Tasks provide additional tools...
+
+[cf-projects.dita] [awkward-phrasing]
+  Original  : A Content Fusion Project : Provides Git-based storage for DITA content. Allows authors to create content with AI assistance.
+  Suggestion: A Content Fusion Project provides Git-based storage for DITA content and allows authors to create content with AI assistance.
+
+[cf-projects.dita] [parallel-structure]
+  Original  : Helps Authors build WebHelp or PDF outputs via Publications and Deliverables .
+  Suggestion: helps authors build WebHelp or PDF outputs via Publications and Deliverables.
+
+[cf-projects.dita] [awkward-phrasing]
+  Original  : An optional folder parameter can be used to specify the folder where the content is located that will be used to create the project.
+  Suggestion: An optional folder parameter can be used to specify the folder containing the content used to create the project.
+
+[cf-projects-workspace.dita] [redundancy]
+  Original  : Personal Workspace Personal Workspace When opening a project
+  Suggestion: Personal Workspace
+
+When opening a project
+
+[cf-projects-workspace_publications_view.dita] [missing-comma]
+  Original  : A Content Fusion publication defines a DITA map that is used to resolve keys in topics and optionally, a DITAVAL filter used for flagging or filtering profiled content.
+  Suggestion: A Content Fusion publication defines a DITA map that is used to resolve keys in topics and, optionally, a DITAVAL filter used for flagging or filtering profiled content.
+
+[cf-projects-workspace_publications_view.dita] [missing-comma]
+  Original  : In the resulting dialog box, you enter a name for the publication and specify the context DITA map and optionally, a DITAVAL filter file.
+  Suggestion: In the resulting dialog box, you enter a name for the publication and specify the context DITA map and, optionally, a DITAVAL filter file.
+
+[cf-projects-workspace_publications_view.dita] [awkward-phrasing]
+  Original  : If that option is deselected, the map is displayed as read only.
+  Suggestion: If that option is deselected, the map is displayed as read-only.
+
+[cf-projects-workspace_publications_view.dita] [redundancy]
+  Original  : Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications.
+  Suggestion: Manage Publications Dialog Box: The Manage Publications dialog box allows you to create and configure publications.
+
+[cf-projects-workspace_publications_view.dita] [awkward-phrasing]
+  Original  : You can click the Manage Deliverables button to the right of the current publication to open the deliverables management page for the particular publication where you can create new deliverables, build an existing deliverable, view logs, download deliverables, and schedule periodic builds for a deliverable to automate the process.
+  Suggestion: To open the deliverables management page for a specific publication, click the Manage Deliverables button. From there, you can create new deliverables, build existing ones, view logs, download deliverables, and schedule periodic builds.
+
+[CF-dita-map-tree-editor.dita] [article-usage]
+  Original  : To open and edit the DITA map defined in the particular publication
+  Suggestion: To open and edit the DITA map defined in a particular publication
+
+[CF-dita-map-tree-editor.dita] [parallel-structure]
+  Original  : Promotes Promotes the reference one level. Demote Demotes the reference one level.
+  Suggestion: Promote Promotes the reference one level. Demote Demotes the reference one level.
+
+[CF-dita-map-tree-editor.dita] [word-order]
+  Original  : You can right-click items in the map and the following possible contextual menu actions are available:
+  Suggestion: You can right-click items in the map to access the following contextual menu actions:
+
+[cf-projects-workspace_changes_view.dita] [parallel-structure]
+  Original  : You can set a title, due date, and select a context publication.
+  Suggestion: You can set a title, a due date, and a context publication.
+
+[cf-projects-workspace_incoming_changes.dita] [run-on-sentence]
+  Original  : When there are no conflicts, you can also click the View changed files button to see a comparison of the incoming changes versus the current workspace version and a Pull action is available in that comparison dialog box.
+  Suggestion: When there are no conflicts, you can also click the View changed files button to see a comparison of the incoming changes versus the current workspace version. A Pull action is available in that comparison dialog box.
+
+[cf-projects-workspace-conflict-resolution.dita] [parallel-structure]
+  Original  : - Conflicting changes that cannot be automatically merged and require manual intervention. - Incoming changes can be automatically merged. - Incoming files from the repository that are not present in your workspace.
+  Suggestion: - Conflicting changes that cannot be automatically merged and require manual intervention. - Incoming changes that can be automatically merged. - Incoming files from the repository that are not present in your workspace.
+
+[cf-projects-workspace-conflict-resolution.dita] [parallel-structure]
+  Original  : - Conflicting changes that cannot be automatically merged and require manual intervention. - The file can be automatically merged. - Incoming changes from the source branch that are not present in the destination branch.
+  Suggestion: - Conflicting changes that cannot be automatically merged and require manual intervention. - Changes that can be automatically merged. - Incoming changes from the source branch that are not present in the destination branch.
+
+[cf-projects-workspace_problems_view.dita] [run-on-sentence]
+  Original  : If problems are detected, they are grouped by publication context and each one is listed with the severity of the problem (fatal, error, warning, info) displayed in a badge at the top-left corner of the problem, the name of the publication in the top-right corner, followed by a description of the problem.
+  Suggestion: If problems are detected, they are grouped by publication context. Each problem is listed with its severity (fatal, error, warning, or info) displayed in a badge at the top-left corner, the publication name in the top-right corner, and a description of the problem.
+
+[cf-projects-workspace_problems_view.dita] [run-on-sentence]
+  Original  : The file name is listed at the bottom of each problem and clicking on the file name opens it in the editor pane with the cursor placed at the location of the problem (if the file is from a different publication other than the current publication, a dialog box is displayed asking if you want to switch to the other publication).
+  Suggestion: The file name is listed at the bottom of each problem. Clicking the file name opens it in the editor pane with the cursor placed at the location of the problem. If the file is from a publication other than the current one, a dialog box asks if you want to switch to that publication.
+
+[cf-projects-workspace_problems_view.dita] [run-on-sentence]
+  Original  : If problems are detected, you can use the drop-down at the top of the view to filter the list to only show the problems for a particular publication (this also switches the current context for the entire project to the chosen publication) or you can select All publications to show all of them.
+  Suggestion: If problems are detected, you can use the drop-down at the top of the view to filter the list to show problems for a particular publication (this also switches the current context for the entire project to the chosen publication), or you can select All publications to show all of them.
+
+[cf-projects-workspace_search_view.dita] [awkward-phrasing]
+  Original  : The search field works the same as in In content .
+  Suggestion: The search field works the same way as in the In content tab.
+
+[cf-projects-workspace_search_view.dita] [awkward-phrasing]
+  Original  : See for advanced options.
+  Suggestion: See [link/section name] for advanced options.
+
+[cf-projects-workspace_search_view.dita] [awkward-phrasing]
+  Original  : See for how to add mentions in comments.
+  Suggestion: See [link/section name] for how to add mentions in comments.
+
+[cf-projects-workspace_search_view.dita] [awkward-phrasing]
+  Original  : To find reviews where you are mentioned, see .
+  Suggestion: To find reviews where you are mentioned, see [link/section name].
+
+[cf-ai-positron-overview.dita] [redundancy]
+  Original  : AI Positron View offers a plugin to integrate an AI Positron view that provides an advanced solution for using AI assistance to enhance the documentation content creation process.
+  Suggestion: AI Positron View offers a plugin that provides an advanced solution for using AI assistance to enhance the documentation content creation process.
+
+[cf-projects-review-tasks.dita] [wrong-word]
+  Original  : Other task states that a task owner could see is Integrating and Integrated
+  Suggestion: Other task states that a task owner can see are Integrating and Integrated
+
+[cf-projects-review-tasks.dita] [awkward-phrasing]
+  Original  : When a reviewer opens a task that the owner requested that they do another review,
+  Suggestion: When a reviewer opens a task for which the owner has requested a re-review,
+
+[cf-projects-repository.dita] [parallel-structure]
+  Original  : provides ways to open/edit the files in the visual editor, add files to a new review task, and branch management actions are available from the branch drop-down menu
+  Suggestion: provides ways to open/edit files in the visual editor, add files to a new review task, and manage branches via the branch drop-down menu
+
+[cf-projects-deliverables.dita] [wrong-word]
+  Original  : To start building an existing deliverable, click the Build button of the right side of the particular deliverable.
+  Suggestion: click the Build button on the right side of the particular deliverable
+
+[cf-projects-deliverables.dita] [unclear-antecedent]
+  Original  : After it is finished, it shows whether or not the build was successful and information about the time.
+  Suggestion: After the build is finished, the page shows whether the build was successful and provides timing information.
+
+[cf-projects-deliverables.dita] [awkward-phrasing]
+  Original  : Select new customized template and click the Choose button at the bottom.
+  Suggestion: Select the new customized template and click the Choose button at the bottom.
+
+[cf-projects-publications.dita] [redundancy]
+  Original  : Publications Management Publications management page The Publications Management page allows you to create and configure publications.
+  Suggestion: Publications Management page. The Publications Management page allows you to create and configure publications.
+
+[cf-projects-publications.dita] [missing-comma]
+  Original  : and optionally, a DITAVAL filter
+  Suggestion: and, optionally, a DITAVAL filter
+
+[cf-projects-publications.dita] [awkward-phrasing]
+  Original  : Project Publications Page To create a new publication, click the New Publication button
+  Suggestion: Project Publications Page. To create a new publication, click the New Publication button
+
+[cf-publishing-connectors.dita] [redundancy]
+  Original  : You can click the ellipsis (3 vertical dots) to the right of a connector to reveal actions to Edit or Delete it. You can click the ellipsis (3 vertical dots) to the right of a connector to reveal actions to View deliverables for the connector , Edit it, or Delete it.
+  Suggestion: You can click the ellipsis (3 vertical dots) to the right of a connector to reveal actions to View deliverables, Edit, or Delete it.
+
+[cf-amazon-s3-connector.dita] [parallel-structure]
+  Original  : To publish content to an Amazon S3 bucket, you must have the following: An AWS account. An existing S3 bucket configured. For more details, refer to the AWS S3 Documentation . The Access Key ID and Secret Access Key associated with your AWS account.
+  Suggestion: To publish content to an Amazon S3 bucket, you must have the following: an AWS account; an existing, configured S3 bucket; and the Access Key ID and Secret Access Key associated with your AWS account.
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : TARGET_PATH = "Documentation/ .
+  Suggestion: TARGET_PATH = "Documentation/"
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.
+  Suggestion: If you do not, your Lambda function may time out, and the zip file may not be unzipped or deleted.
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.
+  Suggestion: If your output size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.
+
+[cf-amazon-s3-connector.dita] [missing-comma]
+  Original  : If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.
+  Suggestion: If your output's size is bigger than allocated Memory and Ephemeral storage, the lambda function may fail to execute.
+
+[cf-netlify-connector.dita] [article-usage]
+  Original  : For more details, refer to the Netlify's Add new site topic.
+  Suggestion: refer to the Netlify Add new site topic
+
+[cf-netlify-connector.dita] [article-usage]
+  Original  : For more details, refer to the Netlify's Personal Access Token topic.
+  Suggestion: refer to the Netlify Personal Access Token topic
+
+[cf-netlify-connector.dita] [dangling-modifier]
+  Original  : To configure a Netlify connector, the following fields must be provided:
+  Suggestion: To configure a Netlify connector, provide the following fields:
+
+[cf-sftp-connector.dita] [article-usage]
+  Original  : To publish content to a SFTP server, you must have the following:
+  Suggestion: To publish content to an SFTP server, you must have the following:
+
+[cf-projects-publishing-execution-status.dita] [wrong-word]
+  Original  : The status of a deliverable build displayed in the page can be:
+  Suggestion: The status of a deliverable build displayed on the page can be:
+
+[cf-projects-publishing-execution-status.dita] [spelling]
+  Original  : The id of the build
+  Suggestion: The ID of the build
+
+[cf-projects-settings.dita] [redundancy]
+  Original  : Project Settings Page Project settings page The Project Settings page displays information about the project configuration.
+  Suggestion: The Project Settings page displays information about the project configuration.
+
+[cf-projects-members.dita] [redundancy]
+  Original  : Project Members Page Project Members page The Project Members page displays the Members associated with a particular project.
+  Suggestion: The Project Members page displays the Members associated with a particular project.
+
+[cf-projects-members.dita] [wrong-word]
+  Original  : For public projects, only users with the Owner role are displayed in this page.
+  Suggestion: For public projects, only users with the Owner role are displayed on this page.
+
+[making_changes_to_uploaded_files.dita] [spelling]
+  Original  : opens the corresponding feature in a resizeable pane in between the left stripe and the visual editor.
+  Suggestion: opens the corresponding feature in a resizable pane between the left stripe and the visual editor.
+
+[making_changes_to_uploaded_files.dita] [parallel-structure]
+  Original  : the name of the user who made a change within the task, and when it was processed.
+  Suggestion: the name of the user who made the change, and the time it was processed.
+
+[making_changes_to_uploaded_files.dita] [run-on-sentence]
+  Original  : The feature is activated when you press Enter on your keyboard and you can navigate through the list of proposals by using the Up and Down arrow keys and to insert the selection, simply press Enter again.
+  Suggestion: The feature is activated when you press Enter. You can navigate through the list of proposals using the Up and Down arrow keys; to insert the selection, simply press Enter again.
+
+[WA-dita-topic-doc-type.dita] [article-usage]
+  Original  : DITA Map Pane includes an expandable DITA Map pane that presents a DITA map as a hierarchical tree.
+  Suggestion: The DITA Map Pane includes an expandable DITA Map pane that presents a DITA map as a hierarchical tree.
+
+[WA-dita-topic-doc-type.dita] [awkward-phrasing]
+  Original  : where you can specify the DITA-OT project file and optionally, a context defined within it or you can specify a DITA map and optionally, a DITAVAL filtering file
+  Suggestion: where you can specify the DITA-OT project file and an optional context defined within it, or you can specify a DITA map and an optional DITAVAL filtering file
+
+[WA-dita-topic-doc-type.dita] [run-on-sentence]
+  Original  : The settings button ( ) is disabled, and thus a DITA context cannot be selected, when opening a DITA map with the referenced topic content expanded and editable in one document while in a concurrent editing session.
+  Suggestion: The settings button ( ) is disabled when opening a DITA map with the referenced topic content expanded and editable in one document during a concurrent editing session; therefore, a DITA context cannot be selected.
+
+[WA-dita-topic-doc-type.dita] [awkward-phrasing]
+  Original  : When opening a topic from the DITA Map view or directly from a DITA map open in the editor, keys in that topic will be resolved taking the key scopes of the location for the particular topic reference into account.
+  Suggestion: When opening a topic from the DITA Map view or directly from a DITA map open in the editor, keys in that topic are resolved by taking the key scopes of the topic reference location into account.
+
+[review-tasks-intro.dita] [parallel-structure]
+  Original  : They have access to task settings, share options, and they can ultimately merge proposed changes into their project.
+  Suggestion: They have access to task settings, share options, and the ability to merge proposed changes into their project.
+
+[cf-review-tasks-projects.dita] [parallel-structure]
+  Original  : Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process. Projects - Provides additional tools for technical writers to help manage a DITA project
+  Suggestion: Non-Project Review Tasks provide tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process. Projects provide additional tools for technical writers to help manage a DITA project
+
+[content_fusion_task_details.dita] [parallel-structure]
+  Original  : The table also has columns that show the task's Name , Project (if applicable), Branch (if applicable), Owners , Status , Due Date (if specified in the Task Settings page ), and the Last Access column shows the last time you accessed the task.
+  Suggestion: The table also has columns that show the task's Name, Project (if applicable), Branch (if applicable), Owners, Status, Due Date (if specified in the Task Settings page), and Last Access.
+
+[content_fusion_task_details.dita] [awkward-phrasing]
+  Original  : When a reviewer opens a task that the owner requested that they do another review, the Task Files page includes a Changed files only filter option
+  Suggestion: When a reviewer opens a task for which the owner has requested a re-review, the Task Files page includes a Changed files only filter option
+
+[content_fusion_task_details.dita] [awkward-phrasing]
+  Original  : You can click on the Finalized widget (drop-down) to see the status for each assigned reviewer: If a task owner clicks on the Finalized widget (drop-down) for a task that has reviewers who have finalized their review, the task owner has access to a Request re-review button.
+  Suggestion: Click the Finalized widget (drop-down) to see the status for each assigned reviewer. If a task owner clicks the widget for a task where reviewers have already finalized their review, the owner can access the Request re-review button.
+
+[cf-task-files.dita] [awkward-phrasing]
+  Original  : This downloads a zip archive that contains all task files, along with change history downloaded as a Git working directory (making changes traceable).
+  Suggestion: This downloads a zip archive containing all task files and the change history as a Git working directory, making changes traceable.
+
+[cf-task-files.dita] [awkward-phrasing]
+  Original  : Information about the email and author name of the person who made the change in Content Fusion is included.
+  Suggestion: The email and author name of the person who made the change in Content Fusion are included.
+
+[cf-task-activity.dita] [word-order]
+  Original  : you can click the file name from the Task activity to see a comparison
+  Suggestion: you can click the file name in the Task activity to see a comparison
+
+[cf-task-activity.dita] [run-on-sentence]
+  Original  : If you hover over a file change, you can click the Open latest version button to open the current version of that particular file in the visual editor or you can click the ellipsis (3 vertical dots) to the far right and the following actions become available:
+  Suggestion: If you hover over a file change, you can click the Open latest version button to open the current version of that file in the visual editor. Alternatively, you can click the ellipsis (3 vertical dots) to the far right to access the following actions:
+
+[cf-task-activity.dita] [awkward-phrasing]
+  Original  : Opens the version of the file when the selected file change was made.
+  Suggestion: Opens the version of the file as it existed when the selected file change was made.
+
+[cf-task-activity.dita] [redundancy]
+  Original  : Opens a comparison (diff) between the selected file change and its previous version of the file.
+  Suggestion: Opens a comparison (diff) between the selected file change and the previous version of the file.
+
+[cf-task-reviews-view.dita] [awkward-phrasing]
+  Original  : See for how mentions and related notifications work.
+  Suggestion: See how mentions and related notifications work.
+
+[cf-task-settings.dita] [run-on-sentence]
+  Original  : You can optionally specify a Due Date and the amount of time left before the due date arrives is displayed under the review task's title when you have navigated inside the task and also in the table in the My Review Tasks page .
+  Suggestion: You can optionally specify a Due Date. The amount of time left before the due date arrives is displayed under the review task's title when you navigate inside the task, and also in the table on the My Review Tasks page.
+
+[cf-task-settings.dita] [parallel-structure]
+  Original  : Edit (default) - Reviewers are allowed to edit documents within the task. Suggest using change tracking - Change Tracking is always on when the Reviewers make changes or add comments in the documents attached to the task.
+  Suggestion: Edit (default) - Reviewers are allowed to edit documents within the task. Suggest using change tracking - Reviewers make changes or add comments using change tracking, which is always on.
+
+[cf-review-task-comment-mentions-notifications.dita] [redundancy]
+  Original  : the mention list shows all users from your organization all users who can access the server .
+  Suggestion: the mention list shows all users from your organization who can access the server.
+
+[cf-review-task-comment-mentions-notifications.dita] [awkward-phrasing]
+  Original  : To find all comments where you or someone else is mentioned, use the Mentioned user filter in the (for tasks) or in the In reviews tab (for projects).
+  Suggestion: To find all comments where you or someone else is mentioned, use the Mentioned user filter in the [Missing UI Element] tab (for tasks) or in the In reviews tab (for projects).
+
+[sharing_tasks_with_reviewers.dita] [run-on-sentence]
+  Original  : To assign a collaborator to a task, start typing their name or email address in the field at the top of the dialog box and the system will search for assignable users that can be selected from a drop-down menu.
+  Suggestion: To assign a collaborator to a task, start typing their name or email address in the field at the top of the dialog box; the system will search for assignable users that can be selected from a drop-down menu.
+
+[sharing_tasks_with_reviewers.dita] [comma-splice]
+  Original  : An invitation email is automatically sent to the specified email address or you can manually send them the link to access the task
+  Suggestion: An invitation email is automatically sent to the specified email address, or you can manually send them the link to access the task
+
+[sharing_tasks_with_reviewers.dita] [awkward-phrasing]
+  Original  : It is possible to retrieve the task link directly within Oxygen XML Editor/Author but the person you send the link to must first be granted access to the task in the Share dialog box (in the browser).
+  Suggestion: You can retrieve the task link directly within Oxygen XML Editor/Author, but the recipient must first be granted access to the task in the Share dialog box in the browser.
+
+[communicating_with_the_author.dita] [redundancy]
+  Original  : Communicating with Collaborators Communicating with others
+  Suggestion: Communicating with Collaborators
+
+[communicating_with_the_author.dita] [wrong-word]
+  Original  : If you have the review task open in any other page, it opens the Task Activity page
+  Suggestion: If you have the review task open on any other page, the Task Activity page opens
+
+[cf-new-task-from-interface.dita] [article-usage]
+  Original  : Create new task from the browser Create new files from the browser
+  Suggestion: Create a new task from the browser. Create new files from the browser.
+
+[cf-new-task-from-interface.dita] [parallel-structure]
+  Original  : click the New File button and you will be able to choose a file type from a list of templates, then choose a file name in the text field at the bottom, and click OK .
+  Suggestion: click the New File button, choose a file type from a list of templates, enter a file name in the text field at the bottom, and click OK.
+
+[cf-concurrent-editing.dita] [awkward-phrasing]
+  Original  : On the machine where is installed, add this line to the /fusion/data/config/api/api.properties file:
+  Suggestion: On the machine where Content Fusion is installed, add this line to the /fusion/data/config/api/api.properties file:
+
+[cf-unlocking-files.dita] [awkward-phrasing]
+  Original  : If other users do not start editing the file, or once they are finished and it becomes unlocked, a Resume Editing button will be displayed that can be used to switch back to editing mode.
+  Suggestion: If other users do not start editing the file, or once they have finished and the file is unlocked, a Resume Editing button appears to allow you to switch back to editing mode.
+
+[assign_task_to_new_owner.dita] [awkward-phrasing]
+  Original  : Assign task to new owner Collaborators who create new review tasks are automatically assigned as the task owner.
+  Suggestion: Assign a task to a new owner. Collaborators who create new review tasks are automatically assigned as the task owner.
+
+[assign_task_to_new_owner.dita] [missing-comma]
+  Original  : If they are not already listed, start typing the name or email address in the add collaborator field at the top of the dialog box and the system will search for assignable users
+  Suggestion: If they are not already listed, start typing the name or email address in the add collaborator field at the top of the dialog box, and the system will search for assignable users
+
+[assign_task_to_new_owner.dita] [unclear-antecedent]
+  Original  : If the name/email is not in the system, they will be listed as a Pending Collaborator until they sign up for an account and they access the task via its link.
+  Suggestion: If the name or email is not in the system, the user will be listed as a Pending Collaborator until they sign up for an account and access the task via its link.
+
+[assign_task_to_new_owner.dita] [awkward-phrasing]
+  Original  : The task is now listed as one of the Review tasks owned by me in the My Review Tasks page and the task is also added in the Content Fusion Tasks Manager view for the new owner
+  Suggestion: The task is now listed as one of the Review tasks owned by you on the My Review Tasks page, and the task is also added to the Content Fusion Tasks Manager view for the new owner
+
+[finishing_tasks.dita] [pronoun-agreement]
+  Original  : informing the task owner that you have reviewed all the files attached and you are finished with the review process.
+  Suggestion: informing the task owner that they have reviewed all the files attached and are finished with the review process.
+
+[CF-task-states-user-roles.dita] [run-on-sentence]
+  Original  : Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content and changes proposed by reviewers can be integrated back into the DITA project directly within Content Fusion.
+  Suggestion: Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository containing DITA content; changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.
+
+[CF-task-states-user-roles.dita] [parallel-structure]
+  Original  : The task owner (the person who created the task or another person who is assigned as a task owner by the task creator) can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.
+  Suggestion: The task owner (the person who created the task or another person assigned as a task owner by the task creator) can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.
+
+[CF-task-states-user-roles.dita] [awkward-phrasing]
+  Original  : In addition to the features that an SME has access to, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and other advanced features.
+  Suggestion: In addition to the features available to an SME, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and use other advanced features.
+
+[CF-task-states-user-roles.dita] [subject-verb-agreement]
+  Original  : This is the initial status for newly created review tasks and they remain in this state until the task has been closed by the task owner.
+  Suggestion: This is the initial status for newly created review tasks; they remain in this state until the task owner closes the task.
+
+[cf-enterprise-server.dita] [awkward-phrasing]
+  Original  : The Oxygen Content Fusion Connector add-on requires a deployed Enterprise server, or you can use the Cloud version hosted by Oxygen : The solution allows you to host your own server
+  Suggestion: The Oxygen Content Fusion Connector add-on requires a deployed Enterprise server, or you can use the Cloud version hosted by Oxygen. The Enterprise server solution allows you to host your own server
+
+[cf-enterprise-server.dita] [parallel-structure]
+  Original  : Fast start-up - You simply need to sign up, create your organization account, define your team, and you will be ready to collaborate
+  Suggestion: Fast start-up - Simply sign up, create your organization account, and define your team to be ready to collaborate
+
+[cf-enterprise-server.dita] [subject-verb-agreement]
+  Original  : The solution supports the following type of server deployment:
+  Suggestion: The solution supports the following types of server deployment:
+
+[cf-linux.dita] [awkward-phrasing]
+  Original  : The software should be installed on a dedicated machine that is only used for without other services.
+  Suggestion: The software should be installed on a dedicated machine that is used exclusively for this purpose, without other services.
+
+[cf-linux.dita] [awkward-phrasing]
+  Original  : The software should be installed on a dedicated machine that is only used for without other services.
+  Suggestion: The software should be installed on a dedicated machine without other services.
+
+[cf-configure-server-address-property-file.dita] [wrong-word]
+  Original  : Creating a Property File to Impose the Connection to Your Enterprise Server
+  Suggestion: Creating a Property File to Configure the Connection to Your Enterprise Server
+
+[cf-configure-server-address-property-file.dita] [wrong-word]
+  Original  : This server address will then be imposed when Oxygen XML Editor/Author connects to the server
+  Suggestion: This server address will then be applied when Oxygen XML Editor/Author connects to the server
+
+[cf-configure-server-address-property-file.dita] [wrong-word]
+  Original  : When they click Connect , your server address will be imposed and they will not have the ability to change it.
+  Suggestion: When they click Connect, your server address will be applied and they will not be able to change it.
+
+[cf-custom-frameworks.dita] [missing-comma]
+  Original  : Once you are finished with all of your changes click the Restart Server button
+  Suggestion: Once you are finished with all of your changes, click the Restart Server button
+
+[cf-author-experience-user-role.dita] [missing-comma]
+  Original  : When the XML editor is opened, a userRole Loading Option is passed
+  Suggestion: When the XML editor is opened, a userRole loading option is passed
+
+[cf-upload-plugins.dita] [redundancy]
+  Original  : Uploading Plugins to Extend Content Fusion Uploading plugins Contributing plugins
+  Suggestion: Uploading Plugins to Extend Content Fusion
+
+[cf-customizing-options.dita] [awkward-phrasing]
+  Original  : You can also configure which side of the interface it appears by using either of the following:
+  Suggestion: You can also configure which side of the interface it appears on by using either of the following:
+
+[cf-customizing-options.dita] [wrong-word]
+  Original  : Copy or move that patch file to the /fusion/data/temp/webauthor/options/autocorrect folder.
+  Suggestion: Copy or move the patch file to the /fusion/data/temp/webauthor/options/autocorrect folder.
+
+[cf-customizing-options.dita] [unclear-antecedent]
+  Original  : They can then be added to one of the directories that store the spell check dictionaries and the spell checker will merge them with all the dictionaries
+  Suggestion: These lists can then be added to one of the directories that store the spell check dictionaries, and the spell checker will merge them with all the dictionaries
+
+[cf-enterprise-configuration.dita] [awkward-phrasing]
+  Original  : Continue (for example, if you are using Edge, click Details and then Go on to the webpage ).
+  Suggestion: Continue to the webpage (for example, if you are using Edge, click Details and then Go).
+
+[cf-admin-page-general.dita] [run-on-sentence]
+  Original  : Server Address Displays the IP address or DNS name of your server and you can change it.
+  Suggestion: Server Address: Displays the IP address or DNS name of your server, which you can change.
+
+[cf-admin-page-general.dita] [awkward-phrasing]
+  Original  : When this option is selected, an option named Anyone who opens the link is automatically granted access as a Reviewer is available in the Sharing settings dialog box.
+  Suggestion: When this option is selected, the option 'Anyone who opens the link is automatically granted access as a Reviewer' becomes available in the Sharing settings dialog box.
+
+[cf-admin-page-general.dita] [pronoun-agreement]
+  Original  : Selecting that sharing option for a task means that any registered user may automatically be granted access when they use that task's link.
+  Suggestion: Selecting that sharing option for a task means that any registered user may automatically be granted access when using that task's link.
+
+[cf-admin-page-users.dita] [awkward-phrasing]
+  Original  : The Users status section presents the number of allocated Author licenses out of the maximum number supported by your current license plan and the number of SMEs sharing the floating licenses along with the number of seats for your license plan.
+  Suggestion: The Users status section displays the number of allocated Author licenses relative to your plan's maximum, the number of SMEs sharing floating licenses, and the total number of seats in your license plan.
+
+[cf-admin-page-users.dita] [unclear-antecedent]
+  Original  : If the deleted user needs to access the system in the future, they must sign in again to create a new account.
+  Suggestion: If a deleted user needs to access the system in the future, they must create a new account.
+
+[cf-admin-page-git.dita] [word-order]
+  Original  : Once an account has been added, it is listed in this tab and options to Edit or Delete account are available for each added account.
+  Suggestion: Once an account is added, it appears in this tab with options to Edit or Delete it.
+
+[cf-admin-page-mail.dita] [parallel-structure]
+  Original  : SSL on connection Select this option if your email server accepts SSL connections and specify the port.
+  Suggestion: SSL on connection Select this option if your email server accepts SSL connections, and specify the port.
+
+[cf-oidc-auth.dita] [awkward-phrasing]
+  Original  : To enable Single Sign-On: Define a new application in the administration interface of your OpenID Connect provider to represent your deployment: When you are asked for a redirect URI, use the following value:
+  Suggestion: To enable Single Sign-On, define a new application in your OpenID Connect provider's administration interface to represent your deployment. When asked for a redirect URI, use the following value:
+
+[cf-oidc-auth.dita] [awkward-phrasing]
+  Original  : To retrieve the authorization , token , and user info endpoints, append /.well-known/openid-configuration to the Issuer URI of your Authorization Server .
+  Suggestion: To retrieve the authorization, token, and user info endpoints, append /.well-known/openid-configuration to your Authorization Server's Issuer URI.
+
+[cf-oidc-auth.dita] [awkward-phrasing]
+  Original  : You can find the Issuer URI in Okta Admin Console Security API Authorization Servers .
+  Suggestion: You can find the Issuer URI in the Okta Admin Console under Security > API > Authorization Servers.
+
+[ldap_troubleshoot.dita] [redundancy]
+  Original  : The login screen should now display a Username and Password field now that LDAP authentication is enabled.
+  Suggestion: The login screen should display a Username and Password field now that LDAP authentication is enabled.
+
+[cf-admin-page-maintenance.dita] [awkward-phrasing]
+  Original  : Click the Configure Message if you want to display a message at the topic of each Content Fusion page.
+  Suggestion: Click Configure Message if you want to display a message at the top of each Content Fusion page.
+
+[cf-integrate-ai-positron-overview.dita] [missing-comma]
+  Original  : For information about the AI Positron pane its features, see AI Positron View .
+  Suggestion: For information about the AI Positron pane and its features, see AI Positron View.
+
+[cf-enterprise-backups.dita] [missing-comma]
+  Original  : restore-fusion-backup.sh will scan the given backup and if it is corrupted it will ask whether to continue or not.
+  Suggestion: restore-fusion-backup.sh will scan the given backup and, if it is corrupted, it will ask whether to continue or not.
+
+[cf-enterprise-backups.dita] [awkward-phrasing]
+  Original  : It is recommended for the server administrator to set up periodic backups for the .
+  Suggestion: The server administrator should set up periodic backups.
+
+[cf-set-web-author-system-property.dita] [awkward-phrasing]
+  Original  : You would need to edit the /fusion/docker-compose.override.yml file and set the system property under " environment ".
+  Suggestion: Edit the /fusion/docker-compose.override.yml file and set the system property under the 'environment' key.
+
+[cf-increase-memory.dita] [awkward-phrasing]
+  Original  : Increasing Memory for the Web-Based Editor Content Fusion Enterprise - Increase memory OutOfMemoryError Increase memory for web-based editor
+  Suggestion: Increasing Memory for the Web-Based Editor
+
+[cf-configure-task-executor-container.dita] [missing-comma]
+  Original  : Default value is 1024 MB.
+  Suggestion: The default value is 1024 MB.
+
+[cf-configure-task-executor-container.dita] [missing-comma]
+  Original  : Default value is 200 MB.
+  Suggestion: The default value is 200 MB.
+
+[cf-configure-task-executor-container.dita] [missing-comma]
+  Original  : Default value is 2.
+  Suggestion: The default value is 2.
+
+[cf-configure-task-executor-container.dita] [awkward-phrasing]
+  Original  : Controls how many validation processes can occur at the same time, ensuring efficient validation processing while balancing server performance.
+  Suggestion: This property controls how many validation processes can occur at the same time, ensuring efficient validation while balancing server performance.
+
+[cf-configure-task-executor-container.dita] [missing-comma]
+  Original  : Default value is 5.
+  Suggestion: The default value is 5.
+
+[cf-configure-task-executor-container.dita] [missing-comma]
+  Original  : Default value is 30.
+  Suggestion: The default value is 30.
+
+[cf-disk-space.dita] [awkward-phrasing]
+  Original  : Disk Space Requirements for Content Fusion stores large amounts of data on the disk of the server.
+  Suggestion: Content Fusion stores large amounts of data on the server's disk.
+
+[cf-disk-space.dita] [missing-subject]
+  Original  : To reduce the disk space usage, stores review tasks in groups of 100 and tries to store just one copy of a file
+  Suggestion: To reduce disk space usage, Content Fusion stores review tasks in groups of 100 and tries to store just one copy of a file
+
+[cf-disk-space.dita] [missing-subject]
+  Original  : For projects that have deliverables, stores an additional clone of the Git repository for each deliverable.
+  Suggestion: For projects that have deliverables, Content Fusion stores an additional clone of the Git repository for each deliverable.
+
+[cf-disk-space.dita] [word-order]
+  Original  : The indexing.max.occupied.disk.space.mb property can be set to a value higher (or lower than 2000 ) to increase (or decrease) the maximum allowed amount of search index data.
+  Suggestion: The indexing.max.occupied.disk.space.mb property can be set to a value higher (or lower) than 2000 to increase (or decrease) the maximum allowed amount of search index data.
+
+[cf-increasing-available-disk-space.dita] [wrong-word]
+  Original  : it should be tested in a different machine
+  Suggestion: it should be tested on a different machine
+
+[cf-change-admin-password.dita] [redundancy]
+  Original  : How to Change the Administration Page Password Change admin password Change fusion password
+  Suggestion: How to Change the Administration Page Password
+
+[cf-organization-subscription.dita] [parallel-structure]
+  Original  : Status indicator - A colored chip that shows the current trial/subscription state ( Active , Expired , or Cancelled ) Status description - Detailed information about the subscription state and expiration/renewal date.
+  Suggestion: Status indicator: A colored chip that shows the current trial/subscription state (Active, Expired, or Cancelled). Status description: Detailed information about the subscription state and expiration/renewal date.
+
+[cf-organization-subscription.dita] [awkward-phrasing]
+  Original  : Storage - Shows how much space (in GB) is used by the tasks, projects, and deliverables from the organization, with a percentage that is relative to the subscription's disk quota.
+  Suggestion: Storage: Shows the amount of space (in GB) used by the organization's tasks, projects, and deliverables, expressed as a percentage of the subscription's disk quota.
+
+[cf-organization-subscription.dita] [missing-comma]
+  Original  : A yellow/orange status chip with warning icon.
+  Suggestion: A yellow/orange status chip with a warning icon.
+
+[cf-organization-subscription.dita] [article-usage]
+  Original  : A green status chip indicating an active status. The renewal date information. Manage Subscription button to access Verifone account management.
+  Suggestion: A green status chip indicating an active status. The renewal date information. The Manage Subscription button to access Verifone account management.
+
+[cf-organization-projects.dita] [run-on-sentence]
+  Original  : Organization Projects Page View disk usage for each project in your organization.
+  Suggestion: Organization Projects Page: View disk usage for each project in your organization.
+
+[cf-organization-projects.dita] [awkward-phrasing]
+  Original  : Projects Disk Usage table The Projects Disk Usage table lists all projects in the organization and their storage usage.
+  Suggestion: Projects Disk Usage table: The Projects Disk Usage table lists all projects in the organization and their storage usage.
+
+[cf-organization-projects.dita] [awkward-phrasing]
+  Original  : Projects Disk Usage Project Git Repo Deliverables Total Calculated At Each project name in your organization.
+  Suggestion: Projects Disk Usage: Project, Git Repo, Deliverables, Total, Calculated At. Each project name in your organization.
+
+[cf-organization-settings.dita] [awkward-phrasing]
+  Original  : General Information Section Displays and allows editing of basic organization details:
+  Suggestion: The General Information section displays and allows editing of basic organization details:
+
+[cf-organization-settings.dita] [awkward-phrasing]
+  Original  : Delete Organization Section Provides options for organization deletion with important alerts:
+  Suggestion: The Delete Organization section provides options for organization deletion with important alerts:
+
+[known_issues.dita] [awkward-phrasing]
+  Original  : This topic contains information about error messages, possible known issues, and other things that you might want to be aware of regarding .
+  Suggestion: This topic contains information about error messages, known issues, and other important details regarding Content Fusion.
+
+[browser-compatibility.dita] [awkward-phrasing]
+  Original  : Browser compatibility was developed and continuously tested on the following major Web browsers:
+  Suggestion: Browser compatibility was developed and is continuously tested on the following major web browsers:
+
+[browser-compatibility.dita] [unclear-antecedent]
+  Original  : As an HTML 5 application, it is likely to work on other HTML 5 compliant browsers
+  Suggestion: As an HTML5 application, Content Fusion is likely to work on other HTML5-compliant browsers
+
+[content-fusion_vs_web-author.dita] [run-on-sentence]
+  Original  : Oxygen XML Web Author can be integrated with a repository (for example, GitHub) and the output can be configured to include an edit link and clicking that link would open the document in Oxygen XML Web Author where they can correct the problem directly in the source
+  Suggestion: Oxygen XML Web Author can be integrated with a repository (for example, GitHub). The output can be configured to include an edit link; clicking that link opens the document in Oxygen XML Web Author, where users can correct the problem directly in the source
+
+[content-fusion_vs_web-author.dita] [pronoun-agreement]
+  Original  : clicking that link would open the document in Oxygen XML Web Author where they can correct the problem directly in the source
+  Suggestion: clicking that link opens the document in Oxygen XML Web Author, where the support team can correct the problem directly in the source
+
+## SUGGESTION (123)
+
+[overview.dita] [redundancy]
+  Original  : Multiple collaborators can work in real time on the same document concurrently
+  Suggestion: Multiple collaborators can work on the same document concurrently
+
+[platform-user-roles.dita] [awkward-phrasing]
+  Original  : In addition to the features that an SME has access to, users with this role have access to projects and publishing features.
+  Suggestion: In addition to the features available to an SME, users with this role have access to projects and publishing features.
+
+[cf-profile-settings.dita] [awkward-phrasing]
+  Original  : When not selected, the publication tree is displayed as read only.
+  Suggestion: When not selected, the publication tree is displayed as read-only.
+
+[content_fusion_user_interface.dita] [awkward-phrasing]
+  Original  : opens the My Review Tasks page that lists all the tasks that are assigned to you and tasks that you created (or own).
+  Suggestion: opens the My Review Tasks page, which lists all tasks assigned to you and tasks you created (or own).
+
+[content_fusion_user_interface.dita] [subject-verb-agreement]
+  Original  : The main differences between working with non-project based review tasks and projects are:
+  Suggestion: The main differences between working with non-project-based review tasks and projects are:
+
+[cf-projects.dita] [awkward-phrasing]
+  Original  : manage its lifecycle from creation, to review, to publishing as PDF or Oxygen WebHelp Responsive .
+  Suggestion: manage its lifecycle from creation through review to publishing as a PDF or Oxygen WebHelp Responsive output.
+
+[cf-projects.dita] [redundancy]
+  Original  : Once you are done configuring the details, click the Create project button to finish the creation process.
+  Suggestion: Once you have configured the details, click the Create project button.
+
+[cf-projects-workspace.dita] [awkward-phrasing]
+  Original  : On the right side of the second top stripe, an Incoming commits widget shows if there are incoming changes and you can click the drop-down to display more information
+  Suggestion: On the right side of the second top stripe, the Incoming commits widget shows whether there are incoming changes; you can click the drop-down to display more information
+
+[cf-projects-workspace.dita] [missing-comma]
+  Original  : Clicking this button opens the Changes view where you can commit the changes to the repository.
+  Suggestion: Clicking this button opens the Changes view, where you can commit the changes to the repository.
+
+[cf-projects-workspace_publications_view.dita] [awkward-phrasing]
+  Original  : The Publications view (found inside the project's Personal Workspace ) displays the map of a publication in a tree editor to make navigating through the topics easier.
+  Suggestion: The Publications view (found inside the project's Personal Workspace) displays the publication map in a tree editor to make navigation easier.
+
+[cf-projects-workspace_publications_view.dita] [redundancy]
+  Original  : Workspace Publications View To select a defined publication, use the publications drop-down control in the side-pane.
+  Suggestion: To select a defined publication, use the publications drop-down control in the side-pane.
+
+[cf-projects-workspace_publications_view.dita] [awkward-phrasing]
+  Original  : This publication will be used as the context of the open editors.
+  Suggestion: This publication will serve as the context for the open editors.
+
+[CF-dita-map-tree-editor.dita] [awkward-phrasing]
+  Original  : If the referenced topic is missing or not well-formed XML, an error icon is presented instead.
+  Suggestion: If the referenced topic is missing or is not well-formed XML, an error icon is displayed instead.
+
+[CF-dita-map-tree-editor.dita] [redundancy]
+  Original  : Opens a dialog box that allows you to write the description of a problem that was encountered while using the application.
+  Suggestion: Opens a dialog box to describe a problem encountered while using the application.
+
+[cf-projects-workspace_changes_view.dita] [awkward-phrasing]
+  Original  : The History tab shows all repository commits up to the latest one in your workspace.
+  Suggestion: The History tab shows all repository commits, including the latest one in your workspace.
+
+[cf-projects-workspace_incoming_changes.dita] [redundancy]
+  Original  : Incoming commits are automatically refreshed periodically
+  Suggestion: Incoming commits are automatically refreshed
+
+[cf-projects-workspace_incoming_changes.dita] [redundancy]
+  Original  : you can click the Refresh button to refresh manually
+  Suggestion: you can click the Refresh button to update manually
+
+[cf-projects-workspace_incoming_changes.dita] [awkward-phrasing]
+  Original  : the badge with the number of incoming commits is highlighted in red
+  Suggestion: the incoming commits badge is highlighted in red
+
+[cf-projects-workspace-conflict-resolution.dita] [awkward-phrasing]
+  Original  : You can also edit your current workspace version in the left side and it includes content completion and contextual menu actions.
+  Suggestion: You can also edit your current workspace version on the left side, which includes content completion and contextual menu actions.
+
+[cf-projects-workspace-conflict-resolution.dita] [awkward-phrasing]
+  Original  : You can also edit the version in the left side and it includes content completion and contextual menu actions.
+  Suggestion: You can also edit the version on the left side, which includes content completion and contextual menu actions.
+
+[cf-projects-workspace_problems_view.dita] [redundancy]
+  Original  : if the file is from a different publication other than the current publication
+  Suggestion: if the file is from a publication other than the current one
+
+[cf-projects-workspace_search_view.dita] [missing-comma]
+  Original  : The Clear Index button that appears at the bottom-right part of the Search side view resets the entire project indexing data.
+  Suggestion: The Clear Index button, which appears at the bottom-right part of the Search side view, resets the entire project indexing data.
+
+[cf-ai-positron-overview.dita] [parallel-structure]
+  Original  : the AI Positron streamlines and enhances the writing experience by providing a variety of helpful AI-based actions and features, ways to chat and refine responses, and much more.
+  Suggestion: the AI Positron streamlines and enhances the writing experience by providing a variety of helpful AI-based actions, features, and ways to chat and refine responses.
+
+[cf-ai-positron-overview.dita] [awkward-phrasing]
+  Original  : The AI Positron view is only accessible for Content Fusion users with a platform user role of Author .
+  Suggestion: The AI Positron view is only accessible to Content Fusion users with the Author platform user role.
+
+[cf-projects-review-tasks.dita] [awkward-phrasing]
+  Original  : Tasks created from inside a project are slightly different than regular tasks created outside of a project:
+  Suggestion: Tasks created within a project differ slightly from regular tasks created outside of a project:
+
+[cf-projects-review-tasks.dita] [missing-comma]
+  Original  : If you want to create a new file to add to the task (or upload an existing one from your computer), you will first need to finish creating the task.
+  Suggestion: If you want to create a new file to add to the task (or upload an existing one from your computer), you must first finish creating the task.
+
+[cf-projects-review-tasks.dita] [redundancy]
+  Original  : The amount of time left before the due date arrives is displayed
+  Suggestion: The time remaining before the due date is displayed
+
+[cf-projects-repository.dita] [awkward-phrasing]
+  Original  : If you hover over a folder or file, a 3 vertical dots menu appears.
+  Suggestion: If you hover over a folder or file, a menu with three vertical dots appears.
+
+[cf-projects-repository.dita] [awkward-phrasing]
+  Original  : To add a file to a new review task that will be created, click the 3 vertical dots next to the file and select Add to review task .
+  Suggestion: To add a file to a new review task, click the three vertical dots next to the file and select Add to review task.
+
+[cf-projects-repository.dita] [redundancy]
+  Original  : This initiates a new task creation process.
+  Suggestion: This initiates a new task.
+
+[cf-projects-deliverables.dita] [awkward-phrasing]
+  Original  : The progress of the build is displayed while it is building.
+  Suggestion: The build progress is displayed while the build is in progress.
+
+[cf-projects-deliverables.dita] [awkward-phrasing]
+  Original  : You can click the Download button next to the particular build to download an archive of the build package and then use it to publish the output using whatever tool you want.
+  Suggestion: You can click the Download button next to the build to download the build package archive, which you can then use to publish the output with any tool.
+
+[cf-projects-deliverables.dita] [redundancy]
+  Original  : You can use the Oxygen Styles Basket to customize a custom template.
+  Suggestion: You can use the Oxygen Styles Basket to customize a template.
+
+[cf-projects-publications.dita] [awkward-phrasing]
+  Original  : A Content Fusion publication defines a DITA map that will be used to resolve keys in the topics that will be sent for review and optionally, a DITAVAL filter used for flagging or filtering profiled content.
+  Suggestion: A Content Fusion publication defines a DITA map used to resolve keys in the topics sent for review and, optionally, a DITAVAL filter used to flag or filter profiled content.
+
+[cf-publishing-connectors.dita] [awkward-phrasing]
+  Original  : It deploys the output to a web platform that is accessible publicly.
+  Suggestion: It deploys the output to a publicly accessible web platform.
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : To configure an Amazon S3 connector, the following fields must be provided:
+  Suggestion: To configure an Amazon S3 connector, provide the following fields:
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : Click the Edit button of the General Configuration .
+  Suggestion: Click the Edit button in the General Configuration section.
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : Set the timeout to 15 minutes 0 seconds.
+  Suggestion: Set the timeout to 15 minutes, 0 seconds.
+
+[cf-amazon-s3-connector.dita] [awkward-phrasing]
+  Original  : Set the Memory to somewhere between 1000-5000 MB.
+  Suggestion: Set the Memory to between 1000 and 5000 MB.
+
+[cf-netlify-connector.dita] [awkward-phrasing]
+  Original  : Select the Netlify Connector in the Deliverables Page
+  Suggestion: Select the Netlify Connector on the Deliverables page
+
+[cf-sftp-connector.dita] [word-order]
+  Original  : The address of the server where files will be transferred to.
+  Suggestion: The address of the server to which files will be transferred.
+
+[cf-sftp-connector.dita] [awkward-phrasing]
+  Original  : The Folder where build output files will be stored after the upload process.
+  Suggestion: The folder where build output files will be stored after the upload process.
+
+[cf-sftp-connector.dita] [awkward-phrasing]
+  Original  : The location where temporary files will be stored during the upload process.
+  Suggestion: The location where temporary files are stored during the upload process.
+
+[cf-projects-publishing-execution-status.dita] [awkward-phrasing]
+  Original  : The id of the build, relative to the deliverable that started it.
+  Suggestion: The ID of the build, relative to the deliverable that started the build.
+
+[cf-projects-publishing-execution-status.dita] [awkward-phrasing]
+  Original  : You can hover over the symbol in this column to see what the status symbol means.
+  Suggestion: Hover over the symbol in this column to see its meaning.
+
+[cf-projects-settings.dita] [awkward-phrasing]
+  Original  : You can edit the Account credentials used to connect to the Git repository, while all the other settings (project name, description, project URL, branch) are read-only and cannot be updated.
+  Suggestion: You can edit the Account credentials used to connect to the Git repository; however, all other settings (project name, description, project URL, and branch) are read-only.
+
+[cf-projects-members.dita] [awkward-phrasing]
+  Original  : This page is only available for private projects , and only project Members with the Owner role can access it.
+  Suggestion: This page is only available for private projects, and only project Members with the Owner role can access it.
+
+[making_changes_to_uploaded_files.dita] [awkward-phrasing]
+  Original  : Each activity includes an icon that indicates the type of activity, the name of the user who made a change within the task, and when it was processed.
+  Suggestion: Each activity includes an icon indicating the type of activity, the name of the user who made the change, and the time it was processed.
+
+[making_changes_to_uploaded_files.dita] [awkward-phrasing]
+  Original  : In most cases, the tracked changes feature will always be on so you and the task owner can see exactly what was changed and will be able to easily accept or reject the changes.
+  Suggestion: In most cases, the tracked changes feature is always on, allowing you and the task owner to see exactly what was changed and easily accept or reject those changes.
+
+[making_changes_to_uploaded_files.dita] [awkward-phrasing]
+  Original  : The editor also includes a toolbar with some common actions along with others that are specific to the type of document (framework):
+  Suggestion: The editor also includes a toolbar with common actions and others specific to the document type (framework):
+
+[making_changes_to_uploaded_files.dita] [redundancy]
+  Original  : More drop-down menu Gives you access to additional general actions:, such as options to save, download, or print the document.
+  Suggestion: More drop-down menu: Gives you access to general actions, such as saving, downloading, or printing the document.
+
+[WA-dita-topic-doc-type.dita] [missing-comma]
+  Original  : If this is the first time the DITA topic has been opened in Web Author or you want to change the map, you can use the browsing tool
+  Suggestion: If this is the first time the DITA topic has been opened in Web Author, or if you want to change the map, you can use the browsing tool
+
+[WA-dita-topic-doc-type.dita] [awkward-phrasing]
+  Original  : to identify which values are to be used for conditional processing during a particular output.
+  Suggestion: to identify which values to use for conditional processing during a particular output.
+
+[WA-dita-topic-doc-type.dita] [word-order]
+  Original  : the results of the configured attributes can be seen in the current document open in the editor.
+  Suggestion: the results of the configured attributes can be seen in the document currently open in the editor.
+
+[WA-dita-topic-doc-type.dita] [awkward-phrasing]
+  Original  : without having to take your fingers off the keyboard.
+  Suggestion: without taking your hands off the keyboard.
+
+[review-tasks-intro.dita] [awkward-phrasing]
+  Original  : There are two main types of review task users, Reviewers and Task Owners :
+  Suggestion: There are two main types of review task users: Reviewers and Task Owners.
+
+[cf-review-tasks-projects.dita] [awkward-phrasing]
+  Original  : In addition to the features that an SME has access to, Authors can access all projects and are able to create review tasks inside projects, as well as other functionality that is restricted from an SME.
+  Suggestion: In addition to the features available to an SME, Authors can access all projects, create review tasks inside projects, and use other functionality restricted from SMEs.
+
+[content_fusion_task_details.dita] [redundancy]
+  Original  : The next logical step would most likely be to share the task with anyone you want to review the documents.
+  Suggestion: The next step is to share the task with the reviewers.
+
+[cf-task-files.dita] [awkward-phrasing]
+  Original  : Clicking on Files in the left stripe opens the Task Files page that lists all the files that are attached to the task.
+  Suggestion: Clicking Files in the left stripe opens the Task Files page, which lists all files attached to the task.
+
+[cf-task-files.dita] [redundancy]
+  Original  : The components in this header stripe remain persistent regardless of the page you navigate to within the review task.
+  Suggestion: The components in this header stripe remain regardless of the page you navigate to within the review task.
+
+[cf-task-files.dita] [awkward-phrasing]
+  Original  : The new file is opened in the visual editor page with some of the XML structure already added for you.
+  Suggestion: The new file opens in the visual editor with some XML structure already added.
+
+[cf-task-files.dita] [awkward-phrasing]
+  Original  : The next logical step would most likely be to share the task with anyone you want to review the documents.
+  Suggestion: The next step is to share the task with anyone you want to review the documents.
+
+[cf-task-activity.dita] [redundancy]
+  Original  : the Task Activity page that lists the history of the activity that has occurred for the task
+  Suggestion: the Task Activity page, which lists the task's activity history
+
+[cf-task-activity.dita] [awkward-phrasing]
+  Original  : opens the page in a side-view to the left of the editor.
+  Suggestion: opens the page in a side view to the left of the editor.
+
+[cf-task-activity.dita] [missing-comma]
+  Original  : if the Task activity is open in the side-pane, you can access the Add message action from the 3 vertical dots menu on the right side of the header
+  Suggestion: if the Task activity is open in the side pane, you can access the Add message action from the 3-vertical-dots menu on the right side of the header
+
+[cf-task-search.dita] [awkward-phrasing]
+  Original  : opens the Search in Task page that allows you to search for specific content
+  Suggestion: opens the Search in Task page, which allows you to search for specific content
+
+[cf-task-search.dita] [awkward-phrasing]
+  Original  : opens the page in a side-view to the left of the editor.
+  Suggestion: opens the page in a side view to the left of the editor.
+
+[cf-task-reviews-view.dita] [awkward-phrasing]
+  Original  : Clicking on Reviews in the left stripe opens the Reviews page, which allows you to search and filter review comments and other review items in all files attached to the task.
+  Suggestion: Clicking Reviews in the left stripe opens the Reviews page, allowing you to search and filter review comments and other review items in all files attached to the task.
+
+[cf-task-reviews-view.dita] [awkward-phrasing]
+  Original  : If a file is open in the visual editor, clicking on Reviews opens the page in a side-view to the left of the editor.
+  Suggestion: If a file is open in the visual editor, clicking Reviews opens the page in a side view to the left of the editor.
+
+[cf-task-reviews-view.dita] [missing-comma]
+  Original  : Next to the search field, the Filters button opens a pop-up where you can set values for the following filters:
+  Suggestion: Next to the search field, the Filters button opens a pop-up where you can set values for the following filters:
+
+[cf-task-reviews-view.dita] [awkward-phrasing]
+  Original  : The current user is listed first in the list.
+  Suggestion: The current user is listed first.
+
+[cf-task-reviews-view.dita] [awkward-phrasing]
+  Original  : Mentions are available only in review task comments.
+  Suggestion: Mentions are only available in review task comments.
+
+[cf-task-settings.dita] [awkward-phrasing]
+  Original  : Also, any reviewers who have not finalized the task will receive an email notification when the due date is within 3 days, 1 day, and 12 hours of its expiration.
+  Suggestion: Additionally, reviewers who have not finalized the task will receive email notifications when the due date is 3 days, 1 day, or 12 hours away.
+
+[cf-task-settings.dita] [redundancy]
+  Original  : This allows you and other Reviewers to see exactly what has been changed and you will have the ability to accept or reject the changes after you have integrated them back into Oxygen XML Editor/Author .
+  Suggestion: This allows you and other reviewers to see exactly what has changed, so you can accept or reject changes after integrating them back into Oxygen XML Editor/Author.
+
+[cf-review-task-comment-mentions-notifications.dita] [missing-comma]
+  Original  : Open a file in the review task and add a comment , reply to a comment thread, or edit an existing comment.
+  Suggestion: Open a file in the review task and add a comment, reply to a comment thread, or edit an existing comment.
+
+[sharing_tasks_with_reviewers.dita] [awkward-phrasing]
+  Original  : This sends an email to the owner of the task and they have the ability to accept the request for access.
+  Suggestion: This sends an email to the task owner, who can then accept the access request.
+
+[sharing_tasks_with_reviewers.dita] [redundancy]
+  Original  : You can click on the Copy link button at the bottom of the dialog box to copy the link to the clipboard so that you can send it to collaborators.
+  Suggestion: Click the Copy link button at the bottom of the dialog box to copy the link to the clipboard.
+
+[communicating_with_the_author.dita] [awkward-phrasing]
+  Original  : Select Task Activity from the left stripe.
+  Suggestion: Select Task Activity from the left pane.
+
+[communicating_with_the_author.dita] [awkward-phrasing]
+  Original  : where you can see all the activity that has happened on the task.
+  Suggestion: where you can see all task activity.
+
+[cf-new-task-from-interface.dita] [awkward-phrasing]
+  Original  : The next logical step would most likely be to share the task with anyone you want to review the documents.
+  Suggestion: The next step is to share the task with your reviewers.
+
+[cf-concurrent-editing.dita] [awkward-phrasing]
+  Original  : Simultaneous editing offers a feature that provides the ability for multiple reviewers who have access to a particular task to edit and review content concurrently.
+  Suggestion: Simultaneous editing allows multiple reviewers with access to a task to edit and review content concurrently.
+
+[cf-concurrent-editing.dita] [redundancy]
+  Original  : Each reviewer can see the changes made by others in both the main visual editor and in the activity stream on the left side of the interface, in real time.
+  Suggestion: Each reviewer can see changes made by others in real time in both the main visual editor and the activity stream on the left side of the interface.
+
+[cf-unlocking-files.dita] [awkward-phrasing]
+  Original  : If someone else is currently editing the particular file, you will see a Lock icon on the left side of the Files box and that person's avatar on the right side of the Files box will have a red border.
+  Suggestion: If someone else is currently editing the file, a Lock icon appears on the left side of the Files box, and that person's avatar on the right side will have a red border.
+
+[assign_task_to_new_owner.dita] [awkward-phrasing]
+  Original  : If the person who you want assigned as an owner is listed, change their role from Reviewer to Owner .
+  Suggestion: If the person you want to assign as an owner is listed, change their role from Reviewer to Owner.
+
+[finishing_tasks.dita] [awkward-phrasing]
+  Original  : The Finalized state does reset for a particular user if they make changes within the task, or if a task owner either re-opens a closed task or requests another review of the task .
+  Suggestion: The Finalized state resets for a particular user if they make changes within the task, or if the task owner re-opens a closed task or requests another review.
+
+[finishing_tasks.dita] [redundancy]
+  Original  : The resulting dialog box also has an option to add an additional message to provide more details, if desired.
+  Suggestion: The resulting dialog box also has an option to add a message to provide more details, if desired.
+
+[deleting_tasks.dita] [awkward-phrasing]
+  Original  : In both cases, this will delete the task from the server and the Content Fusion Tasks Manager view.
+  Suggestion: In both cases, the task is deleted from the server and the Content Fusion Tasks Manager view.
+
+[CF-task-states-user-roles.dita] [missing-comma]
+  Original  : For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :
+  Suggestion: For organizations that take advantage of the Content Fusion Projects feature, there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page):
+
+[cf-configure-server-address-property-file.dita] [awkward-phrasing]
+  Original  : Each collaborator who will be creating and managing tasks needs to install the Oxygen Content Fusion Connector add-on
+  Suggestion: Each collaborator creating and managing tasks must install the Oxygen Content Fusion Connector add-on
+
+[cf-custom-frameworks.dita] [awkward-phrasing]
+  Original  : One of the advantages of using the solution is that it can be configured to support any DITA specialization or XML language.
+  Suggestion: One advantage of this solution is that it can be configured to support any DITA specialization or XML language.
+
+[cf-author-experience-user-role.dita] [awkward-phrasing]
+  Original  : OWNER - For review tasks owners. REVIEWER - For reviewers of a review task. AUTHOR - For authors editing in projects.
+  Suggestion: OWNER - For task owners. REVIEWER - For reviewers. AUTHOR - For authors editing in projects.
+
+[cf-upload-plugins.dita] [awkward-phrasing]
+  Original  : One of the advantages of using the solution is that its functionality can be extended through plugins.
+  Suggestion: One advantage of using Content Fusion is that you can extend its functionality through plugins.
+
+[cf-upload-plugins.dita] [awkward-phrasing]
+  Original  : Oxygen XML Web Author does a validation check to make sure the uploaded plugin archive contains the proper extension descriptor file.
+  Suggestion: Oxygen XML Web Author validates that the uploaded plugin archive contains the proper extension descriptor file.
+
+[cf-customizing-options.dita] [missing-comma]
+  Original  : They can then be added to one of the directories that store the spell check dictionaries and the spell checker will merge them
+  Suggestion: They can then be added to one of the directories that store the spell check dictionaries, and the spell checker will merge them
+
+[cf-admin-page-general.dita] [awkward-phrasing]
+  Original  : When you select this checkbox, it will expand and provide options to upload your certificate and private key in PEM format.
+  Suggestion: Selecting this checkbox expands the section and provides options to upload your certificate and private key in PEM format.
+
+[cf-admin-page-license.dita] [missing-comma]
+  Original  : If you have already received a license key, choose the Already have a license key option, paste your license key in the text field and click Activate .
+  Suggestion: If you have already received a license key, choose the Already have a license key option, paste your license key in the text field, and click Activate.
+
+[cf-admin-page-license.dita] [awkward-phrasing]
+  Original  : If you want to replace the current license key: Choose Manage license .
+  Suggestion: To replace the current license key, choose Manage license.
+
+[cf-admin-page-users.dita] [awkward-phrasing]
+  Original  : The other section in the tab includes a registered users list where you can see all the users along with their information such as username and email address.
+  Suggestion: The other section in the tab includes a registered users list showing all users and their information, such as usernames and email addresses.
+
+[cf-admin-page-git.dita] [awkward-phrasing]
+  Original  : The Git Accounts tab of the Content Fusion Administration page can be used to configure Git accounts that are used when projects are created in Content Fusion to connect to external Git services.
+  Suggestion: Use the Git Accounts tab on the Content Fusion Administration page to configure the Git accounts used to connect projects to external Git services.
+
+[cf-admin-page-authentication.dita] [awkward-phrasing]
+  Original  : If the Enable Sign Up option is enabled (default state), users are allowed to sign up using email and password credentials.
+  Suggestion: If the Enable Sign Up option is enabled (the default state), users can sign up using email and password credentials.
+
+[cf-oidc-auth.dita] [awkward-phrasing]
+  Original  : On the machine where Content Fusion is installed, go to the Administration Page . In the Single Sign-On Authentication section, enable the Use OIDC single sign-on option
+  Suggestion: On the machine where Content Fusion is installed, go to the Administration Page. In the Single Sign-On Authentication section, enable the Use OIDC single sign-on option
+
+[cf-oidc-auth.dita] [awkward-phrasing]
+  Original  : where you must replace <tenant-id> with the Directory (tenant) ID from your registered application's overview in Azure Portal.
+  Suggestion: where you must replace <tenant-id> with the Directory (tenant) ID from your registered application's overview in the Azure Portal.
+
+[cf-admin-page-maintenance.dita] [redundancy]
+  Original  : Users will see a message in the Content Fusion browser interface letting them know that the site is temporarily down for maintenance purposes.
+  Suggestion: Users will see a message in the Content Fusion browser interface letting them know that the site is temporarily down for maintenance.
+
+[cf-admin-page-maintenance.dita] [awkward-phrasing]
+  Original  : Prior to clicking that button, you can also use the Custom backup name text field to specify a particular name, useful for identifying the newly created backup.
+  Suggestion: Before clicking the button, you can use the Custom backup name text field to specify a name to help identify the new backup.
+
+[cf-integrate-ai-positron-overview.dita] [awkward-phrasing]
+  Original  : It is possible to integrate the Oxygen AI Positron for Content Fusion , an advanced AI-powered solution
+  Suggestion: You can integrate Oxygen AI Positron for Content Fusion, an advanced AI-powered solution
+
+[cf-enterprise-backups.dita] [redundancy]
+  Original  : The server administrator should create backups and download them to a safe backup storage location periodically.
+  Suggestion: The server administrator should periodically create backups and download them to a safe storage location.
+
+[cf-set-web-author-system-property.dita] [wrong-word]
+  Original  : The following example sets the amount of available memory to 8 GB:
+  Suggestion: The following example sets the maximum available memory to 8 GB:
+
+[cf-configure-task-executor-container.dita] [article-usage]
+  Original  : The Task Executor Container is used for executing various tasks, such as building deliverables and validating the publications.
+  Suggestion: The Task Executor Container is used for executing various tasks, such as building deliverables and validating publications.
+
+[cf-configure-task-executor-container.dita] [redundancy]
+  Original  : This ensures that metrics for builds are stored for a limited time, preventing disk space overuse by automatically purging old data after the specified retention period.
+  Suggestion: This ensures that build metrics are stored for a limited time, preventing disk space overuse by automatically purging old data.
+
+[cf-configure-task-executor-container.dita] [word-order]
+  Original  : Example : Sample configuration (to be added under the environment section of the task-executor container in the docker-compose.override.yml ):
+  Suggestion: Example sample configuration (to be added under the environment section of the task-executor container in docker-compose.override.yml):
+
+[cf-disk-space.dita] [awkward-phrasing]
+  Original  : A search index is created and maintained for each personal workspace that the end user has started using the Search functionality.
+  Suggestion: A search index is created and maintained for each personal workspace once the end user starts using the Search functionality.
+
+[cf-increasing-available-disk-space.dita] [awkward-phrasing]
+  Original  : Increasing the Available Disk Space Installation Kit Instructions
+  Suggestion: Installation Kit Instructions: Increasing Available Disk Space
+
+[cf-enterprise-unistall.dita] [awkward-phrasing]
+  Original  : A backup should be created beforehand if that data is still needed in the future.
+  Suggestion: Create a backup beforehand if you need that data in the future.
+
+[cf-change-admin-password.dita] [awkward-phrasing]
+  Original  : To change the password of the admin user ( fusion ), follow these steps:
+  Suggestion: To change the admin user (fusion) password, follow these steps:
+
+[cf-proxy-setup.dita] [redundancy]
+  Original  : Locate the data/config/documents-storage/env-custom.properties file located in the installation directory
+  Suggestion: Locate the data/config/documents-storage/env-custom.properties file in the installation directory
+
+[cf-organization-subscription.dita] [missing-comma]
+  Original  : In the organization management interface, click on Subscription in the left navigation panel.
+  Suggestion: In the organization management interface, click Subscription in the left navigation panel.
+
+[cf-organization-subscription.dita] [awkward-phrasing]
+  Original  : The Subscription page provides comprehensive information about the current subscription state and available actions based on the subscription type and status.
+  Suggestion: The Subscription page provides comprehensive information about the current subscription state and available actions, depending on the subscription type and status.
+
+[cf-organization-settings.dita] [missing-comma]
+  Original  : If not selected (default), organization members have access to the AI features
+  Suggestion: If not selected (default), organization members have access to AI features
+
+[cf-organization-settings.dita] [awkward-phrasing]
+  Original  : The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system where auto-renewal is currently enabled.
+  Suggestion: The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system that have auto-renewal enabled.
+
+[known_issues.dita] [awkward-phrasing]
+  Original  : After reset, the lockout state does not prevent using the new password once the lockout period has passed.
+  Suggestion: After the reset, you can use your new password once the lockout period has passed.
+
+[known_issues.dita] [redundancy]
+  Original  : If an error exception is detected, a warning icon ( ) will be displayed
+  Suggestion: If an error is detected, a warning icon ( ) will be displayed
+
+[browser-compatibility.dita] [awkward-phrasing]
+  Original  : The Chinese IMEs (e.g. Sogou or Chinese Simplified ) are supported
+  Suggestion: Chinese IMEs (e.g., Sogou or Chinese Simplified) are supported
+
+[content-fusion_vs_web-author.dita] [awkward-phrasing]
+  Original  : The technical writer can use Oxygen Content Fusion to create a task with the documents attached, upload it, and then they can simply share a link to the task with the expert.
+  Suggestion: The technical writer can use Oxygen Content Fusion to create and upload a task with the documents attached, then simply share a link to the task with the expert.
+
