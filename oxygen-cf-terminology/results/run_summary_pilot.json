@@ -1,0 +1,62 @@
+{
+  "model": "google/gemma-4-26b-a4b-it",
+  "mode": "pilot",
+  "topicsProcessed": 5,
+  "topicsTotal": 99,
+  "uniqueTerms": 58,
+  "totalInputTokens": 6078,
+  "totalOutputTokens": 1313,
+  "totalCostUsd": 0.0013153400000000001,
+  "topicResults": [
+    {
+      "file": "overview.dita",
+      "termsExtracted": 16,
+      "error": null,
+      "usage": {
+        "inputTokens": 1250,
+        "outputTokens": 256,
+        "costUsd": 0.0002649
+      }
+    },
+    {
+      "file": "platform-user-roles.dita",
+      "termsExtracted": 14,
+      "error": null,
+      "usage": {
+        "inputTokens": 1129,
+        "outputTokens": 231,
+        "costUsd": 0.00023917000000000003
+      }
+    },
+    {
+      "file": "account_management.dita",
+      "termsExtracted": 16,
+      "error": null,
+      "usage": {
+        "inputTokens": 1263,
+        "outputTokens": 256,
+        "costUsd": 0.00026659000000000003
+      }
+    },
+    {
+      "file": "cf-profile-settings.dita",
+      "termsExtracted": 12,
+      "error": null,
+      "usage": {
+        "inputTokens": 1026,
+        "outputTokens": 294,
+        "costUsd": 0.00025098
+      }
+    },
+    {
+      "file": "content_fusion_user_interface.dita",
+      "termsExtracted": 17,
+      "error": null,
+      "usage": {
+        "inputTokens": 1410,
+        "outputTokens": 276,
+        "costUsd": 0.00029370000000000004
+      }
+    }
+  ]
+}

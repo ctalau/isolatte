@@ -1,0 +1,483 @@
+[
+  {
+    "term": "Review Task",
+    "category": "FEATURE",
+    "count": 4,
+    "topics": [
+      "overview",
+      "platform-user-roles",
+      "cf-profile-settings",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Profile settings page",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "topics": [
+      "account_management",
+      "cf-profile-settings",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Reviewer",
+    "category": "ROLE",
+    "count": 3,
+    "topics": [
+      "overview",
+      "cf-profile-settings",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Administrator",
+    "category": "ROLE",
+    "count": 2,
+    "topics": [
+      "account_management",
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "Content Fusion Author",
+    "category": "ROLE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Deliverable",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Git repository",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "overview",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Log Out",
+    "category": "ACTION",
+    "count": 2,
+    "topics": [
+      "account_management",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "My Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "account_management",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Projects",
+    "category": "FEATURE",
+    "count": 2,
+    "topics": [
+      "platform-user-roles",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Projects page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "topics": [
+      "platform-user-roles",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Subject Matter Expert",
+    "category": "ROLE",
+    "count": 2,
+    "topics": [
+      "overview",
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "WebHelp",
+    "category": "CONCEPT",
+    "count": 2,
+    "topics": [
+      "overview",
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Account lockout",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Account management",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "AI Positron",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Authorize",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Collaborative Review",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Collaborator",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "Commit Update",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Confirmation dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "Content Fusion Author License",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Content Fusion browser login page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Delete account",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "DITA CMS",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "DITA map",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "DITA map tree editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "DITA project",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "DITA source",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Email notification",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "floating licensing model",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "floating seat model",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Git-based version control",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "GitHub authentication",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Google authentication",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Log In",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Login page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "OIDC",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Oxygen AI Positron",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion Connector",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "PDF output",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Profile management",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Project",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Publications side-view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "Publishing",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Publishing Pipeline",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "overview"
+    ]
+  },
+  {
+    "term": "Reset password",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Send Feedback",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Show finalized review tasks",
+    "category": "ACTION",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "Sign Up tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "account_management"
+    ]
+  },
+  {
+    "term": "SME License",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  },
+  {
+    "term": "Task Creator",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Tasks Manager view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Technical Writer",
+    "category": "ROLE",
+    "count": 1,
+    "topics": [
+      "content_fusion_user_interface"
+    ]
+  },
+  {
+    "term": "Tree editing",
+    "category": "FEATURE",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "User role",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "cf-profile-settings"
+    ]
+  },
+  {
+    "term": "user-based licensing",
+    "category": "CONCEPT",
+    "count": 1,
+    "topics": [
+      "platform-user-roles"
+    ]
+  }
+]

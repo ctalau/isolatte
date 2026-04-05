@@ -1,0 +1,3928 @@
+[
+  {
+    "term": "Reviewer",
+    "category": "ROLE",
+    "count": 20,
+    "merged": []
+  },
+  {
+    "term": "Task Owner",
+    "category": "ROLE",
+    "count": 15,
+    "merged": [
+      "task owner",
+      "review task owner"
+    ]
+  },
+  {
+    "term": "Author",
+    "category": "ROLE",
+    "count": 8,
+    "merged": []
+  },
+  {
+    "term": "Collaborator",
+    "category": "ROLE",
+    "count": 8,
+    "merged": []
+  },
+  {
+    "term": "Subject Matter Expert",
+    "category": "ROLE",
+    "count": 7,
+    "merged": []
+  },
+  {
+    "term": "Content Fusion Author",
+    "category": "ROLE",
+    "count": 6,
+    "merged": []
+  },
+  {
+    "term": "Administrator",
+    "category": "ROLE",
+    "count": 5,
+    "merged": [
+      "admin user"
+    ]
+  },
+  {
+    "term": "Organization Administrator",
+    "category": "ROLE",
+    "count": 5,
+    "merged": []
+  },
+  {
+    "term": "Owner",
+    "category": "ROLE",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Server Administrator",
+    "category": "ROLE",
+    "count": 4,
+    "merged": [
+      "server administrator"
+    ]
+  },
+  {
+    "term": "Pending Collaborator",
+    "category": "ROLE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Technical Writer",
+    "category": "ROLE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Content Author",
+    "category": "ROLE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Member",
+    "category": "ROLE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Platform Administrator",
+    "category": "ROLE",
+    "count": 1,
+    "merged": [
+      "platform administrator"
+    ]
+  },
+  {
+    "term": "Product Expert",
+    "category": "ROLE",
+    "count": 1,
+    "merged": [
+      "product expert"
+    ]
+  },
+  {
+    "term": "Support Team",
+    "category": "ROLE",
+    "count": 1,
+    "merged": [
+      "support team"
+    ]
+  },
+  {
+    "term": "System Administrator",
+    "category": "ROLE",
+    "count": 1,
+    "merged": [
+      "System Administrator"
+    ]
+  },
+  {
+    "term": "Task Creator",
+    "category": "ROLE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Review Task",
+    "category": "FEATURE",
+    "count": 41,
+    "merged": [
+      "Review Tasks",
+      "My Review Tasks"
+    ]
+  },
+  {
+    "term": "Projects",
+    "category": "FEATURE",
+    "count": 20,
+    "merged": [
+      "Project",
+      "Content Fusion Project"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise",
+    "category": "FEATURE",
+    "count": 11,
+    "merged": []
+  },
+  {
+    "term": "Deliverables",
+    "category": "FEATURE",
+    "count": 6,
+    "merged": []
+  },
+  {
+    "term": "Oxygen AI Positron",
+    "category": "FEATURE",
+    "count": 5,
+    "merged": [
+      "AI Positron",
+      "Oxygen AI Positron for Content Fusion"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion",
+    "category": "FEATURE",
+    "count": 5,
+    "merged": [
+      "Content Fusion"
+    ]
+  },
+  {
+    "term": "Oxygen Content Fusion Connector",
+    "category": "FEATURE",
+    "count": 5,
+    "merged": [
+      "Oxygen Content Fusion Connector add-on"
+    ]
+  },
+  {
+    "term": "Publication",
+    "category": "FEATURE",
+    "count": 5,
+    "merged": []
+  },
+  {
+    "term": "Build",
+    "category": "FEATURE",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Change Tracking",
+    "category": "FEATURE",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Project Review Task",
+    "category": "FEATURE",
+    "count": 4,
+    "merged": [
+      "Project-based review task"
+    ]
+  },
+  {
+    "term": "Single Sign-On",
+    "category": "FEATURE",
+    "count": 4,
+    "merged": [
+      "Single Sign-On Authentication",
+      "Use OIDC single sign-on"
+    ]
+  },
+  {
+    "term": "Account lockout",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Content Completion Assistant",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Deliverable build process",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Installation Kit",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": [
+      "Linux installation kit"
+    ]
+  },
+  {
+    "term": "Plugin",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Search",
+    "category": "FEATURE",
+    "count": 3,
+    "merged": [
+      "search",
+      "Search functionality"
+    ]
+  },
+  {
+    "term": "AutoCorrect",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Concurrent Editing",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": [
+      "Enable Concurrent Editing"
+    ]
+  },
+  {
+    "term": "Content Fusion Docs Web Platform",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Email notification",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Maintenance Mode",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Mentioned user filter",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "New Document Template Wizard",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Non-Project Review Task",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Oxygen Styles Basket",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Project Workspace",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Schedule Build",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "SME License",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Spell Checker",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": [
+      "spell checker"
+    ]
+  },
+  {
+    "term": "Task Activity",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": [
+      "task activity"
+    ]
+  },
+  {
+    "term": "Toggle Change Tracking",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Web Author",
+    "category": "FEATURE",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Account management",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Advanced Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Agentic AI workflow",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "agentic AI workflow"
+    ]
+  },
+  {
+    "term": "AI-powered feature",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "AI-powered feature"
+    ]
+  },
+  {
+    "term": "Amazon S3 connector",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Announcement Banner",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Auto-renewal",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Automatic build",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "automatic build"
+    ]
+  },
+  {
+    "term": "Backup",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "backup"
+    ]
+  },
+  {
+    "term": "Boosting",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Branch management",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "branch management"
+    ]
+  },
+  {
+    "term": "Branch merging",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Branch merging"
+    ]
+  },
+  {
+    "term": "Built-in review workflow",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "built-in review workflow"
+    ]
+  },
+  {
+    "term": "Built-in storage",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "built-in storage"
+    ]
+  },
+  {
+    "term": "Changed files only filter",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Changed files only filter"
+    ]
+  },
+  {
+    "term": "Collaborative Review",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Collaborative Review"
+    ]
+  },
+  {
+    "term": "Comment only",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Comment only"
+    ]
+  },
+  {
+    "term": "Conflict resolution",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Conflict resolution"
+    ]
+  },
+  {
+    "term": "Content Fusion Author License",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Content Fusion Author License"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise server",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Content Fusion Enterprise server"
+    ]
+  },
+  {
+    "term": "Content Fusion Enterprise virtual machine",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Content Fusion Enterprise virtual machine"
+    ]
+  },
+  {
+    "term": "Content Fusion publication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Content Fusion publication"
+    ]
+  },
+  {
+    "term": "Database backup",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "database backup"
+    ]
+  },
+  {
+    "term": "DITA Map Display Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "DITA Map Display Mode"
+    ]
+  },
+  {
+    "term": "DITA validation",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "DITA validation"
+    ]
+  },
+  {
+    "term": "Documents Storage container",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Documents Storage container"
+    ]
+  },
+  {
+    "term": "Editing and Publishing Security",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Editing and Publishing Security"
+    ]
+  },
+  {
+    "term": "Element Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Element Search"
+    ]
+  },
+  {
+    "term": "Email and Password Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Email and Password Authentication"
+    ]
+  },
+  {
+    "term": "Enable Sign Up",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Enable Sign Up"
+    ]
+  },
+  {
+    "term": "Estimated remaining time",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Estimated remaining time"
+    ]
+  },
+  {
+    "term": "Field Grouping",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Field Grouping"
+    ]
+  },
+  {
+    "term": "File",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "file"
+    ]
+  },
+  {
+    "term": "File change notification",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "file change notification"
+    ]
+  },
+  {
+    "term": "Framework extension mechanism",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "framework extension mechanism"
+    ]
+  },
+  {
+    "term": "Git Integration",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Git Integration"
+    ]
+  },
+  {
+    "term": "HTTPS enabled for Content Fusion",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "HTTPS enabled for Content Fusion"
+    ]
+  },
+  {
+    "term": "Incoming Commits",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Incoming Commits"
+    ]
+  },
+  {
+    "term": "LDAP authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "LDAP authentication"
+    ]
+  },
+  {
+    "term": "Linked Git Repository",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Linked Git Repository"
+    ]
+  },
+  {
+    "term": "Mail configuration",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Mail configuration"
+    ]
+  },
+  {
+    "term": "Netlify connector",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Netlify connector"
+    ]
+  },
+  {
+    "term": "OAuth2 Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "OAuth2 Authentication"
+    ]
+  },
+  {
+    "term": "Organization account",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Organization account"
+    ]
+  },
+  {
+    "term": "Organization deletion",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Organization deletion"
+    ]
+  },
+  {
+    "term": "Password Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Password Authentication"
+    ]
+  },
+  {
+    "term": "Phrase Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Phrase Search"
+    ]
+  },
+  {
+    "term": "Profile management",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Profile management"
+    ]
+  },
+  {
+    "term": "Project validation",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "project validation"
+    ]
+  },
+  {
+    "term": "Proximity Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Proximity Search"
+    ]
+  },
+  {
+    "term": "Publishing functionality",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "publishing functionality"
+    ]
+  },
+  {
+    "term": "Publishing Main Container",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Publishing Main Container"
+    ]
+  },
+  {
+    "term": "Publishing Pipeline",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Publishing Pipeline"
+    ]
+  },
+  {
+    "term": "Publishing Project",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Publishing Project"
+    ]
+  },
+  {
+    "term": "Quick Fix",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Quick Fix"
+    ]
+  },
+  {
+    "term": "Real-time messaging mechanism",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "real-time messaging mechanism"
+    ]
+  },
+  {
+    "term": "reCAPTCHA",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "reCAPTCHA"
+    ]
+  },
+  {
+    "term": "Regular Expression Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Regular Expression Search"
+    ]
+  },
+  {
+    "term": "Reply Notification",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Reply Notification"
+    ]
+  },
+  {
+    "term": "Request a trial license key",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Request a trial license key"
+    ]
+  },
+  {
+    "term": "Reviewers Edit Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Reviewers Edit Mode"
+    ]
+  },
+  {
+    "term": "Reviews",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Reviews"
+    ]
+  },
+  {
+    "term": "Revision history",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "revision history"
+    ]
+  },
+  {
+    "term": "Search Index",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Search Index"
+    ]
+  },
+  {
+    "term": "Security Option",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Security Option"
+    ]
+  },
+  {
+    "term": "Sender email address",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Sender email address"
+    ]
+  },
+  {
+    "term": "SFTP connector",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "SFTP connector"
+    ]
+  },
+  {
+    "term": "Share Option",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Share Option"
+    ]
+  },
+  {
+    "term": "Share Task",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Share Task"
+    ]
+  },
+  {
+    "term": "Sign-up Option",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Sign-up Option"
+    ]
+  },
+  {
+    "term": "Smart Paste",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Smart Paste"
+    ]
+  },
+  {
+    "term": "SSH Private Key Authentication",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "SSH Private Key Authentication"
+    ]
+  },
+  {
+    "term": "Tags Display Mode",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Tags Display Mode"
+    ]
+  },
+  {
+    "term": "Task Setting",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Task Setting"
+    ]
+  },
+  {
+    "term": "Task sharing behavior",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Task sharing behavior"
+    ]
+  },
+  {
+    "term": "Tracked changes",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Tracked changes"
+    ]
+  },
+  {
+    "term": "Tree editing",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Tree editing"
+    ]
+  },
+  {
+    "term": "Trusted Code",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Trusted Code"
+    ]
+  },
+  {
+    "term": "Trusted email domain",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Trusted email domain"
+    ]
+  },
+  {
+    "term": "Wildcard Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Wildcard Search"
+    ]
+  },
+  {
+    "term": "Workspace Search",
+    "category": "FEATURE",
+    "count": 1,
+    "merged": [
+      "Workspace Search"
+    ]
+  },
+  {
+    "term": "Visual Editor",
+    "category": "UI_ELEMENT",
+    "count": 25,
+    "merged": [
+      "visual editor",
+      "visual editor page",
+      "web-based editor",
+      "Main visual editor",
+      "Content Fusion Visual Editor Page",
+      "online editor",
+      "Online Visual Editor",
+      "web-based visual editor"
+    ]
+  },
+  {
+    "term": "Administration Page",
+    "category": "UI_ELEMENT",
+    "count": 21,
+    "merged": [
+      "Administration Page",
+      "Content Fusion Administration page",
+      "Content Fusion Enterprise Administration Page",
+      "Oxygen XML Web Author Administration page",
+      "admin page",
+      "Administration Web UI",
+      "Organization administration area"
+    ]
+  },
+  {
+    "term": "Personal Workspace",
+    "category": "UI_ELEMENT",
+    "count": 13,
+    "merged": []
+  },
+  {
+    "term": "My Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 9,
+    "merged": [
+      "My Review Tasks page",
+      "My Review Task page"
+    ]
+  },
+  {
+    "term": "Projects page",
+    "category": "UI_ELEMENT",
+    "count": 9,
+    "merged": [
+      "Projects page",
+      "Main Projects Page",
+      "Organization Projects page"
+    ]
+  },
+  {
+    "term": "Changes view",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Changes view",
+      "Workspace Changes view"
+    ]
+  },
+  {
+    "term": "Content Fusion interface",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Content Fusion interface",
+      "Content Fusion browser interface",
+      "Content Fusion Web UI"
+    ]
+  },
+  {
+    "term": "Content Fusion Tasks Manager view",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Content Fusion Tasks Manager view",
+      "Tasks Manager view",
+      "Content Fusion Task Manager view",
+      "task management view"
+    ]
+  },
+  {
+    "term": "Deliverables page",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Deliverables page",
+      "deliverables management page"
+    ]
+  },
+  {
+    "term": "Publications Management page",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Publications Management page",
+      "Publications Management dialog box",
+      "Publications page"
+    ]
+  },
+  {
+    "term": "Reviews view",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": [
+      "Reviews view",
+      "Reviews side view",
+      "Reviews side-pane",
+      "side-view"
+    ]
+  },
+  {
+    "term": "Task Settings page",
+    "category": "UI_ELEMENT",
+    "count": 5,
+    "merged": []
+  },
+  {
+    "term": "Profile settings page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Task Activity page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "merged": [
+      "Task Activity page",
+      "Task Activity pane",
+      "Task Activity side-pane"
+    ]
+  },
+  {
+    "term": "Task Files page",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Web Author tab",
+    "category": "UI_ELEMENT",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "Authentication tab",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": [
+      "Authentication tab",
+      "Authentication page"
+    ]
+  },
+  {
+    "term": "Files side-pane",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": [
+      "Files side-pane",
+      "Files pane",
+      "Left Side Pane"
+    ]
+  },
+  {
+    "term": "In reviews tab",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Oxygen AI Positron View",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": [
+      "AI Positron View",
+      "AI Positron pane"
+    ]
+  },
+  {
+    "term": "Publications side-view",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Review Tasks Header Stripe",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": [
+      "Review Tasks Header Stripe",
+      "Review task header stripe"
+    ]
+  },
+  {
+    "term": "Sharing settings dialog box",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Users Management tab",
+    "category": "UI_ELEMENT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Activity stream",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Assigned To Me tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "DITA Map Pane",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "DITA map tree editor",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "editing pane",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": [
+      "editing pane",
+      "Main Editing Pane"
+    ]
+  },
+  {
+    "term": "Execution Status page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": [
+      "Execution Status",
+      "Execution Status page"
+    ]
+  },
+  {
+    "term": "Files box",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Files header",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "left stripe",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Login page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": [
+      "Login page",
+      "login screen"
+    ]
+  },
+  {
+    "term": "Mail tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "New Review Task page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Organization management interface",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Organization Settings page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Owned By Me tab",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Publishing Connectors page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Review Status Summary pop-up window",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Share button",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Task Search page",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Workspace Search View",
+    "category": "UI_ELEMENT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Add button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add Comment button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add message button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Branch merging conflict resolution dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "build console",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Build progress bar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Cancel deletion button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Clear Index button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Commit graph",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "comparison dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Configuration Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Configure DITA Context dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Confirmation dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Conflict resolution dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Content Completion list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Content Fusion browser login page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Content Fusion Download webpage",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Copy link button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "CSS Inspector pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete Organization button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete Organization section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Deliverables Summary",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA Map toolbar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Done button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Editing and Publishing Security section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "editor pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "File comparison view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "file tree pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Files view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Finalize Review button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Finalized widget",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Frameworks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "General Information section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "General tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Git Accounts tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Grant Task Access dialog",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "History tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "In content tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Incoming commits widget",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Invite Member button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "LDAP Authentication Settings",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "license management and statistics page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "License tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Link With Git Repository dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Made by you tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Maintenance tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage Deliverables button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage License button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage Publications dialog box",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage Web Author button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Members list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Members page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Metrics page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Connector button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Deliverable page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New File button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Publication button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Task button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Open latest version button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Organization Avatar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Organization Display Name",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Organization Subscription Page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Outline side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Permitted Email Addresses",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Plugins page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Profile page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Deliverables page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Members page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Repository page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Settings page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Projects Disk Usage table",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "registered users list",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Relationship Table submenu",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Remove collaborator button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Request access button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Results panel",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Resume Editing button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Review Tasks button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Review Tasks page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Search in Task page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Search side view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Search side-pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Search view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Seat Usage Section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Security page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Settings Bandwidth Management",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Settings page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Settings view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Show finalized review tasks link",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Sign Up tab",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Single Sign-On Authentication section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Stop button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Subscription Status Section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Task Reviews page",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Task Reviews view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Task Title",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "template gallery",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "TLS certificate table",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Toggle Change Tracking toolbar",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Toggle Change Tracking toolbar button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "tree editor",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "User Roles Capabilities Matrix",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Users status section",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Validation pane",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "View deployments button",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Workspace Problems view",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Workspace Publications View",
+    "category": "UI_ELEMENT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Git repository",
+    "category": "CONCEPT",
+    "count": 20,
+    "merged": [
+      "repository",
+      "file repository",
+      "Git-based storage",
+      "upstream remote repository"
+    ]
+  },
+  {
+    "term": "Deliverable",
+    "category": "CONCEPT",
+    "count": 15,
+    "merged": [
+      "Project Deliverable",
+      "PDF output deliverable"
+    ]
+  },
+  {
+    "term": "DITA map",
+    "category": "CONCEPT",
+    "count": 15,
+    "merged": [
+      "Bookmap"
+    ]
+  },
+  {
+    "term": "Context publication",
+    "category": "CONCEPT",
+    "count": 7,
+    "merged": [
+      "publication context",
+      "DITA Context",
+      "DITAVAL context filter"
+    ]
+  },
+  {
+    "term": "DITA project",
+    "category": "CONCEPT",
+    "count": 7,
+    "merged": [
+      "DITA XML project",
+      "DITA-OT project file"
+    ]
+  },
+  {
+    "term": "Task",
+    "category": "CONCEPT",
+    "count": 7,
+    "merged": [
+      "DITA Task",
+      "task file"
+    ]
+  },
+  {
+    "term": "Branch",
+    "category": "CONCEPT",
+    "count": 6,
+    "merged": [
+      "Destination branch",
+      "Source branch"
+    ]
+  },
+  {
+    "term": "OIDC",
+    "category": "CONCEPT",
+    "count": 6,
+    "merged": [
+      "OpenID Connect",
+      "OAuth2",
+      "OAuth"
+    ]
+  },
+  {
+    "term": "DITAVAL filter",
+    "category": "CONCEPT",
+    "count": 5,
+    "merged": [
+      "DITAVAL filtering file"
+    ]
+  },
+  {
+    "term": "LDAP",
+    "category": "CONCEPT",
+    "count": 5,
+    "merged": []
+  },
+  {
+    "term": "Client ID",
+    "category": "CONCEPT",
+    "count": 4,
+    "merged": [
+      "OAuth client ID"
+    ]
+  },
+  {
+    "term": "Git",
+    "category": "CONCEPT",
+    "count": 4,
+    "merged": [
+      "Git server",
+      "Git service",
+      "Git account"
+    ]
+  },
+  {
+    "term": "Review item",
+    "category": "CONCEPT",
+    "count": 4,
+    "merged": []
+  },
+  {
+    "term": "SSL",
+    "category": "CONCEPT",
+    "count": 4,
+    "merged": [
+      "SSL certificate",
+      "HTTPS",
+      "TLS"
+    ]
+  },
+  {
+    "term": "Amazon S3",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": [
+      "Amazon S3 bucket"
+    ]
+  },
+  {
+    "term": "Client Secret",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "connector",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": [
+      "Connector Name",
+      "Connector Type"
+    ]
+  },
+  {
+    "term": "Custom framework",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "DITA",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "framework",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "GitHub authentication",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Google authentication",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Mention",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Review comment",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": [
+      "comment"
+    ]
+  },
+  {
+    "term": "Subscription",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": [
+      "Subscription Status Types",
+      "Trial subscription"
+    ]
+  },
+  {
+    "term": "Topic Reference",
+    "category": "CONCEPT",
+    "count": 3,
+    "merged": [
+      "topicref"
+    ]
+  },
+  {
+    "term": "Cloud version",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Content Fusion server",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Deliverable build",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "DITA content",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "DITA Topic",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "DocBook",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Documentation Folder",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "Destination Folder"
+    ]
+  },
+  {
+    "term": "Due Date",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Enterprise server",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "extension descriptor file",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "floating license model",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "floating licensing model"
+    ]
+  },
+  {
+    "term": "GitHub",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "GitHub application"
+    ]
+  },
+  {
+    "term": "Highlight",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "In review",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Key Definition",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Key reference",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "License seat",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Merge",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Netlify",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "publishing process",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Review closed",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "server log",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "SFTP",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "SFTP Server"
+    ]
+  },
+  {
+    "term": "Task Executor container",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "task metadata",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "TEI",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "term list",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "Terms list"
+    ]
+  },
+  {
+    "term": "Trusted host",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "user profile",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "User role",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "WebHelp",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Workspace",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": [
+      "Workspace version"
+    ]
+  },
+  {
+    "term": "XHTML",
+    "category": "CONCEPT",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Access Token",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "artifact",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Association rule",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Authorization endpoint URL",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Authorization Server",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "AuthorUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "backup archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Boolean Operator",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "build metric",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "build package",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Change history",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "chapter",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "collaboration platform",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Commit message",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Conflicting change",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "conkeyref attribute",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Content Security Policy",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "deployment",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "diff",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Disk quota",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA CMS",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA CSS style",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA document type",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA framework",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA key scope",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": [
+      "Key scope"
+    ]
+  },
+  {
+    "term": "DITA markup",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA schema",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA source",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA specialization",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DITA Task",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "DNS name",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "documentation review process",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "EditContext",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "editing mode",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Finalized state",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "framework archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Git working directory",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "GitLab",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Google Fonts",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Host Key fingerprint",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "HSTS",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "HTML 5",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "ime_interface",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "In progress",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Incoming change",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Input Method Editor",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Integrated",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Integrated task",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Integrating",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Invitation email",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Issuer URI",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Java system property",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "JVM option",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Key name",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "learned word",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "License change notification",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "license plan",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Lifecycle Rule",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Map Reference",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Map type",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Markdown",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Microsoft Entra ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "named-user license model",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Okta",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "OPE",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "options.xml",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Org-level role",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Organization ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Organization storage quota",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "OwnerUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "OXYGEN_JAVA_OPTS",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Paid subscription",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "PEM format",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Pending",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Pending invitation",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Perforce",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Personal Access Token",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "plugin archive",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "PostgreSQL database dump",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "private project",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Processing role",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Profiling attribute",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project Git Repo",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Project indexing data",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Proxy setting",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "public project",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "publishing build",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Pull Request",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "read-only mode",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Regular Review Task",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "remote modification",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "repository clone",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Review process",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Review Status",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "ReviewerUserFrameworkMatcher",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "scheduled task",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Shareable link",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "SharePoint",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Site ID",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Software-as-a-Service",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "SSH",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "STARTTLS",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Subject Scheme",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "SVN",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Team",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "template",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Temporary Folder",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Token endpoint URL",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Topic Head",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "transformation progress",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "user-based licensing model",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": [
+      "user-based licensing"
+    ]
+  },
+  {
+    "term": "validation build",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "validation process",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Verifone system",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "version control system",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Web Author Docker container",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Web Author framework",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "WebDAV",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "XML element",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "XML language",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "xref element",
+    "category": "CONCEPT",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Commit",
+    "category": "ACTION",
+    "count": 8,
+    "merged": [
+      "Commit Changes",
+      "Commit Update"
+    ]
+  },
+  {
+    "term": "Delete",
+    "category": "ACTION",
+    "count": 5,
+    "merged": []
+  },
+  {
+    "term": "Add message",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Manage organization",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Manage Web Author",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Restart Server",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Save Configuration",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Upload output using a publishing connector",
+    "category": "ACTION",
+    "count": 3,
+    "merged": []
+  },
+  {
+    "term": "Add to Review Task",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Close review",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Delete account",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Delete user",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Demote",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Finalize My Review",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Log Out",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Mark as integrated",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Promote",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Report Problem",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Request re-review",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Save",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Upload File",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "View deliverables",
+    "category": "ACTION",
+    "count": 2,
+    "merged": []
+  },
+  {
+    "term": "Activate",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add account",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add collaborator",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add Comment",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add Member",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Add publication",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Anonymize user",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Assign Me as Owner",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Authorize",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Backup script",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Buy subscription",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Compare with latest version",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Compare with previous version",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Configure",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Configure publication",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Connect",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Copy task link",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Create",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Create Database Backup",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Create new file",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Create publication",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Define Variable",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete folder",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete project",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete publication",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete Relationship Column",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete Relationship Row",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Delete Task",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Deploy",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Discard changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Discard changes from all files",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Download",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Download task",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Duplicate & Edit",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit account",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit in Author Mode",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit in Workspace",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit Profiling Attributes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit Properties",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Edit Topic Content",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Finish Integration",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Get password reset email",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Hide Excluded Content",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Include Publications",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Insert Relationship Column",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Insert Relationship Row",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Insert Relationship Table",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Inspect Styles",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Keep dev changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Keep main changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Keep repository changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Keep workspace changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage Deliverables",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage Publications",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manage subscription",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Manual merge",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Mark as not integrated",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "merge branch",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Merge button",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Merge changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Merge into current branch",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "merge suggested changes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Move Down",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Move Up",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New File",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Folder",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "New Review Task",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Open latest version",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Open this version",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Pull",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Pull button",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Re-index project content",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Refresh",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Refresh Publications",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Register/Activate",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Remove Reference",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Renew Plan",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Reopen review",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Replace/Remove license key",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Request access",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Reset password",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Resolve conflicts",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Resolve conflicts button",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Restart Trial",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Restart validation",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Restore Database from Backup",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Save merge result to a new branch",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Send Feedback",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Share",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Show integrated review task",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Show Logs",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Show Profiling Attributes",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Start Integrating",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Start Review Task",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Stop",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Stop Auto-renewal",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Stop build",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Unlock File",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upgrade plan",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload Folder",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload Framework",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload Plugin",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Upload the deliverable's build output in ZIP format",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "Validate now",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "View Topic Content",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "View Topic References",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  },
+  {
+    "term": "View Topic Titles",
+    "category": "ACTION",
+    "count": 1,
+    "merged": []
+  }
+]

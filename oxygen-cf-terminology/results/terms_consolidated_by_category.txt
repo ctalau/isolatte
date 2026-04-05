@@ -1,0 +1,612 @@
+Oxygen Content Fusion – Consolidated Terminology
+Model: google/gemma-4-26b-a4b-it  |  Total unique terms: 598
+============================================================
+
+## ROLE (19)
+  Reviewer                                           [×20]
+  Task Owner                                         [×15]  ← task owner; review task owner
+  Author                                             [×8]
+  Collaborator                                       [×8]
+  Subject Matter Expert                              [×7]
+  Content Fusion Author                              [×6]
+  Administrator                                      [×5]  ← admin user
+  Organization Administrator                         [×5]
+  Owner                                              [×4]
+  Server Administrator                               [×4]  ← server administrator
+  Pending Collaborator                               [×2]
+  Technical Writer                                   [×2]
+  Content Author                                     [×1]
+  Member                                             [×1]
+  Platform Administrator                             [×1]  ← platform administrator
+  Product Expert                                     [×1]  ← product expert
+  Support Team                                       [×1]  ← support team
+  System Administrator                               [×1]  ← System Administrator
+  Task Creator                                       [×1]
+
+## FEATURE (115)
+  Review Task                                        [×41]  ← Review Tasks; My Review Tasks
+  Projects                                           [×20]  ← Project; Content Fusion Project
+  Content Fusion Enterprise                          [×11]
+  Deliverables                                       [×6]
+  Oxygen AI Positron                                 [×5]  ← AI Positron; Oxygen AI Positron for Content Fusion
+  Oxygen Content Fusion                              [×5]  ← Content Fusion
+  Oxygen Content Fusion Connector                    [×5]  ← Oxygen Content Fusion Connector add-on
+  Publication                                        [×5]
+  Build                                              [×4]
+  Change Tracking                                    [×4]
+  Project Review Task                                [×4]  ← Project-based review task
+  Single Sign-On                                     [×4]  ← Single Sign-On Authentication; Use OIDC single sign-on
+  Account lockout                                    [×3]
+  Content Completion Assistant                       [×3]
+  Deliverable build process                          [×3]
+  Installation Kit                                   [×3]  ← Linux installation kit
+  Plugin                                             [×3]
+  Search                                             [×3]  ← search; Search functionality
+  AutoCorrect                                        [×2]
+  Concurrent Editing                                 [×2]  ← Enable Concurrent Editing
+  Content Fusion Docs Web Platform                   [×2]
+  Email notification                                 [×2]
+  Maintenance Mode                                   [×2]
+  Mentioned user filter                              [×2]
+  New Document Template Wizard                       [×2]
+  Non-Project Review Task                            [×2]
+  Oxygen Styles Basket                               [×2]
+  Project Workspace                                  [×2]
+  Schedule Build                                     [×2]
+  SME License                                        [×2]
+  Spell Checker                                      [×2]  ← spell checker
+  Task Activity                                      [×2]  ← task activity
+  Toggle Change Tracking                             [×2]
+  Web Author                                         [×2]
+  Account management                                 [×1]
+  Advanced Search                                    [×1]
+  Agentic AI workflow                                [×1]  ← agentic AI workflow
+  AI-powered feature                                 [×1]  ← AI-powered feature
+  Amazon S3 connector                                [×1]
+  Announcement Banner                                [×1]
+  Auto-renewal                                       [×1]
+  Automatic build                                    [×1]  ← automatic build
+  Backup                                             [×1]  ← backup
+  Boosting                                           [×1]
+  Branch management                                  [×1]  ← branch management
+  Branch merging                                     [×1]  ← Branch merging
+  Built-in review workflow                           [×1]  ← built-in review workflow
+  Built-in storage                                   [×1]  ← built-in storage
+  Changed files only filter                          [×1]  ← Changed files only filter
+  Collaborative Review                               [×1]  ← Collaborative Review
+  Comment only                                       [×1]  ← Comment only
+  Conflict resolution                                [×1]  ← Conflict resolution
+  Content Fusion Author License                      [×1]  ← Content Fusion Author License
+  Content Fusion Enterprise server                   [×1]  ← Content Fusion Enterprise server
+  Content Fusion Enterprise virtual machine          [×1]  ← Content Fusion Enterprise virtual machine
+  Content Fusion publication                         [×1]  ← Content Fusion publication
+  Database backup                                    [×1]  ← database backup
+  DITA Map Display Mode                              [×1]  ← DITA Map Display Mode
+  DITA validation                                    [×1]  ← DITA validation
+  Documents Storage container                        [×1]  ← Documents Storage container
+  Editing and Publishing Security                    [×1]  ← Editing and Publishing Security
+  Element Search                                     [×1]  ← Element Search
+  Email and Password Authentication                  [×1]  ← Email and Password Authentication
+  Enable Sign Up                                     [×1]  ← Enable Sign Up
+  Estimated remaining time                           [×1]  ← Estimated remaining time
+  Field Grouping                                     [×1]  ← Field Grouping
+  File                                               [×1]  ← file
+  File change notification                           [×1]  ← file change notification
+  Framework extension mechanism                      [×1]  ← framework extension mechanism
+  Git Integration                                    [×1]  ← Git Integration
+  HTTPS enabled for Content Fusion                   [×1]  ← HTTPS enabled for Content Fusion
+  Incoming Commits                                   [×1]  ← Incoming Commits
+  LDAP authentication                                [×1]  ← LDAP authentication
+  Linked Git Repository                              [×1]  ← Linked Git Repository
+  Mail configuration                                 [×1]  ← Mail configuration
+  Netlify connector                                  [×1]  ← Netlify connector
+  OAuth2 Authentication                              [×1]  ← OAuth2 Authentication
+  Organization account                               [×1]  ← Organization account
+  Organization deletion                              [×1]  ← Organization deletion
+  Password Authentication                            [×1]  ← Password Authentication
+  Phrase Search                                      [×1]  ← Phrase Search
+  Profile management                                 [×1]  ← Profile management
+  Project validation                                 [×1]  ← project validation
+  Proximity Search                                   [×1]  ← Proximity Search
+  Publishing functionality                           [×1]  ← publishing functionality
+  Publishing Main Container                          [×1]  ← Publishing Main Container
+  Publishing Pipeline                                [×1]  ← Publishing Pipeline
+  Publishing Project                                 [×1]  ← Publishing Project
+  Quick Fix                                          [×1]  ← Quick Fix
+  Real-time messaging mechanism                      [×1]  ← real-time messaging mechanism
+  reCAPTCHA                                          [×1]  ← reCAPTCHA
+  Regular Expression Search                          [×1]  ← Regular Expression Search
+  Reply Notification                                 [×1]  ← Reply Notification
+  Request a trial license key                        [×1]  ← Request a trial license key
+  Reviewers Edit Mode                                [×1]  ← Reviewers Edit Mode
+  Reviews                                            [×1]  ← Reviews
+  Revision history                                   [×1]  ← revision history
+  Search Index                                       [×1]  ← Search Index
+  Security Option                                    [×1]  ← Security Option
+  Sender email address                               [×1]  ← Sender email address
+  SFTP connector                                     [×1]  ← SFTP connector
+  Share Option                                       [×1]  ← Share Option
+  Share Task                                         [×1]  ← Share Task
+  Sign-up Option                                     [×1]  ← Sign-up Option
+  Smart Paste                                        [×1]  ← Smart Paste
+  SSH Private Key Authentication                     [×1]  ← SSH Private Key Authentication
+  Tags Display Mode                                  [×1]  ← Tags Display Mode
+  Task Setting                                       [×1]  ← Task Setting
+  Task sharing behavior                              [×1]  ← Task sharing behavior
+  Tracked changes                                    [×1]  ← Tracked changes
+  Tree editing                                       [×1]  ← Tree editing
+  Trusted Code                                       [×1]  ← Trusted Code
+  Trusted email domain                               [×1]  ← Trusted email domain
+  Wildcard Search                                    [×1]  ← Wildcard Search
+  Workspace Search                                   [×1]  ← Workspace Search
+
+## UI_ELEMENT (153)
+  Visual Editor                                      [×25]  ← visual editor; visual editor page; web-based editor; Main visual editor; Content Fusion Visual Editor Page; online editor; Online Visual Editor; web-based visual editor
+  Administration Page                                [×21]  ← Administration Page; Content Fusion Administration page; Content Fusion Enterprise Administration Page; Oxygen XML Web Author Administration page; admin page; Administration Web UI; Organization administration area
+  Personal Workspace                                 [×13]
+  My Review Tasks page                               [×9]  ← My Review Tasks page; My Review Task page
+  Projects page                                      [×9]  ← Projects page; Main Projects Page; Organization Projects page
+  Changes view                                       [×5]  ← Changes view; Workspace Changes view
+  Content Fusion interface                           [×5]  ← Content Fusion interface; Content Fusion browser interface; Content Fusion Web UI
+  Content Fusion Tasks Manager view                  [×5]  ← Content Fusion Tasks Manager view; Tasks Manager view; Content Fusion Task Manager view; task management view
+  Deliverables page                                  [×5]  ← Deliverables page; deliverables management page
+  Publications Management page                       [×5]  ← Publications Management page; Publications Management dialog box; Publications page
+  Reviews view                                       [×5]  ← Reviews view; Reviews side view; Reviews side-pane; side-view
+  Task Settings page                                 [×5]
+  Profile settings page                              [×4]
+  Task Activity page                                 [×4]  ← Task Activity page; Task Activity pane; Task Activity side-pane
+  Task Files page                                    [×4]
+  Web Author tab                                     [×4]
+  Authentication tab                                 [×3]  ← Authentication tab; Authentication page
+  Files side-pane                                    [×3]  ← Files side-pane; Files pane; Left Side Pane
+  In reviews tab                                     [×3]
+  Oxygen AI Positron View                            [×3]  ← AI Positron View; AI Positron pane
+  Publications side-view                             [×3]
+  Review Tasks Header Stripe                         [×3]  ← Review Tasks Header Stripe; Review task header stripe
+  Sharing settings dialog box                        [×3]
+  Users Management tab                               [×3]
+  Activity stream                                    [×2]
+  Assigned To Me tab                                 [×2]
+  DITA Map Pane                                      [×2]
+  DITA map tree editor                               [×2]
+  editing pane                                       [×2]  ← editing pane; Main Editing Pane
+  Execution Status page                              [×2]  ← Execution Status; Execution Status page
+  Files box                                          [×2]
+  Files header                                       [×2]
+  left stripe                                        [×2]
+  Login page                                         [×2]  ← Login page; login screen
+  Mail tab                                           [×2]
+  New Review Task page                               [×2]
+  Organization management interface                  [×2]
+  Organization Settings page                         [×2]
+  Owned By Me tab                                    [×2]
+  Publishing Connectors page                         [×2]
+  Review Status Summary pop-up window                [×2]
+  Share button                                       [×2]
+  Task Search page                                   [×2]
+  Workspace Search View                              [×2]
+  Add button                                         [×1]
+  Add Comment button                                 [×1]
+  Add message button                                 [×1]
+  Branch merging conflict resolution dialog box      [×1]
+  build console                                      [×1]
+  Build progress bar                                 [×1]
+  Cancel deletion button                             [×1]
+  Clear Index button                                 [×1]
+  Commit graph                                       [×1]
+  comparison dialog box                              [×1]
+  Configuration Page                                 [×1]
+  Configure DITA Context dialog box                  [×1]
+  Confirmation dialog box                            [×1]
+  Conflict resolution dialog box                     [×1]
+  Content Completion list                            [×1]
+  Content Fusion browser login page                  [×1]
+  Content Fusion Download webpage                    [×1]
+  Copy link button                                   [×1]
+  CSS Inspector pane                                 [×1]
+  Delete Organization button                         [×1]
+  Delete Organization section                        [×1]
+  Deliverables Summary                               [×1]
+  DITA Map toolbar                                   [×1]
+  Done button                                        [×1]
+  Editing and Publishing Security section            [×1]
+  editor pane                                        [×1]
+  File comparison view                               [×1]
+  file tree pane                                     [×1]
+  Files view                                         [×1]
+  Finalize Review button                             [×1]
+  Finalized widget                                   [×1]
+  Frameworks page                                    [×1]
+  General Information section                        [×1]
+  General tab                                        [×1]
+  Git Accounts tab                                   [×1]
+  Grant Task Access dialog                           [×1]
+  History tab                                        [×1]
+  In content tab                                     [×1]
+  Incoming commits widget                            [×1]
+  Invite Member button                               [×1]
+  LDAP Authentication Settings                       [×1]
+  license management and statistics page             [×1]
+  License tab                                        [×1]
+  Link With Git Repository dialog box                [×1]
+  Made by you tab                                    [×1]
+  Maintenance tab                                    [×1]
+  Manage Deliverables button                         [×1]
+  Manage License button                              [×1]
+  Manage Publications dialog box                     [×1]
+  Manage Web Author button                           [×1]
+  Members list                                       [×1]
+  Members page                                       [×1]
+  Metrics page                                       [×1]
+  New Connector button                               [×1]
+  New Deliverable page                               [×1]
+  New File button                                    [×1]
+  New Publication button                             [×1]
+  New Task button                                    [×1]
+  Open latest version button                         [×1]
+  Organization Avatar                                [×1]
+  Organization Display Name                          [×1]
+  Organization Subscription Page                     [×1]
+  Outline side-pane                                  [×1]
+  Permitted Email Addresses                          [×1]
+  Plugins page                                       [×1]
+  Profile page                                       [×1]
+  Project Deliverables page                          [×1]
+  Project Members page                               [×1]
+  Project Repository page                            [×1]
+  Project Review Tasks page                          [×1]
+  Project Settings page                              [×1]
+  Projects Disk Usage table                          [×1]
+  registered users list                              [×1]
+  Relationship Table submenu                         [×1]
+  Remove collaborator button                         [×1]
+  Request access button                              [×1]
+  Results panel                                      [×1]
+  Resume Editing button                              [×1]
+  Review Tasks button                                [×1]
+  Review Tasks page                                  [×1]
+  Search in Task page                                [×1]
+  Search side view                                   [×1]
+  Search side-pane                                   [×1]
+  Search view                                        [×1]
+  Seat Usage Section                                 [×1]
+  Security page                                      [×1]
+  Settings Bandwidth Management                      [×1]
+  Settings page                                      [×1]
+  Settings view                                      [×1]
+  Show finalized review tasks link                   [×1]
+  Sign Up tab                                        [×1]
+  Single Sign-On Authentication section              [×1]
+  Stop button                                        [×1]
+  Subscription Status Section                        [×1]
+  Task Reviews page                                  [×1]
+  Task Reviews view                                  [×1]
+  Task Title                                         [×1]
+  template gallery                                   [×1]
+  TLS certificate table                              [×1]
+  Toggle Change Tracking toolbar                     [×1]
+  Toggle Change Tracking toolbar button              [×1]
+  tree editor                                        [×1]
+  Upload button                                      [×1]
+  User Roles Capabilities Matrix                     [×1]
+  Users status section                               [×1]
+  Validation pane                                    [×1]
+  View deployments button                            [×1]
+  Workspace Problems view                            [×1]
+  Workspace Publications View                        [×1]
+
+## CONCEPT (180)
+  Git repository                                     [×20]  ← repository; file repository; Git-based storage; upstream remote repository
+  Deliverable                                        [×15]  ← Project Deliverable; PDF output deliverable
+  DITA map                                           [×15]  ← Bookmap
+  Context publication                                [×7]  ← publication context; DITA Context; DITAVAL context filter
+  DITA project                                       [×7]  ← DITA XML project; DITA-OT project file
+  Task                                               [×7]  ← DITA Task; task file
+  Branch                                             [×6]  ← Destination branch; Source branch
+  OIDC                                               [×6]  ← OpenID Connect; OAuth2; OAuth
+  DITAVAL filter                                     [×5]  ← DITAVAL filtering file
+  LDAP                                               [×5]
+  Client ID                                          [×4]  ← OAuth client ID
+  Git                                                [×4]  ← Git server; Git service; Git account
+  Review item                                        [×4]
+  SSL                                                [×4]  ← SSL certificate; HTTPS; TLS
+  Amazon S3                                          [×3]  ← Amazon S3 bucket
+  Client Secret                                      [×3]
+  connector                                          [×3]  ← Connector Name; Connector Type
+  Custom framework                                   [×3]
+  DITA                                               [×3]
+  framework                                          [×3]
+  GitHub authentication                              [×3]
+  Google authentication                              [×3]
+  Mention                                            [×3]
+  Review comment                                     [×3]  ← comment
+  Subscription                                       [×3]  ← Subscription Status Types; Trial subscription
+  Topic Reference                                    [×3]  ← topicref
+  Cloud version                                      [×2]
+  Content Fusion server                              [×2]
+  Deliverable build                                  [×2]
+  DITA content                                       [×2]
+  DITA Topic                                         [×2]
+  DocBook                                            [×2]
+  Documentation Folder                               [×2]  ← Destination Folder
+  Due Date                                           [×2]
+  Enterprise server                                  [×2]
+  extension descriptor file                          [×2]
+  floating license model                             [×2]  ← floating licensing model
+  GitHub                                             [×2]  ← GitHub application
+  Highlight                                          [×2]
+  In review                                          [×2]
+  Key Definition                                     [×2]
+  Key reference                                      [×2]
+  License seat                                       [×2]
+  Merge                                              [×2]
+  Netlify                                            [×2]
+  publishing process                                 [×2]
+  Review closed                                      [×2]
+  server log                                         [×2]
+  SFTP                                               [×2]  ← SFTP Server
+  Task Executor container                            [×2]
+  task metadata                                      [×2]
+  TEI                                                [×2]
+  term list                                          [×2]  ← Terms list
+  Trusted host                                       [×2]
+  user profile                                       [×2]
+  User role                                          [×2]
+  WebHelp                                            [×2]
+  Workspace                                          [×2]  ← Workspace version
+  XHTML                                              [×2]
+  Access Token                                       [×1]
+  artifact                                           [×1]
+  Association rule                                   [×1]
+  Authorization endpoint URL                         [×1]
+  Authorization Server                               [×1]
+  AuthorUserFrameworkMatcher                         [×1]
+  backup archive                                     [×1]
+  Boolean Operator                                   [×1]
+  build metric                                       [×1]
+  build package                                      [×1]
+  Change history                                     [×1]
+  chapter                                            [×1]
+  collaboration platform                             [×1]
+  Commit message                                     [×1]
+  Conflicting change                                 [×1]
+  conkeyref attribute                                [×1]
+  Content Security Policy                            [×1]
+  deployment                                         [×1]
+  diff                                               [×1]
+  Disk quota                                         [×1]
+  DITA CMS                                           [×1]
+  DITA CSS style                                     [×1]
+  DITA document type                                 [×1]
+  DITA framework                                     [×1]
+  DITA key scope                                     [×1]  ← Key scope
+  DITA markup                                        [×1]
+  DITA schema                                        [×1]
+  DITA source                                        [×1]
+  DITA specialization                                [×1]
+  DITA Task                                          [×1]
+  DNS name                                           [×1]
+  documentation review process                       [×1]
+  EditContext                                        [×1]
+  editing mode                                       [×1]
+  Finalized state                                    [×1]
+  framework archive                                  [×1]
+  Git working directory                              [×1]
+  GitLab                                             [×1]
+  Google Fonts                                       [×1]
+  Host Key fingerprint                               [×1]
+  HSTS                                               [×1]
+  HTML 5                                             [×1]
+  ime_interface                                      [×1]
+  In progress                                        [×1]
+  Incoming change                                    [×1]
+  Input Method Editor                                [×1]
+  Integrated                                         [×1]
+  Integrated task                                    [×1]
+  Integrating                                        [×1]
+  Invitation email                                   [×1]
+  Issuer URI                                         [×1]
+  Java system property                               [×1]
+  JVM option                                         [×1]
+  Key name                                           [×1]
+  learned word                                       [×1]
+  License change notification                        [×1]
+  license plan                                       [×1]
+  Lifecycle Rule                                     [×1]
+  Map Reference                                      [×1]
+  Map type                                           [×1]
+  Markdown                                           [×1]
+  Microsoft Entra ID                                 [×1]
+  named-user license model                           [×1]
+  Okta                                               [×1]
+  OPE                                                [×1]
+  options.xml                                        [×1]
+  Org-level role                                     [×1]
+  Organization ID                                    [×1]
+  Organization storage quota                         [×1]
+  OwnerUserFrameworkMatcher                          [×1]
+  OXYGEN_JAVA_OPTS                                   [×1]
+  Paid subscription                                  [×1]
+  PEM format                                         [×1]
+  Pending                                            [×1]
+  Pending invitation                                 [×1]
+  Perforce                                           [×1]
+  Personal Access Token                              [×1]
+  plugin archive                                     [×1]
+  PostgreSQL database dump                           [×1]
+  private project                                    [×1]
+  Processing role                                    [×1]
+  Profiling attribute                                [×1]
+  Project Git Repo                                   [×1]
+  Project indexing data                              [×1]
+  Proxy setting                                      [×1]
+  public project                                     [×1]
+  publishing build                                   [×1]
+  Pull Request                                       [×1]
+  read-only mode                                     [×1]
+  Regular Review Task                                [×1]
+  remote modification                                [×1]
+  repository clone                                   [×1]
+  Review process                                     [×1]
+  Review Status                                      [×1]
+  ReviewerUserFrameworkMatcher                       [×1]
+  scheduled task                                     [×1]
+  Shareable link                                     [×1]
+  SharePoint                                         [×1]
+  Site ID                                            [×1]
+  Software-as-a-Service                              [×1]
+  SSH                                                [×1]
+  STARTTLS                                           [×1]
+  Subject Scheme                                     [×1]
+  SVN                                                [×1]
+  Team                                               [×1]
+  template                                           [×1]
+  Temporary Folder                                   [×1]
+  Token endpoint URL                                 [×1]
+  Topic Head                                         [×1]
+  transformation progress                            [×1]
+  user-based licensing model                         [×1]  ← user-based licensing
+  validation build                                   [×1]
+  validation process                                 [×1]
+  Verifone system                                    [×1]
+  version control system                             [×1]
+  Web Author Docker container                        [×1]
+  Web Author framework                               [×1]
+  WebDAV                                             [×1]
+  XML element                                        [×1]
+  XML language                                       [×1]
+  xref element                                       [×1]
+
+## ACTION (131)
+  Commit                                             [×8]  ← Commit Changes; Commit Update
+  Delete                                             [×5]
+  Add message                                        [×3]
+  Manage organization                                [×3]
+  Manage Web Author                                  [×3]
+  Restart Server                                     [×3]
+  Save Configuration                                 [×3]
+  Upload output using a publishing connector         [×3]
+  Add to Review Task                                 [×2]
+  Close review                                       [×2]
+  Delete account                                     [×2]
+  Delete user                                        [×2]
+  Demote                                             [×2]
+  Finalize My Review                                 [×2]
+  Log Out                                            [×2]
+  Mark as integrated                                 [×2]
+  Promote                                            [×2]
+  Report Problem                                     [×2]
+  Request re-review                                  [×2]
+  Save                                               [×2]
+  Upload File                                        [×2]
+  View deliverables                                  [×2]
+  Activate                                           [×1]
+  Add account                                        [×1]
+  Add collaborator                                   [×1]
+  Add Comment                                        [×1]
+  Add Member                                         [×1]
+  Add publication                                    [×1]
+  Anonymize user                                     [×1]
+  Assign Me as Owner                                 [×1]
+  Authorize                                          [×1]
+  Backup script                                      [×1]
+  Buy subscription                                   [×1]
+  Compare with latest version                        [×1]
+  Compare with previous version                      [×1]
+  Configure                                          [×1]
+  Configure publication                              [×1]
+  Connect                                            [×1]
+  Copy task link                                     [×1]
+  Create                                             [×1]
+  Create Database Backup                             [×1]
+  Create new file                                    [×1]
+  Create publication                                 [×1]
+  Define Variable                                    [×1]
+  Delete folder                                      [×1]
+  Delete project                                     [×1]
+  Delete publication                                 [×1]
+  Delete Relationship Column                         [×1]
+  Delete Relationship Row                            [×1]
+  Delete Task                                        [×1]
+  Deploy                                             [×1]
+  Discard changes                                    [×1]
+  Discard changes from all files                     [×1]
+  Download                                           [×1]
+  Download task                                      [×1]
+  Duplicate & Edit                                   [×1]
+  Edit                                               [×1]
+  Edit account                                       [×1]
+  Edit in Author Mode                                [×1]
+  Edit in Workspace                                  [×1]
+  Edit Profiling Attributes                          [×1]
+  Edit Properties                                    [×1]
+  Edit Topic Content                                 [×1]
+  Finish Integration                                 [×1]
+  Get password reset email                           [×1]
+  Hide Excluded Content                              [×1]
+  Include Publications                               [×1]
+  Insert Relationship Column                         [×1]
+  Insert Relationship Row                            [×1]
+  Insert Relationship Table                          [×1]
+  Inspect Styles                                     [×1]
+  Keep dev changes                                   [×1]
+  Keep main changes                                  [×1]
+  Keep repository changes                            [×1]
+  Keep workspace changes                             [×1]
+  Manage Deliverables                                [×1]
+  Manage Publications                                [×1]
+  Manage subscription                                [×1]
+  Manual merge                                       [×1]
+  Mark as not integrated                             [×1]
+  merge branch                                       [×1]
+  Merge button                                       [×1]
+  Merge changes                                      [×1]
+  Merge into current branch                          [×1]
+  merge suggested changes                            [×1]
+  Move Down                                          [×1]
+  Move Up                                            [×1]
+  New File                                           [×1]
+  New Folder                                         [×1]
+  New Review Task                                    [×1]
+  Open latest version                                [×1]
+  Open this version                                  [×1]
+  Pull                                               [×1]
+  Pull button                                        [×1]
+  Re-index project content                           [×1]
+  Refresh                                            [×1]
+  Refresh Publications                               [×1]
+  Register/Activate                                  [×1]
+  Remove Reference                                   [×1]
+  Renew Plan                                         [×1]
+  Reopen review                                      [×1]
+  Replace/Remove license key                         [×1]
+  Request access                                     [×1]
+  Reset password                                     [×1]
+  Resolve conflicts                                  [×1]
+  Resolve conflicts button                           [×1]
+  Restart Trial                                      [×1]
+  Restart validation                                 [×1]
+  Restore Database from Backup                       [×1]
+  Save merge result to a new branch                  [×1]
+  Send Feedback                                      [×1]
+  Share                                              [×1]
+  Show integrated review task                        [×1]
+  Show Logs                                          [×1]
+  Show Profiling Attributes                          [×1]
+  Start Integrating                                  [×1]
+  Start Review Task                                  [×1]
+  Stop                                               [×1]
+  Stop Auto-renewal                                  [×1]
+  Stop build                                         [×1]
+  Unlock File                                        [×1]
+  Upgrade plan                                       [×1]
+  Upload                                             [×1]
+  Upload Folder                                      [×1]
+  Upload Framework                                   [×1]
+  Upload Plugin                                      [×1]
+  Upload the deliverable's build output in ZIP format [×1]
+  Validate now                                       [×1]
+  View Topic Content                                 [×1]
+  View Topic References                              [×1]
+  View Topic Titles                                  [×1]
+
