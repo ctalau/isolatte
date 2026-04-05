@@ -1,0 +1,135 @@
+Oxygen Content Fusion – Grammar & Style Report
+Model: google/gemma-4-26b-a4b-it  |  Mode: PILOT  |  Topics: 5
+Total issues found: 27
+  error       : 10
+  warning     : 11
+  suggestion  : 6
+
+## Issue type summary
+  article-usage                  1
+  awkward-phrasing               6
+  missing-comma                  2
+  parallel-structure             6
+  redundancy                     1
+  run-on-sentence                3
+  spelling                       2
+  subject-verb-agreement         2
+  unclear-antecedent             3
+  wrong-word                     1
+
+======================================================================
+
+## ERROR (10)
+
+[overview.dita] [run-on-sentence]
+  Original  : What is Oxygen Content Fusion? combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.
+  Suggestion: Oxygen Content Fusion combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.
+
+[overview.dita] [run-on-sentence]
+  Original  : can be used purely as a collaborative review platform, without projects or publishing.
+  Suggestion: It can be used purely as a collaborative review platform, without projects or publishing.
+
+[overview.dita] [subject-verb-agreement]
+  Original  : The Content Fusion projects support allows you to connect to an existing Git repository
+  Suggestion: Content Fusion project support allows you to connect to an existing Git repository
+
+[platform-user-roles.dita] [subject-verb-agreement]
+  Original  : User roles supports two distinct user roles that can be assigned from the page
+  Suggestion: User roles support two distinct user roles that can be assigned from the page
+
+[account_management.dita] [unclear-antecedent]
+  Original  : only uses your social account to read your name and email address. No other data is accessed. requires a valid email address
+  Suggestion: [Product Name] only uses your social account to read your name and email address. No other data is accessed. [Product Name] requires a valid email address
+
+[account_management.dita] [unclear-antecedent]
+  Original  : In this case, asks you to provide one.
+  Suggestion: In this case, the system asks you to provide one.
+
+[account_management.dita] [unclear-antecedent]
+  Original  : For , the number of attempts and lockout duration can be configured by the administrator. See .
+  Suggestion: For [Product Name], the number of attempts and lockout duration can be configured by the administrator. See [Link].
+
+[cf-profile-settings.dita] [wrong-word]
+  Original  : When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.
+  Suggestion: When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.
+
+[content_fusion_user_interface.dita] [spelling]
+  Original  : webinars, and other presentations for .
+  Suggestion: webinars, and other presentations.
+
+[content_fusion_user_interface.dita] [spelling]
+  Original  : displays information about the current version of .
+  Suggestion: displays information about the current version.
+
+## WARNING (11)
+
+[overview.dita] [awkward-phrasing]
+  Original  : For in-depth visual looks at , see the following resources:
+  Suggestion: For in-depth visual overviews, see the following resources:
+
+[platform-user-roles.dita] [article-usage]
+  Original  : This type of user role utilizes floating licensing model.
+  Suggestion: This type of user role utilizes a floating licensing model.
+
+[platform-user-roles.dita] [awkward-phrasing]
+  Original  : SMEs can create content but not directly in projects.
+  Suggestion: SMEs can create content, but not directly within projects.
+
+[account_management.dita] [awkward-phrasing]
+  Original  : If this is your first time before using , you must create an account by following these steps:
+  Suggestion: If this is your first time using the platform, you must create an account by following these steps:
+
+[account_management.dita] [awkward-phrasing]
+  Original  : you can simply click either of those two buttons and allow to use those credentials.
+  Suggestion: you can simply click either of those two buttons and allow the use of those credentials.
+
+[account_management.dita] [parallel-structure]
+  Original  : This opens a profile settings page that displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.
+  Suggestion: This opens a profile settings page that displays your name, email, and avatar, and allows you to delete your account or specify notification types.
+
+[cf-profile-settings.dita] [parallel-structure]
+  Original  : New messages are added on review tasks assigned to me New messages are added on review tasks owned by me Review tasks owned by me are finalized by a reviewer New reviewers are assigned to public tasks owned by me A file is modified by a collaborator on a review task owned by me or assigned to me
+  Suggestion: New messages are added to review tasks assigned to me; New messages are added to review tasks owned by me; Review tasks owned by me are finalized by a reviewer; New reviewers are assigned to public tasks owned by me; A file is modified by a collaborator on a review task owned by me or assigned to me
+
+[cf-profile-settings.dita] [awkward-phrasing]
+  Original  : When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.
+  Suggestion: When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.
+
+[content_fusion_user_interface.dita] [missing-comma]
+  Original  : The browser interface includes a top stripe that is always visible and it contains a user drop-down menu
+  Suggestion: The browser interface includes a top stripe that is always visible, and it contains a user drop-down menu
+
+[content_fusion_user_interface.dita] [missing-comma]
+  Original  : A left navigation stripe is also always visible and it contains buttons for navigating
+  Suggestion: A left navigation stripe is also always visible, and it contains buttons for navigating
+
+[content_fusion_user_interface.dita] [run-on-sentence]
+  Original  : When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe
+  Suggestion: When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area to navigate to previous pages; additionally, more actions become available below the top stripe
+
+## SUGGESTION (6)
+
+[overview.dita] [redundancy]
+  Original  : Multiple collaborators can work in real time on the same document concurrently
+  Suggestion: Multiple collaborators can work on the same document concurrently
+
+[platform-user-roles.dita] [parallel-structure]
+  Original  : Access to projects and content creation tools . Ability to edit and manage content . Publishing functionality for finalized content.
+  Suggestion: Access projects and content creation tools. Edit and manage content. Publish finalized content.
+
+[account_management.dita] [parallel-structure]
+  Original  : displays a list of all the current tasks that you created, those that were assigned to you, and those that have been finalized
+  Suggestion: displays a list of all current tasks: those you created, those assigned to you, and those that have been finalized
+
+[cf-profile-settings.dita] [awkward-phrasing]
+  Original  : When not selected, the publication tree is displayed as read only.
+  Suggestion: When not selected, the publication tree is displayed as read-only.
+
+[content_fusion_user_interface.dita] [parallel-structure]
+  Original  : Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process.
+  Suggestion: Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks efficiently during the documentation review process.
+
+[content_fusion_user_interface.dita] [parallel-structure]
+  Original  : Project Review Tasks - Provides additional tools for technical writers to help manage a DITA project
+  Suggestion: Project Review Tasks - Provides additional tools for technical writers to manage a DITA project
+

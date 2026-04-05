@@ -1,0 +1,224 @@
+[
+  {
+    "file": "overview.dita",
+    "issueCount": 5,
+    "error": null,
+    "usage": {
+      "inputTokens": 1286,
+      "outputTokens": 356,
+      "costUsd": 0.00030958
+    },
+    "issues": [
+      {
+        "issue": "run-on-sentence",
+        "original": "What is Oxygen Content Fusion? combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.",
+        "suggestion": "Oxygen Content Fusion combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.",
+        "severity": "error"
+      },
+      {
+        "issue": "redundancy",
+        "original": "Multiple collaborators can work in real time on the same document concurrently",
+        "suggestion": "Multiple collaborators can work on the same document concurrently",
+        "severity": "suggestion"
+      },
+      {
+        "issue": "run-on-sentence",
+        "original": "can be used purely as a collaborative review platform, without projects or publishing.",
+        "suggestion": "It can be used purely as a collaborative review platform, without projects or publishing.",
+        "severity": "error"
+      },
+      {
+        "issue": "subject-verb-agreement",
+        "original": "The Content Fusion projects support allows you to connect to an existing Git repository",
+        "suggestion": "Content Fusion project support allows you to connect to an existing Git repository",
+        "severity": "error"
+      },
+      {
+        "issue": "awkward-phrasing",
+        "original": "For in-depth visual looks at , see the following resources:",
+        "suggestion": "For in-depth visual overviews, see the following resources:",
+        "severity": "warning"
+      }
+    ]
+  },
+  {
+    "file": "platform-user-roles.dita",
+    "issueCount": 4,
+    "error": null,
+    "usage": {
+      "inputTokens": 1165,
+      "outputTokens": 264,
+      "costUsd": 0.00025705
+    },
+    "issues": [
+      {
+        "issue": "subject-verb-agreement",
+        "original": "User roles supports two distinct user roles that can be assigned from the page",
+        "suggestion": "User roles support two distinct user roles that can be assigned from the page",
+        "severity": "error"
+      },
+      {
+        "issue": "article-usage",
+        "original": "This type of user role utilizes floating licensing model.",
+        "suggestion": "This type of user role utilizes a floating licensing model.",
+        "severity": "warning"
+      },
+      {
+        "issue": "parallel-structure",
+        "original": "Access to projects and content creation tools . Ability to edit and manage content . Publishing functionality for finalized content.",
+        "suggestion": "Access projects and content creation tools. Edit and manage content. Publish finalized content.",
+        "severity": "suggestion"
+      },
+      {
+        "issue": "awkward-phrasing",
+        "original": "SMEs can create content but not directly in projects.",
+        "suggestion": "SMEs can create content, but not directly within projects.",
+        "severity": "warning"
+      }
+    ]
+  },
+  {
+    "file": "account_management.dita",
+    "issueCount": 7,
+    "error": null,
+    "usage": {
+      "inputTokens": 1299,
+      "outputTokens": 576,
+      "costUsd": 0.00039927
+    },
+    "issues": [
+      {
+        "issue": "awkward-phrasing",
+        "original": "If this is your first time before using , you must create an account by following these steps:",
+        "suggestion": "If this is your first time using the platform, you must create an account by following these steps:",
+        "severity": "warning"
+      },
+      {
+        "issue": "awkward-phrasing",
+        "original": "you can simply click either of those two buttons and allow to use those credentials.",
+        "suggestion": "you can simply click either of those two buttons and allow the use of those credentials.",
+        "severity": "warning"
+      },
+      {
+        "issue": "unclear-antecedent",
+        "original": "only uses your social account to read your name and email address. No other data is accessed. requires a valid email address",
+        "suggestion": "[Product Name] only uses your social account to read your name and email address. No other data is accessed. [Product Name] requires a valid email address",
+        "severity": "error"
+      },
+      {
+        "issue": "unclear-antecedent",
+        "original": "In this case, asks you to provide one.",
+        "suggestion": "In this case, the system asks you to provide one.",
+        "severity": "error"
+      },
+      {
+        "issue": "unclear-antecedent",
+        "original": "For , the number of attempts and lockout duration can be configured by the administrator. See .",
+        "suggestion": "For [Product Name], the number of attempts and lockout duration can be configured by the administrator. See [Link].",
+        "severity": "error"
+      },
+      {
+        "issue": "parallel-structure",
+        "original": "This opens a profile settings page that displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
+        "suggestion": "This opens a profile settings page that displays your name, email, and avatar, and allows you to delete your account or specify notification types.",
+        "severity": "warning"
+      },
+      {
+        "issue": "parallel-structure",
+        "original": "displays a list of all the current tasks that you created, those that were assigned to you, and those that have been finalized",
+        "suggestion": "displays a list of all current tasks: those you created, those assigned to you, and those that have been finalized",
+        "severity": "suggestion"
+      }
+    ]
+  },
+  {
+    "file": "cf-profile-settings.dita",
+    "issueCount": 4,
+    "error": null,
+    "usage": {
+      "inputTokens": 1062,
+      "outputTokens": 407,
+      "costUsd": 0.00030086
+    },
+    "issues": [
+      {
+        "issue": "parallel-structure",
+        "original": "New messages are added on review tasks assigned to me New messages are added on review tasks owned by me Review tasks owned by me are finalized by a reviewer New reviewers are assigned to public tasks owned by me A file is modified by a collaborator on a review task owned by me or assigned to me",
+        "suggestion": "New messages are added to review tasks assigned to me; New messages are added to review tasks owned by me; Review tasks owned by me are finalized by a reviewer; New reviewers are assigned to public tasks owned by me; A file is modified by a collaborator on a review task owned by me or assigned to me",
+        "severity": "warning"
+      },
+      {
+        "issue": "awkward-phrasing",
+        "original": "When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.",
+        "suggestion": "When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.",
+        "severity": "warning"
+      },
+      {
+        "issue": "wrong-word",
+        "original": "When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.",
+        "suggestion": "When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.",
+        "severity": "error"
+      },
+      {
+        "issue": "awkward-phrasing",
+        "original": "When not selected, the publication tree is displayed as read only.",
+        "suggestion": "When not selected, the publication tree is displayed as read-only.",
+        "severity": "suggestion"
+      }
+    ]
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issueCount": 7,
+    "error": null,
+    "usage": {
+      "inputTokens": 1446,
+      "outputTokens": 535,
+      "costUsd": 0.00040198
+    },
+    "issues": [
+      {
+        "issue": "missing-comma",
+        "original": "The browser interface includes a top stripe that is always visible and it contains a user drop-down menu",
+        "suggestion": "The browser interface includes a top stripe that is always visible, and it contains a user drop-down menu",
+        "severity": "warning"
+      },
+      {
+        "issue": "missing-comma",
+        "original": "A left navigation stripe is also always visible and it contains buttons for navigating",
+        "suggestion": "A left navigation stripe is also always visible, and it contains buttons for navigating",
+        "severity": "warning"
+      },
+      {
+        "issue": "spelling",
+        "original": "webinars, and other presentations for .",
+        "suggestion": "webinars, and other presentations.",
+        "severity": "error"
+      },
+      {
+        "issue": "spelling",
+        "original": "displays information about the current version of .",
+        "suggestion": "displays information about the current version.",
+        "severity": "error"
+      },
+      {
+        "issue": "run-on-sentence",
+        "original": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe",
+        "suggestion": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area to navigate to previous pages; additionally, more actions become available below the top stripe",
+        "severity": "warning"
+      },
+      {
+        "issue": "parallel-structure",
+        "original": "Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process.",
+        "suggestion": "Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks efficiently during the documentation review process.",
+        "severity": "suggestion"
+      },
+      {
+        "issue": "parallel-structure",
+        "original": "Project Review Tasks - Provides additional tools for technical writers to help manage a DITA project",
+        "suggestion": "Project Review Tasks - Provides additional tools for technical writers to manage a DITA project",
+        "severity": "suggestion"
+      }
+    ]
+  }
+]

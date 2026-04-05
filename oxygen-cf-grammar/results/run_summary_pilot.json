@@ -1,0 +1,79 @@
+{
+  "model": "google/gemma-4-26b-a4b-it",
+  "mode": "pilot",
+  "topicsProcessed": 5,
+  "topicsTotal": 99,
+  "totalIssues": 27,
+  "issuesBySeverity": {
+    "error": 10,
+    "warning": 11,
+    "suggestion": 6
+  },
+  "issuesByType": {
+    "article-usage": 1,
+    "awkward-phrasing": 6,
+    "missing-comma": 2,
+    "parallel-structure": 6,
+    "redundancy": 1,
+    "run-on-sentence": 3,
+    "spelling": 2,
+    "subject-verb-agreement": 2,
+    "unclear-antecedent": 3,
+    "wrong-word": 1
+  },
+  "totalInputTokens": 6258,
+  "totalOutputTokens": 2138,
+  "totalCostUsd": 0.0016687400000000002,
+  "topicResults": [
+    {
+      "file": "overview.dita",
+      "issueCount": 5,
+      "error": null,
+      "usage": {
+        "inputTokens": 1286,
+        "outputTokens": 356,
+        "costUsd": 0.00030958
+      }
+    },
+    {
+      "file": "platform-user-roles.dita",
+      "issueCount": 4,
+      "error": null,
+      "usage": {
+        "inputTokens": 1165,
+        "outputTokens": 264,
+        "costUsd": 0.00025705
+      }
+    },
+    {
+      "file": "account_management.dita",
+      "issueCount": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 1299,
+        "outputTokens": 576,
+        "costUsd": 0.00039927
+      }
+    },
+    {
+      "file": "cf-profile-settings.dita",
+      "issueCount": 4,
+      "error": null,
+      "usage": {
+        "inputTokens": 1062,
+        "outputTokens": 407,
+        "costUsd": 0.00030086
+      }
+    },
+    {
+      "file": "content_fusion_user_interface.dita",
+      "issueCount": 7,
+      "error": null,
+      "usage": {
+        "inputTokens": 1446,
+        "outputTokens": 535,
+        "costUsd": 0.00040198
+      }
+    }
+  ]
+}
