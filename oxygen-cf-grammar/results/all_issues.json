@@ -1,9 +1,9 @@
 [
   {
     "file": "overview.dita",
-    "issue": "run-on-sentence",
-    "original": "What is Oxygen Content Fusion? combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.",
-    "suggestion": "Oxygen Content Fusion combines the power of Git-based versioning control with an intuitive, browser-based authoring and review interface.",
+    "issue": "subject-verb-agreement",
+    "original": "The Content Fusion projects support allows you to connect to an existing Git repository",
+    "suggestion": "The Content Fusion project support allows you to connect to an existing Git repository",
     "severity": "error"
   },
   {
@@ -15,38 +15,17 @@
   },
   {
     "file": "overview.dita",
-    "issue": "run-on-sentence",
-    "original": "can be used purely as a collaborative review platform, without projects or publishing.",
-    "suggestion": "It can be used purely as a collaborative review platform, without projects or publishing.",
-    "severity": "error"
-  },
-  {
-    "file": "overview.dita",
-    "issue": "subject-verb-agreement",
-    "original": "The Content Fusion projects support allows you to connect to an existing Git repository",
-    "suggestion": "Content Fusion project support allows you to connect to an existing Git repository",
-    "severity": "error"
-  },
-  {
-    "file": "overview.dita",
-    "issue": "awkward-phrasing",
-    "original": "For in-depth visual looks at , see the following resources:",
-    "suggestion": "For in-depth visual overviews, see the following resources:",
-    "severity": "warning"
-  },
-  {
-    "file": "platform-user-roles.dita",
-    "issue": "subject-verb-agreement",
-    "original": "User roles supports two distinct user roles that can be assigned from the page",
-    "suggestion": "User roles support two distinct user roles that can be assigned from the page",
-    "severity": "error"
+    "issue": "redundancy",
+    "original": "Multiple collaborators can work in real time on the same document concurrently",
+    "suggestion": "Multiple collaborators can work in real time on the same document",
+    "severity": "suggestion"
   },
   {
     "file": "platform-user-roles.dita",
     "issue": "article-usage",
     "original": "This type of user role utilizes floating licensing model.",
     "suggestion": "This type of user role utilizes a floating licensing model.",
-    "severity": "warning"
+    "severity": "error"
   },
   {
     "file": "platform-user-roles.dita",
@@ -59,7 +38,7 @@
     "file": "platform-user-roles.dita",
     "issue": "parallel-structure",
     "original": "Content Fusion Author Capabilities: Access to projects and content creation tools . Ability to edit and manage content . Publishing functionality for finalized content.",
-    "suggestion": "Content Fusion Author Capabilities: Access projects and content creation tools; edit and manage content; and use publishing functionality for finalized content.",
+    "suggestion": "Content Fusion Author Capabilities: Accessing projects and content creation tools; editing and managing content; and using publishing functionality for finalized content.",
     "severity": "warning"
   },
   {
@@ -72,134 +51,106 @@
   {
     "file": "account_management.dita",
     "issue": "awkward-phrasing",
-    "original": "If this is your first time before using , you must create an account by following these steps:",
-    "suggestion": "If this is your first time using the platform, you must create an account by following these steps:",
+    "original": "If this is your first time before using Oxygen Content Fusion, you must create an account by following these steps:",
+    "suggestion": "If this is your first time using Oxygen Content Fusion, you must create an account by following these steps:",
     "severity": "warning"
+  },
+  {
+    "file": "account_management.dita",
+    "issue": "redundancy",
+    "original": "Open the email that is sent to the email address you entered and use the link to verify your email address.",
+    "suggestion": "Open the email sent to the address you entered and use the link to verify your account.",
+    "severity": "suggestion"
   },
   {
     "file": "account_management.dita",
     "issue": "awkward-phrasing",
-    "original": "you can simply click either of those two buttons and allow to use those credentials.",
-    "suggestion": "you can simply click either of those two buttons and allow the use of those credentials.",
-    "severity": "warning"
-  },
-  {
-    "file": "account_management.dita",
-    "issue": "unclear-antecedent",
-    "original": "only uses your social account to read your name and email address. No other data is accessed. requires a valid email address",
-    "suggestion": "[Product Name] only uses your social account to read your name and email address. No other data is accessed. [Product Name] requires a valid email address",
-    "severity": "error"
-  },
-  {
-    "file": "account_management.dita",
-    "issue": "unclear-antecedent",
-    "original": "In this case, asks you to provide one.",
-    "suggestion": "In this case, the system asks you to provide one.",
-    "severity": "error"
-  },
-  {
-    "file": "account_management.dita",
-    "issue": "unclear-antecedent",
-    "original": "For , the number of attempts and lockout duration can be configured",
-    "suggestion": "For [Product Name], the number of attempts and lockout duration can be configured",
-    "severity": "error"
-  },
-  {
-    "file": "account_management.dita",
-    "issue": "unclear-antecedent",
-    "original": "See .",
-    "suggestion": "See [Link/Section Name].",
-    "severity": "error"
+    "original": "The lockout expires automatically so you just need to wait before trying again.",
+    "suggestion": "The lockout expires automatically; simply wait before trying again.",
+    "severity": "suggestion"
   },
   {
     "file": "account_management.dita",
     "issue": "parallel-structure",
-    "original": "displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
-    "suggestion": "displays your name, email, and avatar, and allows you to delete your account or specify your email notification settings.",
+    "original": "This opens a profile settings page that displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
+    "suggestion": "This opens a profile settings page where you can view your name, email, and avatar, delete your account, or specify notification settings.",
     "severity": "warning"
   },
   {
     "file": "account_management.dita",
-    "issue": "awkward-phrasing",
+    "issue": "parallel-structure",
     "original": "Opens the My Review Tasks page in the main area that displays a list of all the current tasks that you created, those that were assigned to you, and those that have been finalized",
-    "suggestion": "Opens the My Review Tasks page in the main area, which displays a list of all current tasks: those you created, those assigned to you, and those that have been finalized",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-profile-settings.dita",
-    "issue": "parallel-structure",
-    "original": "New messages are added on review tasks assigned to me New messages are added on review tasks owned by me Review tasks owned by me are finalized by a reviewer New reviewers are assigned to public tasks owned by me",
-    "suggestion": "New messages are added to review tasks assigned to me; New messages are added to review tasks owned by me; Review tasks owned by me are finalized by a reviewer; New reviewers are assigned to public tasks owned by me",
+    "suggestion": "Opens the My Review Tasks page, which displays a list of all tasks you created, tasks assigned to you, and finalized tasks",
     "severity": "warning"
   },
   {
     "file": "cf-profile-settings.dita",
     "issue": "awkward-phrasing",
-    "original": "When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.",
-    "suggestion": "When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.",
+    "original": "It displays information about your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
+    "suggestion": "This page displays your name, email, and avatar, and allows you to delete your account or specify your email notification preferences.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-profile-settings.dita",
+    "issue": "parallel-structure",
+    "original": "New messages are added on review tasks assigned to me New messages are added on review tasks owned by me Review tasks owned by me are finalized by a reviewer New reviewers are assigned to public tasks owned by me A file is modified by a collaborator on a review task owned by me or assigned to me",
+    "suggestion": "New messages are added to review tasks assigned to me; New messages are added to review tasks owned by me; Review tasks owned by me are finalized by a reviewer; New reviewers are assigned to public tasks owned by me; A file is modified by a collaborator on a review task owned by me or assigned to me",
     "severity": "warning"
   },
   {
     "file": "cf-profile-settings.dita",
     "issue": "wrong-word",
-    "original": "When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.",
-    "suggestion": "When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.",
-    "severity": "error"
+    "original": "When not selected, the publication tree is displayed as read only.",
+    "suggestion": "When not selected, the publication tree is displayed as read-only.",
+    "severity": "warning"
   },
   {
     "file": "cf-profile-settings.dita",
     "issue": "awkward-phrasing",
-    "original": "When not selected, the publication tree is displayed as read only.",
-    "suggestion": "When not selected, the publication tree is displayed as read-only.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "content_fusion_user_interface.dita",
-    "issue": "missing-comma",
-    "original": "The browser interface includes a top stripe that is always visible and it contains a user drop-down menu",
-    "suggestion": "The browser interface includes a top stripe that is always visible, and it contains a user drop-down menu",
+    "original": "When the due date for a task is within 3 days, 1 day, and 12 hours of its expiration.",
+    "suggestion": "When the due date for a task is within 3 days, 1 day, or 12 hours of its expiration.",
     "severity": "warning"
   },
   {
     "file": "content_fusion_user_interface.dita",
-    "issue": "missing-comma",
-    "original": "A left navigation stripe is also always visible and it contains buttons for navigating",
-    "suggestion": "A left navigation stripe is also always visible, and it contains buttons for navigating",
+    "issue": "redundancy",
+    "original": "The Oxygen Content Fusion browser interface can be accessed by using a task link and then logging in.",
+    "suggestion": "The Oxygen Content Fusion browser interface can be accessed by using a task link and logging in.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "awkward-phrasing",
+    "original": "The Oxygen Content Fusion browser interface includes a top stripe that is always visible and it contains a user drop-down menu and other actions depending on the page that is opened within the interface.",
+    "suggestion": "The Oxygen Content Fusion browser interface includes a persistent top stripe containing a user drop-down menu and other actions that vary depending on the active page.",
     "severity": "warning"
   },
   {
     "file": "content_fusion_user_interface.dita",
     "issue": "awkward-phrasing",
-    "original": "opens the My Review Tasks page that lists all the tasks that are assigned to you and tasks that you created (or own).",
-    "suggestion": "opens the My Review Tasks page, which lists all tasks assigned to you and tasks you created (or own).",
+    "original": "A left navigation stripe is also always visible and it contains buttons for navigating to various pages within the interface.",
+    "suggestion": "A left navigation stripe is also always visible, containing buttons to navigate to various pages within the interface.",
     "severity": "suggestion"
   },
   {
     "file": "content_fusion_user_interface.dita",
     "issue": "parallel-structure",
-    "original": "Opens a profile settings page that displays your name, email, avatar, and allows you to delete your account",
-    "suggestion": "Opens a profile settings page that displays your name, email, and avatar, and allows you to delete your account",
+    "original": "Opens the My Review Tasks page that displays a list of all the current tasks that you own or that were assigned to you.",
+    "suggestion": "Opens the My Review Tasks page, which displays a list of all tasks you own or that were assigned to you.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "parallel-structure",
+    "original": "Opens a profile settings page that displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
+    "suggestion": "Opens the profile settings page to display your name, email, and avatar, and to allow you to delete your account or specify email notification settings.",
     "severity": "warning"
   },
   {
     "file": "content_fusion_user_interface.dita",
-    "issue": "spelling",
-    "original": "webpage with a variety of video demonstrations, webinars, and other presentations for .",
-    "suggestion": "webpage with a variety of video demonstrations, webinars, and other presentations.",
-    "severity": "error"
-  },
-  {
-    "file": "content_fusion_user_interface.dita",
-    "issue": "spelling",
-    "original": "displays information about the current version of .",
-    "suggestion": "displays information about the current version.",
-    "severity": "error"
-  },
-  {
-    "file": "content_fusion_user_interface.dita",
     "issue": "run-on-sentence",
-    "original": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe",
-    "suggestion": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area to navigate to previous pages; additionally, more actions become available below the top stripe",
+    "original": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe, depending on the page and the user role.",
+    "suggestion": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area for navigating to previous pages. Additional actions also become available below the top stripe, depending on the page and the user role.",
     "severity": "warning"
   },
   {
@@ -212,15 +163,8 @@
   {
     "file": "content_fusion_user_interface.dita",
     "issue": "parallel-structure",
-    "original": "Non-Project Review Tasks - Provides tools for technical writers... Project Review Tasks - Provides additional tools...",
-    "suggestion": "Non-Project Review Tasks provide tools... Project Review Tasks provide additional tools...",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-projects.dita",
-    "issue": "awkward-phrasing",
-    "original": "manage its lifecycle from creation, to review, to publishing as PDF or Oxygen WebHelp Responsive .",
-    "suggestion": "manage its lifecycle from creation through review to publishing as a PDF or Oxygen WebHelp Responsive output.",
+    "original": "Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process.",
+    "suggestion": "Non-Project Review Tasks: Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during the documentation review process.",
     "severity": "suggestion"
   },
   {
@@ -235,7 +179,7 @@
     "issue": "parallel-structure",
     "original": "Helps Authors build WebHelp or PDF outputs via Publications and Deliverables .",
     "suggestion": "helps authors build WebHelp or PDF outputs via Publications and Deliverables.",
-    "severity": "warning"
+    "severity": "suggestion"
   },
   {
     "file": "cf-projects.dita",
@@ -262,7 +206,7 @@
     "file": "cf-projects-workspace.dita",
     "issue": "awkward-phrasing",
     "original": "On the right side of the second top stripe, an Incoming commits widget shows if there are incoming changes and you can click the drop-down to display more information",
-    "suggestion": "On the right side of the second top stripe, the Incoming commits widget shows whether there are incoming changes; you can click the drop-down to display more information",
+    "suggestion": "On the right side of the second top stripe, an Incoming commits widget shows whether there are incoming changes; you can click the drop-down to display more information",
     "severity": "suggestion"
   },
   {
@@ -271,6 +215,13 @@
     "original": "Clicking this button opens the Changes view where you can commit the changes to the repository.",
     "suggestion": "Clicking this button opens the Changes view, where you can commit the changes to the repository.",
     "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-workspace.dita",
+    "issue": "awkward-phrasing",
+    "original": "When trying to merge branches inside the Personal Workspace, the merge cannot be processed if you have any local outgoing changes.",
+    "suggestion": "If you have local outgoing changes, you cannot process a branch merge inside the Personal Workspace.",
+    "severity": "warning"
   },
   {
     "file": "cf-projects-workspace_publications_view.dita",
@@ -288,9 +239,9 @@
   },
   {
     "file": "cf-projects-workspace_publications_view.dita",
-    "issue": "redundancy",
-    "original": "Workspace Publications View To select a defined publication, use the publications drop-down control in the side-pane.",
-    "suggestion": "To select a defined publication, use the publications drop-down control in the side-pane.",
+    "issue": "awkward-phrasing",
+    "original": "If you have modified the publications using the project Publications Management page , you also need to pull incoming changes into your workspace to retrieve the latest publications.",
+    "suggestion": "If you have modified publications using the project Publications Management page, you must also pull incoming changes into your workspace to retrieve the latest versions.",
     "severity": "suggestion"
   },
   {
@@ -302,38 +253,31 @@
   },
   {
     "file": "cf-projects-workspace_publications_view.dita",
-    "issue": "missing-comma",
-    "original": "In the resulting dialog box, you enter a name for the publication and specify the context DITA map and optionally, a DITAVAL filter file.",
-    "suggestion": "In the resulting dialog box, you enter a name for the publication and specify the context DITA map and, optionally, a DITAVAL filter file.",
+    "issue": "redundancy",
+    "original": "Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications.",
+    "suggestion": "Manage Publications Dialog Box. The Manage Publications dialog box allows you to create and configure publications.",
     "severity": "warning"
   },
   {
     "file": "cf-projects-workspace_publications_view.dita",
-    "issue": "wrong-word",
-    "original": "This action will add an <include> element in the 's builtin DITA-OT project file.",
-    "suggestion": "This action will add an <include> element to the built-in DITA-OT project file.",
+    "issue": "awkward-phrasing",
+    "original": "This action will add an <include> element in the Oxygen Content Fusion's builtin DITA-OT project file.",
+    "suggestion": "This action adds an <include> element to the Oxygen Content Fusion built-in DITA-OT project file.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "spelling",
+    "original": "Oxygen Content Fusion's builtin DITA-OT project file.",
+    "suggestion": "Oxygen Content Fusion's built-in DITA-OT project file.",
     "severity": "error"
   },
   {
     "file": "cf-projects-workspace_publications_view.dita",
     "issue": "awkward-phrasing",
-    "original": "If that option is deselected, the map is displayed as read only.",
-    "suggestion": "If that option is deselected, the map is displayed as read-only.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-projects-workspace_publications_view.dita",
-    "issue": "redundancy",
-    "original": "Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications.",
-    "suggestion": "Manage Publications Dialog Box: The Manage Publications dialog box allows you to create and configure publications.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-projects-workspace_publications_view.dita",
-    "issue": "awkward-phrasing",
-    "original": "You can click the Manage Deliverables button to the right of the current publication to open the deliverables management page for the particular publication where you can create new deliverables, build an existing deliverable, view logs, download deliverables, and schedule periodic builds for a deliverable to automate the process.",
-    "suggestion": "To open the deliverables management page for a specific publication, click the Manage Deliverables button. From there, you can create new deliverables, build existing ones, view logs, download deliverables, and schedule periodic builds.",
-    "severity": "warning"
+    "original": "There are some limitations in regard to the supported DITA-OT project files:",
+    "suggestion": "There are some limitations regarding the supported DITA-OT project files:",
+    "severity": "suggestion"
   },
   {
     "file": "CF-dita-map-tree-editor.dita",
@@ -344,16 +288,16 @@
   },
   {
     "file": "CF-dita-map-tree-editor.dita",
-    "issue": "article-usage",
-    "original": "To open and edit the DITA map defined in the particular publication",
-    "suggestion": "To open and edit the DITA map defined in a particular publication",
+    "issue": "awkward-phrasing",
+    "original": "To open and edit the DITA map defined in the particular publication in a tree editor",
+    "suggestion": "To open and edit the DITA map for a specific publication in the tree editor",
     "severity": "warning"
   },
   {
     "file": "CF-dita-map-tree-editor.dita",
-    "issue": "awkward-phrasing",
+    "issue": "missing-comma",
     "original": "If the referenced topic is missing or not well-formed XML, an error icon is presented instead.",
-    "suggestion": "If the referenced topic is missing or is not well-formed XML, an error icon is displayed instead.",
+    "suggestion": "If the referenced topic is missing or is not well-formed XML, an error icon is presented instead.",
     "severity": "suggestion"
   },
   {
@@ -372,7 +316,7 @@
   },
   {
     "file": "CF-dita-map-tree-editor.dita",
-    "issue": "word-order",
+    "issue": "awkward-phrasing",
     "original": "You can right-click items in the map and the following possible contextual menu actions are available:",
     "suggestion": "You can right-click items in the map to access the following contextual menu actions:",
     "severity": "warning"
@@ -399,39 +343,32 @@
     "severity": "suggestion"
   },
   {
-    "file": "cf-projects-workspace_incoming_changes.dita",
-    "issue": "redundancy",
-    "original": "Incoming commits are automatically refreshed periodically",
-    "suggestion": "Incoming commits are automatically refreshed",
-    "severity": "suggestion"
+    "file": "cf-projects-workspace_changes_view.dita",
+    "issue": "parallel-structure",
+    "original": "Viewing the commit graph, which displays the history of branches and merges. Hovering over a commit to see details such as the committer's name, date, and commit message. Clicking on a commit to display the files included in that commit at the bottom of the pane.",
+    "suggestion": "View the commit graph, which displays the history of branches and merges; hover over a commit to see details such as the committer's name, date, and commit message; and click on a commit to display the files included in that commit at the bottom of the pane.",
+    "severity": "warning"
   },
   {
     "file": "cf-projects-workspace_incoming_changes.dita",
     "issue": "redundancy",
-    "original": "you can click the Refresh button to refresh manually",
-    "suggestion": "you can click the Refresh button to update manually",
+    "original": "Incoming commits are automatically refreshed periodically, but you can click the Refresh button to refresh manually.",
+    "suggestion": "Incoming commits are refreshed periodically, but you can click the Refresh button to refresh manually.",
     "severity": "suggestion"
   },
   {
     "file": "cf-projects-workspace_incoming_changes.dita",
     "issue": "run-on-sentence",
     "original": "When there are no conflicts, you can also click the View changed files button to see a comparison of the incoming changes versus the current workspace version and a Pull action is available in that comparison dialog box.",
-    "suggestion": "When there are no conflicts, you can also click the View changed files button to see a comparison of the incoming changes versus the current workspace version. A Pull action is available in that comparison dialog box.",
+    "suggestion": "When there are no conflicts, you can also click the View changed files button to see a comparison of the incoming changes versus the current workspace version; a Pull action is also available in that comparison dialog box.",
     "severity": "warning"
   },
   {
     "file": "cf-projects-workspace_incoming_changes.dita",
     "issue": "awkward-phrasing",
-    "original": "the badge with the number of incoming commits is highlighted in red",
-    "suggestion": "the incoming commits badge is highlighted in red",
+    "original": "You can click the Resolve conflicts button to open a dialog box where you can choose actions for resolving the conflicts .",
+    "suggestion": "You can click the Resolve conflicts button to open a dialog box to resolve the conflicts.",
     "severity": "suggestion"
-  },
-  {
-    "file": "cf-projects-workspace_incoming_changes.dita",
-    "issue": "spelling",
-    "original": "resolving the conflicts .",
-    "suggestion": "resolving the conflicts.",
-    "severity": "error"
   },
   {
     "file": "cf-projects-workspace-conflict-resolution.dita",
@@ -479,14 +416,14 @@
     "file": "cf-projects-workspace_problems_view.dita",
     "issue": "run-on-sentence",
     "original": "If problems are detected, they are grouped by publication context and each one is listed with the severity of the problem (fatal, error, warning, info) displayed in a badge at the top-left corner of the problem, the name of the publication in the top-right corner, followed by a description of the problem.",
-    "suggestion": "If problems are detected, they are grouped by publication context. Each problem is listed with its severity (fatal, error, warning, or info) displayed in a badge at the top-left corner, the publication name in the top-right corner, and a description of the problem.",
+    "suggestion": "If problems are detected, they are grouped by publication context. Each problem is listed with its severity (fatal, error, warning, or info) displayed in a badge at the top-left corner, the name of the publication in the top-right corner, and a description of the problem.",
     "severity": "warning"
   },
   {
     "file": "cf-projects-workspace_problems_view.dita",
     "issue": "run-on-sentence",
     "original": "The file name is listed at the bottom of each problem and clicking on the file name opens it in the editor pane with the cursor placed at the location of the problem (if the file is from a different publication other than the current publication, a dialog box is displayed asking if you want to switch to the other publication).",
-    "suggestion": "The file name is listed at the bottom of each problem. Clicking the file name opens it in the editor pane with the cursor placed at the location of the problem. If the file is from a publication other than the current one, a dialog box asks if you want to switch to that publication.",
+    "suggestion": "The file name is listed at the bottom of each problem. Clicking the file name opens it in the editor pane with the cursor placed at the location of the problem. If the file is from a publication other than the current one, a dialog box asks if you want to switch to the other publication.",
     "severity": "warning"
   },
   {
@@ -498,9 +435,9 @@
   },
   {
     "file": "cf-projects-workspace_problems_view.dita",
-    "issue": "run-on-sentence",
-    "original": "If problems are detected, you can use the drop-down at the top of the view to filter the list to only show the problems for a particular publication (this also switches the current context for the entire project to the chosen publication) or you can select All publications to show all of them.",
-    "suggestion": "If problems are detected, you can use the drop-down at the top of the view to filter the list to show problems for a particular publication (this also switches the current context for the entire project to the chosen publication), or you can select All publications to show all of them.",
+    "issue": "awkward-phrasing",
+    "original": "Once the validation has processed, the Refresh in the top-right corner of the view triggers a new validation.",
+    "suggestion": "Once the validation is complete, click Refresh in the top-right corner of the view to trigger a new validation.",
     "severity": "warning"
   },
   {
@@ -513,15 +450,15 @@
   {
     "file": "cf-projects-workspace_search_view.dita",
     "issue": "redundancy",
-    "original": "In the In reviews tab, you can search for text within review comments",
-    "suggestion": "In the In reviews tab, you can search for text within review comments",
+    "original": "In the In reviews tab, you can search for text",
+    "suggestion": "In the In reviews tab, you can search for text",
     "severity": "error"
   },
   {
     "file": "cf-projects-workspace_search_view.dita",
     "issue": "awkward-phrasing",
     "original": "The search field works the same as in In content .",
-    "suggestion": "The search field works the same way as in the In content tab.",
+    "suggestion": "The search field works the same as in the In content tab.",
     "severity": "warning"
   },
   {
@@ -555,23 +492,30 @@
   {
     "file": "cf-ai-positron-overview.dita",
     "issue": "redundancy",
-    "original": "AI Positron View offers a plugin to integrate an AI Positron view that provides an advanced solution for using AI assistance to enhance the documentation content creation process.",
-    "suggestion": "AI Positron View offers a plugin that provides an advanced solution for using AI assistance to enhance the documentation content creation process.",
-    "severity": "warning"
+    "original": "offers a plugin to integrate an AI Positron view that provides an advanced solution for using AI assistance to enhance the documentation content creation process.",
+    "suggestion": "offers a plugin to integrate an AI Positron view that enhances the documentation content creation process.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-ai-positron-overview.dita",
     "issue": "parallel-structure",
-    "original": "the AI Positron streamlines and enhances the writing experience by providing a variety of helpful AI-based actions and features, ways to chat and refine responses, and much more.",
-    "suggestion": "the AI Positron streamlines and enhances the writing experience by providing a variety of helpful AI-based actions, features, and ways to chat and refine responses.",
-    "severity": "suggestion"
+    "original": "providing a variety of helpful AI-based actions and features, ways to chat and refine responses, and much more.",
+    "suggestion": "providing a variety of helpful AI-based actions, chat and response refinement tools, and much more.",
+    "severity": "warning"
   },
   {
     "file": "cf-ai-positron-overview.dita",
     "issue": "awkward-phrasing",
     "original": "The AI Positron view is only accessible for Content Fusion users with a platform user role of Author .",
-    "suggestion": "The AI Positron view is only accessible to Content Fusion users with the Author platform user role.",
+    "suggestion": "The AI Positron view is only accessible to Content Fusion users with the Author role.",
     "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-review-tasks.dita",
+    "issue": "wrong-word",
+    "original": "Tasks created from inside a project are slightly different than regular tasks created outside of a project",
+    "suggestion": "Tasks created from inside a project are slightly different from regular tasks created outside of a project",
+    "severity": "warning"
   },
   {
     "file": "cf-projects-review-tasks.dita",
@@ -582,45 +526,52 @@
   },
   {
     "file": "cf-projects-review-tasks.dita",
+    "issue": "subject-verb-agreement",
+    "original": "Other task states that a task owner could see is Integrating and Integrated",
+    "suggestion": "Other task states that a task owner could see are Integrating and Integrated",
+    "severity": "error"
+  },
+  {
+    "file": "cf-projects-review-tasks.dita",
     "issue": "awkward-phrasing",
-    "original": "Tasks created from inside a project are slightly different than regular tasks created outside of a project:",
-    "suggestion": "Tasks created within a project differ slightly from regular tasks created outside of a project:",
+    "original": "which makes certain navigation options and the breadcrumb available at all times.",
+    "suggestion": "making certain navigation options and the breadcrumb available at all times.",
     "severity": "suggestion"
   },
   {
     "file": "cf-projects-review-tasks.dita",
-    "issue": "wrong-word",
-    "original": "Other task states that a task owner could see is Integrating and Integrated",
-    "suggestion": "Other task states that a task owner can see are Integrating and Integrated",
+    "issue": "awkward-phrasing",
+    "original": "For any review task that you have access to that originates from a project (and you are not already assigned as an Owner), you can click the Assign Me as Owner link to be changed to an Owner .",
+    "suggestion": "For any project-based review task that you have access to (where you are not already an Owner), click the Assign Me as Owner link to become an Owner.",
     "severity": "warning"
   },
   {
     "file": "cf-projects-review-tasks.dita",
     "issue": "awkward-phrasing",
-    "original": "When a reviewer opens a task that the owner requested that they do another review,",
-    "suggestion": "When a reviewer opens a task for which the owner has requested a re-review,",
+    "original": "When a reviewer opens a task that the owner requested that they do another review, the Task Files page includes a Changed files only filter option",
+    "suggestion": "When a reviewer opens a task for which the owner has requested a re-review, the Task Files page includes a Changed files only filter option",
     "severity": "warning"
   },
   {
     "file": "cf-projects-review-tasks.dita",
     "issue": "word-order",
-    "original": "the files added to the task will be render",
-    "suggestion": "the files added to the task will be rendered",
-    "severity": "error"
+    "original": "any reviewers who have not finalized the task will receive an email notification when the due date is within 3 days, 1 day, and 12 hours of its expiration.",
+    "suggestion": "any reviewers who have not finalized the task will receive an email notification when the due date is within 3 days, 1 day, or 12 hours of its expiration.",
+    "severity": "warning"
   },
   {
     "file": "cf-projects-review-tasks.dita",
     "issue": "missing-comma",
-    "original": "If you want to create a new file to add to the task (or upload an existing one from your computer), you will first need to finish creating the task.",
-    "suggestion": "If you want to create a new file to add to the task (or upload an existing one from your computer), you must first finish creating the task.",
+    "original": "To create a new file, click the New File button and you will be able to choose a file type",
+    "suggestion": "To create a new file, click the New File button, and you will be able to choose a file type",
     "severity": "suggestion"
   },
   {
     "file": "cf-projects-review-tasks.dita",
-    "issue": "redundancy",
-    "original": "The amount of time left before the due date arrives is displayed",
-    "suggestion": "The time remaining before the due date is displayed",
-    "severity": "suggestion"
+    "issue": "incomplete-sentence",
+    "original": "Optionally, you can select a Context Publication (the publication must already be defined in the ).",
+    "suggestion": "Optionally, you can select a Context Publication (the publication must already be defined in the system).",
+    "severity": "error"
   },
   {
     "file": "cf-projects-repository.dita",
@@ -632,22 +583,15 @@
   {
     "file": "cf-projects-repository.dita",
     "issue": "awkward-phrasing",
-    "original": "If you hover over a folder or file, a 3 vertical dots menu appears.",
-    "suggestion": "If you hover over a folder or file, a menu with three vertical dots appears.",
+    "original": "a 3 vertical dots menu appears",
+    "suggestion": "a three-dot vertical menu appears",
     "severity": "suggestion"
   },
   {
     "file": "cf-projects-repository.dita",
     "issue": "awkward-phrasing",
     "original": "To add a file to a new review task that will be created, click the 3 vertical dots next to the file and select Add to review task .",
-    "suggestion": "To add a file to a new review task, click the three vertical dots next to the file and select Add to review task.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-projects-repository.dita",
-    "issue": "redundancy",
-    "original": "This initiates a new task creation process.",
-    "suggestion": "This initiates a new task.",
+    "suggestion": "To add a file to a new review task, click the three-dot vertical menu next to the file and select Add to review task.",
     "severity": "suggestion"
   },
   {
@@ -675,7 +619,7 @@
     "file": "cf-projects-deliverables.dita",
     "issue": "awkward-phrasing",
     "original": "You can click the Download button next to the particular build to download an archive of the build package and then use it to publish the output using whatever tool you want.",
-    "suggestion": "You can click the Download button next to the build to download the build package archive, which you can then use to publish the output with any tool.",
+    "suggestion": "You can click the Download button next to the build to download the build package archive and use it to publish the output with your preferred tool.",
     "severity": "suggestion"
   },
   {
@@ -694,38 +638,31 @@
   },
   {
     "file": "cf-projects-deliverables.dita",
-    "issue": "word-order",
+    "issue": "awkward-phrasing",
     "original": "This is a built-in connector that deploys the output to a web platform that is accessible pu",
     "suggestion": "This is a built-in connector that deploys the output to a publicly accessible web platform.",
     "severity": "error"
   },
   {
     "file": "cf-projects-publications.dita",
-    "issue": "redundancy",
-    "original": "Publications Management Publications management page The Publications Management page allows you to create and configure publications.",
-    "suggestion": "Publications Management page. The Publications Management page allows you to create and configure publications.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-projects-publications.dita",
     "issue": "awkward-phrasing",
     "original": "A Content Fusion publication defines a DITA map that will be used to resolve keys in the topics that will be sent for review and optionally, a DITAVAL filter used for flagging or filtering profiled content.",
     "suggestion": "A Content Fusion publication defines a DITA map used to resolve keys in the topics sent for review and, optionally, a DITAVAL filter used to flag or filter profiled content.",
-    "severity": "suggestion"
+    "severity": "warning"
   },
   {
     "file": "cf-projects-publications.dita",
     "issue": "missing-comma",
-    "original": "and optionally, a DITAVAL filter",
-    "suggestion": "and, optionally, a DITAVAL filter",
-    "severity": "warning"
+    "original": "To reach the page, go to Deliverables (found at the bottom of the left navigation stripe when inside a project), then click Publications from the left stripe.",
+    "suggestion": "To reach the page, go to Deliverables (found at the bottom of the left navigation stripe when inside a project), and then click Publications from the left stripe.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-projects-publications.dita",
-    "issue": "awkward-phrasing",
-    "original": "Project Publications Page To create a new publication, click the New Publication button",
-    "suggestion": "Project Publications Page. To create a new publication, click the New Publication button",
-    "severity": "warning"
+    "issue": "redundancy",
+    "original": "To edit an existing publication, click the Configure button next to the particular publication. To delete an existing publication, click the Delete button next to the particular publication.",
+    "suggestion": "To edit or delete an existing publication, click the Configure or Delete button next to the publication.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-publishing-connectors.dita",
@@ -759,7 +696,7 @@
     "file": "cf-amazon-s3-connector.dita",
     "issue": "awkward-phrasing",
     "original": "To configure an Amazon S3 connector, the following fields must be provided:",
-    "suggestion": "To configure an Amazon S3 connector, provide the following fields:",
+    "suggestion": "To configure the Amazon S3 connector, provide the following fields:",
     "severity": "suggestion"
   },
   {
@@ -786,50 +723,43 @@
   {
     "file": "cf-amazon-s3-connector.dita",
     "issue": "awkward-phrasing",
-    "original": "Set the timeout to 15 minutes 0 seconds.",
-    "suggestion": "Set the timeout to 15 minutes, 0 seconds.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-amazon-s3-connector.dita",
-    "issue": "awkward-phrasing",
-    "original": "If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.",
-    "suggestion": "If you do not, your Lambda function may time out, and the zip file may not be unzipped or deleted.",
+    "original": "Set the timeout to 15 minutes 0 seconds. If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.",
+    "suggestion": "Set the timeout to 15 minutes 0 seconds. Otherwise, the Lambda function may time out, and the zip file may not be unzipped or deleted.",
     "severity": "warning"
   },
   {
     "file": "cf-amazon-s3-connector.dita",
     "issue": "awkward-phrasing",
-    "original": "Set the Memory to somewhere between 1000-5000 MB.",
-    "suggestion": "Set the Memory to between 1000 and 5000 MB.",
+    "original": "Set the Memory to somewhere between 1000-5000 MB. Set the Ephemeral storage to somewhere between 1000-5000 MB.",
+    "suggestion": "Set the Memory and Ephemeral storage to between 1000 and 5000 MB.",
     "severity": "suggestion"
-  },
-  {
-    "file": "cf-amazon-s3-connector.dita",
-    "issue": "awkward-phrasing",
-    "original": "If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.",
-    "suggestion": "If your output size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.",
-    "severity": "warning"
   },
   {
     "file": "cf-amazon-s3-connector.dita",
     "issue": "missing-comma",
     "original": "If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.",
-    "suggestion": "If your output's size is bigger than allocated Memory and Ephemeral storage, the lambda function may fail to execute.",
+    "suggestion": "If your output's size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "article-usage",
+    "original": "Click Save button.",
+    "suggestion": "Click the Save button.",
     "severity": "warning"
   },
   {
     "file": "cf-netlify-connector.dita",
     "issue": "article-usage",
     "original": "For more details, refer to the Netlify's Add new site topic.",
-    "suggestion": "refer to the Netlify Add new site topic",
+    "suggestion": "For more details, refer to the Netlify Add new site topic.",
     "severity": "warning"
   },
   {
     "file": "cf-netlify-connector.dita",
     "issue": "article-usage",
     "original": "For more details, refer to the Netlify's Personal Access Token topic.",
-    "suggestion": "refer to the Netlify Personal Access Token topic",
+    "suggestion": "For more details, refer to the Netlify Personal Access Token topic.",
     "severity": "warning"
   },
   {
@@ -862,7 +792,7 @@
   },
   {
     "file": "cf-sftp-connector.dita",
-    "issue": "word-order",
+    "issue": "wrong-word",
     "original": "The address of the server where files will be transferred to.",
     "suggestion": "The address of the server to which files will be transferred.",
     "severity": "suggestion"
@@ -877,16 +807,16 @@
   {
     "file": "cf-sftp-connector.dita",
     "issue": "awkward-phrasing",
-    "original": "The Folder where build output files will be stored after the upload process.",
-    "suggestion": "The folder where build output files will be stored after the upload process.",
-    "severity": "suggestion"
+    "original": "Specify the Destination Folder . The Folder where build output files will be stored after the upload process.",
+    "suggestion": "Specify the Destination Folder: The folder where build output files will be stored after the upload process.",
+    "severity": "warning"
   },
   {
     "file": "cf-sftp-connector.dita",
     "issue": "awkward-phrasing",
-    "original": "The location where temporary files will be stored during the upload process.",
-    "suggestion": "The location where temporary files are stored during the upload process.",
-    "severity": "suggestion"
+    "original": "Specify the Temporary Folder . The location where temporary files will be stored during the upload process.",
+    "suggestion": "Specify the Temporary Folder: The location where temporary files will be stored during the upload process.",
+    "severity": "warning"
   },
   {
     "file": "cf-projects-publishing-execution-status.dita",
@@ -898,23 +828,23 @@
   {
     "file": "cf-projects-publishing-execution-status.dita",
     "issue": "awkward-phrasing",
+    "original": "You also have the ability to stop builds that are in progress from this page.",
+    "suggestion": "You can also stop builds in progress from this page.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-publishing-execution-status.dita",
+    "issue": "word-order",
     "original": "The id of the build, relative to the deliverable that started it.",
-    "suggestion": "The ID of the build, relative to the deliverable that started the build.",
+    "suggestion": "The build ID, relative to the deliverable that started it.",
     "severity": "suggestion"
   },
   {
     "file": "cf-projects-publishing-execution-status.dita",
-    "issue": "spelling",
-    "original": "The id of the build",
-    "suggestion": "The ID of the build",
+    "issue": "parallel-structure",
+    "original": "Build - The id of the build, relative to the deliverable that started it. Name - The name of the deliverable that started the build. Status - The current status of the build .",
+    "suggestion": "Build - The ID of the build. Name - The name of the deliverable. Status - The current status of the build.",
     "severity": "warning"
-  },
-  {
-    "file": "cf-projects-publishing-execution-status.dita",
-    "issue": "awkward-phrasing",
-    "original": "You can hover over the symbol in this column to see what the status symbol means.",
-    "suggestion": "Hover over the symbol in this column to see its meaning.",
-    "severity": "suggestion"
   },
   {
     "file": "cf-projects-settings.dita",
@@ -926,8 +856,8 @@
   {
     "file": "cf-projects-settings.dita",
     "issue": "awkward-phrasing",
-    "original": "You can edit the Account credentials used to connect to the Git repository, while all the other settings (project name, description, project URL, branch) are read-only and cannot be updated.",
-    "suggestion": "You can edit the Account credentials used to connect to the Git repository; however, all other settings (project name, description, project URL, and branch) are read-only.",
+    "original": "You can use the Delete project button to delete the current project.",
+    "suggestion": "Use the Delete project button to delete the current project.",
     "severity": "suggestion"
   },
   {
@@ -940,23 +870,16 @@
   {
     "file": "cf-projects-members.dita",
     "issue": "awkward-phrasing",
-    "original": "This page is only available for private projects , and only project Members with the Owner role can access it.",
-    "suggestion": "This page is only available for private projects, and only project Members with the Owner role can access it.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-projects-members.dita",
-    "issue": "wrong-word",
     "original": "For public projects, only users with the Owner role are displayed in this page.",
     "suggestion": "For public projects, only users with the Owner role are displayed on this page.",
-    "severity": "warning"
+    "severity": "suggestion"
   },
   {
     "file": "cf-projects-members.dita",
     "issue": "redundancy",
     "original": "The Member must be configured and assigned a role of Author in the Users Management tab of the Administration Page . The Member must be assigned a role of Author in the page.",
     "suggestion": "The Member must be assigned a role of Author in the Users Management tab of the Administration Page.",
-    "severity": "error"
+    "severity": "warning"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
@@ -969,50 +892,43 @@
     "file": "making_changes_to_uploaded_files.dita",
     "issue": "awkward-phrasing",
     "original": "Each activity includes an icon that indicates the type of activity, the name of the user who made a change within the task, and when it was processed.",
-    "suggestion": "Each activity includes an icon indicating the type of activity, the name of the user who made the change, and the time it was processed.",
+    "suggestion": "Each activity includes an icon indicating the activity type, the name of the user who made the change, and the time it was processed.",
     "severity": "suggestion"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
-    "issue": "parallel-structure",
-    "original": "the name of the user who made a change within the task, and when it was processed.",
-    "suggestion": "the name of the user who made the change, and the time it was processed.",
+    "issue": "redundancy",
+    "original": "In most cases, the tracked changes feature will always be on so you and the task owner can see exactly what was changed",
+    "suggestion": "The tracked changes feature is usually on so you and the task owner can see exactly what was changed",
     "severity": "warning"
-  },
-  {
-    "file": "making_changes_to_uploaded_files.dita",
-    "issue": "awkward-phrasing",
-    "original": "In most cases, the tracked changes feature will always be on so you and the task owner can see exactly what was changed and will be able to easily accept or reject the changes.",
-    "suggestion": "In most cases, the tracked changes feature is always on, allowing you and the task owner to see exactly what was changed and easily accept or reject those changes.",
-    "severity": "suggestion"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
     "issue": "run-on-sentence",
     "original": "The feature is activated when you press Enter on your keyboard and you can navigate through the list of proposals by using the Up and Down arrow keys and to insert the selection, simply press Enter again.",
     "suggestion": "The feature is activated when you press Enter. You can navigate through the list of proposals using the Up and Down arrow keys; to insert the selection, simply press Enter again.",
-    "severity": "warning"
+    "severity": "error"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
     "issue": "wrong-word",
-    "original": "Markdown documents can opened as read-only in the visual editor",
-    "suggestion": "Markdown documents can be opened as read-only in the visual editor",
+    "original": "for example, Markdown documents can opened as read-only in the visual editor",
+    "suggestion": "for example, Markdown documents can be opened as read-only in the visual editor",
     "severity": "error"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
     "issue": "awkward-phrasing",
     "original": "The editor also includes a toolbar with some common actions along with others that are specific to the type of document (framework):",
-    "suggestion": "The editor also includes a toolbar with common actions and others specific to the document type (framework):",
+    "suggestion": "The editor also includes a toolbar with common actions and actions specific to the document type (framework):",
     "severity": "suggestion"
   },
   {
     "file": "making_changes_to_uploaded_files.dita",
-    "issue": "redundancy",
+    "issue": "missing-comma",
     "original": "More drop-down menu Gives you access to additional general actions:, such as options to save, download, or print the document.",
-    "suggestion": "More drop-down menu: Gives you access to general actions, such as saving, downloading, or printing the document.",
-    "severity": "suggestion"
+    "suggestion": "More drop-down menu: Gives you access to additional general actions, such as options to save, download, or print the document.",
+    "severity": "error"
   },
   {
     "file": "WA-dita-topic-doc-type.dita",
@@ -1039,7 +955,7 @@
     "file": "WA-dita-topic-doc-type.dita",
     "issue": "awkward-phrasing",
     "original": "where you can specify the DITA-OT project file and optionally, a context defined within it or you can specify a DITA map and optionally, a DITAVAL filtering file",
-    "suggestion": "where you can specify the DITA-OT project file and an optional context defined within it, or you can specify a DITA map and an optional DITAVAL filtering file",
+    "suggestion": "where you can specify the DITA-OT project file and an optional context defined within it, or specify a DITA map and an optional DITAVAL filtering file",
     "severity": "warning"
   },
   {
@@ -1065,14 +981,14 @@
   },
   {
     "file": "WA-dita-topic-doc-type.dita",
-    "issue": "awkward-phrasing",
-    "original": "When opening a topic from the DITA Map view or directly from a DITA map open in the editor, keys in that topic will be resolved taking the key scopes of the location for the particular topic reference into account.",
-    "suggestion": "When opening a topic from the DITA Map view or directly from a DITA map open in the editor, keys in that topic are resolved by taking the key scopes of the topic reference location into account.",
-    "severity": "warning"
+    "issue": "missing-comma",
+    "original": "When opening a topic from the DITA Map view or directly from a DITA map open in the editor, keys in that topic will be resolved",
+    "suggestion": "When opening a topic from the DITA Map view or directly from a DITA map open in the editor, the keys in that topic will be resolved",
+    "severity": "suggestion"
   },
   {
     "file": "WA-dita-topic-doc-type.dita",
-    "issue": "sentence-fragment",
+    "issue": "awkward-phrasing",
     "original": "also supports a KeyscopeStack URL parameter .",
     "suggestion": "The system also supports a KeyscopeStack URL parameter.",
     "severity": "error"
@@ -1081,7 +997,42 @@
     "file": "WA-dita-topic-doc-type.dita",
     "issue": "awkward-phrasing",
     "original": "without having to take your fingers off the keyboard.",
-    "suggestion": "without taking your hands off the keyboard.",
+    "suggestion": "without having to move your hands from the keyboard.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "WA-dita-map-doc-type.dita",
+    "issue": "awkward-phrasing",
+    "original": "DITA Map Document Type DITA Map document type DITA map toolbar actions The visual editor includes a variety of features",
+    "suggestion": "DITA Map Document Type and DITA Map Toolbar Actions. The visual editor includes a variety of features",
+    "severity": "warning"
+  },
+  {
+    "file": "WA-dita-map-doc-type.dita",
+    "issue": "subject-verb-agreement",
+    "original": "View Topic Titles Displays the map with both titles and topic references shown.",
+    "suggestion": "View Topic Titles: Displays the map with both titles and topic references shown.",
+    "severity": "warning"
+  },
+  {
+    "file": "WA-dita-map-doc-type.dita",
+    "issue": "parallel-structure",
+    "original": "View Topic References Display the map with the topic references shown. View Topic Titles Displays the map with both titles and topic references shown.",
+    "suggestion": "View Topic References: Displays the map with the topic references shown. View Topic Titles: Displays the map with both titles and topic references shown.",
+    "severity": "warning"
+  },
+  {
+    "file": "WA-dita-map-doc-type.dita",
+    "issue": "awkward-phrasing",
+    "original": "This amount can be configured with the topic.content.refs.limit option .",
+    "suggestion": "This limit can be configured using the topic.content.refs.limit option.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "WA-dita-map-doc-type.dita",
+    "issue": "redundancy",
+    "original": "There are various actions that are available in the contextual menu",
+    "suggestion": "Various actions are available in the contextual menu",
     "severity": "suggestion"
   },
   {
@@ -1093,50 +1044,43 @@
   },
   {
     "file": "review-tasks-intro.dita",
+    "issue": "awkward-phrasing",
+    "original": "There are two main types of review task users, Reviewers and Task Owners :",
+    "suggestion": "There are two main types of review task users: Reviewers and Task Owners.",
+    "severity": "warning"
+  },
+  {
+    "file": "review-tasks-intro.dita",
     "issue": "parallel-structure",
     "original": "They have access to task settings, share options, and they can ultimately merge proposed changes into their project.",
     "suggestion": "They have access to task settings, share options, and the ability to merge proposed changes into their project.",
     "severity": "warning"
   },
   {
-    "file": "review-tasks-intro.dita",
-    "issue": "awkward-phrasing",
-    "original": "There are two main types of review task users, Reviewers and Task Owners :",
-    "suggestion": "There are two main types of review task users: Reviewers and Task Owners.",
-    "severity": "suggestion"
-  },
-  {
     "file": "cf-review-tasks-projects.dita",
-    "issue": "subject-verb-agreement",
-    "original": "Project review tasks offers the ability to connect to an existing Git repository",
-    "suggestion": "Project review tasks offer the ability to connect to an existing Git repository",
+    "issue": "redundancy",
+    "original": "This role must be assigned to a user by an administrator (from the Administration page ) page ).",
+    "suggestion": "(from the Administration page).",
     "severity": "error"
   },
   {
     "file": "cf-review-tasks-projects.dita",
     "issue": "parallel-structure",
     "original": "Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process. Projects - Provides additional tools for technical writers to help manage a DITA project",
-    "suggestion": "Non-Project Review Tasks provide tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process. Projects provide additional tools for technical writers to help manage a DITA project",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-review-tasks-projects.dita",
-    "issue": "redundancy",
-    "original": "This role must be assigned to a user by an administrator (from the Administration page ) page ).",
-    "suggestion": "This role must be assigned to a user by an administrator (from the Administration page).",
-    "severity": "error"
+    "suggestion": "Non-Project Review Tasks: Provides tools... Projects: Provides additional tools...",
+    "severity": "suggestion"
   },
   {
     "file": "cf-review-tasks-projects.dita",
     "issue": "awkward-phrasing",
     "original": "In addition to the features that an SME has access to, Authors can access all projects and are able to create review tasks inside projects, as well as other functionality that is restricted from an SME.",
-    "suggestion": "In addition to the features available to an SME, Authors can access all projects, create review tasks inside projects, and use other functionality restricted from SMEs.",
-    "severity": "suggestion"
+    "suggestion": "In addition to the features available to an SME, Authors can access all projects, create review tasks within projects, and use other functionality restricted to SMEs.",
+    "severity": "warning"
   },
   {
     "file": "content_fusion_task_details.dita",
     "issue": "subject-verb-agreement",
-    "original": "To open an existing task, simply click on it. This open the Task Files page .",
+    "original": "This open the Task Files page .",
     "suggestion": "This opens the Task Files page.",
     "severity": "error"
   },
@@ -1157,16 +1101,23 @@
   {
     "file": "content_fusion_task_details.dita",
     "issue": "redundancy",
-    "original": "The next logical step would most likely be to share the task with anyone you want to review the documents.",
-    "suggestion": "The next step is to share the task with the reviewers.",
+    "original": "The bottom part of the header stripe changes depending on the context and user role. It contains a variety of helpful information and some useful actions.",
+    "suggestion": "The bottom part of the header stripe changes depending on the context and user role, containing helpful information and useful actions.",
     "severity": "suggestion"
   },
   {
     "file": "content_fusion_task_details.dita",
-    "issue": "awkward-phrasing",
+    "issue": "word-order",
     "original": "You can click on the Finalized widget (drop-down) to see the status for each assigned reviewer: If a task owner clicks on the Finalized widget (drop-down) for a task that has reviewers who have finalized their review, the task owner has access to a Request re-review button.",
-    "suggestion": "Click the Finalized widget (drop-down) to see the status for each assigned reviewer. If a task owner clicks the widget for a task where reviewers have already finalized their review, the owner can access the Request re-review button.",
+    "suggestion": "To see the status for each assigned reviewer, click the Finalized widget (drop-down). If a task owner clicks the widget for a task where reviewers have finalized their review, the task owner can access the Request re-review button.",
     "severity": "warning"
+  },
+  {
+    "file": "content_fusion_task_details.dita",
+    "issue": "awkward-phrasing",
+    "original": "The next logical step would most likely be to share the task with anyone you want to review the documents.",
+    "suggestion": "You can then share the task with the reviewers you choose.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-task-files.dita",
@@ -1193,15 +1144,15 @@
     "file": "cf-task-files.dita",
     "issue": "awkward-phrasing",
     "original": "Information about the email and author name of the person who made the change in Content Fusion is included.",
-    "suggestion": "The email and author name of the person who made the change in Content Fusion are included.",
-    "severity": "warning"
+    "suggestion": "The email and name of the person who made the change in Content Fusion are included.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-task-files.dita",
-    "issue": "subject-verb-agreement",
-    "original": "Information about the email and author name of the person who made the change in Content Fusion is included.",
-    "suggestion": "Information about the email and author name of the person who made the change in Content Fusion is included.",
-    "severity": "error"
+    "issue": "run-on-sentence",
+    "original": "You can also create a new file from this page and it will be attached to the current task:",
+    "suggestion": "You can also create a new file from this page; it will be attached to the current task:",
+    "severity": "warning"
   },
   {
     "file": "cf-task-files.dita",
@@ -1214,7 +1165,7 @@
     "file": "cf-task-files.dita",
     "issue": "awkward-phrasing",
     "original": "The next logical step would most likely be to share the task with anyone you want to review the documents.",
-    "suggestion": "The next step is to share the task with anyone you want to review the documents.",
+    "suggestion": "Next, share the task with anyone you want to review the documents.",
     "severity": "suggestion"
   },
   {
@@ -1227,16 +1178,9 @@
   {
     "file": "cf-task-activity.dita",
     "issue": "awkward-phrasing",
-    "original": "opens the page in a side-view to the left of the editor.",
-    "suggestion": "opens the page in a side view to the left of the editor.",
+    "original": "clicking on Task activity opens the page in a side-view to the left of the editor.",
+    "suggestion": "clicking Task activity opens the page in a side view to the left of the editor.",
     "severity": "suggestion"
-  },
-  {
-    "file": "cf-task-activity.dita",
-    "issue": "word-order",
-    "original": "you can click the file name from the Task activity to see a comparison",
-    "suggestion": "you can click the file name in the Task activity to see a comparison",
-    "severity": "warning"
   },
   {
     "file": "cf-task-activity.dita",
@@ -1248,13 +1192,6 @@
   {
     "file": "cf-task-activity.dita",
     "issue": "awkward-phrasing",
-    "original": "Opens the version of the file when the selected file change was made.",
-    "suggestion": "Opens the version of the file as it existed when the selected file change was made.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-task-activity.dita",
-    "issue": "redundancy",
     "original": "Opens a comparison (diff) between the selected file change and its previous version of the file.",
     "suggestion": "Opens a comparison (diff) between the selected file change and the previous version of the file.",
     "severity": "warning"
@@ -1275,17 +1212,17 @@
   },
   {
     "file": "cf-task-search.dita",
-    "issue": "awkward-phrasing",
-    "original": "opens the page in a side-view to the left of the editor.",
-    "suggestion": "opens the page in a side view to the left of the editor.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-task-search.dita",
     "issue": "wrong-word",
     "original": "See for advanced options.",
     "suggestion": "See advanced options.",
     "severity": "error"
+  },
+  {
+    "file": "cf-task-search.dita",
+    "issue": "redundancy",
+    "original": "The search looks for matches in the text of all task files.",
+    "suggestion": "The search looks for matches in all task files.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-task-reviews-view.dita",
@@ -1319,15 +1256,15 @@
     "file": "cf-task-reviews-view.dita",
     "issue": "awkward-phrasing",
     "original": "Mentions are available only in review task comments.",
-    "suggestion": "Mentions are only available in review task comments.",
-    "severity": "suggestion"
+    "suggestion": "Mentions are only available in task review comments.",
+    "severity": "warning"
   },
   {
     "file": "cf-task-reviews-view.dita",
     "issue": "awkward-phrasing",
     "original": "See for how mentions and related notifications work.",
     "suggestion": "See how mentions and related notifications work.",
-    "severity": "warning"
+    "severity": "error"
   },
   {
     "file": "cf-task-settings.dita",
@@ -1346,50 +1283,57 @@
   {
     "file": "cf-task-settings.dita",
     "issue": "parallel-structure",
-    "original": "Edit (default) - Reviewers are allowed to edit documents within the task. Suggest using change tracking - Change Tracking is always on when the Reviewers make changes or add comments in the documents attached to the task.",
-    "suggestion": "Edit (default) - Reviewers are allowed to edit documents within the task. Suggest using change tracking - Reviewers make changes or add comments using change tracking, which is always on.",
+    "original": "Change Tracking is always on when the Reviewers make changes or add comments in the documents attached to the task.",
+    "suggestion": "Change Tracking is always on when reviewers make changes to or add comments in the documents attached to the task.",
     "severity": "warning"
   },
   {
     "file": "cf-task-settings.dita",
-    "issue": "unclear-antecedent",
-    "original": "For more information, see .",
-    "suggestion": "For more information, see [insert link/section].",
-    "severity": "error"
-  },
-  {
-    "file": "cf-task-settings.dita",
-    "issue": "redundancy",
-    "original": "This allows you and other Reviewers to see exactly what has been changed and you will have the ability to accept or reject the changes after you have integrated them back into Oxygen XML Editor/Author .",
-    "suggestion": "This allows you and other reviewers to see exactly what has changed, so you can accept or reject changes after integrating them back into Oxygen XML Editor/Author.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-review-task-comment-mentions-notifications.dita",
     "issue": "awkward-phrasing",
-    "original": "When the task is shared so that anyone with the link has access (the Anyone in your organization who opens the link is automatically granted access as a Reviewer Anyone who opens the link is automatically granted access as a Reviewer option is enabled), the mention list shows all users from your organization all users who can access the server .",
-    "suggestion": "When the task is shared so that anyone with the link has access (the 'Anyone who opens the link is automatically granted access as a Reviewer' option is enabled), the mention list shows all users from your organization who can access the server.",
-    "severity": "error"
-  },
-  {
-    "file": "cf-review-task-comment-mentions-notifications.dita",
-    "issue": "redundancy",
-    "original": "the mention list shows all users from your organization all users who can access the server .",
-    "suggestion": "the mention list shows all users from your organization who can access the server.",
-    "severity": "warning"
+    "original": "This allows you and other Reviewers to see exactly what has been changed and you will have the ability to accept or reject the changes after you have integrated them back into Oxygen XML Editor/Author .",
+    "suggestion": "This allows you and other reviewers to see exactly what has changed, enabling you to accept or reject changes after integrating them back into Oxygen XML Editor/Author.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-review-task-comment-mentions-notifications.dita",
     "issue": "missing-comma",
     "original": "Open a file in the review task and add a comment , reply to a comment thread, or edit an existing comment.",
     "suggestion": "Open a file in the review task and add a comment, reply to a comment thread, or edit an existing comment.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-review-task-comment-mentions-notifications.dita",
+    "issue": "awkward-phrasing",
+    "original": "When the task is shared so that anyone with the link has access (the Anyone in your organization who opens the link is automatically granted access as a Reviewer Anyone who opens the link is automatically granted access as a Reviewer option is enabled), the mention list shows all users from your organization all users who can access the server .",
+    "suggestion": "When the task is shared so that anyone with the link has access (the 'Anyone who opens the link is automatically granted access as a Reviewer' option is enabled), the mention list shows all users from your organization who can access the server.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-review-task-comment-mentions-notifications.dita",
+    "issue": "run-on-sentence",
+    "original": "the mention list shows all users from your organization all users who can access the server .",
+    "suggestion": "the mention list shows all users from your organization who can access the server.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-review-task-comment-mentions-notifications.dita",
+    "issue": "awkward-phrasing",
+    "original": "As the task owner , if you mention someone who has not yet been added to the task, a Grant task access dialog box appears so that you can add them.",
+    "suggestion": "As the task owner, if you mention someone who has not yet been added to the task, the Grant task access dialog box appears so that you can add them.",
     "severity": "suggestion"
   },
   {
     "file": "cf-review-task-comment-mentions-notifications.dita",
     "issue": "awkward-phrasing",
-    "original": "To find all comments where you or someone else is mentioned, use the Mentioned user filter in the (for tasks) or in the In reviews tab (for projects).",
-    "suggestion": "To find all comments where you or someone else is mentioned, use the Mentioned user filter in the [Missing UI Element] tab (for tasks) or in the In reviews tab (for projects).",
+    "original": "As a reviewer , when the task is shared with the link, the full list of users appears.",
+    "suggestion": "As a reviewer, when the task is shared via a link, the full list of users appears.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-review-task-comment-mentions-notifications.dita",
+    "issue": "unclear-antecedent",
+    "original": "use the Mentioned user filter in the (for tasks) or in the In reviews tab (for projects).",
+    "suggestion": "use the Mentioned user filter in the [Missing UI Element] (for tasks) or in the In reviews tab (for projects).",
     "severity": "warning"
   },
   {
@@ -1409,29 +1353,22 @@
   {
     "file": "sharing_tasks_with_reviewers.dita",
     "issue": "awkward-phrasing",
-    "original": "This sends an email to the owner of the task and they have the ability to accept the request for access.",
-    "suggestion": "This sends an email to the task owner, who can then accept the access request.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "sharing_tasks_with_reviewers.dita",
-    "issue": "run-on-sentence",
-    "original": "If the Anyone who opens the link is automatically granted access as a Reviewer Anyone in your organization who opens the link is automatically granted access as a Reviewer option is selected, if a removed collaborator re-opens the task via its link, they will automatically be re-added as a Reviewer .",
-    "suggestion": "If the 'Anyone in your organization who opens the link is automatically granted access as a Reviewer' option is selected, a removed collaborator who re-opens the task via its link will automatically be re-added as a Reviewer.",
+    "original": "If the Anyone who opens the link is automatically granted access as a Reviewer Anyone in your organization who opens the link is automatically granted access as a Reviewer option is selected",
+    "suggestion": "If the \"Anyone in your organization who opens the link is automatically granted access as a Reviewer\" option is selected",
     "severity": "error"
   },
   {
     "file": "sharing_tasks_with_reviewers.dita",
-    "issue": "redundancy",
-    "original": "You can click on the Copy link button at the bottom of the dialog box to copy the link to the clipboard so that you can send it to collaborators.",
-    "suggestion": "Click the Copy link button at the bottom of the dialog box to copy the link to the clipboard.",
-    "severity": "suggestion"
+    "issue": "awkward-phrasing",
+    "original": "This option is available only if the Tasks can be shared publicly toggle option is selected in the Administration page.",
+    "suggestion": "This option is available only if the \"Tasks can be shared publicly\" toggle option is selected on the Administration page.",
+    "severity": "warning"
   },
   {
     "file": "sharing_tasks_with_reviewers.dita",
-    "issue": "awkward-phrasing",
-    "original": "It is possible to retrieve the task link directly within Oxygen XML Editor/Author but the person you send the link to must first be granted access to the task in the Share dialog box (in the browser).",
-    "suggestion": "You can retrieve the task link directly within Oxygen XML Editor/Author, but the recipient must first be granted access to the task in the Share dialog box in the browser.",
+    "issue": "missing-comma",
+    "original": "It is possible to retrieve the task link directly within Oxygen XML Editor/Author but the person you send the link to must first be granted access",
+    "suggestion": "It is possible to retrieve the task link directly within Oxygen XML Editor/Author, but the person you send the link to must first be granted access",
     "severity": "warning"
   },
   {
@@ -1444,22 +1381,22 @@
   {
     "file": "communicating_with_the_author.dita",
     "issue": "awkward-phrasing",
-    "original": "Select Task Activity from the left stripe.",
-    "suggestion": "Select Task Activity from the left pane.",
+    "original": "If you have a file from a review task open in the visual editor , a Task Activity pane is opened to the left of the editor pane.",
+    "suggestion": "If you have a file from a review task open in the visual editor, the Task Activity pane opens to the left of the editor pane.",
     "severity": "suggestion"
   },
   {
     "file": "communicating_with_the_author.dita",
-    "issue": "wrong-word",
-    "original": "If you have the review task open in any other page, it opens the Task Activity page",
-    "suggestion": "If you have the review task open on any other page, the Task Activity page opens",
+    "issue": "awkward-phrasing",
+    "original": "If you have the review task open in any other page, it opens the Task Activity page where you can see all the activity that has happened on the task.",
+    "suggestion": "If you have the review task open on any other page, the Task Activity page opens, showing all activity related to the task.",
     "severity": "warning"
   },
   {
     "file": "communicating_with_the_author.dita",
-    "issue": "awkward-phrasing",
-    "original": "where you can see all the activity that has happened on the task.",
-    "suggestion": "where you can see all task activity.",
+    "issue": "wrong-word",
+    "original": "Anyone who has access to the task can see the message in the Task Activity page or side view.",
+    "suggestion": "Anyone who has access to the task can see the message on the Task Activity page or in the side view.",
     "severity": "suggestion"
   },
   {
@@ -1467,63 +1404,42 @@
     "issue": "article-usage",
     "original": "Create new task from the browser Create new files from the browser",
     "suggestion": "Create a new task from the browser. Create new files from the browser.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-new-task-from-interface.dita",
+    "issue": "awkward-phrasing",
+    "original": "To create a new file, click the New File button and you will be able to choose a file type from a list of templates, then choose a file name in the text field at the bottom, and click OK .",
+    "suggestion": "To create a new file, click the New File button, choose a file type from the list of templates, enter a file name in the text field at the bottom, and click OK.",
     "severity": "warning"
   },
   {
     "file": "cf-new-task-from-interface.dita",
     "issue": "awkward-phrasing",
     "original": "The next logical step would most likely be to share the task with anyone you want to review the documents.",
-    "suggestion": "The next step is to share the task with your reviewers.",
+    "suggestion": "Next, share the task with the reviewers.",
     "severity": "suggestion"
   },
   {
-    "file": "cf-new-task-from-interface.dita",
-    "issue": "parallel-structure",
-    "original": "click the New File button and you will be able to choose a file type from a list of templates, then choose a file name in the text field at the bottom, and click OK .",
-    "suggestion": "click the New File button, choose a file type from a list of templates, enter a file name in the text field at the bottom, and click OK.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-concurrent-editing.dita",
-    "issue": "awkward-phrasing",
-    "original": "Simultaneous editing offers a feature that provides the ability for multiple reviewers who have access to a particular task to edit and review content concurrently.",
-    "suggestion": "Simultaneous editing allows multiple reviewers with access to a task to edit and review content concurrently.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-concurrent-editing.dita",
+    "file": "cf-unlocking-files.dita",
     "issue": "redundancy",
-    "original": "Each reviewer can see the changes made by others in both the main visual editor and in the activity stream on the left side of the interface, in real time.",
-    "suggestion": "Each reviewer can see changes made by others in real time in both the main visual editor and the activity stream on the left side of the interface.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-concurrent-editing.dita",
-    "issue": "awkward-phrasing",
-    "original": "On the machine where is installed, add this line to the /fusion/data/config/api/api.properties file:",
-    "suggestion": "On the machine where Content Fusion is installed, add this line to the /fusion/data/config/api/api.properties file:",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-unlocking-files.dita",
-    "issue": "awkward-phrasing",
     "original": "If someone else is currently editing the particular file, you will see a Lock icon on the left side of the Files box and that person's avatar on the right side of the Files box will have a red border.",
-    "suggestion": "If someone else is currently editing the file, a Lock icon appears on the left side of the Files box, and that person's avatar on the right side will have a red border.",
+    "suggestion": "If someone else is currently editing the file, you will see a Lock icon on the left side of the Files box and that person's avatar on the right side will have a red border.",
     "severity": "suggestion"
-  },
-  {
-    "file": "cf-unlocking-files.dita",
-    "issue": "missing-comma",
-    "original": "until that person navigates back to the Task Files page , closes the browser, or uses the Finalize Review button.",
-    "suggestion": "until that person navigates back to the Task Files page, closes the browser, or uses the Finalize Review button.",
-    "severity": "error"
   },
   {
     "file": "cf-unlocking-files.dita",
     "issue": "awkward-phrasing",
     "original": "If other users do not start editing the file, or once they are finished and it becomes unlocked, a Resume Editing button will be displayed that can be used to switch back to editing mode.",
-    "suggestion": "If other users do not start editing the file, or once they have finished and the file is unlocked, a Resume Editing button appears to allow you to switch back to editing mode.",
+    "suggestion": "If other users do not start editing the file, or once they have finished and the file is unlocked, a Resume Editing button appears to let you switch back to editing mode.",
     "severity": "warning"
+  },
+  {
+    "file": "cf-unlocking-files.dita",
+    "issue": "missing-comma",
+    "original": "When a file is locked, no one else can edit the file until that person navigates back to the Task Files page , closes the browser, or uses the Finalize Review button.",
+    "suggestion": "When a file is locked, no one else can edit the file until that person navigates back to the Task Files page, closes the browser, or uses the Finalize Review button.",
+    "severity": "error"
   },
   {
     "file": "assign_task_to_new_owner.dita",
@@ -1556,29 +1472,29 @@
   {
     "file": "assign_task_to_new_owner.dita",
     "issue": "awkward-phrasing",
-    "original": "The task is now listed as one of the Review tasks owned by me in the My Review Tasks page and the task is also added in the Content Fusion Tasks Manager view for the new owner",
-    "suggestion": "The task is now listed as one of the Review tasks owned by you on the My Review Tasks page, and the task is also added to the Content Fusion Tasks Manager view for the new owner",
+    "original": "The task is now listed as one of the Review tasks owned by me in the My Review Tasks page and the task is also added in the Content Fusion Tasks Manager view",
+    "suggestion": "The task is now listed as one of the Review tasks owned by you on the My Review Tasks page, and the task is also added to the Content Fusion Tasks Manager view",
     "severity": "warning"
   },
   {
     "file": "finishing_tasks.dita",
     "issue": "pronoun-agreement",
     "original": "informing the task owner that you have reviewed all the files attached and you are finished with the review process.",
-    "suggestion": "informing the task owner that they have reviewed all the files attached and are finished with the review process.",
+    "suggestion": "informing the task owner that the reviewer has reviewed all the attached files and is finished with the review process.",
     "severity": "warning"
   },
   {
     "file": "finishing_tasks.dita",
     "issue": "awkward-phrasing",
     "original": "The Finalized state does reset for a particular user if they make changes within the task, or if a task owner either re-opens a closed task or requests another review of the task .",
-    "suggestion": "The Finalized state resets for a particular user if they make changes within the task, or if the task owner re-opens a closed task or requests another review.",
+    "suggestion": "The Finalized state resets for a particular user if they make changes within the task, or if a task owner re-opens a closed task or requests another review.",
     "severity": "suggestion"
   },
   {
     "file": "finishing_tasks.dita",
     "issue": "redundancy",
-    "original": "The resulting dialog box also has an option to add an additional message to provide more details, if desired.",
-    "suggestion": "The resulting dialog box also has an option to add a message to provide more details, if desired.",
+    "original": "That particular user will need to use the Finalize My Review button to finalize the review again once they are done making changes.",
+    "suggestion": "That user will need to use the Finalize My Review button again once they have finished making changes.",
     "severity": "suggestion"
   },
   {
@@ -1590,16 +1506,16 @@
   },
   {
     "file": "deleting_tasks.dita",
-    "issue": "awkward-phrasing",
-    "original": "In both cases, this will delete the task from the server and the Content Fusion Tasks Manager view.",
-    "suggestion": "In both cases, the task is deleted from the server and the Content Fusion Tasks Manager view.",
+    "issue": "redundancy",
+    "original": "Deleting Review Tasks Deleting tasks",
+    "suggestion": "Deleting Review Tasks",
     "severity": "suggestion"
   },
   {
     "file": "CF-task-states-user-roles.dita",
     "issue": "run-on-sentence",
     "original": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content and changes proposed by reviewers can be integrated back into the DITA project directly within Content Fusion.",
-    "suggestion": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository containing DITA content; changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.",
+    "suggestion": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content. Changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.",
     "severity": "warning"
   },
   {
@@ -1612,20 +1528,41 @@
   {
     "file": "CF-task-states-user-roles.dita",
     "issue": "parallel-structure",
-    "original": "The task owner (the person who created the task or another person who is assigned as a task owner by the task creator) can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.",
-    "suggestion": "The task owner (the person who created the task or another person assigned as a task owner by the task creator) can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.",
-    "severity": "warning"
-  },
-  {
-    "file": "CF-task-states-user-roles.dita",
-    "issue": "missing-comma",
-    "original": "For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :",
-    "suggestion": "For organizations that take advantage of the Content Fusion Projects feature, there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page):",
+    "original": "The changes made to a project-based review task are stored in the Git repository and merged into the project's branch and pushed to the upstream remote repository when the task is finished.",
+    "suggestion": "The changes made to a project-based review task are stored in the Git repository, merged into the project's branch, and pushed to the upstream remote repository when the task is finished.",
     "severity": "suggestion"
   },
   {
     "file": "CF-task-states-user-roles.dita",
+    "issue": "article-usage",
+    "original": "All users with platform user role of Author that have access to a project are able to see all review tasks",
+    "suggestion": "All users with the platform user role of Author who have access to a project are able to see all review tasks",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "parallel-structure",
+    "original": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once they consider the review process is finished.",
+    "suggestion": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once the review process is finished.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "parallel-structure",
+    "original": "can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.",
+    "suggestion": "can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
     "issue": "awkward-phrasing",
+    "original": "For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :",
+    "suggestion": "For organizations using the Content Fusion Projects feature, an administrator can assign two platform user roles (from the Users Management tab on the Administration Page):",
+    "severity": "suggestion"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "missing-comma",
     "original": "In addition to the features that an SME has access to, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and other advanced features.",
     "suggestion": "In addition to the features available to an SME, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and use other advanced features.",
     "severity": "warning"
@@ -1648,15 +1585,8 @@
     "file": "cf-enterprise-server.dita",
     "issue": "awkward-phrasing",
     "original": "The Oxygen Content Fusion Connector add-on requires a deployed Enterprise server, or you can use the Cloud version hosted by Oxygen : The solution allows you to host your own server",
-    "suggestion": "The Oxygen Content Fusion Connector add-on requires a deployed Enterprise server, or you can use the Cloud version hosted by Oxygen. The Enterprise server solution allows you to host your own server",
+    "suggestion": "The Oxygen Content Fusion Connector add-on requires a deployed Enterprise server, or you can use the Cloud version hosted by Oxygen. The self-hosted solution allows you to host your own server",
     "severity": "warning"
-  },
-  {
-    "file": "cf-enterprise-server.dita",
-    "issue": "unclear-antecedent",
-    "original": "This solution also allows you to upload custom frameworks so that all contributors will have access to them when reviewing content in .",
-    "suggestion": "This solution also allows you to upload custom frameworks so that all contributors will have access to them when reviewing content in Content Fusion.",
-    "severity": "error"
   },
   {
     "file": "cf-enterprise-server.dita",
@@ -1664,6 +1594,13 @@
     "original": "Fast start-up - You simply need to sign up, create your organization account, define your team, and you will be ready to collaborate",
     "suggestion": "Fast start-up - Simply sign up, create your organization account, and define your team to be ready to collaborate",
     "severity": "warning"
+  },
+  {
+    "file": "cf-enterprise-server.dita",
+    "issue": "awkward-phrasing",
+    "original": "30 days trial - You can try Oxygen Content Fusion for free for 30 days.",
+    "suggestion": "30-day trial - You can try Oxygen Content Fusion for free for 30 days.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-enterprise-server.dita",
@@ -1681,17 +1618,17 @@
   },
   {
     "file": "cf-linux.dita",
-    "issue": "awkward-phrasing",
-    "original": "The software should be installed on a dedicated machine that is only used for without other services.",
-    "suggestion": "The software should be installed on a dedicated machine that is used exclusively for this purpose, without other services.",
+    "issue": "parallel-structure",
+    "original": "One of the following fresh Linux distributions: Ubuntu 22.04 or 24.04 VM ( ) Red Hat Enterprise Linux 9 ( ) CentOS 9 ( ) Root access to the machine Docker Engine Community Edition 25, 27, 28, or 29 iptables needs to be installed At least 100 GB of free disk space",
+    "suggestion": "One of the following fresh Linux distributions: Ubuntu 22.04 or 24.04 VM, Red Hat Enterprise Linux 9, or CentOS 9; root access to the machine; Docker Engine Community Edition 25, 27, 28, or 29; iptables; at least 100 GB of free disk space",
     "severity": "warning"
   },
   {
     "file": "cf-linux.dita",
     "issue": "awkward-phrasing",
-    "original": "The software should be installed on a dedicated machine that is only used for without other services.",
-    "suggestion": "The software should be installed on a dedicated machine without other services.",
-    "severity": "warning"
+    "original": "The software should be installed on a dedicated machine that is only used for Oxygen Content Fusion without other services.",
+    "suggestion": "Install the software on a dedicated machine used exclusively for Oxygen Content Fusion, without other services.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-configure-server-address-property-file.dita",
@@ -1723,13 +1660,6 @@
   },
   {
     "file": "cf-custom-frameworks.dita",
-    "issue": "awkward-phrasing",
-    "original": "One of the advantages of using the solution is that it can be configured to support any DITA specialization or XML language.",
-    "suggestion": "One advantage of this solution is that it can be configured to support any DITA specialization or XML language.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-custom-frameworks.dita",
     "issue": "missing-comma",
     "original": "Once you are finished with all of your changes click the Restart Server button",
     "suggestion": "Once you are finished with all of your changes, click the Restart Server button",
@@ -1737,10 +1667,10 @@
   },
   {
     "file": "cf-custom-frameworks.dita",
-    "issue": "unclear-antecedent",
-    "original": "whenever a file from that custom framework is opened in , the reviewers will have access",
-    "suggestion": "whenever a file from that custom framework is opened in Content Fusion, the reviewers will have access",
-    "severity": "error"
+    "issue": "awkward-phrasing",
+    "original": "All *.framework descriptor files should be located next to each other in the top and only directory of the archive.",
+    "suggestion": "All *.framework descriptor files should be located in the root directory of the archive.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-author-experience-user-role.dita",
@@ -1759,86 +1689,9 @@
   {
     "file": "cf-author-experience-user-role.dita",
     "issue": "missing-comma",
-    "original": "When the XML editor is opened, a userRole Loading Option is passed",
-    "suggestion": "When the XML editor is opened, a userRole loading option is passed",
+    "original": "When the XML editor is opened, a userRole Loading Option is passed with the following possible values:",
+    "suggestion": "When the XML editor is opened, a userRole loading option is passed with the following possible values:",
     "severity": "warning"
-  },
-  {
-    "file": "cf-upload-plugins.dita",
-    "issue": "redundancy",
-    "original": "Uploading Plugins to Extend Content Fusion Uploading plugins Contributing plugins",
-    "suggestion": "Uploading Plugins to Extend Content Fusion",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-upload-plugins.dita",
-    "issue": "awkward-phrasing",
-    "original": "One of the advantages of using the solution is that its functionality can be extended through plugins.",
-    "suggestion": "One advantage of using Content Fusion is that you can extend its functionality through plugins.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-upload-plugins.dita",
-    "issue": "awkward-phrasing",
-    "original": "Oxygen XML Web Author does a validation check to make sure the uploaded plugin archive contains the proper extension descriptor file.",
-    "suggestion": "Oxygen XML Web Author validates that the uploaded plugin archive contains the proper extension descriptor file.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-customizing-options.dita",
-    "issue": "awkward-phrasing",
-    "original": "You can also configure which side of the interface it appears by using either of the following:",
-    "suggestion": "You can also configure which side of the interface it appears on by using either of the following:",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-customizing-options.dita",
-    "issue": "wrong-word",
-    "original": "Copy or move that patch file to the /fusion/data/temp/webauthor/options/autocorrect folder.",
-    "suggestion": "Copy or move the patch file to the /fusion/data/temp/webauthor/options/autocorrect folder.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-customizing-options.dita",
-    "issue": "unclear-antecedent",
-    "original": "They can then be added to one of the directories that store the spell check dictionaries and the spell checker will merge them with all the dictionaries",
-    "suggestion": "These lists can then be added to one of the directories that store the spell check dictionaries, and the spell checker will merge them with all the dictionaries",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-customizing-options.dita",
-    "issue": "missing-comma",
-    "original": "They can then be added to one of the directories that store the spell check dictionaries and the spell checker will merge them",
-    "suggestion": "They can then be added to one of the directories that store the spell check dictionaries, and the spell checker will merge them",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-enterprise-configuration.dita",
-    "issue": "missing-word",
-    "original": "Use the IP address shown in the VM console to access the web interface of .",
-    "suggestion": "Use the IP address shown in the VM console to access the web interface.",
-    "severity": "error"
-  },
-  {
-    "file": "cf-enterprise-configuration.dita",
-    "issue": "subject-verb-agreement",
-    "original": "By default, uses a self-signed certificate.",
-    "suggestion": "By default, the system uses a self-signed certificate.",
-    "severity": "error"
-  },
-  {
-    "file": "cf-enterprise-configuration.dita",
-    "issue": "awkward-phrasing",
-    "original": "Continue (for example, if you are using Edge, click Details and then Go on to the webpage ).",
-    "suggestion": "Continue to the webpage (for example, if you are using Edge, click Details and then Go).",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-enterprise-configuration.dita",
-    "issue": "missing-word",
-    "original": "For information about changing the password, see .",
-    "suggestion": "For information about changing the password, see the password configuration section.",
-    "severity": "error"
   },
   {
     "file": "cf-admin-page-general.dita",
@@ -1905,9 +1758,16 @@
   },
   {
     "file": "cf-admin-page-users.dita",
-    "issue": "unclear-antecedent",
-    "original": "If the deleted user needs to access the system in the future, they must sign in again to create a new account.",
-    "suggestion": "If a deleted user needs to access the system in the future, they must create a new account.",
+    "issue": "parallel-structure",
+    "original": "Subject Matter Expert (SME) - This role allows the user to access review tasks assigned to them and to create review tasks from scratch.",
+    "suggestion": "Subject Matter Expert (SME): This role allows users to access assigned review tasks and create new review tasks from scratch.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-admin-page-users.dita",
+    "issue": "awkward-phrasing",
+    "original": "In addition to the features that an SME has access to, Content Fusion Authors can access all projects and are able to create review tasks inside projects, as well as other functionality that is restricted from an SME.",
+    "suggestion": "In addition to SME features, Content Fusion Authors can access all projects, create review tasks within projects, and use other functionality restricted for SMEs.",
     "severity": "warning"
   },
   {
@@ -1921,14 +1781,14 @@
     "file": "cf-admin-page-git.dita",
     "issue": "awkward-phrasing",
     "original": "The Git Accounts tab of the Content Fusion Administration page can be used to configure Git accounts that are used when projects are created in Content Fusion to connect to external Git services.",
-    "suggestion": "Use the Git Accounts tab on the Content Fusion Administration page to configure the Git accounts used to connect projects to external Git services.",
+    "suggestion": "The Git Accounts tab of the Content Fusion Administration page allows you to configure Git accounts for connecting to external Git services when creating projects in Content Fusion.",
     "severity": "suggestion"
   },
   {
     "file": "cf-admin-page-git.dita",
     "issue": "word-order",
-    "original": "Once an account has been added, it is listed in this tab and options to Edit or Delete account are available for each added account.",
-    "suggestion": "Once an account is added, it appears in this tab with options to Edit or Delete it.",
+    "original": "where you can enter the Account name , Account user , Account password , and the Server URL .",
+    "suggestion": "where you can enter the Account name, Account user, Account password, and Server URL.",
     "severity": "warning"
   },
   {
@@ -1956,14 +1816,14 @@
     "file": "cf-oidc-auth.dita",
     "issue": "run-on-sentence",
     "original": "Single Sign-On in Content Fusion Enterprise OpenID Connect authentication Microsoft Entra ID Okta supports Single Sign-On by configuring a provider",
-    "suggestion": "Single Sign-On in Content Fusion Enterprise: OpenID Connect authentication with Microsoft Entra ID or Okta supports Single Sign-On by configuring a provider",
+    "suggestion": "Single Sign-On in Content Fusion Enterprise: OpenID Connect authentication with Microsoft Entra ID or Okta. Okta supports Single Sign-On by configuring a provider",
     "severity": "error"
   },
   {
     "file": "cf-oidc-auth.dita",
     "issue": "awkward-phrasing",
     "original": "To enable Single Sign-On: Define a new application in the administration interface of your OpenID Connect provider to represent your deployment: When you are asked for a redirect URI, use the following value:",
-    "suggestion": "To enable Single Sign-On, define a new application in your OpenID Connect provider's administration interface to represent your deployment. When asked for a redirect URI, use the following value:",
+    "suggestion": "To enable Single Sign-On, define a new application in your OpenID Connect provider's administration interface to represent your deployment. When prompted for a redirect URI, use the following value:",
     "severity": "warning"
   },
   {
@@ -1982,7 +1842,7 @@
   },
   {
     "file": "cf-oidc-auth.dita",
-    "issue": "awkward-phrasing",
+    "issue": "missing-comma",
     "original": "You can find the Issuer URI in Okta Admin Console Security API Authorization Servers .",
     "suggestion": "You can find the Issuer URI in the Okta Admin Console under Security > API > Authorization Servers.",
     "severity": "warning"
@@ -1991,7 +1851,7 @@
     "file": "cf-oidc-auth.dita",
     "issue": "awkward-phrasing",
     "original": "where you must replace <tenant-id> with the Directory (tenant) ID from your registered application's overview in Azure Portal.",
-    "suggestion": "where you must replace <tenant-id> with the Directory (tenant) ID from your registered application's overview in the Azure Portal.",
+    "suggestion": "where you must replace <tenant-id> with the Directory (tenant) ID found in your registered application's overview in the Azure Portal.",
     "severity": "suggestion"
   },
   {
@@ -2006,7 +1866,49 @@
     "issue": "redundancy",
     "original": "The login screen should now display a Username and Password field now that LDAP authentication is enabled.",
     "suggestion": "The login screen should display a Username and Password field now that LDAP authentication is enabled.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "wrong-word",
+    "original": "Allows you the choose the initial state of the Change Tracking feature.",
+    "suggestion": "Allows you to choose the initial state of the Change Tracking feature.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "awkward-phrasing",
+    "original": "the Enter key will work similar to the behavior in normal word processors",
+    "suggestion": "the Enter key will behave similarly to a normal word processor",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "awkward-phrasing",
+    "original": "until the plugin is updated to account for the changes added to functionality.",
+    "suggestion": "until the plugin is updated to support the new functionality.",
     "severity": "warning"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "redundancy",
+    "original": "Displays the various plugins for your Oxygen Content Fusion and allows you to add and configure them.",
+    "suggestion": "Displays the plugins for Oxygen Content Fusion and allows you to add and configure them.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "redundancy",
+    "original": "Displays the various frameworks for your Oxygen Content Fusion and allows you to add and configure them.",
+    "suggestion": "Displays the frameworks for Oxygen Content Fusion and allows you to add and configure them.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-admin-page-webauthor.dita",
+    "issue": "wrong-word",
+    "original": "additional fields are revealed where you can use to configure you own custom security policy.",
+    "suggestion": "additional fields are revealed that you can use to configure your own custom security policy.",
+    "severity": "error"
   },
   {
     "file": "cf-admin-page-maintenance.dita",
@@ -2041,7 +1943,7 @@
     "issue": "missing-comma",
     "original": "For information about the AI Positron pane its features, see AI Positron View .",
     "suggestion": "For information about the AI Positron pane and its features, see AI Positron View.",
-    "severity": "warning"
+    "severity": "error"
   },
   {
     "file": "cf-integrate-ai-positron-overview.dita",
@@ -2072,24 +1974,45 @@
     "severity": "suggestion"
   },
   {
-    "file": "cf-set-web-author-system-property.dita",
+    "file": "cf-security.dita",
     "issue": "missing-comma",
-    "original": "A variety of Java system properties can be set to influence the behavior of the visual editor embedded in .",
-    "suggestion": "A variety of Java system properties can be set to influence the behavior of the visual editor embedded in Content Fusion.",
-    "severity": "error"
+    "original": "The administrator should upload a valid HTTPS certificate for the Content Fusion hostname before exposing the service to users and HTTPS should be enabled for the main application.",
+    "suggestion": "The administrator should upload a valid HTTPS certificate for the Content Fusion hostname before exposing the service to users, and HTTPS should be enabled for the main application.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-security.dita",
+    "issue": "awkward-phrasing",
+    "original": "Content Fusion can connect to external services if it is configured to do so: Email server for notifications and password resets",
+    "suggestion": "Content Fusion can connect to external services if configured to do so, such as:",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-security.dita",
+    "issue": "parallel-structure",
+    "original": "Email server for notifications and password resets (see Content Fusion Enterprise Administration Page - Mail Tab for configuration details). LDAP server for LDAP authentication",
+    "suggestion": "An email server for notifications and password resets (see Content Fusion Enterprise Administration Page - Mail Tab for configuration details); or an LDAP server for LDAP authentication (see Content Fusion Enterprise Administration Page - Authentication Tab for configuration details).",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-security.dita",
+    "issue": "awkward-phrasing",
+    "original": "The server's hard disk where Content Fusion is installed must be encrypted to ensure that persistent history data is secure.",
+    "suggestion": "The hard disk where Content Fusion is installed must be encrypted to ensure the security of persistent history data.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-set-web-author-system-property.dita",
+    "issue": "redundancy",
+    "original": "Content Fusion Enterprise - Set system property Set system property",
+    "suggestion": "Content Fusion Enterprise - Set a system property",
+    "severity": "warning"
   },
   {
     "file": "cf-set-web-author-system-property.dita",
     "issue": "awkward-phrasing",
     "original": "You would need to edit the /fusion/docker-compose.override.yml file and set the system property under \" environment \".",
-    "suggestion": "Edit the /fusion/docker-compose.override.yml file and set the system property under the 'environment' key.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-set-web-author-system-property.dita",
-    "issue": "wrong-word",
-    "original": "The following example sets the amount of available memory to 8 GB:",
-    "suggestion": "The following example sets the maximum available memory to 8 GB:",
+    "suggestion": "Edit the /fusion/docker-compose.override.yml file and set the system property under the \"environment\" key.",
     "severity": "suggestion"
   },
   {
@@ -2103,92 +2026,64 @@
     "file": "cf-increase-memory.dita",
     "issue": "awkward-phrasing",
     "original": "Increasing Memory for the Web-Based Editor Content Fusion Enterprise - Increase memory OutOfMemoryError Increase memory for web-based editor",
-    "suggestion": "Increasing Memory for the Web-Based Editor",
+    "suggestion": "Increasing Memory for the Web-Based Editor (Content Fusion Enterprise) - Resolving OutOfMemoryError",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
     "issue": "article-usage",
-    "original": "The Task Executor Container is used for executing various tasks, such as building deliverables and validating the publications.",
-    "suggestion": "The Task Executor Container is used for executing various tasks, such as building deliverables and validating publications.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-configure-task-executor-container.dita",
-    "issue": "missing-comma",
     "original": "Default value is 1024 MB.",
     "suggestion": "The default value is 1024 MB.",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
-    "issue": "missing-comma",
+    "issue": "article-usage",
     "original": "Default value is 200 MB.",
     "suggestion": "The default value is 200 MB.",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
-    "issue": "missing-comma",
+    "issue": "article-usage",
     "original": "Default value is 2.",
     "suggestion": "The default value is 2.",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
-    "issue": "awkward-phrasing",
-    "original": "Controls how many validation processes can occur at the same time, ensuring efficient validation processing while balancing server performance.",
-    "suggestion": "This property controls how many validation processes can occur at the same time, ensuring efficient validation while balancing server performance.",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-configure-task-executor-container.dita",
-    "issue": "missing-comma",
+    "issue": "article-usage",
     "original": "Default value is 5.",
     "suggestion": "The default value is 5.",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
-    "issue": "redundancy",
-    "original": "This ensures that metrics for builds are stored for a limited time, preventing disk space overuse by automatically purging old data after the specified retention period.",
-    "suggestion": "This ensures that build metrics are stored for a limited time, preventing disk space overuse by automatically purging old data.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-configure-task-executor-container.dita",
-    "issue": "missing-comma",
+    "issue": "article-usage",
     "original": "Default value is 30.",
     "suggestion": "The default value is 30.",
     "severity": "warning"
   },
   {
     "file": "cf-configure-task-executor-container.dita",
-    "issue": "word-order",
+    "issue": "awkward-phrasing",
     "original": "Example : Sample configuration (to be added under the environment section of the task-executor container in the docker-compose.override.yml ):",
-    "suggestion": "Example sample configuration (to be added under the environment section of the task-executor container in docker-compose.override.yml):",
+    "suggestion": "Example: Sample configuration (to be added under the environment section of the task-executor container in docker-compose.override.yml):",
     "severity": "suggestion"
   },
   {
     "file": "cf-configure-publishing-main-container.dita",
     "issue": "spelling",
-    "original": "publising.service.check.remote.period",
+    "original": "publising.service.check.remote.period The interval (in seconds) at which the system checks for remote changes.",
     "suggestion": "publishing.service.check.remote.period",
     "severity": "error"
   },
   {
     "file": "cf-configure-publishing-main-container.dita",
     "issue": "spelling",
-    "original": "publishing.service.build.console.max.lines.numbe",
+    "original": "publishing.service.build.console.max.lines.numbe Specifies the maximum number of lines displayed in the console",
     "suggestion": "publishing.service.build.console.max.lines.number",
     "severity": "error"
-  },
-  {
-    "file": "cf-disk-space.dita",
-    "issue": "awkward-phrasing",
-    "original": "Disk Space Requirements for Content Fusion stores large amounts of data on the disk of the server.",
-    "suggestion": "Content Fusion stores large amounts of data on the server's disk.",
-    "severity": "warning"
   },
   {
     "file": "cf-disk-space.dita",
@@ -2199,31 +2094,17 @@
   },
   {
     "file": "cf-disk-space.dita",
-    "issue": "missing-subject",
-    "original": "To reduce the disk space usage, stores review tasks in groups of 100 and tries to store just one copy of a file",
-    "suggestion": "To reduce disk space usage, Content Fusion stores review tasks in groups of 100 and tries to store just one copy of a file",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-disk-space.dita",
-    "issue": "missing-subject",
-    "original": "For projects that have deliverables, stores an additional clone of the Git repository for each deliverable.",
-    "suggestion": "For projects that have deliverables, Content Fusion stores an additional clone of the Git repository for each deliverable.",
+    "issue": "awkward-phrasing",
+    "original": "A search index is created and maintained for each personal workspace that the end user has started using the Search functionality.",
+    "suggestion": "A search index is created and maintained for each personal workspace where the end user uses the Search functionality.",
     "severity": "warning"
   },
   {
     "file": "cf-disk-space.dita",
     "issue": "awkward-phrasing",
-    "original": "A search index is created and maintained for each personal workspace that the end user has started using the Search functionality.",
-    "suggestion": "A search index is created and maintained for each personal workspace once the end user starts using the Search functionality.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "cf-disk-space.dita",
-    "issue": "word-order",
     "original": "The indexing.max.occupied.disk.space.mb property can be set to a value higher (or lower than 2000 ) to increase (or decrease) the maximum allowed amount of search index data.",
-    "suggestion": "The indexing.max.occupied.disk.space.mb property can be set to a value higher (or lower) than 2000 to increase (or decrease) the maximum allowed amount of search index data.",
-    "severity": "warning"
+    "suggestion": "The indexing.max.occupied.disk.space.mb property can be set to a value higher or lower than 2000 to increase or decrease the maximum allowed amount of search index data.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-increasing-available-disk-space.dita",
@@ -2235,22 +2116,99 @@
   {
     "file": "cf-increasing-available-disk-space.dita",
     "issue": "wrong-word",
-    "original": "it should be tested in a different machine",
-    "suggestion": "it should be tested on a different machine",
+    "original": "it should be tested in a different machine to ensure that it works correctly.",
+    "suggestion": "it should be tested on a different machine to ensure that it works correctly.",
     "severity": "warning"
+  },
+  {
+    "file": "cf-github-auth.dita",
+    "issue": "missing-comma",
+    "original": "For Application name , pick something like",
+    "suggestion": "For Application name, pick something like",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-github-auth.dita",
+    "issue": "awkward-phrasing",
+    "original": "Take note of these 2 values.",
+    "suggestion": "Note these two values.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-github-auth.dita",
+    "issue": "awkward-phrasing",
+    "original": "Restart the Content Fusion machine.",
+    "suggestion": "Restart the Content Fusion service.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "Upgrading Content Fusion Content Fusion Enterprise - Upgrading Upgrading Pre-Upgrade Notes",
+    "suggestion": "Upgrading Content Fusion Enterprise - Pre-Upgrade Notes",
+    "severity": "error"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "the free space should be at least equal to the size of the data folder.",
+    "suggestion": "the free space should be at least equal to the size of the data folder.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "Maintenance mode is needed to ensure that users are not making any changes to the tasks while the backup is being created.",
+    "suggestion": "Enable maintenance mode to ensure users do not make changes to tasks while the backup is being created.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "Create a backup of the data on the old server by running the following command on the old server :",
+    "suggestion": "Create a backup of the data by running the following command on the old server:",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "where the path to the backup file is updated to match your situation.",
+    "suggestion": "replacing the path with the actual path to your backup file.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "all the user tasks and configurations will be available in the new Content Fusion server.",
+    "suggestion": "all user tasks and configurations will be available on the new Content Fusion server.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "ensuring that you can later recover your data from the previous version of Content Fusion in case of unforeseen complications that may arise during the installation process.",
+    "suggestion": "ensuring that you can recover your data in case of unforeseen complications during the installation process.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "The Administration page credentials will be reset to the initial setting (user= fusion / password= oxygenxml ) and will need to be re-configured.",
+    "suggestion": "The Administration page credentials will be reset to the default settings (user=fusion, password=oxygenxml) and must be reconfigured.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-enterprise-unistall.dita",
     "issue": "redundancy",
     "original": "Uninstalling Content Fusion Enterprise Content Fusion Enterprise - Uninstalling Uninstalling To uninstall the deployment",
-    "suggestion": "Uninstalling Content Fusion Enterprise. To uninstall the deployment",
+    "suggestion": "Uninstalling Content Fusion Enterprise - To uninstall the deployment",
     "severity": "error"
   },
   {
     "file": "cf-enterprise-unistall.dita",
     "issue": "awkward-phrasing",
     "original": "A backup should be created beforehand if that data is still needed in the future.",
-    "suggestion": "Create a backup beforehand if you need that data in the future.",
+    "suggestion": "Create a backup beforehand if you will need that data in the future.",
     "severity": "suggestion"
   },
   {
@@ -2275,11 +2233,25 @@
     "severity": "suggestion"
   },
   {
-    "file": "cf-organization-subscription.dita",
-    "issue": "wrong-word",
-    "original": "The Subscription page in allows organization administrators to view and manage",
-    "suggestion": "The Subscription page allows organization administrators to view and manage",
+    "file": "cf-configure-firewall.dita",
+    "issue": "subject-verb-agreement",
+    "original": "To function properly, requires access to external networks or the internet for various services:",
+    "suggestion": "To function properly, the service requires access to external networks or the internet for various services:",
     "severity": "error"
+  },
+  {
+    "file": "cf-configure-firewall.dita",
+    "issue": "parallel-structure",
+    "original": "Mail server - Connects to an external mail server as configured. Authentication - User accounts may be configured on an external LDAP server. OAuth services - Supports login via OAuth providers",
+    "suggestion": "Mail server - Connects to an external mail server as configured. Authentication - Uses an external LDAP server for user accounts. OAuth services - Supports login via OAuth providers",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-configure-firewall.dita",
+    "issue": "parallel-structure",
+    "original": "Project creation - Accesses repositories on Git or GitLab servers. Publishing delivery - Amazon S3, Netlify, or SFTP servers.",
+    "suggestion": "Project creation - Accesses repositories on Git or GitLab servers. Publishing delivery - Connects to Amazon S3, Netlify, or SFTP servers.",
+    "severity": "warning"
   },
   {
     "file": "cf-organization-subscription.dita",
@@ -2291,44 +2263,79 @@
   {
     "file": "cf-organization-subscription.dita",
     "issue": "awkward-phrasing",
-    "original": "The Subscription page provides comprehensive information about the current subscription state and available actions based on the subscription type and status.",
-    "suggestion": "The Subscription page provides comprehensive information about the current subscription state and available actions, depending on the subscription type and status.",
-    "severity": "suggestion"
+    "original": "The subscription page is organized into two main sections: Subscription Status Section Displays the current subscription status, renewal information, and available management actions.",
+    "suggestion": "The subscription page is organized into two main sections:\n\nSubscription Status Section\nDisplays the current subscription status, renewal information, and available management actions.",
+    "severity": "warning"
   },
   {
     "file": "cf-organization-subscription.dita",
     "issue": "parallel-structure",
     "original": "Status indicator - A colored chip that shows the current trial/subscription state ( Active , Expired , or Cancelled ) Status description - Detailed information about the subscription state and expiration/renewal date.",
-    "suggestion": "Status indicator: A colored chip that shows the current trial/subscription state (Active, Expired, or Cancelled). Status description: Detailed information about the subscription state and expiration/renewal date.",
+    "suggestion": "Status indicator: A colored chip that shows the current trial/subscription state (Active, Expired, or Cancelled).\nStatus description: Detailed information about the subscription state and expiration/renewal date.",
     "severity": "warning"
   },
   {
     "file": "cf-organization-subscription.dita",
     "issue": "awkward-phrasing",
     "original": "Storage - Shows how much space (in GB) is used by the tasks, projects, and deliverables from the organization, with a percentage that is relative to the subscription's disk quota.",
-    "suggestion": "Storage: Shows the amount of space (in GB) used by the organization's tasks, projects, and deliverables, expressed as a percentage of the subscription's disk quota.",
-    "severity": "warning"
+    "suggestion": "Storage: Shows how much space (in GB) is used by the organization's tasks, projects, and deliverables, as a percentage of the subscription's disk quota.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-organization-subscription.dita",
-    "issue": "missing-comma",
-    "original": "A yellow/orange status chip with warning icon.",
-    "suggestion": "A yellow/orange status chip with a warning icon.",
+    "issue": "parallel-structure",
+    "original": "Trial - Active Indicates that the organization is currently using a trial subscription. This status shows: A yellow/orange status chip with warning icon.",
+    "suggestion": "Trial - Active: Indicates that the organization is currently using a trial subscription. This status shows:\n- A yellow/orange status chip with a warning icon.",
     "severity": "warning"
   },
   {
     "file": "cf-organization-subscription.dita",
     "issue": "article-usage",
-    "original": "A green status chip indicating an active status. The renewal date information. Manage Subscription button to access Verifone account management.",
-    "suggestion": "A green status chip indicating an active status. The renewal date information. The Manage Subscription button to access Verifone account management.",
+    "original": "A yellow/orange status chip with warning icon.",
+    "suggestion": "A yellow/orange status chip with a warning icon.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-organization-subscription.dita",
+    "issue": "parallel-structure",
+    "original": "The trial expiration date information. A Buy Subscription button to upgrade to a paid plan.",
+    "suggestion": "- The trial expiration date.\n- A Buy Subscription button to upgrade to a paid plan.",
     "severity": "warning"
   },
   {
     "file": "cf-organization-subscription.dita",
-    "issue": "unclear-antecedent",
-    "original": "After completing the renewal process, allow up to 10 minutes for the Verifone platform to send the license change notification (LCN) event to .",
-    "suggestion": "After completing the renewal process, allow up to 10 minutes for the Verifone platform to send the license change notification (LCN) event to the system.",
+    "issue": "parallel-structure",
+    "original": "A red status chip indicating the trial has expired. The expiration date information. A Buy Subscription button to purchase a paid plan.",
+    "suggestion": "- A red status chip indicating the trial has expired.\n- The expiration date.\n- A Buy Subscription button to purchase a paid plan.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-organization-subscription.dita",
+    "issue": "parallel-structure",
+    "original": "A green status chip indicating an active status. The renewal date information. Manage Subscription button to access Verifone account management.",
+    "suggestion": "- A green status chip indicating an active status.\n- The renewal date.\n- A Manage Subscription button to access Verifone account management.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-organization-subscription.dita",
+    "issue": "article-usage",
+    "original": "Manage Subscription button to access Verifone account management.",
+    "suggestion": "A Manage Subscription button to access Verifone account management.",
     "severity": "error"
+  },
+  {
+    "file": "cf-organization-subscription.dita",
+    "issue": "parallel-structure",
+    "original": "A red status chip indicating the subscription has been cancelled. The cancellation information. A Buy Subscription button to purchase a new subscription.",
+    "suggestion": "- A red status chip indicating the subscription has been cancelled.\n- The cancellation information.\n- A Buy Subscription button to purchase a new subscription.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-organization-subscription.dita",
+    "issue": "awkward-phrasing",
+    "original": "It displays your order reference number with a copy button for easy access.",
+    "suggestion": "It displays your order reference number and includes a copy button for easy access.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-organization-projects.dita",
@@ -2341,22 +2348,22 @@
     "file": "cf-organization-projects.dita",
     "issue": "awkward-phrasing",
     "original": "Projects Disk Usage table The Projects Disk Usage table lists all projects in the organization and their storage usage.",
-    "suggestion": "Projects Disk Usage table: The Projects Disk Usage table lists all projects in the organization and their storage usage.",
-    "severity": "warning"
+    "suggestion": "Projects Disk Usage Table: The Projects Disk Usage table lists all projects in the organization and their storage usage.",
+    "severity": "suggestion"
   },
   {
     "file": "cf-organization-projects.dita",
     "issue": "awkward-phrasing",
-    "original": "Projects Disk Usage Project Git Repo Deliverables Total Calculated At Each project name in your organization.",
-    "suggestion": "Projects Disk Usage: Project, Git Repo, Deliverables, Total, Calculated At. Each project name in your organization.",
+    "original": "At Each project name in your organization. Storage used by the project's Git repository.",
+    "suggestion": "Project Name: Each project name in your organization. Git Repo: Storage used by the project's Git repository.",
     "severity": "warning"
   },
   {
     "file": "cf-organization-settings.dita",
-    "issue": "redundancy",
-    "original": "The Organization Settings page in allows organization administrators to manage their organization's basic information",
-    "suggestion": "The Organization Settings page allows organization administrators to manage their organization's basic information",
-    "severity": "error"
+    "issue": "parallel-structure",
+    "original": "allows organization administrators to manage their organization's basic information, display settings, and handle organization deletions.",
+    "suggestion": "allows organization administrators to manage their organization's basic information, display settings, and organization deletions.",
+    "severity": "warning"
   },
   {
     "file": "cf-organization-settings.dita",
@@ -2367,114 +2374,51 @@
   },
   {
     "file": "cf-organization-settings.dita",
-    "issue": "awkward-phrasing",
-    "original": "Delete Organization Section Provides options for organization deletion with important alerts:",
-    "suggestion": "The Delete Organization section provides options for organization deletion with important alerts:",
-    "severity": "warning"
-  },
-  {
-    "file": "cf-organization-settings.dita",
     "issue": "missing-comma",
-    "original": "If not selected (default), organization members have access to the AI features",
-    "suggestion": "If not selected (default), organization members have access to AI features",
+    "original": "The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system where auto-renewal is currently enabled.",
+    "suggestion": "The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system, where auto-renewal is currently enabled.",
     "severity": "suggestion"
   },
   {
     "file": "cf-organization-settings.dita",
-    "issue": "awkward-phrasing",
-    "original": "The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system where auto-renewal is currently enabled.",
-    "suggestion": "The auto-renewal warning only appears for organizations with paid subscriptions purchased through the Verifone system that have auto-renewal enabled.",
-    "severity": "suggestion"
-  },
-  {
-    "file": "known_issues.dita",
-    "issue": "awkward-phrasing",
-    "original": "This topic contains information about error messages, possible known issues, and other things that you might want to be aware of regarding .",
-    "suggestion": "This topic contains information about error messages, known issues, and other important details regarding Content Fusion.",
+    "issue": "redundancy",
+    "original": "Cancelling Organization Deletion Cancel Organization Deletion",
+    "suggestion": "Cancel Organization Deletion",
     "severity": "warning"
   },
   {
     "file": "known_issues.dita",
-    "issue": "wrong-word",
-    "original": "it is mostly likely because the source DITA map was not uploaded in the review task.",
-    "suggestion": "it is most likely because the source DITA map was not uploaded with the review task.",
+    "issue": "redundancy",
+    "original": "This topic contains information about error messages, possible known issues, and other things that you might want to be aware of regarding Oxygen Content Fusion.",
+    "suggestion": "This topic contains information about error messages and known issues in Oxygen Content Fusion.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "known_issues.dita",
+    "issue": "article-usage",
+    "original": "If you try to create a new review task or project in a Oxygen Content Fusion deployment",
+    "suggestion": "If you try to create a new review task or project in an Oxygen Content Fusion deployment",
     "severity": "error"
   },
   {
     "file": "known_issues.dita",
     "issue": "awkward-phrasing",
     "original": "After reset, the lockout state does not prevent using the new password once the lockout period has passed.",
-    "suggestion": "After the reset, you can use your new password once the lockout period has passed.",
-    "severity": "suggestion"
+    "suggestion": "After the password is reset, you can use the new password once the lockout period has passed.",
+    "severity": "warning"
+  },
+  {
+    "file": "known_issues.dita",
+    "issue": "awkward-phrasing",
+    "original": "it is mostly likely because the source DITA map was not uploaded in the review task.",
+    "suggestion": "it is most likely because the source DITA map was not uploaded with the review task.",
+    "severity": "warning"
   },
   {
     "file": "known_issues.dita",
     "issue": "redundancy",
-    "original": "If an error exception is detected, a warning icon ( ) will be displayed",
-    "suggestion": "If an error is detected, a warning icon ( ) will be displayed",
-    "severity": "suggestion"
-  },
-  {
-    "file": "browser-compatibility.dita",
-    "issue": "awkward-phrasing",
-    "original": "Browser compatibility was developed and continuously tested on the following major Web browsers:",
-    "suggestion": "Browser compatibility was developed and is continuously tested on the following major web browsers:",
-    "severity": "warning"
-  },
-  {
-    "file": "browser-compatibility.dita",
-    "issue": "missing-comma",
-    "original": "For browser versions that are released after version , the system administrator",
-    "suggestion": "For browser versions released after a specific version, the system administrator",
-    "severity": "error"
-  },
-  {
-    "file": "browser-compatibility.dita",
-    "issue": "missing-comma",
-    "original": "Due to implementation particularities, may exhibit minor behavioral differences:",
-    "suggestion": "Due to implementation particularities, the application may exhibit minor behavioral differences:",
-    "severity": "error"
-  },
-  {
-    "file": "browser-compatibility.dita",
-    "issue": "unclear-antecedent",
-    "original": "As an HTML 5 application, it is likely to work on other HTML 5 compliant browsers",
-    "suggestion": "As an HTML5 application, Content Fusion is likely to work on other HTML5-compliant browsers",
-    "severity": "warning"
-  },
-  {
-    "file": "browser-compatibility.dita",
-    "issue": "awkward-phrasing",
-    "original": "The Chinese IMEs (e.g. Sogou or Chinese Simplified ) are supported",
-    "suggestion": "Chinese IMEs (e.g., Sogou or Chinese Simplified) are supported",
-    "severity": "suggestion"
-  },
-  {
-    "file": "content-fusion_vs_web-author.dita",
-    "issue": "run-on-sentence",
-    "original": "Oxygen XML Web Author can be integrated with a repository (for example, GitHub) and the output can be configured to include an edit link and clicking that link would open the document in Oxygen XML Web Author where they can correct the problem directly in the source",
-    "suggestion": "Oxygen XML Web Author can be integrated with a repository (for example, GitHub). The output can be configured to include an edit link; clicking that link opens the document in Oxygen XML Web Author, where users can correct the problem directly in the source",
-    "severity": "warning"
-  },
-  {
-    "file": "content-fusion_vs_web-author.dita",
-    "issue": "pronoun-agreement",
-    "original": "clicking that link would open the document in Oxygen XML Web Author where they can correct the problem directly in the source",
-    "suggestion": "clicking that link opens the document in Oxygen XML Web Author, where the support team can correct the problem directly in the source",
-    "severity": "warning"
-  },
-  {
-    "file": "content-fusion_vs_web-author.dita",
-    "issue": "wrong-word",
-    "original": "The simply follows the link to access the review task in a browser",
-    "suggestion": "They simply follow the link to access the review task in a browser",
-    "severity": "error"
-  },
-  {
-    "file": "content-fusion_vs_web-author.dita",
-    "issue": "awkward-phrasing",
-    "original": "The technical writer can use Oxygen Content Fusion to create a task with the documents attached, upload it, and then they can simply share a link to the task with the expert.",
-    "suggestion": "The technical writer can use Oxygen Content Fusion to create and upload a task with the documents attached, then simply share a link to the task with the expert.",
+    "original": "If uploading a task fails and the error message suggests that a possible cause may be that Oxygen XML Editor/Author needs more memory",
+    "suggestion": "If uploading a task fails and the error message suggests that Oxygen XML Editor/Author needs more memory",
     "severity": "suggestion"
   }
 ]
