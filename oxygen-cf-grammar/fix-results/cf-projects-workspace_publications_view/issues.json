@@ -1,0 +1,58 @@
+[
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "missing-comma",
+    "original": "A Content Fusion publication defines a DITA map that is used to resolve keys in topics and optionally, a DITAVAL filter used for flagging or filtering profiled content.",
+    "suggestion": "A Content Fusion publication defines a DITA map that is used to resolve keys in topics and, optionally, a DITAVAL filter used for flagging or filtering profiled content.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "awkward-phrasing",
+    "original": "The Publications view (found inside the project's Personal Workspace ) displays the map of a publication in a tree editor to make navigating through the topics easier.",
+    "suggestion": "The Publications view (found inside the project's Personal Workspace) displays the publication map in a tree editor to make navigation easier.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "awkward-phrasing",
+    "original": "If you have modified the publications using the project Publications Management page , you also need to pull incoming changes into your workspace to retrieve the latest publications.",
+    "suggestion": "If you have modified publications using the project Publications Management page, you must also pull incoming changes into your workspace to retrieve the latest versions.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "awkward-phrasing",
+    "original": "This publication will be used as the context of the open editors.",
+    "suggestion": "This publication will serve as the context for the open editors.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "redundancy",
+    "original": "Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications.",
+    "suggestion": "Manage Publications Dialog Box. The Manage Publications dialog box allows you to create and configure publications.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "awkward-phrasing",
+    "original": "This action will add an <include> element in the Oxygen Content Fusion's builtin DITA-OT project file.",
+    "suggestion": "This action adds an <include> element to the Oxygen Content Fusion built-in DITA-OT project file.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "spelling",
+    "original": "Oxygen Content Fusion's builtin DITA-OT project file.",
+    "suggestion": "Oxygen Content Fusion's built-in DITA-OT project file.",
+    "severity": "error"
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "issue": "awkward-phrasing",
+    "original": "There are some limitations in regard to the supported DITA-OT project files:",
+    "suggestion": "There are some limitations regarding the supported DITA-OT project files:",
+    "severity": "suggestion"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "redundancy",
+    "original": "The Oxygen Content Fusion browser interface can be accessed by using a task link and then logging in.",
+    "suggestion": "The Oxygen Content Fusion browser interface can be accessed by using a task link and logging in.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "awkward-phrasing",
+    "original": "The Oxygen Content Fusion browser interface includes a top stripe that is always visible and it contains a user drop-down menu and other actions depending on the page that is opened within the interface.",
+    "suggestion": "The Oxygen Content Fusion browser interface includes a persistent top stripe containing a user drop-down menu and other actions that vary depending on the active page.",
+    "severity": "warning"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "awkward-phrasing",
+    "original": "A left navigation stripe is also always visible and it contains buttons for navigating to various pages within the interface.",
+    "suggestion": "A left navigation stripe is also always visible, containing buttons to navigate to various pages within the interface.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "parallel-structure",
+    "original": "Opens the My Review Tasks page that displays a list of all the current tasks that you own or that were assigned to you.",
+    "suggestion": "Opens the My Review Tasks page, which displays a list of all tasks you own or that were assigned to you.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "parallel-structure",
+    "original": "Opens a profile settings page that displays your name, email, avatar, and allows you to delete your account or specify which types of notifications will be sent to you via email.",
+    "suggestion": "Opens the profile settings page to display your name, email, and avatar, and to allow you to delete your account or specify email notification settings.",
+    "severity": "warning"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "run-on-sentence",
+    "original": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area that can be used to navigate to previous pages and additional actions become available below the top stripe, depending on the page and the user role.",
+    "suggestion": "When a page within a review task or project is open, a breadcrumb is displayed at the top of the main area for navigating to previous pages. Additional actions also become available below the top stripe, depending on the page and the user role.",
+    "severity": "warning"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "subject-verb-agreement",
+    "original": "The main differences between working with non-project based review tasks and projects are:",
+    "suggestion": "The main differences between working with non-project-based review tasks and projects are:",
+    "severity": "suggestion"
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "issue": "parallel-structure",
+    "original": "Non-Project Review Tasks - Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during their documentation review process.",
+    "suggestion": "Non-Project Review Tasks: Provides tools for technical writers and reviewers to create and use review tasks for efficient collaboration during the documentation review process.",
+    "severity": "suggestion"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "Upgrading Content Fusion Content Fusion Enterprise - Upgrading Upgrading Pre-Upgrade Notes",
+    "suggestion": "Upgrading Content Fusion Enterprise - Pre-Upgrade Notes",
+    "severity": "error"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "the free space should be at least equal to the size of the data folder.",
+    "suggestion": "the free space should be at least equal to the size of the data folder.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "Maintenance mode is needed to ensure that users are not making any changes to the tasks while the backup is being created.",
+    "suggestion": "Enable maintenance mode to ensure users do not make changes to tasks while the backup is being created.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "Create a backup of the data on the old server by running the following command on the old server :",
+    "suggestion": "Create a backup of the data by running the following command on the old server:",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "where the path to the backup file is updated to match your situation.",
+    "suggestion": "replacing the path with the actual path to your backup file.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "all the user tasks and configurations will be available in the new Content Fusion server.",
+    "suggestion": "all user tasks and configurations will be available on the new Content Fusion server.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "redundancy",
+    "original": "ensuring that you can later recover your data from the previous version of Content Fusion in case of unforeseen complications that may arise during the installation process.",
+    "suggestion": "ensuring that you can recover your data in case of unforeseen complications during the installation process.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-upgrading.dita",
+    "issue": "awkward-phrasing",
+    "original": "The Administration page credentials will be reset to the initial setting (user= fusion / password= oxygenxml ) and will need to be re-configured.",
+    "suggestion": "The Administration page credentials will be reset to the default settings (user=fusion, password=oxygenxml) and must be reconfigured.",
+    "severity": "suggestion"
+  }
+]

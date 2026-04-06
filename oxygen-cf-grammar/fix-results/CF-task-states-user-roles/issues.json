@@ -1,0 +1,65 @@
+[
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "run-on-sentence",
+    "original": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content and changes proposed by reviewers can be integrated back into the DITA project directly within Content Fusion.",
+    "suggestion": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content. Changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "subject-verb-agreement",
+    "original": "Review tasks can be created inside or outside projects in Content Fusion and there are some difference between the two:",
+    "suggestion": "Review tasks can be created inside or outside projects in Content Fusion, and there are some differences between the two:",
+    "severity": "error"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "parallel-structure",
+    "original": "The changes made to a project-based review task are stored in the Git repository and merged into the project's branch and pushed to the upstream remote repository when the task is finished.",
+    "suggestion": "The changes made to a project-based review task are stored in the Git repository, merged into the project's branch, and pushed to the upstream remote repository when the task is finished.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "article-usage",
+    "original": "All users with platform user role of Author that have access to a project are able to see all review tasks",
+    "suggestion": "All users with the platform user role of Author who have access to a project are able to see all review tasks",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "parallel-structure",
+    "original": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once they consider the review process is finished.",
+    "suggestion": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once the review process is finished.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "parallel-structure",
+    "original": "can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.",
+    "suggestion": "can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "awkward-phrasing",
+    "original": "For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :",
+    "suggestion": "For organizations using the Content Fusion Projects feature, an administrator can assign two platform user roles (from the Users Management tab on the Administration Page):",
+    "severity": "suggestion"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "missing-comma",
+    "original": "In addition to the features that an SME has access to, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and other advanced features.",
+    "suggestion": "In addition to the features available to an SME, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and use other advanced features.",
+    "severity": "warning"
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "issue": "subject-verb-agreement",
+    "original": "This is the initial status for newly created review tasks and they remain in this state until the task has been closed by the task owner.",
+    "suggestion": "This is the initial status for newly created review tasks; they remain in this state until the task owner closes the task.",
+    "severity": "warning"
+  }
+]
