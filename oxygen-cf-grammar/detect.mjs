@@ -91,6 +91,13 @@ function ditaToText(filePath) {
   xml = xml.replace(/<!DOCTYPE[^>]*>/g, '');
   xml = xml.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
   xml = xml.replace(/<!--[\s\S]*?-->/g, '');
+
+  // Expand keyref="product" before stripping tags so the LLM sees the product name.
+  // Self-closing form: <ph keyref="product"/> <keyword keyref="product"/> etc.
+  xml = xml.replace(/<\w+\b[^>]*\bkeyref="product"[^>]*\/>/g, 'Oxygen Content Fusion');
+  // Open/close form with optional fallback content: <ph keyref="product">fallback</ph>
+  xml = xml.replace(/<(\w+)\b[^>]*\bkeyref="product"[^>]*>[\s\S]*?<\/\1>/g, 'Oxygen Content Fusion');
+
   xml = xml.replace(/<[^>]+>/g, ' ');
   xml = xml
     .replace(/&amp;/g, '&')
