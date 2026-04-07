@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="setup-en">
+  <title>Setting Up Your Kettle</title>
+  <body>
+    <section>
+      <title>What's in the Box</title>
+      <ul>
+        <li>1x <keyword keyref="product-name"/> kettle unit</li>
+        <li>1x Power base with cord</li>
+        <li>1x User manual</li>
+      </ul>
+      <fig>
+        <title><keyword keyref="product-name"/></title>
+        <image keyref="img-kettle-front" width="200px">
+          <alt>Front view of the <keyword keyref="product-name"/></alt>
+        </image>
+      </fig>
+    </section>
+    <section>
+      <title>Initial Setup</title>
+      <ol>
+        <li>Remove all packaging materials from the <keyword keyref="product-name"/>.</li>
+        <li>Rinse the interior of the kettle with clean water.</li>
+        <li>Place the power base on a flat, dry surface near a
+          <keyword keyref="socket-type"/> outlet.</li>
+        <li>Insert the plug into the <keyword keyref="socket-type"/> wall outlet.</li>
+        <li>Fill the kettle with water to the MAX line and boil once. Discard this water.</li>
+      </ol>
+    </section>
+  </body>
+</topic>

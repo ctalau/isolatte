@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="usage-fr">
+  <title>Utilisation de la bouilloire</title>
+  <body>
+    <section>
+      <title>Faire bouillir de l'eau</title>
+      <ol>
+        <li>Ouvrez le couvercle du <keyword keyref="product-name"/> en appuyant sur le bouton
+          d'ouverture.</li>
+        <li>Remplissez d'eau fraîche entre les repères MIN et MAX.</li>
+        <li>Fermez le couvercle jusqu'à ce qu'il s'enclenche.</li>
+        <li>Placez la bouilloire sur la base.</li>
+        <li>Appuyez sur l'interrupteur MARCHE/ARRÊT. Le voyant lumineux s'allume.</li>
+        <li>Le <keyword keyref="product-name"/> s'éteint automatiquement lorsque l'eau bout.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Entretien</title>
+      <p>Pour détartrer le <keyword keyref="product-name"/>, remplissez-le à parts égales
+        d'eau et de vinaigre blanc. Faites bouillir, puis laissez reposer une heure.
+        Rincez abondamment.</p>
+      <p>Essuyez l'extérieur avec un chiffon humide. N'utilisez jamais de produits abrasifs.</p>
+    </section>
+  </body>
+</topic>

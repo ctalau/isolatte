@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="safety-de">
+  <title>Sicherheitshinweise</title>
+  <body>
+    <section>
+      <title>Wichtige Sicherheitsinformationen</title>
+      <p>Lesen Sie alle Anweisungen, bevor Sie den <keyword keyref="product-name"/> verwenden.</p>
+      <ul>
+        <li>Stellen Sie den <keyword keyref="product-name"/> immer auf eine ebene, stabile Fläche.</li>
+        <li>Betreiben Sie den Wasserkocher nicht ohne Wasser.</li>
+        <li>Tauchen Sie die Basiseinheit, das Kabel oder den Stecker nicht in Wasser.</li>
+        <li>Ziehen Sie den Stecker, wenn das Gerät nicht in Gebrauch ist oder vor der Reinigung.</li>
+        <li>Lassen Sie das Kabel nicht über die Tisch- oder Arbeitsplattenkante hängen.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Elektrische Sicherheit</title>
+      <p>Dieses Gerät ist für die Verwendung mit einer <keyword keyref="socket-type"/>-Steckdose
+        vorgesehen. Stellen Sie sicher, dass Ihre Steckdose übereinstimmt, bevor Sie den
+        Stecker anschließen.</p>
+      <fig>
+        <title>Netzstecker</title>
+        <image keyref="img-kettle-plug" width="150px">
+          <alt>Netzstecker des <keyword keyref="product-name"/></alt>
+        </image>
+      </fig>
+      <note type="warning">Verwenden Sie niemals einen Adapter, der nicht für die Leistung
+        des <keyword keyref="product-name"/> (2200W) ausgelegt ist.</note>
+    </section>
+  </body>
+</topic>

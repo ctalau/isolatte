@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="safety-en">
+  <title>Safety Instructions</title>
+  <body>
+    <section>
+      <title>Important Safety Information</title>
+      <p>Read all instructions before using the <keyword keyref="product-name"/>.</p>
+      <ul>
+        <li>Always place the <keyword keyref="product-name"/> on a flat, stable surface.</li>
+        <li>Do not operate the kettle without water.</li>
+        <li>Do not immerse the base unit, cord, or plug in water.</li>
+        <li>Unplug the kettle when not in use and before cleaning.</li>
+        <li>Do not let the cord hang over the edge of a table or counter.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Electrical Safety</title>
+      <p>This appliance is designed for use with a <keyword keyref="socket-type"/> power outlet.
+        Ensure your outlet matches before connecting the plug.</p>
+      <fig>
+        <title>Power Plug</title>
+        <image keyref="img-kettle-plug" width="150px">
+          <alt>Power plug for the <keyword keyref="product-name"/></alt>
+        </image>
+      </fig>
+      <note type="warning">Never use an adapter that is not rated for the wattage of
+        the <keyword keyref="product-name"/> (2200W).</note>
+    </section>
+  </body>
+</topic>

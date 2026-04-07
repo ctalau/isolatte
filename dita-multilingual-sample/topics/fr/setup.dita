@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="setup-fr">
+  <title>Installation de la bouilloire</title>
+  <body>
+    <section>
+      <title>Contenu de l'emballage</title>
+      <ul>
+        <li>1x Bouilloire <keyword keyref="product-name"/></li>
+        <li>1x Base avec cordon d'alimentation</li>
+        <li>1x Manuel d'utilisation</li>
+      </ul>
+      <fig>
+        <title><keyword keyref="product-name"/></title>
+        <image keyref="img-kettle-front" width="200px">
+          <alt>Vue de face du <keyword keyref="product-name"/></alt>
+        </image>
+      </fig>
+    </section>
+    <section>
+      <title>Première mise en service</title>
+      <ol>
+        <li>Retirez tous les matériaux d'emballage du <keyword keyref="product-name"/>.</li>
+        <li>Rincez l'intérieur de la bouilloire avec de l'eau propre.</li>
+        <li>Placez la base sur une surface plane et sèche à proximité d'une prise
+          <keyword keyref="socket-type"/>.</li>
+        <li>Insérez la fiche dans la prise murale <keyword keyref="socket-type"/>.</li>
+        <li>Remplissez la bouilloire jusqu'au repère MAX et faites bouillir une fois.
+          Jetez cette eau.</li>
+      </ol>
+    </section>
+  </body>
+</topic>

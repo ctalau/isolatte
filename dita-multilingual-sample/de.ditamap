@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="de">
+  <title>Deutsch — Bedienungsanleitung</title>
+
+  <!-- Language-specific key: German Schuko socket -->
+  <keydef keys="socket-type">
+    <topicmeta>
+      <keywords><keyword>Typ F (Schuko, CEE 7/4)</keyword></keywords>
+    </topicmeta>
+  </keydef>
+
+  <topicref href="topics/de/safety.dita"/>
+  <topicref href="topics/de/setup.dita"/>
+  <topicref href="topics/de/usage.dita"/>
+</map>

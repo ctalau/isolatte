@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Power cord -->
+  <path d="M100,10 Q80,50 90,80 Q100,100 95,130" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+  <!-- Plug body -->
+  <rect x="60" y="130" width="80" height="50" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="2"/>
+  <!-- Plug prongs (generic) -->
+  <rect x="78" y="180" width="8" height="20" rx="2" fill="#999" stroke="#777" stroke-width="1"/>
+  <rect x="114" y="180" width="8" height="20" rx="2" fill="#999" stroke="#777" stroke-width="1"/>
+  <!-- Label -->
+  <text x="100" y="162" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">PLUG</text>
+</svg>

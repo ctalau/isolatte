@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en">
+  <title>English — User Manual</title>
+
+  <!-- Language-specific key: UK socket type -->
+  <keydef keys="socket-type">
+    <topicmeta>
+      <keywords><keyword>Type G (BS 1363)</keyword></keywords>
+    </topicmeta>
+  </keydef>
+
+  <topicref href="topics/en/safety.dita"/>
+  <topicref href="topics/en/setup.dita"/>
+  <topicref href="topics/en/usage.dita"/>
+</map>
