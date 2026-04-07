@@ -1,0 +1,63 @@
+--- /tmp/orig_cf-projects-workspace_publications_view.dita	2026-04-06 20:08:59.411998558 +0000
++++ /tmp/fixed_cf-projects-workspace_publications_view.dita	2026-04-06 20:08:59.411998558 +0000
+@@ -5,18 +5,12 @@
+   <title>Workspace Publications View</title>
+   <body>
+     <p id="p_xkq_hrz_vbc">A Content Fusion <i>publication</i> defines a DITA map that is used to
+-      resolve keys in topics and optionally, a DITAVAL filter used for flagging or filtering
++      resolve keys in topics and<?oxy_delete content="optionally," author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000">, optionally,</oxy_insert_end?> a DITAVAL filter used for flagging or filtering
+       profiled content.</p>
+-    <p id="p_pnt_yd3_cfc">The <uicontrol>Publications</uicontrol> view (found inside the project's
+-        <xref href="cf-projects-workspace.dita">Personal Workspace</xref>) displays the map of a
+-      publication in a tree editor to make navigating through the topics easier. For a publication
++    <p id="p_pnt_yd3_cfc"><?oxy_delete content="The &lt;uicontrol&gt;Publications&lt;/uicontrol&gt; view (found inside the project's &lt;xref href=&quot;cf-projects-workspace.dita&quot;&gt;Personal Workspace&lt;/xref&gt;) displays the map of a publication in a tree editor to make navigating through the topics easier." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>The <uicontrol>Publications</uicontrol> view (found inside the project's <xref href="cf-projects-workspace.dita">Personal Workspace</xref>) displays the publication map in a tree editor to make navigation easier.<?oxy_insert_end?></p> For a publication
+       to appear, it must first be defined in the <xref
+         href="#cf-projects-workspace_publications_view/section_cws_2lh_1fc"><uicontrol>Publications
+-          Management</uicontrol> dialog box</xref>. <note id="note_zmx_klh_1fc">If you have modified
+-        the publications using the <xref href="cf-projects-publications.dita">project
+-            <uicontrol>Publications Management</uicontrol> page</xref>, you also need to pull <xref
+-          href="cf-projects-workspace_incoming_changes.dita">incoming changes into your
+-          workspace</xref> to retrieve the latest publications. </note></p>
++          Management</uicontrol> dialog box</xref>. <note id="note_zmx_klh_1fc"><?oxy_delete content="If you have modified the publications using the &lt;xref href=&quot;cf-projects-publications.dita&quot;&gt;project &lt;uicontrol&gt;Publications Management&lt;/uicontrol&gt; page&lt;/xref&gt;, you also need to pull &lt;xref href=&quot;cf-projects-workspace_incoming_changes.dita&quot;&gt;incoming changes into your workspace&lt;/xref&gt; to retrieve the latest publications." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>If you have modified publications using the <xref href="cf-projects-publications.dita">project <uicontrol>Publications Management</uicontrol> page</xref>, you must also pull <xref href="cf-projects-workspace_incoming_changes.dita">incoming changes into your workspace</xref> to retrieve the latest versions.<?oxy_insert_end?></note></p>
+     <p>
+       <fig>
+         <title>Workspace Publications View</title>
+@@ -24,7 +18,7 @@
+       </fig>
+     </p>
+     <p id="p_x2z_ktz_vbc">To select a defined publication, use the publications drop-down control in
+-      the side-pane. This publication will be used as the context of the open editors. Changing the
++      the side-pane. This<?oxy_delete content="publication will be used as the context of the open editors." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>publication will serve as the context for the open editors.<?oxy_insert_end?> Changing the
+       publication triggers a reload of the currently open editor to match the new context.</p>
+     <p><u><b>Add New Publications</b></u></p>
+     <p id="p_hfm_p21_5fc">To add a new publication, click the <uicontrol><image
+@@ -89,9 +83,7 @@
+           <image href="../img/cf-manage-publications.png"/>
+         </fig>
+       </p>
+-      <p>The <uicontrol>Manage Publications</uicontrol> dialog box allows you to create and
+-        configure publications. These publications can be used as context in new review tasks, in
+-        deliverables, and in your personal workspace.</p>
++      <p><?oxy_delete content="Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>Manage Publications Dialog Box. The Manage Publications dialog box allows you to create and configure publications.<?oxy_insert_end?></p>
+       <p>To add a new publication from the management dialog box, click the <uicontrol>New
+           Publication</uicontrol> button in the top-right corner. This button opens a drop-down menu
+         with options for creating a new publication:<ul id="ul_d4r_qd1_5fc">
+@@ -116,10 +108,7 @@
+           scope="external">DITA-OT project file</xref>, you can include all the
+           <codeph>&lt;context></codeph> elements as Publications in your <ph keyref="product"/>
+         project using the <uicontrol>Include Publications</uicontrol> button (available when
+-        managing publications from the workspace). This action will add an
+-          <codeph>&lt;include></codeph> element in the <ph keyref="product"/>'s builtin DITA-OT
+-        project file.<note id="note_wfl_2mh_1fc">There are some limitations in regard to the
+-          supported DITA-OT project files:<p>
++        managing publications from the workspace). This<?oxy_delete content="action will add an &lt;include&gt; element in the &lt;ph keyref=&quot;product&quot;&gt;'s builtin DITA-OT project file." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>action adds an <codeph>&lt;include></codeph> element to the Oxygen Content Fusion's built-in DITA-OT project file.<?oxy_insert_end?><note id="note_wfl_2mh_1fc"><?oxy_delete content="There are some limitations in regard to the supported DITA-OT project files:" author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>There are some limitations regarding the supported DITA-OT project files:<?oxy_insert_end?><p>
+             <ul id="ul_uby_1ph_1fc">
+               <li>A <codeph>&lt;context></codeph> element that contains more than one
+                   <codeph>&lt;profile></codeph> element is not supported and will be ignored.</li>
+@@ -128,4 +117,4 @@
+           </p></note></p>
+     </section>
+   </body>
+-</topic>
++</topic>
+\ No newline at end of file

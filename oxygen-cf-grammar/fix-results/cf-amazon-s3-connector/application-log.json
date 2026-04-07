@@ -1,0 +1,41 @@
+{
+  "applied": [
+    {
+      "original": "To configure an Amazon S3 connector, the following fields must be provided:",
+      "replacement": "To configure the Amazon S3 connector, provide the following fields:",
+      "matchType": "verbatim"
+    },
+    {
+      "original": "Click the Edit button of the General Configuration",
+      "replacement": "Click the Edit button in the General Configuration section",
+      "matchType": "xml-aware",
+      "matched": "Click the <b>Edit</b> button of the <b>General\n            Configuration"
+    },
+    {
+      "original": "Set the timeout to 15 minutes 0 seconds. If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.",
+      "replacement": "Set the timeout to 15 minutes 0 seconds. Otherwise, the Lambda function may time out, and the zip file may not be unzipped or deleted.",
+      "matchType": "xml-aware",
+      "matched": "Set the timeout to 15 minutes 0 seconds.<note id=\"note_amd_p2g_41c\">If you do\n            not do that, your Lambda function may get timed out and the zip will not be\n            unzipped/deleted."
+    },
+    {
+      "original": "Set the Memory to somewhere between 1000-5000 MB. Set the Ephemeral storage to somewhere between 1000-5000 MB.",
+      "replacement": "Set the Memory and Ephemeral storage to between 1000 and 5000 MB.",
+      "matchType": "xml-aware",
+      "matched": "Set the <b>Memory</b> to somewhere between 1000-5000 MB.</li>\n          <li>Set the <b>Ephemeral storage</b> to somewhere between 1000-5000 MB."
+    },
+    {
+      "original": "If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.",
+      "replacement": "If your output's size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.",
+      "matchType": "xml-aware",
+      "matched": "If your output's size is bigger than allocated Memory and\n            Ephemeral storage the lambda function may fail to execute."
+    },
+    {
+      "original": "Click Save button.",
+      "replacement": "Click the Save button.",
+      "matchType": "xml-aware",
+      "matched": "Click <b>Save</b> button."
+    }
+  ],
+  "skipped": [],
+  "rawModelOutput": "[\n  {\n    \"original\": \"To configure an Amazon S3 connector, the following fields must be provided:\",\n    \"replacement\": \"To configure the Amazon S3 connector, provide the following fields:\"\n  },\n  {\n    \"original\": \"Click the Edit button of the General Configuration\",\n    \"replacement\": \"Click the Edit button in the General Configuration section\"\n  },\n  {\n    \"original\": \"Set the timeout to 15 minutes 0 seconds. If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.\",\n    \"replacement\": \"Set the timeout to 15 minutes 0 seconds. Otherwise, the Lambda function may time out, and the zip file may not be unzipped or deleted.\"\n  },\n  {\n    \"original\": \"Set the Memory to somewhere between 1000-5000 MB. Set the Ephemeral storage to somewhere between 1000-5000 MB.\",\n    \"replacement\": \"Set the Memory and Ephemeral storage to between 1000 and 5000 MB.\"\n  },\n  {\n    \"original\": \"If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.\",\n    \"replacement\": \"If your output's size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.\"\n  },\n  {\n    \"original\": \"Click Save button.\",\n    \"replacement\": \"Click the Save button.\"\n  }\n]"
+}

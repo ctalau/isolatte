@@ -1,0 +1,65 @@
+[
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "parallel-structure",
+    "original": "To publish content to an Amazon S3 bucket, you must have the following: An AWS account. An existing S3 bucket configured. For more details, refer to the AWS S3 Documentation . The Access Key ID and Secret Access Key associated with your AWS account.",
+    "suggestion": "To publish content to an Amazon S3 bucket, you must have the following: an AWS account; an existing, configured S3 bucket; and the Access Key ID and Secret Access Key associated with your AWS account.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "awkward-phrasing",
+    "original": "To configure an Amazon S3 connector, the following fields must be provided:",
+    "suggestion": "To configure the Amazon S3 connector, provide the following fields:",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "spelling",
+    "original": "logging.info(\"Path to unzp the files: \" + TARGET_PATH);",
+    "suggestion": "logging.info(\"Path to unzip the files: \" + TARGET_PATH);",
+    "severity": "error"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "awkward-phrasing",
+    "original": "TARGET_PATH = \"Documentation/ .",
+    "suggestion": "TARGET_PATH = \"Documentation/\"",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "awkward-phrasing",
+    "original": "Click the Edit button of the General Configuration .",
+    "suggestion": "Click the Edit button in the General Configuration section.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "awkward-phrasing",
+    "original": "Set the timeout to 15 minutes 0 seconds. If you do not do that, your Lambda function may get timed out and the zip will not be unzipped/deleted.",
+    "suggestion": "Set the timeout to 15 minutes 0 seconds. Otherwise, the Lambda function may time out, and the zip file may not be unzipped or deleted.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "awkward-phrasing",
+    "original": "Set the Memory to somewhere between 1000-5000 MB. Set the Ephemeral storage to somewhere between 1000-5000 MB.",
+    "suggestion": "Set the Memory and Ephemeral storage to between 1000 and 5000 MB.",
+    "severity": "suggestion"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "missing-comma",
+    "original": "If your output's size is bigger than allocated Memory and Ephemeral storage the lambda function may fail to execute.",
+    "suggestion": "If your output's size is larger than the allocated Memory and Ephemeral storage, the Lambda function may fail to execute.",
+    "severity": "warning"
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "issue": "article-usage",
+    "original": "Click Save button.",
+    "suggestion": "Click the Save button.",
+    "severity": "warning"
+  }
+]

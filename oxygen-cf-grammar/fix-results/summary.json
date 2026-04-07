@@ -1,0 +1,47 @@
+[
+  {
+    "file": "cf-upgrading.dita",
+    "slug": "cf-upgrading",
+    "issueCount": 8,
+    "originalBytes": 7224,
+    "fixedBytes": 9011,
+    "oxyInserts": 8,
+    "oxyDeletes": 8
+  },
+  {
+    "file": "CF-task-states-user-roles.dita",
+    "slug": "CF-task-states-user-roles",
+    "issueCount": 9,
+    "originalBytes": 7804,
+    "fixedBytes": 9200,
+    "oxyInserts": 3,
+    "oxyDeletes": 6
+  },
+  {
+    "file": "content_fusion_user_interface.dita",
+    "slug": "content_fusion_user_interface",
+    "issueCount": 8,
+    "originalBytes": 8163,
+    "fixedBytes": 10702,
+    "oxyInserts": 8,
+    "oxyDeletes": 8
+  },
+  {
+    "file": "cf-projects-workspace_publications_view.dita",
+    "slug": "cf-projects-workspace_publications_view",
+    "issueCount": 8,
+    "originalBytes": 9034,
+    "fixedBytes": 10972,
+    "oxyInserts": 7,
+    "oxyDeletes": 7
+  },
+  {
+    "file": "cf-amazon-s3-connector.dita",
+    "slug": "cf-amazon-s3-connector",
+    "issueCount": 9,
+    "originalBytes": 10361,
+    "fixedBytes": 12518,
+    "oxyInserts": 8,
+    "oxyDeletes": 10
+  }
+]

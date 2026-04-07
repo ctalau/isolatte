@@ -1,0 +1,60 @@
+{
+  "applied": [
+    {
+      "original": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content and changes proposed by reviewers can be integrated back into the DITA project directly within Content Fusion.",
+      "replacement": "Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content. Changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.",
+      "matchType": "xml-aware",
+      "matched": "Content Fusion includes a <xref href=\"cf-projects.dita\"><i>Projects</i> feature</xref> that\n        makes it possible for an organization to integrate a Git repository that contains DITA\n        content and changes proposed by reviewers can be integrated back into the DITA project\n        directly within Content Fusion."
+    },
+    {
+      "original": "Review tasks can be created inside or outside projects in Content Fusion and there are some difference between the two:",
+      "replacement": "Review tasks can be created inside or outside projects in Content Fusion, and there are some differences between the two:",
+      "matchType": "xml-aware",
+      "matched": "Review tasks can be created inside or outside projects in Content Fusion and there are some\n        difference between the two:"
+    },
+    {
+      "original": "The changes made to a project-based review task are stored in the Git repository and merged into the project's branch and pushed to the upstream remote repository when the task is finished.",
+      "replacement": "The changes made to a project-based review task are stored in the Git repository, merged into the project's branch, and pushed to the upstream remote repository when the task is finished.",
+      "matchType": "xml-aware",
+      "matched": "The changes made to a project-based review task are stored in the Git repository\n                  and merged into the project's branch and pushed to the upstream remote repository\n                  when the task is finished."
+    },
+    {
+      "original": "All users with platform user role of Author that have access to a project are able to see all review tasks",
+      "replacement": "All users with the platform user role of Author who have access to a project are able to see all review tasks",
+      "matchType": "xml-aware",
+      "matched": "All users with <xref\n                    href=\"CF-task-states-user-roles.dita#CF-task-states-user-roles/section_cjw_fns_1yb\"\n                    >platform user role of <uicontrol>Author</uicontrol></xref> that have access to\n                  a project are able to see all review tasks"
+    },
+    {
+      "original": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once they consider the review process is finished.",
+      "replacement": "can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once the review process is finished.",
+      "matchType": "xml-aware",
+      "matched": "can review and edit\n            content, add messages to communicate with the task owner and other collaborators, and\n            mark the task as finalized once they consider the review process is finished."
+    },
+    {
+      "original": "can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.",
+      "replacement": "can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.",
+      "matchType": "xml-aware",
+      "matched": "can review and edit content, add\n            messages to communicate with other collaborators, change task settings, decide when to\n            close the review task."
+    },
+    {
+      "original": "For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :",
+      "replacement": "For organizations using the Content Fusion Projects feature, an administrator can assign two platform user roles (from the Users Management tab on the Administration Page):",
+      "matchType": "xml-aware",
+      "matched": "For organizations that take advantage of the Content Fusion <xref href=\"cf-projects.dita\"\n            ><i>Projects</i> feature</xref>, there are two platform user roles that can be assigned\n        by the administrator<ph product=\"fusion\"> (from the <uicontrol>Users Management</uicontrol>\n          tab found in the <xref href=\"cf-enterprise-configuration.dita\">Administration\n          Page</xref>)</ph>:"
+    },
+    {
+      "original": "In addition to the features that an SME has access to, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and other advanced features.",
+      "replacement": "In addition to the features available to an SME, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and use other advanced features.",
+      "matchType": "xml-aware",
+      "matched": "In addition to the features that an SME has access to, Authors can access\n            all projects created within the organization, create review tasks from inside projects,\n            build output deliverables, and other advanced features."
+    },
+    {
+      "original": "This is the initial status for newly created review tasks and they remain in this state until the task has been closed by the task owner.",
+      "replacement": "This is the initial status for newly created review tasks; they remain in this state until the task owner closes the task.",
+      "matchType": "xml-aware",
+      "matched": "This is the initial status for newly created\n              review tasks and they remain in this state until the task has been closed by the task\n              owner."
+    }
+  ],
+  "skipped": [],
+  "rawModelOutput": "[\n  {\n    \"original\": \"Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content and changes proposed by reviewers can be integrated back into the DITA project directly within Content Fusion.\",\n    \"replacement\": \"Content Fusion includes a Projects feature that makes it possible for an organization to integrate a Git repository that contains DITA content. Changes proposed by reviewers can then be integrated back into the DITA project directly within Content Fusion.\"\n  },\n  {\n    \"original\": \"Review tasks can be created inside or outside projects in Content Fusion and there are some difference between the two:\",\n    \"replacement\": \"Review tasks can be created inside or outside projects in Content Fusion, and there are some differences between the two:\"\n  },\n  {\n    \"original\": \"The changes made to a project-based review task are stored in the Git repository and merged into the project's branch and pushed to the upstream remote repository when the task is finished.\",\n    \"replacement\": \"The changes made to a project-based review task are stored in the Git repository, merged into the project's branch, and pushed to the upstream remote repository when the task is finished.\"\n  },\n  {\n    \"original\": \"All users with platform user role of Author that have access to a project are able to see all review tasks\",\n    \"replacement\": \"All users with the platform user role of Author who have access to a project are able to see all review tasks\"\n  },\n  {\n    \"original\": \"can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once they consider the review process is finished.\",\n    \"replacement\": \"can review and edit content, add messages to communicate with the task owner and other collaborators, and mark the task as finalized once the review process is finished.\"\n  },\n  {\n    \"original\": \"can review and edit content, add messages to communicate with other collaborators, change task settings, decide when to close the review task.\",\n    \"replacement\": \"can review and edit content, add messages to communicate with other collaborators, change task settings, and decide when to close the review task.\"\n  },\n  {\n    \"original\": \"For organizations that take advantage of the Content Fusion Projects feature , there are two platform user roles that can be assigned by the administrator (from the Users Management tab found in the Administration Page ) :\",\n    \"replacement\": \"For organizations using the Content Fusion Projects feature, an administrator can assign two platform user roles (from the Users Management tab on the Administration Page):\"\n  },\n  {\n    \"original\": \"In addition to the features that an SME has access to, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and other advanced features.\",\n    \"replacement\": \"In addition to the features available to an SME, Authors can access all projects created within the organization, create review tasks from inside projects, build output deliverables, and use other advanced features.\"\n  },\n  {\n    \"original\": \"This is the initial status for newly created review tasks and they remain in this state until the task has been closed by the task owner.\",\n    \"replacement\": \"This is the initial status for newly created review tasks; they remain in this state until the task owner closes the task.\"\n  }\n]"
+}

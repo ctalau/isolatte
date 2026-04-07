@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-projects-workspace_publications_view">
+  <title>Workspace Publications View</title>
+  <body>
+    <p id="p_xkq_hrz_vbc">A Content Fusion <i>publication</i> defines a DITA map that is used to
+      resolve keys in topics and<?oxy_delete content="optionally," author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000">, optionally,</oxy_insert_end?> a DITAVAL filter used for flagging or filtering
+      profiled content.</p>
+    <p id="p_pnt_yd3_cfc"><?oxy_delete content="The &lt;uicontrol&gt;Publications&lt;/uicontrol&gt; view (found inside the project's &lt;xref href=&quot;cf-projects-workspace.dita&quot;&gt;Personal Workspace&lt;/xref&gt;) displays the map of a publication in a tree editor to make navigating through the topics easier." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>The <uicontrol>Publications</uicontrol> view (found inside the project's <xref href="cf-projects-workspace.dita">Personal Workspace</xref>) displays the publication map in a tree editor to make navigation easier.<?oxy_insert_end?></p> For a publication
+      to appear, it must first be defined in the <xref
+        href="#cf-projects-workspace_publications_view/section_cws_2lh_1fc"><uicontrol>Publications
+          Management</uicontrol> dialog box</xref>. <note id="note_zmx_klh_1fc"><?oxy_delete content="If you have modified the publications using the &lt;xref href=&quot;cf-projects-publications.dita&quot;&gt;project &lt;uicontrol&gt;Publications Management&lt;/uicontrol&gt; page&lt;/xref&gt;, you also need to pull &lt;xref href=&quot;cf-projects-workspace_incoming_changes.dita&quot;&gt;incoming changes into your workspace&lt;/xref&gt; to retrieve the latest publications." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>If you have modified publications using the <xref href="cf-projects-publications.dita">project <uicontrol>Publications Management</uicontrol> page</xref>, you must also pull <xref href="cf-projects-workspace_incoming_changes.dita">incoming changes into your workspace</xref> to retrieve the latest versions.<?oxy_insert_end?></note></p>
+    <p>
+      <fig>
+        <title>Workspace Publications View</title>
+        <image href="../img/cf-workspace-publication.png"/>
+      </fig>
+    </p>
+    <p id="p_x2z_ktz_vbc">To select a defined publication, use the publications drop-down control in
+      the side-pane. This<?oxy_delete content="publication will be used as the context of the open editors." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>publication will serve as the context for the open editors.<?oxy_insert_end?> Changing the
+      publication triggers a reload of the currently open editor to match the new context.</p>
+    <p><u><b>Add New Publications</b></u></p>
+    <p id="p_hfm_p21_5fc">To add a new publication, click the <uicontrol><image
+          href="../img/CF-AddPub16.png"/>Add publication</uicontrol> button at the top-right corner
+      of the view's header. This button opens a drop-down menu with options for creating a new
+        publication:<ul id="ul_ifm_p21_5fc">
+        <li id="li_jfm_p21_5fc"><uicontrol>From existing DITA map</uicontrol> - Adds a new
+          publication based on an existing DITA map. In the resulting dialog box, you enter a name
+          for the publication and specify the context DITA map and optionally, a DITAVAL filter
+          file.</li>
+        <li id="li_kfm_p21_5fc"><uicontrol>From new map</uicontrol> - Adds a new publication based
+          on a new DITA map. In the resulting dialog box, you enter a <uicontrol>Title</uicontrol>
+          for the new publication, specify the path of the <uicontrol>Parent folder</uicontrol>, and
+          choose the <uicontrol>Map type</uicontrol> (either <i>Map</i> or <i>Bookmap</i>).</li>
+      </ul></p>
+    <p id="p_vy5_pf1_5fc">When finished configuring the options, click the
+        <uicontrol>Create</uicontrol> button at the bottom of the dialog box to add the
+      publication.</p>
+    <p><u><b>Manage Publications</b></u></p>
+    <p>The <uicontrol><image href="../img/Cf-ManagePub16.png"/>Manage Publications</uicontrol>
+      button at the top-right corner of the view 's header can be used to open a <xref
+        href="#cf-projects-workspace_publications_view/section_cws_2lh_1fc"><uicontrol>Manage
+          Publications</uicontrol> dialog box</xref> where you have access to all publication
+      management features, including creating, editing, and deleting publications. You can also
+      reach this configuration dialog box by selecting <uicontrol>Manage publications</uicontrol>
+      from the publications drop-down list.</p>
+    <p><u><b>Refresh Publications</b></u></p>
+    <p id="p_vrd_dd5_rcc">You can click the <uicontrol><image href="../img/cfRefresh16.png"
+        />Refresh</uicontrol> button at the top-right corner of the view 's header to refresh the
+      list of publications.</p>
+    <p><u><b>Manage Deliverables</b></u></p>
+    <p>You can click the <uicontrol><image href="../img/CF-ManageDeliverable16.png"/>Manage
+        Deliverables</uicontrol> button to the right of the current publication to open the <xref
+        href="cf-projects-deliverables.dita">deliverables management page</xref> for the particular
+      publication where you can create new deliverables, build an existing deliverable, view logs,
+      download deliverables, and schedule periodic builds for a deliverable to automate the
+      process.</p>
+    <p><u><b>Locate and Open Documents</b></u></p>
+    <p>You can use the <uicontrol>Type to filter</uicontrol> text field to search for a file by
+      name.</p>
+    <p id="p_p2x_vtn_zbc">You can click on a file displayed in the side-pane to open it in the
+      visual editor (or double-click a file when the map is open in the tree editor).</p>
+    <p id="p_zcc_mtz_vbc">
+      <note type="notice">The <uicontrol>Enable tree editing in the Publications
+          side-view</uicontrol> option in the <xref href="cf-profile-settings.dita">Profile Settings
+          page</xref> must be selected (default value) for the map to be editable. If that option is
+        deselected, the map is displayed as read only.</note>
+    </p>
+    <p><u><b>Add Documents to New Review Task</b></u></p>
+    <p id="p_u4r_22t_1hc">You can add topics to a new review task from this page by right-clicking
+      the particular topics and selecting <uicontrol>Add to review task</uicontrol> from the
+      contextual menu. This creates a new review task, adds the selected file(s), and opens the
+        <uicontrol>New Review Task</uicontrol> page where you can <xref
+        href="cf-projects-review-tasks.dita#cf-projects-review-tasks/section_cn4_k3x_4jb">configure
+        the new task</xref>.<note conkeyref="reusables-cf/note_include-project-files-context"
+        id="note_ekn_wwb_phc"/></p>
+    <section id="section_cws_2lh_1fc">
+      <title>Manage Publications Dialog Box</title>
+      <p id="p_qwf_423_cfc">
+        <fig id="fig_rwf_423_cfc">
+          <title>Manage Publications Dialog Box</title>
+          <image href="../img/cf-manage-publications.png"/>
+        </fig>
+      </p>
+      <p><?oxy_delete content="Manage Publications Dialog Box Manage Publications Dialog Box The Manage Publications dialog box allows you to create and configure publications." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>Manage Publications Dialog Box. The Manage Publications dialog box allows you to create and configure publications.<?oxy_insert_end?></p>
+      <p>To add a new publication from the management dialog box, click the <uicontrol>New
+          Publication</uicontrol> button in the top-right corner. This button opens a drop-down menu
+        with options for creating a new publication:<ul id="ul_d4r_qd1_5fc">
+          <li id="li_e4r_qd1_5fc"><uicontrol>From existing DITA map</uicontrol> - Adds a new
+            publication based on an existing DITA map. In the resulting dialog box, you enter a name
+            for the publication and specify the context DITA map and optionally, a DITAVAL filter
+            file.</li>
+          <li id="li_g3w_b21_5fc"><uicontrol>From new map</uicontrol> - Adds a new publication based
+            on a new DITA map. In the resulting dialog box, you enter a <uicontrol>Title</uicontrol>
+            for the new publication, specify the path of the <uicontrol>Parent folder</uicontrol>,
+            and choose the <uicontrol>Map type</uicontrol> (either <i>Map</i> or
+            <i>Bookmap</i>).</li>
+        </ul></p>
+      <p id="p_l1g_lf1_5fc">When finished configuring the options, click the
+          <uicontrol>Create</uicontrol> button at the bottom of the dialog box to add the
+        publication.</p>
+      <p>To edit an existing publication, click the <uicontrol>Configure</uicontrol> button next to
+        the particular publication. To delete an existing publication, click the
+          <uicontrol>Delete</uicontrol> button next to the particular publication.</p>
+      <p>If you have an existing <xref
+          href="https://www.dita-ot.org/dev/topics/using-project-files.html" format="html"
+          scope="external">DITA-OT project file</xref>, you can include all the
+          <codeph>&lt;context></codeph> elements as Publications in your <ph keyref="product"/>
+        project using the <uicontrol>Include Publications</uicontrol> button (available when
+        managing publications from the workspace). This<?oxy_delete content="action will add an &lt;include&gt; element in the &lt;ph keyref=&quot;product&quot;&gt;'s builtin DITA-OT project file." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>action adds an <codeph>&lt;include></codeph> element to the Oxygen Content Fusion's built-in DITA-OT project file.<?oxy_insert_end?><note id="note_wfl_2mh_1fc"><?oxy_delete content="There are some limitations in regard to the supported DITA-OT project files:" author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>There are some limitations regarding the supported DITA-OT project files:<?oxy_insert_end?><p>
+            <ul id="ul_uby_1ph_1fc">
+              <li>A <codeph>&lt;context></codeph> element that contains more than one
+                  <codeph>&lt;profile></codeph> element is not supported and will be ignored.</li>
+              <li>Deliverables are not loaded from your project file, but may be in the future.</li>
+            </ul>
+          </p></note></p>
+    </section>
+  </body>
+</topic>

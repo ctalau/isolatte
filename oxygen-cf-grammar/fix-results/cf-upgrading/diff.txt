@@ -1,0 +1,73 @@
+--- /tmp/orig_cf-upgrading.dita	2026-04-06 20:01:52.539973183 +0000
++++ /tmp/fixed_cf-upgrading.dita	2026-04-06 20:01:52.543973183 +0000
+@@ -5,7 +5,7 @@
+   <prolog>
+     <metadata>
+       <keywords>
+-        <indexterm>Content Fusion Enterprise - Upgrading</indexterm>
++        <indexterm><?oxy_delete content="Upgrading Content Fusion Content Fusion Enterprise - Upgrading Upgrading" author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>Upgrading Content Fusion Enterprise<?oxy_insert_end?></indexterm>
+         <indexterm>Upgrading</indexterm>
+       </keywords>
+     </metadata>
+@@ -17,8 +17,7 @@
+         <ul id="ul_ml5_dgk_54b">
+           <li id="li_nl5_dgk_54b">System requirements: On the server running Content Fusion, you need enough disk space
+             to create a backup. The backup file contains a compressed archive of all files located
+-            in <filepath>/fusion/data/</filepath>, so to be safe, the free space should be at least
+-            equal to the size of the data folder.</li>
++            in <filepath>/fusion/data/</filepath>, so to be safe, <?oxy_delete content="the free space should be at least equal to the size of the data folder." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>the free space should be at least equal to the size of the data folder.<?oxy_insert_end?></li>
+           <li id="li_pl5_dgk_54b">Custom frameworks and plugins will need to be reinstalled manually on the new
+             server.</li>
+           <li id="li_ql5_dgk_54b">The upgrade process will involve some downtime, so pick a time that does not affect
+@@ -42,12 +41,9 @@
+           server.</li>
+         <li id="li_yl5_dgk_54b"><xref
+             href="cf-admin-page-maintenance.dita#cf-admin-page-maintenance/dlentry_hh5_dgk_54b"
+-            >Enable maintenance mode</xref> on the <b>old server</b>. Maintenance mode is needed to
+-          ensure that users are not making any changes to the tasks while the backup is being
+-          created.</li>
++            >Enable maintenance mode</xref> on the <b>old server</b>. <?oxy_delete content="Maintenance mode is needed to ensure that users are not making any changes to the tasks while the backup is being created." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>Enable maintenance mode to ensure users do not make changes to tasks while the backup is being created.<?oxy_insert_end?></li>
+         <li id="li_zl5_dgk_54b">
+-          <p id="p_am5_dgk_54b">Create a backup of the data on the old server by running the following command on the <b>old
+-              server</b>:<codeblock xml:space="preserve" outputclass="language-javascript" id="codeblock_bm5_dgk_54b">sudo bash /fusion/admin/create-fusion-backup.sh MY_BACKUP_FILE</codeblock></p>
++          <p id="p_am5_dgk_54b"><?oxy_delete content="Create a backup of the data on the old server by running the following command on the old server :" author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>Create a backup of the data by running the following command on the old server:<?oxy_insert_end?><codeblock xml:space="preserve" outputclass="language-javascript" id="codeblock_bm5_dgk_54b">sudo bash /fusion/admin/create-fusion-backup.sh MY_BACKUP_FILE</codeblock></p>
+           <p id="p_cm5_dgk_54b">This will create a backup archive
+               (<filepath>MY_BACKUP_FILE</filepath>) in the current directory. If the backup file
+             already exists, you will be prompted to choose whether or not to overwrite it. If you
+@@ -59,10 +55,8 @@
+             server</b>.</li>
+         <li id="li_em5_dgk_54b">
+           <p id="p_fm5_dgk_54b">On the <b>newly deployed server</b>, run the following command to restore the
+-            backup:<codeblock xml:space="preserve" outputclass="language-javascript" id="codeblock_gm5_dgk_54b">sudo bash /fusion/admin/restore-fusion-backup.sh /path/to/fusion-backup.tar.gz</codeblock>where
+-            the path to the backup file is updated to match your situation. </p>
+-          <p id="p_hm5_dgk_54b"><b>Step Result:</b> After restoring the backup, all the user tasks
+-            and configurations will be available in the new <b>Content Fusion</b> server.</p>
++            backup:<codeblock xml:space="preserve" outputclass="language-javascript" id="codeblock_gm5_dgk_54b">sudo bash /fusion/admin/restore-fusion-backup.sh /path/to/fusion-backup.tar.gz</codeblock><?oxy_delete content="where the path to the backup file is updated to match your situation." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>replacing the path with the actual path to your backup file.<?oxy_insert_end?> </p>
++          <p id="p_hm5_dgk_54b"><b>Step Result:</b> After restoring the backup, <?oxy_delete content="all the user tasks and configurations will be available in the new" author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>all user tasks and configurations will be available on the new<?oxy_insert_end?> <b>Content Fusion</b> server.</p>
+         </li>
+         <li id="li_jm5_dgk_54b">Because the backup was created while maintenance mode was enabled,
+           the new <b>Content Fusion</b> server will be in maintenance mode after the backup restore.
+@@ -91,9 +85,7 @@
+           <li id="li_t3t_1g4_rsb">Go to the <uicontrol>Linux</uicontrol> tab and download the
+               <ph keyref="cfEnterprise"/> installation kit.</li>
+           <li id="li_nwy_cg4_rsb"><xref href="cf-enterprise-backups.dita">Create a backup</xref> of
+-            your current installation. This step serves as a safeguard, ensuring that you can later
+-            recover your data from the previous version of Content Fusion in case of unforeseen
+-            complications that may arise during the installation process.<note id="note_m3g_sf2_gzb"
++            your current installation. This step serves as a safeguard, <?oxy_delete content="ensuring that you can later recover your data from the previous version of Content Fusion in case of unforeseen complications that may arise during the installation process." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>ensuring that you can recover your data in case of unforeseen complications during the installation process.<?oxy_insert_end?><note id="note_m3g_sf2_gzb"
+               type="important">The <filepath>/fusion/</filepath> folder will be removed during the
+               installation, so your backup should not be located within it.</note></li>
+           <li id="li_etq_gg4_rsb">Run the installer (the installation requires root privileges)
+@@ -101,9 +93,7 @@
+             flag.<codeblock outputclass="language-ini">sudo bash Oxygen_Content_Fusion_Enterprise.sh -u </codeblock></li>
+         </ol><note id="note_klw_lg4_rsb">When the <codeph>-u</codeph> flag is used, the installation
+           kit will upgrade the current version of Content Fusion, while keeping all the existing
+-          data and configuration settings. The Administration page credentials will be reset to the
+-            <xref href="cf-linux.dita#cf-linux/d1225e101">initial setting</xref> (user=<i>fusion</i>
+-          / password=<i>oxygenxml</i>) and will need to be re-configured.</note></p>
++          data and configuration settings. <?oxy_delete content="The Administration page credentials will be reset to the initial setting (user= fusion / password= oxygenxml ) and will need to be re-configured." author="Gemma4" timestamp="20260406T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260406T120000+0000"?>The Administration page credentials will be reset to the default settings (user=fusion, password=oxygenxml) and must be reconfigured.<?oxy_insert_end?></note></p>
+     </section>
+   </body>
+-</topic>
++</topic>
+\ No newline at end of file
