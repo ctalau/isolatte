@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <!-- Kettle body -->
+  <ellipse cx="100" cy="200" rx="60" ry="20" fill="#ddd" stroke="#999" stroke-width="2"/>
+  <rect x="40" y="80" width="120" height="120" rx="20" fill="#4a90d9" stroke="#357abd" stroke-width="2"/>
+  <ellipse cx="100" cy="80" rx="60" ry="15" fill="#5a9fe9" stroke="#357abd" stroke-width="2"/>
+  <!-- Spout -->
+  <path d="M160,110 Q180,100 175,80 L185,78 Q192,102 168,115" fill="#4a90d9" stroke="#357abd" stroke-width="2"/>
+  <!-- Handle -->
+  <path d="M40,100 Q10,140 40,180" fill="none" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+  <!-- Lid knob -->
+  <circle cx="100" cy="68" r="8" fill="#333"/>
+  <!-- Power indicator -->
+  <circle cx="100" cy="160" r="5" fill="#4caf50" stroke="#388e3c" stroke-width="1"/>
+  <!-- Label -->
+  <text x="100" y="135" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">AquaBoil 3000</text>
+</svg>

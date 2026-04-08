@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="usage-en">
+  <title>Using the Kettle</title>
+  <body>
+    <section>
+      <title>Boiling Water</title>
+      <ol>
+        <li>Open the lid of the <keyword keyref="product-name"/> by pressing the lid release button.</li>
+        <li>Fill with fresh water between the MIN and MAX markings.</li>
+        <li>Close the lid until it clicks into place.</li>
+        <li>Place the kettle on the power base.</li>
+        <li>Press the ON/OFF switch. The power indicator will illuminate.</li>
+        <li>The <keyword keyref="product-name"/> will automatically switch off when the water boils.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Care and Maintenance</title>
+      <p>To descale the <keyword keyref="product-name"/>, fill with equal parts water and white
+        vinegar. Boil, then let stand for one hour. Rinse thoroughly.</p>
+      <p>Wipe the exterior with a damp cloth. Never use abrasive cleaners.</p>
+    </section>
+  </body>
+</topic>

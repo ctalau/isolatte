@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="fr">
+  <title>Français — Manuel d'utilisation</title>
+
+  <!-- Language-specific key: French socket type -->
+  <keydef keys="socket-type">
+    <topicmeta>
+      <keywords><keyword>Type E (CEE 7/5)</keyword></keywords>
+    </topicmeta>
+  </keydef>
+
+  <topicref href="topics/fr/safety.dita"/>
+  <topicref href="topics/fr/setup.dita"/>
+  <topicref href="topics/fr/usage.dita"/>
+</map>

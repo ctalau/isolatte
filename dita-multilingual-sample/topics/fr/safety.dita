@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="safety-fr">
+  <title>Consignes de sécurité</title>
+  <body>
+    <section>
+      <title>Informations de sécurité importantes</title>
+      <p>Lisez toutes les instructions avant d'utiliser le <keyword keyref="product-name"/>.</p>
+      <ul>
+        <li>Placez toujours le <keyword keyref="product-name"/> sur une surface plane et stable.</li>
+        <li>Ne faites pas fonctionner la bouilloire sans eau.</li>
+        <li>Ne plongez pas la base, le cordon ou la fiche dans l'eau.</li>
+        <li>Débranchez la bouilloire lorsqu'elle n'est pas utilisée et avant le nettoyage.</li>
+        <li>Ne laissez pas le cordon pendre du bord de la table ou du plan de travail.</li>
+      </ul>
+    </section>
+    <section>
+      <title>Sécurité électrique</title>
+      <p>Cet appareil est conçu pour être utilisé avec une prise <keyword keyref="socket-type"/>.
+        Assurez-vous que votre prise est compatible avant de brancher la fiche.</p>
+      <fig>
+        <title>Fiche d'alimentation</title>
+        <image keyref="img-kettle-plug" width="150px">
+          <alt>Fiche d'alimentation du <keyword keyref="product-name"/></alt>
+        </image>
+      </fig>
+      <note type="warning">N'utilisez jamais un adaptateur qui n'est pas conçu pour la puissance
+        du <keyword keyref="product-name"/> (2200W).</note>
+    </section>
+  </body>
+</topic>

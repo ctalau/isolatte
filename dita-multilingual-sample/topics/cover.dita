@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cover">
+  <title><keyword keyref="product-name"/> — User Manual / Bedienungsanleitung / Manuel d'utilisation</title>
+  <body>
+    <fig>
+      <image keyref="img-kettle-front" width="300px" placement="break">
+        <alt>AquaBoil 3000 Electric Kettle</alt>
+      </image>
+    </fig>
+    <p>Model: <keyword keyref="product-name"/></p>
+    <p>Capacity: 1.7 L | Power: 2200 W</p>
+    <p>This manual contains instructions in English, Deutsch, and Français.</p>
+  </body>
+</topic>

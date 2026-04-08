@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map>
+  <title>AquaBoil 3000 — Multilingual User Manual</title>
+
+  <!-- ============================================= -->
+  <!-- Common keys: product name and images          -->
+  <!-- These are inherited by all child keyscopes    -->
+  <!-- ============================================= -->
+
+  <!-- Product name — not translated -->
+  <keydef keys="product-name">
+    <topicmeta>
+      <keywords><keyword>AquaBoil 3000</keyword></keywords>
+    </topicmeta>
+  </keydef>
+
+  <!-- Image keys — single source, not translated -->
+  <keydef keys="img-kettle-front" href="images/kettle-front.svg" format="svg"/>
+  <keydef keys="img-kettle-plug"  href="images/kettle-plug.svg"  format="svg"/>
+
+  <!-- ============================================= -->
+  <!-- Cover page (before language sections)         -->
+  <!-- ============================================= -->
+  <topicref href="topics/cover.dita" toc="yes"/>
+
+  <!-- ============================================= -->
+  <!-- Language sections — each in its own keyscope  -->
+  <!-- Socket-type key is overridden per language    -->
+  <!-- ============================================= -->
+  <mapref href="en.ditamap" keyscope="en"/>
+  <mapref href="de.ditamap" keyscope="de"/>
+  <mapref href="fr.ditamap" keyscope="fr"/>
+
+</map>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="usage-de">
+  <title>Verwendung des Wasserkochers</title>
+  <body>
+    <section>
+      <title>Wasser kochen</title>
+      <ol>
+        <li>Öffnen Sie den Deckel des <keyword keyref="product-name"/> durch Drücken der
+          Deckelentriegelung.</li>
+        <li>Füllen Sie frisches Wasser zwischen die MIN- und MAX-Markierungen.</li>
+        <li>Schließen Sie den Deckel, bis er einrastet.</li>
+        <li>Stellen Sie den Wasserkocher auf den Sockel.</li>
+        <li>Drücken Sie den EIN/AUS-Schalter. Die Betriebsanzeige leuchtet auf.</li>
+        <li>Der <keyword keyref="product-name"/> schaltet sich automatisch ab, wenn das
+          Wasser kocht.</li>
+      </ol>
+    </section>
+    <section>
+      <title>Pflege und Wartung</title>
+      <p>Zum Entkalken des <keyword keyref="product-name"/> füllen Sie ihn zu gleichen Teilen
+        mit Wasser und Essig. Aufkochen und eine Stunde einwirken lassen. Gründlich ausspülen.</p>
+      <p>Wischen Sie das Äußere mit einem feuchten Tuch ab. Verwenden Sie niemals
+        Scheuermittel.</p>
+    </section>
+  </body>
+</topic>
