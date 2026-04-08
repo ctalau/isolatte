@@ -1,0 +1,340 @@
+{
+  "model": "google/gemma-4-26b-a4b-it",
+  "mode": "partial (20/80 topics with issues)",
+  "timestamp": "2026-04-08T22:00:00Z",
+  "topicsRequested": 80,
+  "topicsFixed": 20,
+  "topicsSkipped": 60,
+  "topicsErrored": 0,
+  "topicsTruncated": 0,
+  "totalIssues": 50,
+  "totalOxyInserts": 55,
+  "totalOxyDeletes": 54,
+  "totalInputTokens": 28369,
+  "totalOutputTokens": 14859,
+  "totalCostUsd": 0.00964,
+  "totalLatencyMs": 2058564,
+  "avgLatencyMs": 102928,
+  "topicResults": [
+    {
+      "file": "cf-admin-page-git.dita",
+      "issueCount": 3,
+      "originalBytes": 1342,
+      "fixedBytes": 2096,
+      "oxyInserts": 4,
+      "oxyDeletes": 3,
+      "latencyMs": 84330,
+      "usage": {
+        "inputTokens": 1357,
+        "outputTokens": 722,
+        "costUsd": 0.00047
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-admin-page-license.dita",
+      "issueCount": 2,
+      "originalBytes": 1707,
+      "fixedBytes": 2122,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 53068,
+      "usage": {
+        "inputTokens": 1441,
+        "outputTokens": 743,
+        "costUsd": 0.00048
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-admin-page-mail.dita",
+      "issueCount": 1,
+      "originalBytes": 1431,
+      "fixedBytes": 1595,
+      "oxyInserts": 1,
+      "oxyDeletes": 1,
+      "latencyMs": 60021,
+      "usage": {
+        "inputTokens": 1286,
+        "outputTokens": 555,
+        "costUsd": 0.00039
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-author-experience-user-role.dita",
+      "issueCount": 3,
+      "originalBytes": 1986,
+      "fixedBytes": 2882,
+      "oxyInserts": 5,
+      "oxyDeletes": 5,
+      "latencyMs": 103678,
+      "usage": {
+        "inputTokens": 1497,
+        "outputTokens": 956,
+        "costUsd": 0.00058
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-change-admin-password.dita",
+      "issueCount": 2,
+      "originalBytes": 1259,
+      "fixedBytes": 1765,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 55280,
+      "usage": {
+        "inputTokens": 1247,
+        "outputTokens": 604,
+        "costUsd": 0.0004
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-configure-firewall.dita",
+      "issueCount": 3,
+      "originalBytes": 2156,
+      "fixedBytes": 2761,
+      "oxyInserts": 3,
+      "oxyDeletes": 3,
+      "latencyMs": 173063,
+      "usage": {
+        "inputTokens": 1651,
+        "outputTokens": 936,
+        "costUsd": 0.00059
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-enterprise-unistall.dita",
+      "issueCount": 2,
+      "originalBytes": 1277,
+      "fixedBytes": 1505,
+      "oxyInserts": 1,
+      "oxyDeletes": 1,
+      "latencyMs": 16606,
+      "usage": {
+        "inputTokens": 1254,
+        "outputTokens": 488,
+        "costUsd": 0.00036
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-increase-memory.dita",
+      "issueCount": 2,
+      "originalBytes": 1610,
+      "fixedBytes": 2055,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 147132,
+      "usage": {
+        "inputTokens": 1370,
+        "outputTokens": 682,
+        "costUsd": 0.00045
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-increasing-available-disk-space.dita",
+      "issueCount": 2,
+      "originalBytes": 1792,
+      "fixedBytes": 2197,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 149923,
+      "usage": {
+        "inputTokens": 1410,
+        "outputTokens": 731,
+        "costUsd": 0.00048
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-integrate-ai-positron-overview.dita",
+      "issueCount": 3,
+      "originalBytes": 1788,
+      "fixedBytes": 2295,
+      "oxyInserts": 3,
+      "oxyDeletes": 3,
+      "latencyMs": 87311,
+      "usage": {
+        "inputTokens": 1476,
+        "outputTokens": 792,
+        "costUsd": 0.00051
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-organization-projects.dita",
+      "issueCount": 3,
+      "originalBytes": 2022,
+      "fixedBytes": 2827,
+      "oxyInserts": 4,
+      "oxyDeletes": 4,
+      "latencyMs": 149934,
+      "usage": {
+        "inputTokens": 1482,
+        "outputTokens": 887,
+        "costUsd": 0.00055
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-projects-publications.dita",
+      "issueCount": 3,
+      "originalBytes": 1998,
+      "fixedBytes": 2750,
+      "oxyInserts": 3,
+      "oxyDeletes": 3,
+      "latencyMs": 97167,
+      "usage": {
+        "inputTokens": 1596,
+        "outputTokens": 869,
+        "costUsd": 0.00056
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-projects-workspace_incoming_changes.dita",
+      "issueCount": 3,
+      "originalBytes": 2153,
+      "fixedBytes": 2757,
+      "oxyInserts": 3,
+      "oxyDeletes": 3,
+      "latencyMs": 158823,
+      "usage": {
+        "inputTokens": 1646,
+        "outputTokens": 931,
+        "costUsd": 0.00059
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-proxy-setup.dita",
+      "issueCount": 1,
+      "originalBytes": 1463,
+      "fixedBytes": 1625,
+      "oxyInserts": 1,
+      "oxyDeletes": 1,
+      "latencyMs": 50017,
+      "usage": {
+        "inputTokens": 1269,
+        "outputTokens": 531,
+        "costUsd": 0.00038
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-set-web-author-system-property.dita",
+      "issueCount": 2,
+      "originalBytes": 1511,
+      "fixedBytes": 2260,
+      "oxyInserts": 4,
+      "oxyDeletes": 4,
+      "latencyMs": 149922,
+      "usage": {
+        "inputTokens": 1335,
+        "outputTokens": 803,
+        "costUsd": 0.00049
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-task-search.dita",
+      "issueCount": 3,
+      "originalBytes": 1769,
+      "fixedBytes": 2375,
+      "oxyInserts": 3,
+      "oxyDeletes": 3,
+      "latencyMs": 158230,
+      "usage": {
+        "inputTokens": 1433,
+        "outputTokens": 812,
+        "costUsd": 0.00051
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "cf-unlocking-files.dita",
+      "issueCount": 3,
+      "originalBytes": 1759,
+      "fixedBytes": 2486,
+      "oxyInserts": 4,
+      "oxyDeletes": 4,
+      "latencyMs": 151555,
+      "usage": {
+        "inputTokens": 1540,
+        "outputTokens": 822,
+        "costUsd": 0.00053
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "communicating_with_the_author.dita",
+      "issueCount": 4,
+      "originalBytes": 2035,
+      "fixedBytes": 2794,
+      "oxyInserts": 4,
+      "oxyDeletes": 4,
+      "latencyMs": 152264,
+      "usage": {
+        "inputTokens": 1622,
+        "outputTokens": 935,
+        "costUsd": 0.00058
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "deleting_tasks.dita",
+      "issueCount": 2,
+      "originalBytes": 1036,
+      "fixedBytes": 1437,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 12067,
+      "usage": {
+        "inputTokens": 1192,
+        "outputTokens": 541,
+        "costUsd": 0.00037
+      },
+      "truncated": false,
+      "error": null
+    },
+    {
+      "file": "review-tasks-intro.dita",
+      "issueCount": 3,
+      "originalBytes": 1182,
+      "fixedBytes": 1612,
+      "oxyInserts": 2,
+      "oxyDeletes": 2,
+      "latencyMs": 48173,
+      "usage": {
+        "inputTokens": 1265,
+        "outputTokens": 519,
+        "costUsd": 0.00037
+      },
+      "truncated": false,
+      "error": null
+    }
+  ]
+}

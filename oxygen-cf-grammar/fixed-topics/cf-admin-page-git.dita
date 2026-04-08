@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-admin-page-git">
+  <title>Admin Page - Git Accounts Tab</title>
+  <body>
+    <p id="p_ajf_j31_lwb"><?oxy_delete content="The &lt;uicontrol&gt;Git Accounts&lt;/uicontrol&gt; tab of the Content Fusion Administration page can be used to configure Git accounts that are used when projects are created in &lt;b&gt;Content Fusion&lt;/b&gt; to connect to external Git services." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>The Git Accounts tab of the Content Fusion Administration page allows you to configure Git accounts for connecting to external Git services when creating projects in Content Fusion<?oxy_insert_end?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>.?<?oxy_insert_end?><?oxy_delete content="The tab has contains the following options:" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>The tab contains the following options:<?oxy_insert_end?></p>
+    <p id="p_kkd_v31_lwb">
+      <dl id="dl_vfj_v31_lwb">
+        <dlentry id="dlentry_wfj_v31_lwb">
+          <dt>Add account</dt>
+          <dd>Clicking the <uicontrol>Add account</uicontrol> button opens a dialog box <?oxy_delete content="where you can enter the Account name , Account user , Account password , and the Server URL ." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>where you can enter the Account name, Account user, Account password, and Server URL.<?oxy_insert_end?></dd>
+        </dlentry>
+        <dlentry id="dlentry_wn1_2j1_lwb">
+          <dt>Edit / Delete account</dt>
+          <dd>Once an account has been added, it is listed in this tab and options to
+              <uicontrol>Edit</uicontrol> or <uicontrol>Delete account</uicontrol> are available for
+            each added account.</dd>
+        </dlentry>
+      </dl>
+    </p>
+  </body>
+</topic>

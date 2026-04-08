@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-author-experience-user-role">
+  <title>Configuring a Different Authoring Experience Depending on User Role</title>
+  <body>
+    <p>When the XML editor is opened, a <codeph>userRole</codeph>
+      <xref href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing-options.html"
+        format="html" scope="external"><?oxy_delete content="Loading Option" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>loading option<?oxy_insert_end?></xref> is passed with the
+      following possible values:</p>
+    <p>
+      <ul id="ul_vs1_5wb_ybc">
+        <li<?oxy_delete content="OWNER - For review tasks owners." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?><codeph>OWNER</codeph> - For task owners.</oxy_insert_end?></li>
+        <li<?oxy_delete content="REVIEWER - For reviewers of a review task." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?><codeph>REVIEWER</codeph> - For reviewers.</oxy_insert_end?></li>
+        <li<?oxy_delete content="AUTHOR - For authors editing in projects." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?><codeph>AUTHOR</codeph> - For authors editing in projects.</oxy_insert_end?></li>
+      </ul>
+    </p>
+    <p>You can create multiple frameworks tuned for different user profiles and load them depending
+      on the current user. You can share configurations between these frameworks by using the <xref
+        href="https://www.oxygenxml.com/doc/ug-waCustom/topics/customizing_frameworks.html#customizing_frameworks__section_zzf_pns_vz"
+        format="html" scope="external">framework extension mechanism</xref>.</p>
+    <p>To configure a framework to be loaded for a particular user profile:<ol id="ol_krt_nyb_ybc">
+        <li>Install this plugin: <xref
+            href="https://github.com/oxygenxml/web-author-user-role-plugin/" format="html"
+            scope="external"/>. It will contribute some framework matching rules that <?oxy_delete content="takes" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>take<?oxy_insert_end?> the
+          profile of the user into account.</li>
+        <li>Configure each of the <uicontrol>Association rules</uicontrol> for your framework to use
+          the Java class that corresponds to the desired profile:
+            <codeph>AuthorUserFrameworkMatcher</codeph>,
+            <codeph>ReviewerUserFrameworkMatcher</codeph>, or
+            <codeph>OwnerUserFrameworkMatcher</codeph>.</li>
+      </ol></p>
+  </body>
+</topic>
