@@ -59,12 +59,14 @@ Promise and user code resumes.
 
 ### Timing (cached guest image, no `/dev/kvm`, x86-64 host)
 
+Original measurements (bare-metal x86-64):
+
 | Checkpoint | +ms from start | Segment |
 |------------|---------------|---------|
 | `vm_create_start` | 0 ms | — |
 | `vm_created` | ~14 ms | VM boot *initiated* |
 | `node_check_done` (first exec ready) | ~8 000 ms | **effective boot: ~8 s** |
-| `exec_attached` (second exec) | ~7 962 ms | — |
+| `exec_attached` (second exec) | ~8 005 ms | — |
 | `first_guest_output` | ~10 470 ms | Node startup in guest: ~2.5 s |
 | `guest_code_start` | ~10 470 ms | first user code line |
 | `rpc_call_sent_id1_fn_add` (guest) | ~10 485 ms | 15 ms after first line |
@@ -77,9 +79,34 @@ Promise and user code resumes.
 | `vm_closed` | ~10 846 ms | VM shutdown: ~93 ms |
 | **Total** | **~10.8 s** | cold start → result |
 
+### Reproduction run (cached guest image, no `/dev/kvm`, cloud container, 2026-06-05)
+
+QEMU 8.2.2, Node.js v22.22.2, Gondolin 0.5.0. All qualitative patterns confirmed.
+Overall ~23% slower than the original, consistent with a cloud VM container having
+less raw CPU throughput than a bare-metal host.
+
+| Checkpoint | +ms from start | Segment | vs. original |
+|------------|---------------|---------|--------------|
+| `vm_create_start` | 0 ms | — | — |
+| `vm_created` | **14 ms** | VM boot *initiated* | ✅ exact |
+| `node_check_done` (first exec ready) | **10 051 ms** | **effective boot: ~10 s** | ⚠️ +2 s (cloud CPU) |
+| `exec_attached` (second exec) | **10 056 ms** | — | ✅ same shape |
+| `first_guest_output` | **12 842 ms** | Node startup in guest: ~2.8 s | ✅ same shape |
+| `guest_code_start` | **12 842 ms** | first user code line | — |
+| `rpc_call_sent_id1_fn_add` (guest) | **12 855 ms** | 13 ms after first line | ✅ ~15 ms |
+| `host_rpc_received_id1_fn_add` | **12 856 ms** | guest→host: **~1 ms** | ✅ exact |
+| `host_rpc_sent_id1_fn_add` | **12 857 ms** | host fn + reply: **~1 ms** | ✅ ~2 ms |
+| `rpc_response_received_id1` (guest) | **12 941 ms** | host→guest: **~84 ms** (TCG JIT cold) | ✅ ~78 ms |
+| `rpc_response_received_id2` (guest) | **12 958 ms** | host→guest: **~9 ms** (JIT warm) | ✅ ~7 ms |
+| `guest_done_marker` | **12 966 ms** | — | — |
+| `exec_completed` | **13 148 ms** | guest process exit: ~182 ms | ✅ ~163 ms |
+| `vm_closed` | **13 337 ms** | VM shutdown: ~189 ms | ⚠️ ~93 ms |
+| **Total** | **~13.3 s** | cold start → result | ⚠️ ~23% slower |
+
 The 78 ms vs 7 ms discrepancy in host→guest response latency is TCG JIT
 warm-up: the first time Node's event-loop machinery runs under TCG it
 translates more basic blocks; subsequent passes hit the translation cache.
+The reproduction confirmed this pattern: **84 ms cold, 9 ms warm**.
 
 ### What did not work / issues found
 
