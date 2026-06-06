@@ -1,81 +1,104 @@
 #cloud-config
 
-# All steps in runcmd so we can install the proxy CA cert before apk runs.
 runcmd:
-  # ── Fix TLS: append egress proxy CA to Alpine's system CA bundle ──────
-  # Alpine stores its CA bundle at /etc/ssl/certs/ca-certificates.crt.
-  # Appending directly is the quickest way without needing extra packages.
+  # ── Fix TLS ───────────────────────────────────────────────────────────
   - cat /var/lib/cloud/seed/nocloud/egress-ca.pem >> /etc/ssl/certs/ca-certificates.crt
-  - echo "[ok] Egress proxy CA appended to trust store"
+  - echo "[ok] Egress proxy CA appended"
 
   # ── Install Docker ────────────────────────────────────────────────────
   - apk update
   - apk add --no-cache docker
   - echo "[ok] Docker installed"
 
-  # ── Start Docker daemon (OpenRC) ──────────────────────────────────────
-  - rc-update add docker default
-  - rc-service docker start
+  # ── Mount cgroup filesystems ──────────────────────────────────────────
+  # OpenRC's cgroups service does not run in the cloud-init boot path,
+  # so /sys/fs/cgroup has no mounts.  We mount them manually.
+  - |
+    echo "[step] Mounting cgroup filesystems..."
 
-  # Confirm L0 Docker is up
+    # Try cgroupv2 unified hierarchy first (Linux 4.5+)
+    if grep -qw cgroup2 /proc/filesystems; then
+      mount -t cgroup2 none /sys/fs/cgroup 2>/dev/null && \
+        echo "[ok] cgroupv2 mounted" && CGROUP_OK=1
+    fi
+
+    # Fall back to cgroupv1 per-controller mounts
+    if [ -z "${CGROUP_OK:-}" ]; then
+      echo "[info] cgroupv2 not available, mounting cgroupv1 controllers..."
+      for subsys in cpuset cpu cpuacct memory blkio devices freezer net_cls pids; do
+        mkdir -p /sys/fs/cgroup/$subsys
+        mount -t cgroup -o $subsys none /sys/fs/cgroup/$subsys 2>/dev/null || true
+      done
+      # cpu and cpuacct are often combined
+      mkdir -p /sys/fs/cgroup/cpu,cpuacct
+      mount -t cgroup -o cpu,cpuacct none /sys/fs/cgroup/cpu,cpuacct 2>/dev/null || true
+      echo "[ok] cgroupv1 controllers mounted"
+    fi
+
+    echo "--- cgroup mounts after setup ---"
+    cat /proc/mounts | grep cgroup || echo "(still none)"
+
+  # ── Start dockerd ─────────────────────────────────────────────────────
+  - |
+    nohup dockerd \
+      --host unix:///var/run/docker.sock \
+      --storage-driver=vfs \
+      --iptables=false \
+      --log-level warn \
+      >> /var/log/dockerd.log 2>&1 &
+    echo "[info] dockerd PID: $!"
+
+  # Confirm L0 dockerd — dump log on early failure
   - |
     i=0
     until docker info >/dev/null 2>&1; do
       i=$((i+1))
-      [ $i -gt 36 ] && { echo "EXPERIMENT_FAILED: L0 dockerd never became ready"; exit 1; }
-      echo "[wait] L0 dockerd not ready yet (attempt $i)..."
+      if [ $i -eq 3 ]; then
+        echo "--- dockerd log (attempt 3) ---"
+        cat /var/log/dockerd.log
+        echo "---"
+      fi
+      [ $i -gt 18 ] && { echo "EXPERIMENT_FAILED: L0 dockerd never ready"; cat /var/log/dockerd.log; exit 1; }
+      echo "[wait] L0 dockerd not ready (attempt $i)..."
       sleep 10
     done
     echo "[ok] L0 dockerd ready"
 
-  # ── Layer 1: privileged Docker-in-Docker ─────────────────────────────
-  # Use vfs storage driver to avoid overlay-on-overlay nesting limits.
+  # ── Layer 1: privileged DinD ──────────────────────────────────────────
   - |
-    echo "[step] Starting L1 DinD container..."
-    docker run \
-      --privileged \
-      --name dind_l1 \
-      -d \
-      docker:dind \
-      --storage-driver=vfs
+    echo "[step] Starting L1 DinD..."
+    docker run --privileged --name dind_l1 -d docker:dind --storage-driver=vfs
 
-  # Wait for L1's own dockerd to become reachable
   - |
     i=0
     until docker exec dind_l1 docker info >/dev/null 2>&1; do
       i=$((i+1))
-      [ $i -gt 60 ] && { echo "EXPERIMENT_FAILED: L1 dockerd never became ready"; exit 1; }
-      echo "[wait] L1 dockerd not ready yet (attempt $i)..."
+      [ $i -gt 60 ] && { echo "EXPERIMENT_FAILED: L1 dockerd never ready"; exit 1; }
+      echo "[wait] L1 dockerd not ready (attempt $i)..."
       sleep 10
     done
     echo "[ok] L1 dockerd ready"
 
   # ── Layer 2: privileged DinD inside L1 ───────────────────────────────
   - |
-    echo "[step] Starting L2 DinD container inside L1..."
+    echo "[step] Starting L2 DinD inside L1..."
     docker exec dind_l1 docker run \
-      --privileged \
-      --name dind_l2 \
-      -d \
-      docker:dind \
-      --storage-driver=vfs
+      --privileged --name dind_l2 -d docker:dind --storage-driver=vfs
 
-  # Wait for L2's dockerd (exec chain: VM → L1 → L2)
   - |
     i=0
     until docker exec dind_l1 docker exec dind_l2 docker info >/dev/null 2>&1; do
       i=$((i+1))
-      [ $i -gt 60 ] && { echo "EXPERIMENT_FAILED: L2 dockerd never became ready"; exit 1; }
-      echo "[wait] L2 dockerd not ready yet (attempt $i)..."
+      [ $i -gt 60 ] && { echo "EXPERIMENT_FAILED: L2 dockerd never ready"; exit 1; }
+      echo "[wait] L2 dockerd not ready (attempt $i)..."
       sleep 10
     done
     echo "[ok] L2 dockerd ready"
 
-  # ── Layer 3: run Node.js container inside L2 ─────────────────────────
+  # ── Layer 3: node:alpine inside L2 ───────────────────────────────────
   - |
-    echo "[step] Running node container inside L2..."
+    echo "[step] Running node inside L2..."
     OUTPUT=$(docker exec dind_l1 docker exec dind_l2 \
-      docker run --rm node:alpine \
-      node -e "console.log('deep hello world')")
+      docker run --rm node:alpine node -e "console.log('deep hello world')")
     echo "[result] $OUTPUT"
     echo "EXPERIMENT_DONE: $OUTPUT"
