@@ -1,14 +1,24 @@
 #cloud-config
 
 runcmd:
-  # ── Fix TLS ───────────────────────────────────────────────────────────
+  # ── Fix TLS (step 1): initial append so apk update can reach Alpine CDN
   - cat /var/lib/cloud/seed/nocloud/egress-ca.pem >> /etc/ssl/certs/ca-certificates.crt
-  - echo "[ok] Egress proxy CA appended"
+  - echo "[ok] Egress proxy CA appended (pre-install)"
 
   # ── Install Docker ────────────────────────────────────────────────────
   - apk update
   - apk add --no-cache docker
   - echo "[ok] Docker installed"
+
+  # ── Fix TLS (step 2): apk installs ca-certificates which triggers ──────
+  # update-ca-certificates and regenerates /etc/ssl/certs/ca-certificates.crt,
+  # wiping our custom CA.  Re-add it properly so it survives future updates.
+  - |
+    mkdir -p /usr/local/share/ca-certificates
+    cp /var/lib/cloud/seed/nocloud/egress-ca.pem \
+       /usr/local/share/ca-certificates/egress-proxy.crt
+    update-ca-certificates
+    echo "[ok] Egress proxy CA reinstalled after apk (post-install)"
 
   # ── Mount cgroup filesystems ──────────────────────────────────────────
   # OpenRC's cgroups service does not run in the cloud-init boot path,
