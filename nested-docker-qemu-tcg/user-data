@@ -1,11 +1,19 @@
 #cloud-config
 
-# Install Docker (Alpine uses OpenRC, not systemd)
-packages:
-  - docker
-
+# All steps in runcmd so we can install the proxy CA cert before apk runs.
 runcmd:
-  # Start Docker daemon (OpenRC service)
+  # ── Fix TLS: append egress proxy CA to Alpine's system CA bundle ──────
+  # Alpine stores its CA bundle at /etc/ssl/certs/ca-certificates.crt.
+  # Appending directly is the quickest way without needing extra packages.
+  - cat /var/lib/cloud/seed/nocloud/egress-ca.pem >> /etc/ssl/certs/ca-certificates.crt
+  - echo "[ok] Egress proxy CA appended to trust store"
+
+  # ── Install Docker ────────────────────────────────────────────────────
+  - apk update
+  - apk add --no-cache docker
+  - echo "[ok] Docker installed"
+
+  # ── Start Docker daemon (OpenRC) ──────────────────────────────────────
   - rc-update add docker default
   - rc-service docker start
 
@@ -20,7 +28,7 @@ runcmd:
     done
     echo "[ok] L0 dockerd ready"
 
-  # ── Layer 1: privileged Docker-in-Docker ──────────────────────────────
+  # ── Layer 1: privileged Docker-in-Docker ─────────────────────────────
   # Use vfs storage driver to avoid overlay-on-overlay nesting limits.
   - |
     echo "[step] Starting L1 DinD container..."
