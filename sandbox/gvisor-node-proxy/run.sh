@@ -19,5 +19,18 @@ if ! command -v runsc &>/dev/null; then
   exit 1
 fi
 
+# `runsc do --network=host` shells out to `ip route list default` to find the
+# host interface to bridge into the sandbox's veth/NAT setup. If `ip` is
+# missing, it silently falls back to an isolated network namespace (logging
+# only "Network interface not found, using internal network" to its debug
+# log) and every fetch then fails with EAI_AGAIN — easy to mistake for the
+# unrelated startup race documented in the README.
+if ! command -v ip &>/dev/null; then
+  echo "Error: 'ip' (iproute2) is not installed. runsc needs it to set up" >&2
+  echo "       host networking — without it the sandbox silently gets no" >&2
+  echo "       network access. Install it with: apt-get install -y iproute2" >&2
+  exit 1
+fi
+
 exec runsc -ignore-cgroups --network=host do \
   node --use-env-proxy "$SCRIPT_DIR/fetch-oxygen.mjs"
