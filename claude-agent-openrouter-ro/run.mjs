@@ -85,10 +85,12 @@ async function main() {
   await mkdir(RESULTS_DIR, { recursive: true });
 
   const sample = await readFile(join(__dirname, "fixtures", "sample.md"), "utf8");
+  const translatedPath = join(RESULTS_DIR, "translated.md");
   const prompt = [
     "Use the translate-ro-codeblock skill to translate the codeblock in the",
-    "sample below into Romanian. Write the translated fenced codeblock to",
-    "`results/translated.md` using the Write tool. Do not modify identifiers.",
+    "sample below into Romanian. Write the translated fenced codeblock to the",
+    `exact absolute path \`${translatedPath}\` using the Write tool.`,
+    "Do not modify identifiers. Do not write anywhere else.",
     "",
     sample,
   ].join("\n");

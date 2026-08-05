@@ -35,9 +35,9 @@ cp env.example .env   # then paste your OpenRouter key
 npm install
 ```
 
-The Agent SDK shells out to the Claude Code runtime bundled with the package
-(or an installed `claude` CLI). No separate Anthropic account is required when
-routing through OpenRouter.
+The Agent SDK shells out to the Claude Code runtime bundled with the platform
+package (`@anthropic-ai/claude-agent-sdk-linux-x64`). No Anthropic account is
+required when routing through OpenRouter.
 
 ## Configuration
 
@@ -76,26 +76,73 @@ Expected behavior:
 - use diacritics (ă, â, î, ș, ț)
 - emit only the fenced codeblock
 
-## Results
+## Live run results (2026-08-05)
 
-See `results/summary.json` after a live run. Status notes are updated there and
-in the assessment section below once the experiment has been executed in this
-environment.
+`npm test` + `npm run verify` both succeeded (`summary.ok: true`, ~16 s).
 
-## Assessment (fill after run)
+### Output (`results/translated.md`)
+
+```python
+# Salută utilizatorul după nume
+def greet(name):
+    """Returnează un mesaj de bun venit prietenos."""
+    # Construiește mesajul și returnează-l
+    message = f"Salut, {name}! Bine ai venit la atelier."
+    return message
+
+
+# Punctul de intrare pentru scriptul demo
+if __name__ == "__main__":
+    print(greet("Alex"))
+```
+
+### Checks
+
+| Check | Result |
+|---|---|
+| Skill discovered in init | yes (`translate-ro-codeblock`) |
+| Skill tool invoked | yes |
+| Romanian diacritics / phrasing | yes |
+| Identifiers preserved | yes (`greet`, `name`, `message`, `{name}`) |
+| File written to experiment `results/` | yes (after absolute-path prompt) |
+| `verify.mjs` | all PASS |
+
+## Assessment
 
 ### What worked
 
-_(pending live run)_
+- OpenRouter Anthropic skin accepted Claude Agent SDK traffic with
+  `ANTHROPIC_BASE_URL=https://openrouter.ai/api` and an empty `ANTHROPIC_API_KEY`.
+- Model override to `deepseek/deepseek-v4-flash` resolved correctly (init reported
+  that model).
+- Project skill discovery worked via `settingSources: ["project"]` +
+  `skills: ["translate-ro-codeblock"]`; the Skill tool was actually invoked.
+- DeepSeek produced natural Romanian with diacritics and kept code identifiers intact.
+- End-to-end cost for the successful run was negligible (flash-tier pricing).
 
 ### What did not work
 
-_(pending live run)_
+- Relative output path `results/translated.md` was resolved to
+  `/workspace/results/translated.md` (repo root), not the experiment folder.
+  Fixed by prompting with an absolute path.
+- With `permissionMode: "bypassPermissions"`, the agent also called `Bash`
+  even though `allowedTools` listed only `Read`, `Write`, and `Skill`. Treat
+  tool allowlists as soft under bypass mode when using non-Anthropic models.
 
 ### What to try next
 
-_(pending live run)_
+- Re-run with `permissionMode: "dontAsk"` (or without bypass) to see whether
+  DeepSeek still respects `allowedTools`.
+- Add a second fixture (JS/Markdown prose codeblock) to stress the skill description.
+- Try `~deepseek/deepseek-v4-flash-latest` vs a pinned revision for stability.
+- Measure tool-calling reliability across a small batch (10 runs) — one success
+  is encouraging but not statistically meaningful.
 
 ### Honest opinion
 
-_(pending live run)_
+**Yes — this experiment works.** Claude Agent SDK + OpenRouter + DeepSeek V4 Flash
+is a viable path for skill-driven agent tasks. The Romanian codeblock skill was
+discovered, invoked, and produced correct output. The only real footgun was path
+resolution for Write; once the prompt used an absolute path, verification passed
+cleanly. Non-Anthropic models may be looser about tool allowlists under
+`bypassPermissions`, so lock that down before any untrusted-input use.
