@@ -10,6 +10,7 @@ Security and sandboxing experiments for running untrusted code with granular iso
 - **iron-proxy** — reimplementation of the smokescreen-proxy experiment using [iron-proxy](https://github.com/ironsh/iron-proxy): MITM/TLS-terminating egress proxy with built-in DNS, default-deny allowlist, and secret injection capability
 - **podman-node-v10** — baseline podman script that established the constrained kernel/storage environment all other container experiments built on
 - **jenkins-container** — Jenkins CI environment inside a udocker container with isolated git repos and restricted authentication
+- **claude-agent-openrouter-ro** — Claude Agent SDK routed through OpenRouter to DeepSeek V4 Flash, testing a Romanian codeblock translation skill
 
 ## Security research
 

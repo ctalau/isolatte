@@ -1,0 +1,6 @@
+node_modules/
+.env
+.env.local
+results/run-log.jsonl
+*.log
+.DS_Store
