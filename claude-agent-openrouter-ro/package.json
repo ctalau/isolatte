@@ -1,0 +1,17 @@
+{
+  "name": "claude-agent-openrouter-ro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Claude Agent SDK via OpenRouter using DeepSeek V4 Flash, with a Romanian codeblock translation skill",
+  "scripts": {
+    "test": "node run.mjs",
+    "verify": "node verify.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.141"
+  }
+}
