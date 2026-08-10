@@ -10,6 +10,7 @@ Each top-level folder is a self-contained experiment or research artifact. Do no
 - **podman-node-v10** — baseline podman setup for a constrained Node v10 container environment
 - **jenkins-container** — Jenkins CI inside a udocker container with isolated repos and restricted auth
 - **claude-agent-openrouter-ro** — Claude Agent SDK via OpenRouter using DeepSeek V4 Flash, with a Romanian codeblock translation skill
+- **quickjs-bash-sandbox** — just-bash (simulated bash + virtual filesystem) with QuickJS-backed `js-exec`, scoped to a workspace folder, benchmarked zipping 1000 files against native `zip`
 
 ## Security research
 
