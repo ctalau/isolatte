@@ -1,0 +1,6 @@
+Tarring 1000 files x 2048 bytes, 3 runs each (reporting median)
+
+BashSandbox.tarDirectory (whole interpreter in QuickJS) median    331.0 ms   runs: [390.0, 331.0, 320.0] ms   archive: 2501.5 KiB
+native tar                             median     12.0 ms   runs: [14.0, 12.0, 12.0] ms   archive: 2510.0 KiB
+
+Slowdown vs native tar: 27.6x
