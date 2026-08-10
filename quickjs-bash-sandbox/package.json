@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "just-bash (simulated bash + virtual filesystem, with QuickJS-backed js-exec) wrapped as a Node API, scoped to a workspace folder",
+  "description": "just-bash's bash interpreter running as guest code inside a real QuickJS WASM VM, scoped to a workspace folder",
   "scripts": {
-    "test": "node --test --test-force-exit test/*.test.mjs",
-    "benchmark": "node benchmark/zip-benchmark.mjs"
+    "test": "node --test test/*.test.mjs",
+    "benchmark": "node benchmark/tar-benchmark.mjs"
   },
   "engines": {
     "node": ">=20.18.1"
   },
   "dependencies": {
-    "just-bash": "^3.2.0"
+    "just-bash": "^3.2.0",
+    "quickjs-emscripten": "^0.32.0"
   }
 }

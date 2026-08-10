@@ -1,9 +1,0 @@
-Zipping 1000 files x 2048 bytes, 3 runs each (reporting median)
-
-BashSandbox.zipDirectory (QuickJS, store) median   3743.0 ms   runs: [4045.0, 3743.0, 3742.0] ms   archive: 2099.6 KiB
-native zip -0 (store)                  median     27.0 ms   runs: [27.7, 27.0, 26.1] ms   archive: 2150.4 KiB
-native zip (default deflate)           median     47.7 ms   runs: [47.7, 45.3, 48.0] ms   archive: 433.6 KiB
-
-Slowdown vs native:
-  vs native zip -0 (store, apples-to-apples): 138.6x
-  vs native zip (default deflate):            78.4x
