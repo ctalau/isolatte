@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="deleting_tasks">
+  <title>Deleting Review Tasks</title>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm><?oxy_delete content="Deleting tasks" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>Deleting Review Tasks<?oxy_insert_end?></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body>
+    <p id="p_tvt_dgk_54b">There are two ways to delete a task:<ul id="ul_uvt_dgk_54b">
+        <li id="li_vvt_dgk_54b">In the <uicontrol>Content Fusion Tasks Manager</uicontrol> view,
+          hover over the task you want to delete and click the <uicontrol>Delete Task</uicontrol>
+          link.</li>
+        <li id="li_wvt_dgk_54b">From the task's <xref href="cf-task-settings.dita"
+            >Settings</xref> page, <?oxy_delete content="where you can find the &lt;uicontrol&gt;Delete&lt;/uicontrol&gt; button." author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>click the <uicontrol>Delete</uicontrol> button.<?oxy_insert_end?></li>
+      </ul></p>
+    <p id="p_xvt_dgk_54b"><b>Result:</b> In both cases, this will delete the task from the <ph keyref="product"/>
+      server and the <uicontrol>Content Fusion Tasks Manager</uicontrol> view.</p>
+  </body>
+</topic>

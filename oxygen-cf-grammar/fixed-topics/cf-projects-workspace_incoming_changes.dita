@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic
+  PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-projects-workspace_incoming_changes">
+  <title>Incoming Commits</title>
+  <body>
+    <p id="p_kqw_s52_vcc">You can click the <uicontrol>Incoming commits</uicontrol> drop-down on the
+      right side of the second top stripe to display more information regarding the status of
+      incoming commits and gain access to additional actions.</p>
+    <p id="p_lqw_s52_vcc">
+      <fig id="fig_mqw_s52_vcc">
+        <title>Incoming Commits Drop-down</title>
+        <image href="../img/cf-incoming-commits1.png"/>
+      </fig>
+    </p>
+    <p id="p_nqw_s52_vcc">Incoming commits are <?oxy_delete content="automatically refreshed periodically" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>refreshed periodically<?oxy_insert_end?>, but you can
+      click the <uicontrol><image href="../img/cfRefresh16.png"/>Refresh</uicontrol> button to
+      refresh manually.</p>
+    <p id="p_oqw_s52_vcc">When there are no conflicts, you can click the <uicontrol>Pull</uicontrol>
+      button to pull the incoming changes. This can also be done from the
+        <uicontrol>Changes</uicontrol> view.</p>
+    <p id="p_pqw_s52_vcc">When there are no conflicts, you can also click the <uicontrol>View
+        changed files</uicontrol> button to see a comparison of the incoming changes versus the
+      current workspace version<?oxy_delete content=" and a" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>; a Pull action is also available in that comparison dialog box.<?oxy_insert_end?> <uicontrol>Pull</uicontrol> action is available in that
+      comparison dialog box.</p>
+    <p id="p_qqw_s52_vcc">If there are conflicts, the badge with the number of incoming commits is
+      highlighted in red. You can click the <uicontrol>Resolve conflicts</uicontrol> button to open
+      a <xref
+        href="cf-projects-workspace-conflict-resolution.dita#cf-projects-workspace-conflict-resolution/section_s3k_xz2_vcc"
+        ><?oxy_delete content="dialog box where you can choose actions for resolving the conflicts" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>dialog box to resolve the conflicts<?oxy_insert_end?></xref>.</p>
+    <p id="p_rqw_s52_vcc">
+      <fig id="fig_sqw_s52_vcc">
+        <title>Incoming Commits with Conflicts</title>
+        <image href="../img/cf-incoming-commits2.png"/>
+      </fig>
+    </p>
+  </body>
+  <related-links>
+    <link href="cf-projects-workspace-conflict-resolution.dita"/>
+  </related-links>
+</topic>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cf-increasing-available-disk-space">
+  <title><?oxy_delete content="Increasing the Available Disk Space" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>Installation Kit Instructions: Increasing Available Disk Space<?oxy_insert_end?></title>
+  <body>
+    <section id="section_oj1_hzx_cnb">
+      <title>Installation Kit Instructions</title>
+      <p id="p_y35_dgk_54b">When the disk where Content Fusion stores its data becomes full, you can follow these
+        instructions to add a new disk with more space:</p>
+      <p id="p_z35_dgk_54b">
+        <ol id="ol_vx3_mzw_cnb">
+          <li id="li_aj5_dgk_54b">Attach, format, and mount a new disk.</li>
+          <li id="li_bj5_dgk_54b"><b>[Important]</b>
+            <xref href="cf-restart.dita#cf-restart/section_h4r_lx4_hnb">Stop Content
+            Fusion</xref>.</li>
+          <li id="li_cj5_dgk_54b">Change the current directory to the newly mounted disk and <xref
+              href="cf-enterprise-backups.dita">create a Content Fusion backup</xref>. The backup
+            will be stored in the current directory.<note importance="recommended" id="note_dj5_dgk_54b">After the backup
+              is created, it should be tested <?oxy_delete content="in a different machine" author="Gemma4" timestamp="20260408T120000+0000"?><?oxy_insert_start author="Gemma4" timestamp="20260408T120000+0000"?>on a different machine<?oxy_insert_end?> to ensure that it works
+              correctly.</note></li>
+          <li id="li_ej5_dgk_54b">Copy the contents of the <filepath>/fusion/data</filepath> directory to the newly
+            mounted disk.</li>
+          <li id="li_fj5_dgk_54b">Mount your new disk at <filepath>/fusion/data</filepath>.</li>
+          <li id="li_gj5_dgk_54b"><xref href="cf-restart.dita">Restart Content Fusion</xref>.</li>
+          <li id="li_hj5_dgk_54b">Ensure that everything works correctly. If you encounter problems, use the backup
+            created in step 3.</li>
+        </ol>
+      </p>
+    </section>
+  </body>
+</topic>
