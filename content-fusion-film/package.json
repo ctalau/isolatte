@@ -1,0 +1,48 @@
+{
+  "name": "content-fusion-film",
+  "version": "1.0.0",
+  "description": "Code-driven cinematic product film for Content Fusion (Remotion + React Three Fiber)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "remotion studio",
+    "typecheck": "tsc --noEmit",
+    "voice": "node scripts/voice/generate.mjs",
+    "capture": "node scripts/capture/capture.mjs",
+    "manifest": "node scripts/validate/manifest.mjs",
+    "still": "remotion still",
+    "render:preview": "remotion render ContentFusion1080 out/preview.mp4 --crf=28 --scale=0.5",
+    "render:1080": "remotion render ContentFusion1080 out/content-fusion-1080.mp4 --crf=17",
+    "render:4k": "remotion render ContentFusionMaster out/content-fusion-4k.mp4 --crf=15",
+    "render:master": "node scripts/render/master.mjs",
+    "render:scene": "node scripts/render/scene.mjs",
+    "qa": "node scripts/validate/manifest.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "@remotion/bundler": "^4.0.520",
+    "@remotion/cli": "^4.0.520",
+    "@remotion/media-utils": "^4.0.520",
+    "@remotion/renderer": "^4.0.520",
+    "@remotion/three": "^4.0.520",
+    "kokoro-js": "^1.2.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remotion": "^4.0.520",
+    "three": "^0.185.1",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "type": "module"
+}
