@@ -1,0 +1,16 @@
+{
+  "$comment": "Narration copy — the single source of truth for both the film and the Kokoro generator. Order here is the order of the film.",
+  "lines": [
+    { "scene": "fragmentation", "id": "fragmentation", "text": "Your best knowledge already exists. It is just scattered.", "tailSilence": 0.4 },
+    { "scene": "fusion", "id": "fusion", "text": "Content Fusion gives it structure.", "tailSilence": 0.35 },
+    { "scene": "intelligent-creation", "id": "intelligentCreation", "text": "Because it is structured, AI can work with meaning. It proposes. You decide.", "tailSilence": 0.45 },
+    { "scene": "structure", "id": "structure", "text": "Underneath every topic, a model.", "tailSilence": 0.35 },
+    { "scene": "reuse", "id": "reuse", "text": "Write it once. It lives everywhere it is needed, and changes everywhere at once.", "tailSilence": 0.4 },
+    { "scene": "human-control", "id": "humanControl", "text": "Nothing ships until a person approves it.", "tailSilence": 0.45 },
+    { "scene": "adaptation", "id": "adaptation", "text": "One source adapts to the audience in front of it.", "tailSilence": 0.35 },
+    { "scene": "localization", "id": "localization", "text": "And to the language it is read in.", "tailSilence": 0.35 },
+    { "scene": "publishing", "id": "publishing", "text": "From there it moves outward. Documentation, support, learning, and AI.", "tailSilence": 0.4 },
+    { "scene": "hero-system", "id": "heroSystem", "text": "One intelligent content layer, connecting what you know to everyone who needs it.", "tailSilence": 0.55 },
+    { "scene": "end-frame", "id": "endFrame", "text": "Content Fusion.", "tailSilence": 0.7 }
+  ]
+}
