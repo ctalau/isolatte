@@ -2,7 +2,7 @@ import React from 'react';
 import { useCurrentFrame } from 'remotion';
 import { theme } from '../../theme/contentFusion';
 import { Background } from '../../components/effects/Backgrounds';
-import { Mark } from '../../components/ui/ProductWindow';
+import { ProductMark } from '../../components/ui/ProductWindow';
 import { RevealLine } from '../../components/typography/Type';
 import { cinematicEase, softLanding } from '../../motion/easing';
 import { ramp } from '../../motion/interpolation';
@@ -43,7 +43,7 @@ export const EndFrame: React.FC<{ durationInFrames: number }> = ({ durationInFra
             transform: `translateY(${((1 - markIn) * 14).toFixed(2)}px) scale(${(0.96 + 0.04 * markIn).toFixed(4)})`,
           }}
         >
-          <Mark size={72} />
+          <ProductMark size={72} />
         </div>
 
         <RevealLine progress={lineIn} scale="display" align="center">

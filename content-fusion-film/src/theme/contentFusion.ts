@@ -81,6 +81,38 @@ export const contentFusionTheme = {
       strong: 'rgba(255,255,255,0.18)',
       accent: 'rgba(91,140,255,0.45)',
     },
+
+    /**
+     * The reconstructed app surface. Modelled on the real Content Fusion
+     * review UI (light workspace, blue actions/links, amber callouts) so the
+     * on-screen product reads as the actual app rather than an art-directed
+     * dark reskin — even though the film's cinematic backgrounds around it
+     * stay on the dark `ink` palette.
+     */
+    ui: {
+      canvas: paper[1],
+      surface: paper[0],
+      surfaceRaised: paper[0],
+      sidebar: paper[2],
+      panel: '#FFFFFF',
+      border: paper[4],
+      borderStrong: paper[5],
+      textPrimary: paper[10],
+      textSecondary: paper[8],
+      textTertiary: paper[7],
+      accent: '#1656D6',
+      accentHover: '#0F45B3',
+      accentSoft: 'rgba(22,86,214,0.08)',
+      accentSoftStrong: 'rgba(22,86,214,0.14)',
+      diffRemovedBg: '#EAF1FB',
+      diffRemovedBorder: '#CBDCF3',
+      diffAddedBg: '#E7F6F3',
+      diffAddedBorder: '#BFE7DE',
+      calloutBg: '#F3F2DE',
+      calloutBorder: '#E4E1B8',
+      calloutIcon: '#E08A1E',
+      brandMark: '#EC5B24',
+    },
   },
 
   typography: {

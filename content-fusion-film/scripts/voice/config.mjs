@@ -8,7 +8,7 @@
  */
 export const voiceConfig = {
   /** kokoro-js voice id. Override with KOKORO_VOICE. */
-  voiceId: process.env.KOKORO_VOICE ?? 'af_nicole',
+  voiceId: process.env.KOKORO_VOICE ?? 'af_heart',
   /** Model id on Hugging Face. Override with KOKORO_MODEL. */
   modelId: process.env.KOKORO_MODEL ?? 'onnx-community/Kokoro-82M-v1.0-ONNX',
   dtype: process.env.KOKORO_DTYPE ?? 'q8',

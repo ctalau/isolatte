@@ -54,21 +54,32 @@ export const assetManifest: AssetEntry[] = [
   {
     id: 'mark',
     kind: 'logo',
-    status: 'placeholder',
-    path: 'src/components/ui/ProductWindow.tsx (Mark)',
+    status: 'delivered',
+    path: 'public/brand/oxygen-app-icon.png, src/components/ui/ProductWindow.tsx (Mark)',
     expectedAsset: 'Official Content Fusion logotype and mark as SVG, plus clear-space rules.',
-    usedBy: ['fusion', 'intelligent-creation', 'human-control', 'end-frame'],
-    notes: 'PLACEHOLDER MARK — a geometric stand-in, not the real brand mark.',
+    usedBy: ['fusion', 'intelligent-creation', 'human-control'],
+    notes:
+      'Downloaded from oxygenxml.com (the app favicon: orange square, white X) — this is the mark the real in-app chrome shows. Only a 48×48 raster is published; ask Oxygen for a vector original before a real delivery.',
+  },
+  {
+    id: 'product-mark',
+    kind: 'logo',
+    status: 'delivered',
+    path: 'public/brand/content-fusion-mark.png, src/components/ui/ProductWindow.tsx (ProductMark)',
+    expectedAsset: 'Official Content Fusion logotype and mark as SVG, plus clear-space rules.',
+    usedBy: ['end-frame'],
+    notes:
+      'Downloaded from oxygenxml.com/contentfusion (Content_fusion80.png). Only an 80×80 raster is published; ask Oxygen for a vector original before a real delivery.',
   },
   {
     id: 'brand-tokens',
     kind: 'brand',
-    status: 'placeholder',
-    path: 'src/theme/contentFusion.ts',
+    status: 'delivered',
+    path: 'src/theme/contentFusion.ts (ui)',
     expectedAsset: 'Official brand colour, type and spacing tokens.',
     usedBy: ['*'],
     notes:
-      'The palette is an art-directed stand-in. Replacing it is a single-file change by design.',
+      'The `ui` palette now mirrors the real app chrome (white surfaces, oXygen orange mark, blue actions/links) as seen in the product review-task screenshot. The cinematic backgrounds around the product window keep the art-directed dark palette by design — only the reconstructed app surface itself was restyled.',
   },
   {
     id: 'sample-content',

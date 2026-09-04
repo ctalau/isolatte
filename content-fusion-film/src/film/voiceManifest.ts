@@ -20,106 +20,106 @@ export type VoiceManifest = {
 
 export const voiceManifest: VoiceManifest = {
   "status": "generated",
-  "voice": "af_nicole",
+  "voice": "af_heart",
   "entries": {
     "fragmentation": {
       "scene": "fragmentation",
       "narrationId": "fragmentation",
       "file": "audio/voice/fragmentation.wav",
       "text": "Your best knowledge already exists. It is just scattered.",
-      "durationInSeconds": 6.175,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:30.581Z"
+      "durationInSeconds": 4.25,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:04.032Z"
     },
     "fusion": {
       "scene": "fusion",
       "narrationId": "fusion",
       "file": "audio/voice/fusion.wav",
       "text": "Content Fusion gives it structure.",
-      "durationInSeconds": 4.1,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:32.315Z"
+      "durationInSeconds": 2.775,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:06.099Z"
     },
     "intelligentCreation": {
       "scene": "intelligent-creation",
       "narrationId": "intelligentCreation",
       "file": "audio/voice/intelligent-creation.wav",
       "text": "Because it is structured, AI can work with meaning. It proposes. You decide.",
-      "durationInSeconds": 8.75,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:36.648Z"
+      "durationInSeconds": 5.775,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:10.447Z"
     },
     "structure": {
       "scene": "structure",
       "narrationId": "structure",
       "file": "audio/voice/structure.wav",
       "text": "Underneath every topic, a model.",
-      "durationInSeconds": 4.05,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:38.731Z"
+      "durationInSeconds": 2.975,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:12.669Z"
     },
     "reuse": {
       "scene": "reuse",
       "narrationId": "reuse",
       "file": "audio/voice/reuse.wav",
       "text": "Write it once. It lives everywhere it is needed, and changes everywhere at once.",
-      "durationInSeconds": 8.575,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:42.855Z"
+      "durationInSeconds": 5.725,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:16.803Z"
     },
     "humanControl": {
       "scene": "human-control",
       "narrationId": "humanControl",
       "file": "audio/voice/human-control.wav",
       "text": "Nothing ships until a person approves it.",
-      "durationInSeconds": 4.525,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:45.099Z"
+      "durationInSeconds": 3.5,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:19.251Z"
     },
     "adaptation": {
       "scene": "adaptation",
       "narrationId": "adaptation",
       "file": "audio/voice/adaptation.wav",
       "text": "One source adapts to the audience in front of it.",
-      "durationInSeconds": 5.15,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:47.406Z"
+      "durationInSeconds": 3.55,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:21.770Z"
     },
     "localization": {
       "scene": "localization",
       "narrationId": "localization",
       "file": "audio/voice/localization.wav",
       "text": "And to the language it is read in.",
-      "durationInSeconds": 3.925,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:49.082Z"
+      "durationInSeconds": 2.95,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:23.906Z"
     },
     "publishing": {
       "scene": "publishing",
       "narrationId": "publishing",
       "file": "audio/voice/publishing.wav",
       "text": "From there it moves outward. Documentation, support, learning, and AI.",
-      "durationInSeconds": 8.325,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:52.743Z"
+      "durationInSeconds": 5.575,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:28.041Z"
     },
     "heroSystem": {
       "scene": "hero-system",
       "narrationId": "heroSystem",
       "file": "audio/voice/hero-system.wav",
       "text": "One intelligent content layer, connecting what you know to everyone who needs it.",
-      "durationInSeconds": 8,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:56.145Z"
+      "durationInSeconds": 5.8,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:32.103Z"
     },
     "endFrame": {
       "scene": "end-frame",
       "narrationId": "endFrame",
       "file": "audio/voice/end-frame.wav",
       "text": "Content Fusion.",
-      "durationInSeconds": 2.85,
-      "voice": "af_nicole",
-      "generatedAt": "2026-09-04T05:58:57.286Z"
+      "durationInSeconds": 2.375,
+      "voice": "af_heart",
+      "generatedAt": "2026-09-04T10:29:33.440Z"
     }
   }
 };

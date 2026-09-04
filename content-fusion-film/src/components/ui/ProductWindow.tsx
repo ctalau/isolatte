@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react';
+import { staticFile } from 'remotion';
 import { theme } from '../../theme/contentFusion';
 import { WORLD_UNIT, useSpatial } from '../spatial/SpatialContext';
 
@@ -32,13 +33,12 @@ export const ProductWindow: React.FC<{
         height,
         borderRadius: radius,
         transformStyle: 'preserve-3d',
-        // Slight top-to-bottom falloff: the key light comes from above, so the
-        // chrome is brighter than the base of the window.
-        background: `linear-gradient(176deg, ${theme.colors.ink[5]} 0%, ${theme.colors.ink[3]} 30%, #0F131A 100%)`,
-        // Two-part border: a bright inner hairline reads as a bezel edge catching
-        // the key light, the outer ring keeps the silhouette from going muddy.
-        border: `1px solid rgba(255,255,255,0.14)`,
-        boxShadow: `${theme.shadows.window}, inset 0 1px 0 rgba(255,255,255,0.10), inset 0 0 0 1px rgba(255,255,255,0.02)`,
+        // The app itself is a light workspace, matching the real product's
+        // review/editor screens. A thin dark rim keeps the window legible as a
+        // physical object against the film's dark cinematic environments.
+        background: theme.colors.ui.canvas,
+        border: `1px solid rgba(0,0,0,0.5)`,
+        boxShadow: `${theme.shadows.window}, inset 0 1px 0 rgba(255,255,255,0.5), inset 0 0 0 1px rgba(0,0,0,0.06)`,
         ...style,
       }}
     >
@@ -128,22 +128,21 @@ export const BrowserChrome: React.FC<{
       alignItems: 'center',
       gap: 14,
       padding: '0 18px',
-      borderBottom: `1px solid ${theme.colors.stroke.hairline}`,
-      background: 'linear-gradient(180deg, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0) 100%)',
+      borderBottom: `1px solid ${theme.colors.ui.border}`,
+      background: theme.colors.ui.surface,
       borderTopLeftRadius: theme.radii.window,
       borderTopRightRadius: theme.radii.window,
       transformStyle: 'preserve-3d',
     }}
   >
-    <Mark size={17} />
+    <Mark size={20} />
     <span
       style={{
         fontFamily: theme.typography.display,
         fontSize: 13,
         fontWeight: 560,
         letterSpacing: '-0.005em',
-        color: theme.colors.text.primary,
-        opacity: 0.92,
+        color: theme.colors.ui.textPrimary,
       }}
     >
       {title}
@@ -152,13 +151,16 @@ export const BrowserChrome: React.FC<{
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 6 }}>
         {breadcrumb.map((crumb, i) => (
           <React.Fragment key={crumb}>
-            <span style={{ color: theme.colors.ink[7], fontSize: 12 }}>/</span>
+            <span style={{ color: theme.colors.ui.textTertiary, fontSize: 12 }}>›</span>
             <span
               style={{
                 fontFamily: theme.typography.body,
                 fontSize: 12,
                 letterSpacing: '0.002em',
-                color: i === breadcrumb.length - 1 ? theme.colors.ink[11] : theme.colors.ink[9],
+                color:
+                  i === breadcrumb.length - 1
+                    ? theme.colors.ui.textPrimary
+                    : theme.colors.ui.textSecondary,
               }}
             >
               {crumb}
@@ -171,22 +173,30 @@ export const BrowserChrome: React.FC<{
 );
 
 /**
- * The Content Fusion mark. A geometric monogram: two offset strokes converging
- * into one — "many sources, one structure". Vector, so it stays crisp at 4K.
+ * The in-app icon: oXygen's own app mark (orange square, white X), matching
+ * the real product chrome seen in review/editor screens. Downloaded from
+ * oxygenxml.com — a native square raster asset, so no color/accent props.
  */
-export const Mark: React.FC<{ size?: number; color?: string; accent?: string }> = ({
-  size = 24,
-  color = theme.colors.text.primary,
-  accent = theme.colors.accent,
-}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" style={{ display: 'block' }}>
-    {/* Three fragments of decreasing length, converging on one solid form. */}
-    <rect x="2" y="5.4" width="9" height="2.4" rx="1.2" fill={color} opacity="0.5" />
-    <rect x="2" y="10.8" width="6.4" height="2.4" rx="1.2" fill={color} opacity="0.72" />
-    <rect x="2" y="16.2" width="3.6" height="2.4" rx="1.2" fill={color} opacity="0.5" />
-    <path
-      d="M13.4 4.2h4.2c2.4 0 4.4 2 4.4 4.4v6.8c0 2.4-2 4.4-4.4 4.4h-4.2z"
-      fill={accent}
-    />
-  </svg>
+export const Mark: React.FC<{ size?: number }> = ({ size = 24 }) => (
+  <img
+    src={staticFile('brand/oxygen-app-icon.png')}
+    width={size}
+    height={size}
+    style={{ display: 'block', borderRadius: size * 0.18 }}
+    alt=""
+  />
+);
+
+/**
+ * The Content Fusion product mark, used for the closing brand card. Downloaded
+ * from oxygenxml.com/contentfusion.
+ */
+export const ProductMark: React.FC<{ size?: number }> = ({ size = 24 }) => (
+  <img
+    src={staticFile('brand/content-fusion-mark.png')}
+    width={size}
+    height={size}
+    style={{ display: 'block', borderRadius: size * 0.18 }}
+    alt=""
+  />
 );

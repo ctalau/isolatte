@@ -50,7 +50,7 @@ Pacing is carried by the **handles** (`voiceLeadInFrames = 14`,
 `voiceLeadOutFrames = 20`) rather than by slowing the read — a slowed read
 sounds sluggish, silence around a claim sounds considered.
 
-Current voice (`af_nicole`) is a first pass and expected to change. Changing it
+Current voice (`af_heart`) is a first pass and expected to change. Changing it
 is one environment variable plus a regenerate; the film re-times itself.
 
 ## Sound design brief
