@@ -6,6 +6,7 @@ import type { ContentBlock } from '../../assets/productContent';
 
 const t = theme.typography;
 const c = theme.colors;
+const ui = theme.colors.ui;
 
 /**
  * The AI suggestion panel.
@@ -39,11 +40,9 @@ export const AIPanel: React.FC<{
       width,
       borderRadius: theme.radii.lg,
       overflow: 'hidden',
-      background: `${theme.gradients.glassSurface}, rgba(28,34,46,0.9)`,
-      backdropFilter: 'blur(30px) saturate(118%)',
-      WebkitBackdropFilter: 'blur(30px) saturate(118%)',
-      border: `1px solid rgba(91,140,255,0.22)`,
-      boxShadow: theme.shadows.panel,
+      background: ui.panel,
+      border: `1px solid ${ui.border}`,
+      boxShadow: '0 2px 6px rgba(20,30,50,0.08), 0 24px 60px rgba(20,30,50,0.16)',
     }}
   >
     <div
@@ -52,17 +51,17 @@ export const AIPanel: React.FC<{
         alignItems: 'center',
         gap: 9,
         padding: '14px 17px 12px',
-        borderBottom: `1px solid ${c.stroke.hairline}`,
+        borderBottom: `1px solid ${ui.border}`,
       }}
     >
-      <IconSparkle color={c.accent} size={14} />
+      <IconSparkle color={ui.accent} size={14} />
       <span
         style={{
           fontFamily: t.display,
           fontSize: 13,
           fontWeight: 560,
           letterSpacing: '-0.004em',
-          color: c.ink[12],
+          color: ui.textPrimary,
         }}
       >
         {title}
@@ -74,10 +73,10 @@ export const AIPanel: React.FC<{
           fontSize: 9.5,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: c.accent,
+          color: ui.accent,
           padding: '3px 7px',
           borderRadius: 4,
-          background: 'rgba(91,140,255,0.12)',
+          background: ui.accentSoft,
         }}
       >
         Draft
@@ -90,9 +89,9 @@ export const AIPanel: React.FC<{
           fontFamily: t.body,
           fontSize: 12,
           lineHeight: 1.5,
-          color: c.ink[9],
+          color: ui.textSecondary,
           paddingBottom: 13,
-          borderBottom: `1px solid rgba(255,255,255,0.04)`,
+          borderBottom: `1px solid ${ui.border}`,
         }}
       >
         {prompt}
@@ -115,11 +114,11 @@ export const AIPanel: React.FC<{
         alignItems: 'center',
         gap: 9,
         padding: '12px 17px',
-        borderTop: `1px solid ${c.stroke.hairline}`,
-        background: 'rgba(0,0,0,0.16)',
+        borderTop: `1px solid ${ui.border}`,
+        background: ui.sidebar,
       }}
     >
-      <span style={{ fontFamily: t.body, fontSize: 11.5, color: c.ink[8] }}>{footerNote}</span>
+      <span style={{ fontFamily: t.body, fontSize: 11.5, color: ui.textTertiary }}>{footerNote}</span>
       <span style={{ flex: 1 }} />
       <div
         style={{
@@ -130,8 +129,9 @@ export const AIPanel: React.FC<{
           borderRadius: theme.radii.sm,
           fontFamily: t.body,
           fontSize: 12,
-          color: c.ink[9],
-          border: `1px solid ${c.stroke.hairline}`,
+          color: ui.textSecondary,
+          border: `1px solid ${ui.border}`,
+          background: ui.surface,
         }}
       >
         Dismiss
@@ -147,13 +147,13 @@ export const AIPanel: React.FC<{
           fontFamily: t.body,
           fontSize: 12,
           fontWeight: 520,
-          color: '#0A0D14',
-          background: `rgba(${approve > 0 ? '232,180,115' : '91,140,255'}, 1)`,
+          color: '#FFFFFF',
+          background: approve > 0 ? c.human : ui.accent,
           boxShadow: approve > 0 ? `0 0 ${(20 * approve).toFixed(0)}px rgba(232,180,115,0.4)` : undefined,
           transform: `scale(${(1 + approve * 0.03).toFixed(4)})`,
         }}
       >
-        <IconCheck color="#0A0D14" size={13} strokeWidth={1.9} />
+        <IconCheck color="#FFFFFF" size={13} strokeWidth={1.9} />
         Apply
       </div>
     </div>
@@ -176,17 +176,15 @@ export const ReviewPanel: React.FC<{
       width,
       borderRadius: theme.radii.lg,
       overflow: 'hidden',
-      background: `${theme.gradients.glassSurface}, rgba(28,34,46,0.92)`,
-      backdropFilter: 'blur(30px) saturate(118%)',
-      WebkitBackdropFilter: 'blur(30px) saturate(118%)',
-      border: `1px solid ${approved > 0.5 ? 'rgba(232,180,115,0.32)' : c.stroke.soft}`,
-      boxShadow: theme.shadows.panel,
+      background: ui.panel,
+      border: `1px solid ${approved > 0.5 ? 'rgba(232,180,115,0.55)' : ui.border}`,
+      boxShadow: '0 2px 6px rgba(20,30,50,0.08), 0 24px 60px rgba(20,30,50,0.16)',
     }}
   >
     <div
       style={{
         padding: '14px 18px 12px',
-        borderBottom: `1px solid ${c.stroke.hairline}`,
+        borderBottom: `1px solid ${ui.border}`,
         display: 'flex',
         alignItems: 'center',
         gap: 9,
@@ -198,7 +196,7 @@ export const ReviewPanel: React.FC<{
           fontSize: 13,
           fontWeight: 560,
           letterSpacing: '-0.004em',
-          color: c.ink[12],
+          color: ui.textPrimary,
         }}
       >
         Review change
@@ -210,7 +208,7 @@ export const ReviewPanel: React.FC<{
           fontSize: 9.5,
           letterSpacing: '0.12em',
           textTransform: 'uppercase',
-          color: approved > 0.5 ? c.human : c.ink[9],
+          color: approved > 0.5 ? c.humanDim : ui.textTertiary,
         }}
       >
         {approved > 0.5 ? 'Approved' : 'Awaiting approval'}
@@ -228,11 +226,11 @@ export const ReviewPanel: React.FC<{
         alignItems: 'center',
         gap: 9,
         padding: '12px 18px',
-        borderTop: `1px solid ${c.stroke.hairline}`,
-        background: 'rgba(0,0,0,0.16)',
+        borderTop: `1px solid ${ui.border}`,
+        background: ui.sidebar,
       }}
     >
-      <span style={{ fontFamily: t.body, fontSize: 11.5, color: c.ink[8] }}>
+      <span style={{ fontFamily: t.body, fontSize: 11.5, color: ui.textTertiary }}>
         Suggested by AI · applied by you
       </span>
       <span style={{ flex: 1 }} />
@@ -247,13 +245,13 @@ export const ReviewPanel: React.FC<{
           fontFamily: t.body,
           fontSize: 12,
           fontWeight: 520,
-          color: '#0A0D14',
+          color: '#3A2A0F',
           background: c.human,
           transform: `scale(${(1 + approve * 0.035).toFixed(4)})`,
           boxShadow: approve > 0 ? `0 0 ${(22 * approve).toFixed(0)}px rgba(232,180,115,0.45)` : undefined,
         }}
       >
-        <IconCheck color="#0A0D14" size={13} strokeWidth={1.9} />
+        <IconCheck color="#3A2A0F" size={13} strokeWidth={1.9} />
         Approve
       </div>
     </div>
@@ -271,15 +269,15 @@ const DiffRow: React.FC<{ sign: string; text: string; tone: 'added' | 'removed' 
       gap: 11,
       padding: '10px 13px',
       borderRadius: theme.radii.sm,
-      background: tone === 'added' ? 'rgba(127,209,192,0.07)' : 'rgba(255,255,255,0.026)',
-      border: `1px solid ${tone === 'added' ? 'rgba(127,209,192,0.18)' : c.stroke.hairline}`,
+      background: tone === 'added' ? ui.diffAddedBg : ui.diffRemovedBg,
+      border: `1px solid ${tone === 'added' ? ui.diffAddedBorder : ui.diffRemovedBorder}`,
     }}
   >
     <span
       style={{
         fontFamily: t.mono,
         fontSize: 12,
-        color: tone === 'added' ? c.structure.reusable : c.ink[8],
+        color: tone === 'added' ? '#3E8E77' : ui.textTertiary,
         lineHeight: 1.5,
       }}
     >
@@ -290,9 +288,9 @@ const DiffRow: React.FC<{ sign: string; text: string; tone: 'added' | 'removed' 
         fontFamily: t.body,
         fontSize: 13,
         lineHeight: 1.5,
-        color: tone === 'added' ? c.ink[11] : c.ink[8],
+        color: tone === 'added' ? ui.textPrimary : ui.textSecondary,
         textDecoration: tone === 'removed' ? 'line-through' : undefined,
-        textDecorationColor: 'rgba(255,255,255,0.22)',
+        textDecorationColor: ui.textTertiary,
       }}
     >
       {text}

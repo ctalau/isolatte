@@ -4,11 +4,14 @@ Config.setEntryPoint('src/index.ts');
 Config.setVideoImageFormat('png');
 Config.setOverwriteOutput(true);
 /**
- * The film is composited with heavy backdrop-filter and layered transforms.
- * The GL angle backend below is the one that renders those consistently in the
- * headless shell; software rendering produces different blur radii.
+ * The film is composited with heavy backdrop-filter and layered transforms,
+ * and scenes 09-10 render real WebGL (react-three-fiber). `swangle` (software
+ * ANGLE) is the backend that actually creates a WebGL context in a headless,
+ * GPU-less sandbox — plain `angle`/`egl` fail there with "Error creating WebGL
+ * context" — while still rendering the CSS filters consistently, unlike
+ * `swiftshader`.
  */
-Config.setChromiumOpenGlRenderer('angle');
+Config.setChromiumOpenGlRenderer('swangle');
 Config.setConcurrency(2);
 Config.setDelayRenderTimeoutInMilliseconds(60000);
 

@@ -9,6 +9,7 @@ import { IconComponent, IconLibrary, IconMap, IconTopic } from './Icons';
 
 const t = theme.typography;
 const c = theme.colors;
+const ui = theme.colors.ui;
 
 export const SIDEBAR_WIDTH = 250;
 export const METADATA_WIDTH = 268;
@@ -20,7 +21,7 @@ export const CHROME_HEIGHT = 46;
 /* -------------------------------------------------------------------------- */
 
 const treeIcon = (kind: string, active: boolean) => {
-  const color = active ? c.accent : c.ink[8];
+  const color = active ? ui.accent : ui.textSecondary;
   if (kind === 'map') return <IconMap color={color} />;
   if (kind === 'library') return <IconLibrary color={color} />;
   if (kind === 'component') return <IconComponent color={color} />;
@@ -36,8 +37,8 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
       bottom: 0,
       width: SIDEBAR_WIDTH,
       paddingTop: 18,
-      background: `linear-gradient(180deg, rgba(255,255,255,0.022) 0%, rgba(255,255,255,0) 60%), ${c.ink[2]}`,
-      borderRight: `1px solid ${c.stroke.hairline}`,
+      background: ui.sidebar,
+      borderRight: `1px solid ${ui.border}`,
       borderBottomLeftRadius: theme.radii.window,
     }}
   >
@@ -49,7 +50,7 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
         fontWeight: 500,
         letterSpacing: '0.14em',
         textTransform: 'uppercase',
-        color: c.ink[8],
+        color: ui.textTertiary,
       }}
     >
       Workspace
@@ -70,11 +71,11 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
               paddingRight: 8,
               borderRadius: theme.radii.sm,
               background: isActive
-                ? 'rgba(91,140,255,0.13)'
+                ? ui.accentSoftStrong
                 : isHi
-                  ? 'rgba(127,209,192,0.11)'
+                  ? 'rgba(127,209,192,0.16)'
                   : 'transparent',
-              boxShadow: isActive ? `inset 0 0 0 1px rgba(91,140,255,0.22)` : undefined,
+              boxShadow: isActive ? `inset 0 0 0 1px rgba(22,86,214,0.28)` : undefined,
             }}
           >
             {treeIcon(node.kind, isActive)}
@@ -83,7 +84,7 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
                 fontFamily: t.body,
                 fontSize: 12.5,
                 letterSpacing: '-0.002em',
-                color: isActive ? c.ink[12] : node.depth === 0 ? c.ink[11] : c.ink[10],
+                color: isActive ? ui.accent : node.depth === 0 ? ui.textPrimary : ui.textSecondary,
                 fontWeight: node.depth === 0 ? 520 : 420,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
@@ -104,7 +105,7 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
         right: 18,
         bottom: 18,
         paddingTop: 12,
-        borderTop: `1px solid ${c.stroke.hairline}`,
+        borderTop: `1px solid ${ui.border}`,
         display: 'flex',
         alignItems: 'center',
         gap: 8,
@@ -116,10 +117,10 @@ export const Sidebar: React.FC<{ highlightComponent?: boolean }> = ({ highlightC
           height: 6,
           borderRadius: 3,
           background: c.structure.reusable,
-          opacity: 0.8,
+          opacity: 0.9,
         }}
       />
-      <span style={{ fontFamily: t.body, fontSize: 11.5, color: c.ink[9] }}>
+      <span style={{ fontFamily: t.body, fontSize: 11.5, color: ui.textSecondary }}>
         42 topics · 7 languages
       </span>
     </div>
@@ -160,7 +161,7 @@ export const BlockView: React.FC<{
           bottom: -6,
           width: 2,
           borderRadius: 2,
-          background: c.accent,
+          background: ui.accent,
           opacity: 0.75 * highlight,
         }}
       />
@@ -186,7 +187,7 @@ const renderBlock = (
             fontWeight: 570,
             letterSpacing: '-0.021em',
             lineHeight: 1.14,
-            color: c.text.primary,
+            color: ui.textPrimary,
           }}
         >
           {block.text}
@@ -203,7 +204,7 @@ const renderBlock = (
             fontWeight: 420,
             lineHeight: 1.55,
             letterSpacing: '-0.003em',
-            color: c.ink[10],
+            color: ui.textSecondary,
             maxWidth: 560,
           }}
         >
@@ -227,12 +228,12 @@ const renderBlock = (
               fontSize: 15,
               fontWeight: 570,
               letterSpacing: '-0.008em',
-              color: c.ink[11],
+              color: ui.textPrimary,
             }}
           >
             {block.label}
           </span>
-          <span style={{ flex: 1, height: 1, background: c.stroke.hairline }} />
+          <span style={{ flex: 1, height: 1, background: ui.border }} />
         </div>
       );
     case 'paragraph':
@@ -245,7 +246,7 @@ const renderBlock = (
             fontSize: 14,
             lineHeight: 1.62,
             letterSpacing: '-0.001em',
-            color: c.ink[10],
+            color: ui.textSecondary,
             maxWidth: 560,
           }}
         >
@@ -261,14 +262,14 @@ const renderBlock = (
               height: 21,
               flex: '0 0 auto',
               borderRadius: 6,
-              background: 'rgba(255,255,255,0.045)',
-              border: `1px solid ${c.stroke.hairline}`,
+              background: ui.accentSoft,
+              border: `1px solid ${ui.border}`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontFamily: t.mono,
               fontSize: 11,
-              color: c.ink[10],
+              color: ui.accent,
               marginTop: 1,
             }}
           >
@@ -280,7 +281,7 @@ const renderBlock = (
               fontFamily: t.body,
               fontSize: 14,
               lineHeight: 1.6,
-              color: c.ink[11],
+              color: ui.textPrimary,
               maxWidth: 520,
             }}
           >
@@ -298,15 +299,15 @@ const renderBlock = (
             gap: 12,
             padding: '12px 15px',
             borderRadius: theme.radii.sm,
-            background: block.reusable ? 'rgba(127,209,192,0.055)' : 'rgba(255,255,255,0.028)',
-            border: `1px solid ${block.reusable ? 'rgba(127,209,192,0.2)' : c.stroke.hairline}`,
+            background: block.reusable ? 'rgba(127,209,192,0.14)' : ui.calloutBg,
+            border: `1px solid ${block.reusable ? 'rgba(90,168,150,0.32)' : ui.calloutBorder}`,
             maxWidth: 560,
-            boxShadow: emphasis > 0 ? `0 0 0 ${(emphasis * 2).toFixed(1)}px rgba(127,209,192,${(0.22 * emphasis).toFixed(3)})` : undefined,
+            boxShadow: emphasis > 0 ? `0 0 0 ${(emphasis * 2).toFixed(1)}px rgba(90,168,150,${(0.3 * emphasis).toFixed(3)})` : undefined,
           }}
         >
           {block.reusable ? (
             <span style={{ marginTop: 1 }}>
-              <IconComponent color={c.structure.reusable} size={14} />
+              <IconComponent color="#3E8E77" size={14} />
             </span>
           ) : null}
           <div>
@@ -317,9 +318,9 @@ const renderBlock = (
                   fontSize: 9.5,
                   letterSpacing: '0.13em',
                   textTransform: 'uppercase',
-                  color: c.structure.reusable,
+                  color: '#3E8E77',
                   marginBottom: 5,
-                  opacity: 0.9,
+                  opacity: 0.95,
                 }}
               >
                 Reusable component
@@ -331,7 +332,7 @@ const renderBlock = (
                 fontFamily: t.body,
                 fontSize: 13.5,
                 lineHeight: 1.55,
-                color: c.ink[10],
+                color: ui.textPrimary,
               }}
             >
               {block.text}
@@ -347,12 +348,12 @@ const renderBlock = (
             margin: 0,
             padding: '12px 15px',
             borderRadius: theme.radii.sm,
-            background: 'rgba(0,0,0,0.35)',
-            border: `1px solid ${c.stroke.hairline}`,
+            background: ui.sidebar,
+            border: `1px solid ${ui.border}`,
             fontFamily: t.mono,
             fontSize: 12,
             lineHeight: 1.6,
-            color: c.ink[10],
+            color: ui.textPrimary,
           }}
         >
           {block.lines.join('\n')}
@@ -417,8 +418,8 @@ export const MetadataPanel: React.FC<{ highlight?: number }> = ({ highlight = 0 
       bottom: 0,
       width: METADATA_WIDTH,
       paddingTop: 18,
-      background: `linear-gradient(180deg, rgba(255,255,255,0.018) 0%, rgba(255,255,255,0) 50%), ${c.ink[2]}`,
-      borderLeft: `1px solid ${c.stroke.hairline}`,
+      background: ui.sidebar,
+      borderLeft: `1px solid ${ui.border}`,
       borderBottomRightRadius: theme.radii.window,
     }}
   >
@@ -429,7 +430,7 @@ export const MetadataPanel: React.FC<{ highlight?: number }> = ({ highlight = 0 
         fontSize: t.scale.micro.size,
         letterSpacing: '0.14em',
         textTransform: 'uppercase',
-        color: c.ink[8],
+        color: ui.textTertiary,
       }}
     >
       Metadata
@@ -443,16 +444,16 @@ export const MetadataPanel: React.FC<{ highlight?: number }> = ({ highlight = 0 
             justifyContent: 'space-between',
             alignItems: 'center',
             height: 33,
-            borderBottom: `1px solid rgba(255,255,255,0.035)`,
+            borderBottom: `1px solid ${ui.border}`,
           }}
         >
-          <span style={{ fontFamily: t.body, fontSize: 12, color: c.ink[9] }}>{f.label}</span>
+          <span style={{ fontFamily: t.body, fontSize: 12, color: ui.textSecondary }}>{f.label}</span>
           <span
             style={{
               fontFamily: t.body,
               fontSize: 12,
               fontWeight: 500,
-              color: highlight > 0 ? c.accent : c.ink[11],
+              color: highlight > 0 ? ui.accent : ui.textPrimary,
               opacity: 1,
             }}
           >
@@ -479,11 +480,9 @@ export const FloatingToolbar: React.FC<{
       gap: 3,
       padding: 4,
       borderRadius: theme.radii.pill,
-      background: 'rgba(16,20,28,0.86)',
-      backdropFilter: 'blur(24px) saturate(120%)',
-      WebkitBackdropFilter: 'blur(24px) saturate(120%)',
-      border: `1px solid ${c.stroke.soft}`,
-      boxShadow: theme.shadows.card,
+      background: ui.surface,
+      border: `1px solid ${ui.border}`,
+      boxShadow: '0 1px 2px rgba(20,30,50,0.06), 0 10px 26px rgba(20,30,50,0.12)',
       opacity,
     }}
   >
@@ -497,9 +496,9 @@ export const FloatingToolbar: React.FC<{
           height: 30,
           padding: '0 13px',
           borderRadius: theme.radii.pill,
-          background: item.active ? 'rgba(91,140,255,0.18)' : 'transparent',
-          boxShadow: item.active ? 'inset 0 0 0 1px rgba(91,140,255,0.3)' : undefined,
-          color: item.active ? c.ink[12] : c.ink[10],
+          background: item.active ? ui.accentSoftStrong : 'transparent',
+          boxShadow: item.active ? `inset 0 0 0 1px rgba(22,86,214,0.3)` : undefined,
+          color: item.active ? ui.accent : ui.textSecondary,
           fontFamily: t.body,
           fontSize: 12.5,
           fontWeight: 480,

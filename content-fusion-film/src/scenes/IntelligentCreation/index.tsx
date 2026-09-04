@@ -244,7 +244,7 @@ export const IntelligentCreation: React.FC<{ durationInFrames?: number }> = ({
                   bottom: 0,
                   pointerEvents: 'none',
                   background:
-                    'linear-gradient(90deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0) 7%, rgba(0,0,0,0) 93%, rgba(0,0,0,0.30) 100%)',
+                    'linear-gradient(90deg, rgba(20,30,50,0.07) 0%, rgba(20,30,50,0) 7%, rgba(20,30,50,0) 93%, rgba(20,30,50,0.07) 100%)',
                 }}
               />
             </WindowLayer>
@@ -260,7 +260,7 @@ export const IntelligentCreation: React.FC<{ durationInFrames?: number }> = ({
                   height: 150,
                   pointerEvents: 'none',
                   background:
-                    'linear-gradient(180deg, rgba(15,19,26,0) 0%, rgba(15,19,26,0.72) 52%, rgba(15,19,26,0.94) 100%)',
+                    'linear-gradient(180deg, rgba(251,252,254,0) 0%, rgba(251,252,254,0.72) 52%, rgba(251,252,254,0.94) 100%)',
                 }}
               />
             </WindowLayer>
@@ -288,7 +288,7 @@ export const IntelligentCreation: React.FC<{ durationInFrames?: number }> = ({
                         icon: (
                           <IconSparkle
                             size={13}
-                            color={aiActionActive ? theme.colors.accent : theme.colors.ink[10]}
+                            color={aiActionActive ? theme.colors.ui.accent : theme.colors.ui.textSecondary}
                           />
                         ),
                         active: aiActionActive,
@@ -297,7 +297,7 @@ export const IntelligentCreation: React.FC<{ durationInFrames?: number }> = ({
                     ]}
                   />
                   {actionPulse > 0 ? (
-                    <ClickPulse x={214} y={15} progress={1 - actionPulse} color={theme.colors.accent} />
+                    <ClickPulse x={214} y={15} progress={1 - actionPulse} color={theme.colors.ui.accent} />
                   ) : null}
                 </div>
               </div>
