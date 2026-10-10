@@ -1,0 +1,9 @@
+Clean build: Maven 3.9.9, Corretto 21.0.12.1, TeaVM 0.16.0, Saxon-HE 12.10, Xerces-J 2.12.2
+Command: mvn -B clean package org.apache.maven.plugins:maven-dependency-plugin:3.8.1:build-classpath -Dmdep.outputFile=target/classpath.txt
+
+[INFO] Output file successfully built
+[INFO] Classes compiled: 4619
+[INFO] Methods compiled: 34069
+[INFO] BUILD SUCCESS
+[INFO] Total time:  35.957 s
+[INFO] Finished at: 2026-10-10T20:16:40+03:00
