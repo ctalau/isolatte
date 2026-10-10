@@ -1,0 +1,23 @@
+PASS sample
+PASS xml-serialization
+PASS templates-sort
+PASS grouping
+PASS maps-and-arrays
+PASS regex-unicode
+PASS normalization
+PASS decimal-arithmetic
+PASS json
+PASS malformed-xml
+PASS malformed-stylesheet
+PASS static-xpath-error
+PASS runtime-xslt-error
+PASS input-doctype
+PASS stylesheet-doctype
+PASS include-denied
+PASS document-denied
+PASS text-denied
+PASS collection-denied
+PASS secondary-output-denied
+PASS locale-collation-unavailable
+PASS: 21 checks; 9 successful outputs compared with JVM Saxon
+Node v24.19.0; generated JavaScript 40041046 bytes

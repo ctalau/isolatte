@@ -1,0 +1,417 @@
+Initial Saxon-HE 12.10 / TeaVM 0.16.0 build using the earlier Xerces adaptation.
+Result: BUILD FAILURE. 70 missing API diagnostics.
+Call traces below are excerpted to their first four frames. Duplicate API/owner pairs omitted.
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.<init>(Configuration.java:172)
+    at net.sf.saxon.s9api.Processor.<init>(Processor.java:88)
+    at org.isolatte.TransformXml.main(TransformXml.java:16)
+[ERROR] Class java.security.MessageDigest was not found
+
+[ERROR] Class java.security.MessageDigest was not found
+    at net.sf.saxon.lib.DigestMaker.<init>(DigestMaker.java:20)
+    at net.sf.saxon.event.CheckSumFilter.<init>(CheckSumFilter.java:61)
+    at net.sf.saxon.style.StylesheetModule.loadStylesheet(StylesheetModule.java:221)
+    at net.sf.saxon.style.Compilation.compileSingletonPackage(Compilation.java:115)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.getStyleParser(Configuration.java:2934)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:155)
+    at net.sf.saxon.style.StylesheetModule.loadStylesheet(StylesheetModule.java:231)
+    at net.sf.saxon.style.Compilation.compileSingletonPackage(Compilation.java:115)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.getStyleParser(Configuration.java:2932)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:155)
+    at net.sf.saxon.style.StylesheetModule.loadStylesheet(StylesheetModule.java:231)
+    at net.sf.saxon.style.Compilation.compileSingletonPackage(Compilation.java:115)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.reuseStyleParser(Configuration.java:2982)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:158)
+    at net.sf.saxon.style.StylesheetModule.loadStylesheet(StylesheetModule.java:231)
+    at net.sf.saxon.style.Compilation.compileSingletonPackage(Compilation.java:115)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.reuseStyleParser(Configuration.java:2998)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:158)
+    at net.sf.saxon.style.StylesheetModule.loadStylesheet(StylesheetModule.java:231)
+    at net.sf.saxon.style.Compilation.compileSingletonPackage(Compilation.java:115)
+
+[ERROR] Method java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL; was not found
+    at net.sf.saxon.java.JavaPlatform.locateResource(JavaPlatform.java:112)
+    at net.sf.saxon.regex.CaseVariants.build(CaseVariants.java:60)
+    at net.sf.saxon.regex.CaseVariants.<init>(CaseVariants.java:44)
+    at net.sf.saxon.regex.CaseVariants.<init>(CaseVariants.java:35)
+
+[ERROR] Method java.lang.ClassLoader.getSystemResource(Ljava/lang/String;)Ljava/net/URL; was not found
+    at net.sf.saxon.java.JavaPlatform.locateResource(JavaPlatform.java:133)
+    at net.sf.saxon.regex.CaseVariants.build(CaseVariants.java:60)
+    at net.sf.saxon.regex.CaseVariants.<init>(CaseVariants.java:44)
+    at net.sf.saxon.regex.CaseVariants.<init>(CaseVariants.java:35)
+
+[ERROR] Method java.io.PrintStream.<init>(Ljava/lang/String;)V was not found
+    at net.sf.saxon.Configuration.makeTraceListener(Configuration.java:1344)
+    at net.sf.saxon.Configuration.makeTraceListener(Configuration.java:1202)
+    at net.sf.saxon.trans.XsltController.reset(XsltController.java:107)
+    at net.sf.saxon.Controller.<init>(Controller.java:158)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.getSourceParser(Configuration.java:2824)
+    at net.sf.saxon.java.JavaPlatform.resolveSource(JavaPlatform.java:352)
+    at net.sf.saxon.Configuration.resolveSource(Configuration.java:4154)
+    at net.sf.saxon.event.Sender.send(Sender.java:96)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.getSourceParser(Configuration.java:2822)
+    at net.sf.saxon.java.JavaPlatform.resolveSource(JavaPlatform.java:352)
+    at net.sf.saxon.Configuration.resolveSource(Configuration.java:4154)
+    at net.sf.saxon.event.Sender.send(Sender.java:96)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.trans.PackageLoaderHE.importProperties(PackageLoaderHE.java:1476)
+    at net.sf.saxon.trans.PackageLoaderHE.lambda$static$118(PackageLoaderHE.java:3054)
+    at net.sf.saxon.trans.PackageLoaderHE$<clinit>$lambda$_230_103.loadFrom(PackageLoaderHE.java:3047)
+    at net.sf.saxon.trans.PackageLoaderHE.loadExpression(PackageLoaderHE.java:1099)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.trans.PackageLoaderHE.importProperties(PackageLoaderHE.java:1478)
+    at net.sf.saxon.trans.PackageLoaderHE.lambda$static$118(PackageLoaderHE.java:3054)
+    at net.sf.saxon.trans.PackageLoaderHE$<clinit>$lambda$_230_103.loadFrom(PackageLoaderHE.java:3047)
+    at net.sf.saxon.trans.PackageLoaderHE.loadExpression(PackageLoaderHE.java:1099)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.reuseSourceParser(Configuration.java:2885)
+    at net.sf.saxon.resource.ActiveStreamSource.deliver(ActiveStreamSource.java:75)
+    at net.sf.saxon.event.Sender.send(Sender.java:104)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:157)
+
+[ERROR] Class java.util.concurrent.ConcurrentLinkedQueue was not found
+    at net.sf.saxon.Configuration.reuseSourceParser(Configuration.java:2903)
+    at net.sf.saxon.resource.ActiveStreamSource.deliver(ActiveStreamSource.java:75)
+    at net.sf.saxon.event.Sender.send(Sender.java:104)
+    at net.sf.saxon.style.StylesheetModule.sendStylesheetSource(StylesheetModule.java:157)
+
+[ERROR] Class java.security.MessageDigest was not found
+    at net.sf.saxon.lib.DigestMaker.getDigest(DigestMaker.java:39)
+    at net.sf.saxon.event.CheckSumFilter.getDigest(CheckSumFilter.java:283)
+    at net.sf.saxon.trace.ExpressionPresenter.close(ExpressionPresenter.java:554)
+    at net.sf.saxon.expr.Expression.explain(Expression.java:1065)
+
+[ERROR] Method java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; was not found
+    at net.sf.saxon.trans.DynamicLoader.getClass(DynamicLoader.java:110)
+    at net.sf.saxon.trans.DynamicLoader.getInstance(DynamicLoader.java:149)
+    at net.sf.saxon.Configuration.makeTraceListener(Configuration.java:1339)
+    at net.sf.saxon.Configuration.makeTraceListener(Configuration.java:1202)
+
+[ERROR] Class java.security.MessageDigest was not found
+    at net.sf.saxon.lib.DigestMaker.update(DigestMaker.java:28)
+    at net.sf.saxon.event.CheckSumFilter.hash(CheckSumFilter.java:301)
+    at net.sf.saxon.event.CheckSumFilter.append(CheckSumFilter.java:102)
+    at net.sf.saxon.event.ComplexContentOutputter.attribute(ComplexContentOutputter.java:461)
+
+[ERROR] Class java.security.MessageDigest was not found
+    at net.sf.saxon.lib.DigestMaker.update(DigestMaker.java:32)
+    at net.sf.saxon.event.CheckSumFilter.hash(CheckSumFilter.java:302)
+    at net.sf.saxon.event.CheckSumFilter.append(CheckSumFilter.java:102)
+    at net.sf.saxon.event.ComplexContentOutputter.attribute(ComplexContentOutputter.java:461)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:84)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:97)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:95)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:108)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:111)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:114)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:117)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:129)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:141)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:154)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:169)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:172)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:175)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.Collator was not found
+    at net.sf.saxon.java.JavaCollationFactory.makeCollation(JavaCollationFactory.java:192)
+    at net.sf.saxon.java.JavaPlatform.makeCollation(JavaPlatform.java:390)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:59)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.<init>(UcaCollatorUsingJava.java:67)
+    at net.sf.saxon.java.JavaPlatform.makeUcaCollator(JavaPlatform.java:449)
+    at net.sf.saxon.lib.StandardCollationURIResolver.resolve(StandardCollationURIResolver.java:85)
+    at net.sf.saxon.Configuration.getCollation(Configuration.java:1668)
+
+[ERROR] Method java.lang.Class.getResource(Ljava/lang/String;)Ljava/net/URL; was not found
+    at org.xmlresolver.XMLResolverConfiguration.loadConfiguration(XMLResolverConfiguration.java:373)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:288)
+    at net.sf.saxon.lib.CatalogResourceResolver.<init>(CatalogResourceResolver.java:46)
+    at net.sf.saxon.Configuration.getResourceResolver(Configuration.java:785)
+
+[ERROR] Method java.lang.ClassLoader.getResources(Ljava/lang/String;)Ljava/util/Enumeration; was not found
+    at org.xmlresolver.XMLResolverConfiguration.findClasspathCatalogFiles(XMLResolverConfiguration.java:1104)
+    at org.xmlresolver.XMLResolverConfiguration.showConfig(XMLResolverConfiguration.java:813)
+    at org.xmlresolver.XMLResolverConfiguration.loadConfiguration(XMLResolverConfiguration.java:441)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:288)
+
+[ERROR] Class org.slf4j.LoggerFactory was not found
+    at org.xmlresolver.logging.SystemLogger.<init>(SystemLogger.java:44)
+    at org.xmlresolver.XMLResolverConfiguration.getFeature(XMLResolverConfiguration.java:1205)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:292)
+    at net.sf.saxon.lib.CatalogResourceResolver.<init>(CatalogResourceResolver.java:46)
+
+[ERROR] Class org.slf4j.Logger was not found
+    at org.xmlresolver.logging.SystemLogger.debug(SystemLogger.java:93)
+    at org.xmlresolver.XMLResolverConfiguration.loadConfiguration(XMLResolverConfiguration.java:379)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:288)
+    at net.sf.saxon.lib.CatalogResourceResolver.<init>(CatalogResourceResolver.java:46)
+
+[ERROR] Method java.io.File.toPath()Ljava/nio/file/Path; was not found
+    at org.xmlresolver.cache.ResourceCache.updateCacheControlFile(ResourceCache.java:251)
+    at org.xmlresolver.cache.ResourceCache.reset(ResourceCache.java:240)
+    at org.xmlresolver.XMLResolverConfiguration.setFeature(XMLResolverConfiguration.java:926)
+    at net.sf.saxon.lib.CatalogResourceResolver.<init>(CatalogResourceResolver.java:47)
+
+[ERROR] Class org.slf4j.Logger was not found
+    at org.xmlresolver.logging.SystemLogger.info(SystemLogger.java:80)
+    at org.xmlresolver.logging.AbstractLogger.log(AbstractLogger.java:131)
+    at org.xmlresolver.XMLResolverConfiguration$FallbackLogger.forward(XMLResolverConfiguration.java:1295)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:293)
+
+[ERROR] Class org.slf4j.Logger was not found
+    at org.xmlresolver.logging.SystemLogger.warn(SystemLogger.java:67)
+    at org.xmlresolver.logging.AbstractLogger.log(AbstractLogger.java:128)
+    at org.xmlresolver.XMLResolverConfiguration$FallbackLogger.forward(XMLResolverConfiguration.java:1295)
+    at org.xmlresolver.XMLResolverConfiguration.<init>(XMLResolverConfiguration.java:293)
+
+[ERROR] Method java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; was not found
+    at javax.xml.parsers.FactoryFinder.newInstance(-1)
+    at javax.xml.parsers.FactoryFinder.find(-1)
+    at javax.xml.parsers.SAXParserFactory.newInstance(-1)
+    at org.xmlresolver.CatalogResolver.checkRddl(CatalogResolver.java:613)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.getCollationKey(UcaCollatorUsingJava.java:310)
+    at net.sf.saxon.value.StringValue.getXPathMatchKey(StringValue.java:268)
+    at net.sf.saxon.value.AtomicValue.asMapKey(AtomicValue.java:161)
+    at net.sf.saxon.ma.map.HashTrieMap.makeKey(HashTrieMap.java:337)
+
+[ERROR] Method java.lang.ClassLoader.getResource(Ljava/lang/String;)Ljava/net/URL; was not found
+    at org.xmlresolver.CatalogResolver.uncachedResource(CatalogResolver.java:598)
+    at org.xmlresolver.CatalogResolver.resolveEntity(CatalogResolver.java:319)
+    at net.sf.saxon.lib.CatalogResourceResolver.resolve(CatalogResourceResolver.java:135)
+    at net.sf.saxon.lib.ResourceRequest.resolve(ResourceRequest.java:161)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.compareStrings(UcaCollatorUsingJava.java:299)
+    at net.sf.saxon.expr.sort.CollatingAtomicComparer.compareAtomicValues(CollatingAtomicComparer.java:89)
+    at net.sf.saxon.expr.ValueComparison.compare(ValueComparison.java:409)
+    at net.sf.saxon.expr.compat.GeneralComparison10.compare(GeneralComparison10.java:419)
+
+[ERROR] Method java.io.RandomAccessFile.getChannel()Ljava/nio/channels/FileChannel; was not found
+    at org.xmlresolver.cache.ResourceCache$DirectoryLock.<init>(ResourceCache.java:1020)
+    at org.xmlresolver.cache.ResourceCache.loadCache(ResourceCache.java:608)
+    at org.xmlresolver.cache.ResourceCache.lookupNamespaceURI(ResourceCache.java:517)
+    at org.xmlresolver.CatalogResolver.resolveNamespace(CatalogResolver.java:427)
+
+[ERROR] Class java.security.MessageDigest was not found
+    at org.xmlresolver.cache.ResourceCache.cacheBaseName(ResourceCache.java:949)
+    at org.xmlresolver.cache.ResourceCache.addNamespaceURI(ResourceCache.java:769)
+    at org.xmlresolver.cache.ResourceCache.cachedNamespaceUri(ResourceCache.java:556)
+    at org.xmlresolver.CatalogResolver.resolveNamespace(CatalogResolver.java:453)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.comparesEqual(UcaCollatorUsingJava.java:277)
+    at net.sf.saxon.expr.sort.GenericAtomicComparer.comparesEqual(GenericAtomicComparer.java:405)
+    at net.sf.saxon.expr.ValueComparison.compare(ValueComparison.java:405)
+    at net.sf.saxon.expr.compat.GeneralComparison10.compare(GeneralComparison10.java:419)
+
+[ERROR] Class java.nio.channels.FileLock was not found
+    at org.xmlresolver.cache.ResourceCache$DirectoryLock.unlock(ResourceCache.java:1048)
+    at org.xmlresolver.cache.ResourceCache.loadCache(ResourceCache.java:639)
+    at org.xmlresolver.cache.ResourceCache.lookupNamespaceURI(ResourceCache.java:517)
+    at org.xmlresolver.CatalogResolver.resolveNamespace(CatalogResolver.java:427)
+
+[ERROR] Class java.nio.channels.FileChannel was not found
+    at org.xmlresolver.cache.ResourceCache$DirectoryLock.lock(ResourceCache.java:1034)
+    at org.xmlresolver.cache.ResourceCache.loadCache(ResourceCache.java:610)
+    at org.xmlresolver.cache.ResourceCache.lookupNamespaceURI(ResourceCache.java:517)
+    at org.xmlresolver.CatalogResolver.resolveNamespace(CatalogResolver.java:427)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.functions.UnparsedTextLines.evalUnparsedTextLines(UnparsedTextLines.java:70)
+    at net.sf.saxon.functions.UnparsedTextLines.call(UnparsedTextLines.java:49)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+    at net.sf.saxon.expr.DynamicFunctionCall$DynamicFunctionCallElaborator.lambda$elaborateForPull$2(DynamicFunctionCall.java:359)
+
+[ERROR] Class java.util.SimpleTimeZone was not found
+    at net.sf.saxon.value.DateTimeValue.getCalendar(DateTimeValue.java:960)
+    at net.sf.saxon.value.DateTimeValue.randomSeed(DateTimeValue.java:943)
+    at net.sf.saxon.functions.hof.RandomNumberGenerator.call(RandomNumberGenerator.java:162)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.tree.iter.UnparsedTextIterator.<init>(UnparsedTextIterator.java:44)
+    at net.sf.saxon.functions.UnparsedTextLines.evalUnparsedTextLines(UnparsedTextLines.java:75)
+    at net.sf.saxon.functions.UnparsedTextLines.call(UnparsedTextLines.java:49)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.tree.iter.TextLinesIterator.close(TextLinesIterator.java:86)
+    at net.sf.saxon.expr.FirstItemExpression.evaluateItem(FirstItemExpression.java:134)
+    at net.sf.saxon.expr.Expression.evaluateAsString(Expression.java:935)
+    at net.sf.saxon.style.UseWhenFilter.processShadowAttribute(UseWhenFilter.java:647)
+
+[ERROR] Method java.lang.System.getenv()Ljava/util/Map; was not found
+    at net.sf.saxon.lib.StandardEnvironmentVariableResolver.getAvailableEnvironmentVariables(StandardEnvironmentVariableResolver.java:29)
+    at net.sf.saxon.functions.AvailableEnvironmentVariables.call(AvailableEnvironmentVariables.java:42)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+    at net.sf.saxon.expr.DynamicFunctionCall$DynamicFunctionCallElaborator.lambda$elaborateForPull$2(DynamicFunctionCall.java:359)
+
+[ERROR] Method java.io.File.toPath()Ljava/nio/file/Path; was not found
+    at org.xmlresolver.cache.CacheEntryCatalog.flushCache(CacheEntryCatalog.java:194)
+    at org.xmlresolver.cache.ResourceCache.flushCache(ResourceCache.java:941)
+    at org.xmlresolver.cache.ResourceCache.expired(ResourceCache.java:395)
+    at org.xmlresolver.cache.ResourceCache.lookupNamespaceURI(ResourceCache.java:522)
+
+[ERROR] Field java.text.Normalizer$Form.NFC was not found
+    at net.sf.saxon.serialize.HTMLURIEscaper.escapeURL(HTMLURIEscaper.java:187)
+    at net.sf.saxon.functions.EscapeHtmlUri.evaluate(EscapeHtmlUri.java:27)
+    at net.sf.saxon.functions.ScalarSystemFunction.call(ScalarSystemFunction.java:65)
+    at net.sf.saxon.expr.DynamicFunctionCall$DynamicFunctionCallElaborator.lambda$elaborateForPull$2(DynamicFunctionCall.java:359)
+
+[ERROR] Field java.text.Normalizer$Form.NFC was not found
+    at net.sf.saxon.functions.NormalizeUnicode.normalize(NormalizeUnicode.java:47)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:40)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:22)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Class java.text.Normalizer was not found
+    at net.sf.saxon.functions.NormalizeUnicode.normalize(NormalizeUnicode.java:61)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:40)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:22)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Field java.text.Normalizer$Form.NFD was not found
+    at net.sf.saxon.functions.NormalizeUnicode.normalize(NormalizeUnicode.java:49)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:40)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:22)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Field java.text.Normalizer$Form.NFKC was not found
+    at net.sf.saxon.functions.NormalizeUnicode.normalize(NormalizeUnicode.java:51)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:40)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:22)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Field java.text.Normalizer$Form.NFKD was not found
+    at net.sf.saxon.functions.NormalizeUnicode.normalize(NormalizeUnicode.java:53)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:40)
+    at net.sf.saxon.functions.NormalizeUnicode.call(NormalizeUnicode.java:22)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Class java.io.LineNumberReader was not found
+    at net.sf.saxon.tree.iter.TextLinesIterator.next(TextLinesIterator.java:52)
+    at net.sf.saxon.tree.iter.TextLinesIterator.next(TextLinesIterator.java:30)
+    at net.sf.saxon.expr.Expression.evaluateItem(Expression.java:872)
+    at net.sf.saxon.expr.instruct.Executable.checkInitialContextItem(Executable.java:588)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.contains(UcaCollatorUsingJava.java:326)
+    at net.sf.saxon.functions.Contains.contains(Contains.java:38)
+    at net.sf.saxon.functions.Contains.call(Contains.java:45)
+    at net.sf.saxon.functions.Contains.call(Contains.java:24)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.substringAfter(UcaCollatorUsingJava.java:378)
+    at net.sf.saxon.functions.SubstringAfter.substringAfter(SubstringAfter.java:65)
+    at net.sf.saxon.functions.SubstringAfter.call(SubstringAfter.java:48)
+    at net.sf.saxon.functions.SubstringAfter.call(SubstringAfter.java:27)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.endsWith(UcaCollatorUsingJava.java:343)
+    at net.sf.saxon.functions.EndsWith.endsWith(EndsWith.java:70)
+    at net.sf.saxon.functions.EndsWith.call(EndsWith.java:86)
+    at net.sf.saxon.functions.EndsWith.call(EndsWith.java:26)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.substringBefore(UcaCollatorUsingJava.java:402)
+    at net.sf.saxon.functions.SubstringBefore.call(SubstringBefore.java:51)
+    at net.sf.saxon.functions.SubstringBefore.call(SubstringBefore.java:29)
+    at net.sf.saxon.functions.hof.CoercedFunction.call(CoercedFunction.java:190)
+
+[ERROR] Class java.text.RuleBasedCollator was not found
+    at net.sf.saxon.expr.sort.UcaCollatorUsingJava.startsWith(UcaCollatorUsingJava.java:360)
+    at net.sf.saxon.functions.StartsWith.startsWith(StartsWith.java:74)
+    at net.sf.saxon.functions.StartsWith.call(StartsWith.java:85)
+    at net.sf.saxon.functions.StartsWith.call(StartsWith.java:27)
+
+[ERROR] Method java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; was not found
+    at net.sf.saxon.Configuration.instantiateConfiguration(Configuration.java:330)
+    at net.sf.saxon.Configuration.makeLicensedConfiguration(Configuration.java:473)
+    at net.sf.saxon.trans.ConfigurationReader.startElement(ConfigurationReader.java:222)
+    at net.sf.saxon.tree.linked.ElementImpl.copy(ElementImpl.java:359)
