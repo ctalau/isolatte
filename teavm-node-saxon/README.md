@@ -40,6 +40,8 @@ node verify.mjs --jvm
 
 `JAVA_HOME`, when set, selects the reference JDK. The suite compares every successful transformation's output byte-for-byte with JVM Saxon, as well as with a stated expected output. Negative tests require a nonzero exit, empty stdout and the expected diagnostic.
 
+Run `node benchmark.mjs` after building the classpath to compare fresh-process latency and repeated transformations with and without a cached stylesheet. In the measured workloads, TeaVM/Node took **1.5–5.7× longer per repeated transformation** than the JVM. See [performance results and methodology](PERFORMANCE.md) and [raw measurements](results/benchmark.json).
+
 ## Adaptations
 
 Downloaded JARs remain unchanged. TeaVM's build-time class transformers alter the reachable bytecode, with the following explicit replacements:
