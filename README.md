@@ -4,6 +4,8 @@ Security and sandboxing experiments for running untrusted code with granular iso
 
 ## Sandboxing experiments
 
+- **teavm-node-xerces** — TeaVM compiles Xerces-J to JavaScript for UTF-8 XML file parsing in Node; includes compatibility adaptations and verification evidence
+
 - **bwrap-seccomp** — hermetic bubblewrap sandbox hardened with a custom seccomp-BPF syscall filter
 - **nsjail-dita** — wraps DITA-OT processing in an nsjail jail with namespace isolation, chroot, capability drops, CPU pinning, and a loopback-only HTTP server
 - **smokescreen-proxy** — egress ACL enforcement on a container with no default route using Stripe's Smokescreen proxy over a veth pair
