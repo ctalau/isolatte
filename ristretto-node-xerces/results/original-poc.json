@@ -1,0 +1,15 @@
+{
+  "host": "Node v24.19.0",
+  "pid": 3635,
+  "execution": "Ristretto WASM inside Node; no Java subprocess",
+  "filesystem": "Node files loaded into a JS-hosted memory filesystem",
+  "file": "/workspace/ristretto-node-xerces/sample.xml",
+  "parser": "org.apache.xerces.parsers.DOMParser",
+  "xercesVersion": "Xerces-J 2.12.2",
+  "javaVersion": "21.0.12.1",
+  "root": "catalog",
+  "namespace": "urn:example:catalog",
+  "elementCount": 5,
+  "text": "Ristretto & Xerces — caféNode.js JVM",
+  "elapsedMs": 7628
+}

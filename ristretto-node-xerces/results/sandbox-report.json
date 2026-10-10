@@ -1,0 +1,1197 @@
+{
+  "recordedAt": "2026-10-10T08:25:51.627Z",
+  "node": "v24.19.0",
+  "platform": "linux",
+  "ristrettoCommit": "dcd45fb452d6956122a9985096260310a22b4d44",
+  "elapsedMs": 10323,
+  "result": {
+    "parser": "org.apache.xerces.parsers.DOMParser",
+    "xercesVersion": "Xerces-J 2.12.2",
+    "javaVersion": "21.0.12.1",
+    "root": "catalog",
+    "namespace": "urn:example:catalog",
+    "elementCount": 5,
+    "text": "Ristretto & Xerces — caféNode.js JVM"
+  },
+  "probe": {
+    "inputReadable": true,
+    "hostPasswdHidden": true,
+    "runtimeFilesVisibleToJava": true,
+    "runtimeWriteDenied": true,
+    "inputWriteDenied": true,
+    "scratchWriteDenied": true,
+    "nioWriteDenied": true,
+    "hostEnvironmentHidden": true,
+    "subprocessDenied": true,
+    "nativeLibraryDenied": true
+  },
+  "initialFilesystem": {
+    "fileCount": 18,
+    "bytes": 37856741,
+    "files": [
+      {
+        "path": "/jdk/release",
+        "bytes": 54
+      },
+      {
+        "path": "/jdk/lib/modules",
+        "bytes": 36089960
+      },
+      {
+        "path": "/jdk/conf/jaxp.properties",
+        "bytes": 7302
+      },
+      {
+        "path": "/jdk/conf/net.properties",
+        "bytes": 7441
+      },
+      {
+        "path": "/jdk/conf/sdp/sdp.conf.template",
+        "bytes": 1455
+      },
+      {
+        "path": "/jdk/conf/security/java.policy",
+        "bytes": 2294
+      },
+      {
+        "path": "/jdk/conf/security/java.security",
+        "bytes": 71386
+      },
+      {
+        "path": "/jdk/conf/security/policy/README.txt",
+        "bytes": 2390
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/default_US_export.policy",
+        "bytes": 146
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/default_local.policy",
+        "bytes": 647
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/exempt_local.policy",
+        "bytes": 566
+      },
+      {
+        "path": "/jdk/conf/security/policy/unlimited/default_US_export.policy",
+        "bytes": 146
+      },
+      {
+        "path": "/jdk/conf/security/policy/unlimited/default_local.policy",
+        "bytes": 193
+      },
+      {
+        "path": "/app/classes/ParseXml$1.class",
+        "bytes": 543
+      },
+      {
+        "path": "/app/classes/ParseXml.class",
+        "bytes": 3084
+      },
+      {
+        "path": "/app/classes/ProbeSandbox.class",
+        "bytes": 2449
+      },
+      {
+        "path": "/app/vendor/xercesImpl-2.12.2.jar",
+        "bytes": 1446149
+      },
+      {
+        "path": "/app/vendor/xml-apis-1.4.01.jar",
+        "bytes": 220536
+      }
+    ]
+  },
+  "currentFilesystem": {
+    "fileCount": 19,
+    "bytes": 37856943,
+    "files": [
+      {
+        "path": "/jdk/release",
+        "bytes": 54
+      },
+      {
+        "path": "/jdk/lib/modules",
+        "bytes": 36089960
+      },
+      {
+        "path": "/jdk/conf/jaxp.properties",
+        "bytes": 7302
+      },
+      {
+        "path": "/jdk/conf/net.properties",
+        "bytes": 7441
+      },
+      {
+        "path": "/jdk/conf/sdp/sdp.conf.template",
+        "bytes": 1455
+      },
+      {
+        "path": "/jdk/conf/security/java.policy",
+        "bytes": 2294
+      },
+      {
+        "path": "/jdk/conf/security/java.security",
+        "bytes": 71386
+      },
+      {
+        "path": "/jdk/conf/security/policy/README.txt",
+        "bytes": 2390
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/default_US_export.policy",
+        "bytes": 146
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/default_local.policy",
+        "bytes": 647
+      },
+      {
+        "path": "/jdk/conf/security/policy/limited/exempt_local.policy",
+        "bytes": 566
+      },
+      {
+        "path": "/jdk/conf/security/policy/unlimited/default_US_export.policy",
+        "bytes": 146
+      },
+      {
+        "path": "/jdk/conf/security/policy/unlimited/default_local.policy",
+        "bytes": 193
+      },
+      {
+        "path": "/app/classes/ParseXml$1.class",
+        "bytes": 543
+      },
+      {
+        "path": "/app/classes/ParseXml.class",
+        "bytes": 3084
+      },
+      {
+        "path": "/app/classes/ProbeSandbox.class",
+        "bytes": 2449
+      },
+      {
+        "path": "/app/vendor/xercesImpl-2.12.2.jar",
+        "bytes": 1446149
+      },
+      {
+        "path": "/app/vendor/xml-apis-1.4.01.jar",
+        "bytes": 220536
+      },
+      {
+        "path": "/input/sample.xml",
+        "bytes": 202
+      }
+    ]
+  },
+  "wasmMemories": [
+    {
+      "bytes": 65011712
+    }
+  ],
+  "beforeInstantiation": {
+    "rss": 74186752,
+    "heapTotal": 11055104,
+    "heapUsed": 6078896,
+    "external": 41784979,
+    "arrayBuffers": 39799777
+  },
+  "currentProcessMemory": {
+    "rss": 235675648,
+    "heapTotal": 46972928,
+    "heapUsed": 27130144,
+    "external": 105242288,
+    "arrayBuffers": 38069375
+  },
+  "quotas": {
+    "maxInputBytes": 8388608,
+    "maxOutputBytes": 1048576,
+    "filesystemWrites": false
+  },
+  "wasiCalls": [
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:clocks/monotonic-clock@0.2.12",
+      "operation": "now",
+      "count": 798
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:clocks/wall-clock@0.2.12",
+      "operation": "now",
+      "count": 3
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.metadata-hash",
+      "count": 1026
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.metadata-hash-at",
+      "count": 25
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.open-at",
+      "count": 9
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.read-via-stream",
+      "count": 452
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.readlink-at",
+      "count": 10
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.stat",
+      "count": 1026
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.stat-at",
+      "count": 25
+    },
+    {
+      "phase": "java-security-probe",
+      "interface": "wasi:io/streams@0.2.12",
+      "operation": "[method]input-stream.read",
+      "count": 1222
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:cli/environment@0.2.12",
+      "operation": "get-environment",
+      "count": 1
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:clocks/monotonic-clock@0.2.12",
+      "operation": "now",
+      "count": 5592
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:clocks/wall-clock@0.2.12",
+      "operation": "now",
+      "count": 7
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/preopens@0.2.12",
+      "operation": "get-directories",
+      "count": 1
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.metadata-hash",
+      "count": 184543
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.metadata-hash-at",
+      "count": 184
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.open-at",
+      "count": 148
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.read-via-stream",
+      "count": 80578
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.readlink-at",
+      "count": 431
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.stat",
+      "count": 184543
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:filesystem/types@0.2.12",
+      "operation": "[method]descriptor.stat-at",
+      "count": 184
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:io/streams@0.2.12",
+      "operation": "[method]input-stream.read",
+      "count": 218380
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:random/insecure-seed@0.2.12",
+      "operation": "insecure-seed",
+      "count": 1
+    },
+    {
+      "phase": "parse",
+      "interface": "wasi:random/random@0.2.12",
+      "operation": "get-random-u64",
+      "count": 8
+    }
+  ],
+  "javascriptFilesystemImplementation": {
+    "sourceBytes": 14481,
+    "gzipBytes": 3826
+  },
+  "declaredInterfaces": [
+    "wasi:cli/environment",
+    "wasi:cli/exit",
+    "wasi:cli/stderr",
+    "wasi:cli/stdin",
+    "wasi:cli/stdout",
+    "wasi:cli/terminal-input",
+    "wasi:cli/terminal-output",
+    "wasi:cli/terminal-stderr",
+    "wasi:cli/terminal-stdin",
+    "wasi:cli/terminal-stdout",
+    "wasi:clocks/monotonic-clock",
+    "wasi:clocks/wall-clock",
+    "wasi:filesystem/preopens",
+    "wasi:filesystem/types",
+    "wasi:http/outgoing-handler",
+    "wasi:http/types",
+    "wasi:io/error",
+    "wasi:io/poll",
+    "wasi:io/streams",
+    "wasi:random/insecure-seed",
+    "wasi:random/random"
+  ],
+  "linkedOperations": [
+    "parse#parse",
+    "probe#probe",
+    "wasi:cli/environment@0.2.12#get-environment",
+    "wasi:cli/exit@0.2.12#exit",
+    "wasi:cli/stderr@0.2.12#get-stderr",
+    "wasi:cli/stdin@0.2.12#get-stdin",
+    "wasi:cli/stdout@0.2.12#get-stdout",
+    "wasi:cli/terminal-stderr@0.2.12#get-terminal-stderr",
+    "wasi:cli/terminal-stdin@0.2.12#get-terminal-stdin",
+    "wasi:cli/terminal-stdout@0.2.12#get-terminal-stdout",
+    "wasi:clocks/monotonic-clock@0.2.12#now",
+    "wasi:clocks/monotonic-clock@0.2.12#subscribe-duration",
+    "wasi:clocks/monotonic-clock@0.2.12#subscribe-instant",
+    "wasi:clocks/wall-clock@0.2.12#now",
+    "wasi:filesystem/preopens@0.2.12#get-directories",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.append-via-stream",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.create-directory-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.get-flags",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.metadata-hash",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.metadata-hash-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.open-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.read-directory",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.read-via-stream",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.readlink-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.remove-directory-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.rename-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.set-size",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.stat",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.stat-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.sync",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.unlink-file-at",
+    "wasi:filesystem/types@0.2.12#[method]descriptor.write-via-stream",
+    "wasi:filesystem/types@0.2.12#[method]directory-entry-stream.read-directory-entry",
+    "wasi:http/outgoing-handler@0.2.12#handle",
+    "wasi:http/types@0.2.12#[constructor]fields",
+    "wasi:http/types@0.2.12#[constructor]outgoing-request",
+    "wasi:http/types@0.2.12#[constructor]request-options",
+    "wasi:http/types@0.2.12#[method]fields.append",
+    "wasi:http/types@0.2.12#[method]fields.entries",
+    "wasi:http/types@0.2.12#[method]future-incoming-response.get",
+    "wasi:http/types@0.2.12#[method]future-incoming-response.subscribe",
+    "wasi:http/types@0.2.12#[method]future-trailers.get",
+    "wasi:http/types@0.2.12#[method]future-trailers.subscribe",
+    "wasi:http/types@0.2.12#[method]incoming-body.stream",
+    "wasi:http/types@0.2.12#[method]incoming-response.consume",
+    "wasi:http/types@0.2.12#[method]incoming-response.headers",
+    "wasi:http/types@0.2.12#[method]incoming-response.status",
+    "wasi:http/types@0.2.12#[method]outgoing-body.write",
+    "wasi:http/types@0.2.12#[method]outgoing-request.body",
+    "wasi:http/types@0.2.12#[method]outgoing-request.set-authority",
+    "wasi:http/types@0.2.12#[method]outgoing-request.set-method",
+    "wasi:http/types@0.2.12#[method]outgoing-request.set-path-with-query",
+    "wasi:http/types@0.2.12#[method]outgoing-request.set-scheme",
+    "wasi:http/types@0.2.12#[method]request-options.set-between-bytes-timeout",
+    "wasi:http/types@0.2.12#[method]request-options.set-connect-timeout",
+    "wasi:http/types@0.2.12#[method]request-options.set-first-byte-timeout",
+    "wasi:http/types@0.2.12#[static]incoming-body.finish",
+    "wasi:http/types@0.2.12#[static]outgoing-body.finish",
+    "wasi:io/error@0.2.12#[method]error.to-debug-string",
+    "wasi:io/poll@0.2.12#[method]pollable.block",
+    "wasi:io/poll@0.2.12#[method]pollable.ready",
+    "wasi:io/poll@0.2.12#poll",
+    "wasi:io/streams@0.2.12#[method]input-stream.read",
+    "wasi:io/streams@0.2.12#[method]input-stream.subscribe",
+    "wasi:io/streams@0.2.12#[method]output-stream.blocking-flush",
+    "wasi:io/streams@0.2.12#[method]output-stream.check-write",
+    "wasi:io/streams@0.2.12#[method]output-stream.splice",
+    "wasi:io/streams@0.2.12#[method]output-stream.subscribe",
+    "wasi:io/streams@0.2.12#[method]output-stream.write",
+    "wasi:random/insecure-seed@0.2.12#insecure-seed",
+    "wasi:random/random@0.2.12#get-random-u64"
+  ],
+  "coreModules": [
+    {
+      "name": "xerces.core.wasm",
+      "bytes": 8836314,
+      "imports": [
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]incoming-body",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]outgoing-body",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]future-trailers",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]outgoing-request",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]future-incoming-response",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]fields",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:random/random@0.2.0",
+          "name": "get-random-u64",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[resource-drop]output-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[resource-drop]input-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/error@0.2.12",
+          "name": "[resource-drop]error",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]request-options",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.12",
+          "name": "[resource-drop]pollable",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[resource-drop]incoming-response",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]request-options.set-between-bytes-timeout",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]incoming-response.status",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]incoming-response.headers",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]incoming-response.consume",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]incoming-body.stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[static]incoming-body.finish",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]future-trailers.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]future-trailers.get",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-body.write",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[static]outgoing-body.finish",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]future-incoming-response.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]future-incoming-response.get",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]fields.append",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]fields.entries",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[constructor]outgoing-request",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-request.body",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-request.set-method",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-request.set-path-with-query",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-request.set-scheme",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]outgoing-request.set-authority",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[constructor]request-options",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]request-options.set-connect-timeout",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[method]request-options.set-first-byte-timeout",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/types@0.2.12",
+          "name": "[constructor]fields",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]input-stream.read",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]input-stream.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]output-stream.check-write",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]output-stream.write",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]output-stream.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.12",
+          "name": "[method]output-stream.splice",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/error@0.2.12",
+          "name": "[method]error.to-debug-string",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.12",
+          "name": "[method]pollable.ready",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.12",
+          "name": "poll",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:clocks/monotonic-clock@0.2.12",
+          "name": "subscribe-duration",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:random/random@0.2.12",
+          "name": "get-random-u64",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:http/outgoing-handler@0.2.12",
+          "name": "handle",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:random/insecure-seed@0.2.12",
+          "name": "insecure-seed",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/error@0.2.0",
+          "name": "[resource-drop]error",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.0",
+          "name": "[resource-drop]pollable",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[resource-drop]input-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[resource-drop]output-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/terminal-input@0.2.0",
+          "name": "[resource-drop]terminal-input",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/terminal-output@0.2.0",
+          "name": "[resource-drop]terminal-output",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[resource-drop]descriptor",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[resource-drop]directory-entry-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/environment@0.2.0",
+          "name": "get-environment",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/exit@0.2.0",
+          "name": "exit",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.0",
+          "name": "[method]pollable.block",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/poll@0.2.0",
+          "name": "poll",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]input-stream.read",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]input-stream.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]output-stream.check-write",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]output-stream.write",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]output-stream.blocking-flush",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:io/streams@0.2.0",
+          "name": "[method]output-stream.subscribe",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/stdin@0.2.0",
+          "name": "get-stdin",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/stdout@0.2.0",
+          "name": "get-stdout",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/stderr@0.2.0",
+          "name": "get-stderr",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/terminal-stdin@0.2.0",
+          "name": "get-terminal-stdin",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/terminal-stdout@0.2.0",
+          "name": "get-terminal-stdout",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:cli/terminal-stderr@0.2.0",
+          "name": "get-terminal-stderr",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:clocks/monotonic-clock@0.2.0",
+          "name": "now",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:clocks/monotonic-clock@0.2.0",
+          "name": "subscribe-instant",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:clocks/monotonic-clock@0.2.0",
+          "name": "subscribe-duration",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:clocks/wall-clock@0.2.0",
+          "name": "now",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.read-via-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.write-via-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.append-via-stream",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.get-flags",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.set-size",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.read-directory",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.sync",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.create-directory-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.stat",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.stat-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.open-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.readlink-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.remove-directory-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.rename-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.unlink-file-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.metadata-hash",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]descriptor.metadata-hash-at",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/types@0.2.0",
+          "name": "[method]directory-entry-stream.read-directory-entry",
+          "kind": "function"
+        },
+        {
+          "module": "wasi:filesystem/preopens@0.2.0",
+          "name": "get-directories",
+          "kind": "function"
+        }
+      ]
+    },
+    {
+      "name": "xerces.core2.wasm",
+      "bytes": 1089,
+      "imports": []
+    },
+    {
+      "name": "xerces.core3.wasm",
+      "bytes": 495,
+      "imports": [
+        {
+          "module": "",
+          "name": "0",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "1",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "2",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "3",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "4",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "5",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "6",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "7",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "8",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "9",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "10",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "11",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "12",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "13",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "14",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "15",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "16",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "17",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "18",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "19",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "20",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "21",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "22",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "23",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "24",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "25",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "26",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "27",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "28",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "29",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "30",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "31",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "32",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "33",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "34",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "35",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "36",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "37",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "38",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "39",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "40",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "41",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "42",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "43",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "44",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "45",
+          "kind": "function"
+        },
+        {
+          "module": "",
+          "name": "$imports",
+          "kind": "table"
+        }
+      ]
+    }
+  ]
+}

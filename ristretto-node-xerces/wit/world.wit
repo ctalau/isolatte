@@ -1,0 +1,6 @@
+package poc:xerces;
+
+world xerces {
+    export parse: func(path: string) -> result<string, string>;
+    export probe: func() -> result<string, string>;
+}
