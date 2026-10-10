@@ -1,0 +1,2 @@
+PASS: 10 checks (valid XML, namespaces, Unicode, CDATA, escaping, malformed XML, DTD rejection, invalid UTF-8, missing file)
+Node v24.19.0; generated JavaScript 2223087 bytes

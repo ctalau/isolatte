@@ -1,0 +1,42 @@
+TeaVM 0.16.0 / Xerces-J 2.12.2 initial build, before adaptations
+
+[ERROR] Method java.lang.SecurityManager.checkPackageAccess(Ljava/lang/String;)V was not found
+    at org.apache.xerces.impl.dv.ObjectFactory.findProviderClass(-1)
+    at org.apache.xerces.impl.dv.ObjectFactory.newInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.createDatatypeValidatorFactory(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.isolatte.ParseXml.main(ParseXml.java:12)
+[ERROR] Method java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; was not found
+    at org.apache.xerces.impl.dv.ObjectFactory.findProviderClass(-1)
+    at org.apache.xerces.impl.dv.ObjectFactory.newInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.createDatatypeValidatorFactory(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.isolatte.ParseXml.main(ParseXml.java:12)
+[ERROR] Method java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class; was not found
+    at org.apache.xerces.impl.dv.ObjectFactory.findProviderClass(-1)
+    at org.apache.xerces.impl.dv.ObjectFactory.newInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.impl.dv.DTDDVFactory.getInstance(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.createDatatypeValidatorFactory(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.<init>(-1)
+    at org.isolatte.ParseXml.main(ParseXml.java:12)
+[ERROR] Class org.apache.xerces.impl.io.MalformedByteSequenceException extends java.io.CharConversionException, which is missing in the classpath
+[ERROR] Class java.io.CharConversionException was not found
+    at org.apache.xerces.impl.io.MalformedByteSequenceException.<init>(-1)
+    at org.apache.xerces.impl.io.ASCIIReader.read(-1)
+    at org.apache.xerces.impl.XMLEntityScanner.load(-1)
+    at org.apache.xerces.impl.XMLEntityScanner.peekChar(-1)
+    at org.apache.xerces.impl.XMLDocumentScannerImpl$XMLDeclDispatcher.dispatch(-1)
+    at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.parse(-1)
+    at org.apache.xerces.parsers.NonValidatingConfiguration.parse(-1)
+    at org.apache.xerces.parsers.XMLParser.parse(-1)
+    at org.apache.xerces.parsers.AbstractSAXParser.parse(-1)
+    at org.isolatte.ParseXml.main(ParseXml.java:21)

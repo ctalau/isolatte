@@ -4,6 +4,8 @@ Each top-level folder is a self-contained experiment or research artifact. Do no
 
 ## Experiments
 
+- **teavm-node-xerces** — TeaVM AOT compilation of Xerces-J to JavaScript, with UTF-8 file parsing in Node and explicit compatibility adaptations
+
 - **bwrap-seccomp** — bubblewrap sandbox with a custom seccomp-BPF syscall filter
 - **nsjail-dita** — nsjail jail for DITA-OT processing with namespace isolation and capability drops
 - **smokescreen-proxy** — egress ACL enforcement via Stripe's Smokescreen proxy over a veth pair

