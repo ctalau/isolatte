@@ -20,4 +20,4 @@ PASS collection-denied
 PASS secondary-output-denied
 PASS locale-collation-unavailable
 PASS: 21 checks; 9 successful outputs compared with JVM Saxon
-Node v24.19.0; generated JavaScript 40041046 bytes
+Node v24.19.0; generated JavaScript 40057732 bytes
