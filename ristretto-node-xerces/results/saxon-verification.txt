@@ -1,0 +1,16 @@
+
+> verify:saxon
+> node verify-saxon.mjs
+
+PASS: Saxon HE transformed namespaced UTF-8 XML with XSLT 2.0 upper-case(), without subprocesses.
+PASS: rejected malformed.xml / sample.xsl.
+PASS: rejected sample.xml / invalid.xsl.
+PASS: rejected missing.xml / sample.xsl.
+PASS: rejected sample.xml / missing.xsl.
+PASS: rejected external-entity.xml / sample.xsl.
+PASS: rejected sample.xml / external-entity.xml.
+PASS: rejected sample.xml / include.xsl.
+PASS: rejected sample.xml / document.xsl.
+PASS: rejected sample.xml / text.xsl.
+PASS: component remained usable after errors; stylesheet directory escape denied.
+PASS: stylesheet input quota enforced before Java execution.

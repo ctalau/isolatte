@@ -17,6 +17,7 @@ impl Engine {
                     "/app/classes",
                     "/app/vendor/xercesImpl-2.12.2.jar",
                     "/app/vendor/xml-apis-1.4.01.jar",
+                    "/app/vendor/Saxon-HE-10.9.jar",
                 ]))
                 .interpreted(true)
                 .add_system_property("os.name", "Linux")
@@ -65,6 +66,14 @@ impl Guest for Engine {
 
     fn probe() -> Result<String, String> {
         Engine::invoke("ProbeSandbox", "probe()Ljava/lang/String;", &[])
+    }
+
+    fn transform(xml_path: String, xslt_path: String) -> Result<String, String> {
+        Engine::invoke(
+            "TransformXml",
+            "transform(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+            &[xml_path, xslt_path],
+        )
     }
 }
 

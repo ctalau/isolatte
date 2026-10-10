@@ -45,7 +45,10 @@ export async function createParser(inputDirectory = root, options = {}) {
   const tree = directory({
     jdk: directory({
       release: loadFile(resolve(root, 'vendor/runtime/release')),
-      lib: directory({ modules: loadFile(resolve(root, 'vendor/runtime/lib/modules')) }),
+      lib: directory({
+        modules: loadFile(resolve(root, 'vendor/runtime/lib/modules')),
+        'tzdb.dat': loadFile(resolve(root, 'vendor/runtime/lib/tzdb.dat')),
+      }),
       conf: loadDirectory(resolve(root, 'vendor/runtime/conf')),
     }),
     app: directory({
@@ -53,6 +56,7 @@ export async function createParser(inputDirectory = root, options = {}) {
       vendor: directory({
         'xercesImpl-2.12.2.jar': loadFile(resolve(root, 'vendor/xercesImpl-2.12.2.jar')),
         'xml-apis-1.4.01.jar': loadFile(resolve(root, 'vendor/xml-apis-1.4.01.jar')),
+        'Saxon-HE-10.9.jar': loadFile(resolve(root, 'vendor/Saxon-HE-10.9.jar')),
       }),
     }),
     input,
@@ -86,40 +90,61 @@ export async function createParser(inputDirectory = root, options = {}) {
       return instance;
     },
   );
-  return {
-    parseFile(file) {
-      const absolute = resolve(file);
-      if (dirname(absolute) !== inputDirectory) {
-        throw new Error('XML file must be inside the configured input directory.');
-      }
-      const name = basename(absolute);
-      for (const previous of Object.keys(input.dir)) delete input.dir[previous];
+  function inputPath(file) {
+    const absolute = resolve(file);
+    if (dirname(absolute) !== inputDirectory) {
+      throw new Error('XML/XSLT file must be inside the configured input directory.');
+    }
+    return absolute;
+  }
+  function clearInputs() {
+    for (const previous of Object.keys(input.dir)) delete input.dir[previous];
+  }
+  function copyInputFile(absolute, name) {
+    try {
+      // Linux reproduction: bind the containment check to the opened descriptor,
+      // reject symlinks, and limit the selected file before copying its bytes.
+      const descriptor = openSync(absolute, constants.O_RDONLY | constants.O_NOFOLLOW);
       try {
-        // Linux reproduction: bind the containment check to the opened descriptor,
-        // reject symlinks, and limit the selected file before copying its bytes.
-        const descriptor = openSync(absolute, constants.O_RDONLY | constants.O_NOFOLLOW);
-        try {
-          const actual = realpathSync(`/proc/self/fd/${descriptor}`);
-          if (dirname(actual) !== inputDirectory) throw new Error('Input file escaped the authorized directory');
-          const stat = fstatSync(descriptor);
-          if (!stat.isFile()) throw new Error('Input must be a regular file');
-          if (stat.size > maxInputBytes) throw new Error('Input quota exceeded');
-          // Bound allocation even if another process grows the file after fstat.
-          const buffer = Buffer.alloc(stat.size + 1);
-          let count = 0;
-          while (count < buffer.byteLength) {
-            const read = readSync(descriptor, buffer, count, buffer.byteLength - count, null);
-            if (read === 0) break;
-            count += read;
-          }
-          if (count > stat.size) throw new Error('Input changed while being read');
-          input.dir[name] = { source: new Uint8Array(buffer.subarray(0, count)) };
-        } finally { closeSync(descriptor); }
-      }
-      catch (error) {
-        if (error.code !== 'ENOENT') throw error;
-        delete input.dir[name]; // Let Java produce FileNotFoundException for a missing file.
-      }
+        const actual = realpathSync(`/proc/self/fd/${descriptor}`);
+        if (dirname(actual) !== inputDirectory) throw new Error('Input file escaped the authorized directory');
+        const stat = fstatSync(descriptor);
+        if (!stat.isFile()) throw new Error('Input must be a regular file');
+        if (stat.size > maxInputBytes) throw new Error('Input quota exceeded');
+        // Bound allocation even if another process grows the file after fstat.
+        const buffer = Buffer.alloc(stat.size + 1);
+        let count = 0;
+        while (count < buffer.byteLength) {
+          const read = readSync(descriptor, buffer, count, buffer.byteLength - count, null);
+          if (read === 0) break;
+          count += read;
+        }
+        if (count > stat.size) throw new Error('Input changed while being read');
+        input.dir[name] = { source: new Uint8Array(buffer.subarray(0, count)) };
+      } finally { closeSync(descriptor); }
+    }
+    catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+      delete input.dir[name]; // Let Java produce FileNotFoundException for a missing file.
+    }
+  }
+  return {
+    transformFiles(xmlFile, xsltFile) {
+      const xml = inputPath(xmlFile);
+      const xslt = inputPath(xsltFile);
+      clearInputs();
+      // Fixed distinct guest names also allow transforming a file against itself.
+      copyInputFile(xml, 'document.xml');
+      copyInputFile(xslt, 'stylesheet.xsl');
+      outputBytes = 0;
+      audit.setPhase(options.phase ?? 'transform');
+      return component.transform('/input/document.xml', '/input/stylesheet.xsl');
+    },
+    parseFile(file) {
+      const absolute = inputPath(file);
+      const name = basename(absolute);
+      clearInputs();
+      copyInputFile(absolute, name);
       // Java reads the Node-supplied file through FileInputStream/WASI.
       outputBytes = 0;
       audit.setPhase(options.phase ?? 'parse');

@@ -1,0 +1,8 @@
+{
+  "host": "Node v24.19.0",
+  "execution": "Saxon HE 10.9 in Ristretto WASM inside Node; no Java subprocess",
+  "xml": "/workspace/isolatte/ristretto-node-xerces/sample.xml",
+  "xslt": "/workspace/isolatte/ristretto-node-xerces/sample.xsl",
+  "output": "b1: RISTRETTO & XERCES — CAFÉ\nb2: NODE.JS JVM\n",
+  "elapsedMs": 15261
+}

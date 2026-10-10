@@ -24,6 +24,8 @@ download 'https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.12.2/xercesIm
   vendor/xercesImpl-2.12.2.jar '6fc991829af1708d15aea50c66f0beadcd2cfeb6968e0b2f55c1b0909883fe16'
 download 'https://repo.maven.apache.org/maven2/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar' \
   vendor/xml-apis-1.4.01.jar 'a840968176645684bb01aed376e067ab39614885f9eee44abe35a5f20ebe7fad'
+download 'https://repo.maven.apache.org/maven2/net/sf/saxon/Saxon-HE/10.9/Saxon-HE-10.9.jar' \
+  vendor/Saxon-HE-10.9.jar '491d8edf4ec811d15c2b2417b007218b9b938f15e4dfbad004025beb4e70e960'
 if ! test -x vendor/jdk21/bin/javac; then
   mkdir -p vendor/jdk21
   tar -xzf vendor/jdk21.tar.gz --strip-components=1 -C vendor/jdk21
