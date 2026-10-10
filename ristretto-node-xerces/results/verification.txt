@@ -1,0 +1,49 @@
+
+> verify
+> node verify.mjs
+
+PASS: external Xerces-J parsed a real UTF-8 XML file, namespaces, and entities.
+org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 18; The element type "book" must be terminated by the matching end-tag "</book>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at ParseXml.parse(ParseXml.java:24)
+PASS: malformed XML returned a Xerces SAXParseException to Node.
+java.io.FileNotFoundException: /input/missing.xml (No such file or directory)
+	at java.base@21.0.12.1/java.io.FileInputStream.open(Unknown Source)
+	at java.base@21.0.12.1/java.io.FileInputStream.<init>(Unknown Source)
+	at java.base@21.0.12.1/java.io.FileInputStream.<init>(Unknown Source)
+	at ParseXml.parse(ParseXml.java:23)
+PASS: missing XML returned FileNotFoundException to Node.
+PASS: component remained usable after errors; all subprocess APIs were disabled.
+PASS: Java I/O and NIO writes, host files/environment, subprocesses and native library loading were denied.
+LIMIT: Java can read mounted runtime files; class loading and Java I/O share WASI descriptors.
+PASS: HTTP, all twelve filesystem mutators, and input directory escape denied.
+org.xml.sax.SAXParseException; lineNumber: 2; columnNumber: 10; DOCTYPE is disallowed when the feature "http://apache.org/xml/features/disallow-doctype-decl" set to true.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at ParseXml.parse(ParseXml.java:24)
+PASS: XML DOCTYPE/external entity expansion denied.
+PASS: omitting a linked HTTP interface fails instantiation even though parsing never calls HTTP.
+PASS: input quota enforced before executing Java.
+PASS: denying all filesystem preopens prevents JVM boot, confirming the current class loader dependency.

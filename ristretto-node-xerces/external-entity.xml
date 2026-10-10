@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalog [<!ENTITY leaked SYSTEM "file:///jdk/release">]>
+<catalog>&leaked;</catalog>

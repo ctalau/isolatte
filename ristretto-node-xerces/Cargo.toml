@@ -1,0 +1,16 @@
+[package]
+name = "ristretto_node_xerces"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+ristretto_vm = { path = "vendor/ristretto/ristretto_vm", default-features = false }
+tokio = { version = "1.53.2", default-features = false, features = ["rt", "time", "sync"] }
+wit-bindgen = { version = "0.57.1", default-features = false, features = ["macros", "realloc"] }
+
+[profile.release]
+opt-level = 2
+panic = "abort"
