@@ -1,5 +1,7 @@
 # Sandbox findings
 
+The measurements below describe the original Xerces workload. The Saxon extension adds its JAR and JDK `lib/tzdb.dat` to the mounted runtime; those files and its memory/time costs are not included in the historical measurements. See [README.md](README.md#saxon-he-proof-of-concept) and [Saxon evidence](results/saxon-poc.json).
+
 These findings apply to the pinned component and Node host. Source inspection and negative probes provide evidence, not a complete security audit.
 
 ## WASM, JS and native code
@@ -80,9 +82,9 @@ Other linked interfaces include stdin/stdout/stderr, terminal queries, exit, I/O
 
 `host-policy.mjs` denies twelve descriptor mutation methods and rejects create/truncate/write/mutate-directory in `openAt`. It reports read-only flags. The stock browser shim ignores some descriptor rights and has stub mutators; flags alone do not establish enforcement.
 
-`host.mjs` supplies no ambient environment/disk fallback. It copies one selected XML and removes previous inputs. Input must be directly inside the configured directory, opened with `O_NOFOLLOW`, and checked by its opened `/proc/self/fd` target. Allocation is bounded before Java executes, including concurrent growth. Configuring the directory is a trusted host action.
+`host.mjs` supplies no ambient environment/disk fallback. It copies one selected XML (or the selected XML and XSLT for transformation) and removes previous inputs. Input must be directly inside the configured directory, opened with `O_NOFOLLOW`, and checked by its opened `/proc/self/fd` target. Allocation is bounded before Java executes, including concurrent growth. Configuring the directory is a trusted host action.
 
-Defaults: 8 MiB selected XML, 1 MiB combined stdout/stderr per call. All guest writes are denied, including `/tmp`. DOCTYPEs/external entities are disabled to stop XML requesting more files/URLs. Return JSON, DOM and Java heap are **not** bounded by the output budget. Small XML can still exhaust CPU/memory. Those limits are not implemented. Linked random-byte and other handlers also need request-size checks: guest requests can exhaust host allocations independently of WASM heap size.
+Defaults: 8 MiB per selected XML/XSLT file, 1 MiB combined stdout/stderr per call. All guest writes are denied, including `/tmp`. DOCTYPEs/external entities are disabled to stop XML requesting more files/URLs. Return JSON, DOM and Java heap are **not** bounded by the output budget. Small XML can still exhaust CPU/memory. Those limits are not implemented. Linked random-byte and other handlers also need request-size checks: guest requests can exhaust host allocations independently of WASM heap size.
 
 Verification covers valid/malformed/missing XML, reuse after errors, prohibited DOCTYPE, input quota/directory escape, Java I/O/NIO writes, hidden host files/environment, subprocess/library failures, direct HTTP denial, every mutation stub, omitted-interface linking failure and no-preopen bootstrap failure. The library probe uses a nonexistent path: that failure alone is not an audit. The WASM target and absence of a host library bridge supply the architectural boundary. General escape/resource auditing remains open.
 

@@ -5,6 +5,8 @@
   "scripts": {
     "build": "node build.mjs",
     "start": "node run.mjs sample.xml",
+    "transform": "node transform.mjs sample.xml sample.xsl",
+    "verify:saxon": "node verify-saxon.mjs",
     "verify": "node verify.mjs",
     "inspect": "node inspect.mjs"
   },

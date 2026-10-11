@@ -3,4 +3,5 @@ package poc:xerces;
 world xerces {
     export parse: func(path: string) -> result<string, string>;
     export probe: func() -> result<string, string>;
+    export transform: func(xml-path: string, xslt-path: string) -> result<string, string>;
 }

@@ -11,8 +11,8 @@ const run = (command, args, options = {}) => execFileSync(command, args, {
 mkdirSync(join(root, 'classes'), { recursive: true });
 run(join(root, 'vendor/jdk21/bin/javac'), [
   '--release', '8', '-Xlint:-options', '-encoding', 'UTF-8',
-  '-cp', 'vendor/xercesImpl-2.12.2.jar:vendor/xml-apis-1.4.01.jar',
-  '-d', 'classes', 'java/ParseXml.java', 'java/ProbeSandbox.java',
+  '-cp', 'vendor/xercesImpl-2.12.2.jar:vendor/xml-apis-1.4.01.jar:vendor/Saxon-HE-10.9.jar',
+  '-d', 'classes', 'java/ParseXml.java', 'java/ProbeSandbox.java', 'java/TransformXml.java',
 ]);
 if (!process.argv.includes('--skip-rust')) {
   run('cargo', ['build', '--locked', '--target', 'wasm32-wasip2', '--release'], {
