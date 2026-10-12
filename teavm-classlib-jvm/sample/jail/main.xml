@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inside the jail</title>
+  <xi:include href="chapters/chapter1.xml"/>
+  <xi:include href="chapters/notes.txt" parse="text"/>
+</book>

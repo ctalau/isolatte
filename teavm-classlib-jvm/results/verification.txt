@@ -1,0 +1,18 @@
+PASS  java.io.File is TeaVM's class
+PASS  "/" lists the jail folder
+PASS  ".." cannot climb above the jail root
+PASS  file inside the jail is readable
+PASS  /etc/passwd is not visible
+PASS  File.toPath() refuses to map to host NIO
+PASS  known gap: OpenJDK NIO is not jailed
+PASS  known gap: processes can be started
+PASS  XInclude inside the jail (XML + text)
+PASS  XInclude escape via escape-dotdot fails
+PASS  control: escape-dotdot reaches the outside file on stock OpenJDK
+PASS  XInclude escape via escape-absolute fails
+PASS  control: escape-absolute reaches the outside file on stock OpenJDK
+PASS  XInclude escape via escape-symlink fails
+PASS  control: escape-symlink reaches the outside file on stock OpenJDK
+PASS  blocked XInclude uses xi:fallback
+PASS  control: main.xml identical on stock OpenJDK
+0 failure(s)
