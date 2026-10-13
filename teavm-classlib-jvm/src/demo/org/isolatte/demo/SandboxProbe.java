@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 
 /**
  * Tries the usual ways out of a Java program and prints what each one did. Plain application code;
- * run it on stock HotSpot and on the interpreter to compare.
+ * run it on stock HotSpot and on miniJVM with TeaVM's class library to compare.
  */
 public final class SandboxProbe {
     public static void main(String[] args) {
@@ -52,6 +52,10 @@ public final class SandboxProbe {
         check("class path resource ../../etc/passwd", () -> {
             var in = SandboxProbe.class.getClassLoader().getResourceAsStream("../../../../../../../../etc/passwd");
             return in == null ? null : in.readAllBytes().length + " bytes";
+        });
+        check("miniJVM file native via own class", () -> {
+            long handle = org.mini.fs.InnerFile.openFile("/etc/passwd\0".getBytes(), "rb\0".getBytes());
+            return handle != 0 ? "opened host /etc/passwd" : "no handle";
         });
         check("Class.forName(\"sun.misc.Unsafe\")", () -> Class.forName("sun.misc.Unsafe"));
     }

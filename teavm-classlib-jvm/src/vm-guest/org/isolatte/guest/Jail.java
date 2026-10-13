@@ -1,7 +1,7 @@
 package org.isolatte.guest;
 
 /**
- * Host file access for the guest, implemented by the VM ({@code org.isolatte.vm.Jail}). Paths are
+ * Host file access for the guest, implemented by miniJVM ({@code minijvm/jni_teavm.c}). Paths are
  * virtual: the VM confines them to the jail folder.
  */
 final class Jail {

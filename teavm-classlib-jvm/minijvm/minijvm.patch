@@ -1,0 +1,139 @@
+diff --git a/minijvm/c/jvm/class.c b/minijvm/c/jvm/class.c
+index 90f4e14..e69e25b 100644
+--- a/minijvm/c/jvm/class.c
++++ b/minijvm/c/jvm/class.c
+@@ -1285,19 +1285,24 @@ MethodInfo *find_methodInfo_by_name(Utf8String *clsName, Utf8String *methodName,
+         other = getSuperClass(other);
+     }
+ 
+-    other = start;
+-    while (mi == NULL && other) {
+-        s32 i;
+-        for (i = 0; i < other->interfacePool.clasz_used; i++) {
+-            ConstantClassRef *ccr = (other->interfacePool.clasz + i);
+-            Utf8String *icl_name = class_get_constant_utf8(other, ccr->stringIndex)->utfstr;
+-            JClass *icl = classes_load_get_without_resolve(jloader, icl_name, runtime);
+-            mi = find_method_in_interface_tree(icl, methodName, methodType, runtime, 1);
+-            if (mi != NULL) {
+-                break;
++    /* isolatte: default methods first; then, per JVMS 5.4.3.3, an abstract method of a
++     * superinterface (e.g. AbstractCollection.size() declared only in Collection). */
++    s32 requireCode;
++    for (requireCode = 1; requireCode >= 0 && mi == NULL; requireCode--) {
++        other = start;
++        while (mi == NULL && other) {
++            s32 i;
++            for (i = 0; i < other->interfacePool.clasz_used; i++) {
++                ConstantClassRef *ccr = (other->interfacePool.clasz + i);
++                Utf8String *icl_name = class_get_constant_utf8(other, ccr->stringIndex)->utfstr;
++                JClass *icl = classes_load_get_without_resolve(jloader, icl_name, runtime);
++                mi = find_method_in_interface_tree(icl, methodName, methodType, runtime, requireCode);
++                if (mi != NULL) {
++                    break;
++                }
+             }
++            other = getSuperClass(other);
+         }
+-        other = getSuperClass(other);
+     }
+     return mi;
+ }
+diff --git a/minijvm/c/jvm/global.c b/minijvm/c/jvm/global.c
+index af0ff94..a1e6f4d 100644
+--- a/minijvm/c/jvm/global.c
++++ b/minijvm/c/jvm/global.c
+@@ -62,8 +62,9 @@ const c8 STR_CLASS_JAVA_IO_FILENOTFOUND[] = "java.io.FileNotFoundException";
+ const c8 STR_CLASS_JAVA_LANG_ARITHMETIC[] = "java.lang.ArithmeticException";
+ const c8 STR_CLASS_JAVA_LANG_CLASSNOTFOUND[] = "java.lang.ClassNotFoundException";
+ const c8 STR_CLASS_JAVA_LANG_NULLPOINTER[] = "java.lang.NullPointerException";
+-const c8 STR_CLASS_JAVA_LANG_NOSUCHMETHOD[] = "java.lang.NoSuchMethodException";
+-const c8 STR_CLASS_JAVA_LANG_NOSUCHFIELD[] = "java.lang.NoSuchFieldException";
++/* isolatte: these codes are raised by linkage (JVMS: NoSuchMethodError/NoSuchFieldError) */
++const c8 STR_CLASS_JAVA_LANG_NOSUCHMETHOD[] = "java.lang.NoSuchMethodError";
++const c8 STR_CLASS_JAVA_LANG_NOSUCHFIELD[] = "java.lang.NoSuchFieldError";
+ const c8 STR_CLASS_JAVA_LANG_ILLEGALARGUMENT[] = "java.lang.IllegalArgumentException";
+ const c8 STR_CLASS_JAVA_LANG_CLASSCAST[] = "java.lang.ClassCastException";
+ const c8 STR_CLASS_JAVA_LANG_ARRAYINDEXOUTOFBOUNDS[] = "java.lang.ArrayIndexOutOfBoundsException";
+diff --git a/minijvm/c/jvm/interpreter.c b/minijvm/c/jvm/interpreter.c
+index 919fc9a..ea2eccc 100755
+--- a/minijvm/c/jvm/interpreter.c
++++ b/minijvm/c/jvm/interpreter.c
+@@ -3271,6 +3271,12 @@ s32 execute_method_impl(MethodInfo *method, Runtime *pruntime) {
+                             r->ins = NULL;
+                             if (r->other) {
+                                 r->ins = instance_create(r, r->other);
++                            } else {
++                                /* isolatte: a missing class is NoClassDefFoundError, not OutOfMemoryError */
++                                Utf8String *missing = class_get_constant_classref(clazz, r->idx)->name;
++                                push_ref(stack, (__refer) exception_create_str(JVM_ERROR_NOCLASSDEFFOUND, r,
++                                                                               missing ? utf8_cstr(missing) : "?"));
++                                goto label_exception_handle;
+                             }
+                             sp = stack->sp;
+ 
+@@ -4278,6 +4284,8 @@ s32 execute_method_impl(MethodInfo *method, Runtime *pruntime) {
+             // find and cache the native method
+             java_native_method *native = find_native_method(r->jvm, utf8_cstr(clazz->name), utf8_cstr(method->name), utf8_cstr(method->descriptor));
+             if (!native) {
++                /* isolatte: name natives that are missing or not on the allowlist */
++                jvm_printf("[native] not bound: %s.%s%s\n", utf8_cstr(clazz->name), utf8_cstr(method->name), utf8_cstr(method->descriptor));
+                 _nosuchmethod_check_exception(utf8_cstr(method->name), stack, r);
+                 ret = RUNTIME_STATUS_EXCEPTION;
+             } else {
+diff --git a/minijvm/c/jvm/jni_std.c b/minijvm/c/jvm/jni_std.c
+index 5c9fecc..6ec3959 100644
+--- a/minijvm/c/jvm/jni_std.c
++++ b/minijvm/c/jvm/jni_std.c
+@@ -1621,7 +1621,8 @@ java_native_method *find_native_method(MiniJVM *jvm, c8 const *cls_name, c8 cons
+         for (i = 0; i < lib->methods_count; i++)
+             if (strcmp(cls_name, (methods + i)->clzname) == 0 &&
+                 strcmp(method_name, (methods + i)->methodname) == 0 &&
+-                strcmp(method_type, (methods + i)->methodtype) == 0)
++                strcmp(method_type, (methods + i)->methodtype) == 0 &&
++                isolatte_native_allowed(methods + i)) /* isolatte: native allowlist */
+                 return (methods + i);
+     }
+     return 0;
+diff --git a/minijvm/c/jvm/jvm.c b/minijvm/c/jvm/jvm.c
+index 28c0fbb..d2f1f87 100644
+--- a/minijvm/c/jvm/jvm.c
++++ b/minijvm/c/jvm/jvm.c
+@@ -990,6 +990,7 @@ s32 jvm_init(MiniJVM *jvm, c8 *p_bootclasspath, c8 *p_classpath) {
+     reg_std_native_lib(jvm);
+     reg_net_native_lib(jvm);
+     reg_reflect_native_lib(jvm);
++    reg_teavm_native_lib(jvm); /* isolatte: TeaVM class library backend + jail */
+ 
+     //创建jstring 相关容器
+     jvm->table_jstring_const = hashtable_create(UNICODE_STR_HASH_FUNC, UNICODE_STR_EQUALS_FUNC);
+diff --git a/minijvm/c/jvm/jvm.h b/minijvm/c/jvm/jvm.h
+index a8abf5a..017a8a3 100644
+--- a/minijvm/c/jvm/jvm.h
++++ b/minijvm/c/jvm/jvm.h
+@@ -2037,6 +2037,11 @@ s32 native_lib_destroy(MiniJVM *jvm);
+ 
+ void reg_std_native_lib(MiniJVM *jvm);
+ 
++/* isolatte: TeaVM class library natives (jni_teavm.c) and the native allowlist. */
++void reg_teavm_native_lib(MiniJVM *jvm);
++
++s32 isolatte_native_allowed(java_native_method *m);
++
+ void reg_net_native_lib(MiniJVM *jvm);
+ 
+ void reg_reflect_native_lib(MiniJVM *jvm);
+diff --git a/minijvm/c/jvm/os_posix.c b/minijvm/c/jvm/os_posix.c
+index 22cb065..a5040fd 100644
+--- a/minijvm/c/jvm/os_posix.c
++++ b/minijvm/c/jvm/os_posix.c
+@@ -297,8 +297,9 @@ s32 conv_platform_encoding_2_utf8(Utf8String *dst, const c8 *src) {
+     return src_len;
+ }
+ 
++#include <limits.h> /* realpath(3) writes up to PATH_MAX (4096 on Linux) bytes */
+ #ifndef PATH_MAX
+-#define PATH_MAX 1024
++#define PATH_MAX 4096
+ #endif
+ 
+ void os_get_uuid(MiniJVM *jvm, Utf8String *buf) {

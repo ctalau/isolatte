@@ -6,7 +6,7 @@ This experiment runs a real OpenJDK 21 HotSpot JVM with **TeaVM's `java.io` impl
 
 See [verification](results/verification.txt), [run output](results/run.txt), the [static link check](results/link-check.txt) and the [per-package boot probe](results/package-probe.md).
 
-**Second variant: the whole class library.** A small bytecode interpreter written for this experiment runs the same demo with *all* of TeaVM's class library as the JRE, `java.lang` included, and the same jail. The results match, and NIO, processes and sockets are closed too. It is about 15× slower. See [The whole class library, on a small JVM of our own](#the-whole-class-library-on-a-small-jvm-of-our-own).
+**Second variant: the whole class library.** The open-source [miniJVM](https://github.com/digitalgust/miniJVM) runs the same demo with *all* of TeaVM's class library as its JRE, `java.lang` included, and the same jail. That takes a 37-line patch, 59 C natives and a build step that adapts TeaVM's classes to miniJVM. The results match, and NIO, processes and sockets are closed too. See [The whole class library, on miniJVM](#the-whole-class-library-on-minijvm).
 
 ## Run
 
@@ -96,79 +96,75 @@ This is a feasibility port, not a sandbox.
 - `FileInputStream/FileOutputStream.getChannel()` throw `UnsupportedOperationException`. `FileNotFoundException`s carry no message (TeaVM's), hence Xerces' "Reason: null".
 - `-Xshare:off` is passed explicitly: the CDS archive holds OpenJDK's classes (`--patch-module` disables it anyway). Only tested on Linux x86-64 with one JDK build. The JNI symbol names are JDK-21-specific.
 
-## The whole class library, on a small JVM of our own
+## The whole class library, on miniJVM
 
-HotSpot will not accept TeaVM's `java.lang`. So the second variant ([`org.isolatte.vm`](src/main/java/org/isolatte/vm)) is a JVM that does not care: a bytecode interpreter of about 3,000 lines of Java. It runs as an ordinary program on HotSpot but has **no class library of its own**. Every guest class comes from TeaVM 0.16.0, renamed by TeaVM's rules: `java.lang.Object`, `String`, `Class`, `Throwable`, `System`, `java.util`, `java.io`, `java.nio.file`, `java.net`, `java.text`, … xml-apis, Xerces and the demo load on top. No OpenJDK class is on the guest class path.
+HotSpot will not accept TeaVM's `java.lang`. So the second variant runs on an open-source JVM whose class library *can* be swapped: [miniJVM](https://github.com/digitalgust/miniJVM) (MIT, C, about 40,000 lines with interpreter, JIT, GC and JDWP). It ships its own small class library, and its C code expects a short, explicit list of fields and methods from it. This variant gives miniJVM **TeaVM 0.16.0's class library as its entire JRE**: `java.lang.Object`, `String`, `Class`, `Throwable`, `System`, `java.util`, `java.io`, `java.nio.file`, `java.net`, `java.text`, … xml-apis, Xerces and the demo load on top. No miniJVM or OpenJDK class library class is on the boot class path.
 
-**Result:** it works. The same `XIncludeDemo` gives the same outcomes as the HotSpot variant: the include inside the jail works, the three escapes fail, and `xi:fallback` is used. Xerces needed no changes. The jail now also covers NIO, because TeaVM's `java.nio.file` is built on the same `VirtualFileSystem`. A [sandbox probe](src/demo/org/isolatte/demo/SandboxProbe.java) that tries the usual ways out is blocked on every one, while stock HotSpot allows them. [`vm-verify.sh`](vm-verify.sh) asserts 34 outcomes ([verification](results/vm-verification.txt), [run output](results/vm-run.txt)). The cost is speed: the five documents take about 3.3–4.1 s against about 0.25 s for the HotSpot variant (≈21 M bytecodes, 403 classes).
-
-### Why our own VM
-
-No alternative JVM is packaged here: no JamVM, Avian, Cacao or GCJ. These VMs also hard-wire their own core-class layouts: JamVM through GNU Classpath's `VM*` classes, Avian through `types.def`. Porting either to TeaVM's `java.lang` would mean rewriting that coupling in C or C++.
-
-TeaVM's library, by contrast, is written to leave storage to the backend, so a VM that owns the object layout fits well. `TString` has no character field, only natives (`charactersGet`, `initWithCharArray`, …). `Class` is a wrapper over a `ClassInfo` whose methods are all `@Intrinsified` natives. Unicode and CLDR tables come from natives filled in at compile time. Each of those is now one Java lambda in the VM.
+**Result:** it works. The same `XIncludeDemo` gives the same outcomes as the HotSpot variant: the include inside the jail works, the three escapes fail, and `xi:fallback` is used. Xerces needed no changes. The jail now also covers NIO, because TeaVM's `java.nio.file` is built on the same `VirtualFileSystem`. A [sandbox probe](src/demo/org/isolatte/demo/SandboxProbe.java) that tries the usual ways out is blocked on every one, while stock HotSpot allows them. [`minijvm-verify.sh`](minijvm-verify.sh) asserts 34 outcomes ([verification](results/minijvm-verification.txt), [run output](results/minijvm-run.txt)). The five documents take about 1.6 s including VM startup, against about 0.25 s for the HotSpot variant.
 
 ### Run
 
+Requirements in addition to the above: a C compiler, CMake, git, and network access to GitHub on the first build.
+
 ```sh
 cd teavm-classlib-jvm
-./vm-build.sh         # VM (target/classes), guest support (work/vm-guest), gap classes, demo
-./vm-verify.sh        # XInclude demo + sandbox probe + smoke test, 34 checks
-./vm-run.sh --jail work/sample/jail --cp work/demo org.isolatte.demo.XIncludeDemo file:///main.xml
+./minijvm-build.sh    # fetch miniJVM @87c9808, patch, build; build the TeaVM boot jar
+./minijvm-verify.sh   # XInclude demo + sandbox probe + smoke test, 34 checks
+./minijvm-run.sh --jail work/sample/jail org.isolatte.demo.XIncludeDemo file:///main.xml
 ```
 
-`VM_STATS=1` prints class and bytecode counts and every missing class or native. `VM_TRACE=1` logs unimplemented natives, failed `<clinit>`s and host exceptions turned into guest ones.
+`minijvm-run.sh` starts `org.isolatte.guest.Boot`, which installs the jailed file system and a `file:` URL handler and then calls the main class. The jail folder is passed to the VM as an absolute path in `ISOLATTE_JAIL`: miniJVM changes into its own directory at startup.
 
-### How it works
+### What it took
 
 | Part | What | Code |
 | --- | --- | --- |
-| Loader | For `java/x/Name` it reads `org/teavm/classlib/java/x/TName.class` and nothing else. It applies TeaVM's `ClassRefsRenamer` rules: rename every reference, `@Superclass("")` (`Object` has no parent), `@Rename` (it wins over a same-descriptor method, e.g. `TObject.equals0` over the bridge `equals`), `@Remove`. | [`Loader`](src/main/java/org/isolatte/vm/Loader.java) |
-| Interpreter | All opcodes except `jsr`/`ret`. Values are boxed and `long`/`double` take one stack entry, so `dup2`/`pop2` decide by the value's type. Guest objects hold a field array plus a hidden host slot. Guest primitive arrays are host arrays. Host NPE, AIOOBE, `ArithmeticException` and `NegativeArraySizeException` become guest exceptions. Single-threaded, so monitors are no-ops. | [`VM`](src/main/java/org/isolatte/vm/VM.java) |
-| `invokedynamic` | Lambdas (`LambdaMetafactory`, `altMetafactory`) become VM-made classes. String concatenation formats every value with the guest's own `String.valueOf`, so the text is TeaVM's. | [`Dynamic`](src/main/java/org/isolatte/vm/Dynamic.java) |
-| Intrinsics | About 90 natives that TeaVM's compiler would generate, implemented in the VM: `String` storage, `ClassInfo`/`StringInfo`, `Object.identity`/`clone`, `System.arraycopy`, console output, `Math`/`Double`/`Float`. Also `Throwable.fillInStackTrace`, which builds TeaVM `StackTraceElement`s from the VM's frames, with TeaVM's source file names. | [`Intrinsics`](src/main/java/org/isolatte/vm/Intrinsics.java) |
-| Metadata | Unicode case and digit tables, and CLDR (number and date formats): the VM reads the registrations from TeaVM's own `JCLPlugin.installMetadata` and runs TeaVM's host-side generators on first use. That is what TeaVM's compiler does at build time. The results become guest `StringResource`/`ResourceMap`/… objects. | [`Metadata`](src/main/java/org/isolatte/vm/Metadata.java) |
-| Jail | Five natives (`attributes`, `list`, `length`, `lastModified`, `read`) take *virtual* paths. The VM normalizes them lexically, resolves them under the folder and canonicalizes them. A real path outside the folder does not exist. Read-only. | [`Jail`](src/main/java/org/isolatte/vm/Jail.java) |
-| Guest support | Guest Java code compiled against OpenJDK's API but run against TeaVM's: a `VirtualFileSystem` over the jail natives, a `file:` URL handler on `java.io` (TeaVM's `URL` has none), and the `ResourceBundle` table. | [`src/vm-guest`](src/vm-guest/org/isolatte/guest) |
+| miniJVM patch | 37 changed lines in 7 files. It registers the TeaVM native table, routes native binding through an allowlist, and fixes four miniJVM issues this exposed (listed below). | [`minijvm.patch`](minijvm/minijvm.patch) |
+| TeaVM natives (C) | 59 natives. `ClassInfo` as `Class.ci$*` (modifiers, names, component and array types, supertypes, enum constants, reflective arrays, allocation), `Object.getObjectClassInfo`, number and math helpers, console output, class path resources, `Boot.callMain`, and the 5 jail natives. | [`jni_teavm.c`](minijvm/jni_teavm.c) |
+| Renaming | TeaVM's compiler rules (`T`-prefix substitution, `@Superclass`, `@Rename`, `@Remove`), plus one mapping for miniJVM: TeaVM's `ClassInfo`/`StringInfo` become `Class`/`String`. miniJVM creates the `Class` objects itself, so a `Class` is its own `ClassInfo`. | [`TeaVMRenamer`](src/main/java/org/isolatte/minijvm/TeaVMRenamer.java) |
+| Mixins (Java) | The fields miniJVM's C code reads (`String.value/count/offset/hash`, `Class.classHandle`, `Thread.stackFrame`, `StackTraceElement.parent`, `Reference.target`). TeaVM's `String` storage natives get bodies over those fields. TeaVM methods that miniJVM implements become miniJVM natives (`clone`, `wait`/`notify`, `arraycopy`, `identityHashCode`, `nanoTime`, `random`). `fillInStackTrace` reads miniJVM's frames. Also `forName`, `ClassLoader.loadClass`/`getResourceAsStream`, console output, and `getSecurityManager()` returning `null`. | [`src/minijvm-mixins`](src/minijvm-mixins) |
+| `invokedynamic` | Removed at build time, as TeaVM's compiler does (TeaVM's `LambdaMetafactory` is a compiler intrinsic, while miniJVM runs bootstrap methods as Java). Lambdas become classes (354 of them), and string concatenation becomes `StringBuilder` chains. | [`IndyDesugar`](src/main/java/org/isolatte/minijvm/IndyDesugar.java) |
+| Metadata | Unicode and CLDR tables: TeaVM's own generators (registrations from `JCLPlugin`) run at build time, and each metadata native becomes a method that decodes the serialized result. That is what TeaVM's compiler does too. | [`MetadataBaker`](src/main/java/org/isolatte/minijvm/MetadataBaker.java) |
+| Assembly | Closure from the application classes and miniJVM's required classes (3,095 classes, 3.7 MB jar). Also the `System.out` field-to-method rewrite, `int.class` in TeaVM's box classes, nestmate-era private calls rewritten to `invokespecial`, compile-time metaprogramming stripped, and class version 50 without stack maps. | [`RuntimeBuilder`](src/main/java/org/isolatte/minijvm/RuntimeBuilder.java) |
+| Guest support | A `VirtualFileSystem` over the jail natives, a `file:` URL handler on `java.io`, the `ResourceBundle` table, and metadata decoding. One Java SE class TeaVM lacks: `CharConversionException`. | [`src/vm-guest`](src/vm-guest/org/isolatte/guest), [`src/vm-gaps`](src/vm-gaps) |
 
-### What TeaVM's library needed from the VM, besides natives
+### miniJVM issues found on the way (all in the patch)
 
-| Gap | Why | Where |
-| --- | --- | --- |
-| `getstatic System.out/err/in` | TeaVM has `out()` methods; its compiler rewrites the field reads. The VM does the same. | `VM.systemStream` |
-| `Class.forName` | TeaVM looks names up in the closed set of classes it compiled. Here classes load lazily from the guest class path. | `Intrinsics.classInfo` |
-| `ClassLoader.loadClass` (added) and `getResourceAsStream` | TeaVM's `ClassLoader` has no `loadClass`. Its resources are embedded at compile time. Here they come from the guest class path, read-only. Xerces calls both. | `Intrinsics.patches` |
-| `ResourceBundleImpl.createBundleMap` | Compile-time metaprogramming (`@Meta`) that builds the bundle table from `META-INF/services`. Replaced by a lazy guest map that finds a bundle class or `.properties`. | [`BundleMap`](src/vm-guest/org/isolatte/guest/BundleMap.java) |
-| `System.getSecurityManager()` returns `null` | TeaVM returns a new, empty `SecurityManager`, and Xerces then calls `checkPackageAccess`, which TeaVM's lacks. Java SE returns `null` when none is installed. | `Intrinsics.patches` |
-| `java.io.CharConversionException` | Missing from TeaVM's `java.io`. Xerces' `MalformedByteSequenceException` extends it. This is the only Java SE class added, compiled from 13 lines of source. | [`src/vm-gaps`](src/vm-gaps/java/io/CharConversionException.java) |
+- **`PATH_MAX` defined as 1024** before `<limits.h>` in `os_posix.c`. glibc's fortified `realpath` aborts with "buffer overflow detected" at startup on Ubuntu 24.04, even with miniJVM's own class library.
+- **Abstract superinterface methods are not found** when a method reference names a class (JVMS 5.4.3.3). `invokevirtual AbstractCollection.size()` fails with a link error when `size()` is declared only in `Collection`, as it is in TeaVM's library.
+- **Linkage errors use reflection exception classes**: `NoSuchMethodException`/`NoSuchFieldException` instead of `NoSuchMethodError`/`NoSuchFieldError`.
+- **`new` of a missing class reports `OutOfMemoryError`** instead of `NoClassDefFoundError`.
+- **No nestmates (Java 11+)**: calls to private methods via `invokevirtual` throw `IllegalAccessError`. This one is handled in the builder (rewritten to `invokespecial`), not patched.
+
+### The native allowlist matters
+
+miniJVM binds a native method by class and method name only. Its tables include file, socket, process (`Runtime.exec`) and library-loading (`System.loadLibrary0`) natives under miniJVM's own class names. A guest jar that declares, say, its own `org.mini.fs.InnerFile` with `native long openFile(byte[], byte[])` gets miniJVM's implementation. In a scratch build with the allowlist disabled, the probe's 11-line fixture class opened the host's `/etc/passwd`. With the patch, `find_native_method` only binds the 59 TeaVM natives and 25 named miniJVM natives (object, clock, math, stack trace). Everything else is reported as `[native] not bound: …` and fails with `NoSuchMethodError`. The probe asserts both.
 
 ### What the guest can reach
 
-| Probe ([`SandboxProbe`](src/demo/org/isolatte/demo/SandboxProbe.java)) | stock HotSpot | interpreter, jailed |
+| Probe ([`SandboxProbe`](src/demo/org/isolatte/demo/SandboxProbe.java)) | stock HotSpot | miniJVM + TeaVM, jailed |
 | --- | --- | --- |
 | `java.io` read `/etc/passwd` | allowed | `FileNotFoundException` |
 | `java.io` write `/tmp/…` | allowed | `FileNotFoundException` (read-only) |
 | NIO `Files.readAllBytes(/etc/passwd)` | allowed | `NoSuchFileException` (TeaVM NIO, same jail) |
-| NIO list `/` | host root (25 entries) | the jail folder (7 entries) |
+| NIO list `/` | host root | the jail folder (7 entries) |
 | `ProcessBuilder`, `Runtime.exec` | allowed | `NoClassDefFoundError`, `NoSuchMethodError` |
-| `Socket`, `http:` URL | attempted (connection refused) | `NoClassDefFoundError` (no `Socket`; TeaVM's `http:` needs a browser's `XMLHttpRequest`) |
+| `Socket`, `http:` URL | attempted (connection refused) | `NoClassDefFoundError`; TeaVM's `http:` handler needs a browser's `XMLHttpRequest`, whose natives are not bound |
 | `System.loadLibrary`, `sun.misc.Unsafe` | allowed | `NoSuchMethodError`, `ClassNotFoundException` |
+| miniJVM's own file native via a guest class | n/a (`UnsatisfiedLinkError`) | blocked by the allowlist |
 | `System.getenv("PATH")`, `user.home` | host values | `null`, `/` |
-| class path resource `../../etc/passwd` | `null` | `null` |
+| class path resource `../../etc/passwd` | `null` | `null` (names with `..` are refused in C) |
 
-Most rows are "blocked" because the capability does not exist in TeaVM's library or in the VM, not because a policy check said no. The guest's whole host interface is the VM's native list: console output, the five jail natives, class path resources, the clock, math, and TeaVM's metadata generators (which take no guest input). Guest values are host objects in a memory-safe host. So unverified or hostile bytecode can at worst cause a host `ClassCastException`, which ends the VM: a crash, not memory corruption.
+Most rows are blocked because the capability does not exist in TeaVM's library, not because a policy said no. The guest's host interface is the native allowlist. Unlike the HotSpot variant, that list is short, and all of it is in [`jni_teavm.c`](minijvm/jni_teavm.c).
 
-Reviewing that interface turned up one real hole in my first version. `getResourceAsStream("../../../etc/passwd")` resolved against the class path *directories* and returned the host file. Guest-supplied names are now rejected if absolute or if they contain `.`, `..` or empty segments, and the probe asserts it.
+### Limits of the miniJVM variant
 
-### Limits of the interpreter variant
-
-- **Speed:** roughly 15× slower than the HotSpot variant end to end (about 7 M bytecodes/s with boxed values). There is no JIT or caching beyond per-instruction link caches.
-- **Single-threaded:** monitors are no-ops, `wait` is unsupported, and `Thread.start` is not implemented. TeaVM's own threads are green threads over JS/coroutines.
-- **No reflection metadata:** `ClassInfo.reflection()` returns `null`, so `getMethods`/`getDeclaredFields`/`getConstructor` do not work. `Class.newInstance`, names, `isInstance`, enums and arrays do.
-- **Partial JVM semantics:** no bytecode verification, no `ExceptionInInitializerError` (a failing `<clinit>` rethrows), no `MethodHandle`/`MethodType` constants or other bootstrap methods, and no access checks. Error classes TeaVM lacks (`UnsatisfiedLinkError`, …) are reported as `java.lang.Error` with the class name in the message.
-- **No resource limits:** guest frames are capped at 3,000, but CPU and heap are the host's. Bugs in the VM's own Java code crash it, unless they are one of the four host exceptions it converts, which could also hide such a bug.
-- **TeaVM library gaps** are the guest's gaps: no `File.toPath()`, `ProcessBuilder`, `Socket`, `loadLibrary`, … That is fine for this demo, and it is also why the probe is blocked. Other software will hit missing classes or methods sooner than on HotSpot.
-- The jail's TOCTOU caveat is unchanged: the real path is checked, then opened.
+- **miniJVM is C.** Unlike a JVM written in Java, a bug in its interpreter, GC or class parser is memory-unsafe. Hostile bytecode is not verified (no verifier, frames are dropped), so this is not a boundary against malicious class files. The allowlist only closes the native-binding route.
+- **Reflection metadata is missing**: `ci$reflection()` returns `null`, so `getMethods`/`getDeclaredFields`/`getConstructor` do not work. `Class.newInstance`, names, `isInstance`, enums and reflective arrays do. Weak references are strong.
+- **Threads untested**: TeaVM's `Thread` is green-thread code and miniJVM's thread start natives are not bound. Single-threaded programs only.
+- **Link warnings**: miniJVM links eagerly and prints `method not exist` for references to classes TeaVM lacks (Xerces' serialization hooks, the probes). 23 referenced classes are missing (`work/minijvm/boot.jar.missing.txt`).
+- **Messages**: exceptions miniJVM raises itself (e.g. `ClassCastException`) carry no message.
+- The jail's TOCTOU caveat is unchanged: the real path is checked, then opened. Pinned to one miniJVM commit and tested only on Linux x86-64.
 
 ## Assessment
 
@@ -182,20 +178,20 @@ Next I would try one of these:
 
 The class-replacement approach is useful for testing TeaVM's classlib against real Java code on a JVM. I would not build a security boundary on it.
 
-**The interpreter variant** answers the question the HotSpot variant could not. Yes, TeaVM's whole class library can be a JVM's entire JRE: a lazily loading interpreter needs about 90 natives, TeaVM's own metadata generators (31 registrations), the five adaptations and one missing exception class listed above. Xerces then runs XInclude unchanged. This fits better than expected because TeaVM 0.16 keeps object storage and class metadata behind natives.
+**The miniJVM variant** answers the question the HotSpot variant could not. Yes, TeaVM's whole class library can be a real JVM's entire JRE. It needs a JVM whose core-class contract is explicit (miniJVM's is about 30 fields and methods), a build step that does what TeaVM's compiler does (renaming, desugaring `invokedynamic`, baking metadata), and a small native layer. Xerces then runs XInclude unchanged. It fits better than expected because TeaVM 0.16 keeps string storage and class metadata behind natives, which map onto miniJVM's own `String` fields and `Class` objects.
 
-What worked: everything the demo exercises, plus lambdas, string concatenation, `String.format` with CLDR data, Unicode case mapping, and guest stack traces with TeaVM's file names. The jail now covers NIO, and processes, sockets and native libraries are simply absent.
+What worked: everything the demo exercises, plus lambdas, string concatenation, `String.format` with CLDR data, Unicode case mapping, and stack traces from miniJVM's frames with TeaVM's source file names. The jail now covers NIO, and processes, sockets and native libraries are absent. Speed is about 6× slower than the HotSpot variant end to end.
 
-What did not, or was not tried: threads, reflection metadata, performance (about 15× slower), and anything TeaVM's library lacks.
+What did not, or was not tried: reflection metadata, threads, weak references, and anything TeaVM's library lacks. It also surfaced five miniJVM issues; four are patched. The most important finding is that miniJVM binds natives by name, which lets guest code reach its file natives; the allowlist closes that.
 
-As isolation it is much stronger than the HotSpot variant. The guest's host interface is a short native list that can be read in one sitting, which is where the one real escape I found, class path traversal, sat. But it is a research interpreter, not a hardened VM: it has no verifier, no resource limits, and a host process around it.
+As isolation it is much stronger than the HotSpot variant: the guest's host interface is one short allowlist. But miniJVM is a C interpreter without a bytecode verifier. I would trust it with trusted code that should stay confined, not with hostile class files, unless it runs inside the bwrap/seccomp sandbox from this repo.
 
 Next I would:
-- add `ClassInfo.reflection()` from the ASM class nodes, so reflective code (Saxon, JAXP factories) works;
-- add green threads on the interpreter loop (it already owns the frames);
-- speed it up: unboxed int/long stacks, pre-decoded instructions;
-- run it inside the bwrap/seccomp sandbox from this repo for defence in depth.
+- implement `ci$reflection()` from miniJVM's own field/method tables, so reflective code (Saxon, JAXP factories) works;
+- bind TeaVM's `Thread` to miniJVM's native threads;
+- upstream the four miniJVM fixes and an opt-in native allowlist;
+- run the whole thing under the repo's bwrap/seccomp profile.
 
-I think the variant is viable for running trusted-but-confined XML pipelines where 10–20× overhead is acceptable. To make it competitive, I would rather invest in TeaVM's own Wasm/C backends (see `teavm-node-saxon`), which AOT-compile the same library.
+I think this is a viable way to run confined XML pipelines on a small embeddable VM.
 
 References: TeaVM's renaming rule is `org.teavm.classlib.impl.ClasslibSubstitutionPolicy` in `teavm-classlib-0.16.0-sources.jar`; [JEP 261 (`--patch-module`)](https://openjdk.org/jeps/261).

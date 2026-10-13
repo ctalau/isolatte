@@ -10,24 +10,26 @@ PASS  XInclude escape via escape-dotdot fails
 PASS  XInclude escape via escape-absolute fails
 PASS  XInclude escape via escape-symlink fails
 PASS  blocked XInclude uses xi:fallback
-PASS  only the probed ProcessBuilder was missing (no native, no class Xerces needs)
-PASS  interpreter blocks: java.io read /etc/passwd
-PASS  interpreter blocks: java.io write /tmp/isolatte-probe
-PASS  interpreter blocks: NIO read /etc/passwd
-PASS  interpreter blocks: ProcessBuilder("true")
-PASS  interpreter blocks: Runtime.exec("true")
-PASS  interpreter blocks: Socket connect 127.0.0.1:9
-PASS  interpreter blocks: URL http://127.0.0.1:9/
-PASS  interpreter blocks: System.loadLibrary("z")
-PASS  interpreter blocks: Class.forName("sun.misc.Unsafe")
+PASS  the demo needed no missing or blocked native
+PASS  miniJVM blocks: java.io read /etc/passwd
+PASS  miniJVM blocks: java.io write /tmp/isolatte-probe
+PASS  miniJVM blocks: NIO read /etc/passwd
+PASS  miniJVM blocks: ProcessBuilder("true")
+PASS  miniJVM blocks: Runtime.exec("true")
+PASS  miniJVM blocks: Socket connect 127.0.0.1:9
+PASS  miniJVM blocks: URL http://127.0.0.1:9/
+PASS  miniJVM blocks: System.loadLibrary("z")
+PASS  miniJVM blocks: Class.forName("sun.misc.Unsafe")
+PASS  miniJVM blocks: miniJVM file native via own class
 PASS  NIO "/" is the jail (7 entries)
 PASS  no host environment
 PASS  class path resources cannot climb out
+PASS  native allowlist refuses miniJVM's own file native
 PASS  control: stock HotSpot allows java.io read /etc/passwd
 PASS  control: stock HotSpot allows NIO read /etc/passwd
 PASS  control: stock HotSpot allows ProcessBuilder("true")
 PASS  control: stock HotSpot allows System.loadLibrary("z")
 PASS  smoke test: lambdas, collections, Unicode case mapping
 PASS  smoke test: String.format via TeaVM's CLDR data
-PASS  smoke test: guest stack traces
+PASS  smoke test: guest stack traces from miniJVM frames
 0 failure(s)

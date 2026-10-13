@@ -1,4 +1,7 @@
-### Interpreter + TeaVM class library, jail root = work/sample/jail
+### miniJVM + TeaVM class library, jail root = work/sample/jail
+method not exist :java/lang/ProcessBuilder.<init>([Ljava/lang/String;)V
+method not exist :java/lang/ProcessBuilder.start()Ljava/lang/Process;
+method not exist :java/lang/Process.waitFor()I
 == java.io probe
    File.class source: TFile.java
    user.dir property: null, new File("").getAbsolutePath(): /
@@ -9,8 +12,17 @@
    read /../outside/secret.xml: FileNotFoundException
    File.toPath(): java.lang.NoSuchMethodError
    NIO Files.isReadable(/etc/passwd): false
-   ProcessBuilder: java.lang.NoClassDefFoundError: java.lang.ProcessBuilder
+   ProcessBuilder: java.lang.NoClassDefFoundError: java/lang/ProcessBuilder
 == file:///main.xml
+method not exist :java/io/ObjectInputStream.defaultReadObject()V
+method not exist :java/io/ObjectOutputStream.defaultWriteObject()V
+method not exist :java/io/ObjectOutputStream.defaultWriteObject()V
+method not exist :java/io/ObjectInputStream.defaultReadObject()V
+method not exist :java/io/ObjectOutputStream.defaultWriteObject()V
+method not exist :java/io/ObjectInputStream.defaultReadObject()V
+method not exist :java/io/ObjectOutputStream.defaultWriteObject()V
+method not exist :java/io/ObjectOutputStream.defaultWriteObject()V
+method not exist :java/io/ObjectInputStream.defaultReadObject()V
    OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
 == file:///escape-dotdot.xml
    warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
@@ -25,23 +37,32 @@
    warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
    OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
 failures: 3
-[vm] 403 guest classes, 21362008 bytecodes, 3764 ms
-[vm] missing: [java/lang/ProcessBuilder]
+[time] 1661 ms including VM startup
 
-### Sandbox probe: interpreter, same jail
+### Sandbox probe: miniJVM, same jail
+method not exist :java/net/Socket.<init>()V
+method not exist :java/net/InetSocketAddress.<init>(Ljava/lang/String;I)V
+method not exist :java/net/Socket.connect(Ljava/net/SocketAddress;I)V
+method not exist :java/net/Socket.close()V
+method not exist :java/lang/Process.waitFor()I
+method not exist :java/lang/ProcessBuilder.<init>([Ljava/lang/String;)V
+method not exist :java/lang/ProcessBuilder.start()Ljava/lang/Process;
 java.io read /etc/passwd             blocked  java.io.FileNotFoundException
 java.io write /tmp/isolatte-probe    blocked  java.io.FileNotFoundException: Could not create file
 NIO read /etc/passwd                 blocked  java.nio.file.NoSuchFileException: /etc/passwd
 NIO list /                           ALLOWED  7 entries
-ProcessBuilder("true")               blocked  java.lang.NoClassDefFoundError: java.lang.ProcessBuilder
-Runtime.exec("true")                 blocked  java.lang.NoSuchMethodError: java.lang.Runtime.exec([Ljava/lang/String;)Ljava/lang/Process;
-Socket connect 127.0.0.1:9           blocked  java.lang.NoClassDefFoundError: java.net.Socket
-URL http://127.0.0.1:9/              blocked  java.lang.NoClassDefFoundError: org.teavm.jso.ajax.XMLHttpRequest
-System.loadLibrary("z")              blocked  java.lang.NoSuchMethodError: java.lang.System.loadLibrary(Ljava/lang/String;)V
+ProcessBuilder("true")               blocked  java.lang.NoClassDefFoundError: java/lang/ProcessBuilder
+Runtime.exec("true")                 blocked  java.lang.NoSuchMethodError
+Socket connect 127.0.0.1:9           blocked  java.lang.NoClassDefFoundError: java/net/Socket
+[native] not bound: org/teavm/jso/ajax/XMLHttpRequest.open(Ljava/lang/String;Ljava/lang/String;)V
+URL http://127.0.0.1:9/              blocked  java.lang.NoSuchMethodError: open
+System.loadLibrary("z")              blocked  java.lang.NoSuchMethodError: loadLibrary
 System.getenv("PATH")                ALLOWED  null
 System.getProperty("user.home")      ALLOWED  /
 class path resource ../../etc/passwd ALLOWED  null
-Class.forName("sun.misc.Unsafe")     blocked  java.lang.ClassNotFoundException: sun.misc.Unsafe
+[native] not bound: org/mini/fs/InnerFile.openFile([B[B)J
+miniJVM file native via own class    blocked  java.lang.NoSuchMethodError: openFile
+Class.forName("sun.misc.Unsafe")     blocked  java.lang.ClassNotFoundException: sun/misc/Unsafe
 
 ### Sandbox probe: stock HotSpot
 java.io read /etc/passwd             ALLOWED  3333 bytes
@@ -56,12 +77,13 @@ System.loadLibrary("z")              ALLOWED  loaded
 System.getenv("PATH")                ALLOWED  <host PATH>
 System.getProperty("user.home")      ALLOWED  /root
 class path resource ../../etc/passwd ALLOWED  null
+miniJVM file native via own class    blocked  java.lang.UnsatisfiedLinkError: 'long org.mini.fs.InnerFile.openFile(byte[], byte[])'
 Class.forName("sun.misc.Unsafe")     ALLOWED  class sun.misc.Unsafe
 
-### Smoke test: interpreter (no jail)
+### Smoke test: miniJVM (no jail)
 hello from java.lang.Object = class java.lang.Object
 args [A, B, A] counts {A=2, B=1} pi 3.141592653589793 1.5 9223372036854775807
-caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught java.lang.ClassCastException
 caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
 00042|fmt|2.500
 eurt21c

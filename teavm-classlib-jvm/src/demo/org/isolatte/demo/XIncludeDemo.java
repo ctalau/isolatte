@@ -89,7 +89,7 @@ public final class XIncludeDemo {
             System.out.println("   File.toPath(): " + e.getClass().getName());
         }
         // With the HotSpot overlay these are not jailed: OpenJDK's java.nio.file and process
-        // launching are not part of it. On the interpreter they are TeaVM's or missing.
+        // launching are not part of it. On miniJVM with TeaVM's library they are TeaVM's or missing.
         try {
             System.out.println("   NIO Files.isReadable(/etc/passwd): "
                     + java.nio.file.Files.isReadable(java.nio.file.Path.of("/etc/passwd")));
