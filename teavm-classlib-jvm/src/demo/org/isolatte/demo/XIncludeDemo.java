@@ -85,14 +85,23 @@ public final class XIncludeDemo {
             new File("/main.xml").toPath();
         } catch (UnsupportedOperationException e) {
             System.out.println("   File.toPath(): UnsupportedOperationException");
+        } catch (LinkageError e) {
+            System.out.println("   File.toPath(): " + e.getClass().getName());
         }
-        // Not jailed: OpenJDK's java.nio.file and process launching are not part of the overlay.
-        System.out.println("   NIO Files.isReadable(/etc/passwd): "
-                + java.nio.file.Files.isReadable(java.nio.file.Path.of("/etc/passwd")));
+        // With the HotSpot overlay these are not jailed: OpenJDK's java.nio.file and process
+        // launching are not part of it. On the interpreter they are TeaVM's or missing.
+        try {
+            System.out.println("   NIO Files.isReadable(/etc/passwd): "
+                    + java.nio.file.Files.isReadable(java.nio.file.Path.of("/etc/passwd")));
+        } catch (RuntimeException | LinkageError e) {
+            System.out.println("   NIO Files.isReadable(/etc/passwd): " + e.getClass().getName() + ": " + e.getMessage());
+        }
         try {
             System.out.println("   ProcessBuilder(\"true\") exit: " + new ProcessBuilder("true").start().waitFor());
         } catch (IOException | InterruptedException e) {
             System.out.println("   ProcessBuilder: " + e);
+        } catch (LinkageError e) {
+            System.out.println("   ProcessBuilder: " + e.getClass().getName() + ": " + e.getMessage());
         }
     }
 
