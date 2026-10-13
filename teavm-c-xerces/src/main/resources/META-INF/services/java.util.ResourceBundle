@@ -1,0 +1,6 @@
+org.apache.xerces.impl.msg.XMLMessages
+org.apache.xerces.impl.msg.SAXMessages
+org.apache.xerces.impl.msg.XIncludeMessages
+org.apache.xerces.impl.msg.XPointerMessages
+org.apache.xerces.impl.msg.DOMMessages
+org.apache.xerces.impl.msg.DatatypeMessages

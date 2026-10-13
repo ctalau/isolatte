@@ -1,0 +1,110 @@
+### jailed run (root=/tmp/tmp.YQV8Q36elU/jail)
+== java.io probe
+   list(/): chapters escape-abs-text.xml escape-abs-xml.xml escape-dotdot-text.xml escape-dotdot.xml escape-etc.xml escape-fallback.xml escape-http.xml escape-symlink-file.xml escape-symlink.xml inside-dotdot.xml main.xml out secret-link.xml
+   read /main.xml: 230 bytes
+   read /etc/passwd: FileNotFoundException
+   read /../etc/passwd: FileNotFoundException
+   read /link-to-etc/passwd: FileNotFoundException
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf\u00e9 \u2014 included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+   cold parse: 1587 us
+== file:///inside-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><chapter id="c1">Caf\u00e9 \u2014 included from chapters/chapter1.xml</chapter></book>
+   cold parse: 710 us
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 612 us
+== file:///escape-dotdot-text.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as text (href='../outside/secret.txt'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 294 us
+== file:///escape-abs-xml.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file:///tmp/tmp.YQV8Q36elU/outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 685 us
+== file:///escape-abs-text.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as text (href='file:///tmp/tmp.YQV8Q36elU/outside/secret.txt'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 448 us
+== file:///escape-etc.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as text (href='file:///etc/passwd'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 342 us
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='out/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 713 us
+== file:///escape-symlink-file.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='secret-link.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 508 us
+== file:///escape-http.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='http://127.0.0.1:9/x.xml'). Reason: scheme not supported in this build: http
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+   cold parse: 450 us
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+   cold parse: 523 us
+== file:///../outside/secret.xml
+   FAILED java.io.FileNotFoundException: null
+   cold parse: 78 us
+failures: 9
+PASS XML + text XInclude inside folder
+PASS inside folder via chapters/../
+PASS blocked: escape-dotdot
+PASS blocked: escape-dotdot-text
+PASS blocked: escape-abs-xml
+PASS blocked: escape-abs-text
+PASS blocked: escape-etc
+PASS blocked: escape-symlink
+PASS blocked: escape-symlink-file
+PASS blocked: escape-http
+PASS xi:fallback honoured for blocked include
+PASS direct parse of file:///../outside/secret.xml fails
+PASS java.io: /etc/passwd not readable
+PASS java.io: /../etc/passwd not readable
+PASS NO secret leaked
+
+### control: --no-jail (same binary, same includes, host paths)
+== file:///tmp/tmp.YQV8Q36elU/jail/escape-abs-xml.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>SECRET-OUTSIDE-JAIL</secret></book>
+   cold parse: 1060 us
+== file:///tmp/tmp.YQV8Q36elU/jail/escape-abs-text.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude">SECRET-OUTSIDE-JAIL</book>
+   cold parse: 443 us
+== file:///tmp/tmp.YQV8Q36elU/jail/escape-dotdot-text.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude">SECRET-OUTSIDE-JAIL</book>
+   cold parse: 255 us
+== file:///tmp/tmp.YQV8Q36elU/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>SECRET-OUTSIDE-JAIL</secret></book>
+   cold parse: 490 us
+failures: 0
+PASS control: all 4 escapes succeed without the jail
+
+### strace: every path the jailed binary touches
+      3 /tmp/tmp.YQV8Q36elU/jail/main.xml
+      3 /tmp/tmp.YQV8Q36elU/jail/escape-symlink.xml
+      3 /tmp/tmp.YQV8Q36elU/jail/escape-etc.xml
+      3 /tmp/tmp.YQV8Q36elU/jail/escape-dotdot.xml
+      3 /tmp/tmp.YQV8Q36elU/jail/escape-abs-xml.xml
+      3 /tmp/tmp.YQV8Q36elU/jail/chapters/notes.txt
+      3 /tmp/tmp.YQV8Q36elU/jail/chapters/chapter1.xml
+      2 /tmp/tmp.YQV8Q36elU/jail/tmp/tmp.YQV8Q36elU/outside/secret.xml
+      2 /tmp/tmp.YQV8Q36elU/jail/outside/secret.xml
+      2 /tmp/tmp.YQV8Q36elU/jail/etc/passwd
+      2 /tmp/tmp.YQV8Q36elU/jail/chapters
+      1 /tmp/tmp.YQV8Q36elU/jail/tmp/tmp.YQV8Q36elU/outside
+      1 /tmp/tmp.YQV8Q36elU/jail/tmp/tmp.YQV8Q36elU
+      1 /tmp/tmp.YQV8Q36elU/jail/tmp
+      1 /tmp/tmp.YQV8Q36elU/jail/outside
+      1 /tmp/tmp.YQV8Q36elU/jail/out
+      1 /tmp/tmp.YQV8Q36elU/jail/etc
+      1 /lib/x86_64-linux-gnu/libc.so.6
+      1 /etc/ld.so.preload
+      1 /etc/ld.so.cache
+PASS strace: no path outside jail (excluding ld.so/libc startup)
+PASS strace: /etc/passwd and outside/ never touched
+
+passed: 18, failed: 0

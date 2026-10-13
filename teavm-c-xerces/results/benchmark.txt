@@ -1,0 +1,18 @@
+## fresh-process wall time, parse of file:///main.xml
+# baseline: spawn /bin/true
+fork+exec /bin/true                            median    1.15 ms  p95    1.56 ms  min    0.94 ms  (n=300)
+TeaVM C, jailed, dynamic libc                  median    5.71 ms  p95    7.82 ms  min    4.89 ms  (n=300)
+TeaVM C, NOT jailed, dynamic libc              median    5.71 ms  p95    8.06 ms  min    4.73 ms  (n=300)
+HotSpot 21 (-Xshare:auto), plain Xerces        median  187.72 ms  p95  226.07 ms  min  164.05 ms  (n=300)
+HotSpot 21 (-XX:TieredStopAtLevel=1 -Xshare:auto) median  174.15 ms  p95  219.26 ms  min  147.77 ms  (n=300)
+
+## in-process: first (cold) parse, then 5000 warm parses
+# TeaVM C jailed
+   cold parse: 1799 us
+   warm parse x5000: median 442 us, p95 1350 us, min 342 us
+# TeaVM C NOT jailed
+   cold parse: 1192 us
+   warm parse x5000: median 397 us, p95 1243 us, min 321 us
+# HotSpot 21
+   cold parse: 126532 us (text length 111)
+   warm parse x5000: median 228 us, p95 852 us, min 127 us
