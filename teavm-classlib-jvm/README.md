@@ -166,6 +166,35 @@ Most rows are blocked because the capability does not exist in TeaVM's library, 
 - **Messages**: exceptions miniJVM raises itself (e.g. `ClassCastException`) carry no message.
 - The jail's TOCTOU caveat is unchanged: the real path is checked, then opened. Pinned to one miniJVM commit and tested only on Linux x86-64.
 
+## Performance
+
+[`bench.sh`](bench.sh) compares every way this experiment runs Java code on four workloads ([results](results/bench.md), [raw output](results/bench-raw.txt)). It also runs the bytecode interpreter I first wrote for the second variant, restored from commit `9b463e2`, and a miniJVM built without its JIT. The workloads:
+
+- **Hello**: startup only.
+- **Demo**: the five XInclude documents.
+- **XmlBench**: Xerces parses a ~400 KB document with one XInclude, 10 times.
+- **CpuBench**: a sieve, a `HashMap` with built string keys, `StringBuilder`/`indexOf`, and a sort with a lambda comparator, 5 rounds.
+
+Measured on 4 vCPUs. XmlBench and CpuBench are single runs, so treat differences under about 20% as noise.
+
+| Configuration | Hello | Demo | XmlBench warm | CpuBench warm | CpuBench first |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| HotSpot (JIT), OpenJDK library | 0.10 s | 0.20 s | 13 ms | 24 ms | 61 ms |
+| HotSpot `-Xint`, OpenJDK library | 0.09 s | 0.24 s | 448 ms | 140 ms | 163 ms |
+| HotSpot + TeaVM `java.io` (variant 1) | 0.20 s | 0.28 s | 12 ms | 9 ms | 32 ms |
+| own interpreter + TeaVM library | 1.23 s | 3.46 s | 1.33 s | 0.90 s | 8.03 s |
+| own interpreter, host JVM limited to C1 | 0.99 s | 1.16 s | 2.58 s | 1.85 s | 2.21 s |
+| miniJVM (JIT) + TeaVM library (variant 2) | 0.71 s | 1.57 s | 264 ms | 157 ms | 301 ms |
+| miniJVM without JIT + TeaVM library | 0.74 s | 1.69 s | 675 ms | 287 ms | 421 ms |
+
+*Warm* is the fastest round after the first, measured inside the guest. All configurations print the same CpuBench checksum and element count.
+
+- **Swapping in TeaVM's `java.io` costs nothing on HotSpot.** Variant 1 matches stock HotSpot once warm; only startup is slower, because `-Xshare:off` disables class data sharing.
+- **miniJVM is about 20× slower than HotSpot on XML parsing and 7× on CPU work, warm.** Without its JIT it is 50× and 12×, close to HotSpot's own `-Xint`. Its startup is about 0.7 s, mostly loading and linking the 3.7 MB boot jar.
+- **My interpreter is the slowest.** Warm, it is 5–6× slower than miniJVM with JIT and 2–3× slower than miniJVM's plain interpreter: every value is boxed, and it dispatches over ASM tree nodes.
+- **Its cold behaviour is worse still.** The first CpuBench rounds take 8–9 s against 0.9 s later. Profiling shows 90% of samples in its `execute()` loop. HotSpot's first C2 compile of that loop is poor: it is built from immature profiles with uncommon traps, and is only replaced after a deoptimization about 15 s in. Limiting the host to C1 (`-XX:TieredStopAtLevel=1`) gives a steady ~2 s per round and cuts the demo from 3.5 s to 1.2 s. Turning off uncommon traps (`-XX:PerMethodTrapLimit=0`) behaves similarly.
+- **For short jobs like the demo, startup dominates.** HotSpot finishes in 0.2 s, miniJVM in about 1.6 s, and my interpreter in 1.2–3.5 s.
+
 ## Assessment
 
 Running TeaVM's `java.io` on HotSpot works, with ten small mixins. Plugging a folder-scoped file system into TeaVM's VFS gives the intended XInclude behaviour without changing Xerces or the application. The experiment also found two real issues in TeaVM's classlib: the sign-extending `FileInputStream.read()`, and `PrintStream` ignoring `autoFlush` for array writes.
@@ -180,7 +209,7 @@ The class-replacement approach is useful for testing TeaVM's classlib against re
 
 **The miniJVM variant** answers the question the HotSpot variant could not. Yes, TeaVM's whole class library can be a real JVM's entire JRE. It needs a JVM whose core-class contract is explicit (miniJVM's is about 30 fields and methods), a build step that does what TeaVM's compiler does (renaming, desugaring `invokedynamic`, baking metadata), and a small native layer. Xerces then runs XInclude unchanged. It fits better than expected because TeaVM 0.16 keeps string storage and class metadata behind natives, which map onto miniJVM's own `String` fields and `Class` objects.
 
-What worked: everything the demo exercises, plus lambdas, string concatenation, `String.format` with CLDR data, Unicode case mapping, and stack traces from miniJVM's frames with TeaVM's source file names. The jail now covers NIO, and processes, sockets and native libraries are absent. Speed is about 6× slower than the HotSpot variant end to end.
+What worked: everything the demo exercises, plus lambdas, string concatenation, `String.format` with CLDR data, Unicode case mapping, and stack traces from miniJVM's frames with TeaVM's source file names. The jail now covers NIO, and processes, sockets and native libraries are absent. Speed: warm, about 20× slower than HotSpot on XML parsing and 7× on CPU work, and about 1.6 s for the demo against 0.2 s, mostly startup. That is still 2–6× faster than the interpreter I wrote first (see [Performance](#performance)).
 
 What did not, or was not tried: reflection metadata, threads, weak references, and anything TeaVM's library lacks. It also surfaced five miniJVM issues; four are patched. The most important finding is that miniJVM binds natives by name, which lets guest code reach its file natives; the allowlist closes that.
 

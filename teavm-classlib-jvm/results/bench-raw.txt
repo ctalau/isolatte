@@ -1,0 +1,592 @@
+=== hotspot hello rep1 wall_ms=92
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot hello rep2 wall_ms=136
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot hello rep3 wall_ms=98
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot demo rep1 wall_ms=192
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot demo rep2 wall_ms=199
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot demo rep3 wall_ms=202
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot xml rep1 wall_ms=421
+round 0: 146 ms
+round 1: 37 ms
+round 2: 28 ms
+round 3: 19 ms
+round 4: 19 ms
+round 5: 22 ms
+round 6: 16 ms
+round 7: 17 ms
+round 8: 13 ms
+round 9: 13 ms
+elements 20502
+=== hotspot cpu rep1 wall_ms=258
+round 0: 61 ms
+round 1: 29 ms
+round 2: 31 ms
+round 3: 24 ms
+round 4: 30 ms
+check 9548064060
+=== hotspot-xint hello rep1 wall_ms=83
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-xint hello rep2 wall_ms=93
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-xint hello rep3 wall_ms=85
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-xint demo rep1 wall_ms=240
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot-xint demo rep2 wall_ms=241
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot-xint demo rep3 wall_ms=231
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0
+=== hotspot-xint xml rep1 wall_ms=4940
+round 0: 547 ms
+round 1: 454 ms
+round 2: 461 ms
+round 3: 448 ms
+round 4: 495 ms
+round 5: 500 ms
+round 6: 516 ms
+round 7: 470 ms
+round 8: 474 ms
+round 9: 491 ms
+elements 20502
+=== hotspot-xint cpu rep1 wall_ms=849
+round 0: 163 ms
+round 1: 140 ms
+round 2: 156 ms
+round 3: 169 ms
+round 4: 147 ms
+check 9548064060
+=== hotspot-teavmio hello rep1 wall_ms=188
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-teavmio hello rep2 wall_ms=201
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-teavmio hello rep3 wall_ms=224
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer (java.lang.String and java.lang.Integer are in module java.base of loader 'bootstrap')
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== hotspot-teavmio demo rep1 wall_ms=277
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== hotspot-teavmio demo rep2 wall_ms=263
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== hotspot-teavmio demo rep3 wall_ms=314
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Caf? ? included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== hotspot-teavmio xml rep1 wall_ms=558
+round 0: 102 ms
+round 1: 57 ms
+round 2: 25 ms
+round 3: 27 ms
+round 4: 34 ms
+round 5: 24 ms
+round 6: 15 ms
+round 7: 16 ms
+round 8: 23 ms
+round 9: 12 ms
+elements 20502
+=== hotspot-teavmio cpu rep1 wall_ms=262
+round 0: 32 ms
+round 1: 20 ms
+round 2: 14 ms
+round 3: 9 ms
+round 4: 10 ms
+check 9548064060
+=== interp hello rep1 wall_ms=1234
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp hello rep2 wall_ms=1467
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp hello rep3 wall_ms=1220
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp demo rep1 wall_ms=3457
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp demo rep2 wall_ms=3003
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp demo rep3 wall_ms=3494
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp xml rep1 wall_ms=18850
+round 0: 5863 ms
+round 1: 1374 ms
+round 2: 1382 ms
+round 3: 1472 ms
+round 4: 1372 ms
+round 5: 1347 ms
+round 6: 1344 ms
+round 7: 1332 ms
+round 8: 1482 ms
+round 9: 1582 ms
+elements 20502
+=== interp cpu rep1 wall_ms=20944
+round 0: 8028 ms
+round 1: 8394 ms
+round 2: 2325 ms
+round 3: 902 ms
+round 4: 957 ms
+check 9548064060
+=== interp-c1 hello rep1 wall_ms=993
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp-c1 hello rep2 wall_ms=1037
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp-c1 hello rep3 wall_ms=986
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== interp-c1 demo rep1 wall_ms=1087
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp-c1 demo rep2 wall_ms=1310
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp-c1 demo rep3 wall_ms=1155
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== interp-c1 xml rep1 wall_ms=28460
+round 0: 3412 ms
+round 1: 2727 ms
+round 2: 2820 ms
+round 3: 2840 ms
+round 4: 2818 ms
+round 5: 2792 ms
+round 6: 2575 ms
+round 7: 2635 ms
+round 8: 2893 ms
+round 9: 2703 ms
+elements 20502
+=== interp-c1 cpu rep1 wall_ms=10682
+round 0: 2212 ms
+round 1: 2362 ms
+round 2: 1986 ms
+round 3: 1851 ms
+round 4: 2028 ms
+check 9548064060
+=== minijvm hello rep1 wall_ms=681
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm hello rep2 wall_ms=711
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm hello rep3 wall_ms=768
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm demo rep1 wall_ms=1508
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm demo rep2 wall_ms=1569
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm demo rep3 wall_ms=1582
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm xml rep1 wall_ms=4492
+round 0: 1132 ms
+round 1: 317 ms
+round 2: 264 ms
+round 3: 273 ms
+round 4: 276 ms
+round 5: 294 ms
+round 6: 347 ms
+round 7: 372 ms
+round 8: 337 ms
+round 9: 345 ms
+elements 20502
+=== minijvm cpu rep1 wall_ms=1545
+round 0: 301 ms
+round 1: 229 ms
+round 2: 169 ms
+round 3: 157 ms
+round 4: 184 ms
+check 9548064060
+=== minijvm-nojit hello rep1 wall_ms=737
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm-nojit hello rep2 wall_ms=726
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm-nojit hello rep3 wall_ms=755
+hello from java.lang.Object = class java.lang.Object
+args [X] counts {X=1} pi 3.141592653589793 1.5 9223372036854775807
+caught java.lang.ClassCastException
+caught ArrayIndexOutOfBoundsException at org.isolatte.guest.Hello.main(Hello.java:28)
+00042|fmt|2.500
+eurt21c
+=== minijvm-nojit demo rep1 wall_ms=1708
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm-nojit demo rep2 wall_ms=1583
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm-nojit demo rep3 wall_ms=1686
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: <experiment>/work/sample/outside/secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: /linked-secret.xml
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: /../outside/secret.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+=== minijvm-nojit xml rep1 wall_ms=8428
+round 0: 1652 ms
+round 1: 711 ms
+round 2: 675 ms
+round 3: 681 ms
+round 4: 681 ms
+round 5: 685 ms
+round 6: 707 ms
+round 7: 694 ms
+round 8: 678 ms
+round 9: 698 ms
+elements 20502
+=== minijvm-nojit cpu rep1 wall_ms=2112
+round 0: 421 ms
+round 1: 311 ms
+round 2: 287 ms
+round 3: 291 ms
+round 4: 291 ms
+check 9548064060
