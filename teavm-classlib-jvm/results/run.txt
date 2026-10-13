@@ -1,0 +1,40 @@
+### HotSpot + TeaVM java.io, jail root = work/sample/jail
+== java.io probe
+   File.class source: TFile.java
+   user.dir property: <experiment>, new File("").getAbsolutePath(): /
+   new File("/").list(): chapters escape-absolute.xml escape-dotdot.xml escape-fallback.xml escape-symlink.xml linked-secret.xml main.xml
+   new File("/../..").getCanonicalPath(): /
+   read /main.xml: 230 bytes
+   read /etc/passwd: FileNotFoundException
+   read /../outside/secret.xml: FileNotFoundException
+   File.toPath(): UnsupportedOperationException
+   NIO Files.isReadable(/etc/passwd): true
+   ProcessBuilder("true") exit: 0
+== file:///main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file:///escape-dotdot.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-absolute.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='file://<experiment>/work/sample/outside/secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-symlink.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='linked-secret.xml'). Reason: null
+   FAILED org.xml.sax.SAXParseException: An 'include' failed, and no 'fallback' element was found.
+== file:///escape-fallback.xml
+   warning: Include operation failed, reverting to fallback. Resource error reading file as XML (href='../outside/secret.xml'). Reason: null
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><blocked></blocked></book>
+failures: 3
+
+### Control: stock OpenJDK java.io, same files by host path
+== file://<experiment>/work/sample/jail/main.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><title>Inside the jail</title><chapter id="c1">Café — included from chapters/chapter1.xml</chapter>plain text included from chapters/notes.txt</book>
+== file://<experiment>/work/sample/jail/escape-dotdot.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-absolute.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-symlink.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+== file://<experiment>/work/sample/jail/escape-fallback.xml
+   OK <book xmlns:xi="http://www.w3.org/2001/XInclude"><secret>outside the jail</secret></book>
+failures: 0

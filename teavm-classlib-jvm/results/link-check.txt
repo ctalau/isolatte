@@ -1,0 +1,18 @@
+overlay classes: 71
+unresolved symbols by referrer: {openjdk=5}
+  openjdk field java/io/File.FS:Ljava/io/FileSystem;  <- 1 class(es): java/io/File$TempDirectory
+  openjdk field java/io/PrintStream.lock:Ljdk/internal/misc/InternalLock;  <- 1 class(es): java/io/PrintStream$1
+  openjdk method java/io/BufferedReader.readLine(Z[Z)Ljava/lang/String;  <- 1 class(es): java/io/LineNumberReader
+  openjdk method java/io/PrintWriter.<init>(Ljava/io/Writer;Ljava/lang/Object;)V  <- 1 class(es): java/io/ProxyingConsole$WrappingWriter
+  openjdk method java/io/RandomAccessFile.<init>(Ljava/io/File;Ljava/lang/String;Z)V  <- 1 class(es): java/io/RandomAccessFile$2
+overlay native methods: 10
+  java/io/FileInputStream.available0()I  -> libjava Java_java_io_FileInputStream_available0
+  java/io/FileInputStream.initIDs()V  -> libjava Java_java_io_FileInputStream_initIDs
+  java/io/FileInputStream.readBytes([BII)I  -> libjava Java_java_io_FileInputStream_readBytes
+  java/io/FileOutputStream.initIDs()V  -> libjava Java_java_io_FileOutputStream_initIDs
+  java/io/FileOutputStream.writeBytes([BIIZ)V  -> libjava Java_java_io_FileOutputStream_writeBytes
+  java/io/RandomAccessFile.initIDs()V  -> libjava Java_java_io_RandomAccessFile_initIDs
+  java/io/RandomAccessFile.length0()J  -> libjava Java_java_io_RandomAccessFile_length0
+  java/io/RandomAccessFile.open0(Ljava/lang/String;I)V  -> libjava Java_java_io_RandomAccessFile_open0
+  java/io/RandomAccessFile.readBytes0([BII)I  -> libjava Java_java_io_RandomAccessFile_readBytes0
+  java/io/RandomAccessFile.seek0(J)V  -> libjava Java_java_io_RandomAccessFile_seek0

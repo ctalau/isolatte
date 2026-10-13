@@ -5,6 +5,7 @@ Security and sandboxing experiments for running untrusted code with granular iso
 ## Sandboxing experiments
 
 - **teavm-node-saxon** — TeaVM compiles Saxon-HE and Xerces to JavaScript for in-memory XSLT execution in Node, with explicit platform adaptations and JVM comparisons
+- **teavm-classlib-jvm** — runs HotSpot with TeaVM's `java.io` in place of OpenJDK's, backed by a read-only file system scoped to one folder; Xerces XIncludes inside the folder resolve, escapes via `..`, absolute URIs and symlinks fail
 
 - **bwrap-seccomp** — hermetic bubblewrap sandbox hardened with a custom seccomp-BPF syscall filter
 - **nsjail-dita** — wraps DITA-OT processing in an nsjail jail with namespace isolation, chroot, capability drops, CPU pinning, and a loopback-only HTTP server

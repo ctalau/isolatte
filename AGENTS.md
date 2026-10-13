@@ -5,6 +5,7 @@ Each top-level folder is a self-contained experiment or research artifact. Do no
 ## Experiments
 
 - **teavm-node-saxon** — TeaVM AOT compilation of Saxon-HE/Xerces for in-memory XSLT execution in Node, with platform adaptations and JVM reference checks
+- **teavm-classlib-jvm** — TeaVM's `java.io` classlib patched into a real HotSpot `java.base`, with a TeaVM VirtualFileSystem jailed to one folder; Xerces XInclude works inside it and fails outside
 
 - **bwrap-seccomp** — bubblewrap sandbox with a custom seccomp-BPF syscall filter
 - **nsjail-dita** — nsjail jail for DITA-OT processing with namespace isolation and capability drops
