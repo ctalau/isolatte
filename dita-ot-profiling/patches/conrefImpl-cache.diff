@@ -1,0 +1,5 @@
+--- a/plugins/org.dita.base/xsl/preprocess/conrefImpl.xsl
++++ b/plugins/org.dita.base/xsl/preprocess/conrefImpl.xsl
+@@ -627 +627 @@
+-  <xsl:function name="conref:isValid" as="xs:boolean">
++  <xsl:function name="conref:isValid" as="xs:boolean" cache="yes">

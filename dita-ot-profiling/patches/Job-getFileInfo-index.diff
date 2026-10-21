@@ -1,0 +1,92 @@
+--- a/src/main/java/org/dita/dost/util/Job.java
++++ b/src/main/java/org/dita/dost/util/Job.java
+@@ -404,7 +404,14 @@
+    * Add file info. If file info with the same file already exists, it will be replaced.
+    */
+   public void add(final FileInfo fileInfo) {
+-    files.put(fileInfo.uri, fileInfo);
++    final FileInfo old = files.put(fileInfo.uri, fileInfo);
++    final Map<URI, FileInfo> idx = srcResultIndex;
++    if (idx != null) {
++      if (old != null) {
++        unindexFileInfo(idx, old);
++      }
++      indexFileInfo(idx, fileInfo);
++    }
+   }
+ 
+   /**
+@@ -413,7 +420,12 @@
+    * @return removed file info, {@code null} if not found
+    */
+   public FileInfo remove(final FileInfo fileInfo) {
+-    return files.remove(fileInfo.uri);
++    final FileInfo old = files.remove(fileInfo.uri);
++    final Map<URI, FileInfo> idx = srcResultIndex;
++    if (idx != null && old != null) {
++      unindexFileInfo(idx, old);
++    }
++    return old;
+   }
+ 
+   /**
+@@ -534,6 +546,45 @@
+     return files.values().stream().filter(filter).collect(Collectors.toList());
+   }
+ 
++
++  /** Lazily built index of {@code src} and {@code result} URIs to file info, kept in sync by add/remove. */
++  private volatile Map<URI, FileInfo> srcResultIndex;
++
++  private Map<URI, FileInfo> srcResultIndex() {
++    Map<URI, FileInfo> idx = srcResultIndex;
++    if (idx == null) {
++      synchronized (this) {
++        idx = srcResultIndex;
++        if (idx == null) {
++          idx = new ConcurrentHashMap<>();
++          for (final FileInfo fi : files.values()) {
++            indexFileInfo(idx, fi);
++          }
++          srcResultIndex = idx;
++        }
++      }
++    }
++    return idx;
++  }
++
++  private static void indexFileInfo(final Map<URI, FileInfo> idx, final FileInfo fi) {
++    if (fi.src != null) {
++      idx.putIfAbsent(fi.src, fi);
++    }
++    if (fi.result != null) {
++      idx.putIfAbsent(fi.result, fi);
++    }
++  }
++
++  private static void unindexFileInfo(final Map<URI, FileInfo> idx, final FileInfo fi) {
++    if (fi.src != null) {
++      idx.remove(fi.src, fi);
++    }
++    if (fi.result != null) {
++      idx.remove(fi.result, fi);
++    }
++  }
++
+   /**
+    * Get file info object
+    *
+@@ -549,12 +600,7 @@
+       final URI relative = getRelativePath(jobFile.toURI(), file);
+       return files.get(relative);
+     } else {
+-      return files
+-        .values()
+-        .stream()
+-        .filter(fileInfo -> file.equals(fileInfo.src) || file.equals(fileInfo.result))
+-        .findFirst()
+-        .orElse(null);
++      return srcResultIndex().get(file);
+     }
+   }
+ 

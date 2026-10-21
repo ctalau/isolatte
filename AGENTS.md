@@ -17,6 +17,7 @@ Each top-level folder is a self-contained experiment or research artifact. Do no
 - **claude-agent-openrouter-ro** — Claude Agent SDK via OpenRouter using DeepSeek V4 Flash, with a Romanian codeblock translation skill
 - **quickjs-bash-sandbox** — the just-bash interpreter running as guest code inside a real QuickJS WASM VM, scoped to a workspace folder via a synchronous fs bridge, benchmarked tarring 1000 files against native `tar`
 - **content-fusion-film** — a code-driven cinematic product film for Content Fusion: Remotion + React Three Fiber, a shared camera system driving both CSS-3D and WebGL scenes, Kokoro-generated narration that determines the cut, and a 73.6s 4K master with cutdowns
+- **dita-ot-profiling** — JFR profile of DITA-OT 4.3.1 producing resolved DITA from the Oxygen user guide: hotspot table (file-info linear scan, Saxon, Xerces, regex), two measured patches (−9.7 % wall), unsafe `--parallel` finding
 
 ## Security research
 
