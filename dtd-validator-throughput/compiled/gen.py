@@ -6,7 +6,9 @@ Every content model becomes a minimized DFA over element ids (Glushkov
 automaton -> subset construction -> Moore minimization). DFAs, attribute
 declarations and attribute lists are deduplicated across all doctype shells,
 so the shells share one set of tables and differ only in their per-element
-index rows. Element and attribute names map to ids through a generated
+index rows. Each DTD file is parsed and emitted once; every public id that
+names it (e.g. "-//OASIS//DTD DITA Topic//EN", "... DITA 1.3 Topic//EN",
+"... DITA 1.x Topic//EN") is an alias for the same row set. Element and attribute names map to ids through a generated
 `match` (Rust), a Map (JS) or a string `switch` (Java)."""
 import json
 import re
@@ -285,17 +287,22 @@ def build(shells):
     dfa_cache = {}
     state_final, state_trans = [], []   # global states
 
-    parsed = []
+    parsed, row_of_path, shell_rows = [], {}, []
     for pub, path in shells:
+        if path in row_of_path:
+            shell_rows.append((pub, row_of_path[path]))
+            continue
+        row_of_path[path] = len(parsed)
+        shell_rows.append((pub, len(parsed)))
         e, a, ents = parse_dtd(open(path, encoding="utf-8").read())
-        parsed.append((pub, e, a, ents))
+        parsed.append((e, a, ents))
         for name in sorted(e):
             elems(name)
         for el in sorted(a):
             for an in sorted(a[el]):
                 attrs(an)
     # Names used in content models but never declared still need ids.
-    for _, e, _, _ in parsed:
+    for e, _, _ in parsed:
         for kind, tree in e.values():
             stack = [tree] if tree else []
             while stack:
@@ -325,8 +332,8 @@ def build(shells):
         return dfa_cache[key]
 
     empty_alist = alists(())
-    shell_rows = []
-    for pub, e, a, ents in parsed:
+    rows = []
+    for e, a, ents in parsed:
         kind = [0] * len(elems.items)
         start = [0] * len(elems.items)
         alist = [None] * len(elems.items)
@@ -347,10 +354,15 @@ def build(shells):
             i = elems.index[el]
             alist[i] = alists(tuple(row))
             nreq[i] = sum(1 for d in row if adecls.items[d][2] == ADEF["REQUIRED"])
-        shell_rows.append((pub, kind, start, alist, nreq, sorted(ents.items())))
+        rows.append((kind, start, alist, nreq, sorted(ents.items())))
+    # Element ids grow while the rows are built (undeclared content-model
+    # names); pad the earlier rows to the final width.
+    n = len(elems.items)
+    rows = [(k + [0] * (n - len(k)), st + [0] * (n - len(st)), al + [None] * (n - len(al)),
+             nr + [0] * (n - len(nr)), en) for k, st, al, nr, en in rows]
     return dict(elems=elems.items, attrs=attrs.items, strs=strs.items, enums=enums.items,
                 adecls=adecls.items, alists=alists.items, empty_alist=empty_alist,
-                state_final=state_final, state_trans=state_trans, shells=shell_rows)
+                state_final=state_final, state_trans=state_trans, rows=rows, shells=shell_rows)
 
 
 def flat_offsets(lists):
@@ -406,14 +418,14 @@ def emit_rust(t, out):
              "    pub start: &'static [u32],\n    pub alist: &'static [u16],\n    pub nreq: &'static [u8],\n"
              "    /// Internal general entities (name, fully expanded replacement text), sorted.\n"
              "    pub entities: &'static [(&'static str, &'static str)],\n}\n")
-    for i, (pub, kind, start, alist, nreq, ents) in enumerate(t["shells"]):
+    for i, (kind, start, alist, nreq, ents) in enumerate(t["rows"]):
         alist = [t["empty_alist"] if a is None else a for a in alist]
         w += [arr(f"S{i}_KIND", "u8", kind), arr(f"S{i}_START", "u32", start),
               arr(f"S{i}_ALIST", "u16", alist), arr(f"S{i}_NREQ", "u8", nreq),
               f"pub static S{i}_ENTITIES: &[(&str, &str)] = &["
               + ",".join(f"({rust_str(n)},{rust_str(v)})" for n, v in ents) + "];\n"]
     w.append("pub static SHELLS: &[Shell] = &[\n")
-    for i, (pub, *_rest) in enumerate(t["shells"]):
+    for pub, i in t["shells"]:
         w.append(f"    Shell {{ public_id: {json.dumps(pub)}, kind: &S{i}_KIND, start: &S{i}_START, "
                  f"alist: &S{i}_ALIST, nreq: &S{i}_NREQ, entities: S{i}_ENTITIES }},\n")
     w.append("];\n")
@@ -447,12 +459,15 @@ def emit_js(t, out):
          f"exports.TRANS_OFF = {ta('Uint32Array', toff)};\n",
          f"exports.TRANS_SYM = {ta('Uint16Array', [s for s, _ in tflat])};\n",
          f"exports.TRANS_NEXT = {ta('Uint32Array', [d for _, d in tflat])};\n",
-         "exports.SHELLS = [\n"]
-    for pub, kind, start, alist, nreq, ents in t["shells"]:
+         "const ROWS = [\n"]
+    for kind, start, alist, nreq, ents in t["rows"]:
         alist = [t["empty_alist"] if a is None else a for a in alist]
-        w.append(f"  {{ publicId: {json.dumps(pub)}, kind: {ta('Uint8Array', kind)}, "
+        w.append(f"  {{ kind: {ta('Uint8Array', kind)}, "
                  f"start: {ta('Uint32Array', start)}, alist: {ta('Uint16Array', alist)}, "
                  f"nreq: {ta('Uint8Array', nreq)}, entities: {json.dumps(dict(ents))} }},\n")
+    w.append("];\nexports.SHELLS = [\n")
+    for pub, i in t["shells"]:
+        w.append(f"  {{ publicId: {json.dumps(pub)}, ...ROWS[{i}] }},\n")
     w.append("];\n")
     open(out, "w").write("".join(w))
 
@@ -525,14 +540,20 @@ def emit_java(t, out):
         }
     }
 
-    static final Shell[] SHELLS = {
 """)
-    for pub, kind, start, alist, nreq, ents in t["shells"]:
-        alist = [t["empty_alist"] if a is None else a for a in alist]
-        w.append(f"        new Shell({java_str(pub)}, {java_chars(kind)}, {java_chars(start)},\n"
-                 f"            {java_chars(alist)}, {java_chars(nreq)},\n"
-                 "            new String[] {" + ", ".join(java_str(n) for n, _ in ents) + "},\n"
-                 "            new String[] {" + ", ".join(java_str(v) for _, v in ents) + "}),\n")
+    # One set of row arrays per DTD file; the public ids below share them.
+    for field, col in (("ROW_KIND", 0), ("ROW_START", 1), ("ROW_ALIST", 2), ("ROW_NREQ", 3)):
+        vals = [[t["empty_alist"] if a is None else a for a in r[col]] for r in t["rows"]]
+        w.append(f"    private static final char[][] {field} = {{\n"
+                 + ",\n".join(f"        {java_chars(v)}" for v in vals) + "\n    };\n")
+    for field, col in (("ROW_ENTITY_NAMES", 0), ("ROW_ENTITY_VALUES", 1)):
+        w.append(f"    private static final String[][] {field} = {{\n"
+                 + ",\n".join("        {" + ", ".join(java_str(e[col]) for e in r[4]) + "}" for r in t["rows"])
+                 + "\n    };\n")
+    w.append("\n    static final Shell[] SHELLS = {\n")
+    for pub, i in t["shells"]:
+        w.append(f"        new Shell({java_str(pub)}, ROW_KIND[{i}], ROW_START[{i}], ROW_ALIST[{i}], ROW_NREQ[{i}],\n"
+                 f"            ROW_ENTITY_NAMES[{i}], ROW_ENTITY_VALUES[{i}]),\n")
     w.append("    };\n}\n")
     open(out, "w").write("".join(w))
 
@@ -545,6 +566,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 4:
         emit_java(t, sys.argv[4])
     ntrans = sum(len(x) for x in t["state_trans"])
-    print(f"shells={len(shells)} elements={len(t['elems'])} attributes={len(t['attrs'])} "
+    print(f"public_ids={len(shells)} shells={len(t['rows'])} elements={len(t['elems'])} attributes={len(t['attrs'])} "
           f"attr_decls={len(t['adecls'])} attr_lists={len(t['alists'])} enums={len(t['enums'])} "
           f"dfa_states={len(t['state_final'])} transitions={ntrans}")

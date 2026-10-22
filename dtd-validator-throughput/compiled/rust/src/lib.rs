@@ -41,6 +41,9 @@ struct Frame {
 struct Validator {
     shell: Option<&'static g::Shell>,
     doctype_name: String,
+    /// Entities declared in the document's internal DTD subset; these take
+    /// precedence over the shell's (the internal subset is read first).
+    doc_entities: Vec<(String, String)>,
     stack: Vec<Frame>,
     ids: HashSet<String>,
     idrefs: Vec<String>,
@@ -84,6 +87,88 @@ fn entity(shell: &'static g::Shell, name: &str) -> Option<&'static str> {
     Some(shell.entities[i].1)
 }
 
+/// Expands character and entity references in an entity value, for
+/// deciding whether its replacement text is whitespace.
+fn expand_entity_value(
+    value: &str,
+    known: &[(String, String)],
+    shell: Option<&'static g::Shell>,
+) -> Result<String, String> {
+    let mut out = String::new();
+    let mut rest = value;
+    while let Some(i) = rest.find('&') {
+        out.push_str(&rest[..i]);
+        let end = rest[i..].find(';').ok_or("unterminated reference in an entity value")? + i;
+        let r = &rest[i + 1..end];
+        if let Some(num) = r.strip_prefix('#') {
+            let code = match num.strip_prefix('x') {
+                Some(hex) => u32::from_str_radix(hex, 16),
+                None => num.parse(),
+            };
+            out.push(code.ok().and_then(char::from_u32).ok_or("bad character reference")?);
+        } else if let Some(v) = resolve_predefined_entity(r) {
+            out.push_str(v);
+        } else if let Some((_, v)) = known.iter().find(|(n, _)| n == r) {
+            out.push_str(v);
+        } else if let Some(v) = shell.and_then(|s| entity(s, r)) {
+            out.push_str(v);
+        } else {
+            return Err(format!("entity '{r}' not defined"));
+        }
+        rest = &rest[end + 1..];
+    }
+    out.push_str(rest);
+    Ok(out)
+}
+
+/// Reads an internal DTD subset made only of comments and internal general
+/// entity declarations (the common `<!ENTITY product "...">` case). Anything
+/// else -- element or attribute declarations, parameter or external
+/// entities, entity values with markup -- is reported as unsupported.
+fn parse_internal_subset(
+    subset: &str,
+    shell: Option<&'static g::Shell>,
+) -> Result<Vec<(String, String)>, String> {
+    let unsupported = |what: &str| Err(format!("internal DTD subset: {what} is not supported"));
+    let mut out: Vec<(String, String)> = Vec::new();
+    let mut rest = subset.trim_start();
+    while !rest.is_empty() {
+        if let Some(r) = rest.strip_prefix("<!--") {
+            let end = r.find("-->").ok_or("unterminated comment in the internal DTD subset")?;
+            rest = r[end + 3..].trim_start();
+            continue;
+        }
+        let Some(r) = rest.strip_prefix("<!ENTITY") else {
+            return unsupported("a declaration other than <!ENTITY>");
+        };
+        let r = r.trim_start();
+        if r.starts_with('%') {
+            return unsupported("a parameter entity");
+        }
+        let name_end = r.find(|c: char| c.is_whitespace()).ok_or("malformed <!ENTITY> declaration")?;
+        let (name, r) = (&r[..name_end], r[name_end..].trim_start());
+        let Some(q) = r.chars().next().filter(|&c| c == '"' || c == '\'') else {
+            return unsupported("an external entity");
+        };
+        let close = r[1..].find(q).ok_or("unterminated entity value")? + 1;
+        let raw = &r[1..close];
+        if raw.contains('<') {
+            return unsupported("an entity value with markup");
+        }
+        let after = r[close + 1..].trim_start();
+        let Some(after) = after.strip_prefix('>') else {
+            return Err("malformed <!ENTITY> declaration".into());
+        };
+        // The first declaration of an entity binds (XML 1.0 4.2).
+        if !out.iter().any(|(n, _)| n == name) {
+            let value = expand_entity_value(raw, &out, shell)?;
+            out.push((name.to_string(), value));
+        }
+        rest = after.trim_start();
+    }
+    Ok(out)
+}
+
 fn step(state: u32, sym: u16) -> Option<u32> {
     let (lo, hi) = (g::TRANS_OFF[state as usize] as usize, g::TRANS_OFF[state as usize + 1] as usize);
     let syms = &g::TRANS_SYM[lo..hi];
@@ -99,6 +184,7 @@ impl Validator {
         Validator {
             shell: None,
             doctype_name: String::new(),
+            doc_entities: Vec::new(),
             stack: Vec::with_capacity(64),
             ids: HashSet::new(),
             idrefs: Vec::new(),
@@ -114,13 +200,23 @@ impl Validator {
         }
     }
 
-    /// The document's DOCTYPE: `name PUBLIC "pub" "sys"`.
+    /// Replacement text of an entity: the internal subset's, else the shell's.
+    fn entity_text(&self, name: &str) -> Option<&str> {
+        self.doc_entities
+            .iter()
+            .find(|(n, _)| n == name)
+            .map(|(_, v)| v.as_str())
+            .or_else(|| self.shell.and_then(|s| entity(s, name)))
+    }
+
+    /// The document's DOCTYPE: `name PUBLIC "pub" "sys" [internal subset]`.
     fn doctype(&mut self, text: &str) {
         let name = text.split_whitespace().next().unwrap_or("");
         self.doctype_name = name.to_string();
-        if text.contains('[') {
-            return self.error(|| "internal DTD subsets are not supported".into());
-        }
+        let (text, subset) = match (text.find('['), text.rfind(']')) {
+            (Some(a), Some(b)) if a < b => (&text[..a], Some(&text[a + 1..b])),
+            _ => (text, None),
+        };
         let public = text.find("PUBLIC").and_then(|p| {
             let rest = &text[p + 6..];
             let a = rest.find(['"', '\''])?;
@@ -132,6 +228,16 @@ impl Validator {
         if self.shell.is_none() {
             let p = public.unwrap_or("").to_string();
             self.error(|| format!("no compiled DTD for public id '{p}'"));
+        }
+        if let Some(subset) = subset {
+            match parse_internal_subset(subset, self.shell) {
+                Ok(ents) => self.doc_entities = ents,
+                Err(e) => {
+                    // Without its declarations the document cannot be checked.
+                    self.shell = None;
+                    self.error(|| e);
+                }
+            }
         }
     }
 
@@ -195,7 +301,12 @@ impl Validator {
                 self.error(|| format!("no declaration for attribute {key}"));
                 continue;
             };
-            let resolve = |name: &str| resolve_predefined_entity(name).or_else(|| entity(shell, name));
+            let doc_entities = &self.doc_entities;
+            let resolve = |name: &str| {
+                resolve_predefined_entity(name)
+                    .or_else(|| doc_entities.iter().find(|(n, _)| n == name).map(|(_, v)| v.as_str()))
+                    .or_else(|| entity(shell, name))
+            };
             let Ok(raw) = attr.normalized_value_with(XmlVersion::Implicit1_0, 1, resolve) else {
                 self.error(|| "bad attribute value".into());
                 return false;
@@ -260,7 +371,8 @@ impl Validator {
                 }
                 Event::Start(ref e) | Event::Empty(ref e) => {
                     let Some(shell) = self.shell else {
-                        if !seen_root {
+                        // A DOCTYPE problem was already reported; otherwise there is none.
+                        if !seen_root && self.errors == 0 {
                             self.error(|| "no DTD found".into());
                         }
                         return;
@@ -287,8 +399,8 @@ impl Validator {
                         self.content_text(false, false);
                     } else if matches!(r.as_ref(), "lt" | "gt" | "amp" | "quot" | "apos") {
                         self.content_text(false, false);
-                    } else if let Some(text) = self.shell.and_then(|s| entity(s, &r)) {
-                        self.content_text(is_ws(text.as_bytes()), false);
+                    } else if let Some(ws) = self.entity_text(&r).map(|t| is_ws(t.as_bytes())) {
+                        self.content_text(ws, false);
                     } else {
                         let n = r.to_string();
                         return self.error(|| format!("entity '{n}' not defined"));

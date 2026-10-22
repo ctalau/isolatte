@@ -40,18 +40,21 @@ L=work-ditaot/dita-ot-4.2.4/lib
 mkdir -p work-java
 javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.jar" -d work-java java/XercesBench.java
 
-# Validators compiled from the flattened DTDs.
+# Validators compiled from every DITA 1.3 / 2.0 / LwDITA shell DITA-OT ships.
+python3 -I all_shells.py work-ditaot/dita-ot-4.2.4 ./work-flatten_dtd work-flat-all work-dtdmap-all.tsv
 mkdir -p work-gen
-python3 -I compiled/gen.py work-dtdmap.tsv work-gen/generated.rs work-gen/generated.js work-gen/GeneratedDtd.java
+python3 -I compiled/gen.py work-dtdmap-all.tsv work-gen/generated.rs work-gen/generated.js work-gen/GeneratedDtd.java
 (cd compiled/rust && cargo build --release -q)
 # The same validator as WebAssembly, and the browser page that embeds it.
 rustup target add wasm32-unknown-unknown >/dev/null
 (cd compiled/rust && cargo build --release -q --lib --target wasm32-unknown-unknown)
 python3 -I compiled/web/build_page.py compiled/web/index.template.html \
-  compiled/rust/target/wasm32-unknown-unknown/release/dita_compiled_validator.wasm work-gen/dita-wasm-validator.html
+  compiled/rust/target/wasm32-unknown-unknown/release/dita_compiled_validator.wasm work-dtdmap-all.tsv \
+  compiled/web/dita-wasm-validator.html
 (cd compiled/js && npm ci -q)
 mkdir -p work-java-compiled
 javac -d work-java-compiled work-gen/GeneratedDtd.java compiled/java/CompiledValidator.java
 
 python3 -I make_mutants.py work-files.txt work-mutants 50
 python3 -I make_mutants2.py work-files.txt work-mutants2 30
+python3 -I fuzz_shells.py work-dtdmap-all.tsv work-fuzz2 5 20 2   # then ./fuzz_compare.sh work-fuzz2

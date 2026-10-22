@@ -38,6 +38,57 @@ function collapse(v) {
     ? v : v.split(' ').filter((w) => w).join(' ');
 }
 
+/** Expands character and entity references in an entity value. */
+function expandEntityValue(value, known, shell) {
+  return value.replace(/&([^;]*);/g, (m, r) => {
+    if (r[0] === '#') {
+      const code = r[1] === 'x' ? parseInt(r.slice(2), 16) : parseInt(r.slice(1), 10);
+      if (!(code >= 0 && code <= 0x10ffff)) throw new Error('bad character reference');
+      return String.fromCodePoint(code);
+    }
+    const predefined = { lt: '<', gt: '>', amp: '&', quot: '"', apos: "'" }[r];
+    if (predefined !== undefined) return predefined;
+    if (known.has(r)) return known.get(r);
+    if (shell && Object.prototype.hasOwnProperty.call(shell.entities, r)) return shell.entities[r];
+    throw new Error(`entity '${r}' not defined`);
+  });
+}
+
+/**
+ * Reads an internal DTD subset made only of comments and internal general
+ * entity declarations (the common <!ENTITY product "..."> case). Anything
+ * else -- element or attribute declarations, parameter or external entities,
+ * entity values with markup -- is reported as unsupported.
+ */
+function parseInternalSubset(subset, shell) {
+  const unsupported = (what) => { throw new Error(`internal DTD subset: ${what} is not supported`); };
+  const out = new Map();
+  let rest = subset.trimStart();
+  while (rest) {
+    if (rest.startsWith('<!--')) {
+      const end = rest.indexOf('-->');
+      if (end < 0) throw new Error('unterminated comment in the internal DTD subset');
+      rest = rest.slice(end + 3).trimStart();
+      continue;
+    }
+    if (!rest.startsWith('<!ENTITY')) unsupported('a declaration other than <!ENTITY>');
+    let r = rest.slice(8).trimStart();
+    if (r[0] === '%') unsupported('a parameter entity');
+    const m = /^(\S+)\s+(["'])/.exec(r);
+    if (!m) unsupported('an external entity');
+    const close = r.indexOf(m[2], m[0].length);
+    if (close < 0) throw new Error('unterminated entity value');
+    const raw = r.slice(m[0].length, close);
+    if (raw.includes('<')) unsupported('an entity value with markup');
+    r = r.slice(close + 1).trimStart();
+    if (r[0] !== '>') throw new Error('malformed <!ENTITY> declaration');
+    // The first declaration of an entity binds (XML 1.0 4.2).
+    if (!out.has(m[1])) out.set(m[1], expandEntityValue(raw, out, shell));
+    rest = r.slice(1).trimStart();
+  }
+  return out;
+}
+
 function enumHas(e, v) {
   for (let i = g.ENUM_OFF[e], end = g.ENUM_OFF[e + 1]; i < end; i++) if (g.STRS[g.ENUM_VALS[i]] === v) return true;
   return false;
@@ -70,15 +121,27 @@ function validate(text, verbose) {
   p.on('error', (e) => { if (!stop) error(`not well-formed: ${e.message}`); stop = true; });
   p.on('doctype', (d) => {
     doctypeName = d.trim().split(/\s/)[0];
-    if (d.includes('[')) return error('internal DTD subsets are not supported');
-    const m = /PUBLIC\s+(["'])(.*?)\1/.exec(d);
+    const a = d.indexOf('['), b = d.lastIndexOf(']');
+    const subset = a >= 0 && b > a ? d.slice(a + 1, b) : null;
+    const external = subset === null ? d : d.slice(0, a);
+    const m = /PUBLIC\s+(["'])(.*?)\1/.exec(external);
     shell = m ? SHELL_BY_PUBLIC.get(m[2]) || null : null;
     if (!shell) error(`no compiled DTD for public id '${m ? m[2] : ''}'`);
     else Object.assign(p.ENTITIES, shell.entities);
+    if (subset !== null) {
+      try {
+        // The internal subset is read first, so its entities take precedence.
+        for (const [name, value] of parseInternalSubset(subset, shell)) p.ENTITIES[name] = value;
+      } catch (e) {
+        shell = null; // without its declarations the document cannot be checked
+        error(e.message);
+      }
+    }
   });
   p.on('opentag', (tag) => {
     if (stop) return;
-    if (!shell) { if (!seenRoot) error('no DTD found'); stop = true; return; }
+    // A DOCTYPE problem was already reported; otherwise there is none.
+    if (!shell) { if (!seenRoot && !errors) error('no DTD found'); stop = true; return; }
     seenRoot = true;
     const name = tag.name;
     const id = g.ELEM_ID.get(name);

@@ -22,12 +22,12 @@ Host: 4 vCPU cloud VM, files in page cache. Times cover read + parse + validate 
 
 | Validator | Threads | Validation time | **Files/s** | MB/s | DTD load (once) |
 |---|---:|---:|---:|---:|---:|
-| **DTD compiled to Rust** (+ quick-xml) | 1 | 0.100 s | **27,500** | 151 | none |
-| **DTD compiled to Rust** (+ quick-xml) | 4 | 0.026 s | **108,000** | 592 | none |
-| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 1 | 0.302 s | **9,130** | 50 | none |
-| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 4 | 0.109 s | **25,300** | 139 | none |
-| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 1 | 0.315 s | **8,760** | 48 | none |
-| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 4 | 0.168 s | **16,400** | 90 | none |
+| **DTD compiled to Rust** (+ quick-xml) | 1 | 0.083 s | **33,200** | 182 | none |
+| **DTD compiled to Rust** (+ quick-xml) | 4 | 0.022 s | **124,500** | 683 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 1 | 0.293 s | **9,420** | 52 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 4 | 0.122 s | **22,600** | 124 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 1 | 0.333 s | **8,290** | 46 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 4 | 0.164 s | **16,800** | 92 | none |
 | **xmloxide 0.5.0** (Rust, patched) | 1 | 0.390 s | **7,070** | 39 | 0.13 s |
 | **xmloxide 0.5.0** (Rust, patched) | 4 | 0.136 s | **20,300** | 111 | 0.15 s |
 | libxml2 2.9.14, cached DTD (C) | 1 | 0.459 s | 6,010 | 33 | 0.19 s |
@@ -63,11 +63,12 @@ by 1.2× on one thread and 1.6× on four.
 
 ## Compiling the DTDs to Rust, JS and Java
 
-`compiled/gen.py` takes the 8 flattened DTDs (6.5 MB in total) and emits
-`work-gen/generated.rs` (223 KB), `work-gen/generated.js` (189 KB) and
-`work-gen/GeneratedDtd.java` (224 KB). Generating takes 2.1 s. Then the Rust crate
-takes 7 s to build with LTO (0.79 MB binary), and `javac` takes 1.3 s. After that,
-nothing DTD-related is parsed at run time.
+`compiled/gen.py` takes flattened DTDs and emits `work-gen/generated.rs`,
+`work-gen/generated.js` and `work-gen/GeneratedDtd.java`. After that, nothing
+DTD-related is parsed at run time. It started with the 8 shells this corpus uses
+(6.5 MB of DTD → 223 KB of Rust, 2.1 s to generate). It now compiles **all 42 DITA 1.3,
+DITA 2.0 and LwDITA shells** (see [All shells](#all-dita-13-20-and-lwdita-shells)).
+The figures below are for the 8-shell build unless marked.
 
 - **Content models → minimized DFAs.** Each `<!ELEMENT>` model becomes a Glushkov
   automaton, then a DFA via subset construction, then a minimized DFA (Moore's
@@ -153,7 +154,8 @@ Two of the earlier harnesses turn out to be *less strict* than full validation:
   the real content error.
 
 **Limits of the compiled validators.** They accept only documents whose DOCTYPE
-names one of the compiled shells, and refuse internal DTD subsets. Attribute
+names one of the compiled shells. Internal DTD subsets may only declare internal
+general entities (see [All shells](#all-dita-13-20-and-lwdita-shells)). Attribute
 defaults are not inserted (no `@class` in an output tree; there is no output tree).
 The error *count* differs from libxml2: they report one error per broken parent,
 and only pass/fail is compared. quick-xml is a fast tokenizer, not a fully
@@ -162,6 +164,61 @@ character); saxes and the JDK's SAX parser are conformant. Character references
 in element-only content are treated as character data in Rust (always an error)
 but arrive from SAX/saxes already decoded, so `&#32;` passes there. None of the
 test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
+
+## All DITA 1.3, 2.0 and LwDITA shells
+
+`all_shells.py` walks the shell catalogs of DITA-OT 4.2.4's
+`org.oasis-open.dita.v1_3`, `…v2_0`, `…techcomm.v2_0` and `org.oasis-open.xdita.v0_3_0`
+(LwDITA) plugins. It finds **108 public IDs naming 42 shell DTDs**:
+
+- **DITA 1.3, 26 shells.** Topic, Concept, Task, General Task, Machinery Task,
+  Reference, Glossary, Glossary Entry, Glossary Group, Troubleshooting, Composite,
+  Base Topic, Map, Base Map, BookMap, Subject Scheme Map, Classification Map, and the
+  nine Learning & Training shells.
+- **DITA 2.0, 14 shells.** The base and technical-content topic and map shells.
+- **LwDITA, 2 shells.** Topic and Map.
+
+Each shell answers to its unversioned, versioned and `1.x`/`2.x` public IDs.
+DITA 1.2-only IDs (`-//OASIS//DTD DITA 1.2 …`) are not included. Each shell is
+flattened once with libxml2 (25 MB in total).
+
+The generator now parses each DTD file once and emits one table row set per shell.
+The public IDs are aliases pointing at it, so the Rust, JS and Java runtimes did not
+change. Everything is still deduplicated: **906 element names, 1,898 DFA states,
+30,495 transitions**, 642 attribute declarations, 360 attribute lists and
+141 enumerations. That is 807 KB of Rust, 736 KB of JS and 1.1 MB of Java, a 7.5 s
+generation, and an 808 KB wasm build. Validation speed did not change measurably
+(`results-raw-compiled.txt`: 33,200 files/s on 1 thread, 124,500 on 4, against 27,500
+and 108,000 for the 8-shell build; both are within this VM's noise).
+
+**Differential fuzzing over every shell.** The user guide exercises only 13 of the 42
+shells, so `fuzz_shells.py` generates documents straight from each shell's content
+models. For every one of the 108 public IDs it writes valid documents, plus mutants:
+a dropped, duplicated or swapped child, stray text, a bad attribute value, an
+undeclared attribute or element, or a missing required attribute.
+`fuzz_compare.sh` takes the ground truth from stock `xmllint`, loading the real
+modular DTDs through the DITA-OT catalog, and compares all four compiled runtimes
+against it.
+
+| Run | Documents | Invalid per xmllint | Rust | wasm | JS | Java |
+|---|---:|---:|---:|---:|---:|---:|
+| seed 1 (3 valid + 6 mutants per ID) | 972 | 464 | 0 disagreements | 0 | 0 | 0 |
+| seed 2 (5 valid + 20 mutants per ID) | 2,700 | 1,591 | 0 disagreements | 0 | 0 | 0 |
+
+All 324 generated "valid" documents of seed 1 are valid per xmllint. The mutants
+split both ways: 62 of 148 stray-text mutants are invalid, for example, since text
+is often allowed.
+
+**Internal DTD subsets with entity declarations.** Five of the user guide's 64
+`.ditamap` files declare text entities in their DOCTYPE, such as
+`<!ENTITY OXYGEN_MINOR "27.0">`. All three runtimes now accept internal subsets made
+only of comments and internal general entities. They expand the entity values and
+give the subset's entities precedence over the shell's, as XML does. Other content
+in a subset is still reported as unsupported: element or attribute declarations,
+parameter or external entities, and markup in entity values. With that, all 64 maps
+validate, matching xmllint. Hand-written edge cases (entity use in text, in
+attributes, an override of `&nbsp;`, undefined entities, the unsupported kinds) give
+the same verdict in Rust, JS and Java.
 
 ## In the browser: WebAssembly on 4 Web Workers
 
@@ -196,6 +253,28 @@ The result is the one DOCTYPE-less topic, as everywhere else. In the browser, wa
 4 workers runs about the native single-thread rate. The gap to native's 4-thread
 ~110,000 topics/s is per-document copying into wasm memory and wasm overhead, and
 the workers are statically partitioned, so they finish a few ms apart.
+
+**All shells, maps and GitHub (page version 2).** The page now embeds the 42-shell
+build and keeps `.ditamap` files too. From the user-guide zip that is 2,757 topics
+plus 64 maps, which use 13 different shells. Warm, the 2,821 documents validate in
+~100–140 ms in headless Chromium.
+
+The page can also read a public GitHub repository, either `owner/repo` or a
+`github.com/owner/repo/tree/branch/folder` URL. It reads the default branch and
+recursive tree from the REST API, which sends CORS headers, then fetches each
+`.dita`/`.ditamap` from `raw.githubusercontent.com` (`Access-Control-Allow-Origin:
+*`), 16 requests at a time. That costs 2 of the 60 unauthenticated API requests per
+hour.
+
+This sandbox's proxy refuses `api.github.com`, so the end-to-end test served both
+hosts from the local clone. The page loaded 2,821 files in 3.4 s and validated
+them in 77 ms. When the requests are refused, the page shows the reason and links
+the repository's zip download (`/archive/HEAD.zip`), to drop in instead. That is
+what to expect inside the Claude artifact viewer, whose CSP blocks `fetch()` to
+other hosts whatever their CORS headers. I could not run the published page inside
+the viewer from here to confirm it. The built standalone file
+`compiled/web/dita-wasm-validator.html` has no such policy when opened directly in
+a browser.
 
 ## Xerces-J with a shared grammar pool
 
@@ -242,7 +321,8 @@ about 0.33× xmloxide.
    self-contained DTD per doctype (`work-flat/*.dtd`, 19 KB for LwDITA and
    ~0.9 MB for the others). This runs once, at setup.
 2. **Validate** (`rust-bench/src/main.rs`, `c/libxml2_cached.c`). Each thread
-   parses the 8 flattened DTDs once. Worker threads then pull file paths from a
+   parses the 8 flattened DTDs once (these library-based runs keep the 8-shell map
+   `work-dtdmap.tsv`). Worker threads then pull file paths from a
    shared atomic counter. For each topic they read the DOCTYPE public ID, parse the
    document *without* loading its external DTD, and validate the tree against
    the cached DTD. All three library-based runs use the same flattened DTDs.

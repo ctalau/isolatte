@@ -134,15 +134,25 @@ public class CompiledValidator extends DefaultHandler implements LexicalHandler,
 
     @Override public void endDTD() { inDtd = false; }
 
-    private void internalSubset() {
-        if (!stop) error("internal DTD subsets are not supported");
+    /**
+     * Internal DTD subsets may only declare internal general entities, which
+     * the SAX parser then expands itself (they take precedence over the
+     * compiled shell's, as the internal subset is read first).
+     */
+    private void unsupported(String what) {
+        if (!stop) error("internal DTD subset: " + what + " is not supported");
         stop = true;
     }
 
-    @Override public void elementDecl(String name, String model) { internalSubset(); }
-    @Override public void attributeDecl(String e, String a, String t, String m, String v) { internalSubset(); }
-    @Override public void internalEntityDecl(String name, String value) { internalSubset(); }
-    @Override public void externalEntityDecl(String name, String p, String s) { internalSubset(); }
+    @Override public void elementDecl(String name, String model) { unsupported("a declaration other than <!ENTITY>"); }
+    @Override public void attributeDecl(String e, String a, String t, String m, String v) {
+        unsupported("a declaration other than <!ENTITY>");
+    }
+    @Override public void internalEntityDecl(String name, String value) {
+        if (name.startsWith("%")) unsupported("a parameter entity");
+        else if (value.indexOf('<') >= 0) unsupported("an entity value with markup");
+    }
+    @Override public void externalEntityDecl(String name, String p, String s) { unsupported("an external entity"); }
     @Override public void startCDATA() { inCdata = true; }
     @Override public void endCDATA() { inCdata = false; }
     @Override public void startEntity(String name) {}
@@ -155,7 +165,8 @@ public class CompiledValidator extends DefaultHandler implements LexicalHandler,
     public void startElement(String uri, String local, String name, Attributes atts) {
         if (stop) return;
         if (shell == null) {
-            if (!seenRoot) error("no DTD found");
+            // A DOCTYPE problem was already reported; otherwise there is none.
+            if (!seenRoot && errors == 0) error("no DTD found");
             stop = true;
             return;
         }

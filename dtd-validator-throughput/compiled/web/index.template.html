@@ -108,6 +108,25 @@
   }
   .chip.warn { background: var(--bad-soft); color: var(--bad); }
   .status { font-size: 14px; color: var(--muted); min-height: 1.5em; }
+  .gh { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+  .gh label { font-weight: 600; font-size: 14px; }
+  .gh input[type="text"] {
+    flex: 1 1 260px; min-width: 0;
+    font: 14px/1.2 var(--font-mono);
+    padding: 10px 12px; border-radius: 7px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  }
+  .gh input[type="text"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .linkish { background: none; border: none; padding: 0; color: var(--accent); font: 500 13px var(--font-mono); cursor: pointer; }
+  .linkish:hover { text-decoration: underline; }
+  .gh-help { font-size: 13px; color: var(--muted); }
+  .fallback { border-left: 3px solid var(--bad); padding: 4px 0 4px 12px; display: grid; gap: 6px; font-size: 14px; }
+  .fallback a { color: var(--accent); font-family: var(--font-mono); font-size: 13px; overflow-wrap: anywhere; }
+  .or { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .groups { display: grid; gap: 14px; }
+  .group { display: grid; gap: 6px; }
+  .group h3 { margin: 0; font: 600 14px var(--font-display); }
+  .group h3 span { font: 400 12px var(--font-mono); color: var(--muted); margin-left: 6px; }
   .status.error { color: var(--bad); }
 
   .run-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
@@ -164,21 +183,35 @@
 <main>
   <header>
     <h1>DITA Wasm Validator</h1>
-    <p class="lede">DTD validation of DITA topics in your browser. The DITA 1.3 DTDs were compiled
-      ahead of time into Rust code and built to WebAssembly. Four Web Workers each run a copy of
-      that validator, and nothing is uploaded anywhere.</p>
+    <p class="lede">DTD validation of DITA topics and maps in your browser. All 42 document-type
+      shells of DITA 1.3, DITA 2.0 and Lightweight DITA were compiled ahead of time into Rust code
+      and built to WebAssembly. Four Web Workers each run a copy of that validator, and your files
+      are never uploaded.</p>
   </header>
 
   <section class="step" aria-labelledby="s1">
     <h2 id="s1"><span class="step-no">STEP 1</span> Load a DITA project</h2>
     <div class="drop" id="drop">
       <p>Drop a <code>.zip</code> of your DITA project here. The page unpacks it in memory and
-        keeps only the <code>.dita</code> topics; maps, images and other files are skipped.</p>
+        keeps the <code>.dita</code> topics and <code>.ditamap</code> maps; images and other files
+        are skipped.</p>
       <label class="file-btn">Choose .zip
         <input type="file" id="zip-input" accept=".zip,application/zip">
       </label>
       <button type="button" id="sample-btn">Use sample project</button>
     </div>
+    <span class="or">or read a public GitHub repository</span>
+    <form class="gh" id="gh-form">
+      <label for="gh-input">Repository</label>
+      <input type="text" id="gh-input" placeholder="owner/repo or a github.com URL" autocomplete="off" spellcheck="false">
+      <button type="submit" id="gh-btn">Load from GitHub</button>
+    </form>
+    <p class="gh-help">Try <button type="button" class="linkish" data-repo="oxygenxml/userguide">oxygenxml/userguide</button>
+      or <button type="button" class="linkish" data-repo="dita-ot/docs">dita-ot/docs</button>. A
+      <code>/tree/branch/folder</code> URL limits loading to that branch and folder. Files are read
+      straight from GitHub's public API. Inside the Claude artifact viewer such requests are
+      blocked, and the page offers the repository's zip download instead.</p>
+    <div class="fallback" id="gh-fallback" hidden></div>
     <div class="facts" id="facts" hidden></div>
     <div class="chips" id="doctypes" hidden></div>
     <p class="status" id="load-status" role="status"></p>
@@ -199,13 +232,13 @@
         <span class="label">Time to validate</span>
         <span class="big" id="wall"></span>
       </div>
-      <div class="stat"><span class="label">Topics</span><span class="v" id="r-files"></span></div>
+      <div class="stat"><span class="label">Documents</span><span class="v" id="r-files"></span></div>
       <div class="stat"><span class="label">Throughput</span><span class="v" id="r-rate"></span></div>
       <div class="stat"><span class="label">Data</span><span class="v" id="r-mb"></span></div>
       <span class="pill" id="verdict"></span>
     </div>
     <p class="muted" style="font-size:13px">Measured from pressing Validate until the last worker
-      reported back. The topics were already copied into the workers when the project loaded, so
+      reported back. The documents were already copied into the workers when the project loaded, so
       the time covers only parsing and validating. Each bar shows one worker's time inside its
       validation loop.</p>
     <div class="workers" id="workers"></div>
@@ -214,7 +247,7 @@
       <summary>All runs in this session</summary>
       <div class="scroll">
         <table>
-          <thead><tr><th>Run</th><th>Project</th><th>Topics</th><th>Time</th><th>Topics/s</th><th>Invalid</th></tr></thead>
+          <thead><tr><th>Run</th><th>Project</th><th>Documents</th><th>Time</th><th>Docs/s</th><th>Invalid</th></tr></thead>
           <tbody id="history"></tbody>
         </table>
       </div>
@@ -223,10 +256,11 @@
 
   <section class="step" aria-labelledby="s4">
     <h2 id="s4">Supported document types</h2>
-    <p class="muted">Each topic is validated against the shell its DOCTYPE public ID names.
-      These shells were compiled in (DITA-OT 4.2.4, DITA 1.3 and Lightweight DITA). A topic with
-      any other DOCTYPE, such as a custom specialization, is reported as invalid.</p>
-    <div class="chips" id="shells"></div>
+    <p class="muted">Each document is validated against the shell its DOCTYPE public ID names.
+      These shells come from DITA-OT 4.2.4, and each answers to its unversioned, versioned and
+      <code>1.x</code>/<code>2.x</code> public IDs (hover a name to see them). A document with any
+      other DOCTYPE, such as a custom specialization, is reported as invalid.</p>
+    <div class="groups" id="shells"></div>
   </section>
 </main>
 
@@ -272,25 +306,33 @@
   'use strict';
   const WASM_BASE64 = '__WASM_BASE64__';
   const WORKERS = 4;
-  const SHELLS = [
-    ['-//OASIS//DTD DITA Topic//EN', 'Topic'],
-    ['-//OASIS//DTD DITA Concept//EN', 'Concept'],
-    ['-//OASIS//DTD DITA Task//EN', 'Task'],
-    ['-//OASIS//DTD DITA Reference//EN', 'Reference'],
-    ['-//OASIS//DTD DITA Glossary//EN', 'Glossary'],
-    ['-//OASIS//DTD DITA Troubleshooting//EN', 'Troubleshooting'],
-    ['-//OASIS//DTD DITA 1.3 Troubleshooting//EN', 'Troubleshooting 1.3'],
-    ['-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN', 'LwDITA Topic'],
-  ];
-  const SHELL_NAME = new Map(SHELLS);
+  // [public id, shell name, version group] for every compiled public id.
+  const SHELLS = __SHELLS_JSON__;
+  const SHELL_NAME = new Map(SHELLS.map(([pub, name, group]) => [pub, `${group} ${name}`]));
 
   const $ = (id) => document.getElementById(id);
   const fmt = (n, d = 0) => n.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
   const mb = (b) => b >= 1e6 ? `${fmt(b / 1e6, 1)} MB` : `${fmt(b / 1e3, 0)} KB`;
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-  $('shells').innerHTML = SHELLS.map(([pub, name]) =>
-    `<span class="chip" title="${esc(pub)}">${esc(name)}</span>`).join('');
+  {
+    const groups = new Map();
+    for (const [pub, name, group] of SHELLS) {
+      if (!groups.has(group)) groups.set(group, new Map());
+      const g = groups.get(group);
+      if (!g.has(name)) g.set(name, []);
+      g.get(name).push(pub);
+    }
+    const order = ['DITA 1.3', 'DITA 2.0', 'LwDITA'];
+    const sorted = [...groups].sort((x, y) => order.indexOf(x[0]) - order.indexOf(y[0]))
+      .map(([group, names]) => [group, new Map([...names].sort((x, y) => x[0].localeCompare(y[0])))]);
+    $('shells').innerHTML = sorted.map(([group, names]) => `
+      <div class="group">
+        <h3>${esc(group)}<span>${names.size} shells</span></h3>
+        <div class="chips">${[...names].map(([name, pubs]) =>
+          `<span class="chip" title="${esc(pubs.join('\n'))}">${esc(name)}</span>`).join('')}</div>
+      </div>`).join('');
+  }
 
   // ---------------------------------------------------------------- workers
   const workerUrl = URL.createObjectURL(new Blob([$('worker-src').textContent], { type: 'text/javascript' }));
@@ -317,7 +359,7 @@
     await Promise.all(workers.map((w) => call(w, { type: 'init', module }, 'ready')));
   })();
 
-  /** Split topics over the workers by size, largest first (LPT), so they finish together. */
+  /** Split documents over the workers by size, largest first (LPT), so they finish together. */
   function partition(files) {
     const parts = Array.from({ length: WORKERS }, () => ({ files: [], bytes: 0 }));
     const order = files.map((f, i) => i).sort((a, b) => files[b].bytes.length - files[a].bytes.length);
@@ -343,9 +385,11 @@
       const key = pub ? (SHELL_NAME.get(pub) || `Unknown: ${pub}`) : 'No DOCTYPE';
       counts.set(key, (counts.get(key) || 0) + 1);
     }
+    const maps = p.files.filter((f) => /\.ditamap$/i.test(f.path)).length;
     $('facts').innerHTML = [
-      `<span><b>${fmt(p.files.length)}</b> .dita topics</span>`,
-      `<span><b>${mb(p.totalBytes)}</b> of topic XML</span>`,
+      `<span><b>${fmt(p.files.length - maps)}</b> topics</span>`,
+      `<span><b>${fmt(maps)}</b> maps</span>`,
+      `<span><b>${mb(p.totalBytes)}</b> of DITA XML</span>`,
       p.skipped != null ? `<span><b>${fmt(p.skipped)}</b> other files skipped</span>` : '',
       unpackMs != null ? `<span>unpacked in <b>${fmt(unpackMs)} ms</b></span>` : '',
     ].join('');
@@ -361,16 +405,16 @@
     $('validate-btn').disabled = true;
     showProject(p, unpackMs);
     if (!p.files.length) {
-      setStatus('load-status', 'This zip has no .dita files. Check that it contains your topics folder.', true);
+      setStatus('load-status', `${p.name} has no .dita or .ditamap files. Check that it contains your DITA source.`, true);
       return;
     }
-    setStatus('load-status', `Copying ${fmt(p.files.length)} topics into ${WORKERS} workers…`);
+    setStatus('load-status', `Copying ${fmt(p.files.length)} documents into ${WORKERS} workers…`);
     await ready;
     const parts = partition(p.files);
     await Promise.all(workers.map((w, i) => call(w, { type: 'load', files: parts[i].files }, 'loaded')));
     loadedCount = p.files.length;
-    setStatus('load-status', `${p.name} is loaded. Topics are split across ${WORKERS} workers by size.`);
-    setStatus('run-status', `Ready to validate ${fmt(p.files.length)} topics.`);
+    setStatus('load-status', `${p.name} is loaded. Documents are split across ${WORKERS} workers by size.`);
+    setStatus('run-status', `Ready to validate ${fmt(p.files.length)} documents.`);
     $('validate-btn').disabled = false;
   }
 
@@ -379,6 +423,8 @@
     el.textContent = text;
     el.classList.toggle('error', !!isError);
   }
+
+  const DITA_FILE = /\.(dita|ditamap)$/i;
 
   async function loadZip(file) {
     if (running) return;
@@ -391,7 +437,7 @@
       let skipped = 0;
       zip.forEach((path, entry) => {
         if (entry.dir) return;
-        if (/\.dita$/i.test(path) && !/(^|\/)__MACOSX\//.test(path)) entries.push(entry);
+        if (DITA_FILE.test(path) && !/(^|\/)__MACOSX\//.test(path)) entries.push(entry);
         else skipped++;
       });
       const files = await Promise.all(entries.map(async (e) => ({ path: e.name, bytes: await e.async('uint8array') })));
@@ -414,6 +460,100 @@
     if (f) loadZip(f);
   });
 
+  // ---------------------------------------------------------------- GitHub
+  /** "owner/repo", or github.com/owner/repo[/tree/branch[/folder]] -> parts. */
+  function parseRepo(text) {
+    const t = text.trim().replace(/^https?:\/\/(www\.)?github\.com\//i, '').replace(/\.git$/, '').replace(/\/+$/, '');
+    const m = /^([\w.-]+)\/([\w.-]+)(?:\/tree\/([^/]+)(?:\/(.+))?)?$/.exec(t);
+    return m ? { owner: m[1], repo: m[2], branch: m[3] || null, folder: m[4] || '' } : null;
+  }
+
+  async function getJson(url) {
+    const r = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+    if (r.status === 403 || r.status === 429) {
+      const reset = Number(r.headers.get('x-ratelimit-reset'));
+      const when = reset ? ` Try again after ${new Date(reset * 1000).toLocaleTimeString()}.` : '';
+      throw Object.assign(new Error(`GitHub's API rate limit for unauthenticated requests (60 an hour) is used up.${when}`), { http: true });
+    }
+    if (r.status === 404) throw Object.assign(new Error('GitHub has no public repository or branch by that name.'), { http: true });
+    if (!r.ok) throw Object.assign(new Error(`GitHub answered ${r.status} ${r.statusText}.`), { http: true });
+    return r.json();
+  }
+
+  function showFallback(ref, reason) {
+    const zipUrl = `https://github.com/${ref.owner}/${ref.repo}/archive/${ref.branch ? `refs/heads/${ref.branch}` : 'HEAD'}.zip`;
+    const el = $('gh-fallback');
+    el.innerHTML = `<p>${esc(reason)}</p>
+      <p>Download the repository as a zip instead, then drop it above:</p>
+      <a href="${esc(zipUrl)}" target="_blank" rel="noopener">${esc(zipUrl)}</a>`;
+    el.hidden = false;
+  }
+
+  async function loadGitHub(text) {
+    if (running) return;
+    $('gh-fallback').hidden = true;
+    const ref = parseRepo(text);
+    if (!ref) {
+      setStatus('load-status', 'Enter a repository as owner/repo, or paste its github.com URL.', true);
+      return;
+    }
+    const label = `${ref.owner}/${ref.repo}`;
+    $('gh-btn').disabled = true;
+    $('validate-btn').disabled = true;
+    const t0 = performance.now();
+    try {
+      setStatus('load-status', `Asking GitHub for the files in ${label}…`);
+      const api = `https://api.github.com/repos/${ref.owner}/${ref.repo}`;
+      if (!ref.branch) ref.branch = (await getJson(api)).default_branch;
+      const tree = await getJson(`${api}/git/trees/${encodeURIComponent(ref.branch)}?recursive=1`);
+      const prefix = ref.folder ? `${ref.folder.replace(/\/$/, '')}/` : '';
+      const paths = tree.tree
+        .filter((e) => e.type === 'blob' && DITA_FILE.test(e.path) && e.path.startsWith(prefix))
+        .map((e) => e.path);
+      const raw = (path) => `https://raw.githubusercontent.com/${ref.owner}/${ref.repo}/${encodeURIComponent(ref.branch)}/` +
+        path.split('/').map(encodeURIComponent).join('/');
+      const files = new Array(paths.length);
+      let next = 0, done = 0;
+      const fetchOne = async () => {
+        for (let i; (i = next++) < paths.length;) {
+          const r = await fetch(raw(paths[i]));
+          if (!r.ok) throw Object.assign(new Error(`GitHub answered ${r.status} for ${paths[i]}.`), { http: true });
+          files[i] = { path: paths[i], bytes: new Uint8Array(await r.arrayBuffer()) };
+          if (++done % 50 === 0 || done === paths.length) {
+            setStatus('load-status', `Downloading from ${label}: ${fmt(done)} of ${fmt(paths.length)} files…`);
+          }
+        }
+      };
+      await Promise.all(Array.from({ length: Math.min(16, paths.length) }, fetchOne));
+      const totalBytes = files.reduce((s, f) => s + f.bytes.length, 0);
+      const name = `${label}@${ref.branch}${ref.folder ? `/${ref.folder}` : ''}`;
+      const ms = performance.now() - t0;
+      await useProject({ name, files, skipped: tree.tree.filter((e) => e.type === 'blob').length - files.length, totalBytes }, null);
+      setStatus('load-status', `${name} is loaded: downloaded in ${fmt(ms / 1000, 1)} s` +
+        (tree.truncated ? '. GitHub truncated the file list for this very large repository, so some files are missing.' : '.') +
+        ` Documents are split across ${WORKERS} workers by size.`);
+    } catch (err) {
+      const kept = project && loadedCount === project.files.length ? ` ${project.name} is still loaded.` : '';
+      if (project && loadedCount === project.files.length) $('validate-btn').disabled = false;
+      if (err.http) {
+        setStatus('load-status', err.message + kept, true);
+      } else {
+        setStatus('load-status', `Could not reach GitHub from this page.${kept}`, true);
+        showFallback(ref, 'The browser blocked the request to GitHub. When this page runs inside the Claude artifact ' +
+          'viewer, its security policy does not allow requests to other sites. Opened as a standalone file, the same ' +
+          'page reads public repositories directly.');
+      }
+    } finally {
+      $('gh-btn').disabled = false;
+    }
+  }
+
+  $('gh-form').addEventListener('submit', (e) => { e.preventDefault(); loadGitHub($('gh-input').value); });
+  document.querySelectorAll('[data-repo]').forEach((b) => b.addEventListener('click', () => {
+    $('gh-input').value = b.dataset.repo;
+    loadGitHub(b.dataset.repo);
+  }));
+
   // ---------------------------------------------------------------- sample
   const topic = (dt, id, body, pub) =>
     `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE ${dt} PUBLIC "${pub}" "${dt}.dtd">\n${body.replace('ID', id)}\n`;
@@ -431,8 +571,17 @@
       '<stentry>Keys</stentry></sthead><strow><stentry>Validate</stentry><stentry><uicontrol>Ctrl+Shift+V</uicontrol></stentry></strow>' +
       '</simpletable></refbody></reference>', '-//OASIS//DTD DITA Reference//EN')],
     ['topics/overview.dita', topic('topic', 'overview',
-      '<topic id="ID"><title>Overview</title><body><p>This sample project has six topics. Two contain mistakes.</p>' +
+      '<topic id="ID"><title>Overview</title><body><p>This sample project has six topics and a map. Two topics contain mistakes.</p>' +
       '<codeblock xml:space="preserve">&lt;topic id="x"/&gt;</codeblock></body></topic>', '-//OASIS//DTD DITA Topic//EN')],
+    ['topics/whats-new.dita', topic('topic', 'whats-new',
+      '<topic id="ID"><title>What is new in DITA 2.0</title><body><p>The <xmlelement>audio</xmlelement> and ' +
+      '<xmlelement>video</xmlelement> elements are part of the base vocabulary.</p></body></topic>',
+      '-//OASIS//DTD DITA 2.0 Topic//EN')],
+    ['guide.ditamap', topic('map', '',
+      '<map><title>Sample guide</title><topicref href="topics/overview.dita"><topicref href="topics/installing.dita"/>' +
+      '<topicref href="topics/about-validation.dita"/><topicref href="topics/whats-new.dita"/></topicref>' +
+      '<reltable><relrow><relcell><topicref href="topics/shortcuts.dita"/></relcell></relrow></reltable></map>',
+      '-//OASIS//DTD DITA Map//EN')],
     ['topics/broken-order.dita', topic('topic', 'broken-order',
       '<topic id="ID"><body><p>The title must come before the body.</p></body><title>Wrong order</title></topic>',
       '-//OASIS//DTD DITA Topic//EN')],
@@ -474,13 +623,13 @@
     $('results').hidden = false;
     $('wall').innerHTML = wall >= 1000 ? `${fmt(secs, 2)}<small>s</small>` : `${fmt(wall, wall < 10 ? 2 : 1)}<small>ms</small>`;
     $('r-files').textContent = fmt(files);
-    $('r-rate').textContent = `${fmt(files / secs)} topics/s`;
+    $('r-rate').textContent = `${fmt(files / secs)} docs/s`;
     $('r-mb').textContent = `${mb(bytes)} · ${fmt(bytes / 1e6 / secs, 1)} MB/s`;
     const v = $('verdict');
     v.className = `pill ${invalid.length ? 'bad' : 'ok'}`;
     v.textContent = invalid.length
-      ? `${fmt(invalid.length)} invalid topic${invalid.length === 1 ? '' : 's'} · ${fmt(errors)} error${errors === 1 ? '' : 's'}`
-      : 'All topics valid';
+      ? `${fmt(invalid.length)} invalid document${invalid.length === 1 ? '' : 's'} · ${fmt(errors)} error${errors === 1 ? '' : 's'}`
+      : 'All documents valid';
     setStatus('run-status', `Run ${runNo} finished. Press again to repeat; later runs are usually faster once the browser has optimized the WebAssembly.`);
 
     const maxMs = Math.max(...results.map((r) => r.ms), 0.001);
@@ -488,7 +637,7 @@
       <div class="worker">
         <span class="label">Worker ${i + 1}</span>
         <div class="track" aria-hidden="true"><div class="fill" style="width:${(100 * r.ms / maxMs).toFixed(1)}%"></div></div>
-        <span class="num">${fmt(r.ms, 1)} ms · ${fmt(r.files)} topics</span>
+        <span class="num">${fmt(r.ms, 1)} ms · ${fmt(r.files)} docs</span>
       </div>`).join('');
 
     const shown = invalid.slice(0, 200);
@@ -497,7 +646,7 @@
         <div class="path">${esc(p.path)} <span class="muted">(${p.n} error${p.n === 1 ? '' : 's'})</span></div>
         <ul>${p.msgs.map((m) => `<li>${esc(m)}</li>`).join('')}</ul>
       </div>`).join('') +
-      (invalid.length > shown.length ? `<p class="muted">…and ${fmt(invalid.length - shown.length)} more invalid topics.</p>` : '');
+      (invalid.length > shown.length ? `<p class="muted">…and ${fmt(invalid.length - shown.length)} more invalid documents.</p>` : '');
 
     const row = document.createElement('tr');
     row.innerHTML = `<td class="n">${runNo}</td><td>${esc(project.name)}</td><td class="n">${fmt(files)}</td>` +
