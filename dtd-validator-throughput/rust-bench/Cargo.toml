@@ -1,0 +1,18 @@
+[package]
+name = "rust-bench"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rusty_xml = "0.8.3"
+xmloxide = "0.5.0"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+
+# xmloxide 0.5.0 compares attribute *local* names against DTD-declared
+# qualified names, so every `xml:space` / `xml:lang` attribute is reported as
+# undeclared. setup.sh builds this patched copy (patches/).
+[patch.crates-io]
+xmloxide = { path = "../work-xmloxide-patched" }

@@ -1,0 +1,36 @@
+--- a/src/validation/dtd.rs	2026-10-22 19:00:27.921900207 +0000
++++ b/src/validation/dtd.rs	2026-10-22 19:00:27.939440280 +0000
+@@ -2613,6 +2613,15 @@
+     }
+ }
+ 
++/// The attribute name as written in the document (`prefix:local`), which is
++/// how a DTD declares it (e.g. `xml:space`).
++fn attr_qname(attr: &crate::tree::Attribute) -> std::borrow::Cow<'_, str> {
++    match &attr.prefix {
++        Some(p) => std::borrow::Cow::Owned(format!("{p}:{}", attr.name)),
++        None => std::borrow::Cow::Borrowed(attr.name.as_str()),
++    }
++}
++
+ /// Validates attributes for an element against DTD attribute declarations.
+ #[allow(clippy::too_many_arguments)]
+ fn validate_attributes(
+@@ -2631,7 +2640,7 @@
+     if let Some(decls) = attr_decls {
+         // Check each declared attribute
+         for decl in decls {
+-            let actual = actual_attrs.iter().find(|a| a.name == decl.attribute_name);
++            let actual = actual_attrs.iter().find(|a| attr_qname(a) == decl.attribute_name);
+ 
+             match (&decl.default, actual) {
+                 (AttributeDefault::Required, None) => {
+@@ -2679,7 +2688,7 @@
+             if attr.name == "xmlns" || attr.prefix.as_deref() == Some("xmlns") {
+                 continue;
+             }
+-            let is_declared = decls.iter().any(|d| d.attribute_name == attr.name);
++            let is_declared = decls.iter().any(|d| d.attribute_name == attr_qname(attr));
+             if !is_declared {
+                 errors.push(ValidationError {
+                     message: format!(
