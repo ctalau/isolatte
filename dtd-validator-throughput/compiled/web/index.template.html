@@ -1,0 +1,512 @@
+<title>DITA Wasm Validator</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  /* Layout: one 880px column of numbered steps (load -> validate -> result); results lead with the timing. */
+  :root {
+    --bg: #f3f5f8;
+    --panel: #ffffff;
+    --fg: #172231;
+    --muted: #5a6778;
+    --line: #d7dee7;
+    --accent: #2754c5;
+    --accent-ink: #ffffff;
+    --accent-soft: #e4ebfb;
+    --ok: #1d7a4c;
+    --ok-soft: #e1f2e8;
+    --bad: #b42318;
+    --bad-soft: #fbe6e3;
+    --bar: #9fb4e6;
+    --font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f151d; --panel: #17202b; --fg: #e3e9f1; --muted: #93a1b3; --line: #2a3644;
+      --accent: #7ea2f5; --accent-ink: #0d1626; --accent-soft: #1d2a45;
+      --ok: #5cc890; --ok-soft: #15301f; --bad: #f2877b; --bad-soft: #3a1b18; --bar: #3d5a9c;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f151d; --panel: #17202b; --fg: #e3e9f1; --muted: #93a1b3; --line: #2a3644;
+    --accent: #7ea2f5; --accent-ink: #0d1626; --accent-soft: #1d2a45;
+    --ok: #5cc890; --ok-soft: #15301f; --bad: #f2877b; --bad-soft: #3a1b18; --bar: #3d5a9c;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font: 15px/1.55 var(--font-body);
+    padding-block: 28px 56px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 880px; margin: 0 auto; display: grid; gap: 22px; }
+  h1, h2 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+  h1 { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; font-weight: 600; display: flex; align-items: baseline; gap: 10px; }
+  p { margin: 0; max-width: 65ch; }
+  code, .mono { font-family: var(--font-mono); font-size: 0.88em; }
+  .muted { color: var(--muted); }
+
+  header { display: grid; gap: 8px; }
+  .lede { color: var(--muted); }
+
+  .step {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    display: grid;
+    gap: 14px;
+    min-width: 0;
+  }
+  .step-no {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+    color: var(--accent); letter-spacing: 0.06em;
+  }
+
+  .drop {
+    border: 1.5px dashed var(--line);
+    border-radius: 8px;
+    padding: 22px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px;
+    transition: border-color .15s, background .15s;
+  }
+  .drop.over { border-color: var(--accent); background: var(--accent-soft); }
+  .drop p { flex: 1 1 260px; }
+
+  button, .file-btn {
+    font: 600 14px/1 var(--font-body);
+    border-radius: 7px;
+    padding: 11px 16px;
+    cursor: pointer;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--fg);
+  }
+  button:hover:not(:disabled), .file-btn:hover { border-color: var(--accent); }
+  button:focus-visible, .file-btn:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .primary:hover:not(:disabled) { filter: brightness(1.08); }
+  .file-btn input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .file-btn { position: relative; display: inline-flex; }
+
+  .facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
+  .facts b { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font: 500 12px/1 var(--font-mono);
+    padding: 5px 8px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--fg);
+  }
+  .chip.warn { background: var(--bad-soft); color: var(--bad); }
+  .status { font-size: 14px; color: var(--muted); min-height: 1.5em; }
+  .status.error { color: var(--bad); }
+
+  .run-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+
+  .result-head { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 28px; }
+  .big {
+    font: 600 46px/1 var(--font-display);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .big small { font-size: 22px; font-weight: 500; color: var(--muted); margin-left: 4px; }
+  .stat { display: grid; gap: 2px; }
+  .label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .stat .v { font: 500 18px/1.2 var(--font-mono); font-variant-numeric: tabular-nums; }
+  .pill {
+    font: 600 13px/1 var(--font-body);
+    padding: 7px 11px; border-radius: 999px;
+  }
+  .pill.ok { background: var(--ok-soft); color: var(--ok); }
+  .pill.bad { background: var(--bad-soft); color: var(--bad); }
+
+  .workers { display: grid; gap: 8px; }
+  .worker {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr) auto;
+    align-items: center; gap: 12px;
+    font-size: 13px;
+  }
+  .track { height: 10px; background: var(--accent-soft); border-radius: 3px; overflow: hidden; }
+  .fill { height: 100%; background: var(--bar); border-radius: 3px; }
+  .worker .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  td.n { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .problems { display: grid; gap: 10px; }
+  .problem { border-left: 3px solid var(--bad); padding: 2px 0 2px 12px; min-width: 0; }
+  .problem .path { font-family: var(--font-mono); font-size: 13px; overflow-wrap: anywhere; }
+  .problem ul { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+
+  details summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+  details[open] summary { margin-bottom: 8px; }
+
+  @media (max-width: 560px) {
+    .worker { grid-template-columns: 60px minmax(0, 1fr); }
+    .worker .num { grid-column: 1 / -1; text-align: left; }
+    .big { font-size: 38px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .drop { transition: none; } }
+</style>
+
+<main>
+  <header>
+    <h1>DITA Wasm Validator</h1>
+    <p class="lede">DTD validation of DITA topics in your browser. The DITA 1.3 DTDs were compiled
+      ahead of time into Rust code and built to WebAssembly. Four Web Workers each run a copy of
+      that validator, and nothing is uploaded anywhere.</p>
+  </header>
+
+  <section class="step" aria-labelledby="s1">
+    <h2 id="s1"><span class="step-no">STEP 1</span> Load a DITA project</h2>
+    <div class="drop" id="drop">
+      <p>Drop a <code>.zip</code> of your DITA project here. The page unpacks it in memory and
+        keeps only the <code>.dita</code> topics; maps, images and other files are skipped.</p>
+      <label class="file-btn">Choose .zip
+        <input type="file" id="zip-input" accept=".zip,application/zip">
+      </label>
+      <button type="button" id="sample-btn">Use sample project</button>
+    </div>
+    <div class="facts" id="facts" hidden></div>
+    <div class="chips" id="doctypes" hidden></div>
+    <p class="status" id="load-status" role="status"></p>
+  </section>
+
+  <section class="step" aria-labelledby="s2">
+    <h2 id="s2"><span class="step-no">STEP 2</span> Validate</h2>
+    <div class="run-row">
+      <button type="button" class="primary" id="validate-btn" disabled>Validate</button>
+      <p class="status" id="run-status" role="status">Preparing the 4 workers…</p>
+    </div>
+  </section>
+
+  <section class="step" aria-labelledby="s3" id="results" hidden>
+    <h2 id="s3"><span class="step-no">RESULT</span> <span id="result-title">Validation time</span></h2>
+    <div class="result-head">
+      <div class="stat">
+        <span class="label">Time to validate</span>
+        <span class="big" id="wall"></span>
+      </div>
+      <div class="stat"><span class="label">Topics</span><span class="v" id="r-files"></span></div>
+      <div class="stat"><span class="label">Throughput</span><span class="v" id="r-rate"></span></div>
+      <div class="stat"><span class="label">Data</span><span class="v" id="r-mb"></span></div>
+      <span class="pill" id="verdict"></span>
+    </div>
+    <p class="muted" style="font-size:13px">Measured from pressing Validate until the last worker
+      reported back. The topics were already copied into the workers when the project loaded, so
+      the time covers only parsing and validating. Each bar shows one worker's time inside its
+      validation loop.</p>
+    <div class="workers" id="workers"></div>
+    <div class="problems" id="problems"></div>
+    <details id="history-box">
+      <summary>All runs in this session</summary>
+      <div class="scroll">
+        <table>
+          <thead><tr><th>Run</th><th>Project</th><th>Topics</th><th>Time</th><th>Topics/s</th><th>Invalid</th></tr></thead>
+          <tbody id="history"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="step" aria-labelledby="s4">
+    <h2 id="s4">Supported document types</h2>
+    <p class="muted">Each topic is validated against the shell its DOCTYPE public ID names.
+      These shells were compiled in (DITA-OT 4.2.4, DITA 1.3 and Lightweight DITA). A topic with
+      any other DOCTYPE, such as a custom specialization, is reported as invalid.</p>
+    <div class="chips" id="shells"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script type="text/plain" id="worker-src">
+  // One validator instance per worker. Topics arrive once ("load"); each
+  // "run" validates all of them and reports the time spent in the loop.
+  let ex = null, files = [];
+  const dec = new TextDecoder();
+  onmessage = (e) => {
+    const m = e.data;
+    if (m.type === 'init') {
+      ex = new WebAssembly.Instance(m.module, {}).exports;
+      postMessage({ type: 'ready' });
+    } else if (m.type === 'load') {
+      files = m.files;
+      postMessage({ type: 'loaded', files: files.length });
+    } else if (m.type === 'run') {
+      const invalid = [];
+      let errors = 0, bytes = 0;
+      const t0 = performance.now();
+      for (const f of files) {
+        const d = f.bytes;
+        const p = ex.alloc(d.length);
+        new Uint8Array(ex.memory.buffer, p, d.length).set(d);
+        const n = ex.validate(p, d.length, 1);
+        ex.dealloc(p, d.length);
+        bytes += d.length;
+        if (n) {
+          errors += n;
+          const text = dec.decode(new Uint8Array(ex.memory.buffer, ex.messages_ptr(), ex.messages_len()));
+          invalid.push({ path: f.path, n, msgs: text.split('\n').slice(0, 4) });
+        }
+      }
+      postMessage({ type: 'done', ms: performance.now() - t0, files: files.length, bytes, errors, invalid });
+    }
+  };
+</script>
+
+<script>
+(() => {
+  'use strict';
+  const WASM_BASE64 = '__WASM_BASE64__';
+  const WORKERS = 4;
+  const SHELLS = [
+    ['-//OASIS//DTD DITA Topic//EN', 'Topic'],
+    ['-//OASIS//DTD DITA Concept//EN', 'Concept'],
+    ['-//OASIS//DTD DITA Task//EN', 'Task'],
+    ['-//OASIS//DTD DITA Reference//EN', 'Reference'],
+    ['-//OASIS//DTD DITA Glossary//EN', 'Glossary'],
+    ['-//OASIS//DTD DITA Troubleshooting//EN', 'Troubleshooting'],
+    ['-//OASIS//DTD DITA 1.3 Troubleshooting//EN', 'Troubleshooting 1.3'],
+    ['-//OASIS//DTD LIGHTWEIGHT DITA Topic//EN', 'LwDITA Topic'],
+  ];
+  const SHELL_NAME = new Map(SHELLS);
+
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n, d = 0) => n.toLocaleString('en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
+  const mb = (b) => b >= 1e6 ? `${fmt(b / 1e6, 1)} MB` : `${fmt(b / 1e3, 0)} KB`;
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+  $('shells').innerHTML = SHELLS.map(([pub, name]) =>
+    `<span class="chip" title="${esc(pub)}">${esc(name)}</span>`).join('');
+
+  // ---------------------------------------------------------------- workers
+  const workerUrl = URL.createObjectURL(new Blob([$('worker-src').textContent], { type: 'text/javascript' }));
+  const workers = [];
+  let project = null;      // { name, files: [{ path, bytes }], skipped, totalBytes }
+  let loadedCount = 0;
+  let running = false;
+  let runNo = 0;
+
+  function call(w, msg, wantType) {
+    return new Promise((resolve) => {
+      const onMsg = (e) => {
+        if (e.data.type === wantType) { w.removeEventListener('message', onMsg); resolve(e.data); }
+      };
+      w.addEventListener('message', onMsg);
+      w.postMessage(msg);
+    });
+  }
+
+  const ready = (async () => {
+    const bin = Uint8Array.from(atob(WASM_BASE64), (c) => c.charCodeAt(0));
+    const module = await WebAssembly.compile(bin);
+    for (let i = 0; i < WORKERS; i++) workers.push(new Worker(workerUrl));
+    await Promise.all(workers.map((w) => call(w, { type: 'init', module }, 'ready')));
+  })();
+
+  /** Split topics over the workers by size, largest first (LPT), so they finish together. */
+  function partition(files) {
+    const parts = Array.from({ length: WORKERS }, () => ({ files: [], bytes: 0 }));
+    const order = files.map((f, i) => i).sort((a, b) => files[b].bytes.length - files[a].bytes.length);
+    for (const i of order) {
+      const p = parts.reduce((a, b) => (b.bytes < a.bytes ? b : a));
+      p.files.push(files[i]);
+      p.bytes += files[i].bytes.length;
+    }
+    return parts;
+  }
+
+  // ---------------------------------------------------------------- loading
+  function doctypeOf(bytes) {
+    const head = new TextDecoder().decode(bytes.subarray(0, 1024));
+    const m = /<!DOCTYPE[^>]*?PUBLIC\s+["']([^"']+)["']/.exec(head);
+    return m ? m[1] : null;
+  }
+
+  function showProject(p, unpackMs) {
+    const counts = new Map();
+    for (const f of p.files) {
+      const pub = doctypeOf(f.bytes);
+      const key = pub ? (SHELL_NAME.get(pub) || `Unknown: ${pub}`) : 'No DOCTYPE';
+      counts.set(key, (counts.get(key) || 0) + 1);
+    }
+    $('facts').innerHTML = [
+      `<span><b>${fmt(p.files.length)}</b> .dita topics</span>`,
+      `<span><b>${mb(p.totalBytes)}</b> of topic XML</span>`,
+      p.skipped != null ? `<span><b>${fmt(p.skipped)}</b> other files skipped</span>` : '',
+      unpackMs != null ? `<span>unpacked in <b>${fmt(unpackMs)} ms</b></span>` : '',
+    ].join('');
+    $('doctypes').innerHTML = [...counts].sort((a, b) => b[1] - a[1]).map(([k, n]) =>
+      `<span class="chip${/^(Unknown|No DOCTYPE)/.test(k) ? ' warn' : ''}">${esc(k)} · ${fmt(n)}</span>`).join('');
+    $('facts').hidden = false;
+    $('doctypes').hidden = false;
+  }
+
+  async function useProject(p, unpackMs) {
+    project = p;
+    loadedCount = 0;
+    $('validate-btn').disabled = true;
+    showProject(p, unpackMs);
+    if (!p.files.length) {
+      setStatus('load-status', 'This zip has no .dita files. Check that it contains your topics folder.', true);
+      return;
+    }
+    setStatus('load-status', `Copying ${fmt(p.files.length)} topics into ${WORKERS} workers…`);
+    await ready;
+    const parts = partition(p.files);
+    await Promise.all(workers.map((w, i) => call(w, { type: 'load', files: parts[i].files }, 'loaded')));
+    loadedCount = p.files.length;
+    setStatus('load-status', `${p.name} is loaded. Topics are split across ${WORKERS} workers by size.`);
+    setStatus('run-status', `Ready to validate ${fmt(p.files.length)} topics.`);
+    $('validate-btn').disabled = false;
+  }
+
+  function setStatus(id, text, isError) {
+    const el = $(id);
+    el.textContent = text;
+    el.classList.toggle('error', !!isError);
+  }
+
+  async function loadZip(file) {
+    if (running) return;
+    setStatus('load-status', `Unpacking ${file.name}…`);
+    $('validate-btn').disabled = true;
+    try {
+      const t0 = performance.now();
+      const zip = await JSZip.loadAsync(file);
+      const entries = [];
+      let skipped = 0;
+      zip.forEach((path, entry) => {
+        if (entry.dir) return;
+        if (/\.dita$/i.test(path) && !/(^|\/)__MACOSX\//.test(path)) entries.push(entry);
+        else skipped++;
+      });
+      const files = await Promise.all(entries.map(async (e) => ({ path: e.name, bytes: await e.async('uint8array') })));
+      files.sort((a, b) => (a.path < b.path ? -1 : 1));
+      const totalBytes = files.reduce((s, f) => s + f.bytes.length, 0);
+      await useProject({ name: file.name, files, skipped, totalBytes }, performance.now() - t0);
+    } catch (err) {
+      setStatus('load-status', `Could not read ${file.name} as a zip archive (${err.message}). Choose a .zip file.`, true);
+    }
+  }
+
+  $('zip-input').addEventListener('change', (e) => { if (e.target.files[0]) loadZip(e.target.files[0]); e.target.value = ''; });
+  const drop = $('drop');
+  drop.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('over'); });
+  drop.addEventListener('dragleave', () => drop.classList.remove('over'));
+  drop.addEventListener('drop', (e) => {
+    e.preventDefault();
+    drop.classList.remove('over');
+    const f = e.dataTransfer.files[0];
+    if (f) loadZip(f);
+  });
+
+  // ---------------------------------------------------------------- sample
+  const topic = (dt, id, body, pub) =>
+    `<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE ${dt} PUBLIC "${pub}" "${dt}.dtd">\n${body.replace('ID', id)}\n`;
+  const SAMPLE = [
+    ['topics/installing.dita', topic('task', 'installing',
+      '<task id="ID"><title>Installing the editor</title><shortdesc>Run the installer for your platform.</shortdesc>' +
+      '<taskbody><steps><step><cmd>Download the installer.</cmd></step><step><cmd>Run it and follow the prompts.</cmd></step></steps></taskbody></task>',
+      '-//OASIS//DTD DITA Task//EN')],
+    ['topics/about-validation.dita', topic('concept', 'about-validation',
+      '<concept id="ID"><title>About validation</title><conbody><p>Validation checks each topic against its&nbsp;DTD.</p>' +
+      '<note type="tip">Fix errors from the top of the file down.</note></conbody></concept>',
+      '-//OASIS//DTD DITA Concept//EN')],
+    ['topics/shortcuts.dita', topic('reference', 'shortcuts',
+      '<reference id="ID"><title>Keyboard shortcuts</title><refbody><simpletable><sthead><stentry>Action</stentry>' +
+      '<stentry>Keys</stentry></sthead><strow><stentry>Validate</stentry><stentry><uicontrol>Ctrl+Shift+V</uicontrol></stentry></strow>' +
+      '</simpletable></refbody></reference>', '-//OASIS//DTD DITA Reference//EN')],
+    ['topics/overview.dita', topic('topic', 'overview',
+      '<topic id="ID"><title>Overview</title><body><p>This sample project has six topics. Two contain mistakes.</p>' +
+      '<codeblock xml:space="preserve">&lt;topic id="x"/&gt;</codeblock></body></topic>', '-//OASIS//DTD DITA Topic//EN')],
+    ['topics/broken-order.dita', topic('topic', 'broken-order',
+      '<topic id="ID"><body><p>The title must come before the body.</p></body><title>Wrong order</title></topic>',
+      '-//OASIS//DTD DITA Topic//EN')],
+    ['topics/broken-attribute.dita', topic('task', 'broken-attribute',
+      '<task id="ID"><title>Typo in an attribute</title><taskbody><steps><step importance="critical"><cmd>Save the file.</cmd>' +
+      '</step></steps></taskbody></task>', '-//OASIS//DTD DITA Task//EN')],
+  ];
+  function loadSample() {
+    const enc = new TextEncoder();
+    const files = SAMPLE.map(([path, text]) => ({ path, bytes: enc.encode(text) }));
+    useProject({ name: 'The sample project', files, skipped: null,
+      totalBytes: files.reduce((s, f) => s + f.bytes.length, 0) });
+  }
+  $('sample-btn').addEventListener('click', () => { if (!running) loadSample(); });
+
+  // ---------------------------------------------------------------- validating
+  $('validate-btn').addEventListener('click', async () => {
+    if (running || !project || loadedCount !== project.files.length) return;
+    running = true;
+    $('validate-btn').disabled = true;
+    setStatus('run-status', 'Validating…');
+    const t0 = performance.now();
+    const results = await Promise.all(workers.map((w) => call(w, { type: 'run' }, 'done')));
+    const wall = performance.now() - t0;
+    running = false;
+    $('validate-btn').disabled = false;
+    $('validate-btn').textContent = 'Validate again';
+    render(results, wall);
+  });
+
+  function render(results, wall) {
+    runNo++;
+    const files = results.reduce((s, r) => s + r.files, 0);
+    const bytes = results.reduce((s, r) => s + r.bytes, 0);
+    const invalid = results.flatMap((r) => r.invalid).sort((a, b) => (a.path < b.path ? -1 : 1));
+    const errors = results.reduce((s, r) => s + r.errors, 0);
+    const secs = wall / 1000;
+
+    $('results').hidden = false;
+    $('wall').innerHTML = wall >= 1000 ? `${fmt(secs, 2)}<small>s</small>` : `${fmt(wall, wall < 10 ? 2 : 1)}<small>ms</small>`;
+    $('r-files').textContent = fmt(files);
+    $('r-rate').textContent = `${fmt(files / secs)} topics/s`;
+    $('r-mb').textContent = `${mb(bytes)} · ${fmt(bytes / 1e6 / secs, 1)} MB/s`;
+    const v = $('verdict');
+    v.className = `pill ${invalid.length ? 'bad' : 'ok'}`;
+    v.textContent = invalid.length
+      ? `${fmt(invalid.length)} invalid topic${invalid.length === 1 ? '' : 's'} · ${fmt(errors)} error${errors === 1 ? '' : 's'}`
+      : 'All topics valid';
+    setStatus('run-status', `Run ${runNo} finished. Press again to repeat; later runs are usually faster once the browser has optimized the WebAssembly.`);
+
+    const maxMs = Math.max(...results.map((r) => r.ms), 0.001);
+    $('workers').innerHTML = results.map((r, i) => `
+      <div class="worker">
+        <span class="label">Worker ${i + 1}</span>
+        <div class="track" aria-hidden="true"><div class="fill" style="width:${(100 * r.ms / maxMs).toFixed(1)}%"></div></div>
+        <span class="num">${fmt(r.ms, 1)} ms · ${fmt(r.files)} topics</span>
+      </div>`).join('');
+
+    const shown = invalid.slice(0, 200);
+    $('problems').innerHTML = shown.map((p) => `
+      <div class="problem">
+        <div class="path">${esc(p.path)} <span class="muted">(${p.n} error${p.n === 1 ? '' : 's'})</span></div>
+        <ul>${p.msgs.map((m) => `<li>${esc(m)}</li>`).join('')}</ul>
+      </div>`).join('') +
+      (invalid.length > shown.length ? `<p class="muted">…and ${fmt(invalid.length - shown.length)} more invalid topics.</p>` : '');
+
+    const row = document.createElement('tr');
+    row.innerHTML = `<td class="n">${runNo}</td><td>${esc(project.name)}</td><td class="n">${fmt(files)}</td>` +
+      `<td class="n">${fmt(wall, 1)} ms</td><td class="n">${fmt(files / secs)}</td><td class="n">${fmt(invalid.length)}</td>`;
+    $('history').prepend(row);
+  }
+
+  // Open in a working state: the sample project loaded and ready to validate.
+  ready.then(() => { if (!project) loadSample(); })
+    .catch((err) => setStatus('run-status', `This browser could not start the WebAssembly validator (${err.message}).`, true));
+})();
+</script>

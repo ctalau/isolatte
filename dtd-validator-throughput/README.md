@@ -163,6 +163,40 @@ in element-only content are treated as character data in Rust (always an error)
 but arrive from SAX/saxes already decoded, so `&#32;` passes there. None of the
 test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
 
+## In the browser: WebAssembly on 4 Web Workers
+
+The Rust crate in `compiled/rust` is also a library. `cargo build --release --lib
+--target wasm32-unknown-unknown` builds it into a 331 KB `.wasm` with no imports,
+exporting `alloc`, `dealloc`, `validate(ptr, len, verbose)`, `messages_ptr` and
+`messages_len`. `compiled/wasm-check.js` runs it under Node. There it flags the same
+files as the native build on the corpus and on all 640 test files, at ~21,000 files/s
+on one thread.
+
+`compiled/web/index.template.html` is a single-page tool, built by
+`compiled/web/build_page.py`, which embeds the wasm as base64:
+
+1. Drop or choose a `.zip` of a DITA project. JSZip unpacks it in memory, keeps only
+   the `.dita` entries, and shows the DOCTYPE mix. The topics are then split by size
+   across 4 Web Workers, each holding its own instance of the compiled module.
+2. Press **Validate**. Each worker validates its topics in wasm.
+3. The page shows the time from the press until the last worker reported back,
+   the throughput, each worker's busy time, and the invalid topics with their
+   messages.
+
+Measured in headless Chromium (Playwright) with a zip of this user guide
+(`DITA/`, 5,645 entries, 37 MB): unpacking takes 1.36 s, and 2,757 topics are kept.
+
+| Run | Time to validate | Topics/s |
+|---|---:|---:|
+| 1 (wasm still tiering up) | 209 ms | 13,200 |
+| 2 | 93 ms | 29,600 |
+| 3 | 92 ms | 30,100 |
+
+The result is the one DOCTYPE-less topic, as everywhere else. In the browser, wasm on
+4 workers runs about the native single-thread rate. The gap to native's 4-thread
+~110,000 topics/s is per-document copying into wasm memory and wasm overhead, and
+the workers are statically partitioned, so they finish a few ms apart.
+
 ## Xerces-J with a shared grammar pool
 
 `java/XercesBench.java` uses the Xerces 2.12.2 jar that DITA-OT 4.2.4 ships. One

@@ -44,6 +44,11 @@ javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.j
 mkdir -p work-gen
 python3 -I compiled/gen.py work-dtdmap.tsv work-gen/generated.rs work-gen/generated.js work-gen/GeneratedDtd.java
 (cd compiled/rust && cargo build --release -q)
+# The same validator as WebAssembly, and the browser page that embeds it.
+rustup target add wasm32-unknown-unknown >/dev/null
+(cd compiled/rust && cargo build --release -q --lib --target wasm32-unknown-unknown)
+python3 -I compiled/web/build_page.py compiled/web/index.template.html \
+  compiled/rust/target/wasm32-unknown-unknown/release/dita_compiled_validator.wasm work-gen/dita-wasm-validator.html
 (cd compiled/js && npm ci -q)
 mkdir -p work-java-compiled
 javac -d work-java-compiled work-gen/GeneratedDtd.java compiled/java/CompiledValidator.java
