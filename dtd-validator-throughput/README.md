@@ -169,7 +169,8 @@ test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
 
 `all_shells.py` walks the shell catalogs of DITA-OT 4.2.4's
 `org.oasis-open.dita.v1_3`, `…v2_0`, `…techcomm.v2_0` and `org.oasis-open.xdita.v0_3_0`
-(LwDITA) plugins. It finds **108 public IDs naming 42 shell DTDs**:
+(LwDITA) plugins. It finds **108 public IDs naming 42 shell DTDs**, plus 2 aliases
+(below), for 110 public IDs:
 
 - **DITA 1.3, 26 shells.** Topic, Concept, Task, General Task, Machinery Task,
   Reference, Glossary, Glossary Entry, Glossary Group, Troubleshooting, Composite,
@@ -181,6 +182,15 @@ test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
 Each shell answers to its unversioned, versioned and `1.x`/`2.x` public IDs.
 DITA 1.2-only IDs (`-//OASIS//DTD DITA 1.2 …`) are not included. Each shell is
 flattened once with libxml2 (25 MB in total).
+
+**`-//OASIS//DTD DITA 2.x Glossary//EN`.** DITA 1.3 kept "Glossary" as an alias of
+the glossentry shell. DITA 2.0 dropped it, so DITA-OT's catalogs have no entry for
+it. Documents still use it, though: 7 glossentry topics in ScriptoriumDev/LearningDITA
+do. `all_shells.py` has an `ALIASES` table that maps it (and the `2.0` spelling) to
+the DITA 2.0 Glossary Entry shell. It also writes `work-catalog-all.xml`, which adds
+the same two mappings in front of `catalog-dita.xml`, so xmllint and Xerces resolve
+exactly what the compiled validators use. The alias changes no tables: it is one
+more public ID on an existing row.
 
 The generator now parses each DTD file once and emits one table row set per shell.
 The public IDs are aliases pointing at it, so the Rust, JS and Java runtimes did not
@@ -331,6 +341,31 @@ about 0.33× xmloxide.
 
 ## Correctness checks
 
+- **ScriptoriumDev/LearningDITA vs Xerces-J** (`learningdita_compare.sh`,
+  `results-learningdita.txt`). The repository has 3,294 `.dita`/`.ditamap` files and
+  29 distinct public IDs. They cover DITA 1.3 topics, maps, BookMap, the glossary and
+  Learning & Training shells, and DITA 2.x topics, maps, BookMap and glossary
+  shells. The reference is `java/XercesCheck.java`: a plain validating Xerces-J 2.12.2
+  SAX parser per thread, **without** a grammar pool (so DTD-declared entities such
+  as `&nbsp;` are known). It resolves the real modular DTDs by public ID through
+  `work-catalog-all.xml`.
+  - Xerces flags **35 invalid files with 92 errors**: 52 undeclared attributes,
+    24 content-model violations, 10 undeclared elements and 6 bad ID values such as
+    `lca_${id}` in templates.
+  - The compiled Rust validator flags **the same 35 files, with the same error
+    count in every one**.
+  - The wasm, JS and Java builds and stock xmllint also flag the same 35 files.
+  - That is 0 disagreements across six validators.
+  - The 7 `2.x Glossary` topics are valid in all of them. Before the alias, the
+    compiled validators rejected them with "no DTD found".
+  - On the first run Xerces reported 74 extra failures. They were all
+    `FileNotFoundException`s on non-ASCII French file names (`leçon1/…`), because
+    the JVM's path encoding defaulted to ASCII. The script now sets `LC_ALL=C.UTF-8`
+    and `-Dsun.jnu.encoding=UTF-8`.
+  - Speed on this corpus: Xerces without a pool does 90 files/s, because it
+    re-reads the modular DTDs for every file. The compiled Rust validator does
+    ~170,000 files/s on 4 threads.
+
 - **Real corpus:** every validator reports exactly the one DOCTYPE-less file.
 - **Negative corpus** (`make_mutants.py`): 250 broken copies of real topics, in
   5 kinds × 50: undeclared element, element in a forbidden position (`<section>`
@@ -362,4 +397,5 @@ about 0.33× xmloxide.
 ./benchmark.sh   # REPS=5 by default; prints one line per run (ends with the
                  # Xerces and compiled-validator benchmarks)
 ./compare_detection.sh work-mutants2   # per-kind detection table, all validators
+./learningdita_compare.sh              # LearningDITA: compiled validators vs Xerces-J and xmllint
 ```

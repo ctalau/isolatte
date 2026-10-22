@@ -38,10 +38,10 @@ patch -s -d work-xmloxide-patched -p1 < patches/xmloxide-0.5.0-prefixed-attr-nam
 # Xerces-J harness, built against the jars DITA-OT ships.
 L=work-ditaot/dita-ot-4.2.4/lib
 mkdir -p work-java
-javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.jar" -d work-java java/XercesBench.java
+javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.jar" -d work-java java/XercesBench.java java/XercesCheck.java
 
 # Validators compiled from every DITA 1.3 / 2.0 / LwDITA shell DITA-OT ships.
-python3 -I all_shells.py work-ditaot/dita-ot-4.2.4 ./work-flatten_dtd work-flat-all work-dtdmap-all.tsv
+python3 -I all_shells.py work-ditaot/dita-ot-4.2.4 ./work-flatten_dtd work-flat-all work-dtdmap-all.tsv work-catalog-all.xml
 mkdir -p work-gen
 python3 -I compiled/gen.py work-dtdmap-all.tsv work-gen/generated.rs work-gen/generated.js work-gen/GeneratedDtd.java
 (cd compiled/rust && cargo build --release -q)
