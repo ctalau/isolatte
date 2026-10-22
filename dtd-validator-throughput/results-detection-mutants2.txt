@@ -1,14 +1,14 @@
-kind                    total       xmllint       libxml2      xmloxide        xerces compiled-rust   compiled-js
-bad-fixed                  30            30            30            30            30            30            30
-bad-nmtoken                30            30            30            30            30            30            30
-duplicate-id               30            30            30            30            30            30            30
-empty-with-content         30            30            30            30            30            30            30
-missing-required           30            30            30            30            30            30            30
-missing-title              30            30            30            30            30            30            30
-nbsp-in-body               30            30             0             0            30            30            30
-ok-explicit-fixed          30             0             0             0             0             0             0
-ok-nbsp-in-p               30             0             0             0            30             0             0
-root-mismatch              30            30             0            30            30            30            30
-stray-text                 30            30            30            30            30            30            30
-undefined-entity           30            30             0             0            30            30            30
-ws-in-empty                30            30            30            30            30            30            30
+kind                    total       xmllint       libxml2      xmloxide        xerces compiled-rust   compiled-js compiled-java
+bad-fixed                  30            30            30            30            30            30            30            30
+bad-nmtoken                30            30            30            30            30            30            30            30
+duplicate-id               30            30            30            30            30            30            30            30
+empty-with-content         30            30            30            30            30            30            30            30
+missing-required           30            30            30            30            30            30            30            30
+missing-title              30            30            30            30            30            30            30            30
+nbsp-in-body               30            30             0             0            30            30            30            30
+ok-explicit-fixed          30             0             0             0             0             0             0             0
+ok-nbsp-in-p               30             0             0             0            30             0             0             0
+root-mismatch              30            30             0            30            30            30            30            30
+stray-text                 30            30            30            30            30            30            30            30
+undefined-entity           30            30             0             0            30            30            30            30
+ws-in-empty                30            30            30            30            30            30            30            30

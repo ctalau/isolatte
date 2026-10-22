@@ -17,10 +17,11 @@ out[xmloxide]=$(rust-bench/target/release/rust-bench xmloxide 4 work-dtdmap.tsv 
 out[xerces]=$(java -cp "$CP" XercesBench 4 work-dtdmap.tsv flat x publicid < $M/files.txt 2>/dev/null | flagged)
 out[compiled-rust]=$(compiled/rust/target/release/dita-compiled-validator 4 < $M/files.txt | flagged)
 out[compiled-js]=$(node compiled/js/bench.js 4 < $M/files.txt | flagged)
-printf '%-22s %6s' kind total; for v in xmllint libxml2 xmloxide xerces compiled-rust compiled-js; do printf ' %13s' $v; done; echo
+out[compiled-java]=$(java -cp work-java-compiled CompiledValidator 4 < $M/files.txt 2>/dev/null | flagged)
+printf '%-22s %6s' kind total; for v in xmllint libxml2 xmloxide xerces compiled-rust compiled-js compiled-java; do printf ' %13s' $v; done; echo
 for k in $(ls -d $M/*/ | xargs -n1 basename); do
   printf '%-22s %6d' $k $(grep -c "/$k/" $M/files.txt)
-  for v in xmllint libxml2 xmloxide xerces compiled-rust compiled-js; do
+  for v in xmllint libxml2 xmloxide xerces compiled-rust compiled-js compiled-java; do
     printf ' %13d' $(grep -c "/$k/" <<< "${out[$v]}" || true)
   done
   echo

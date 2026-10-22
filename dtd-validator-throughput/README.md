@@ -4,8 +4,8 @@ How fast can every `.dita` topic of the [Oxygen XML user guide](https://github.c
 be DTD-validated? Compared here: a pure-Rust validator (**xmloxide**), a second
 pure-Rust one (**rusty_xml**), libxml2 used as a library with cached DTDs,
 **Xerces-J with a shared grammar pool**, stock `xmllint --valid`, and — fastest
-by far — **validators compiled from the DTDs into Rust and JavaScript code**
-(see [Compiling the DTDs to Rust and JS](#compiling-the-dtds-to-rust-and-js)).
+by far — **validators compiled from the DTDs into Rust, JavaScript and Java code**
+(see [Compiling the DTDs to Rust, JS and Java](#compiling-the-dtds-to-rust-js-and-java)).
 
 ## Corpus
 
@@ -22,10 +22,12 @@ Host: 4 vCPU cloud VM, files in page cache. Times cover read + parse + validate 
 
 | Validator | Threads | Validation time | **Files/s** | MB/s | DTD load (once) |
 |---|---:|---:|---:|---:|---:|
-| **DTD compiled to Rust** (+ quick-xml) | 1 | 0.088 s | **31,300** | 171 | none |
-| **DTD compiled to Rust** (+ quick-xml) | 4 | 0.024 s | **116,700** | 640 | none |
-| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 1 | 0.343 s | **8,040** | 44 | none |
-| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 4 | 0.112 s | **24,600** | 135 | none |
+| **DTD compiled to Rust** (+ quick-xml) | 1 | 0.100 s | **27,500** | 151 | none |
+| **DTD compiled to Rust** (+ quick-xml) | 4 | 0.026 s | **108,000** | 592 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 1 | 0.302 s | **9,130** | 50 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 4 | 0.109 s | **25,300** | 139 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 1 | 0.315 s | **8,760** | 48 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 4 | 0.168 s | **16,400** | 90 | none |
 | **xmloxide 0.5.0** (Rust, patched) | 1 | 0.390 s | **7,070** | 39 | 0.13 s |
 | **xmloxide 0.5.0** (Rust, patched) | 4 | 0.136 s | **20,300** | 111 | 0.15 s |
 | libxml2 2.9.14, cached DTD (C) | 1 | 0.459 s | 6,010 | 33 | 0.19 s |
@@ -38,8 +40,9 @@ Host: 4 vCPU cloud VM, files in page cache. Times cover read + parse + validate 
 | `xmllint --valid` (stock, 50 files/process) | 1 proc | 116.8 s | 24 | 0.13 | per file |
 | `xmllint --valid` (stock, 50 files/process) | 4 procs | 30.0 s | 92 | 0.5 | per file |
 
-**Whole user guide, end to end: 0.031 s for the DTD compiled to Rust (fresh
-process, 4 threads), 0.42 s for the DTD compiled to JS (fresh `node`, cold JIT)**, and
+**Whole user guide, end to end: 0.029 s for the DTD compiled to Rust (fresh
+process, 4 threads), 0.42 s for JS (fresh `node`, cold JIT) and 1.1 s for Java
+(fresh JVM, cold JIT)**, and
 ~0.28 s with xmloxide on 4 threads
 (0.15 s loading 8 DTDs + 0.14 s validating) — vs ~1.5 s for a fresh Xerces-J
 process (JVM startup + cold JIT) and 30 s for parallel stock `xmllint`.
@@ -58,12 +61,13 @@ for **every** file (~38 ms/file); the topic itself is a few KB and takes well un
 choice of language matters much less after that: xmloxide beats libxml2-with-cache
 by 1.2× on one thread and 1.6× on four.
 
-## Compiling the DTDs to Rust and JS
+## Compiling the DTDs to Rust, JS and Java
 
 `compiled/gen.py` takes the 8 flattened DTDs (6.5 MB in total) and emits
-`work-gen/generated.rs` (223 KB) and `work-gen/generated.js` (189 KB). Generating
-takes 2.1 s, and the Rust crate then takes 7 s to build with LTO, giving a 0.79 MB
-binary. After that, nothing DTD-related is parsed at run time.
+`work-gen/generated.rs` (223 KB), `work-gen/generated.js` (189 KB) and
+`work-gen/GeneratedDtd.java` (224 KB). Generating takes 2.1 s. Then the Rust crate
+takes 7 s to build with LTO (0.79 MB binary), and `javac` takes 1.3 s. After that,
+nothing DTD-related is parsed at run time.
 
 - **Content models → minimized DFAs.** Each `<!ELEMENT>` model becomes a Glushkov
   automaton, then a DFA via subset construction, then a minimized DFA (Moore's
@@ -73,43 +77,66 @@ binary. After that, nothing DTD-related is parsed at run time.
   `topic` to 7. DFAs, attribute declarations (572 distinct), attribute lists (198)
   and enumerations (113) are deduplicated across shells, so each shell is just a
   row of per-element indexes into shared tables.
-- **Names → ids.** A generated `match` on byte strings in Rust, a `Map` in JS.
+- **Names → ids.** A generated `match` on byte strings in Rust, a `Map` in JS, and
+  a generated string `switch` in Java.
+- **Java table packing.** A Java class's static initializer is limited to 64 KB of
+  bytecode, and a 10,120-entry array literal would not fit. So every table is a
+  `char[]` packed into string constants and decoded once at class load. All values
+  fit in 16 bits.
 - **Attributes.** Declared or not, `#REQUIRED` count, `#FIXED` value, and
   ID / IDREF(S) / NMTOKEN(S) / enumeration syntax, with non-CDATA whitespace
   normalization. ID uniqueness and IDREF targets are checked per document.
 - **Entities.** The DTDs' internal general entities (`&nbsp;`, `&included-domains;`
   …) are expanded at generation time into a per-shell table. The generator refuses
   external or markup-bearing entities; DITA has none.
-- **Runtimes.** `compiled/rust/src/main.rs` (quick-xml 0.42 events) and
-  `compiled/js/validator.js` (saxes 6, `worker_threads`) walk the document with a
-  stack of DFA states, about 300 lines each.
+- **Runtimes.** `compiled/rust/src/main.rs` (quick-xml 0.42 events),
+  `compiled/js/validator.js` (saxes 6, `worker_threads`) and
+  `compiled/java/CompiledValidator.java` walk the document with a stack of DFA
+  states, about 300 lines each. The Java one uses the JDK's built-in SAX parser
+  with external-DTD loading turned off: `startDTD` gives the DOCTYPE, any
+  declaration callback flags an (unsupported) internal subset, and references
+  to entities the unread DTD declares arrive as `skippedEntity`. The compiled
+  entity table resolves them there.
 
-Where the time goes (1 thread; median of 5 runs, or of JIT-warm passes 3–5 for JS):
+Where the time goes (1 thread; median of 5 runs, or of JIT-warm passes 3–5 for JS
+and Java; all from one run, `results-raw-compiled.txt`):
 
 | | Parse only | Parse + validate | Validation overhead |
 |---|---:|---:|---:|
-| Rust: quick-xml | 0.065 s (42,600 files/s) | 0.088 s (31,300 files/s) | ~35% |
-| JS: saxes | 0.201 s (13,700 files/s) | 0.343 s (8,040 files/s) | ~70% |
+| Rust: quick-xml | 0.079 s (35,000 files/s) | 0.100 s (27,500 files/s) | ~27% |
+| JS: saxes | 0.199 s (13,900 files/s) | 0.302 s (9,130 files/s) | ~52% |
+| Java: JDK SAX | 0.214 s (12,900 files/s) | 0.315 s (8,760 files/s) | ~47% |
 
-The compiled Rust validator runs **4.4× xmloxide on 1 thread and 5.7× on 4 threads**.
-It does 9.5× the 4-thread rate of libxml2 with cached DTDs, and 1,270× stock
-`xmllint --valid`. Even the JS version on 4 warm threads is faster than every
-library-based validator here. Its cold, single-process run of 0.42 s is mostly
-Node startup and the JIT, about as long as xmloxide's whole run.
+The VM is noisy. An earlier run of the same Rust binary gave 31,300 files/s on
+1 thread and 116,700 on 4 (see git history of `results-raw-compiled.txt`), so read
+the ratios below as ±15%.
 
-**Correctness.** On the real corpus, both compiled validators flag only the
+- **Rust.** The compiled Rust validator runs about 3.9× xmloxide on 1 thread and
+  5.3× on 4. It does 8.8× the 4-thread rate of libxml2 with cached DTDs, and
+  about 1,200× stock `xmllint --valid`.
+- **JS.** On 4 warm threads it is faster than every library-based validator here.
+  Its cold, single-process run of 0.42 s is mostly Node startup and the JIT.
+- **Java.** Warm on 1 thread, it matches the compiled JS and runs 3.3× Xerces with
+  a shared grammar pool (2,680 files/s), on the same JDK SAX/Xerces lineage of
+  parser. On 4 threads it scales worse than JS (16,400 vs 25,300 files/s). A fresh
+  JVM needs about 1.1 s for the whole guide, because pass 1 runs mostly
+  interpreted (2,700–3,100 files/s). It is the right choice inside an already
+  running JVM, such as DITA-OT or an Oxygen plugin, and the wrong one for a
+  one-shot CLI.
+
+**Correctness.** On the real corpus, all three compiled validators flag only the
 DOCTYPE-less topic, the same as every other validator. On both negative corpora
 (640 files, 18 kinds, including 2 kinds of valid "ok-" controls) they match stock
 `xmllint`, the ground truth, **file for file** (`results-detection-*.txt`):
 
-| Kind (30 each) | xmllint | libxml2-cached | xmloxide | Xerces pool | compiled Rust | compiled JS |
-|---|---:|---:|---:|---:|---:|---:|
-| missing-title, stray-text, bad-nmtoken, duplicate-id, empty-with-content, ws-in-empty, missing-required, bad-fixed | 30 | 30 | 30 | 30 | 30 | 30 |
-| root-mismatch (DOCTYPE `concept`, root `<topic>`) | 30 | **0** | 30 | 30 | 30 | 30 |
-| undefined-entity (`&nbspx;`) | 30 | **0** | **0** | 30 | 30 | 30 |
-| nbsp-in-body (declared `&nbsp;` in element-only content) | 30 | **0** | **0** | 30\* | 30 | 30 |
-| ok-nbsp-in-p (valid) | 0 | 0 | 0 | **30 ✗** | 0 | 0 |
-| ok-explicit-fixed (valid) | 0 | 0 | 0 | 0 | 0 | 0 |
+| Kind (30 each) | xmllint | libxml2-cached | xmloxide | Xerces pool | compiled Rust | compiled JS | compiled Java |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| missing-title, stray-text, bad-nmtoken, duplicate-id, empty-with-content, ws-in-empty, missing-required, bad-fixed | 30 | 30 | 30 | 30 | 30 | 30 | 30 |
+| root-mismatch (DOCTYPE `concept`, root `<topic>`) | 30 | **0** | 30 | 30 | 30 | 30 | 30 |
+| undefined-entity (`&nbspx;`) | 30 | **0** | **0** | 30 | 30 | 30 | 30 |
+| nbsp-in-body (declared `&nbsp;` in element-only content) | 30 | **0** | **0** | 30\* | 30 | 30 | 30 |
+| ok-nbsp-in-p (valid) | 0 | 0 | 0 | **30 ✗** | 0 | 0 | 0 |
+| ok-explicit-fixed (valid) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 The first negative corpus (5 kinds × 50) is 250/250 for everything.
 
@@ -131,8 +158,10 @@ defaults are not inserted (no `@class` in an output tree; there is no output tre
 The error *count* differs from libxml2: they report one error per broken parent,
 and only pass/fail is compared. quick-xml is a fast tokenizer, not a fully
 conformant well-formedness checker (for example, it does not check every XML name
-character); saxes is conformant. A DTD change means re-running `gen.py` and
-rebuilding.
+character); saxes and the JDK's SAX parser are conformant. Character references
+in element-only content are treated as character data in Rust (always an error)
+but arrive from SAX/saxes already decoded, so `&#32;` passes there. None of the
+test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
 
 ## Xerces-J with a shared grammar pool
 
