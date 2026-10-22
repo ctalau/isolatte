@@ -2,8 +2,8 @@
 
 How fast can every `.dita` topic of the [Oxygen XML user guide](https://github.com/oxygenxml/userguide)
 be DTD-validated? Compared here: a pure-Rust validator (**xmloxide**), a second
-pure-Rust one (**rusty_xml**), libxml2 used as a library with cached DTDs, and
-stock `xmllint --valid`.
+pure-Rust one (**rusty_xml**), libxml2 used as a library with cached DTDs,
+**Xerces-J with a shared grammar pool**, and stock `xmllint --valid`.
 
 ## Corpus
 
@@ -24,13 +24,18 @@ Host: 4 vCPU cloud VM, files in page cache. Times cover read + parse + validate 
 | **xmloxide 0.5.0** (Rust, patched) | 4 | 0.136 s | **20,300** | 111 | 0.15 s |
 | libxml2 2.9.14, cached DTD (C) | 1 | 0.459 s | 6,010 | 33 | 0.19 s |
 | libxml2 2.9.14, cached DTD (C) | 4 | 0.223 s | 12,340 | 68 | 0.23 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, JIT-warm | 1 | 1.03 s | 2,680 | 15 | 0.30 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, JIT-warm | 4 | 0.408 s | 6,750 | 37 | 0.38 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, cold JVM (1st pass) | 4 | 1.06 s | 2,600 | 14 | 0.38 s |
 | rusty_xml 0.8.3 (Rust) | 1 | 22.98 s | 120 | 0.7 | 0.15 s |
 | rusty_xml 0.8.3 (Rust) | 4 | 5.92 s | 466 | 2.6 | 0.18 s |
 | `xmllint --valid` (stock, 50 files/process) | 1 proc | 116.8 s | 24 | 0.13 | per file |
 | `xmllint --valid` (stock, 50 files/process) | 4 procs | 30.0 s | 92 | 0.5 | per file |
 
 **Whole user guide, end to end: ~0.28 s with xmloxide on 4 threads**
-(0.15 s loading 8 DTDs + 0.14 s validating) — vs 30 s for parallel stock `xmllint`.
+(0.15 s loading 8 DTDs + 0.14 s validating) — vs ~1.5 s for a fresh Xerces-J
+process (JVM startup + cold JIT) and 30 s for parallel stock `xmllint`.
+Xerces rows are the median of passes 3–5 within one JVM (`results-raw-xerces.txt`).
 
 All validators agree on the real corpus: every topic is valid except
 `dcpp_how_to_make_visible_information_from_topic_prologue_revision_history.dita`,
@@ -44,6 +49,40 @@ for **every** file (~38 ms/file); the topic itself is a few KB and takes well un
 1 ms. So the main gain comes from parsing each DTD once and reusing it. The
 choice of language matters much less after that: xmloxide beats libxml2-with-cache
 by 1.2× on one thread and 1.6× on four.
+
+## Xerces-J with a shared grammar pool
+
+`java/XercesBench.java` uses the Xerces 2.12.2 jar that DITA-OT 4.2.4 ships. One
+`XMLGrammarPool` and one `SynchronizedSymbolTable` are shared by every thread. Each
+thread has its own `SAXParser`, with validation turned on. The DTDs are preparsed
+into the pool with `XMLGrammarPreparser`.
+
+**The stock pool key does not fit DITA.** Xerces identifies a DTD grammar by its
+*expanded system ID*, which is the DOCTYPE's `"topic.dtd"` resolved against the
+**document's** folder, plus the root element name. It falls back to the public ID
+only when there is no system ID. So:
+
+| Pool setup (4 threads) | DTD re-fetches | Grammars in pool | Files/s, warm |
+|---|---:|---:|---:|
+| `XMLGrammarPoolImpl`, preparsed then **locked** | 2,756 (every file) | 8 | 75 (cold) |
+| `XMLGrammarPoolImpl`, preparsed, left **open** | 36 | 26 | 6,520 |
+| **keyed by public ID** (like DITA-OT's `XMLGrammarPoolImplUtils`), locked | **0** | **8** | **6,750** |
+| keyed by public ID, *original modular DTDs* via the DITA-OT catalog | 0 | 8 | 6,010 |
+
+- **Locked stock pool:** the preparsed grammars never match a document, so every
+  file re-parses its DTD. That is no better than xmllint.
+- **Open stock pool:** it works, but only by accident. The user guide keeps its
+  topics in a handful of folders, so the pool fills up to one copy per folder and
+  root element. On the first, cold pass it is 1.6× slower than the public-ID pool
+  (1,580 vs 2,600 files/s), because each copy is parsed separately. A corpus spread
+  over many folders would re-parse the DTD far more often.
+- **Public-ID pool:** this is the right setup. The original modular DTDs and the
+  flattened ones run at the same speed once cached. Only the one-time load
+  differs (0.83 s vs 0.38 s).
+
+Xerces also flags only the DOCTYPE-less topic on the real corpus, and catches 250/250
+of the broken topics. JIT-warm on 4 threads it is about 0.55× libxml2-cached and
+about 0.33× xmloxide.
 
 ## How it works
 
@@ -68,7 +107,7 @@ by 1.2× on one thread and 1.6× on four.
 - **Negative corpus** (`make_mutants.py`): 250 broken copies of real topics, in
   5 kinds × 50: undeclared element, element in a forbidden position (`<section>`
   in `<p>`), duplicate `<title>`, undeclared attribute, and an out-of-enumeration
-  value (`translate="maybe"`). **All four validators flag 250/250.**
+  value (`translate="maybe"`). **All five validators (incl. Xerces-J) flag 250/250.**
 - **xmloxide bug found and patched.** Stock xmloxide 0.5.0 falsely rejected 19
   topics with 39 errors: `attribute 'space' on element 'codeblock' is not declared`.
   It compares an attribute's *local* name (`space`) with the DTD's qualified name
@@ -92,5 +131,5 @@ by 1.2× on one thread and 1.6× on four.
 
 ```sh
 ./setup.sh       # clones corpus, downloads DITA-OT 4.2.4, flattens DTDs, builds everything
-./benchmark.sh   # REPS=5 by default; prints one line per run
+./benchmark.sh   # REPS=5 by default; prints one line per run (ends with benchmark-xerces.sh)
 ```

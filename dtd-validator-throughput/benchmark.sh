@@ -28,3 +28,5 @@ for p in 1 4; do
   awk -v n="$n" -v s="$s" -v e="$e" -v p="$p" \
     'BEGIN { printf "validator=xmllint-stock procs=%d files=%d seconds=%.3f files_per_s=%.0f\n", p, n, e-s, n/(e-s) }'
 done
+
+./benchmark-xerces.sh

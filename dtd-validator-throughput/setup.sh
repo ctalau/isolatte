@@ -35,4 +35,9 @@ rm -rf work-xmloxide-patched && cp -r "$src" work-xmloxide-patched
 patch -s -d work-xmloxide-patched -p1 < patches/xmloxide-0.5.0-prefixed-attr-names.patch
 (cd rust-bench && cargo build --release -q)
 
+# Xerces-J harness, built against the jars DITA-OT ships.
+L=work-ditaot/dita-ot-4.2.4/lib
+mkdir -p work-java
+javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.jar" -d work-java java/XercesBench.java
+
 python3 -I make_mutants.py work-files.txt work-mutants 50
