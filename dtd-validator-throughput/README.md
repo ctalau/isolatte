@@ -1,0 +1,401 @@
+# dtd-validator-throughput
+
+How fast can every `.dita` topic of the [Oxygen XML user guide](https://github.com/oxygenxml/userguide)
+be DTD-validated? Compared here: a pure-Rust validator (**xmloxide**), a second
+pure-Rust one (**rusty_xml**), libxml2 used as a library with cached DTDs,
+**Xerces-J with a shared grammar pool**, stock `xmllint --valid`, and — fastest
+by far — **validators compiled from the DTDs into Rust, JavaScript and Java code**
+(see [Compiling the DTDs to Rust, JS and Java](#compiling-the-dtds-to-rust-js-and-java)).
+
+## Corpus
+
+- `oxygenxml/userguide` @ HEAD (shallow clone): **2,757 `.dita` topics, 15.1 MB**
+- DOCTYPEs: Topic (2,421), Task (109), Troubleshooting 1.2/1.3 (86), Concept (57),
+  Glossary (51), LwDITA Topic (29), Reference (3); one topic has no DOCTYPE
+- DTDs + catalog from DITA-OT 4.2.4 (`catalog-dita.xml`, DITA 1.3 + LwDITA plugins)
+
+## Result
+
+Host: 4 vCPU cloud VM, files in page cache. Times cover read + parse + validate of all
+2,757 files; the one-time DTD load is listed separately. Median of 5 runs
+(`results-raw.txt` has every run; run-to-run noise is ±15%).
+
+| Validator | Threads | Validation time | **Files/s** | MB/s | DTD load (once) |
+|---|---:|---:|---:|---:|---:|
+| **DTD compiled to Rust** (+ quick-xml) | 1 | 0.083 s | **33,200** | 182 | none |
+| **DTD compiled to Rust** (+ quick-xml) | 4 | 0.022 s | **124,500** | 683 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 1 | 0.293 s | **9,420** | 52 | none |
+| **DTD compiled to JS** (+ saxes, Node 22), JIT-warm | 4 | 0.122 s | **22,600** | 124 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 1 | 0.333 s | **8,290** | 46 | none |
+| **DTD compiled to Java** (+ JDK SAX, JDK 21), JIT-warm | 4 | 0.164 s | **16,800** | 92 | none |
+| **xmloxide 0.5.0** (Rust, patched) | 1 | 0.390 s | **7,070** | 39 | 0.13 s |
+| **xmloxide 0.5.0** (Rust, patched) | 4 | 0.136 s | **20,300** | 111 | 0.15 s |
+| libxml2 2.9.14, cached DTD (C) | 1 | 0.459 s | 6,010 | 33 | 0.19 s |
+| libxml2 2.9.14, cached DTD (C) | 4 | 0.223 s | 12,340 | 68 | 0.23 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, JIT-warm | 1 | 1.03 s | 2,680 | 15 | 0.30 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, JIT-warm | 4 | 0.408 s | 6,750 | 37 | 0.38 s |
+| Xerces-J 2.12.2, shared pool keyed by public ID, cold JVM (1st pass) | 4 | 1.06 s | 2,600 | 14 | 0.38 s |
+| rusty_xml 0.8.3 (Rust) | 1 | 22.98 s | 120 | 0.7 | 0.15 s |
+| rusty_xml 0.8.3 (Rust) | 4 | 5.92 s | 466 | 2.6 | 0.18 s |
+| `xmllint --valid` (stock, 50 files/process) | 1 proc | 116.8 s | 24 | 0.13 | per file |
+| `xmllint --valid` (stock, 50 files/process) | 4 procs | 30.0 s | 92 | 0.5 | per file |
+
+**Whole user guide, end to end: 0.029 s for the DTD compiled to Rust (fresh
+process, 4 threads), 0.42 s for JS (fresh `node`, cold JIT) and 1.1 s for Java
+(fresh JVM, cold JIT)**, and
+~0.28 s with xmloxide on 4 threads
+(0.15 s loading 8 DTDs + 0.14 s validating) — vs ~1.5 s for a fresh Xerces-J
+process (JVM startup + cold JIT) and 30 s for parallel stock `xmllint`.
+Xerces rows are the median of passes 3–5 within one JVM (`results-raw-xerces.txt`).
+
+All validators agree on the real corpus: every topic is valid except
+`dcpp_how_to_make_visible_information_from_topic_prologue_revision_history.dita`,
+which has no DOCTYPE.
+
+## Why the cached runs are ~250× faster than xmllint
+
+A DITA shell DTD pulls in ~40 `.mod`/`.ent` files (MathML and SVG domains included)
+and expands to ~900 KB of declarations. `xmllint --valid` re-reads and re-parses that
+for **every** file (~38 ms/file); the topic itself is a few KB and takes well under
+1 ms. So the main gain comes from parsing each DTD once and reusing it. The
+choice of language matters much less after that: xmloxide beats libxml2-with-cache
+by 1.2× on one thread and 1.6× on four.
+
+## Compiling the DTDs to Rust, JS and Java
+
+`compiled/gen.py` takes flattened DTDs and emits `work-gen/generated.rs`,
+`work-gen/generated.js` and `work-gen/GeneratedDtd.java`. After that, nothing
+DTD-related is parsed at run time. It started with the 8 shells this corpus uses
+(6.5 MB of DTD → 223 KB of Rust, 2.1 s to generate). It now compiles **all 42 DITA 1.3,
+DITA 2.0 and LwDITA shells** (see [All shells](#all-dita-13-20-and-lwdita-shells)).
+The figures below are for the 8-shell build unless marked.
+
+- **Content models → minimized DFAs.** Each `<!ELEMENT>` model becomes a Glushkov
+  automaton, then a DFA via subset construction, then a minimized DFA (Moore's
+  algorithm) over integer element ids. Mixed content becomes a one-state DFA over
+  its allowed children. 544 element names over all shells yield **422 DFA states and
+  10,120 transitions**. For example, `body`'s 40-way choice minimizes to 1 state and
+  `topic` to 7. DFAs, attribute declarations (572 distinct), attribute lists (198)
+  and enumerations (113) are deduplicated across shells, so each shell is just a
+  row of per-element indexes into shared tables.
+- **Names → ids.** A generated `match` on byte strings in Rust, a `Map` in JS, and
+  a generated string `switch` in Java.
+- **Java table packing.** A Java class's static initializer is limited to 64 KB of
+  bytecode, and a 10,120-entry array literal would not fit. So every table is a
+  `char[]` packed into string constants and decoded once at class load. All values
+  fit in 16 bits.
+- **Attributes.** Declared or not, `#REQUIRED` count, `#FIXED` value, and
+  ID / IDREF(S) / NMTOKEN(S) / enumeration syntax, with non-CDATA whitespace
+  normalization. ID uniqueness and IDREF targets are checked per document.
+- **Entities.** The DTDs' internal general entities (`&nbsp;`, `&included-domains;`
+  …) are expanded at generation time into a per-shell table. The generator refuses
+  external or markup-bearing entities; DITA has none.
+- **Runtimes.** `compiled/rust/src/main.rs` (quick-xml 0.42 events),
+  `compiled/js/validator.js` (saxes 6, `worker_threads`) and
+  `compiled/java/CompiledValidator.java` walk the document with a stack of DFA
+  states, about 300 lines each. The Java one uses the JDK's built-in SAX parser
+  with external-DTD loading turned off: `startDTD` gives the DOCTYPE, any
+  declaration callback flags an (unsupported) internal subset, and references
+  to entities the unread DTD declares arrive as `skippedEntity`. The compiled
+  entity table resolves them there.
+
+Where the time goes (1 thread; median of 5 runs, or of JIT-warm passes 3–5 for JS
+and Java; all from one run, `results-raw-compiled.txt`):
+
+| | Parse only | Parse + validate | Validation overhead |
+|---|---:|---:|---:|
+| Rust: quick-xml | 0.079 s (35,000 files/s) | 0.100 s (27,500 files/s) | ~27% |
+| JS: saxes | 0.199 s (13,900 files/s) | 0.302 s (9,130 files/s) | ~52% |
+| Java: JDK SAX | 0.214 s (12,900 files/s) | 0.315 s (8,760 files/s) | ~47% |
+
+The VM is noisy. An earlier run of the same Rust binary gave 31,300 files/s on
+1 thread and 116,700 on 4 (see git history of `results-raw-compiled.txt`), so read
+the ratios below as ±15%.
+
+- **Rust.** The compiled Rust validator runs about 3.9× xmloxide on 1 thread and
+  5.3× on 4. It does 8.8× the 4-thread rate of libxml2 with cached DTDs, and
+  about 1,200× stock `xmllint --valid`.
+- **JS.** On 4 warm threads it is faster than every library-based validator here.
+  Its cold, single-process run of 0.42 s is mostly Node startup and the JIT.
+- **Java.** Warm on 1 thread, it matches the compiled JS and runs 3.3× Xerces with
+  a shared grammar pool (2,680 files/s), on the same JDK SAX/Xerces lineage of
+  parser. On 4 threads it scales worse than JS (16,400 vs 25,300 files/s). A fresh
+  JVM needs about 1.1 s for the whole guide, because pass 1 runs mostly
+  interpreted (2,700–3,100 files/s). It is the right choice inside an already
+  running JVM, such as DITA-OT or an Oxygen plugin, and the wrong one for a
+  one-shot CLI.
+
+**Correctness.** On the real corpus, all three compiled validators flag only the
+DOCTYPE-less topic, the same as every other validator. On both negative corpora
+(640 files, 18 kinds, including 2 kinds of valid "ok-" controls) they match stock
+`xmllint`, the ground truth, **file for file** (`results-detection-*.txt`):
+
+| Kind (30 each) | xmllint | libxml2-cached | xmloxide | Xerces pool | compiled Rust | compiled JS | compiled Java |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| missing-title, stray-text, bad-nmtoken, duplicate-id, empty-with-content, ws-in-empty, missing-required, bad-fixed | 30 | 30 | 30 | 30 | 30 | 30 | 30 |
+| root-mismatch (DOCTYPE `concept`, root `<topic>`) | 30 | **0** | 30 | 30 | 30 | 30 | 30 |
+| undefined-entity (`&nbspx;`) | 30 | **0** | **0** | 30 | 30 | 30 | 30 |
+| nbsp-in-body (declared `&nbsp;` in element-only content) | 30 | **0** | **0** | 30\* | 30 | 30 | 30 |
+| ok-nbsp-in-p (valid) | 0 | 0 | 0 | **30 ✗** | 0 | 0 | 0 |
+| ok-explicit-fixed (valid) | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+The first negative corpus (5 kinds × 50) is 250/250 for everything.
+
+Two of the earlier harnesses turn out to be *less strict* than full validation:
+
+- **libxml2-cached and xmloxide never check entity references.** Both parse each
+  topic without its DTD, then validate the tree, so an undefined entity is
+  never noticed.
+- **libxml2-cached does not check the root element against the DOCTYPE name.**
+  `xmlValidateDtd` gets a DTD from `xmlParseDTD`, which has no name.
+- **\*Xerces with a grammar pool gives a false positive.** A DTD grammar taken
+  from the pool brings no entity declarations, so the valid `&nbsp;` is reported
+  as an undefined entity. Its nbsp-in-body "hits" are for that reason, not for
+  the real content error.
+
+**Limits of the compiled validators.** They accept only documents whose DOCTYPE
+names one of the compiled shells. Internal DTD subsets may only declare internal
+general entities (see [All shells](#all-dita-13-20-and-lwdita-shells)). Attribute
+defaults are not inserted (no `@class` in an output tree; there is no output tree).
+The error *count* differs from libxml2: they report one error per broken parent,
+and only pass/fail is compared. quick-xml is a fast tokenizer, not a fully
+conformant well-formedness checker (for example, it does not check every XML name
+character); saxes and the JDK's SAX parser are conformant. Character references
+in element-only content are treated as character data in Rust (always an error)
+but arrive from SAX/saxes already decoded, so `&#32;` passes there. None of the
+test files exercise this. A DTD change means re-running `gen.py` and rebuilding.
+
+## All DITA 1.3, 2.0 and LwDITA shells
+
+`all_shells.py` walks the shell catalogs of DITA-OT 4.2.4's
+`org.oasis-open.dita.v1_3`, `…v2_0`, `…techcomm.v2_0` and `org.oasis-open.xdita.v0_3_0`
+(LwDITA) plugins. It finds **108 public IDs naming 42 shell DTDs**, plus 2 aliases
+(below), for 110 public IDs:
+
+- **DITA 1.3, 26 shells.** Topic, Concept, Task, General Task, Machinery Task,
+  Reference, Glossary, Glossary Entry, Glossary Group, Troubleshooting, Composite,
+  Base Topic, Map, Base Map, BookMap, Subject Scheme Map, Classification Map, and the
+  nine Learning & Training shells.
+- **DITA 2.0, 14 shells.** The base and technical-content topic and map shells.
+- **LwDITA, 2 shells.** Topic and Map.
+
+Each shell answers to its unversioned, versioned and `1.x`/`2.x` public IDs.
+DITA 1.2-only IDs (`-//OASIS//DTD DITA 1.2 …`) are not included. Each shell is
+flattened once with libxml2 (25 MB in total).
+
+**`-//OASIS//DTD DITA 2.x Glossary//EN`.** DITA 1.3 kept "Glossary" as an alias of
+the glossentry shell. DITA 2.0 dropped it, so DITA-OT's catalogs have no entry for
+it. Documents still use it, though: 7 glossentry topics in ScriptoriumDev/LearningDITA
+do. `all_shells.py` has an `ALIASES` table that maps it (and the `2.0` spelling) to
+the DITA 2.0 Glossary Entry shell. It also writes `work-catalog-all.xml`, which adds
+the same two mappings in front of `catalog-dita.xml`, so xmllint and Xerces resolve
+exactly what the compiled validators use. The alias changes no tables: it is one
+more public ID on an existing row.
+
+The generator now parses each DTD file once and emits one table row set per shell.
+The public IDs are aliases pointing at it, so the Rust, JS and Java runtimes did not
+change. Everything is still deduplicated: **906 element names, 1,898 DFA states,
+30,495 transitions**, 642 attribute declarations, 360 attribute lists and
+141 enumerations. That is 807 KB of Rust, 736 KB of JS and 1.1 MB of Java, a 7.5 s
+generation, and an 808 KB wasm build. Validation speed did not change measurably
+(`results-raw-compiled.txt`: 33,200 files/s on 1 thread, 124,500 on 4, against 27,500
+and 108,000 for the 8-shell build; both are within this VM's noise).
+
+**Differential fuzzing over every shell.** The user guide exercises only 13 of the 42
+shells, so `fuzz_shells.py` generates documents straight from each shell's content
+models. For every one of the 108 public IDs it writes valid documents, plus mutants:
+a dropped, duplicated or swapped child, stray text, a bad attribute value, an
+undeclared attribute or element, or a missing required attribute.
+`fuzz_compare.sh` takes the ground truth from stock `xmllint`, loading the real
+modular DTDs through the DITA-OT catalog, and compares all four compiled runtimes
+against it.
+
+| Run | Documents | Invalid per xmllint | Rust | wasm | JS | Java |
+|---|---:|---:|---:|---:|---:|---:|
+| seed 1 (3 valid + 6 mutants per ID) | 972 | 464 | 0 disagreements | 0 | 0 | 0 |
+| seed 2 (5 valid + 20 mutants per ID) | 2,700 | 1,591 | 0 disagreements | 0 | 0 | 0 |
+
+All 324 generated "valid" documents of seed 1 are valid per xmllint. The mutants
+split both ways: 62 of 148 stray-text mutants are invalid, for example, since text
+is often allowed.
+
+**Internal DTD subsets with entity declarations.** Five of the user guide's 64
+`.ditamap` files declare text entities in their DOCTYPE, such as
+`<!ENTITY OXYGEN_MINOR "27.0">`. All three runtimes now accept internal subsets made
+only of comments and internal general entities. They expand the entity values and
+give the subset's entities precedence over the shell's, as XML does. Other content
+in a subset is still reported as unsupported: element or attribute declarations,
+parameter or external entities, and markup in entity values. With that, all 64 maps
+validate, matching xmllint. Hand-written edge cases (entity use in text, in
+attributes, an override of `&nbsp;`, undefined entities, the unsupported kinds) give
+the same verdict in Rust, JS and Java.
+
+## In the browser: WebAssembly on 4 Web Workers
+
+The Rust crate in `compiled/rust` is also a library. `cargo build --release --lib
+--target wasm32-unknown-unknown` builds it into a 331 KB `.wasm` with no imports,
+exporting `alloc`, `dealloc`, `validate(ptr, len, verbose)`, `messages_ptr` and
+`messages_len`. `compiled/wasm-check.js` runs it under Node. There it flags the same
+files as the native build on the corpus and on all 640 test files, at ~21,000 files/s
+on one thread.
+
+`compiled/web/index.template.html` is a single-page tool, built by
+`compiled/web/build_page.py`, which embeds the wasm as base64:
+
+1. Drop or choose a `.zip` of a DITA project. JSZip unpacks it in memory, keeps only
+   the `.dita` entries, and shows the DOCTYPE mix. The topics are then split by size
+   across 4 Web Workers, each holding its own instance of the compiled module.
+2. Press **Validate**. Each worker validates its topics in wasm.
+3. The page shows the time from the press until the last worker reported back,
+   the throughput, each worker's busy time, and the invalid topics with their
+   messages.
+
+Measured in headless Chromium (Playwright) with a zip of this user guide
+(`DITA/`, 5,645 entries, 37 MB): unpacking takes 1.36 s, and 2,757 topics are kept.
+
+| Run | Time to validate | Topics/s |
+|---|---:|---:|
+| 1 (wasm still tiering up) | 209 ms | 13,200 |
+| 2 | 93 ms | 29,600 |
+| 3 | 92 ms | 30,100 |
+
+The result is the one DOCTYPE-less topic, as everywhere else. In the browser, wasm on
+4 workers runs about the native single-thread rate. The gap to native's 4-thread
+~110,000 topics/s is per-document copying into wasm memory and wasm overhead, and
+the workers are statically partitioned, so they finish a few ms apart.
+
+**All shells, maps and GitHub (page version 2).** The page now embeds the 42-shell
+build and keeps `.ditamap` files too. From the user-guide zip that is 2,757 topics
+plus 64 maps, which use 13 different shells. Warm, the 2,821 documents validate in
+~100–140 ms in headless Chromium.
+
+The page can also read a public GitHub repository, either `owner/repo` or a
+`github.com/owner/repo/tree/branch/folder` URL. It reads the default branch and
+recursive tree from the REST API, which sends CORS headers, then fetches each
+`.dita`/`.ditamap` from `raw.githubusercontent.com` (`Access-Control-Allow-Origin:
+*`), 16 requests at a time. That costs 2 of the 60 unauthenticated API requests per
+hour.
+
+This sandbox's proxy refuses `api.github.com`, so the end-to-end test served both
+hosts from the local clone. The page loaded 2,821 files in 3.4 s and validated
+them in 77 ms. When the requests are refused, the page shows the reason and links
+the repository's zip download (`/archive/HEAD.zip`), to drop in instead. That is
+what to expect inside the Claude artifact viewer, whose CSP blocks `fetch()` to
+other hosts whatever their CORS headers. I could not run the published page inside
+the viewer from here to confirm it. The built standalone file
+`compiled/web/dita-wasm-validator.html` has no such policy when opened directly in
+a browser.
+
+## Xerces-J with a shared grammar pool
+
+`java/XercesBench.java` uses the Xerces 2.12.2 jar that DITA-OT 4.2.4 ships. One
+`XMLGrammarPool` and one `SynchronizedSymbolTable` are shared by every thread. Each
+thread has its own `SAXParser`, with validation turned on. The DTDs are preparsed
+into the pool with `XMLGrammarPreparser`.
+
+**The stock pool key does not fit DITA.** Xerces identifies a DTD grammar by its
+*expanded system ID*, which is the DOCTYPE's `"topic.dtd"` resolved against the
+**document's** folder, plus the root element name. It falls back to the public ID
+only when there is no system ID. So:
+
+| Pool setup (4 threads) | DTD re-fetches | Grammars in pool | Files/s, warm |
+|---|---:|---:|---:|
+| `XMLGrammarPoolImpl`, preparsed then **locked** | 2,756 (every file) | 8 | 75 (cold) |
+| `XMLGrammarPoolImpl`, preparsed, left **open** | 36 | 26 | 6,520 |
+| **keyed by public ID** (like DITA-OT's `XMLGrammarPoolImplUtils`), locked | **0** | **8** | **6,750** |
+| keyed by public ID, *original modular DTDs* via the DITA-OT catalog | 0 | 8 | 6,010 |
+
+- **Locked stock pool:** the preparsed grammars never match a document, so every
+  file re-parses its DTD. That is no better than xmllint.
+- **Open stock pool:** it works, but only by accident. The user guide keeps its
+  topics in a handful of folders, so the pool fills up to one copy per folder and
+  root element. On the first, cold pass it is 1.6× slower than the public-ID pool
+  (1,580 vs 2,600 files/s), because each copy is parsed separately. A corpus spread
+  over many folders would re-parse the DTD far more often.
+- **Public-ID pool:** this is the right setup. The original modular DTDs and the
+  flattened ones run at the same speed once cached. Only the one-time load
+  differs (0.83 s vs 0.38 s).
+
+Xerces also flags only the DOCTYPE-less topic on the real corpus, and catches 250/250
+of the broken topics. It gives a false positive on DTD-declared entities such as
+`&nbsp;` when the grammar comes from the pool (see the correctness table above). JIT-warm on 4 threads it is about 0.55× libxml2-cached and
+about 0.33× xmloxide.
+
+## How it works
+
+1. **Flatten the DTDs** (`c/flatten_dtd.c`). Neither Rust crate can load DITA's
+   modular DTDs. xmloxide skips parameter-entity references outright, and
+   rusty_xml has no catalog/file resolution for external parameter entities.
+   So libxml2 resolves each public ID through the DITA-OT catalog, expands every
+   parameter entity and `INCLUDE`/`IGNORE` section, and dumps the result as one
+   self-contained DTD per doctype (`work-flat/*.dtd`, 19 KB for LwDITA and
+   ~0.9 MB for the others). This runs once, at setup.
+2. **Validate** (`rust-bench/src/main.rs`, `c/libxml2_cached.c`). Each thread
+   parses the 8 flattened DTDs once (these library-based runs keep the 8-shell map
+   `work-dtdmap.tsv`). Worker threads then pull file paths from a
+   shared atomic counter. For each topic they read the DOCTYPE public ID, parse the
+   document *without* loading its external DTD, and validate the tree against
+   the cached DTD. All three library-based runs use the same flattened DTDs.
+   libxml2 gets per-thread DTD copies because `xmlValidateDtd` compiles content-model
+   automata into the DTD lazily, which is not thread-safe.
+
+## Correctness checks
+
+- **ScriptoriumDev/LearningDITA vs Xerces-J** (`learningdita_compare.sh`,
+  `results-learningdita.txt`). The repository has 3,294 `.dita`/`.ditamap` files and
+  29 distinct public IDs. They cover DITA 1.3 topics, maps, BookMap, the glossary and
+  Learning & Training shells, and DITA 2.x topics, maps, BookMap and glossary
+  shells. The reference is `java/XercesCheck.java`: a plain validating Xerces-J 2.12.2
+  SAX parser per thread, **without** a grammar pool (so DTD-declared entities such
+  as `&nbsp;` are known). It resolves the real modular DTDs by public ID through
+  `work-catalog-all.xml`.
+  - Xerces flags **35 invalid files with 92 errors**: 52 undeclared attributes,
+    24 content-model violations, 10 undeclared elements and 6 bad ID values such as
+    `lca_${id}` in templates.
+  - The compiled Rust validator flags **the same 35 files, with the same error
+    count in every one**.
+  - The wasm, JS and Java builds and stock xmllint also flag the same 35 files.
+  - That is 0 disagreements across six validators.
+  - The 7 `2.x Glossary` topics are valid in all of them. Before the alias, the
+    compiled validators rejected them with "no DTD found".
+  - On the first run Xerces reported 74 extra failures. They were all
+    `FileNotFoundException`s on non-ASCII French file names (`leçon1/…`), because
+    the JVM's path encoding defaulted to ASCII. The script now sets `LC_ALL=C.UTF-8`
+    and `-Dsun.jnu.encoding=UTF-8`.
+  - Speed on this corpus: Xerces without a pool does 90 files/s, because it
+    re-reads the modular DTDs for every file. The compiled Rust validator does
+    ~170,000 files/s on 4 threads.
+
+- **Real corpus:** every validator reports exactly the one DOCTYPE-less file.
+- **Negative corpus** (`make_mutants.py`): 250 broken copies of real topics, in
+  5 kinds × 50: undeclared element, element in a forbidden position (`<section>`
+  in `<p>`), duplicate `<title>`, undeclared attribute, and an out-of-enumeration
+  value (`translate="maybe"`). **All five validators (incl. Xerces-J) flag 250/250.**
+- **xmloxide bug found and patched.** Stock xmloxide 0.5.0 falsely rejected 19
+  topics with 39 errors: `attribute 'space' on element 'codeblock' is not declared`.
+  It compares an attribute's *local* name (`space`) with the DTD's qualified name
+  (`xml:space`). `patches/xmloxide-0.5.0-prefixed-attr-names.patch` compares the
+  qualified name instead, and with it the false positives go away. Speed is unchanged
+  (unpatched: 7,690 files/s on 1 thread).
+
+## Caveats
+
+- libxml2 is Ubuntu's 2.9.14. Newer libxml2 releases (2.12+) have parser speedups
+  and might narrow the gap with xmloxide.
+- The cached-DTD approach parses topics without their DTD, so DTD attribute
+  defaults (DITA `@class`) are not inserted into the tree. That is fine for
+  validation. It would not be fine for a pipeline that needs `@class`.
+- The noise between runs is real (shared VM): treat xmloxide vs libxml2-cached as
+  "1.2–1.8× faster", not as an exact ratio.
+- rusty_xml is correct but ~60× slower than xmloxide here. Its validator returns
+  only the first error, and it is slow on large DTDs.
+
+## Run it
+
+```sh
+./setup.sh       # clones corpus, downloads DITA-OT 4.2.4, flattens DTDs, builds everything
+./benchmark.sh   # REPS=5 by default; prints one line per run (ends with the
+                 # Xerces and compiled-validator benchmarks)
+./compare_detection.sh work-mutants2   # per-kind detection table, all validators
+./learningdita_compare.sh              # LearningDITA: compiled validators vs Xerces-J and xmllint
+```

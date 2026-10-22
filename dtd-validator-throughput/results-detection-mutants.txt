@@ -1,0 +1,6 @@
+kind                    total       xmllint       libxml2      xmloxide        xerces compiled-rust   compiled-js compiled-java
+bad-enum-value             50            50            50            50            50            50            50            50
+content-model              50            50            50            50            50            50            50            50
+duplicate-title            50            50            50            50            50            50            50            50
+undeclared-attribute       50            50            50            50            50            50            50            50
+undeclared-element         50            50            50            50            50            50            50            50

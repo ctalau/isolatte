@@ -1,0 +1,34 @@
+validator=libxml2-cached threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.274 seconds=0.417 files_per_s=6613 MB_per_s=36.3
+validator=xmloxide threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.168 seconds=0.439 files_per_s=6287 MB_per_s=34.5
+validator=libxml2-cached threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.209 seconds=0.476 files_per_s=5796 MB_per_s=31.8
+validator=xmloxide threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.143 seconds=0.415 files_per_s=6637 MB_per_s=36.4
+validator=libxml2-cached threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.313 seconds=0.533 files_per_s=5169 MB_per_s=28.4
+validator=xmloxide threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.125 seconds=0.390 files_per_s=7072 MB_per_s=38.8
+validator=libxml2-cached threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.187 seconds=0.459 files_per_s=6007 MB_per_s=33.0
+validator=xmloxide threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.127 seconds=0.367 files_per_s=7507 MB_per_s=41.2
+validator=libxml2-cached threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.187 seconds=0.425 files_per_s=6482 MB_per_s=35.6
+validator=xmloxide threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.119 seconds=0.344 files_per_s=8020 MB_per_s=44.0
+validator=libxml2-cached threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.189 seconds=0.250 files_per_s=11043 MB_per_s=60.6
+validator=xmloxide threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.131 seconds=0.242 files_per_s=11393 MB_per_s=62.5
+validator=libxml2-cached threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.222 seconds=0.271 files_per_s=10157 MB_per_s=55.7
+validator=xmloxide threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.137 seconds=0.196 files_per_s=14092 MB_per_s=77.3
+validator=libxml2-cached threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.185 seconds=0.268 files_per_s=10296 MB_per_s=56.5
+validator=xmloxide threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.134 seconds=0.256 files_per_s=10788 MB_per_s=59.2
+validator=libxml2-cached threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.209 seconds=0.278 files_per_s=9932 MB_per_s=54.5
+validator=xmloxide threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.142 seconds=0.200 files_per_s=13794 MB_per_s=75.7
+validator=libxml2-cached threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.226 seconds=0.293 files_per_s=9395 MB_per_s=51.5
+validator=xmloxide threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.139 seconds=0.221 files_per_s=12466 MB_per_s=68.4
+validator=libxml2-cached threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.275 seconds=0.213 files_per_s=12972 MB_per_s=71.2
+validator=xmloxide threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.146 seconds=0.136 files_per_s=20301 MB_per_s=111.4
+validator=libxml2-cached threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.225 seconds=0.217 files_per_s=12692 MB_per_s=69.6
+validator=xmloxide threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.137 seconds=0.122 files_per_s=22655 MB_per_s=124.3
+validator=libxml2-cached threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.200 seconds=0.224 files_per_s=12289 MB_per_s=67.4
+validator=xmloxide threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.143 seconds=0.153 files_per_s=18037 MB_per_s=98.9
+validator=libxml2-cached threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.234 seconds=0.224 files_per_s=12331 MB_per_s=67.6
+validator=xmloxide threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.148 seconds=0.152 files_per_s=18171 MB_per_s=99.7
+validator=libxml2-cached threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.229 seconds=0.223 files_per_s=12338 MB_per_s=67.7
+validator=xmloxide threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.185 seconds=0.125 files_per_s=22097 MB_per_s=121.2
+validator=rusty_xml threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.153 seconds=22.977 files_per_s=120 MB_per_s=0.7
+validator=rusty_xml threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.182 seconds=5.916 files_per_s=466 MB_per_s=2.6
+validator=xmllint-stock procs=1 files=2757 seconds=116.838 files_per_s=24
+validator=xmllint-stock procs=4 files=2757 seconds=30.009 files_per_s=92

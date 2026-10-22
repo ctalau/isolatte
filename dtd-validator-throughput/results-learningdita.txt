@@ -1,0 +1,8 @@
+files=3294
+xerces   invalid=35   disagreements_vs_xerces=0
+rust     invalid=35   disagreements_vs_xerces=0
+wasm     invalid=35   disagreements_vs_xerces=0
+js       invalid=35   disagreements_vs_xerces=0
+java     invalid=35   disagreements_vs_xerces=0
+xmllint  invalid=35   disagreements_vs_xerces=0
+rust_vs_xerces_error_count_mismatches=0
