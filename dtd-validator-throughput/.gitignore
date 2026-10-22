@@ -1,2 +1,4 @@
 work-*
 rust-bench/target/
+compiled/rust/target/
+compiled/js/node_modules/

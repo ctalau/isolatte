@@ -40,4 +40,11 @@ L=work-ditaot/dita-ot-4.2.4/lib
 mkdir -p work-java
 javac -cp "$L/xercesImpl-2.12.2.jar:$L/xml-apis-1.4.01.jar:$L/xml-resolver-1.2.jar" -d work-java java/XercesBench.java
 
+# Validators compiled from the flattened DTDs.
+mkdir -p work-gen
+python3 -I compiled/gen.py work-dtdmap.tsv work-gen/generated.rs work-gen/generated.js
+(cd compiled/rust && cargo build --release -q)
+(cd compiled/js && npm ci -q)
+
 python3 -I make_mutants.py work-files.txt work-mutants 50
+python3 -I make_mutants2.py work-files.txt work-mutants2 30

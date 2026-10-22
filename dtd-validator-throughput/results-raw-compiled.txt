@@ -1,0 +1,41 @@
+validator=compiled-rust threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.087 files_per_s=31584 MB_per_s=173.3
+validator=compiled-rust threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.090 files_per_s=30541 MB_per_s=167.5
+validator=compiled-rust threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.087 files_per_s=31551 MB_per_s=173.1
+validator=compiled-rust threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.088 files_per_s=31278 MB_per_s=171.6
+validator=compiled-rust threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.093 files_per_s=29520 MB_per_s=161.9
+validator=compiled-rust threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.046 files_per_s=59444 MB_per_s=326.1
+validator=compiled-rust threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.046 files_per_s=60362 MB_per_s=331.1
+validator=compiled-rust threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.044 files_per_s=61981 MB_per_s=340.0
+validator=compiled-rust threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.044 files_per_s=63060 MB_per_s=345.9
+validator=compiled-rust threads=2 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.045 files_per_s=61166 MB_per_s=335.5
+validator=compiled-rust threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.025 files_per_s=111385 MB_per_s=611.0
+validator=compiled-rust threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.027 files_per_s=102102 MB_per_s=560.1
+validator=compiled-rust threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.024 files_per_s=116652 MB_per_s=639.9
+validator=compiled-rust threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.023 files_per_s=121901 MB_per_s=668.7
+validator=compiled-rust threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.022 files_per_s=122916 MB_per_s=674.3
+validator=parse-only-rust threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.062 files_per_s=44405 MB_per_s=243.6
+validator=parse-only-rust threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.065 files_per_s=42138 MB_per_s=231.2
+validator=parse-only-rust threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.065 files_per_s=42646 MB_per_s=233.9
+validator=parse-only-rust threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.063 files_per_s=43675 MB_per_s=239.6
+validator=parse-only-rust threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.070 files_per_s=39188 MB_per_s=215.0
+validator=compiled-js pass=1 threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.383 files_per_s=7192 MB_per_s=39.5
+validator=compiled-js pass=2 threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.390 files_per_s=7068 MB_per_s=38.8
+validator=compiled-js pass=3 threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.343 files_per_s=8042 MB_per_s=44.1
+validator=compiled-js pass=4 threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.449 files_per_s=6142 MB_per_s=33.7
+validator=compiled-js pass=5 threads=1 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.296 files_per_s=9303 MB_per_s=51.0
+validator=compiled-js pass=1 threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.309 files_per_s=8909 MB_per_s=48.9
+validator=compiled-js pass=2 threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.114 files_per_s=24112 MB_per_s=132.3
+validator=compiled-js pass=3 threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.112 files_per_s=24641 MB_per_s=135.2
+validator=compiled-js pass=4 threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.086 files_per_s=32069 MB_per_s=175.9
+validator=compiled-js pass=5 threads=4 files=2757 bytes=15124300 invalid_files=1 errors=1 dtd_load_s=0.000 seconds=0.124 files_per_s=22258 MB_per_s=122.1
+validator=parse-only-js pass=1 threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.261 files_per_s=10559 MB_per_s=57.9
+validator=parse-only-js pass=2 threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.206 files_per_s=13381 MB_per_s=73.4
+validator=parse-only-js pass=3 threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.201 files_per_s=13699 MB_per_s=75.1
+validator=parse-only-js pass=4 threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.196 files_per_s=14050 MB_per_s=77.1
+validator=parse-only-js pass=5 threads=1 files=2757 bytes=15124300 invalid_files=0 errors=0 dtd_load_s=0.000 seconds=0.280 files_per_s=9859 MB_per_s=54.1
+wall_clock cmd="compiled/rust/target/release/dita-compiled-validator 4" seconds=0.032
+wall_clock cmd="compiled/rust/target/release/dita-compiled-validator 4" seconds=0.031
+wall_clock cmd="compiled/rust/target/release/dita-compiled-validator 4" seconds=0.031
+wall_clock cmd="node compiled/js/bench.js 4 1" seconds=0.409
+wall_clock cmd="node compiled/js/bench.js 4 1" seconds=0.434
+wall_clock cmd="node compiled/js/bench.js 4 1" seconds=0.415

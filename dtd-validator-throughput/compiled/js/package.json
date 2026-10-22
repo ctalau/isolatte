@@ -1,0 +1,11 @@
+{
+  "name": "dita-compiled-validator-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DITA DTD validation with tables compiled from the DTDs (see ../gen.py)",
+  "main": "validator.js",
+  "license": "ISC",
+  "dependencies": {
+    "saxes": "6.0.0"
+  }
+}

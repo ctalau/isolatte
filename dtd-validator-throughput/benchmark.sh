@@ -30,3 +30,4 @@ for p in 1 4; do
 done
 
 ./benchmark-xerces.sh
+./benchmark-compiled.sh

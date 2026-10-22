@@ -1,0 +1,11 @@
+[package]
+name = "dita-compiled-validator"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+quick-xml = "0.42.0"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
