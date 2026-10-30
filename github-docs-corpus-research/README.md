@@ -1,6 +1,6 @@
 # Large public GitHub documentation corpora
 
-Snapshot: 30 October 2026. Counts are based on Git trees and histories inspected during this research, not live totals. [repositories.csv](repositories.csv) records the selected repositories, commit IDs, current counts, and completed history counts. The samples are not rankings of all GitHub repositories.
+Snapshot: 30 October 2026. Counts are based on Git trees and histories inspected during this research, not live totals. The full repository manifest was not published; the individual repositories listed below link to sampled commits. The samples are not rankings of all GitHub repositories.
 
 ## Findings
 
@@ -11,7 +11,7 @@ Snapshot: 30 October 2026. Counts are based on Git trees and histories inspected
 | MDN content | [mdn/content](https://github.com/mdn/content/tree/15d531b54c7f0d96ac80ef00b494fd40743d59ce) and [mdn/translated-content](https://github.com/mdn/translated-content/tree/033e5bf0a0ed3d4203313a5079bc95e054df7aa6) | 52,431 | 76,785 in both default-branch histories | 37,600 in translation content directories |
 | AWS guide sample | 248 public awsdocs repositories returned by a repository search for `guide` | 4,956 | At least 13,147 in six scanned histories | Not reliably determined |
 
-The Azure subset is included in the Microsoft sample; do not add the two totals. The Microsoft and AWS samples are search-selected subsets, not comprehensive counts of their organizations or published sites. The history lower bounds are sums over only the repositories with completed scans in the CSV; a path in two repositories is counted twice. The million-path result is historical, not a claim that a million files exist at once.
+The Azure subset is included in the Microsoft sample; do not add the two totals. The Microsoft and AWS samples are search-selected subsets, not comprehensive counts of their organizations or published sites. The history lower bounds are sums over only the repositories with completed scans; a path in two repositories is counted twice. The million-path result is historical, not a claim that a million files exist at once.
 
 AWS [retired most public documentation repositories in 2023](https://aws.amazon.com/blogs/aws/retiring-the-aws-documentation-on-github/); many default branches no longer contain the full former guide. The AWS current count is therefore not a measure of the documentation on the live AWS website. The Azure core repository's full history did not finish downloading and is not included in the historical lower bound.
 
@@ -57,7 +57,7 @@ MDN describes the [separate translation repository](https://developer.mozilla.or
 - **Current count:** recursively list the selected commit's Git tree and count paths ending in `.md`, `.markdown`, `.mdx`, `.dita`, `.ditamap`, `.rst`, `.adoc`, or `.asciidoc`, case-insensitively. This includes support documents, reusable fragments, translations, and generated reference files. YAML, HTML, XML with other extensions, and other formats are excluded. It is not a count of distinct published pages or unique content.
 - **History count:** for each completed scan, list changed paths over all commits reachable from the sampled default-branch commit, including merge diffs and root commits, disable rename detection, deduplicate paths within the repository, and apply the same extension filter. A rename can count as two paths; repeated revisions at one path count once. Other branch-only histories and tags not reachable from that commit are excluded. The aggregate is a sum across repositories, not cross-repository deduplication.
 - **Translations:** translation paths are already included in current counts. For MDN, the count covers matching files under the translated repository's `files/` directory. For Kubernetes, the count covers matching files in non-`en` directories under `content/`. For Microsoft, the minimum reflects matching files under recognized locale-named path components; it is not a comprehensive language classification. AWS was not classified.
-- **Reproduction:** for a checked-out repository with full default-branch history, replace `COMMIT` with the CSV's commit. The history command can be expensive and needs adequate temporary disk space.
+- **Reproduction:** for a checked-out repository with full default-branch history, replace `COMMIT` with a sampled commit. The history command can be expensive and needs adequate temporary disk space.
 
 ```sh
 git ls-tree -r --name-only COMMIT |
