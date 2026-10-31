@@ -1,0 +1,6 @@
+I02-absolute-self-link	2808	files=380	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	1	files=1	relative link target missing and not redirected: privatelink
+R09-heading-skip	206	files=103	heading jumps from H1 to H4 | heading jumps from H2 to H4
+R10-code-lang	2967	files=293	code block without language | code block without language
+R11-anchor-unique	5	files=4	duplicate anchor extend-file-system | duplicate anchor decribe-ami-launch-permissions-aws-cli
+docs	557	seconds	1.6

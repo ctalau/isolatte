@@ -1,0 +1,6 @@
+I02-absolute-self-link	2595	files=324	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	5	files=4	relative link target missing and not redirected: samples/custom-oracle-manifest.zip | relative link target missing and not redirected: samples/custom-oracle-iam.zip
+R09-heading-skip	20	files=20	heading jumps from H2 to H4 | heading jumps from H1 to H4
+R10-code-lang	2950	files=420	code block without language | code block without language
+R11-anchor-unique	13	files=7	duplicate anchor rds-provisioned-iops-storage-range-reference | duplicate anchor Appendix.Oracle-RU-12.2.0.1.191015-Bugs-Fixed
+docs	672	seconds	2.0

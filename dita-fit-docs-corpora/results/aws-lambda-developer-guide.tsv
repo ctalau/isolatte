@@ -1,0 +1,6 @@
+I02-absolute-self-link	1874	files=300	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	6	files=3	relative link target missing and not redirected: samples/runtime-api.zip | relative link target missing and not redirected: samples/extensions-api.zip
+R09-heading-skip	29	files=27	heading jumps from H2 to H4 | heading jumps from H2 to H4
+R10-code-lang	1248	files=260	code block without language | code block without language
+R11-anchor-unique	5	files=5	duplicate anchor gettingstarted-package-zip-cli | duplicate anchor runtimes-avx2-mkl
+docs	400	seconds	0.8

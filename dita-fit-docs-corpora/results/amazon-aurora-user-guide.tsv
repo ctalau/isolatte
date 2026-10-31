@@ -1,0 +1,7 @@
+I02-absolute-self-link	2622	files=370	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	1	files=1	relative link target missing and not redirected: url-rds-user;mysql_rds_import_binlog_ssl_material.html
+R09-heading-skip	21	files=21	heading jumps from H2 to H4 | heading jumps from H2 to H4
+R10-code-lang	3550	files=486	code block without language | code block without language
+R11-anchor-unique	9	files=6	duplicate anchor rds-provisioned-iops-storage-range-reference | duplicate anchor Appendix.Oracle-RU-12.2.0.1.191015-Bugs-Fixed
+R12-retired-name	1	files=1	retired product name: Amazon Elasticsearch Service
+docs	905	seconds	2.4

@@ -1,0 +1,16 @@
+I01-date-older-3y	3274	files=3274	ms.date older than 3 years: 20230117 | ms.date older than 3 years: 20210916
+I02-absolute-self-link	110	files=23	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+I03-cross-repo-ref	2490	files=1055	points into a dependent repository, not checkable here: ~/reusable-content/ce-skilling/azure/includes/gdpr-intro-sentence.md | points into a dependent repository, not checkable here: ~/reusable-content/ce-skilling/azure/includes/quickstarts-free-trial-note.md
+I04-link-via-redirect	4896	files=2259	link only works through a redirect: ../active-directory/architecture/resilient-external-processes.md?bc=/azure/active-directory-b2c/bread/toc.json&toc=/azure/active-directory-b2c/TOC.json | link only works through a redirect: ../active-directory/architecture/resilience-b2c-developer-best-practices.md?bc=/azure/active-directory-b2c/bread/toc.json&toc=/azure/active-directory-b2c/TOC.json
+R01-include-exists	66	files=63	include target missing: ../../includes/quickstarts-free-trial-note.md | include target missing: includes/enable-managed-identity.md
+R02-link-exists	259	files=193	relative link target missing and not redirected: ../cdn/index.yml | relative link target missing and not redirected: ../../includes/quickstarts-free-trial-note.md
+R04-img-exists	62	files=26	image file missing: media/power-bi-visual/security-setting.png | image file missing: ./media/spatial-io-connect-wfs-service/simple-wfs-example.png
+R05-pivot-declared	235	files=32	pivot "playwright-test-runner" not in group "playwright-workspaces" | pivot "nunit-test-runner" not in group "playwright-workspaces"
+R07-topic-vocab	51	files=51	ms.topic "Include" not in vocabulary | ms.topic "Include" not in vocabulary
+R08-date-format	3	files=3	ms.date not MM/DD/YYYY: 05/01/25 | ms.date not MM/DD/YYYY: 05/01/25
+R09-heading-skip	1957	files=988	heading jumps from H1 to H4 | heading jumps from H2 to H4
+R10-code-lang	3933	files=1100	code block without language | code block without language
+R11-anchor-unique	17	files=16	duplicate anchor createprobe | duplicate anchor runbook-fails-no-permission
+R12-retired-name	950	files=428	retired product name: Azure Active Directory | retired product name: Azure Active Directory
+R13-path-case	396	files=150	path differs from the real file only in letter case: enable-authentication-iOs-app.md#step-63-call-a-web-api | path differs from the real file only in letter case: enable-authentication-React-spa-app.md
+docs	16761	seconds	87.1
