@@ -1,0 +1,21 @@
+rule	files	occurrences	example
+md-files	14468	-	-
+ai-usage-ai-generated	3	3	azure-sql/database/free-tier-upgrade-to-hyperscale.md: 
+ai-usage-present	453	453	azure-sql/database/active-geo-replication-overview.md: ai-assisted
+bare-url-not-in-angle-brackets	340	1116	azure-sql/azure-sql-iaas-vs-paas-what-is-overview.md: > [!VIDEO https://learn.microsoft.com/shows/Azure-SQL-for-Beginners/What-is-Azure-SQL-3-of
+click	1860	8848	azure-sql/database/always-encrypted-enclaves-enable.md: 1. Right-click on the **Databases** folder and select **New Database...**
+consecutive-headings	2555	3884	azure-sql/azure-hybrid-benefit.md: Is there a migration allowance with Azure Hybrid Benefit for SQL Server?
+etc-or-and-so-on	433	562	azure-sql/database-watcher-alerts.md: An Azure resource in Azure Monitor Alerts that defines alerting logic such as the frequenc
+gerund-h1	964	964	azure-sql/database/always-encrypted-enclaves-getting-started.md: Getting started using Always Encrypted with secure enclaves
+gerund-title	959	959	azure-sql/database/always-encrypted-enclaves-getting-started.md: Getting Started Using Always Encrypted with Secure Enclaves
+latin-eg-ie	48	62	azure-sql/database/elastic-scale-glossary.md: **Sharded tables**: Tables that are sharded, i.e., whose data is distributed across shards
+learn-absolute-link	16	28	azure-sql/azure-sql-iaas-vs-paas-what-is-overview.md: > [!VIDEO https://learn.microsoft.com/shows/Azure-SQL-for-Beginners/What-is-Azure-SQL-3-of
+master-word	829	4529	azure-sql/copilot/copilot-prompts-list.md: | Database Permission Listing | Lists database permissions and access levels for users. | 
+may-for-possibility	1529	5043	azure-sql/database/alerts-create.md: > To avoid sprawl of many independent alerts, you may want to configure alerts for all res
+non-inclusive-terms	8	13	azure-sql/includes/bias-sensitive-term-t.md: > This article contains references to the term slave, a term that Microsoft no longer uses
+ordered-list-not-all-1	1408	11111	azure-sql/database/adonet-v12-develop-direct-route-ports.md: 2. ADO.NET then connects to SQL Database directly, with no middleware in between.
+please	229	2683	azure-sql/capacity-errors-troubleshoot.md: If you see the following errors, please [register your subscription with the SQL RP]:
+simply-just-easy	943	1214	azure-sql/azure-sql-iaas-vs-paas-what-is-overview.md: - Rapid development and test scenarios when you don't want to buy on-premises hardware for
+title-case-heading	5728	10913	azure-sql/azure-hybrid-benefit.md: Azure Hybrid Benefit - Azure SQL Database & SQL Managed Instance
+we-our-authors	973	1971	azure-sql/azure-hybrid-benefit.md: We offer license mobility benefits to SQL Server customers with Software Assurance. Licens
+you-should	1092	1573	azure-sql/azure-sql-iaas-vs-paas-what-is-overview.md: For **SQL Server on Azure VMs**, Microsoft provides an [enterprise class availability SLA]

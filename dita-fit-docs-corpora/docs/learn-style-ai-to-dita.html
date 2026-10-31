@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learn Style and AI Rules</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: companion to "Learn Markdown to DITA". Intro, inventory of guidance layers, a rule ledger (rule → measured breakage → where it lives after the port), skill anatomy, then the proposed AI layer. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#15212e; --muted:#5a6878; --rule:#d5dce4;
+  --accent:#0b6b74; --accent-soft:#dcefef; --code-bg:#e9eef3; --bar:#9fb3c4;
+  --h-moot:#2f7d4a; --h-markup:#2c5fa8; --h-sch:#8a6212; --h-prose:#7a4a9c;
+  --h-moot-bg:#e3f2e8; --h-markup-bg:#e2ebf8; --h-sch-bg:#f6edd9; --h-prose-bg:#efe5f6;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10161d; --surface:#17202a; --ink:#e3e9ef; --muted:#9aa8b6; --rule:#2b3846;
+  --accent:#5cc3c9; --accent-soft:#163538; --code-bg:#1e2a36; --bar:#4b6378;
+  --h-moot:#7fd39b; --h-markup:#8db5f0; --h-sch:#e2b65c; --h-prose:#c9a2e6;
+  --h-moot-bg:#173322; --h-markup-bg:#1a2a44; --h-sch-bg:#382b12; --h-prose-bg:#2c1d3a;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10161d; --surface:#17202a; --ink:#e3e9ef; --muted:#9aa8b6; --rule:#2b3846;
+  --accent:#5cc3c9; --accent-soft:#163538; --code-bg:#1e2a36; --bar:#4b6378;
+  --h-moot:#7fd39b; --h-markup:#8db5f0; --h-sch:#e2b65c; --h-prose:#c9a2e6;
+  --h-moot-bg:#173322; --h-markup-bg:#1a2a44; --h-sch-bg:#382b12; --h-prose-bg:#2c1d3a;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:44px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:72ch}
+code{font-family:var(--f-mono);font-size:.86em;background:var(--code-bg);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header.top{display:grid;gap:14px}
+.lede{font-size:17px}
+.pins{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+section{display:grid;gap:14px}
+section > .intro{color:var(--muted);max-width:80ch}
+.layers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.layer{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:6px;align-content:start;min-width:0}
+.layer .where{font-family:var(--f-mono);font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.layer .then{font-size:14px;border-top:1px dashed var(--rule);padding-top:8px;margin-top:4px}
+.layer .then b{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-right:6px}
+.home{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.home::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.home.moot{color:var(--h-moot);background:var(--h-moot-bg)}
+.home.markup{color:var(--h-markup);background:var(--h-markup-bg)}
+.home.sch{color:var(--h-sch);background:var(--h-sch-bg)}
+.home.prose{color:var(--h-prose);background:var(--h-prose-bg)}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px}
+.legend .li{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+.legend .desc{color:var(--muted);font-size:13px}
+.split{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.split .cell{border-top:2px solid var(--rule);padding-top:10px;display:grid;gap:4px}
+.split .num{font-family:var(--f-display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.split .moot{border-color:var(--h-moot)} .split .markup{border-color:var(--h-markup)} .split .sch{border-color:var(--h-sch)} .split .prose{border-color:var(--h-prose)}
+@media (max-width:760px){.layers{grid-template-columns:minmax(0,1fr)}.split{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tablebox{overflow-x:auto;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;min-width:880px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--rule)}
+tr:last-child td{border-bottom:0}
+th{font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);background:var(--bg);position:sticky;top:0}
+td.n{font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+td.rule{font-weight:500;min-width:190px}
+td.rule small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+.grp td{background:var(--bg);font-family:var(--f-display);font-weight:600;font-size:15px;padding-block:8px}
+.barcell{display:grid;gap:3px;min-width:120px}
+.bar{height:6px;border-radius:3px;background:var(--bar)}
+.prec{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.anatomy{display:grid;gap:10px}
+.arow{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1.2fr);gap:12px;align-items:stretch}
+.arow > div{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;min-width:0;display:grid;gap:4px;align-content:start}
+.arow .arrow{background:none;border:0;padding:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--f-mono)}
+.arow .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.arow{grid-template-columns:minmax(0,1fr)}.arow .arrow{justify-content:flex-start;padding-left:14px}}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.skill{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:8px;align-content:start;min-width:0}
+.skill .name{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--accent)}
+.skill .step{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.skill ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:14px}
+pre{margin:0;font-family:var(--f-mono);font-size:12.5px;background:var(--code-bg);padding:12px 14px;border-radius:6px;overflow-x:auto;line-height:1.5}
+ol.plain{margin:0;padding-left:20px;display:grid;gap:8px;max-width:84ch}
+footer{color:var(--muted);font-size:13px;display:grid;gap:6px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">dita-fit-docs-corpora · porting reference 2 of 2</div>
+  <h1>Learn Style and AI Rules</h1>
+  <p class="lede">Microsoft Learn steers writers and AI assistants through a style guide, a Copilot instructions file, one repo skill, AI-usage metadata and build rules. This page lists each rule, measures how often the current Markdown breaks it, and says where the rule should live after the DITA port. The main result: once content is semantic XML, 14 of the 21 Copilot rules stop being prompt text and become schema or Schematron checks an agent can run. The other 7 are judgment about voice and clarity.</p>
+  <div class="pins">
+    <span>MicrosoftDocs/sql-docs @ 75b38454ce9c · 14,468 content .md</span>
+    <span>MicrosoftDocs/azure-docs @ 84ce263e4a1b · 16,755 content .md</span>
+    <span>counts: <code>tools/style_signals.py</code> → <code>results/style-*.tsv</code></span>
+    <span>companion: <a href="learn-features-to-dita.html">Learn Markdown to DITA</a> (<code>docs/learn-features-to-dita.html</code>)</span>
+  </div>
+</header>
+
+<section aria-labelledby="layers">
+  <h2 id="layers">Where the guidance lives today</h2>
+  <p class="intro">Ten layers, from human-facing guides to machine checks. Seven are files in the content repositories; three live outside them.</p>
+  <div class="layers">
+    <div class="layer"><h3>Microsoft Writing Style Guide</h3><div class="where">learn.microsoft.com/style-guide · external</div>
+      <p>Voice, grammar, A–Z word list ("select", not "click"), bias-free terms, UI and code formatting.</p>
+      <div class="then"><b>After the port</b>Unchanged. Its checkable parts move into Schematron; the rest stays human and AI guidance.</div></div>
+    <div class="layer"><h3>Learn contributor guide</h3><div class="where">learn.microsoft.com/contribute · external</div>
+      <p>Markdown reference, metadata reference, <code>ms.topic</code> types and article templates.</p>
+      <div class="then"><b>After the port</b>Needs a DITA edition: element reference, topic types, map rules. The Markdown edition stays for the generated view.</div></div>
+    <div class="layer"><h3><code>.github/copilot-instructions.md</code></h3><div class="where">sql-docs: 57 lines · azure-docs: none</div>
+      <p>21 rules in four groups (AI disclosure, voice, structure, formatting). A Learn-wide block is overwritten centrally; repo rules go below the sentinel comment <code>&lt;!--- Add additional repository level instructions below. Do NOT update this line or above. ---&gt;</code>.</p>
+      <div class="then"><b>After the port</b>Keep the two-block design. Rewrite the Learn-wide block for DITA (rule ledger below).</div></div>
+    <div class="layer"><h3>Copilot skill</h3><div class="where">azure-docs/.github/copilot/skills/extended-zones-article-writer.md · 131 lines</div>
+      <p>The only skill in either repo. Hard-codes front matter, file naming, per-type article structure, formatting and a publishing checklist. Paths point at a private mirror (<code>C:\github\azure-docs-pr\…</code>) and six internal team repos.</p>
+      <div class="then"><b>After the port</b>Most of it becomes a constraint module and a template. See "Anatomy of the skill".</div></div>
+    <div class="layer"><h3>AI-usage disclosure</h3><div class="where">front matter <code>ai-usage:</code></div>
+      <p>Required by the instructions for AI-written or AI-edited articles. Present in 453 sql-docs and 715 azure-docs topics (3% and 4%); <code>ai-generated</code> on 3 and 18.</p>
+      <div class="then"><b>After the port</b><code>&lt;othermeta name="ai-usage" content="ai-assisted"/&gt;</code> in the prolog; the CI diff step decides when it is required.</div></div>
+    <div class="layer"><h3>Build rules</h3><div class="where">docfx.json <code>rules</code></div>
+      <p><code>sensitive-language-ma/sl/wl/bl</code>, <code>filename-incomplete</code>, <code>docs-link-absolute</code>, each with per-file exclude lists (e.g. Pacemaker cluster pages, error catalogues).</p>
+      <div class="then"><b>After the port</b>Same rule ids in Schematron. Semantic markup (<code>&lt;codeph&gt;master&lt;/codeph&gt;</code> for the system database) shrinks the exclude lists.</div></div>
+    <div class="layer"><h3>Acrolinx</h3><div class="where">pull-request check · internal</div>
+      <p>Style, terminology and clarity score on each change. Its rule set isn't public.</p>
+      <div class="then"><b>After the port</b>Acrolinx reads DITA. Point it at the source, or keep it on the generated Markdown during step 1.</div></div>
+    <div class="layer"><h3>markdownlint</h3><div class="where">azure-docs/.markdownlint.json</div>
+      <p>Mostly disabled rules (MD001–MD033 largely off).</p>
+      <div class="then"><b>After the port</b>Replaced by DTD/RNG validation on the source; still run on the generated Markdown.</div></div>
+    <div class="layer"><h3>Copilot Workspace policy</h3><div class="where">sql-docs/.github/copilot-workspace/policy.json</div>
+      <p><code>allowPullRequests: false</code>, <code>allowComments: false</code>: AI agents may not open PRs or comment through Copilot Workspace.</p>
+      <div class="then"><b>After the port</b>Unchanged; it is repo policy, not content.</div></div>
+    <div class="layer"><h3>Repo policy bots</h3><div class="where">azure-docs/.github/policies/disallow-edits.yml · PRMerger</div>
+      <p>Close PRs that touch services moved to other repos; route sign-off by <code>ms.author</code>.</p>
+      <div class="then"><b>After the port</b>Path patterns change from <code>.md</code> to <code>.dita</code>; sign-off reads the prolog.</div></div>
+  </div>
+</section>
+
+<section aria-labelledby="ledger">
+  <h2 id="ledger">Rule ledger: the 21 Copilot rules, plus style-guide extras</h2>
+  <p class="intro">Counts are lines in content <code>.md</code> files after removing front matter, fenced code, inline code and link URLs. They are heuristics. The precision column says how much of each count is a real violation, from spot checks.</p>
+  <div class="legend">
+    <span class="li"><span class="home moot">moot</span><span class="desc">DITA markup or the reverse converter makes the violation impossible</span></span>
+    <span class="li"><span class="home markup">markup</span><span class="desc">a semantic element makes the rule precise and checkable</span></span>
+    <span class="li"><span class="home sch">schematron</span><span class="desc">a Schematron rule, often with a quick fix (SQF)</span></span>
+    <span class="li"><span class="home prose">prose</span><span class="desc">stays judgment: AI instructions, Acrolinx, reviewers</span></span>
+  </div>
+  <div class="split" id="split"></div>
+  <div class="tablebox"><table>
+    <thead><tr><th>Rule</th><th style="text-align:right">sql-docs<br>lines · files</th><th style="text-align:right">azure-docs<br>lines · files</th><th>Share of files</th><th>Today</th><th>After the port</th><th>Home</th></tr></thead>
+    <tbody id="ledger-body"></tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="anatomy">
+  <h2 id="anatomy">Anatomy of the skill, and where each part goes</h2>
+  <p class="intro">The Extended Zones skill is a good sample of what writers put into AI instructions today. Most of it restates structure that a DITA schema can enforce. Only the domain facts and naming judgment need to stay as text.</p>
+  <div class="anatomy" id="anatomy-rows"></div>
+</section>
+
+<section aria-labelledby="ailayer">
+  <h2 id="ailayer">Proposed AI layer for the port</h2>
+  <p class="intro">Instructions say what to do; tools prove it was done. Every rule that a schema or Schematron can decide moves out of prompt text, and the agent gets the validator as a tool. Step 1 keeps the existing files unchanged, because they still govern the generated Markdown.</p>
+  <div class="skills">
+    <div class="skill"><div class="step">Instructions · step 2</div><div class="name">AGENTS.md (Learn-wide block)</div>
+      <ul><li>Same two-block layout and sentinel comment as today's Copilot file.</li><li>A table from Markdown habit to DITA element: bold UI → <code>&lt;uicontrol&gt;</code>, backticks → <code>&lt;filepath&gt;</code> / <code>&lt;codeph&gt;</code>, product names → <code>&lt;keyword keyref&gt;</code>.</li><li>Only the prose rules (voice, tense, concision, Oxford comma, complete list items).</li><li>"Run <code>validate</code> before you finish; fix every error."</li></ul></div>
+    <div class="skill"><div class="step">Skill · step 1</div><div class="name">md-to-dita-port</div>
+      <ul><li>Runs the converter on a file set, then the reverse converter.</li><li>Compares rendered HTML per moniker, pivot and tab.</li><li>Never edits content to make a diff go away; reports it.</li></ul></div>
+    <div class="skill"><div class="step">Skills · step 2</div><div class="name">refactor-&lt;kind&gt;</div>
+      <ul><li>One skill per refactoring: <code>tiny-include-to-key</code>, <code>duplicate-to-conref</code>, <code>topic-to-task</code>, <code>bold-to-uicontrol</code>.</li><li>Each states its input query, the change, the count it expects to move, and the rollback.</li></ul></div>
+    <div class="skill"><div class="step">Skill · authoring</div><div class="name">write-learn-task</div>
+      <ul><li>Replaces per-team skills like Extended Zones: picks a topic type and template, fills prolog, adds the topicref.</li><li>Team facts live in a per-docset context file and in warehouse topics to conref.</li></ul></div>
+    <div class="skill"><div class="step">Skill · quality</div><div class="name">fix-findings</div>
+      <ul><li>Reads Schematron SVRL output, applies the SQF fix when one exists, otherwise proposes an edit.</li><li>Handles <code>ai-usage</code> when the change exceeds 5% of words.</li></ul></div>
+    <div class="skill"><div class="step">Tools agents need</div><div class="name">validate · schematron · render-diff</div>
+      <ul><li>DTD validation fast enough to run per edit (the <code>dtd-validator-throughput</code> experiment in this repo does ~120k files/s).</li><li>Per-file Schematron with the shared key and pivot index.</li><li>Rendered-HTML diff for the round trip.</li></ul></div>
+  </div>
+  <h3>Sketch of the Learn-wide block in DITA terms</h3>
+<pre>## Learn-wide instructions (managed centrally; do not edit)
+
+### AI usage
+- Add &lt;othermeta name="ai-usage" content="ai-assisted|ai-generated"/&gt; to the prolog when
+  your change is more than 5% of the topic's words. CI checks this.
+
+### Markup (checked by the schema and Schematron; run `validate`)
+- UI labels: &lt;uicontrol&gt;; menu paths: &lt;menucascade&gt;. Never &lt;b&gt; for UI.
+- Files and folders: &lt;filepath&gt;; code terms: &lt;codeph&gt;; untranslatable text: translate="no".
+- Product names: &lt;keyword keyref="…"/&gt; from the product key map. Never type a product name.
+- Links inside Learn: keyref, never a learn.microsoft.com URL.
+- Steps: &lt;steps&gt;/&lt;step&gt;/&lt;cmd&gt;, starting with an imperative verb.
+
+### Voice (not checkable; follow the Microsoft Writing Style Guide)
+- Active voice, second person, present tense, contractions, short sentences.
+- Oxford comma. Complete sentences in list items.
+
+## Repository-specific instructions
+&lt;!--- Add additional repository level instructions below. Do NOT update this line or above. ---&gt;</pre>
+</section>
+
+<section aria-labelledby="honest">
+  <h2 id="honest">What to trust in these numbers</h2>
+  <ol class="plain">
+    <li><b>High precision:</b> sequential list numbering, bare URLs, gerund titles, <code>etc.</code>, <code>e.g.</code>/<code>i.e.</code>, <code>click</code>, <code>you should</code>, AI-usage counts. Spot checks found these are nearly all real.</li>
+    <li><b>Medium:</b> <code>we</code>/<code>our</code> (some quoted text and customer stories), consecutive headings (FAQ-style question headings under a section heading are often intended), <code>may</code> (the permission sense is allowed).</li>
+    <li><b>Low:</b> title-case headings are inflated by product names ("Microsoft Entra", "Azure Communication Services"); <code>please</code> in sql-docs is mostly quoted error messages (one error catalogue include has 199); <code>master</code> in sql-docs is mostly the <code>master</code> system database. These three are exactly the rules semantic markup fixes, because product names, quoted messages and code terms become distinguishable elements.</li>
+    <li>The Copilot rule "number all ordered list items as 1." is a source-formatting rule. 11,111 and 22,672 lines break it, and it disappears in DITA because <code>&lt;ol&gt;</code> has no literal numbers.</li>
+    <li>Acrolinx rules and Learn's server-side checks are not public, so "today" lists only what the repos show.</li>
+  </ol>
+</section>
+
+<footer>
+  <div>Rule text quoted from <code>sql-docs/.github/copilot-instructions.md</code> and <code>azure-docs/.github/copilot/skills/extended-zones-article-writer.md</code> at the pinned commits. Style-guide extras follow the Microsoft Writing Style Guide word list.</div>
+  <div>"Share of files" is the larger of the two repos' share of content files with at least one hit.</div>
+</footer>
+</div>
+
+<script>
+// rule, note, sql [lines, files], azure [lines, files], precision, today, after, home, group
+const N = {sql:14468, az:16755};
+const R = [
+ ["AI usage & disclosure"],
+ ["ai-usage front matter present","informational: topics that carry it",[453,453],[715,715],"high","CI asks for it on AI-assisted PRs","<code>&lt;othermeta name=\"ai-usage\"&gt;</code>; CI word-diff decides when it's required","sch"],
+ ["Voice and tone"],
+ ["Active voice","",null,null,"—","Acrolinx, review","Instructions + Acrolinx","prose"],
+ ["Second person","",null,null,"—","Acrolinx, review","Instructions + Acrolinx","prose"],
+ ["Conversational, contractions","",null,null,"—","Acrolinx, review","Instructions + Acrolinx","prose"],
+ ["Present tense","",null,null,"—","Acrolinx, review","Instructions + Acrolinx","prose"],
+ ["Imperative mood","\"you should\"",[1573,1092],[3106,2013],"high","Acrolinx","In <code>task</code> topics, Schematron checks that <code>&lt;cmd&gt;</code> starts with a verb; elsewhere a warning on \"you should\"","sch"],
+ ["\"might\", not \"may\"","any \"may\"",[5043,1529],[5881,2622],"medium","Acrolinx","Schematron warning; SQF offers \"might\". Permission sense stays.","sch"],
+ ["No \"we\" / \"our\"","we, our, us",[1971,973],[10901,3871],"medium","Acrolinx","Schematron warning, skipping <code>&lt;q&gt;</code> and <code>&lt;lq&gt;</code>","sch"],
+ ["Structure and format"],
+ ["Sentence-case headings","title-case heuristic",[10913,5728],[6800,3346],"low","Acrolinx","Product names become <code>&lt;keyword keyref&gt;</code>, so Schematron can ignore them and check the remaining words","markup"],
+ ["No gerunds in titles","front-matter title",[959,959],[382,382],"high","Acrolinx","Schematron on topic <code>&lt;title&gt;</code>; task titles get an imperative-verb check","sch"],
+ ["Concise, short sentences","",null,null,"—","Acrolinx","Instructions + Acrolinx","prose"],
+ ["Oxford comma","",null,null,"—","Acrolinx","Instructions + Acrolinx","prose"],
+ ["Number every list item \"1.\"","lines numbered 2. … 9.",[11111,1408],[22672,2992],"high","nothing","<code>&lt;ol&gt;</code>/<code>&lt;steps&gt;</code> carry no numbers; the reverse converter always writes \"1.\"","moot"],
+ ["Complete sentences in list items","",null,null,"—","review","Instructions","prose"],
+ ["No \"etc.\" / \"and so on\"","",[562,433],[1330,892],"high","Acrolinx","Schematron warning","sch"],
+ ["No consecutive headings","heading after heading",[3884,2555],[5962,2735],"medium","nothing","Schematron: a nested topic whose body is empty but which has child topics","sch"],
+ ["Formatting conventions"],
+ ["Bold for UI elements","",null,null,"—","review","<code>&lt;uicontrol&gt;</code> / <code>&lt;menucascade&gt;</code> in step 2; Schematron can then check labels against a UI-string list","markup"],
+ ["Code style for files, types, non-localizable text","",null,null,"—","review","<code>&lt;filepath&gt;</code>, <code>&lt;apiname&gt;</code>, <code>&lt;codeph&gt;</code>, <code>translate=\"no\"</code> replace one backtick style","markup"],
+ ["Raw URLs in angle brackets","bare http(s) URLs",[1116,340],[9025,2304],"high","nothing","<code>&lt;xref scope=\"external\"&gt;</code>; the reverse converter writes <code>&lt;…&gt;</code>","moot"],
+ ["Relative links within the repo","absolute learn.microsoft.com links",[28,16],[90,58],"high","<code>docs-link-absolute</code> build rule","Keys; Schematron flags any learn.microsoft.com href","moot"],
+ ["Strip /en-us/ from Learn links","",[0,0],[3,3],"high","nothing","Keys remove the URL entirely","moot"],
+ ["Style-guide extras (not in the Copilot file)"],
+ ["\"select\", not \"click\"","",[8848,1860],[4571,1654],"high","Acrolinx","Schematron + SQF inside <code>&lt;cmd&gt;</code> and around <code>&lt;uicontrol&gt;</code>","sch"],
+ ["No \"e.g.\" / \"i.e.\"","",[62,48],[352,214],"high","Acrolinx","Schematron + SQF (\"for example\", \"that is\")","sch"],
+ ["No \"please\"","",[2683,229],[880,546],"low (sql)","Acrolinx","Schematron, skipping quoted messages in <code>&lt;msgph&gt;</code> / <code>&lt;q&gt;</code>","markup"],
+ ["No \"simply\", \"just\", \"easily\"","",[1214,943],[2647,1892],"medium","Acrolinx","Schematron warning","sch"],
+ ["Bias-free terms","whitelist, blacklist, slave",[13,8],[38,8],"high","<code>sensitive-language-*</code> rules","Same rule ids in Schematron","sch"],
+ ["\"master\"","whole word",[4529,829],[657,242],"low","<code>sensitive-language-ma</code> + exclude lists","<code>&lt;codeph&gt;master&lt;/codeph&gt;</code> (the system database) is skipped, so exclude lists shrink","markup"]
+];
+const fmt = n => n.toLocaleString("en-US");
+const homeName = {moot:"moot",markup:"markup",sch:"schematron",prose:"prose"};
+const body = document.getElementById("ledger-body");
+let html = "", split = {moot:0,markup:0,sch:0,prose:0}, copilotRows = 0, inCopilot = true;
+for (const r of R) {
+  if (r.length === 1) { if (r[0].startsWith("Style-guide")) inCopilot = false; html += `<tr class="grp"><td colspan="7">${r[0]}</td></tr>`; continue; }
+  const [rule,note,s,a,prec,today,after,home] = r;
+  if (inCopilot) { split[home]++; copilotRows++; }
+  const share = (s && a) ? Math.max(s[1]/N.sql, a[1]/N.az) : null;
+  const cnt = v => v ? `${fmt(v[0])} · ${fmt(v[1])}` : `<span class="prec">not measured</span>`;
+  const bar = share === null ? `<span class="prec">—</span>` :
+    `<div class="barcell"><div class="bar" style="width:${Math.max(2, Math.round(share*100))}%"></div><span class="prec">${(share*100).toFixed(share < .01 ? 1 : 0)}% · precision ${prec}</span></div>`;
+  html += `<tr><td class="rule">${rule}${note ? `<small>${note}</small>` : ""}</td><td class="n">${cnt(s)}</td><td class="n">${cnt(a)}</td><td>${bar}</td><td>${today}</td><td>${after}</td><td><span class="home ${home}">${homeName[home]}</span></td></tr>`;
+}
+body.innerHTML = html;
+const txt = {moot:"Copilot rules that DITA makes impossible to break", markup:"need semantic markup, then become checkable", sch:"become Schematron checks", prose:"stay judgment for AI, Acrolinx and reviewers"};
+document.getElementById("split").innerHTML = Object.keys(split).map(k => `<div class="cell ${k}"><span class="num">${split[k]}<span style="font-size:16px;color:var(--muted)"> / ${copilotRows}</span></span><span>${txt[k]}</span></div>`).join("");
+
+const A = [
+ ["Context sources","Paths to existing articles, the TOC, and six internal team repos on <code>C:\\github\\…</code>.","A per-docset context file outside the content (AGENTS.md for the docset). Use repo-relative paths so it works on any machine and in the public mirror.","prose"],
+ ["Front matter template","title, description (&lt;160 chars, \"Learn how to…\"), author, ms.author, ms.service, ms.topic, ms.date.","Topic template with a filled prolog. Required fields, the 160-character limit and the controlled <code>ms.service</code>/<code>ms.topic</code> values are Schematron and subject-scheme checks, not prompt text.","sch"],
+ ["Naming conventions","<code>[action]-[resource].md</code>, <code>deploy-[resource]-[method].md</code>, <code>overview.md</code>.","Stays as guidance; a Schematron rule on the file name per topic type catches drift.","prose"],
+ ["Structure by type","How-to: H1, intro, Prerequisites, Sign in, task H2s, Clean up resources, Related content. Quickstart ends in Next steps.","A constraint module on <code>task</code>: <code>&lt;prereq&gt;</code>, a required sign-in step conref, <code>&lt;steps&gt;</code>, a required cleanup section. Related content and Next steps come from the map. The validator enforces it.","moot"],
+ ["Formatting rules","Settings tables, alert syntax, code fence languages, relative links, no screenshots.","Alerts are <code>&lt;note type&gt;</code>; code language is required by Schematron; links are keys. \"No screenshots\" becomes a docset constraint that removes <code>&lt;image&gt;</code> from the content model.","moot"],
+ ["Domain facts","Key Vault lives in the parent region; storage is Premium LRS only; select the parent region first.","Warehouse topic with these as reusable notes and steps. The skill says \"conref the parent-region step\" instead of asking the model to rewrite the fact each time.","markup"],
+ ["Publishing checklist","Save the file, add it to TOC.yml, update the supported-services table in overview.md, verify front matter.","Add a topicref to the map. Schematron reports topics no map references. The services table is generated from map metadata, so it can't fall out of date.","sch"]
+];
+document.getElementById("anatomy-rows").innerHTML = A.map(([k,now,then,h]) =>
+ `<div class="arow"><div><span class="k">Skill today · ${k}</span><span>${now}</span></div><div class="arrow" aria-hidden="true">→</div><div><span class="k">After the port <span class="home ${h}" style="margin-left:6px">${homeName[h]}</span></span><span>${then}</span></div></div>`).join("");
+</script>
+</body>
+</html>

@@ -60,4 +60,12 @@ fix), and how to roll it back.
 - Reference material lives in `docs/` (e.g. `docs/learn-features-to-dita.html`, the catalogue of
   Learn features, their build/test infra and their DITA mapping). Update it when a mapping
   decision changes.
+- `docs/learn-style-ai-to-dita.html` covers the style guide, Copilot instructions, skills,
+  `ai-usage` metadata and style build rules: each rule, its measured breakage
+  (`tools/style_signals.py` → `results/style-*.tsv`) and where it lives after the port
+  (made impossible by markup, semantic markup, Schematron, or prose for AI/Acrolinx).
+- AI instructions and skills for this work follow the same principle: a rule a schema or
+  Schematron can decide belongs in a check the agent runs, not in prompt text. Step 1 keeps the
+  existing Markdown-oriented instructions unchanged, because they still govern the generated
+  Markdown.
 - Report honestly: what worked, what did not, what to try next, and whether it can work.

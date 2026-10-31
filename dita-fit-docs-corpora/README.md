@@ -299,3 +299,10 @@ The goal and the two-step plan (lossless syntactic port, then measured refactori
 [`AGENTS.md`](AGENTS.md). [`docs/learn-features-to-dita.html`](docs/learn-features-to-dita.html)
 catalogues 68 Learn content and build/test features with counts and their DITA mapping. The counts
 come from `tools/feature_counts.sh REPO_DIR` and are saved in `results/features-*.tsv`.
+
+[`docs/learn-style-ai-to-dita.html`](docs/learn-style-ai-to-dita.html) does the same for the
+style guide, `.github/copilot-instructions.md`, the one Copilot skill, `ai-usage` metadata and
+the style build rules. `tools/style_signals.py REPO_DIR` counts how often each rule is broken
+(front matter, fenced and inline code removed) into `results/style-*.tsv`. Of the 21 Copilot
+rules, 4 become impossible to break in DITA, 3 become checkable once markup is semantic, 7 become
+Schematron checks, and 7 stay prose guidance.

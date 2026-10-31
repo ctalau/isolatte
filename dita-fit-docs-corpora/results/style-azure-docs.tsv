@@ -1,0 +1,22 @@
+rule	files	occurrences	example
+md-files	16755	-	-
+ai-usage-ai-generated	18	18	articles/api-management/secure-api-management.md: 
+ai-usage-present	715	715	articles/active-directory-b2c/identity-protection-investigate-risk.md: ai-assisted
+bare-url-not-in-angle-brackets	2304	9025	articles/active-directory-b2c/access-tokens.md: Scopes provide a way to manage permissions to protected resources. When an access token is
+click	1654	4571	articles/active-directory-b2c/add-api-connector-token-enrichment.md: 1. Select the sign-up or sign-in policy that you uploaded, and click the **Run now** butto
+consecutive-headings	2735	5962	articles/active-directory-b2c/active-directory-technical-profile.md: Read
+etc-or-and-so-on	892	1330	articles/active-directory-b2c/best-practices.md: | Functional and UI testing | Test the user flows end-to-end. Add synthetic tests every fe
+gerund-h1	379	383	articles/active-directory-b2c/billing.md: Billing model for Azure Active Directory B2C
+gerund-title	382	382	articles/active-directory-b2c/billing.md: Billing model for Azure Active Directory B2C
+latin-eg-ie	214	352	articles/active-directory-b2c/identity-provider-microsoft-account.md: 1. Under **Supported account types**, select **personal Microsoft accounts (e.g. Skype, Xb
+learn-absolute-link	58	90	articles/api-management/expose-existing-mcp-server.md: 1. Enter the existing **MCP server base URL**. For example, `https://learn.microsoft.com/a
+learn-link-with-locale	3	3	articles/databox/data-box-disk-deploy-set-up.md: More details available at https://learn.microsoft.com/en-us/azure/databox/data-box-disk-de
+master-word	242	657	articles/active-directory-b2c/deploy-custom-policies-devops.md: 1. Select a **Default branch**, for example *master*.
+may-for-possibility	2622	5881	articles/active-directory-b2c/aad-sspr-technical-profile.md: Azure Active Directory B2C (Azure AD B2C) provides support for verifying an email address 
+non-inclusive-terms	8	38	articles/app-service/reference-app-settings.md: > The preceding table refers to *whitelist*, a term that Microsoft no longer uses. When th
+ordered-list-not-all-1	2992	22672	articles/active-directory-b2c/add-api-connector.md: 2. Under **Activities**, select **Audit logs**.
+please	546	880	articles/active-directory-b2c/authorization-code-flow.md: | client_secret | Yes, in Web Apps | The application secret that was generated in the [Azu
+simply-just-easy	1892	2647	articles/active-directory-b2c/add-identity-provider.md: With external identity provider federation, you can offer your consumers the ability to si
+title-case-heading	3346	6800	articles/active-directory-b2c/add-captcha.md: Enable CAPTCHA in Azure Active Directory B2C
+we-our-authors	3871	10901	articles/active-directory-b2c/add-api-connector-token-enrichment.md: You can create an API endpoint using one of our [samples].
+you-should	2013	3106	articles/active-directory-b2c/access-tokens.md: When using https://jwt.ms to examine the access token that was returned, you should see so
