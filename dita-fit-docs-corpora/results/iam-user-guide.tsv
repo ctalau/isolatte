@@ -1,0 +1,7 @@
+I02-absolute-self-link	2672	files=279	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	17	files=13	relative link target missing and not redirected: reference_policies_actions-resources-contextkeys.html | relative link target missing and not redirected: reference_policies_actions-resources-contextkeys.html
+R09-heading-skip	73	files=72	heading jumps from H1 to H4 | heading jumps from H1 to H4
+R10-code-lang	1300	files=249	code block without language | code block without language
+R11-anchor-unique	9	files=5	duplicate anchor access-analyzer-reference-policy-checks-error-json-syntax-error | duplicate anchor access-analyzer-reference-policy-checks-error-unsupported-action-in-policy
+R12-retired-name	5	files=2	retired product name: Azure Active Directory | retired product name: Azure AD
+docs	406	seconds	1.1

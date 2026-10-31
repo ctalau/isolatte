@@ -1,0 +1,14 @@
+I01-date-older-3y	7473	files=7473	ms.date older than 3 years: 20200611 | ms.date older than 3 years: 20230424
+I02-absolute-self-link	1	files=1	absolute docs.aws.amazon.com link (key/relative candidate)
+I03-cross-repo-ref	190	files=86	points into a dependent repository, not checkable here: ~/../reusable-content/azure-cli/azure-cli-prepare-your-environment-no-header.md | points into a dependent repository, not checkable here: ~/../reusable-content/azure-cli/azure-cli-prepare-your-environment.md
+I04-link-via-redirect	818	files=445	link only works through a redirect: database/service-tiers-vcore.md | link only works through a redirect: database/service-tiers-vcore.md
+R02-link-exists	8	files=2	relative link target missing and not redirected: ~/../SqlClient/doc/samples/ConnectionStringSettings_RetrieveFromConfig.cs#1 | relative link target missing and not redirected: ~/../SqlClient/doc/samples/ConnectionStringSettings_RetrieveFromConfigByName.cs#1
+R05-pivot-declared	5	files=3	pivot "azure-sql-single-db" not in group "azure-sql-deployment-option-single-elastic" | pivot "azure-sql-elastic-pool" not in group "azure-sql-deployment-option-single-elastic"
+R07-topic-vocab	7	files=7	ms.topic "retired" not in vocabulary | ms.topic "lifecycle" not in vocabulary
+R08-date-format	1	files=1	ms.date not MM/DD/YYYY: 12/05.2025
+R09-heading-skip	3005	files=2627	heading jumps from H2 to H4 | heading jumps from H2 to H4
+R10-code-lang	5381	files=2800	code block without language | code block without language
+R11-anchor-unique	4	files=2	duplicate anchor open | duplicate anchor connection
+R12-retired-name	442	files=167	retired product name: Azure Active Directory | retired product name: Azure Active Directory
+R13-path-case	352	files=83	path differs from the real file only in letter case: media/elastic-scale-get-started/java-client-library.png | path differs from the real file only in letter case: ./media/transparent-data-encryption-byok-database-level-overview/customer-managed-tde-at-the-database-level.PNG
+docs	14472	seconds	58.3

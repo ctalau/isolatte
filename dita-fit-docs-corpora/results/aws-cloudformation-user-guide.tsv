@@ -1,0 +1,7 @@
+I02-absolute-self-link	37354	files=6797	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	103	files=4	relative link target missing and not redirected: datasync/latest/userguide/datasync-network.html#required-network-interfaces | relative link target missing and not redirected: kinesis/latest/APIReference/API_PutRecord.html
+R09-heading-skip	8	files=7	heading jumps from H1 to H4 | heading jumps from H1 to H4
+R10-code-lang	16721	files=6819	code block without language | code block without language
+R11-anchor-unique	38	files=21	duplicate anchor cfn-attributes-updatepolicy-replacingupdate-syntax | duplicate anchor aws-properties-events-rule-inputtransformer--examples--Transform_input_and_substitute_a_variable--json
+R12-retired-name	7	files=7	retired product name: Amazon Elasticsearch Service | retired product name: Amazon Elasticsearch Service
+docs	7204	seconds	78.1

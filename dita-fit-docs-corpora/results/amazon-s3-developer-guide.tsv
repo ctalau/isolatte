@@ -1,0 +1,6 @@
+I02-absolute-self-link	1037	files=228	absolute docs.aws.amazon.com link (key/relative candidate) | absolute docs.aws.amazon.com link (key/relative candidate)
+R02-link-exists	1	files=1	relative link target missing and not redirected: bucket-encryption.html
+R09-heading-skip	1	files=1	heading jumps from H2 to H4
+R10-code-lang	896	files=200	code block without language | code block without language
+R11-anchor-unique	2	files=2	duplicate anchor bucket-encryption-update-bucket-policy | duplicate anchor replication-config-min-rule-config
+docs	396	seconds	0.6
