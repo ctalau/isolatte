@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Learn Markdown to DITA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reference catalogue. Narrow intro column, then one wide grouped register of features; each row reads left to right: source construct, usage, step-1 mapping, step-2 refactor. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --ink:#15212e; --muted:#5a6878; --rule:#d5dce4;
+  --accent:#0b6b74; --accent-soft:#dcefef; --code-bg:#e9eef3;
+  --fit-native:#2f7d4a; --fit-spec:#2c5fa8; --fit-build:#8a6212; --fit-gap:#b23a3a;
+  --fit-native-bg:#e3f2e8; --fit-spec-bg:#e2ebf8; --fit-build-bg:#f6edd9; --fit-gap-bg:#f8e2e2;
+  --f-display:"IBM Plex Sans Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10161d; --surface:#17202a; --ink:#e3e9ef; --muted:#9aa8b6; --rule:#2b3846;
+  --accent:#5cc3c9; --accent-soft:#163538; --code-bg:#1e2a36;
+  --fit-native:#7fd39b; --fit-spec:#8db5f0; --fit-build:#e2b65c; --fit-gap:#f08f8f;
+  --fit-native-bg:#173322; --fit-spec-bg:#1a2a44; --fit-build-bg:#382b12; --fit-gap-bg:#3d1c1c;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10161d; --surface:#17202a; --ink:#e3e9ef; --muted:#9aa8b6; --rule:#2b3846;
+  --accent:#5cc3c9; --accent-soft:#163538; --code-bg:#1e2a36;
+  --fit-native:#7fd39b; --fit-spec:#8db5f0; --fit-build:#e2b65c; --fit-gap:#f08f8f;
+  --fit-native-bg:#173322; --fit-spec-bg:#1a2a44; --fit-build-bg:#382b12; --fit-gap-bg:#3d1c1c;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:40px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(30px,5vw,46px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:24px;font-weight:600}
+h3{font-size:17px;font-weight:600}
+p{margin:0;max-width:68ch}
+code,.mono{font-family:var(--f-mono);font-size:.86em}
+code{background:var(--code-bg);padding:1px 5px;border-radius:3px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px}
+header .lede{font-size:17px;color:var(--ink)}
+.pins{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.step{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;display:grid;gap:8px;align-content:start}
+.step .n{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.step ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+.legend .li{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+.legend span.desc{color:var(--muted);font-size:13px}
+.fit{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.fit::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.fit.native{color:var(--fit-native);background:var(--fit-native-bg)}
+.fit.spec{color:var(--fit-spec);background:var(--fit-spec-bg)}
+.fit.build{color:var(--fit-build);background:var(--fit-build-bg)}
+.fit.gap{color:var(--fit-gap);background:var(--fit-gap-bg)}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.summary .cell{border-top:2px solid var(--rule);padding-top:10px;display:grid;gap:4px}
+.summary .num{font-family:var(--f-display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.summary .cell.gap{border-color:var(--fit-gap)} .summary .cell.spec{border-color:var(--fit-spec)}
+.summary .cell.native{border-color:var(--fit-native)} .summary .cell.build{border-color:var(--fit-build)}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.controls input{font:inherit;padding:7px 10px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);color:var(--ink);min-width:0;flex:1 1 220px}
+.controls button{font:inherit;font-size:13px;cursor:pointer;border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:6px 11px;border-radius:999px}
+.controls button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.controls button:focus-visible,.controls input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.count{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-left:auto}
+.group{display:grid;gap:12px}
+.group > header{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.group > header p{color:var(--muted);font-size:14px}
+.feat{background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;gap:12px}
+.feat .top{display:flex;gap:10px 14px;align-items:baseline;flex-wrap:wrap}
+.feat .id{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:2.2em}
+.feat h3{flex:1 1 260px}
+.feat .syntax{font-family:var(--f-mono);font-size:12.5px;background:var(--code-bg);padding:6px 9px;border-radius:4px;overflow-x:auto;white-space:pre;max-width:100%}
+.feat .cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.2fr) minmax(0,1fr);gap:14px 22px}
+.feat .cols > div{min-width:0;display:grid;gap:3px;align-content:start}
+.feat .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.feat .v{font-size:14px}
+.usage{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.usage b{color:var(--ink);font-weight:500}
+@media (max-width:860px){.feat .cols{grid-template-columns:minmax(0,1fr)}}
+.notes{display:grid;gap:14px}
+.notes ol{margin:0;padding-left:20px;display:grid;gap:8px;max-width:80ch}
+footer{color:var(--muted);font-size:13px;display:grid;gap:6px}
+.empty{color:var(--muted);font-style:italic}
+@media (prefers-reduced-motion:no-preference){.feat{transition:border-color .15s}.feat:hover{border-color:var(--accent)}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">dita-fit-docs-corpora · porting reference</div>
+  <h1>Learn Markdown to DITA</h1>
+  <p class="lede">What Microsoft Learn content can do today, which build and test machinery backs it, and how each piece maps to DITA. The port has to keep every one of these strengths. Counts come from the two largest public repositories at pinned commits.</p>
+  <div class="pins">
+    <span>MicrosoftDocs/sql-docs @ 75b38454ce9c · 14,472 .md</span>
+    <span>MicrosoftDocs/azure-docs @ 84ce263e4a1b · 16,761 .md</span>
+    <span>counts: <code>tools/feature_counts.sh</code> → <code>results/features-*.tsv</code></span>
+  </div>
+</header>
+
+<section class="steps" aria-label="The two steps">
+  <div class="step">
+    <div class="n">Step 1 · syntactical port</div>
+    <h3>One source file becomes one DITA file</h3>
+    <ul>
+      <li>Every Learn extension gets its own element or attribute in a <code>learn-dita</code> specialization. Nothing is approximated.</li>
+      <li>Original expressions (moniker ranges, pivot ids, tab ids, snippet ids) are kept verbatim.</li>
+      <li>A reverse converter turns DITA back into Learn Markdown. Parity is a rendered-HTML diff per moniker, pivot and tab.</li>
+    </ul>
+  </div>
+  <div class="step">
+    <div class="n">Step 2 · quality refactorings</div>
+    <h3>Measured, separate, reversible changes</h3>
+    <ul>
+      <li>Tiny includes become keys; path links become key links.</li>
+      <li>Moniker ranges get a subject-scheme order and are expanded by the build.</li>
+      <li>Pasted duplicates become conrefs; reliable articles become typed topics; cross-file rules move to Schematron with quick fixes.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="notes" aria-labelledby="fitlegend">
+  <h2 id="fitlegend">How well each feature maps</h2>
+  <div class="legend">
+    <span class="li"><span class="fit native">native</span><span class="desc">standard DITA element or attribute fits as is</span></span>
+    <span class="li"><span class="fit spec">specialize</span><span class="desc">needs a <code>learn-dita</code> element or attribute; still valid DITA</span></span>
+    <span class="li"><span class="fit build">build</span><span class="desc">lives in build config or a DITA-OT plugin, not in markup</span></span>
+    <span class="li"><span class="fit gap">gap</span><span class="desc">a current strength DITA does not cover; needs its own design</span></span>
+  </div>
+  <div class="summary" id="summary"></div>
+</section>
+
+<div class="controls" role="search">
+  <input id="q" type="search" placeholder="Filter features, e.g. moniker, tab, xref" aria-label="Filter features">
+  <button type="button" data-fit="all" aria-pressed="true">All</button>
+  <button type="button" data-fit="native" aria-pressed="false">Native</button>
+  <button type="button" data-fit="spec" aria-pressed="false">Specialize</button>
+  <button type="button" data-fit="build" aria-pressed="false">Build</button>
+  <button type="button" data-fit="gap" aria-pressed="false">Gap</button>
+  <span class="count" id="count"></span>
+</div>
+
+<main id="catalogue" class="wrap" style="gap:36px"></main>
+
+<section class="notes" aria-labelledby="hard">
+  <h2 id="hard">The hard problems, in order</h2>
+  <ol>
+    <li><b>Contributors write Markdown.</b> Every page has an Edit link into GitHub's web editor, and repositories are open to public pull requests. Copilot instructions and skills in <code>.github/</code> also target Markdown. Keeping DITA as the only source loses this. The realistic answer for step 1: DITA is the source of truth, and the reverse converter generates Learn Markdown, which keeps feeding the existing OPS build. A Markdown edit from a contributor is converted forward and checked for a clean round trip.</li>
+    <li><b>Moniker ranges.</b> 3,338 front-matter expressions in sql-docs use <code>&gt;=</code>, <code>&lt;</code> or <code>||</code>. DITA filtering has no order. An ordered subject scheme plus a pre-filter step that expands ranges keeps the authoring form and lets DITAVAL do the rest. New releases must not need edits to old topics.</li>
+    <li><b>One URL across versions and variants.</b> Learn serves all monikers under one URL (<code>?view=</code>) and all pivots and tabs on one page (<code>?pivots=</code>, <code>?tabs=</code>). DITA branch filtering produces one output per branch. The HTML step must merge branch outputs back under one URL, or emit Learn Markdown and let OPS do it.</li>
+    <li><b>Headings versus blocks.</b> Moniker and zone blocks in Markdown open and close across headings. DITA sections don't nest, and conditional wrappers can't straddle topic boundaries. Step 1 has to split such blocks at each heading and repeat the condition on each piece, then prove the rendered output is unchanged.</li>
+    <li><b>Dependent repositories.</b> azure-docs declares 117 dependent repositories (themes, reusable-content, sample code). Includes and <code>:::code</code> point into them through <code>~/../</code>. The DITA build needs the same pinned checkouts, or keys that resolve into peer maps.</li>
+    <li><b>Per-PR latency.</b> OPS builds a preview and posts a build report on every pull request. A DITA-OT run over a 16k-topic map is minutes, not seconds. Incremental builds per changed map are needed before this is acceptable.</li>
+  </ol>
+</section>
+
+<footer>
+  <div>Counts are <code>git grep</code> matches in <code>*.md</code> (or the named YAML/JSON files) at the pinned commits. They count syntax, not rendered output; a match inside a code block is included. "Lines" for <code>:::row:::</code>/<code>:::column:::</code> count both opening and closing markers.</div>
+  <div>Mappings target DITA 1.3 with DITA 2.0 elements noted where they help (<code>&lt;video&gt;</code>, <code>@deliveryTarget</code>, <code>&lt;include&gt;</code>). Element names in the <code>learn-dita</code> column are proposals.</div>
+</footer>
+</div>
+
+<script>
+const G = {
+  reuse:{t:"Reuse",d:"Includes are the main reuse tool. They are whole files, called by path."},
+  ver:{t:"Versions and filtering",d:"Monikers are build-time filters: a page or block exists only for some product versions."},
+  reader:{t:"Reader-side variants",d:"Pivots and tabs keep every variant on the page; the reader switches."},
+  block:{t:"Block and inline markup",d:"DocFX Flavored Markdown extensions and the HTML that Learn allows."},
+  code:{t:"Code and media",d:"Snippets pulled from tested sample repositories, images with mandatory alt text, video."},
+  link:{t:"Links and identity",d:"Paths are URLs. Moves are handled by redirect files."},
+  meta:{t:"Metadata",d:"YAML front matter and docfx.json cascades drive search, routing, analytics and F1 help."},
+  nav:{t:"Navigation and page types",d:"toc.yml, breadcrumbs and structured YAML pages."},
+  infra:{t:"Build and publish infrastructure",d:"OPS / docfx v3 builds every branch and pull request."},
+  test:{t:"Validation, review and test",d:"What blocks a bad change today. The port must block at least the same things."}
+};
+// id, group, name, syntax, sql, azure, pro (what to keep), s1 (step-1 mapping), s2 (step-2 refactor), fit
+const F = [
+["reuse","Block include","[!INCLUDE [title](../includes/file.md)]","72,597 calls · 12,205 files","13,976 calls · 6,112 files",
+ "One edit updates every page. Includes are plain Markdown files authors can open.",
+ "Include file → <code>&lt;learn-include&gt;</code> topic (titleless, specialized from <code>topic</code>) whose body sits in one <code>&lt;bodydiv id=\"content\"&gt;</code>. Call → <code>&lt;bodydiv conref=\"inc.dita#inc/content\"/&gt;</code>, specialized as <code>&lt;include-call title=\"…\"&gt;</code> to keep the call's label.",
+ "Element-level conref and <code>conrefend</code> ranges so a warehouse topic can hold many fragments; conkeyref for per-deliverable variants.","spec"],
+["reuse","Inline include","text [!INCLUDE [x](x.md)] text","19,308 calls not at line start · 3,256 files","168 calls · 110 files",
+ "Reuse inside a sentence (product names, short phrases).",
+ "Include file body is <code>&lt;p&gt;&lt;ph id=\"content\"&gt;…</code>; call → <code>&lt;ph conref=\"…/content\"/&gt;</code>.",
+ "Text-only includes become <code>&lt;keyword keyref=\"ssnoversion\"/&gt;</code>. <code>ssnoversion-md.md</code> alone is called 23,272 times.","native"],
+["reuse","Text variables via tiny includes","docs/includes/ssnoversion-md.md → \"SQL Server\"","305 include files ≤300 bytes","78 files ≤300 bytes",
+ "A rename is one edit.",
+ "Same as inline include. Keep file names so the reverse converter can restore the call.",
+ "Key definitions in a shared keydef map; Schematron flags stale literal names (1,392 \"Azure AD\" mentions found earlier).","native"],
+["reuse","Nested includes","an include that calls [!INCLUDE …]","306 includes nest","252 includes nest",
+ "Building blocks compose.",
+ "Conref chains; DITA-OT resolves them recursively. Paths written relative to the outer topic must be rewritten relative to the include file.",
+ "Flatten chains deeper than two levels; detect cycles in Schematron.","native"],
+["reuse","Cross-repo includes","[!INCLUDE [x](~/../reusable-content/azure-cli/…md)]","104 calls · 43 files","2,490 refs into dependent repos",
+ "Shared fragments live in a central repo owned by another team.",
+ "Conref with a peer scope into the dependent repo's own <code>learn-include</code> topics. The build checks out that repo at the pinned branch, as OPS does now.",
+ "A shared key map published by reusable-content, so callers use keys, not <code>~/../</code> paths.","build"],
+["reuse","Applies-to banners","[!INCLUDE [sql-asdb-asdbmi](../includes/applies-to-…md)]","1,146 calls · 652 files","141 calls",
+ "Every page tells the reader which products it covers.",
+ "Keep as an include call in step 1.",
+ "Generate the banner from the topic's moniker/@product values (DITA flagging or an XSLT rule), so the banner can't disagree with the filter.","native"],
+
+["ver","Monikers (named versions)","sql-server-ver16, azuresqldb-current, fabric-sqldb …","defined in the Learn moniker service","same",
+ "A fixed, ordered list of product versions shared across repos.",
+ "Generated <code>subjectScheme</code> map: one <code>&lt;subjectdef&gt;</code> per moniker, grouped by product, document order = version order. Bound to a specialized <code>@moniker</code> attribute (from <code>@props</code>).",
+ "Hierarchy (sql-server › 2017 › 2019 …) so one DITAVAL rule covers a family.","spec"],
+["ver","File-level monikerRange","monikerRange: '>=sql-server-2017 || =azuresqldb-current'","3,508 files","25 files",
+ "A page exists only in the versions it applies to.",
+ "<code>@moniker-range</code> on the topic root with the expression verbatim. Pre-filter step expands it to <code>@moniker</code> tokens before DITAVAL runs.",
+ "Move to the topicref in the map, so filtering is visible where the deliverable is defined.","spec"],
+["ver","Range operators","=x || >=y || <z","3,338 expressions with operators","7",
+ "New releases are included automatically: <code>&gt;=sql-server-2017</code> covers 2025 without an edit.",
+ "No DITA equivalent. Keep the expression; expand it from the subject-scheme order at build time. Never store the expanded list in source.",
+ "Schematron rule: an inline moniker block must be a subset of its topic's range.","gap"],
+["ver","Inline moniker blocks","::: moniker range=\"=fabric\" … ::: moniker-end","965 blocks · 188 files","133 blocks · 40 files",
+ "One page, version-specific paragraphs.",
+ "<code>&lt;moniker-block range=\"…\"&gt;</code> specialized from <code>bodydiv</code> / <code>sectiondiv</code>. Blocks that cross headings are split at each heading and the range repeated on each piece.",
+ "Conditions on the smallest element that varies, instead of on copied paragraphs.","spec"],
+["ver","Folder-level monikers and exclusions","docfx.json fileMetadata.monikerRange / exclude_monikers by glob","63 + 27 globs","1 + 31 globs",
+ "Whole areas filtered without touching each file.",
+ "Map-level: <code>&lt;topicgroup&gt;</code> with the range attribute. Globs that don't follow map structure stay as build config applied by the pre-filter.",
+ "Align folder structure and submaps so the cascade is in the map, not in globs.","build"],
+["ver","Version picker and ?view=","/sql/…/alter-table?view=sql-server-ver16","all moniker-ranged pages","rare",
+ "One URL for all versions; the reader switches version in place.",
+ "DITA branch filtering (<code>&lt;ditavalref&gt;</code>) gives one output per moniker. A merge step must combine them under one URL with the version selector, or emit Learn Markdown and let OPS keep doing it.",
+ "Same, plus a generated \"also available in\" list from the subject scheme.","gap"],
+["ver","Moniker build groups","docfx.json groups.gr-sql-2016-a { moniker_range }","1 group","0",
+ "Separate output folders for version sets.",
+ "One <code>&lt;ditavalref&gt;</code> branch per group with its own output path.",
+ "","native"],
+
+["reader","Zone pivots","::: zone pivot=\"programming-language-csharp\" … ::: zone-end","445 blocks · 31 files","5,899 blocks · 699 files",
+ "Reader picks a language or tool once; the page shows only that variant. URL keeps the choice (?pivots=).",
+ "<code>&lt;zone pivot=\"a b\"&gt;</code> specialized from <code>bodydiv</code>. Not a filter: all variants stay in the output, and an HTML plugin emits <code>data-pivot</code> plus the switcher.",
+ "DITAVAL <code>passthrough</code> for the attribute; pivot-specific steps as conrefs into shared task topics.","spec"],
+["reader","Pivot groups","zone_pivot_groups: front matter + zone-pivot-groups.yml","30 files · 2 group files","720 files · 5 group files",
+ "Pivot ids, titles and prompt text are declared once.",
+ "Each group → a <code>subjectScheme</code> (<code>&lt;subjectdef keys=\"pivot-id\" navtitle=\"Title\"&gt;</code>, prompt in <code>&lt;data&gt;</code>). Topic declares its group in prolog.",
+ "Schematron: pivot used but not declared (240 such cases found earlier).","spec"],
+["reader","Target zones","::: zone target=\"docs\" / \"chromeless\"","0","173 blocks · 26 files",
+ "Content shown only in the web page or only in embedded (in-product) panes.",
+ "<code>@deliveryTarget</code> (DITA 2.0) or <code>@audience</code>; a real filter.",
+ "","native"],
+["reader","Tabs, synced across a page","# [Azure CLI](#tab/azure-cli) … ---","1,624 tab headings · 307 files","17,589 tab headings · 2,389 files",
+ "Choosing \"Azure CLI\" in one tab set switches every set with the same id. ?tabs= in the URL.",
+ "<code>&lt;tabs&gt;&lt;tab id=\"azure-cli\" label=\"Azure CLI\"&gt;</code> specialized from <code>bodydiv</code>. HTML plugin reproduces syncing.",
+ "Shared tab vocabularies in a subject scheme so the same tool always has the same id.","spec"],
+["reader","Dependent tabs","# [Azure CLI](#tab/azure-cli/rbac)","0","416 headings · 56 files",
+ "A tab set whose options depend on another tab choice.",
+ "<code>&lt;tab id=\"azure-cli\" depends-on=\"rbac\"&gt;</code>.",
+ "","spec"],
+["reader","Single selector","> [!div class=\"op_single_selector\"] list of links","109 files","122 files",
+ "A link list rendered as a dropdown to jump between sibling pages.",
+ "<code>&lt;page-selector&gt;</code> specialized from <code>ul</code> with <code>xref</code> items.",
+ "Generate from a map family (<code>@collection-type=\"choice\"</code>) so siblings can't drift.","spec"],
+
+["block","Alerts","> [!NOTE] / [!TIP] / [!IMPORTANT] / [!CAUTION] / [!WARNING]","12,129 · 5,515 files","23,357 · 8,996 files",
+ "Five fixed callout types with consistent styling.",
+ "<code>&lt;note type=\"note|tip|important|caution|warning\"&gt;</code>. One to one.",
+ "","native"],
+["block","Headings and stable anchors","## Create a database → #create-a-database","every topic","every topic",
+ "Readers bookmark and link to <code>#slug</code> anchors generated from heading text.",
+ "Headings become nested topics (H2, H3 …), chunked into one HTML page; each gets <code>@id</code> = the Learn slug. Heading-level skips (3,005 / 1,957) are kept and flagged, not fixed.",
+ "Nested topics that are real tasks or concepts can be retyped or split.","native"],
+["block","Explicit anchors","<a name=\"permissions\"></a>","2,780 · 656 files","4,916 · 958 files",
+ "Link targets that survive heading edits.",
+ "<code>@id</code> on the next element; duplicate anchors (4 / 17) reported.",
+ "","native"],
+["block","Row / column layout",":::row::: :::column span=\"2\"::: … :::column-end:::","4,822 markers · 109 files","2,994 markers · 37 files",
+ "Grid layout on landing-like Markdown pages.",
+ "<code>&lt;row&gt;&lt;column span=\"2\"&gt;</code> specialized from <code>bodydiv</code>.",
+ "Replace with semantic structure where it only lays out link lists.","spec"],
+["block","Next-step button","> [!div class=\"nextstepaction\"] > [Deploy](deploy.md)","204 · 203 files","2,725 · 2,009 files",
+ "Each tutorial ends with a big \"next\" button.",
+ "<code>&lt;next-step&gt;</code> specialized from <code>p</code>, holding one <code>xref</code>.",
+ "Derive from map order (<code>@collection-type=\"sequence\"</code>) or a reltable, so moving a page fixes its button.","spec"],
+["block","Checklist","> [!div class=\"checklist\"] > * Create … ","111 · 95 files","1,088 · 917 files",
+ "\"In this tutorial you learn how to\" lists with check marks.",
+ "<code>&lt;checklist&gt;</code> specialized from <code>ul</code>.",
+ "Generate from the task's step titles.","spec"],
+["block","Pipe tables with <br>","| a<br>b | c |","10,899 rows with <br> · 1,928 files","8,181 · 1,278 files",
+ "Simple tables in plain text.",
+ "<code>&lt;simpletable&gt;</code>; <code>&lt;br&gt;</code> splits the cell into <code>&lt;p&gt;</code>s. Column alignment kept as <code>@outputclass</code>.",
+ "Real CALS tables where cells need lists or code, which Markdown can't express.","native"],
+["block","Allowed inline HTML","<kbd>Ctrl</kbd>, <sup>, <details>, <br>","kbd 589 · details 1","kbd 455 · details 206",
+ "Learn sanitizes HTML to an allowlist; authors use the allowed tags.",
+ "<code>&lt;kbd&gt;</code> → <code>&lt;userinput&gt;</code> or a specialized <code>&lt;key&gt;</code>; <code>&lt;details&gt;</code> → <code>&lt;details&gt;&lt;summary&gt;</code> specialized from <code>section</code>; <code>&lt;sup&gt;</code>/<code>&lt;sub&gt;</code> native. Anything not on the allowlist fails conversion.",
+ "Key combinations as <code>&lt;shortcut&gt;</code>; menu paths as <code>&lt;menucascade&gt;</code>.","spec"],
+["block","UI text in bold","Select **Create** > **Resource group**","very common","very common",
+ "A house convention, easy to write.",
+ "<code>&lt;b&gt;</code>. Step 1 does not guess semantics.",
+ "<code>&lt;uicontrol&gt;</code> / <code>&lt;menucascade&gt;</code> where a checker can confirm the string is UI.","native"],
+["block","Non-localizable text",":::no-loc text=\"Azure Blob Storage\"::: · no-loc: [INSERT, UPDATE …]","34 inline · global list of T-SQL keywords","3 inline · 1 file",
+ "Product names and keywords stay in English in every locale.",
+ "<code>&lt;ph translate=\"no\"&gt;</code>. Global no-loc lists → a terms file the localization step reads, plus a Schematron check.",
+ "Terms as keys with <code>@translate=\"no\"</code> in the key definition.","native"],
+
+["code","Fenced code with language","```azurecli / ```csharp / ```sql","30,265 blocks (5,381 untagged)","67,407 blocks (3,933 untagged)",
+ "Syntax highlighting and a copy button.",
+ "<code>&lt;codeblock outputclass=\"language-azurecli\"&gt;</code>. Untagged stays untagged.",
+ "Schematron with a quick fix that proposes a language.","native"],
+["code","Interactive code blocks","```azurecli-interactive (Open Cloud Shell)","319 · 72 files","7,235 · 1,240 files",
+ "Readers run the sample in Cloud Shell from the page.",
+ "<code>&lt;codeblock outputclass=\"language-azurecli\" interactive=\"cloudshell-bash\"&gt;</code>; HTML plugin adds the button.",
+ "","spec"],
+["code","T-SQL syntax blocks","```syntaxsql","2,032 · 1,758 files","14",
+ "Statement syntax with the Learn T-SQL conventions.",
+ "<code>&lt;codeblock outputclass=\"language-syntaxsql\"&gt;</code>.",
+ "<code>&lt;syntaxdiagram&gt;</code> is possible but costly; low value.","native"],
+["code","Code snippets from files",":::code language=\"python\" source=\"~/samples/app.py\" range=\"3-10\" id=\"main\" highlight=\"5\":::","318 · range 11 · id 97","1,878 · range 429 · id 818 · highlight 98",
+ "Snippets come from runnable files that have their own CI; docs never drift from code.",
+ "<code>&lt;coderef href=\"app.py#line-range(3,10)\"/&gt;</code> inside <code>&lt;codeblock&gt;</code>. Snippet ids → a specialized <code>@region</code> attribute (the <code>&lt;snippet_main&gt;</code> markers aren't standard DITA tokens); <code>@highlight</code> attribute. Legacy <code>[!code-cs[]()]</code> (157 / 109) maps the same way.",
+ "Keys for sample repos so paths don't embed <code>~/../</code>.","spec"],
+["code","Sample repos as dependencies","dependent_repositories in .openpublishing.publish.config.json","16 repos","117 repos",
+ "Sample owners test their code; docs pull it at build time.",
+ "Same pinned checkouts in the DITA build, or peer maps per sample repo.",
+ "","build"],
+["code","Images with required alt text",":::image type=\"content\" source=\"media/x.png\" alt-text=\"…\":::","5,986 · 2,671 files","28,035 · 5,721 files",
+ "Alt text is mandatory and checked; 0 missing in both repos.",
+ "<code>&lt;image href&gt;&lt;alt&gt;…&lt;/alt&gt;&lt;/image&gt;</code> inside <code>&lt;fig&gt;</code> where the image stands alone.",
+ "Image keys so media can move without editing topics; 748 case-only path mismatches fixed.","native"],
+["code","Image variants","type=\"icon\" · lightbox=\"…\" · border=\"false\"","icon 2,381 · lightbox 1,229 · border 2,306","icon 287 · lightbox 11,951 · border 2,221",
+ "Inline icons, click-to-enlarge screenshots, borderless images.",
+ "Icon → <code>&lt;image placement=\"inline\"&gt;</code>; lightbox → specialized <code>@lightbox</code> attribute with the full-size path; border → <code>@outputclass</code>.",
+ "","spec"],
+["code","Complex images with long description",":::image type=\"complex\" … ::: long text :::image-end:::","6","59",
+ "Accessible description for diagrams.",
+ "<code>&lt;fig&gt;&lt;image&gt;&lt;alt&gt;</code> plus <code>&lt;longdescref&gt;</code> to a generated resource topic, or <code>&lt;desc&gt;</code>.",
+ "","native"],
+["code","Video",":::video source=\"https://…\"::: · > [!VIDEO https://…]","43 · 37 files","341 · 229 files",
+ "Embedded video in the page.",
+ "DITA 2.0 <code>&lt;video&gt;</code> / <code>&lt;media-source&gt;</code>; in 1.3 an <code>&lt;object&gt;</code> specialization.",
+ "","native"],
+["code","Mermaid diagrams","```mermaid","0","27 · 23 files",
+ "Diagrams as text, rendered by Learn.",
+ "<code>&lt;codeblock outputclass=\"language-mermaid\"&gt;</code> plus a render step in the HTML plugin.",
+ "","build"],
+
+["link","Relative file links","[text](../security/permissions.md#grant)","every repo","every repo",
+ "Links are checked at build time; broken ones warn.",
+ "<code>&lt;xref href=\"../security/permissions.dita#permissions/grant\"&gt;</code>. File names are kept, so URLs are unchanged.",
+ "Key-based links (<code>&lt;xref keyref&gt;</code>) so moves don't need redirects; 5,714 links today only work through a redirect.","native"],
+["link","Docset-root links","[x](~/relational-databases/x.md)","323 · 168 files","2,673 · 1,148 files",
+ "Paths independent of the linking file's folder.",
+ "Resolved to relative hrefs by the converter, with the original <code>~/</code> form recorded for the reverse converter.",
+ "Keys.","native"],
+["link","Cross-references by UID","<xref:System.Data.SqlClient.SqlConnection?displayProperty=fullName>","5,138 · 449 files","0",
+ "Links to .NET/API reference pages by identifier, resolved through xref maps and the xref service.",
+ "<code>&lt;api-xref uid=\"…\" display=\"fullName\"/&gt;</code> specialized from <code>xref</code>; the build resolves uids from the same xrefmap data (<code>xref_query_tags</code>).",
+ "","build"],
+["link","Redirects",".openpublishing.redirection.json: source_path → redirect_url","15,403 entries · 288 keep the document id","25,344 entries · 3,151 keep the document id",
+ "Old URLs keep working; <code>redirect_document_id</code> carries page history and metrics to the new page.",
+ "Unchanged JSON in step 1. DITA has no redirect concept.",
+ "Generate redirects from key history: when a key's target path changes, the build emits the redirect.","gap"],
+["link","URL = file path","docs/t-sql/statements/alter-table.md → /sql/t-sql/statements/alter-table","every page","every page",
+ "Predictable URLs; document ids map from depot paths.",
+ "Output file names equal source names minus extension. <code>copy-to</code> only where a topic is published twice.",
+ "","build"],
+
+["meta","Page front matter","title, description, ms.date, ms.topic, ms.service, author, ms.author","14,460 with ms.date","16,397 with ms.topic",
+ "Required fields are enforced; description feeds search snippets.",
+ "<code>title</code> → <code>&lt;title&gt;</code> (or <code>&lt;titlealts&gt;&lt;searchtitle&gt;</code> when it differs from H1). <code>description</code> → a prolog element, not <code>&lt;shortdesc&gt;</code>, because shortdesc renders as body text and Learn does not. Others → <code>&lt;othermeta&gt;</code> / <code>&lt;data&gt;</code>.",
+ "Subject schemes for controlled fields.","spec"],
+["meta","Article type","ms.topic: how-to / concept-article / reference / tutorial / quickstart","14,464","16,397",
+ "Drives templates, analytics and content-type rules.",
+ "Kept as metadata; all topics are generic <code>topic</code> in step 1.",
+ "Retype to <code>task</code> / <code>concept</code> / <code>reference</code> / <code>troubleshooting</code> where the structure is reliable.","native"],
+["meta","Service, collection, custom tags","ms.service / ms.subservice / ms.custom / ms.collection","14,249 / 13,220 / 5,490 / 680","13,378 / 3,633 / 8,954 / 234",
+ "Ownership, reporting and tracking (e.g. <code>devx-track-azurecli</code> on 690 files).",
+ "<code>&lt;data name=\"ms.service\" value=\"…\"/&gt;</code>.",
+ "Classification domain bound to subject schemes; invalid values fail the build.","native"],
+["meta","Code language metadata","ms.devlang / dev_langs","151 / 3,312","840 / 0",
+ "Language facets in search.",
+ "<code>&lt;data&gt;</code>; <code>@otherprops</code> is not used because it would trigger filtering.",
+ "","native"],
+["meta","Ownership","author / ms.author / ms.reviewer","all / all / 6,628","all / all / 2,145",
+ "Routes pull requests and sign-off to the owning writer.",
+ "<code>&lt;author type=\"github\"&gt;</code>, <code>&lt;author type=\"ms\"&gt;</code>, reviewer in <code>&lt;data&gt;</code>. The sign-off bot must read these from the prolog.",
+ "","native"],
+["meta","F1 help and help viewer keywords","f1_keywords / helpviewer_keywords","3,445 / 8,048","0",
+ "SSMS F1 opens the right page; offline help index.",
+ "f1_keywords → <code>&lt;resourceid appid=\"…\" appname=\"ssms\"&gt;</code>, which DITA defines for context-sensitive help. helpviewer_keywords → <code>&lt;keywords&gt;&lt;indexterm&gt;</code>.",
+ "","native"],
+["meta","Metadata cascade by glob","docfx.json globalMetadata / fileMetadata","16 fileMetadata keys","24 fileMetadata keys",
+ "Set feedback, titleSuffix, ms.service for a folder in one place.",
+ "<code>&lt;topicmeta&gt;</code> on map groups where folders and map groups line up; remaining globs stay in build config.",
+ "Restructure submaps so the cascade follows the map.","build"],
+["meta","Search and page controls","titleSuffix · ROBOTS: NOINDEX · feedback_* · searchScope","545 · 3 · global","3,128 · 63 · global",
+ "Per-page search behavior and the feedback widget.",
+ "<code>&lt;othermeta name=\"robots\" content=\"noindex\"&gt;</code>; others as <code>&lt;data&gt;</code>.",
+ "","native"],
+
+["nav","toc.yml","name / href / items / displayName / expanded / topicHref / nested toc","33 files · 16,386 nodes","174 files · 24,071 nodes",
+ "Navigation per docset with search keywords per node.",
+ "<code>&lt;map&gt;</code>: <code>&lt;topicref href navtitle&gt;</code>, <code>&lt;topichead&gt;</code>, nested toc → <code>&lt;mapref&gt;</code>, <code>displayName</code> → <code>&lt;topicmeta&gt;&lt;keywords&gt;</code>, <code>expanded</code> → specialized attribute.",
+ "Key definitions in the map; reltables for related links.","native"],
+["nav","Breadcrumbs","breadcrumb/toc.yml + breadcrumb_path","4 files","65 files",
+ "Site-level trail above the page.",
+ "A resource-only map (<code>@processing-role=\"resource-only\"</code>) read by the HTML plugin.",
+ "","build"],
+["nav","Landing and hub pages","### YamlMime:Landing / YamlMime:Hub","18 / 3","169 / 29",
+ "Card-based entry pages from structured YAML.",
+ "<code>&lt;landing&gt;</code> and <code>&lt;hub&gt;</code> topic specializations mirroring the YAML schema (sections, cards, link lists).",
+ "Generate cards from map metadata.","spec"],
+["nav","FAQ pages","### YamlMime:FAQ","25","117",
+ "Question/answer structure; emits FAQ structured data for search.",
+ "<code>&lt;faq&gt;</code> topic specialization (<code>&lt;question&gt;</code>/<code>&lt;answer&gt;</code>).",
+ "Some FAQs become troubleshooting topics.","spec"],
+["nav","Other YAML page types","YamlMime:HowTo · ContextObject · ZonePivotGroups","—","18 · 12 · 1",
+ "Structured how-to and in-product context pages.",
+ "One specialization per YamlMime schema, generated from the schema.",
+ "","spec"],
+["nav","Generated reference","managed-reference/ (mref YAML) · PowerShell · REST","1 folder","via xref",
+ "API reference is generated by other pipelines.",
+ "Out of scope for the port; reached through uid xrefs.",
+ "","build"],
+
+["infra","OPS / docfx v3 build","docs_build_engine: docfx_v3 · markdownEngineName: markdig","3 docsets","1 docset",
+ "Every branch and pull request builds; live branch publishes.",
+ "DITA-OT with a <code>learn-dita</code> plugin whose output is Learn Markdown (reverse converter), fed to the existing OPS build. Direct DITA → Learn HTML is a later option.",
+ "","build"],
+["infra","PR preview and build report","need_preview_pull_request: true · review.learn.microsoft.com","yes","yes",
+ "Contributors see the rendered page and a report of errors, warnings and suggestions on their PR.",
+ "Run the converter and checks on changed files in CI and post the same report format. Incremental per-map builds to keep latency low.",
+ "","gap"],
+["infra","PDF output","branch_target_mapping: Publish + PDF; targets.Pdf","no","yes",
+ "Downloadable PDF of a docset.",
+ "DITA-OT PDF2 plugin, or keep OPS PDF from the generated Markdown.",
+ "","native"],
+["infra","Localization pipeline","per-locale builds; machine and human translation; no-loc","yes","yes",
+ "Pages ship in dozens of languages.",
+ "Keep translating the generated Markdown in step 1, so the pipeline is unchanged.",
+ "XLIFF from DITA with fragment-level reuse; translated keys and conrefs once.","build"],
+["infra","Edit link and public contributions","open_to_public_contributors: true · branch live","yes","yes",
+ "Anyone can fix a typo from the page in GitHub's web editor.",
+ "Edit link targets the generated Markdown; a bot converts the change forward to DITA and checks for a clean round trip. MDITA alone can't express conref, keys or profiling.",
+ "","gap"],
+["infra","Authoring tools","Learn Authoring Pack (VS Code), .github/copilot-instructions.md, copilot skills","yes","yes",
+ "Snippets, preview and AI help tuned to Learn Markdown.",
+ "Unchanged while Markdown stays the authoring view. Oxygen or a VS Code DITA extension for those who edit DITA directly.",
+ "","gap"],
+
+["test","Build validation rules","docfx.json rules: docs-link-absolute, sensitive-language-*, filename-incomplete; service checks for alt text, metadata, links, includes","6 configured","5 configured",
+ "Per-rule severity and per-file exclude lists; inclusive-language checks.",
+ "Same rule ids and exclude lists, implemented as Schematron over DITA (plus DTD/RNG validity). Results reported in the OPS report format.",
+ "Add rules DITA makes possible: moniker subset, key from subject scheme, pivot declared, case-exact paths.","build"],
+["test","markdownlint","./.markdownlint.json","none","1 config",
+ "Basic Markdown hygiene.",
+ "Replaced by schema validation for DITA; still run on the generated Markdown.",
+ "","native"],
+["test","Pull-request bots","PRMerger #sign-off, stale bots, preview-branch merge check, label workflows","3 workflows","8 workflows",
+ "Owner sign-off, triage, merge rules.",
+ "Format-agnostic, except the parts that read <code>ms.author</code> from changed files; point those at the DITA prolog.",
+ "","build"],
+["test","Content quality scoring","Acrolinx on pull requests","yes","yes",
+ "Style and terminology score on each change.",
+ "Acrolinx supports DITA; configure it on the DITA source or keep it on the generated Markdown.",
+ "","native"]
+];
+
+const fitName={native:"native",spec:"specialize",build:"build",gap:"gap"};
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function render(){
+  const q=document.getElementById("q").value.trim().toLowerCase();
+  const fit=document.querySelector(".controls button[aria-pressed=true]").dataset.fit;
+  const main=document.getElementById("catalogue"); main.innerHTML="";
+  let n=0, idx=0;
+  for(const g of Object.keys(G)){
+    const rows=[];
+    F.forEach((f,i)=>{ if(f[0]!==g) return;
+      const hay=(f.slice(1).join(" ")).toLowerCase();
+      if((fit==="all"||f[8]===fit)&&(!q||hay.includes(q))) rows.push([i+1,f]); });
+    if(!rows.length) continue;
+    n+=rows.length;
+    const sec=document.createElement("section"); sec.className="group";
+    sec.innerHTML=`<header><h2>${G[g].t}</h2><p>${G[g].d}</p></header>`;
+    for(const [i,f] of rows){
+      const a=document.createElement("article"); a.className="feat";
+      a.innerHTML=`<div class="top"><span class="id">${String(i).padStart(2,"0")}</span><h3>${esc(f[1])}</h3><span class="fit ${f[8]}">${fitName[f[8]]}</span></div>
+<div class="syntax">${esc(f[2])}</div>
+<div class="usage"><span>sql-docs <b>${esc(f[3])}</b></span><span>azure-docs <b>${esc(f[4])}</b></span></div>
+<div class="cols">
+<div><span class="k">Strength to keep</span><span class="v">${f[5]}</span></div>
+<div><span class="k">Step 1 · syntactic mapping</span><span class="v">${f[6]}</span></div>
+<div><span class="k">Step 2 · refactoring</span><span class="v">${f[7]||'<span class="empty">none planned</span>'}</span></div>
+</div>`;
+      sec.appendChild(a);
+    }
+    main.appendChild(sec);
+  }
+  if(!n) main.innerHTML='<p class="empty">No feature matches this filter. Clear the search box or pick All.</p>';
+  document.getElementById("count").textContent=`${n} of ${F.length} features`;
+}
+function summary(){
+  const c={native:0,spec:0,build:0,gap:0}; F.forEach(f=>c[f[8]]++);
+  const txt={native:"map to standard DITA as they are",spec:"need a learn-dita element or attribute",build:"live in build config or a DITA-OT plugin",gap:"have no DITA answer yet and need design"};
+  document.getElementById("summary").innerHTML=Object.keys(c).map(k=>`<div class="cell ${k}"><span class="num">${c[k]}</span><span>${txt[k]}</span></div>`).join("");
+}
+document.querySelectorAll(".controls button").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".controls button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+  try{localStorage.setItem("fitFilter",b.dataset.fit)}catch(e){}
+  render();
+}));
+document.getElementById("q").addEventListener("input",render);
+try{const s=localStorage.getItem("fitFilter"); if(s){const b=document.querySelector(`.controls button[data-fit="${s}"]`); if(b){document.querySelectorAll(".controls button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"))}}}catch(e){}
+summary(); render();
+</script>
+</body>
+</html>
